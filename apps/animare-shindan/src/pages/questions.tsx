@@ -28,7 +28,15 @@ const loading = keyframes`
 `
 
 const Question = styled.section`
+  box-sizing: border-box;
   padding-top: 28px;
+
+  @media (min-width: 500px) {
+    margin: 0 auto;
+    max-width: 500px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 `
 
 const QuestionHeader = styled.header`
