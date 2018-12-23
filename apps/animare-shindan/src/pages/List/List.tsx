@@ -2,10 +2,151 @@ import * as React from 'react'
 import { default as styled } from 'styled-components'
 import { default as Header } from '../../components/Header'
 
+const Content = styled.main`
+  background-color: #fff;
+  border: solid #000 4px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  margin: 30px auto 0;
+  max-width: 680px;
+  padding: 25px 0;
+  width: 100%;
+
+  @media (min-width: 500px) {
+    margin-top: 50px;
+  }
+`
+
+const Section = styled.section`
+  box-sizing: border-box;
+  padding: 30px 0 0;
+  margin: 30px 24px 0;
+
+  :first-of-type {
+    border-top: none;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  @media (min-width: 500px) {
+    border-top: solid #ececec 2px;
+    margin: 50px auto 0;
+    max-width: 500px;
+    padding: 0 24px;
+    width: 100%;
+  }
+`
+
+const Title = styled.h2`
+  color: #0588f7;
+  font-size: 2.8rem;
+  font-weight: 900;
+  letter-spacing: 0.04rem;
+  line-height: 1.4;
+  margin: 0 0 6px;
+
+  @media (min-width: 500px) {
+    font-size: 3.6rem;
+    margin-bottom: 12px
+  }
+`
+
+const Time = styled.time`
+  display: block;
+  font-size: 1.3rem;
+  line-height: 1;
+
+  @media (min-width: 500px) {
+    font-size: 1.4rem;
+  }
+`
+
+const SectionBody = styled.div`
+  p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 12px 0 0;
+    padding: 0;
+  }
+
+  li {
+    align-items: center;
+    display: flex;
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0;
+    width: 50%;
+  }
+
+  li::before {
+    color: #0588f7;
+    content: 'arrow_right';
+    display: block;
+    font-family: Material Icons;
+    font-size: 2rem;
+    margin-left: -5px;
+  }
+
+  @media (min-width: 500px) {
+    ul {
+      margin-top: 18px;
+    }
+  }
+`
+
+const Footer = styled.footer`
+  background-color: #fff;
+  border-top: solid #000 6px;
+  margin: 40px -20px 0;
+  padding: 20px 12px 32px;
+`
+
+const Copyright = styled.p`
+  text-align: center;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+`
+
 export default function List() {
   return (
     <>
       <Header />
+
+      <Content>
+        <Section>
+          <Time dateTime="2018-12-23">2018.12.23</Time>
+          <Title>Version 1.0</Title>
+
+          <SectionBody>
+            <p>
+              あにまーれオタクタイプ診断を公開しました。
+              <br />
+              Version 1.0で診断結果に表示されるVTuberは以下の通りです。(※今後も随時追加予定)
+            </p>
+            <ul>
+              <li>因幡はねる</li>
+            </ul>
+          </SectionBody>
+        </Section>
+      </Content>
+
+      <Footer>
+        <Copyright>
+          Copyright 2018{' '}
+          <a href="" rel="noopener noreferrer" target="_blank">
+            山岸 和利
+          </a>
+        </Copyright>
+      </Footer>
     </>
   )
 }

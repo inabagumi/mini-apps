@@ -1,4 +1,6 @@
+const CopyPlugin = require('copy-webpack-plugin')
 const HtmlPlugin = require('html-webpack-plugin')
+const path = require('path')
 
 module.exports = (_, argv) => {
   const isProd = argv.mode === 'production'
@@ -23,6 +25,7 @@ module.exports = (_, argv) => {
       publicPath: '/'
     },
     plugins: [
+      new CopyPlugin([path.resolve('src', 'static')]),
       new HtmlPlugin({
         minify: {
           collapseBooleanAttributes: true,
