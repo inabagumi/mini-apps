@@ -1,7 +1,7 @@
 [build]
   base    = "./"
   command = "yarn build"
-  publish = "./dist/"
+  publish = "./public/"
 
   [build.environment]
     NODE_ENV     = "development"
