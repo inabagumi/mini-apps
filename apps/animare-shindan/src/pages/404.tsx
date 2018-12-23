@@ -27,7 +27,9 @@ export default () => (
     <Message>
       <Title>404 Not found</Title>
 
-      <Description>おさがしのページを見つけることができませんでした。</Description>
+      <Description>
+        おさがしのページを見つけることができませんでした。
+      </Description>
     </Message>
   </Layout>
 )

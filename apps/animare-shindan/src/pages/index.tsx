@@ -1,4 +1,4 @@
-import { Link, graphql } from 'gatsby'
+import { Link, withPrefix } from 'gatsby'
 import * as React from 'react'
 import { Helmet } from 'react-helmet'
 import { default as styled } from 'styled-components'
@@ -6,6 +6,7 @@ import * as pkg from '../../package.json'
 import { default as Header } from '../components/header'
 import { default as Layout } from '../components/layout'
 import { default as Message } from '../components/message'
+import { default as mainVisual } from '../images/main-visual.png'
 
 const version = pkg.version
   .split('.')
@@ -145,14 +146,26 @@ export default () => (
       <meta content="好みと推しVTuberを無意識から探る！" name="description" />
       <meta content="website" property="og:type" />
       <meta content="https://shindan.animare.cafe/" property="og:url" />
-      <meta content="" property="og:image" />
-      <meta content="あなたのオタクタイプ診断 by あにまーれ" property="og:site_name" />
+      <meta content={mainVisual} property="og:image" />
+      <meta
+        content="あなたのオタクタイプ診断 by あにまーれ"
+        property="og:site_name"
+      />
       <meta content="あなたのオタクタイプを今すぐ診断" property="og:title" />
-      <meta content="好みと推しVTuberを無意識から探る！" property="og:description" />
+      <meta
+        content="好みと推しVTuberを無意識から探る！"
+        property="og:description"
+      />
       <meta content="summary_large_image" name="twitter:card" />
-      <meta content="" name="twitter:image" />
-      <meta content="あなたのオタクタイプ診断 by あにまーれ" name="twitter:title" />
-      <meta content="好みと推しVTuberを無意識から探る！" name="twitter:description" />
+      <meta content={mainVisual} name="twitter:image" />
+      <meta
+        content="あなたのオタクタイプ診断 by あにまーれ"
+        name="twitter:title"
+      />
+      <meta
+        content="好みと推しVTuberを無意識から探る！"
+        name="twitter:description"
+      />
     </Helmet>
 
     <Header />
