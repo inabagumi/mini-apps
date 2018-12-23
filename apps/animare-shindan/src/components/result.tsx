@@ -37,7 +37,7 @@ const Catchphrase = styled.p`
 `
 
 const Name = styled.h3`
-  color: #0588F7;
+  color: #0588f7;
   margin: 0;
   font-size: 2.4rem;
   font-weight: 900;
@@ -116,7 +116,11 @@ export default () => (
       <Profile>
         <Catchphrase>あなたの推しにしてください </Catchphrase>
         <Name>
-          <a href="https://twitter.com/Haneru_Inaba" rel="noopener noreferrer" target="_blank">
+          <a
+            href="https://twitter.com/Haneru_Inaba"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             因幡 はねる
           </a>
         </Name>
@@ -137,6 +141,13 @@ export default () => (
 
     <Headline>YouTubeにアクセスして、「因幡はねる」と会話しよう!</Headline>
 
-    <Button href="https://www.youtube.com/channel/UC0Owc36U9lOyi9Gx9Ic-4qg" rel="noopener noreferrer" role="button" target="_blank">このVTuberに会いに行く!</Button>
+    <Button
+      href="https://www.youtube.com/channel/UC0Owc36U9lOyi9Gx9Ic-4qg"
+      rel="noopener noreferrer"
+      role="button"
+      target="_blank"
+    >
+      このVTuberに会いに行く!
+    </Button>
   </Container>
 )

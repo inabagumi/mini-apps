@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet'
 import { default as styled } from 'styled-components'
 import { default as Layout } from '../../components/layout'
 import { default as Result } from '../../components/result'
+import { default as neruVisual } from '../../images/neru-visual.jpg'
 
 const Content = styled.main`
   box-sizing: border-box;
@@ -247,7 +248,39 @@ export default () => {
   return (
     <Layout>
       <Helmet>
-        <title />
+        <link href="https://shindan.animare.cafe/s/hUuAaZpw" rel="canonical" />
+        <meta content="好みと推しVTuberを無意識から探る！" name="description" />
+        <meta content="website" property="og:type" />
+        <meta
+          content="https://shindan.animare.cafe/s/hUuAaZpw"
+          property="og:url"
+        />
+        <meta
+          content={`${new URL(neruVisual, 'https://shindan.animare.cafe/')}`}
+          property="og:image"
+        />
+        <meta
+          content="あなたのオタクタイプ診断 by あにまーれ"
+          property="og:site_name"
+        />
+        <meta content="あなたのオタクタイプを今すぐ診断" property="og:title" />
+        <meta
+          content="好みと推しVTuberを無意識から探る！"
+          property="og:description"
+        />
+        <meta content="summary_large_image" name="twitter:card" />
+        <meta
+          content={`${new URL(neruVisual, 'https://shindan.animare.cafe/')}`}
+          name="twitter:image"
+        />
+        <meta
+          content="あなたのオタクタイプ診断 by あにまーれ"
+          name="twitter:title"
+        />
+        <meta
+          content="好みと推しVTuberを無意識から探る！"
+          name="twitter:description"
+        />
       </Helmet>
 
       <Content>
