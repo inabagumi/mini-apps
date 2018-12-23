@@ -146,7 +146,7 @@ export default () => (
       <meta content="好みと推しVTuberを無意識から探る！" name="description" />
       <meta content="website" property="og:type" />
       <meta content="https://shindan.animare.cafe/" property="og:url" />
-      <meta content={mainVisual} property="og:image" />
+      <meta content={`${new URL(mainVisual, 'https://shindan.animare.cafe/')}`} property="og:image" />
       <meta
         content="あなたのオタクタイプ診断 by あにまーれ"
         property="og:site_name"
@@ -157,7 +157,7 @@ export default () => (
         property="og:description"
       />
       <meta content="summary_large_image" name="twitter:card" />
-      <meta content={mainVisual} name="twitter:image" />
+      <meta content={`${new URL(mainVisual, 'https://shindan.animare.cafe/')}`} name="twitter:image" />
       <meta
         content="あなたのオタクタイプ診断 by あにまーれ"
         name="twitter:title"

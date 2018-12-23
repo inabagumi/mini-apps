@@ -5,6 +5,6 @@ module.exports = {
     'gatsby-plugin-typescript'
   ],
   siteMetadata: {
-    pathPrefix: 'https://shindan.animare.cafe'
+    siteUrl: 'https://shindan.animare.cafe'
   }
 }
