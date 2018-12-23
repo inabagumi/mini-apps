@@ -243,7 +243,8 @@ const Copyright = styled.p`
 `
 
 export default () => {
-  const hideShareButton = (location.search || '').indexOf('s=true') >= 1
+  const queryString = (typeof location !== 'undefined' && location.search) || ''
+  const showShareButton = queryString.indexOf('s=true') >= 1
 
   return (
     <Layout>
@@ -315,7 +316,7 @@ export default () => {
               <EvaluationComment>あにまーれは仲良しです♩</EvaluationComment>
             </Evaluation>
 
-            {!hideShareButton && (
+            {showShareButton && (
               <>
                 <ShareButton
                   href="https://twitter.com/intent/tweet?hashtags=%E3%81%82%E3%81%AB%E3%81%BE%E3%83%BC%E3%82%8C%E3%82%AA%E3%82%BF%E3%82%AF%E3%82%BF%E3%82%A4%E3%83%97%E8%A8%BA%E6%96%AD&amp;text=%E3%82%A2%E3%83%8A%E3%82%BF%E3%81%AF%E6%B8%85%E6%A5%9A%E7%B3%BB%E3%80%90%E3%81%86%E3%81%95%E3%81%8E%E5%A5%BD%E3%81%8D%E3%80%91%E3%81%A7%E3%81%99%EF%BC%81%0A&amp;url=https%3A%2F%2Fshindan.animare.cafe%2Fs%2FhUuAaZpw%3Fs%3Dtrue"
