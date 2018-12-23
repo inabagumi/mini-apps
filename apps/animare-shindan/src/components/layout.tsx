@@ -19,7 +19,6 @@ const GlobalStyle = createGlobalStyle`
       );
     font-family: Noto Sans JP, sans-serif;
     font-size: 10px;
-    font-weight: 700;
     height: 100%;
     line-height: 1.8;
   }
@@ -32,10 +31,10 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const Content = styled.div`
+  box-sizing: border-box;
   padding: 0 20px;
 
   @media (min-width: 500px) {
-    box-sizing: border-box;
     min-height: 100vh;
     padding: 0;
     position: relative;
@@ -53,7 +52,7 @@ export default ({ children }: Props) => (
       <link href="/manifest.json" rel="manifest" />
       <link
         as="style"
-        href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400:700,900"
+        href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700,900"
         rel="preload"
       />
       <link
@@ -76,7 +75,7 @@ export default ({ children }: Props) => (
     <Content>{children}</Content>
 
     <link
-      href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400:700,900"
+      href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700,900"
       rel="stylesheet"
     />
     <link

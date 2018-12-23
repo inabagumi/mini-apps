@@ -1,13 +1,13 @@
 import * as React from 'react'
 import { default as styled } from 'styled-components'
 
-const Container = styled.main`
+const Container = styled.div`
   background-color: #fff;
   border: solid #000 4px;
   border-radius: 20px;
   box-sizing: border-box;
   color: #000;
-  margin: 30px auto 0;
+  margin: 0 auto;
   max-width: 680px;
   padding: 25px 0;
   width: 100%;

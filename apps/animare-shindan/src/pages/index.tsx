@@ -13,6 +13,10 @@ const version = pkg.version
   .slice(0, 2)
   .join('.')
 
+const Content = styled.main`
+  padding-top: 30px;
+`
+
 const Title = styled.h1`
   align-items: center;
   display: flex;
@@ -146,7 +150,10 @@ export default () => (
       <meta content="好みと推しVTuberを無意識から探る！" name="description" />
       <meta content="website" property="og:type" />
       <meta content="https://shindan.animare.cafe/" property="og:url" />
-      <meta content={`${new URL(mainVisual, 'https://shindan.animare.cafe/')}`} property="og:image" />
+      <meta
+        content={`${new URL(mainVisual, 'https://shindan.animare.cafe/')}`}
+        property="og:image"
+      />
       <meta
         content="あなたのオタクタイプ診断 by あにまーれ"
         property="og:site_name"
@@ -157,7 +164,10 @@ export default () => (
         property="og:description"
       />
       <meta content="summary_large_image" name="twitter:card" />
-      <meta content={`${new URL(mainVisual, 'https://shindan.animare.cafe/')}`} name="twitter:image" />
+      <meta
+        content={`${new URL(mainVisual, 'https://shindan.animare.cafe/')}`}
+        name="twitter:image"
+      />
       <meta
         content="あなたのオタクタイプ診断 by あにまーれ"
         name="twitter:title"
@@ -170,24 +180,26 @@ export default () => (
 
     <Header />
 
-    <Message>
-      <Title>
-        <span>アナタの</span>
-        <span>オタクタイプ診断</span>
-      </Title>
-      <Description>
-        アナタの隠されたオタクタイプを徹底診断!
-        <br />
-        アナタにマッチするVライバーから、
-        <br />
-        スペシャルなボイスメッセージも…?
-      </Description>
+    <Content>
+      <Message>
+        <Title>
+          <span>アナタの</span>
+          <span>オタクタイプ診断</span>
+        </Title>
+        <Description>
+          アナタの隠されたオタクタイプを徹底診断!
+          <br />
+          アナタにマッチするVライバーから、
+          <br />
+          スペシャルなボイスメッセージも…?
+        </Description>
 
-      <Intro>アナタはどんなオタクタイプ?</Intro>
-      <Button role="button" to="/questions">
-        診断スタート!
-      </Button>
-    </Message>
+        <Intro>アナタはどんなオタクタイプ?</Intro>
+        <Button role="button" to="/questions">
+          診断スタート!
+        </Button>
+      </Message>
+    </Content>
 
     <Footer>
       <svg height="200" width="200">

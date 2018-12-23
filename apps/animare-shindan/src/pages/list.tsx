@@ -5,6 +5,10 @@ import { default as Header } from '../components/header'
 import { default as Layout } from '../components/layout'
 import { default as Message } from '../components/message'
 
+const Content = styled.main`
+  padding-top: 30px;
+`
+
 const Section = styled.section`
   box-sizing: border-box;
   padding: 30px 0 0;
@@ -112,24 +116,26 @@ export default () => (
 
     <Header />
 
-    <Message>
-      <Section>
-        <Time dateTime="2018-12-23">2018.12.23</Time>
-        <Title>Version 1.0</Title>
+    <Content>
+      <Message>
+        <Section>
+          <Time dateTime="2018-12-23">2018.12.23</Time>
+          <Title>Version 1.0</Title>
 
-        <SectionBody>
-          <p>
-            あにまーれオタクタイプ診断を公開しました。
-            <br />
-            Version
-            1.0で診断結果に表示されるVTuberは以下の通りです。(※今後も随時追加予定)
-          </p>
-          <ul>
-            <li>因幡はねる</li>
-          </ul>
-        </SectionBody>
-      </Section>
-    </Message>
+          <SectionBody>
+            <p>
+              あにまーれオタクタイプ診断を公開しました。
+              <br />
+              Version
+              1.0で診断結果に表示されるVTuberは以下の通りです。(※今後も随時追加予定)
+            </p>
+            <ul>
+              <li>因幡はねる</li>
+            </ul>
+          </SectionBody>
+        </Section>
+      </Message>
+    </Content>
 
     <Footer>
       <Copyright>
