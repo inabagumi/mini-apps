@@ -213,6 +213,11 @@ const SubTitle = styled.h2`
 const FooterWrapper = styled.footer`
   background-color: #212121;
   margin: 56px -20px 0;
+
+  @media (min-width: 500px) {
+    margin-left: 0;
+    margin-right: 0;
+  }
 `
 
 const Footer = styled.div`
