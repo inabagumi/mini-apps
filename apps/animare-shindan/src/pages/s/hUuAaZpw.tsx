@@ -244,7 +244,7 @@ const Copyright = styled.p`
 
 export default () => {
   const queryString = (typeof location !== 'undefined' && location.search) || ''
-  const showShareButton = queryString.indexOf('s=true') >= 1
+  const showShareButton = queryString.indexOf('s=true') < 1
 
   return (
     <Layout>
