@@ -1,6 +1,6 @@
 [build]
   base    = "./"
-  command = "yarn build"
+  command = "yarn build --prefix-paths"
   publish = "./public/"
 
   [build.environment]
