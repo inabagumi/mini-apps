@@ -1,21 +1,9 @@
 import * as React from 'react'
+import { Helmet } from 'react-helmet'
 import { default as styled } from 'styled-components'
-import { default as Header } from '../../components/Header'
-
-const Content = styled.main`
-  background-color: #fff;
-  border: solid #000 4px;
-  border-radius: 20px;
-  box-sizing: border-box;
-  margin: 30px auto 0;
-  max-width: 680px;
-  padding: 25px 0;
-  width: 100%;
-
-  @media (min-width: 500px) {
-    margin-top: 50px;
-  }
-`
+import { default as Header } from '../components/header'
+import { default as Layout } from '../components/layout'
+import { default as Message } from '../components/message'
 
 const Section = styled.section`
   box-sizing: border-box;
@@ -47,7 +35,7 @@ const Title = styled.h2`
 
   @media (min-width: 500px) {
     font-size: 3.6rem;
-    margin-bottom: 12px
+    margin-bottom: 12px;
   }
 `
 
@@ -116,37 +104,40 @@ const Copyright = styled.p`
   }
 `
 
-export default function List() {
-  return (
-    <>
-      <Header />
+export default () => (
+  <Layout>
+    <Helmet>
+      <title>お知らせ</title>
+    </Helmet>
 
-      <Content>
-        <Section>
-          <Time dateTime="2018-12-23">2018.12.23</Time>
-          <Title>Version 1.0</Title>
+    <Header />
 
-          <SectionBody>
-            <p>
-              あにまーれオタクタイプ診断を公開しました。
-              <br />
-              Version 1.0で診断結果に表示されるVTuberは以下の通りです。(※今後も随時追加予定)
-            </p>
-            <ul>
-              <li>因幡はねる</li>
-            </ul>
-          </SectionBody>
-        </Section>
-      </Content>
+    <Message>
+      <Section>
+        <Time dateTime="2018-12-23">2018.12.23</Time>
+        <Title>Version 1.0</Title>
 
-      <Footer>
-        <Copyright>
-          Copyright 2018{' '}
-          <a href="" rel="noopener noreferrer" target="_blank">
-            山岸 和利
-          </a>
-        </Copyright>
-      </Footer>
-    </>
-  )
-}
+        <SectionBody>
+          <p>
+            あにまーれオタクタイプ診断を公開しました。
+            <br />
+            Version
+            1.0で診断結果に表示されるVTuberは以下の通りです。(※今後も随時追加予定)
+          </p>
+          <ul>
+            <li>因幡はねる</li>
+          </ul>
+        </SectionBody>
+      </Section>
+    </Message>
+
+    <Footer>
+      <Copyright>
+        Copyright 2018{' '}
+        <a href="https://ykzts.com/" rel="noopener noreferrer" target="_blank">
+          山岸 和利
+        </a>
+      </Copyright>
+    </Footer>
+  </Layout>
+)

@@ -1,5 +1,5 @@
+import { Link } from 'gatsby'
 import * as React from 'react'
-import { Link } from 'react-router-dom'
 import { default as styled } from 'styled-components'
 
 const Container = styled.header`
@@ -14,6 +14,7 @@ const Container = styled.header`
 
 const Logo = styled(Link)`
   color: #fff;
+  display: block;
   text-decoration: none;
 
   span {
