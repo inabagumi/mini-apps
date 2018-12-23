@@ -174,7 +174,7 @@ const ShareButton = styled.a`
   }
 `
 
-const Button = styled(Link)`
+const RetryButton = styled(Link)`
   align-items: center;
   background-color: #fff;
   border: solid #ececec 3px;
@@ -208,6 +208,22 @@ const SubTitle = styled.h2`
     font-size: 3.6rem;
     margin-top: 64px;
   }
+`
+
+const Button = styled(Link)`
+  align-items: center;
+  background-color: #fff;
+  border: solid #14b9ff 4px;
+  border-radius: 28px;
+  box-sizing: border-box;
+  color: #14b9ff;
+  display: flex;
+  height: 56px;
+  justify-content: center;
+  margin: 40px auto 0;
+  max-width: 416px;
+  text-decoration: none;
+  width: 100%;
 `
 
 const FooterWrapper = styled.footer`
@@ -331,9 +347,9 @@ export default () => {
                 >
                   診断結果をツイートする
                 </ShareButton>
-                <Button role="button" to="/">
+                <RetryButton role="button" to="/">
                   もう一度診断する
-                </Button>
+                </RetryButton>
               </>
             )}
           </Message>
@@ -344,6 +360,10 @@ export default () => {
         </SubTitle>
 
         <Result />
+
+        <Button role="button" to="/">
+          オタクタイプを診断してみる
+        </Button>
       </Content>
 
       <FooterWrapper>
