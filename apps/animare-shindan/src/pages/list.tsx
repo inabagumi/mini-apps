@@ -119,7 +119,7 @@ export default () => (
     <Content>
       <Message>
         <Section>
-          <Time dateTime="2018-12-23">2018.12.23</Time>
+          <Time dateTime="2018-12-24">2018.12.24</Time>
           <Title>Version 1.0</Title>
 
           <SectionBody>
