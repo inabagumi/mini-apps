@@ -6,7 +6,7 @@ import * as pkg from '../../package.json'
 import { default as Header } from '../components/header'
 import { default as Layout } from '../components/layout'
 import { default as Message } from '../components/message'
-import { default as mainVisual } from '../images/main-visual.png'
+import { default as mainVisual } from '../images/main-visual.jpg'
 
 const version = pkg.version
   .split('.')
