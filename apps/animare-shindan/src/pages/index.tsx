@@ -95,6 +95,23 @@ const Button = styled(Link)`
   }
 `
 
+const Disclaimer = styled.p`
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 25px auto 0;
+  padding: 0 25px;
+
+  a {
+    color: #14b9ff;
+    text-decoration: none;
+    transition: color 0.5s;
+  }
+
+  a:hover {
+    color: #0588f7;
+  }
+`
+
 const Footer = styled.footer`
   margin: 40px -20px 0;
 
@@ -198,6 +215,32 @@ export default () => (
         <Button role="button" to="/questions">
           診断スタート!
         </Button>
+
+        <Disclaimer>
+          ※このサービスは
+          <a href="https://duo7.co.jp/" rel="noopener noreferrer" target="_blank">
+            株式会社DUO
+          </a>
+          が提供するアプリである
+          <a href="https://iriam.com/" rel="noopener noreferrer" target="_blank">
+            IRIAM
+          </a>
+          の関連サービスである
+          <a href="https://shindan.iriam.com/" rel="noopener noreferrer" target="_blank">
+            あなたのオタクタイプ診断 by IRIAM
+          </a>
+          をオリジナルとするファンメイドの非公式サービスです。
+          <a href="https://animare-official.com/" rel="noopener noreferrer" target="_blank">
+            有閑喫茶あにまーれ
+          </a>
+          やその運営者とは一切関係ない第三者である
+          <a href="https://ykzts.com/" rel="noopener noreferrer" target="_blank">
+            山岸 和利
+          </a>
+          によって制作されています。
+          <br />
+          制作者である山岸和利以外の人物や団体に対してこのサービスに関する問い合わせを行うのはお止めください。
+        </Disclaimer>
       </Message>
     </Content>
 
@@ -210,7 +253,7 @@ export default () => (
         <VersionLink to="/list">Version {version}</VersionLink>
         <Copyright>
           Copyright 2018{' '}
-          <a href="" rel="noopener noreferrer" target="_blank">
+          <a href="https://ykzts.com/" rel="noopener noreferrer" target="_blank">
             山岸 和利
           </a>
         </Copyright>
