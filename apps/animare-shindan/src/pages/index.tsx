@@ -124,7 +124,7 @@ const Footer = styled.footer`
     margin: 20px 0 0;
   }
 
-  @media (min-height: 900px) {
+  @media (min-height: 1024px) {
     bottom: 0;
     left: 0;
     position: absolute;
