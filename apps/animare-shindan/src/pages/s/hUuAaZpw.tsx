@@ -263,7 +263,7 @@ const Copyright = styled.p`
   }
 `
 
-export default () => {
+export default (() => {
   const queryString = (typeof location !== 'undefined' && location.search) || ''
   const showShareButton = queryString.indexOf('s=true') < 1
 
@@ -378,4 +378,4 @@ export default () => {
       </FooterWrapper>
     </Layout>
   )
-}
+}) as React.FunctionComponent

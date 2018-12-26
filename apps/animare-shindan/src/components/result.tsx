@@ -108,7 +108,7 @@ const Button = styled.a`
   }
 `
 
-export default () => (
+export default (() => (
   <Container>
     <Label>「因幡はねる」のおすすめ動画はこちら!</Label>
 
@@ -150,4 +150,4 @@ export default () => (
       このVTuberに会いに行く!
     </Button>
   </Container>
-)
+)) as React.FunctionComponent

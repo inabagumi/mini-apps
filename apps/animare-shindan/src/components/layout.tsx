@@ -2,10 +2,6 @@ import * as React from 'react'
 import { Helmet } from 'react-helmet'
 import { default as styled, createGlobalStyle } from 'styled-components'
 
-interface Props {
-  children: React.ReactNode
-}
-
 const GlobalStyle = createGlobalStyle`
   html {
     background-color: #0588f7;
@@ -41,7 +37,7 @@ const Content = styled.div`
   }
 `
 
-export default ({ children }: Props) => (
+export default (({ children }) => (
   <>
     <Helmet defer={false} titleTemplate="%s | #あにまーれオタクタイプ診断">
       <html lang="ja" />
@@ -83,4 +79,4 @@ export default ({ children }: Props) => (
       rel="stylesheet"
     />
   </>
-)
+)) as React.FunctionComponent

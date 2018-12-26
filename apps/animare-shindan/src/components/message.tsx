@@ -19,8 +19,6 @@ const Container = styled.div`
   }
 `
 
-interface Props {
-  children: React.ReactNode
-}
-
-export default ({ children }: Props) => <Container>{children}</Container>
+export default (({ children }) => (
+  <Container>{children}</Container>
+)) as React.FunctionComponent

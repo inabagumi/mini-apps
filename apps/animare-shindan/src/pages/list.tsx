@@ -108,7 +108,7 @@ const Copyright = styled.p`
   }
 `
 
-export default () => (
+export default (() => (
   <Layout>
     <Helmet>
       <title>お知らせ</title>
@@ -146,4 +146,4 @@ export default () => (
       </Copyright>
     </Footer>
   </Layout>
-)
+)) as React.FunctionComponent

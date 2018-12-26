@@ -16,7 +16,7 @@ const Description = styled.p`
   margin: 10px 24px 0;
 `
 
-export default () => (
+export default (() => (
   <Layout>
     <Helmet>
       <title>404 Not found</title>
@@ -32,4 +32,4 @@ export default () => (
       </Description>
     </Message>
   </Layout>
-)
+)) as React.FunctionComponent

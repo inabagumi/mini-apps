@@ -175,7 +175,7 @@ export default class Questions extends React.Component<Props, State> {
     analysing: false
   }
 
-  shouldComponentUpdate(nextProps: Props, nextState: State) {
+  shouldComponentUpdate(_: Props, nextState: State) {
     const { analysing } = this.state
 
     return analysing !== nextState.analysing
