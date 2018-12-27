@@ -3,6 +3,9 @@ interface AnalysisResult {
   catchphrase: string
   embeddedHTML: string
   id: string
+  image?: {
+    publicURL: string
+  }
   name: string
   type: string
   twitter: string

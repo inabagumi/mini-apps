@@ -4,22 +4,25 @@ import { default as Result } from './result'
 
 interface Props {
   data: {
-    resultsJson: AnalysisResult
+    result: AnalysisResult
   }
   location: Location
 }
 
 export default (({ data, location }) => (
-  <Result location={location} result={data.resultsJson} />
+  <Result location={location} result={data.result} />
 )) as React.FunctionComponent<Props>
 
 export const pageQuery = graphql`
   query($id: String!) {
-    resultsJson(id: { eq: $id }) {
+    result: resultsJson(id: { eq: $id }) {
       attribute
       catchphrase
       embeddedHTML
       id
+      image {
+        publicURL
+      }
       name
       type
       twitter

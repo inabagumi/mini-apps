@@ -3,7 +3,6 @@ import * as React from 'react'
 import { Helmet } from 'react-helmet'
 import { default as styled } from 'styled-components'
 import { default as Layout } from '../../components/layout'
-import { default as neruVisual } from '../../images/neru-visual.jpg'
 import { default as Detail } from './detail'
 import { default as Footer } from './footer'
 import { default as MessageBox } from './message-box'
@@ -86,10 +85,15 @@ export default (({ location, result }) => (
         content={`https://shindan.animare.cafe/s/${result.id}`}
         property="og:url"
       />
-      <meta
-        content={`${new URL(neruVisual, 'https://shindan.animare.cafe/')}`}
-        property="og:image"
-      />
+      {result.image && (
+        <meta
+          content={`${new URL(
+            result.image.publicURL,
+            'https://shindan.animare.cafe/'
+          )}`}
+          property="og:image"
+        />
+      )}
       <meta
         content="あなたのオタクタイプ診断 by あにまーれ"
         property="og:site_name"
@@ -100,10 +104,15 @@ export default (({ location, result }) => (
         property="og:description"
       />
       <meta content="summary_large_image" name="twitter:card" />
-      <meta
-        content={`${new URL(neruVisual, 'https://shindan.animare.cafe/')}`}
-        name="twitter:image"
-      />
+      {result.image && (
+        <meta
+          content={`${new URL(
+            result.image.publicURL,
+            'https://shindan.animare.cafe/'
+          )}`}
+          name="twitter:image"
+        />
+      )}
       <meta
         content="あなたのオタクタイプ診断 by あにまーれ"
         name="twitter:title"

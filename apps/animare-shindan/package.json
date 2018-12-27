@@ -2,7 +2,7 @@
   "author": "Yamagishi Kazutoshi <ykzts@desire.sh>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
-    "gatsby": "^2.0.75",
+    "gatsby": "^2.0.76",
     "gatsby-plugin-react-helmet": "^3.0.5",
     "gatsby-plugin-styled-components": "^3.0.4",
     "gatsby-plugin-typescript": "^2.0.3",
@@ -18,7 +18,6 @@
   "devDependencies": {
     "@types/react": "^16.7.18",
     "@types/react-helmet": "^5.0.7",
-    "@types/react-router-dom": "^4.3.1",
     "@types/styled-components": "^4.1.4",
     "prettier": "^1.15.3"
   },
@@ -32,7 +31,7 @@
   },
   "scripts": {
     "build": "gatsby build",
-    "format": "prettier --write \"./src/**/*.{js,ts,tsx}\"",
+    "format": "prettier --ignore-path .gitignore --write \"./**/*.{js,ts,tsx}\"",
     "start": "gatsby develop"
   },
   "version": "1.0.0"

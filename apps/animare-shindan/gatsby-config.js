@@ -7,9 +7,16 @@ module.exports = {
     'gatsby-plugin-typescript',
     {
       options: {
-        ignore: ['**/\.*'],
+        ignore: ['**/\\.*'],
         name: 'data',
         path: path.resolve('src', 'data')
+      },
+      resolve: 'gatsby-source-filesystem'
+    },
+    {
+      options: {
+        name: 'images',
+        path: path.resolve('src', 'images')
       },
       resolve: 'gatsby-source-filesystem'
     },

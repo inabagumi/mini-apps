@@ -36,7 +36,7 @@ exports.onCreatePage = ({ actions, page }) => {
   return new Promise(resolve => {
     const newPage = {
       ...page,
-      path: page.path === `/` ? page.path : page.path.replace(/\/$/, ``)
+      path: page.path === '/' ? page.path : page.path.replace(/\/$/, '')
     }
 
     if (newPage.path !== page.path) {
