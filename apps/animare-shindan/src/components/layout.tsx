@@ -39,21 +39,14 @@ const Content = styled.div`
 
 export default (({ children }) => (
   <>
-    <Helmet defer={false} titleTemplate="%s | #あにまーれオタクタイプ診断">
+    <Helmet titleTemplate="%s | #あにまーれオタクタイプ診断">
       <html lang="ja" />
       <title>あなたのオタクタイプ診断 by あにまーれ</title>
-      <meta charSet="UTF-8" />
-      <meta content="width=device-width" name="viewport" />
       <link href="/assets/icon-128x128.png" rel="icon" />
       <link href="/manifest.json" rel="manifest" />
       <link
         as="style"
-        href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700,900"
-        rel="preload"
-      />
-      <link
-        as="style"
-        href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700,900|Material+Icons"
         rel="preload"
       />
     </Helmet>
@@ -71,13 +64,8 @@ export default (({ children }) => (
     <Content>{children}</Content>
 
     <link
-      href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700,900"
+      href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700,900|Material+Icons"
       rel="stylesheet"
     />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.polyfill.io/v2/polyfill.js?features=URL" />
   </>
 )) as React.FunctionComponent
