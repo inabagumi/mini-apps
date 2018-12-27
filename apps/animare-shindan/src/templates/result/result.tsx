@@ -3,6 +3,7 @@ import * as React from 'react'
 import { Helmet } from 'react-helmet'
 import { default as styled } from 'styled-components'
 import { default as Layout } from '../../components/layout'
+import { default as SEO } from '../../components/seo'
 import { default as Detail } from './detail'
 import { default as Footer } from './footer'
 import { default as MessageBox } from './message-box'
@@ -68,60 +69,12 @@ const Button = styled(Link)`
 `
 
 interface Props {
-  location: Location
   result: AnalysisResult
 }
 
-export default (({ location, result }) => (
+export default (({ result }) => (
   <Layout>
-    <Helmet>
-      <link
-        href={`https://shindan.animare.cafe/s/${result.id}`}
-        rel="canonical"
-      />
-      <meta content="好みと推しVTuberを無意識から探る！" name="description" />
-      <meta content="website" property="og:type" />
-      <meta
-        content={`https://shindan.animare.cafe/s/${result.id}`}
-        property="og:url"
-      />
-      {result.image && (
-        <meta
-          content={`${new URL(
-            result.image.publicURL,
-            'https://shindan.animare.cafe/'
-          )}`}
-          property="og:image"
-        />
-      )}
-      <meta
-        content="あなたのオタクタイプ診断 by あにまーれ"
-        property="og:site_name"
-      />
-      <meta content="あなたのオタクタイプを今すぐ診断" property="og:title" />
-      <meta
-        content="好みと推しVTuberを無意識から探る！"
-        property="og:description"
-      />
-      <meta content="summary_large_image" name="twitter:card" />
-      {result.image && (
-        <meta
-          content={`${new URL(
-            result.image.publicURL,
-            'https://shindan.animare.cafe/'
-          )}`}
-          name="twitter:image"
-        />
-      )}
-      <meta
-        content="あなたのオタクタイプ診断 by あにまーれ"
-        name="twitter:title"
-      />
-      <meta
-        content="好みと推しVTuberを無意識から探る！"
-        name="twitter:description"
-      />
-    </Helmet>
+    <SEO image={result.image} pathname={`/s/${result.id}?s=true`} />
 
     <Content>
       <Title>オタクタイプ 診断結果</Title>

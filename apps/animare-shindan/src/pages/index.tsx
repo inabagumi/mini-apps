@@ -1,12 +1,11 @@
 import { Link } from 'gatsby'
 import * as React from 'react'
-import { Helmet } from 'react-helmet'
 import { default as styled } from 'styled-components'
 import * as pkg from '../../package.json'
 import { default as Header } from '../components/header'
 import { default as Layout } from '../components/layout'
 import { default as Message } from '../components/message'
-import { default as mainVisual } from '../images/main-visual.jpg'
+import { default as SEO } from '../components/seo'
 
 const version = pkg.version
   .split('.')
@@ -162,38 +161,7 @@ const Copyright = styled.p`
 
 export default (() => (
   <Layout>
-    <Helmet>
-      <link href="https://shindan.animare.cafe/" rel="canonical" />
-      <meta content="好みと推しVTuberを無意識から探る！" name="description" />
-      <meta content="website" property="og:type" />
-      <meta content="https://shindan.animare.cafe/" property="og:url" />
-      <meta
-        content={`${new URL(mainVisual, 'https://shindan.animare.cafe/')}`}
-        property="og:image"
-      />
-      <meta
-        content="あなたのオタクタイプ診断 by あにまーれ"
-        property="og:site_name"
-      />
-      <meta content="あなたのオタクタイプを今すぐ診断" property="og:title" />
-      <meta
-        content="好みと推しVTuberを無意識から探る！"
-        property="og:description"
-      />
-      <meta content="summary_large_image" name="twitter:card" />
-      <meta
-        content={`${new URL(mainVisual, 'https://shindan.animare.cafe/')}`}
-        name="twitter:image"
-      />
-      <meta
-        content="あなたのオタクタイプ診断 by あにまーれ"
-        name="twitter:title"
-      />
-      <meta
-        content="好みと推しVTuberを無意識から探る！"
-        name="twitter:description"
-      />
-    </Helmet>
+    <SEO pathname="/" />
 
     <Header />
 

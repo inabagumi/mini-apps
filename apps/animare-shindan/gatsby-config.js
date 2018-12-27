@@ -23,6 +23,9 @@ module.exports = {
     'gatsby-transformer-json'
   ],
   siteMetadata: {
-    siteUrl: 'https://shindan.animare.cafe'
+    description: '好みと推しVTuberを無意識から探る！',
+    mainVisual: './src/images/main-visual.jpg',
+    siteUrl: 'https://shindan.animare.cafe',
+    title: 'あなたのオタクタイプ診断 by あにまーれ'
   }
 }
