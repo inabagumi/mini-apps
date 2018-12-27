@@ -108,41 +108,39 @@ const Button = styled.a`
   }
 `
 
-export default (() => (
+interface Props {
+  result: AnalysisResult
+}
+
+export default React.memo((({ result }) => (
   <Container>
-    <Label>「因幡はねる」のおすすめ動画はこちら!</Label>
+    <Label>「{result.name}」のおすすめ動画はこちら!</Label>
 
     <Content>
       <Profile>
-        <Catchphrase>あなたの推しにしてください </Catchphrase>
+        <Catchphrase>{result.catchphrase}</Catchphrase>
         <Name>
           <a
-            href="https://twitter.com/Haneru_Inaba"
+            href={result.twitter}
             rel="noopener noreferrer"
             target="_blank"
           >
-            因幡 はねる
+            {result.name}
           </a>
         </Name>
       </Profile>
       <MovieWrapper>
-        <Movie>
-          <iframe
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            frameBorder="0"
-            height="315"
-            src="https://www.youtube.com/embed/46zn0VIqJ1g"
-            width="560"
-          />
-        </Movie>
+        <Movie dangerouslySetInnerHTML={{ __html: result.embeddedHTML }} />
       </MovieWrapper>
     </Content>
 
-    <Headline>YouTubeにアクセスして、「因幡はねる」と会話しよう!</Headline>
+    <Headline>
+      YouTubeにアクセスして、
+      <br />「{result.name}」と会話しよう!
+    </Headline>
 
     <Button
-      href="https://www.youtube.com/channel/UC0Owc36U9lOyi9Gx9Ic-4qg"
+      href={result.youtube}
       rel="noopener noreferrer"
       role="button"
       target="_blank"
@@ -150,4 +148,4 @@ export default (() => (
       このVTuberに会いに行く!
     </Button>
   </Container>
-)) as React.FunctionComponent
+)) as React.FunctionComponent<Props>)
