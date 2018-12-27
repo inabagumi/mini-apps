@@ -69,74 +69,68 @@ const Button = styled(Link)`
 `
 
 interface Props {
-  data: {
-    resultsJson: AnalysisResult
-  }
   location: Location
+  result: AnalysisResult
 }
 
-export default (({ data, location }) => {
-  const { resultsJson: result } = data
+export default (({ location, result }) => (
+  <Layout>
+    <Helmet>
+      <link
+        href={`https://shindan.animare.cafe/s/${result.id}`}
+        rel="canonical"
+      />
+      <meta content="好みと推しVTuberを無意識から探る！" name="description" />
+      <meta content="website" property="og:type" />
+      <meta
+        content={`https://shindan.animare.cafe/s/${result.id}`}
+        property="og:url"
+      />
+      <meta
+        content={`${new URL(neruVisual, 'https://shindan.animare.cafe/')}`}
+        property="og:image"
+      />
+      <meta
+        content="あなたのオタクタイプ診断 by あにまーれ"
+        property="og:site_name"
+      />
+      <meta content="あなたのオタクタイプを今すぐ診断" property="og:title" />
+      <meta
+        content="好みと推しVTuberを無意識から探る！"
+        property="og:description"
+      />
+      <meta content="summary_large_image" name="twitter:card" />
+      <meta
+        content={`${new URL(neruVisual, 'https://shindan.animare.cafe/')}`}
+        name="twitter:image"
+      />
+      <meta
+        content="あなたのオタクタイプ診断 by あにまーれ"
+        name="twitter:title"
+      />
+      <meta
+        content="好みと推しVTuberを無意識から探る！"
+        name="twitter:description"
+      />
+    </Helmet>
 
-  return (
-    <Layout>
-      <Helmet>
-        <link
-          href={`https://shindan.animare.cafe/s/${result.id}`}
-          rel="canonical"
-        />
-        <meta content="好みと推しVTuberを無意識から探る！" name="description" />
-        <meta content="website" property="og:type" />
-        <meta
-          content={`https://shindan.animare.cafe/s/${result.id}`}
-          property="og:url"
-        />
-        <meta
-          content={`${new URL(neruVisual, 'https://shindan.animare.cafe/')}`}
-          property="og:image"
-        />
-        <meta
-          content="あなたのオタクタイプ診断 by あにまーれ"
-          property="og:site_name"
-        />
-        <meta content="あなたのオタクタイプを今すぐ診断" property="og:title" />
-        <meta
-          content="好みと推しVTuberを無意識から探る！"
-          property="og:description"
-        />
-        <meta content="summary_large_image" name="twitter:card" />
-        <meta
-          content={`${new URL(neruVisual, 'https://shindan.animare.cafe/')}`}
-          name="twitter:image"
-        />
-        <meta
-          content="あなたのオタクタイプ診断 by あにまーれ"
-          name="twitter:title"
-        />
-        <meta
-          content="好みと推しVTuberを無意識から探る！"
-          name="twitter:description"
-        />
-      </Helmet>
+    <Content>
+      <Title>オタクタイプ 診断結果</Title>
 
-      <Content>
-        <Title>オタクタイプ 診断結果</Title>
+      <MessageBox location={location} result={result} />
 
-        <MessageBox location={location} result={result} />
+      <SubTitle>
+        総勢約6,000名のVTuberの中から【{result.type}
+        好き】のアナタにマッチするVTuberが選ばれました!
+      </SubTitle>
 
-        <SubTitle>
-          総勢約6,000名のVTuberの中から【{result.type}
-          好き】のアナタにマッチするVTuberが選ばれました!
-        </SubTitle>
+      <Detail result={result} />
 
-        <Detail result={result} />
+      <Button role="button" to="/">
+        オタクタイプを診断してみる
+      </Button>
+    </Content>
 
-        <Button role="button" to="/">
-          オタクタイプを診断してみる
-        </Button>
-      </Content>
-
-      <Footer />
-    </Layout>
-  )
-}) as React.FunctionComponent<Props>
+    <Footer />
+  </Layout>
+)) as React.FunctionComponent<Props>

@@ -1,6 +1,6 @@
 const path = require('path')
 
-const resultTemplate = path.resolve('src', 'templates', 'result', 'index.ts')
+const resultTemplate = path.resolve('src', 'templates', 'result', 'index.tsx')
 
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions

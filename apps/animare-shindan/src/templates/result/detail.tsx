@@ -120,11 +120,7 @@ export default React.memo((({ result }) => (
       <Profile>
         <Catchphrase>{result.catchphrase}</Catchphrase>
         <Name>
-          <a
-            href={result.twitter}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
+          <a href={result.twitter} rel="noopener noreferrer" target="_blank">
             {result.name}
           </a>
         </Name>
