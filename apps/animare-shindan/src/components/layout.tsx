@@ -43,7 +43,6 @@ export default (({ children }) => (
       <html lang="ja" />
       <title>あなたのオタクタイプ診断 by あにまーれ</title>
       <link href="/assets/icon-128x128.png" rel="icon" />
-      <link href="/manifest.json" rel="manifest" />
       <link
         as="style"
         href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700,900|Material+Icons"
