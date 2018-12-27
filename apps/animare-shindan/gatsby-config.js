@@ -50,7 +50,7 @@ module.exports = {
         ],
         name: 'あなたのオタクタイプ診断 by あにまーれ',
         theme_color: '#0588f7',
-        short_name: 'あなたのオタクタイプ診断 by あにまーれ',
+        short_name: 'あにまーれ診断',
         start_url: '/'
       },
       resolve: 'gatsby-plugin-manifest'
@@ -78,7 +78,6 @@ module.exports = {
   ],
   siteMetadata: {
     description: '好みと推しVTuberを無意識から探る！',
-    mainVisual: './src/images/main-visual.jpg',
     siteUrl: 'https://shindan.animare.cafe',
     title: 'あなたのオタクタイプ診断 by あにまーれ'
   }

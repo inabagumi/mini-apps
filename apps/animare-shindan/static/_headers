@@ -13,3 +13,6 @@
 
 /static/*.png
   Cache-Control: immutable, max-age=31536000, public
+
+/manifest.webmanifest
+  Content-Type: application/manifest+json
