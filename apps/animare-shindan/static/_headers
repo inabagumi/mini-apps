@@ -4,3 +4,12 @@
 
 /*.js
   Cache-Control: immutable, max-age=31536000, public
+
+/static/*.jpg
+  Cache-Control: immutable, max-age=31536000, public
+
+/static/*.json
+  Cache-Control: immutable, max-age=31536000, public
+
+/static/*.png
+  Cache-Control: immutable, max-age=31536000, public
