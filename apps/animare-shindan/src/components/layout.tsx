@@ -78,5 +78,6 @@ export default (({ children }) => (
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <script src="https://cdn.polyfill.io/v2/polyfill.js?features=URL" />
   </>
 )) as React.FunctionComponent
