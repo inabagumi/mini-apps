@@ -69,10 +69,11 @@ const Button = styled(Link)`
 `
 
 interface Props {
+  location: Location
   result: AnalysisResult
 }
 
-export default (({ result }) => (
+export default (({ location, result }) => (
   <Layout>
     <SEO image={result.image} pathname={`/s/${result.id}?s=true`} />
 
