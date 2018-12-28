@@ -174,9 +174,9 @@ export default (() => (
         <Description>
           アナタの隠されたオタクタイプを徹底診断!
           <br />
-          アナタにマッチするVライバーから、
+          アナタにマッチするVTuberの、
           <br />
-          スペシャルなボイスメッセージも…?
+          オススメ動画も…?
         </Description>
 
         <Intro>アナタはどんなオタクタイプ?</Intro>
