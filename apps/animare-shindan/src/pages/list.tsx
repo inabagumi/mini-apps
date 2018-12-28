@@ -24,7 +24,7 @@ const Section = styled.section`
     border-top: solid #ececec 2px;
     margin: 50px auto 0;
     max-width: 500px;
-    padding: 0 24px;
+    padding: 50px 24px 0;
     width: 100%;
   }
 `
@@ -118,6 +118,23 @@ export default (() => (
 
     <Content>
       <Message>
+        <Section>
+          <Time dateTime="2018-12-29">2018.12.29</Time>
+          <Title>Version 1.1</Title>
+
+          <SectionBody>
+            <p>
+              診断結果に表示されるVTuberが追加されました。
+              <br />
+              1.1で診断結果に追加されたVTuberは以下の通りです。
+            </p>
+            <ul>
+              <li>因幡はねる</li>
+              <li>因幡はねる</li>
+            </ul>
+          </SectionBody>
+        </Section>
+
         <Section>
           <Time dateTime="2018-12-24">2018.12.24</Time>
           <Title>Version 1.0</Title>

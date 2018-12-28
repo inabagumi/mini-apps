@@ -126,7 +126,16 @@ export default React.memo((({ result }) => (
         </Name>
       </Profile>
       <MovieWrapper>
-        <Movie dangerouslySetInnerHTML={{ __html: result.embeddedHTML }} />
+        <Movie>
+          <iframe
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            frameBorder="0"
+            height="315"
+            src={`https://www.youtube.com/embed/${result.featuredVideoId}`}
+            width="560"
+          />
+        </Movie>
       </MovieWrapper>
     </Content>
 

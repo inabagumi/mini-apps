@@ -1,4 +1,4 @@
-import { navigate } from 'gatsby'
+import { graphql, navigate } from 'gatsby'
 import * as React from 'react'
 import { Helmet } from 'react-helmet'
 import { default as styled, keyframes } from 'styled-components'
@@ -168,7 +168,17 @@ interface State {
   analysing: boolean
 }
 
-interface Props {}
+interface Props {
+  data: {
+    allResultsJson: {
+      edges: {
+        node: {
+          id: string
+        }
+      }[]
+    }
+  }
+}
 
 export default class Questions extends React.Component<Props, State> {
   state: State = {
@@ -183,8 +193,12 @@ export default class Questions extends React.Component<Props, State> {
 
   handleAnswer = () => {
     this.setState({ analysing: true }, () => {
+      const { data } = this.props
+      const results = data.allResultsJson.edges.map(edge => edge.node.id)
+      const id = results[Math.floor(Math.random() * results.length)]
+
       setTimeout(() => {
-        navigate('/s/hUuAaZpw')
+        navigate(`/s/${id}`)
       }, 500)
     })
   }
@@ -230,3 +244,15 @@ export default class Questions extends React.Component<Props, State> {
     )
   }
 }
+
+export const query = graphql`
+  query {
+    allResultsJson {
+      edges {
+        node {
+          id
+        }
+      }
+    }
+  }
+`

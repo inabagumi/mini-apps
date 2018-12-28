@@ -18,7 +18,7 @@ export const pageQuery = graphql`
     result: resultsJson(id: { eq: $id }) {
       attribute
       catchphrase
-      embeddedHTML
+      featuredVideoId
       id
       image {
         publicURL
