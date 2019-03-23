@@ -2,7 +2,7 @@ import React, { FunctionComponent, ReactElement } from 'react'
 import styled from 'styled-components'
 
 const Base = styled.p<{ invert: boolean }>`
-  color: ${props => props.invert ? '#595959' : 'inherit'};
+  color: ${props => (props.invert ? '#595959' : 'inherit')};
   font-size: 1.3rem;
   margin: 28px 0 0;
   letter-spacing: 0.04rem;
