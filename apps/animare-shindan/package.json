@@ -10,15 +10,15 @@
     "gatsby-plugin-typescript": "^2.0.3",
     "gatsby-source-filesystem": "^2.0.12",
     "gatsby-transformer-json": "^2.1.6",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
     "react-helmet": "^5.2.0",
     "styled-components": "^4.1.3",
-    "typescript": "^3.2.2"
+    "typescript": "~3.3.4000"
   },
   "description": "Shindan by AniMare",
   "devDependencies": {
-    "@types/react": "^16.7.18",
+    "@types/react": "^16.8.8",
     "@types/react-helmet": "^5.0.7",
     "@types/styled-components": "^4.1.4",
     "prettier": "^1.15.3"
@@ -30,6 +30,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/ykzts/animare-shindan.git"
+  },
+  "resolutions": {
+    "@babel/core": "^7.4.0"
   },
   "scripts": {
     "build": "gatsby build",

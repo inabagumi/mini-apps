@@ -1,11 +1,12 @@
 import { Link } from 'gatsby'
-import * as React from 'react'
-import { default as styled } from 'styled-components'
-import * as pkg from '../../package.json'
-import { default as Header } from '../components/header'
-import { default as Layout } from '../components/layout'
-import { default as Message } from '../components/message'
-import { default as SEO } from '../components/seo'
+import React, { FunctionComponent, ReactElement } from 'react'
+import styled from 'styled-components'
+import pkg from '../../package.json'
+import Copyright from '../components/copyright'
+import Header from '../components/header'
+import Layout from '../components/layout'
+import Message from '../components/message'
+import SEO from '../components/seo'
 
 const version = pkg.version
   .split('.')
@@ -148,18 +149,7 @@ const VersionLink = styled(Link)`
   text-decoration: underline;
 `
 
-const Copyright = styled.p`
-  display: block;
-  font-size: 100%;
-  margin: 0;
-
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-`
-
-export default (() => (
+const IndexPage: FunctionComponent = (): ReactElement => (
   <Layout>
     <SEO pathname="/" />
 
@@ -239,17 +229,10 @@ export default (() => (
 
       <FooterContent>
         <VersionLink to="/list">Version {version}</VersionLink>
-        <Copyright>
-          Copyright 2018{' '}
-          <a
-            href="https://ykzts.com/"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            山岸 和利
-          </a>
-        </Copyright>
+        <Copyright />
       </FooterContent>
     </Footer>
   </Layout>
-)) as React.FunctionComponent
+)
+
+export default IndexPage

@@ -1,9 +1,10 @@
-import * as React from 'react'
+import React, { FunctionComponent, ReactElement } from 'react'
 import { Helmet } from 'react-helmet'
-import { default as styled } from 'styled-components'
-import { default as Header } from '../components/header'
-import { default as Layout } from '../components/layout'
-import { default as Message } from '../components/message'
+import styled from 'styled-components'
+import Copyright from '../components/copyright'
+import Header from '../components/header'
+import Layout from '../components/layout'
+import Message from '../components/message'
 
 const Content = styled.main`
   padding-top: 30px;
@@ -99,16 +100,7 @@ const Footer = styled.footer`
   padding: 20px 12px 32px;
 `
 
-const Copyright = styled.p`
-  text-align: center;
-
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-`
-
-export default (() => (
+const List: FunctionComponent = (): ReactElement => (
   <Layout>
     <Helmet>
       <title>お知らせ</title>
@@ -155,12 +147,9 @@ export default (() => (
     </Content>
 
     <Footer>
-      <Copyright>
-        Copyright 2018{' '}
-        <a href="https://ykzts.com/" rel="noopener noreferrer" target="_blank">
-          山岸 和利
-        </a>
-      </Copyright>
+      <Copyright />
     </Footer>
   </Layout>
-)) as React.FunctionComponent
+)
+
+export default List
