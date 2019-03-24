@@ -1,3 +1,5 @@
+import { format } from 'date-fns'
+import { graphql } from 'gatsby'
 import React, { FunctionComponent, ReactElement } from 'react'
 import { Helmet } from 'react-helmet'
 import styled from 'styled-components'
@@ -100,56 +102,74 @@ const Footer = styled.footer`
   padding: 20px 12px 32px;
 `
 
-const List: FunctionComponent = (): ReactElement => (
-  <Layout>
-    <Helmet>
-      <title>お知らせ</title>
-    </Helmet>
+type Props = {
+  data: {
+    allMarkdownRemark: {
+      edges: {
+        node: {
+          frontmatter: {
+            date: string
+            title: string
+          }
+          html: string
+          id: string
+        }
+      }[]
+    }
+  }
+}
 
-    <Header />
+const List: FunctionComponent<Props> = ({ data }): ReactElement => {
+  return (
+    <Layout>
+      <Helmet>
+        <title>お知らせ</title>
+      </Helmet>
 
-    <Content>
-      <Message>
-        <Section>
-          <Time dateTime="2018-12-29">2018.12.29</Time>
-          <Title>Version 1.1</Title>
+      <Header />
 
-          <SectionBody>
-            <p>
-              診断結果に表示されるVTuberが追加されました。
-              <br />
-              1.1で診断結果に追加されたVTuberは以下の通りです。
-            </p>
-            <ul>
-              <li>因幡はねる</li>
-              <li>因幡はねる</li>
-            </ul>
-          </SectionBody>
-        </Section>
+      <Content>
+        <Message>
+          {data.allMarkdownRemark.edges.map(edge => (
+            <Section key={edge.node.id}>
+              <Time dateTime={edge.node.frontmatter.date}>
+                {format(new Date(edge.node.frontmatter.date), 'yyyy.MM.dd')}
+              </Time>
+              <Title>{edge.node.frontmatter.title}</Title>
 
-        <Section>
-          <Time dateTime="2018-12-24">2018.12.24</Time>
-          <Title>Version 1.0</Title>
+              <SectionBody
+                dangerouslySetInnerHTML={{ __html: edge.node.html }}
+              />
+            </Section>
+          ))}
+        </Message>
+      </Content>
 
-          <SectionBody>
-            <p>
-              あにまーれオタクタイプ診断を公開しました。
-              <br />
-              Version
-              1.0で診断結果に表示されるVTuberは以下の通りです。(※今後も随時追加予定)
-            </p>
-            <ul>
-              <li>因幡はねる</li>
-            </ul>
-          </SectionBody>
-        </Section>
-      </Message>
-    </Content>
-
-    <Footer>
-      <Copyright />
-    </Footer>
-  </Layout>
-)
+      <Footer>
+        <Copyright />
+      </Footer>
+    </Layout>
+  )
+}
 
 export default List
+
+export const query = graphql`
+  query {
+    allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "//versions/[^/]+.md$/" } }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            date
+            title
+          }
+          html
+          id
+        }
+      }
+    }
+  }
+`
