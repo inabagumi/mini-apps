@@ -11,7 +11,10 @@ exports.onRenderBody = ({ setHeadComponents, setPostBodyComponents }) => {
   ])
 
   setPostBodyComponents([
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=URL" key="polyfills" />,
+    <script
+      src="https://polyfill.io/v3/polyfill.min.js?features=URL"
+      key="polyfills"
+    />,
     <link
       href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700,900|Material+Icons"
       key="fonts"

@@ -1,6 +1,7 @@
 import { Link } from 'gatsby'
 import React, { FunctionComponent, ReactElement } from 'react'
 import styled from 'styled-components'
+import useSiteMetadata from '../hooks/use-site-metadata'
 import lineLogo from '../images/line.svg'
 import twitterLogo from '../images/twitter.svg'
 
@@ -66,33 +67,60 @@ const ShareLogo = styled.img`
   }
 `
 
-const Header: FunctionComponent = (): ReactElement => (
-  <Container>
-    <Logo to="/">ANiMARE</Logo>
+const createLineShareURL = (url: string): string => {
+  const lineShareURL = new URL('/lineit/share', 'https://social-plugins.line.me')
+  lineShareURL.searchParams.set('url', url)
 
-    <Navigation>
-      <ul>
-        <li>
-          <ShareButton
-            href="https://twitter.com/intent/tweet?hashtags=%E3%81%82%E3%81%AB%E3%81%BE%E3%83%BC%E3%82%8C%E3%82%AA%E3%82%BF%E3%82%AF%E3%82%BF%E3%82%A4%E3%83%97%E8%A8%BA%E6%96%AD&amp;text=&amp;url=https%3A%2F%2Fshindan.animare.cafe%2F"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <ShareLogo alt="Twitter" height="24" src={twitterLogo} width="24" />
-          </ShareButton>
-        </li>
-        <li>
-          <ShareButton
-            href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fshindan.animare.cafe%2F"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <ShareLogo alt="Line" height="24" src={lineLogo} width="24" />
-          </ShareButton>
-        </li>
-      </ul>
-    </Navigation>
-  </Container>
-)
+  return lineShareURL.toString()
+}
+
+const createTweetURL = (url: string): string => {
+  const tweetURL = new URL('/intent/tweet', 'https://twitter.com')
+  tweetURL.searchParams.set('hashtags', 'あにまーれオタクタイプ診断')
+  tweetURL.searchParams.set('text', '')
+  tweetURL.searchParams.set('url', url)
+
+  return tweetURL.toString()
+}
+
+const Header: FunctionComponent = (): ReactElement => {
+  const { siteUrl } = useSiteMetadata()
+  const url = new URL('/', siteUrl).toString()
+
+
+  return (
+    <Container>
+      <Logo to="/">ANiMARE</Logo>
+
+      <Navigation>
+        <ul>
+          <li>
+            <ShareButton
+              href={createTweetURL(url)}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <ShareLogo
+                alt="Twitter"
+                height="24"
+                src={twitterLogo}
+                width="24"
+              />
+            </ShareButton>
+          </li>
+          <li>
+            <ShareButton
+              href={createLineShareURL(url)}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <ShareLogo alt="Line" height="24" src={lineLogo} width="24" />
+            </ShareButton>
+          </li>
+        </ul>
+      </Navigation>
+    </Container>
+  )
+}
 
 export default Header

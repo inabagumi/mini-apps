@@ -1,6 +1,6 @@
-import { graphql, useStaticQuery } from 'gatsby'
 import React, { FunctionComponent, ReactElement } from 'react'
 import { Helmet } from 'react-helmet'
+import useSiteMetadata from '../hooks/use-site-metadata'
 import mainVisual from '../images/main-visual.jpg'
 
 type Props = {
@@ -16,19 +16,7 @@ const SEO: FunctionComponent<Props> = ({
   image,
   pathname
 }): ReactElement => {
-  const { site } = useStaticQuery(
-    graphql`
-      query SiteMetaData {
-        site {
-          siteMetadata {
-            defaultDescription: description
-            siteUrl
-          }
-        }
-      }
-    `
-  )
-  const { defaultDescription, siteUrl } = site.siteMetadata
+  const { description: defaultDescription, siteUrl, title } = useSiteMetadata()
 
   return (
     <Helmet>
@@ -40,10 +28,7 @@ const SEO: FunctionComponent<Props> = ({
         content={`${new URL(image ? image.publicURL : mainVisual, siteUrl)}`}
         property="og:image"
       />
-      <meta
-        content="あなたのオタクタイプ診断 by あにまーれ"
-        property="og:site_name"
-      />
+      <meta content={title} property="og:site_name" />
       <meta content="あなたのオタクタイプを今すぐ診断" property="og:title" />
       <meta
         content={description || defaultDescription}
@@ -54,10 +39,7 @@ const SEO: FunctionComponent<Props> = ({
         content={`${new URL(image ? image.publicURL : mainVisual, siteUrl)}`}
         name="twitter:image"
       />
-      <meta
-        content="あなたのオタクタイプ診断 by あにまーれ"
-        name="twitter:title"
-      />
+      <meta content={title} name="twitter:title" />
       <meta
         content={description || defaultDescription}
         name="twitter:description"

@@ -1,6 +1,7 @@
 import { Link } from 'gatsby'
 import * as React from 'react'
 import { default as styled } from 'styled-components'
+import useSiteMetadata from '../../hooks/use-site-metadata'
 import { default as Evaluation } from './evaluation'
 
 const Container = styled.div`
@@ -112,6 +113,7 @@ interface Props {
 }
 
 export default (({ location, result }) => {
+  const { siteUrl } = useSiteMetadata()
   const queryString = (typeof location !== 'undefined' && location.search) || ''
   const showShareButton = queryString.indexOf('s=true') < 1
 
@@ -141,7 +143,7 @@ export default (({ location, result }) => {
             const text = `アナタは${result.type}系【${
               result.attribute
             }好き】です！\n`
-            const url = `https://shindan.animare.cafe/s/${result.id}?s=true`
+            const url = new URL(`/s/${result.id}?s=true`, siteUrl).toString()
             const tweetURL = `https://twitter.com/intent/tweet?hashtags=${encodeURIComponent(
               hashtag
             )}&text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`

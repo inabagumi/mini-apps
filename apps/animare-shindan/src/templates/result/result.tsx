@@ -1,16 +1,14 @@
 import { Link } from 'gatsby'
-import * as React from 'react'
-import { Helmet } from 'react-helmet'
-import { default as styled } from 'styled-components'
-import { default as Layout } from '../../components/layout'
-import { default as SEO } from '../../components/seo'
-import { default as Detail } from './detail'
-import { default as Footer } from './footer'
-import { default as MessageBox } from './message-box'
+import React, { FunctionComponent, ReactElement } from 'react'
+import styled from 'styled-components'
+import Layout from '../../components/layout'
+import SEO from '../../components/seo'
+import Detail from './detail'
+import MessageBox from './message-box'
 
 const Content = styled.main`
   box-sizing: border-box;
-  padding: 20px 0 0;
+  padding: 20px 0 30px;
   width: 100%;
 
   @media (min-width: 500px) {
@@ -73,27 +71,32 @@ interface Props {
   result: AnalysisResult
 }
 
-export default (({ location, result }) => (
-  <Layout>
-    <SEO image={result.image} pathname={`/s/${result.id}?s=true`} />
+const Result: FunctionComponent<Props> = ({
+  location,
+  result
+}): ReactElement => {
+  return (
+    <Layout>
+      <SEO image={result.image} pathname={`/s/${result.id}?s=true`} />
 
-    <Content>
-      <Title>オタクタイプ 診断結果</Title>
+      <Content>
+        <Title>オタクタイプ 診断結果</Title>
 
-      <MessageBox location={location} result={result} />
+        <MessageBox location={location} result={result} />
 
-      <SubTitle>
-        総勢約6,000名のVTuberの中から【{result.type}
-        好き】のアナタにマッチするVTuberが選ばれました!
-      </SubTitle>
+        <SubTitle>
+          総勢約6,000名のVTuberの中から【{result.type}
+          好き】のアナタにマッチするVTuberが選ばれました!
+        </SubTitle>
 
-      <Detail result={result} />
+        <Detail result={result} />
 
-      <Button role="button" to="/">
-        オタクタイプを診断してみる
-      </Button>
-    </Content>
+        <Button role="button" to="/">
+          オタクタイプを診断してみる
+        </Button>
+      </Content>
+    </Layout>
+  )
+}
 
-    <Footer />
-  </Layout>
-)) as React.FunctionComponent<Props>
+export default Result

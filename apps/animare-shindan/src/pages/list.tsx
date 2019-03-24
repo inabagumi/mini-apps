@@ -3,7 +3,6 @@ import { graphql } from 'gatsby'
 import React, { FunctionComponent, ReactElement } from 'react'
 import { Helmet } from 'react-helmet'
 import styled from 'styled-components'
-import Copyright from '../components/copyright'
 import Header from '../components/header'
 import Layout from '../components/layout'
 import Message from '../components/message'
@@ -95,13 +94,6 @@ const SectionBody = styled.div`
   }
 `
 
-const Footer = styled.footer`
-  background-color: #fff;
-  border-top: solid #000 6px;
-  margin: 40px -20px 0;
-  padding: 20px 12px 32px;
-`
-
 type Props = {
   data: {
     allMarkdownRemark: {
@@ -144,10 +136,6 @@ const List: FunctionComponent<Props> = ({ data }): ReactElement => {
           ))}
         </Message>
       </Content>
-
-      <Footer>
-        <Copyright />
-      </Footer>
     </Layout>
   )
 }

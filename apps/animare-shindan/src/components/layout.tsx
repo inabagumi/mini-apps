@@ -1,6 +1,7 @@
-import * as React from 'react'
+import React, { FunctionComponent, ReactElement } from 'react'
 import { Helmet } from 'react-helmet'
-import { default as styled, createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
+import Footer from './footer'
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -26,18 +27,24 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`
+
 const Content = styled.div`
   box-sizing: border-box;
+  flex-basis: 0;
+  flex-grow: 1;
   padding: 0 20px;
 
   @media (min-width: 500px) {
-    min-height: 100vh;
     padding: 0;
-    position: relative;
   }
 `
 
-export default (({ children }) => (
+const Layout: FunctionComponent = ({ children }): ReactElement => (
   <>
     <Helmet titleTemplate="%s | #あにまーれオタクタイプ診断">
       <html lang="ja" />
@@ -55,6 +62,12 @@ export default (({ children }) => (
       </defs>
     </svg>
 
-    <Content>{children}</Content>
+    <Wrapper>
+      <Content>{children}</Content>
+
+      <Footer />
+    </Wrapper>
   </>
-)) as React.FunctionComponent
+)
+
+export default Layout

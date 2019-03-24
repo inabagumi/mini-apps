@@ -1,17 +1,10 @@
 import { Link } from 'gatsby'
 import React, { FunctionComponent, ReactElement } from 'react'
 import styled from 'styled-components'
-import pkg from '../../package.json'
-import Copyright from '../components/copyright'
 import Header from '../components/header'
 import Layout from '../components/layout'
 import Message from '../components/message'
 import SEO from '../components/seo'
-
-const version = pkg.version
-  .split('.')
-  .slice(0, 2)
-  .join('.')
 
 const Content = styled.main`
   padding-top: 30px;
@@ -112,44 +105,7 @@ const Disclaimer = styled.p`
   }
 `
 
-const Footer = styled.footer`
-  margin: 40px -20px 0;
-
-  svg {
-    display: block;
-    margin: 0 auto;
-  }
-
-  @media (min-width: 500px) {
-    margin: 20px 0 0;
-  }
-
-  @media (min-height: 1024px) {
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    right: 0;
-  }
-`
-
-const FooterContent = styled.div`
-  background-color: #fff;
-  border-top: solid #000 6px;
-  padding: 20px 12px 32px;
-  text-align: center;
-
-  @media (min-width: 500px) {
-    margin-left: -20px;
-  }
-`
-
-const VersionLink = styled(Link)`
-  color: #000;
-  font-size: 1.2rem;
-  text-decoration: underline;
-`
-
-const IndexPage: FunctionComponent = (): ReactElement => (
+const Index: FunctionComponent = (): ReactElement => (
   <Layout>
     <SEO pathname="/" />
 
@@ -221,18 +177,7 @@ const IndexPage: FunctionComponent = (): ReactElement => (
         </Disclaimer>
       </Message>
     </Content>
-
-    <Footer>
-      <svg height="200" width="200">
-        <use xlinkHref="#nanashi" />
-      </svg>
-
-      <FooterContent>
-        <VersionLink to="/list">Version {version}</VersionLink>
-        <Copyright />
-      </FooterContent>
-    </Footer>
   </Layout>
 )
 
-export default IndexPage
+export default Index
