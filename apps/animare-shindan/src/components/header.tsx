@@ -68,7 +68,10 @@ const ShareLogo = styled.img`
 `
 
 const createLineShareURL = (url: string): string => {
-  const lineShareURL = new URL('/lineit/share', 'https://social-plugins.line.me')
+  const lineShareURL = new URL(
+    '/lineit/share',
+    'https://social-plugins.line.me'
+  )
   lineShareURL.searchParams.set('url', url)
 
   return lineShareURL.toString()
@@ -86,7 +89,6 @@ const createTweetURL = (url: string): string => {
 const Header: FunctionComponent = (): ReactElement => {
   const { siteUrl } = useSiteMetadata()
   const url = new URL('/', siteUrl).toString()
-
 
   return (
     <Container>

@@ -11,6 +11,7 @@ const Bar = styled.div`
   background-color: #fff263;
   border-radius: 6px;
   height: 12px;
+  transition: width 0.3s ease-out;
 `
 
 interface Props {

@@ -75,7 +75,8 @@ module.exports = {
       resolve: 'gatsby-source-filesystem'
     },
     'gatsby-transformer-json',
-    'gatsby-transformer-remark'
+    'gatsby-transformer-remark',
+    'gatsby-transformer-yaml'
   ],
   siteMetadata: {
     description: '好みと推しVTuberを無意識から探る！',

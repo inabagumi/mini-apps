@@ -1,9 +1,14 @@
 import { graphql, navigate } from 'gatsby'
-import * as React from 'react'
+import React, {
+  FunctionComponent,
+  ReactElement,
+  useCallback,
+  useState
+} from 'react'
 import { Helmet } from 'react-helmet'
-import { default as styled, keyframes } from 'styled-components'
-import { default as Layout } from '../components/layout'
-import { default as ProgressBar } from '../components/progress-bar'
+import styled, { keyframes } from 'styled-components'
+import Layout from '../components/layout'
+import ProgressBar from '../components/progress-bar'
 
 const loading = keyframes`
   0% {
@@ -29,7 +34,7 @@ const loading = keyframes`
 
 const Question = styled.section`
   box-sizing: border-box;
-  padding-top: 28px;
+  padding: 28px 0 200px;
 
   @media (min-width: 500px) {
     margin: 0 auto;
@@ -103,11 +108,34 @@ const Counter = styled.p`
     font-size: 2rem;
     margin-right: 1px;
   }
+
+  mark.last {
+    font-size: 1.3rem;
+  }
+`
+
+const Content = styled.div`
+  overflow-x: hidden;
+`
+
+const AnswerContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  transition: transform 0.3s ease;
 `
 
 const AnswerList = styled.div`
+  box-sizing: border-box;
+  flex-basis: 100%;
+  flex-grow: 0;
+  flex-shrink: 0;
   margin: 20px 0 0;
   padding: 0 5px;
+  transition: opacity 0.4s linear;
+
+  &[aria-hidden='true'] {
+    opacity: 0;
+  }
 `
 
 const Answer = styled.button`
@@ -136,8 +164,24 @@ const Answer = styled.button`
   }
 `
 
+const PrevButton = styled.button`
+  align-items: center;
+  background-color: #fff;
+  border: 0;
+  border-radius: 22px;
+  color: #0588f7;
+  display: flex;
+  font-size: 1.5rem;
+  font-weight: 700;
+  height: 44px;
+  justify-content: center;
+  margin: 20px 0 0 4px;
+  width: 140px;
+`
+
 const NowAnalysing = styled.div`
   align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
   bottom: 0;
   color: #fff;
   display: flex;
@@ -149,11 +193,6 @@ const NowAnalysing = styled.div`
   position: fixed;
   right: 0;
   top: 0;
-  width: 100%;
-
-  p {
-    margin: -15px 0 0 -22px;
-  }
 
   p::after {
     animation: ${loading} 1s infinite;
@@ -164,94 +203,120 @@ const NowAnalysing = styled.div`
   }
 `
 
-interface State {
-  analysing: boolean
-}
-
 interface Props {
   data: {
-    allResultsJson: {
-      edges: {
-        node: {
-          id: string
-        }
+    results: {
+      nodes: {
+        id: string
+      }[]
+    }
+    questions: {
+      nodes: {
+        answers: string[]
+        title: string
       }[]
     }
   }
 }
 
-export default class Questions extends React.Component<Props, State> {
-  state: State = {
-    analysing: false
-  }
+const Questions: FunctionComponent<Props> = ({ data }): ReactElement => {
+  const [count, setCount] = useState<number>(0)
+  const [analysing, setAnalysing] = useState<boolean>(false)
 
-  shouldComponentUpdate(_: Props, nextState: State) {
-    const { analysing } = this.state
+  const handleAnswer = useCallback(() => {
+    if (count < data.questions.nodes.length - 1) {
+      setCount(count + 1)
+    } else {
+      setAnalysing(true)
 
-    return analysing !== nextState.analysing
-  }
-
-  handleAnswer = () => {
-    this.setState({ analysing: true }, () => {
-      const { data } = this.props
-      const results = data.allResultsJson.edges.map(edge => edge.node.id)
+      const results = data.results.nodes.map(node => node.id)
       const id = results[Math.floor(Math.random() * results.length)]
 
       setTimeout(() => {
         navigate(`/s/${id}`)
-      }, 500)
-    })
-  }
+      }, 1500)
+    }
+  }, [count, analysing])
 
-  render() {
-    const { analysing } = this.state
+  const handlePrev = useCallback(() => {
+    setCount(count - 1)
+  }, [count])
 
-    return (
-      <Layout>
-        <Helmet>
-          <title>診断中...</title>
-          <link href="https://shindan.animare.care/" rel="canonical" />
-        </Helmet>
+  return (
+    <Layout>
+      <Helmet>
+        <title>診断中...</title>
+      </Helmet>
 
-        <main>
-          {!analysing ? (
-            <Question>
-              <QuestionHeader>
-                <Number>Q1</Number>
-                <Title>あなたが好きなのは?</Title>
-              </QuestionHeader>
-              <CounterContainer>
-                <Counter>
-                  残り
-                  <mark>1</mark>問
-                </Counter>
-                <ProgressBar max={1} value={1} />
-              </CounterContainer>
-              <AnswerList>
-                <Answer onClick={this.handleAnswer}>メガネ</Answer>
-                <Answer onClick={this.handleAnswer}>黒スト</Answer>
-                <Answer onClick={this.handleAnswer}>うさぎ耳</Answer>
-                <Answer onClick={this.handleAnswer}>清楚</Answer>
+      <Question>
+        <QuestionHeader>
+          <Number>{`Q${count + 1}`}</Number>
+          <Title>{data.questions.nodes[count].title}</Title>
+        </QuestionHeader>
+
+        <CounterContainer>
+          <Counter>
+            {count < data.questions.nodes.length - 1 ? (
+              <>
+                残り
+                <mark>{data.questions.nodes.length - count}</mark>問
+              </>
+            ) : (
+              <mark className="last">ラスト</mark>
+            )}
+          </Counter>
+          <ProgressBar max={data.questions.nodes.length} value={count + 1} />
+        </CounterContainer>
+
+        <Content>
+          <AnswerContainer
+            style={{ transform: `translateX(-${100 * count}%)` }}
+          >
+            {data.questions.nodes.map((node, i) => (
+              <AnswerList
+                aria-hidden={count === i ? undefined : 'true'}
+                key={node.title}
+              >
+                {node.answers.map((answer, i) => (
+                  <Answer key={`answer-${i}`} onClick={handleAnswer}>
+                    {answer}
+                  </Answer>
+                ))}
               </AnswerList>
-            </Question>
-          ) : (
-            <NowAnalysing>
-              <p>あなたのオタクタイプを分析中</p>
-            </NowAnalysing>
-          )}
-        </main>
-      </Layout>
-    )
-  }
+            ))}
+          </AnswerContainer>
+        </Content>
+
+        {count > 0 && (
+          <PrevButton onClick={handlePrev} type="button">
+            1つ前に戻る
+          </PrevButton>
+        )}
+      </Question>
+
+      {analysing && (
+        <NowAnalysing>
+          <p>あなたのオタクタイプを分析中</p>
+        </NowAnalysing>
+      )}
+    </Layout>
+  )
 }
 
+export default Questions
+
 export const query = graphql`
-  query {
-    allResultsJson {
-      edges {
-        node {
-          id
-        }
+  {
+    results: allResultsJson {
+      nodes {
+        id
+      }
+    }
+
+    questions: allQuestionsYaml {
+      nodes {
+        answers
+        title
       }
     }
   }
