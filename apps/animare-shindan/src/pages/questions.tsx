@@ -164,19 +164,37 @@ const Answer = styled.button`
   }
 `
 
-const PrevButton = styled.button`
+const PrevButton = styled.button<{ hide: boolean }>`
   align-items: center;
   background-color: #fff;
-  border: 0;
+  border: 3px solid #0588f7;
   border-radius: 22px;
   color: #0588f7;
   display: flex;
-  font-size: 1.5rem;
+  font-family: inherit;
+  font-size: 1.3rem;
   font-weight: 700;
   height: 44px;
   justify-content: center;
   margin: 20px 0 0 4px;
+  opacity: ${props => props.hide ? 0 : 1};
+  outline: 0;
+  transition: opacity ease-in 0.1s;
   width: 140px;
+
+  @media (min-width: 500px) {
+    font-size: 1.5rem;
+  }
+
+  ::before {
+    content: "keyboard_arrow_left";
+    display: inline-block;
+    font-family: Material Icons;
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 1;
+    margin-left: -9px;
+  }
 `
 
 const NowAnalysing = styled.div`
@@ -246,6 +264,7 @@ const Questions: FunctionComponent<Props> = ({ data }): ReactElement => {
     <Layout>
       <Helmet>
         <title>診断中...</title>
+        <meta content="noindex,follow" name="robots" />
       </Helmet>
 
       <Question>
@@ -287,11 +306,9 @@ const Questions: FunctionComponent<Props> = ({ data }): ReactElement => {
           </AnswerContainer>
         </Content>
 
-        {count > 0 && (
-          <PrevButton onClick={handlePrev} type="button">
-            1つ前に戻る
-          </PrevButton>
-        )}
+        <PrevButton hide={count < 1} onClick={handlePrev} type="button">
+          1つ前に戻る
+        </PrevButton>
       </Question>
 
       {analysing && (
