@@ -1,7 +1,7 @@
 interface AnalysisResult {
   attribute: string
   catchphrase: string
-  featuredVideoId: string
+  embedHTML: string
   id: string
   image?: {
     publicURL: string

@@ -40,7 +40,7 @@
   },
   "scripts": {
     "build": "gatsby build",
-    "format": "prettier --ignore-path .gitignore --write \"./**/*.{js,ts,tsx}\"",
+    "format": "prettier --ignore-path .gitignore --write \"./**/*.{js,md,ts,tsx,yaml}\"",
     "start": "gatsby develop"
   },
   "version": "1.1.0"

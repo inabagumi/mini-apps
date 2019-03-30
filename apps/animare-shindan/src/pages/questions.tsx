@@ -324,7 +324,7 @@ export default Questions
 
 export const query = graphql`
   {
-    results: allResultsJson {
+    results: allResultsYaml {
       nodes {
         id
       }

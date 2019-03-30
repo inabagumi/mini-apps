@@ -7,11 +7,9 @@ exports.createPages = async ({ actions, graphql }) => {
 
   const result = await graphql(`
     {
-      allResultsJson {
-        edges {
-          node {
-            id
-          }
+      results: allResultsYaml {
+        nodes {
+          id
         }
       }
     }
@@ -19,13 +17,11 @@ exports.createPages = async ({ actions, graphql }) => {
 
   if (result.errors) throw result.errors
 
-  result.data.allResultsJson.edges.forEach(edge => {
-    const { id } = edge.node
-
+  result.data.results.nodes.forEach(node => {
     createPage({
       component: resultTemplate,
-      context: { id },
-      path: `/s/${id}`
+      context: { id: node.id },
+      path: `/s/${node.id}`
     })
   })
 }

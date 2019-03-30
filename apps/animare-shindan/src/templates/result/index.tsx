@@ -108,10 +108,10 @@ export default Result
 
 export const pageQuery = graphql`
   query($id: String!) {
-    result: resultsJson(id: { eq: $id }) {
+    result: resultsYaml(id: { eq: $id }) {
       attribute
       catchphrase
-      featuredVideoId
+      embedHTML
       id
       image {
         publicURL
