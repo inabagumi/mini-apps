@@ -2,7 +2,7 @@
   "author": "Yamagishi Kazutoshi <ykzts@desire.sh>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
-    "core-js": "^2.6.1",
+    "core-js": "^2.6.5",
     "date-fns": "^2.0.0-alpha.27",
     "gatsby": "^2.3.4",
     "gatsby-plugin-manifest": "^2.0.26",
