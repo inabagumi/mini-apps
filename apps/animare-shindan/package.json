@@ -14,8 +14,8 @@
     "gatsby-transformer-json": "^2.1.11",
     "gatsby-transformer-remark": "^2.3.8",
     "gatsby-transformer-yaml": "^2.1.11",
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
     "styled-components": "^4.2.0",
     "typescript": "~3.4.0"
