@@ -9,14 +9,20 @@ type Props = {
     publicURL: string
   }
   pathname: string
+  title?: string
 }
 
 const SEO: FunctionComponent<Props> = ({
   description,
   image,
-  pathname
+  pathname,
+  title
 }): ReactElement => {
-  const { description: defaultDescription, siteUrl, title } = useSiteMetadata()
+  const {
+    description: defaultDescription,
+    siteUrl,
+    title: defaultTitle
+  } = useSiteMetadata()
 
   return (
     <Helmet>
@@ -28,8 +34,11 @@ const SEO: FunctionComponent<Props> = ({
         content={`${new URL(image ? image.publicURL : mainVisual, siteUrl)}`}
         property="og:image"
       />
-      <meta content={title} property="og:site_name" />
-      <meta content="あなたのオタクタイプを今すぐ診断" property="og:title" />
+      <meta content={defaultTitle} property="og:site_name" />
+      <meta
+        content={title || 'あなたのオタクタイプを今すぐ診断'}
+        property="og:title"
+      />
       <meta
         content={description || defaultDescription}
         property="og:description"
@@ -39,11 +48,12 @@ const SEO: FunctionComponent<Props> = ({
         content={`${new URL(image ? image.publicURL : mainVisual, siteUrl)}`}
         name="twitter:image"
       />
-      <meta content={title} name="twitter:title" />
+      <meta content={title || defaultTitle} name="twitter:title" />
       <meta
         content={description || defaultDescription}
         name="twitter:description"
       />
+      <title>{title || defaultTitle}</title>
     </Helmet>
   )
 }

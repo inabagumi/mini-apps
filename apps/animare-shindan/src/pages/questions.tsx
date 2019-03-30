@@ -177,7 +177,7 @@ const PrevButton = styled.button<{ hide: boolean }>`
   height: 44px;
   justify-content: center;
   margin: 20px 0 0 4px;
-  opacity: ${props => props.hide ? 0 : 1};
+  opacity: ${props => (props.hide ? 0 : 1)};
   outline: 0;
   transition: opacity ease-in 0.1s;
   width: 140px;
@@ -187,7 +187,7 @@ const PrevButton = styled.button<{ hide: boolean }>`
   }
 
   ::before {
-    content: "keyboard_arrow_left";
+    content: 'keyboard_arrow_left';
     display: inline-block;
     font-family: Material Icons;
     font-size: 24px;
