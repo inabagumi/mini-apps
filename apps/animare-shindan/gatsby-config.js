@@ -57,6 +57,12 @@ module.exports = {
     },
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
+    {
+      options: {
+        exclude: ['/questions']
+      },
+      resolve: 'gatsby-plugin-sitemap'
+    },
     'gatsby-plugin-styled-components',
     'gatsby-plugin-typescript',
     {
