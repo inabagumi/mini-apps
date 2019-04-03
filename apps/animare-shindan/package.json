@@ -23,7 +23,7 @@
   },
   "description": "Shindan by AniMare",
   "devDependencies": {
-    "@types/react": "^16.8.10",
+    "@types/react": "^16.8.11",
     "@types/react-helmet": "^5.0.8",
     "@types/styled-components": "^4.1.12",
     "prettier": "^1.16.4"
