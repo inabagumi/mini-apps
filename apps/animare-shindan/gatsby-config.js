@@ -59,7 +59,19 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     {
       options: {
-        exclude: ['/questions']
+        exclude: ['/questions'],
+        serialize: ({ allSitePage, site }) =>
+          allSitePage.edges.map(edge => {
+            const path = edge.node.path.startsWith('/s/')
+              ? `${edge.node.path}?s=true`
+              : edge.node.path
+
+            return {
+              changefreq: 'daily',
+              priority: 0.7,
+              url: site.siteMetadata.siteUrl + path
+            }
+          })
       },
       resolve: 'gatsby-plugin-sitemap'
     },
