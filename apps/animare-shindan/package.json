@@ -4,7 +4,7 @@
     "babel-plugin-styled-components": "^1.10.0",
     "core-js": "^2.6.5",
     "date-fns": "^2.0.0-alpha.27",
-    "gatsby": "^2.3.12",
+    "gatsby": "^2.3.13",
     "gatsby-plugin-manifest": "^2.0.26",
     "gatsby-plugin-offline": "^2.0.25",
     "gatsby-plugin-react-helmet": "^3.0.12",
