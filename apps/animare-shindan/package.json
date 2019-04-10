@@ -1,5 +1,5 @@
 {
-  "author": "Yamagishi Kazutoshi <ykzts@desire.sh>",
+  "author": "Haneru Developers",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
     "core-js": "^2.6.5",
