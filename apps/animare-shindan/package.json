@@ -37,7 +37,7 @@
     "url": "https://github.com/ykzts/animare-shindan.git"
   },
   "resolutions": {
-    "@babel/core": "^7.4.0"
+    "@babel/core": "^7.4.3"
   },
   "scripts": {
     "build": "gatsby build",
