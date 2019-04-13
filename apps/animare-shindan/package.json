@@ -34,7 +34,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/ykzts/animare-shindan.git"
+    "url": "https://github.com/inabagumi/animare-shindan.git"
   },
   "resolutions": {
     "@babel/core": "^7.4.3"
