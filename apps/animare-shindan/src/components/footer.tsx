@@ -48,7 +48,7 @@ type VersionData = {
 }
 
 const Footer: FunctionComponent = (): ReactElement => {
-  const { version } = useStaticQuery<VersionData>(
+  const { version }: VersionData = useStaticQuery(
     graphql`
       query {
         version: allMarkdownRemark(

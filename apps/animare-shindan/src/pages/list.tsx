@@ -143,7 +143,7 @@ const List: FunctionComponent<Props> = ({ data }): ReactElement => {
 export default List
 
 export const query = graphql`
-  query {
+  {
     allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "//versions/[^/]+.md$/" } }
       sort: { fields: [frontmatter___date], order: DESC }
