@@ -2069,9 +2069,9 @@ caniuse-api@^3.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000844, caniuse-lite@^1.0.30000955, caniuse-lite@^1.0.30000957:
-  version "1.0.30000957"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000957.tgz#fb1026bf184d7d62c685205358c3b24b9e29f7b3"
-  integrity sha512-8wxNrjAzyiHcLXN/iunskqQnJquQQ6VX8JHfW5kLgAPRSiSuKZiNfmIkP5j7jgyXqAQBSoXyJxfnbCFS0ThSiQ==
+  version "1.0.30000958"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000958.tgz#f6307b1512bccc64269e3ac4733072454ede1fd0"
+  integrity sha512-+KfdlJj6IOOrYmX723ZymUttwietVOGQfVKPAkjn+hxWg6FyPVaaIq+euUDu5mK1lblkRcF4Nlw949Lrac72sA==
 
 capture-stack-trace@^1.0.0:
   version "1.0.1"
@@ -3513,10 +3513,10 @@ eslint-loader@^2.1.0:
     object-hash "^1.1.4"
     rimraf "^2.6.1"
 
-eslint-module-utils@^2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/eslint-module-utils/-/eslint-module-utils-2.3.0.tgz#546178dab5e046c8b562bbb50705e2456d7bda49"
-  integrity sha512-lmDJgeOOjk8hObTysjqH7wyMi+nsHwwvfBykwfhjR1LNdd7C2uFJBvx4OpWYpXOw4df1yE1cDEVd1yLHitk34w==
+eslint-module-utils@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/eslint-module-utils/-/eslint-module-utils-2.4.0.tgz#8b93499e9b00eab80ccb6614e69f03678e84e09a"
+  integrity sha512-14tltLm38Eu3zS+mt0KvILC3q8jyIAH518MlG+HO0p+yK885Lb1UHTY/UgR91eOyGdmxAPb+OLoW4znqIT6Ndw==
   dependencies:
     debug "^2.6.8"
     pkg-dir "^2.0.0"
@@ -3537,20 +3537,21 @@ eslint-plugin-graphql@^3.0.3:
     lodash "^4.11.1"
 
 eslint-plugin-import@^2.9.0:
-  version "2.16.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.16.0.tgz#97ac3e75d0791c4fac0e15ef388510217be7f66f"
-  integrity sha512-z6oqWlf1x5GkHIFgrSvtmudnqM6Q60KM4KvpWi5ubonMjycLjndvd5+8VAZIsTlHC03djdgJuyKG6XO577px6A==
+  version "2.17.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.17.1.tgz#b888feb4d9b3ee155113c8dccdd4bec5db33bdf4"
+  integrity sha512-lzD9uvRvW4MsHzIOMJEDSb5MOV9LzgxRPBaovvOhJqzgxRHYfGy9QOrMuwHIh5ehKFJ7Z3DcrcGKDQ0IbP0EdQ==
   dependencies:
+    array-includes "^3.0.3"
     contains-path "^0.1.0"
     debug "^2.6.9"
     doctrine "1.5.0"
     eslint-import-resolver-node "^0.3.2"
-    eslint-module-utils "^2.3.0"
+    eslint-module-utils "^2.4.0"
     has "^1.0.3"
     lodash "^4.17.11"
     minimatch "^3.0.4"
     read-pkg-up "^2.0.0"
-    resolve "^1.9.0"
+    resolve "^1.10.0"
 
 eslint-plugin-jsx-a11y@^6.0.3:
   version "6.2.1"
@@ -5372,9 +5373,9 @@ inquirer@3.3.0:
     through "^2.3.6"
 
 inquirer@^6.2.0, inquirer@^6.2.2:
-  version "6.2.2"
-  resolved "https://registry.yarnpkg.com/inquirer/-/inquirer-6.2.2.tgz#46941176f65c9eb20804627149b743a218f25406"
-  integrity sha512-Z2rREiXA6cHRR9KBOarR3WuLlFzlIfAEIiB45ll5SSadMg7WqOh1MKEjjndfuH5ewXdixWCxqnVfGOQzPeiztA==
+  version "6.3.1"
+  resolved "https://registry.yarnpkg.com/inquirer/-/inquirer-6.3.1.tgz#7a413b5e7950811013a3db491c61d1f3b776e8e7"
+  integrity sha512-MmL624rfkFt4TG9y/Jvmt8vdmOo836U7Y0Hxr2aFk3RelZEGX4Igk0KabWrcaaZaTv9uzglOqWh1Vly+FAWAXA==
   dependencies:
     ansi-escapes "^3.2.0"
     chalk "^2.4.2"
@@ -5387,7 +5388,7 @@ inquirer@^6.2.0, inquirer@^6.2.2:
     run-async "^2.2.0"
     rxjs "^6.4.0"
     string-width "^2.1.0"
-    strip-ansi "^5.0.0"
+    strip-ansi "^5.1.0"
     through "^2.3.6"
 
 internal-ip@^4.2.0:
@@ -10681,9 +10682,9 @@ xstate@^3.1.0:
   integrity sha512-p0ZYDPWxZZZRAJyD3jaGO9/MYioHuxZp6sjcLhPfBZHAprl4EDrZRGDqRVH9VvK8oa6Nrbpf+U5eNmn8KFwO3g==
 
 xstate@^4.3.2:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/xstate/-/xstate-4.4.0.tgz#0daedbdc49313357413546de04fafa0dba7aa0ce"
-  integrity sha512-MS638X5zCzEAZA/UOW9fUHSg4xAGfiHFkGMjtU5j/gmb1PtGBAVImv0iWqRZNwVqTALxxtQz655BVyNSNz2ThA==
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/xstate/-/xstate-4.5.0.tgz#469116d4c3b58412c9d5822543a3c1e2c26bdbe1"
+  integrity sha512-7vShhDqfYUWTb1NXZFjk61KTIg6Gi3r21P0M6ApAPCYTJP+pLtbu+uD5Vxaae8Nz21cSu3/OZfvMqN88AkJpHw==
 
 xtend@^4.0.0, xtend@^4.0.1, xtend@~4.0.1:
   version "4.0.1"
