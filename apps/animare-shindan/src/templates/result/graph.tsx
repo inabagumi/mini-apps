@@ -71,6 +71,7 @@ const ParameterLabel = styled.dt`
     height: 76px;
     position: absolute;
     right: 0;
+    top: -16px;
   }
 `
 
