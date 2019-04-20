@@ -51,15 +51,13 @@ const Name = styled.h3`
   }
 `
 
-const MovieWrapper = styled.div`
+const Movie = styled.div`
   border-radius: 0 0 20px 20px;
   overflow: hidden;
-`
-
-const Movie = styled.div`
   padding-top: 56.25%;
   position: relative;
   width: 100%;
+  z-index: 1;
 
   iframe {
     height: 100%;
@@ -125,9 +123,9 @@ export default React.memo((({ result }) => (
           </a>
         </Name>
       </Profile>
-      <MovieWrapper>
+      <div>
         <Movie dangerouslySetInnerHTML={{ __html: result.embedHTML }} />
-      </MovieWrapper>
+      </div>
     </Content>
 
     <Headline>
