@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { FunctionComponent, memo } from 'react'
 import { default as styled } from 'styled-components'
 
 const Container = styled.div`
@@ -46,7 +46,7 @@ const Avatar = styled.figure`
 
   @media (min-width: 500px) {
     svg {
-      border-weight: 4px;
+      border-width: 4px;
       height: 80px;
       text-align: center;
       width: 80px;
@@ -55,10 +55,15 @@ const Avatar = styled.figure`
 `
 
 const Caption = styled.figcaption`
-  font-size: 1rem;
+  color: #000;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 4px;
+  text-align: center;
 `
 
-export default React.memo((() => (
+const Evaluation: FunctionComponent = () => (
   <Container>
     <Avatar>
       <svg height="56" width="56">
@@ -70,4 +75,6 @@ export default React.memo((() => (
 
     <Comment>あにまーれは仲良しです♩</Comment>
   </Container>
-)) as React.FunctionComponent)
+)
+
+export default memo(Evaluation)
