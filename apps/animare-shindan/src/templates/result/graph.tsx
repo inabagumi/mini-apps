@@ -101,9 +101,7 @@ const Graph: FunctionComponent<Props> = ({ result }) => {
         {result.parameters.map((parameter, i) => (
           <Parameter key={parameter.label}>
             <ParameterLabel>
-              <span>
-                {parameter.label}
-              </span>
+              <span>{parameter.label}</span>
             </ParameterLabel>
             <ParameterValue>
               <GraphBar blue={i === 0} value={parameter.value} />
