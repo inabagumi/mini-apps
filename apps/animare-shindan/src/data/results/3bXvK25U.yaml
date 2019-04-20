@@ -4,6 +4,13 @@ embedHTML: <iframe width="560" height="315" src="https://www.youtube.com/embed/5
 id: 3bXvK25U
 image: ./images/3bXvK25U.jpg
 name: 因幡はねる
+parameters:
+  - label: メイド
+    value: 1.05
+  - label: お料理
+    value: 0.83
+  - label: 清楚
+    value: 0.61
 type: お料理
 twitter: https://twitter.com/Haneru_Inaba
 youtube: https://www.youtube.com/channel/UC0Owc36U9lOyi9Gx9Ic-4qg?sub_confirmation=1

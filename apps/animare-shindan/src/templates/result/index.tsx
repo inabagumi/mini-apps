@@ -117,6 +117,10 @@ export const pageQuery = graphql`
         publicURL
       }
       name
+      parameters {
+        label
+        value
+      }
       type
       twitter
       youtube

@@ -4,6 +4,13 @@ embedHTML: <iframe width="560" height="315" src="https://www.youtube.com/embed/U
 id: hUuAaZpw
 image: ./images/hUuAaZpw.jpg
 name: 因幡はねる
+parameters:
+  - label: うさぎ
+    value: 1.05
+  - label: 清楚
+    value: 0.64
+  - label: かわいさ
+    value: 0.34
 type: 清楚
 twitter: https://twitter.com/Haneru_Inaba
 youtube: https://www.youtube.com/channel/UC0Owc36U9lOyi9Gx9Ic-4qg?sub_confirmation=1
