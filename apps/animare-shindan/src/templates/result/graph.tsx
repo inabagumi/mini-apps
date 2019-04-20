@@ -56,7 +56,6 @@ const Parameter = styled.div`
 
 const ParameterLabel = styled.dt`
   align-items: center;
-  animation: ${show} 0.4s linear;
   display: flex;
   flex-basis: 60px;
   font-size: 1rem;
@@ -72,6 +71,10 @@ const ParameterLabel = styled.dt`
     position: absolute;
     right: 0;
     top: -16px;
+  }
+
+  span {
+    animation: ${show} 0.4s linear;
   }
 `
 
@@ -97,7 +100,11 @@ const Graph: FunctionComponent<Props> = ({ result }) => {
       <Body>
         {result.parameters.map((parameter, i) => (
           <Parameter key={parameter.label}>
-            <ParameterLabel>{parameter.label}</ParameterLabel>
+            <ParameterLabel>
+              <span>
+                {parameter.label}
+              </span>
+            </ParameterLabel>
             <ParameterValue>
               <GraphBar blue={i === 0} value={parameter.value} />
             </ParameterValue>
