@@ -90,7 +90,7 @@ const Result: FunctionComponent<Props> = ({ location, data }): ReactElement => {
         <MessageBox location={location} result={result} />
 
         <SubTitle>
-          総勢約6,000名のVTuberの中から【{result.type}
+          総勢約7,000名のVTuberの中から【{result.type}
           好き】のアナタにマッチするVTuberが選ばれました!
         </SubTitle>
 
