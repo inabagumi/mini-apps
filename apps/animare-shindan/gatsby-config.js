@@ -4,6 +4,12 @@ module.exports = {
   plugins: [
     {
       options: {
+        trackingId: 'UA-138698330-1'
+      },
+      resolve: 'gatsby-plugin-google-analytics'
+    },
+    {
+      options: {
         background_color: '#ffffff',
         display: 'standalone',
         icons: [
