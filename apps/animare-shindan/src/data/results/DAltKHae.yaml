@@ -1,0 +1,16 @@
+attribute: 書家
+catchphrase: 新元号令和を最速書道した女！
+embedHTML: <iframe width="560" height="315" src="https://www.youtube.com/embed/qjkvwHvqWk0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+id: DAltKHae
+image: ./images/DAltKHae.jpg
+name: 因幡はねる
+parameters:
+  - label: 書家
+    value: 1.05
+  - label: 速度
+    value: 0.84
+  - label: 達筆度
+    value: 0.74
+type: 最速
+twitter: https://twitter.com/Haneru_Inaba
+youtube: https://www.youtube.com/channel/UC0Owc36U9lOyi9Gx9Ic-4qg?sub_confirmation=1
