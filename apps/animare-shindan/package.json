@@ -26,6 +26,7 @@
     "@types/react": "^16.8.14",
     "@types/react-helmet": "^5.0.8",
     "@types/styled-components": "^4.1.14",
+    "gatsby-plugin-nprogress": "^2.0.10",
     "prettier": "^1.17.0"
   },
   "homepage": "https://shindan.animare.cafe/",

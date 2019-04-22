@@ -61,6 +61,12 @@ module.exports = {
       },
       resolve: 'gatsby-plugin-manifest'
     },
+    {
+      options: {
+        color: '#000'
+      },
+      resolve: 'gatsby-plugin-nprogress'
+    },
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
     {
