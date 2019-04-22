@@ -3,6 +3,7 @@ import React, { FunctionComponent, ReactElement } from 'react'
 import styled from 'styled-components'
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
+import { AnalysisResult } from '../../types'
 import Detail from './detail'
 import MessageBox from './message-box'
 

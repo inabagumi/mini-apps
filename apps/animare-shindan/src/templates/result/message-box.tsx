@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from 'react'
 import styled from 'styled-components'
+import { AnalysisResult } from '../../types'
 import Evaluation from './evaluation'
 import Graph from './graph'
 import ShareButton from './share-button'

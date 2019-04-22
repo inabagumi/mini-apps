@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import styled, { keyframes } from 'styled-components'
 import GraphBar from '../../components/graph-bar'
+import { AnalysisResult } from '../../types'
 
 const show = keyframes`
   0% {

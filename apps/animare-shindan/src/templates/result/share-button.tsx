@@ -2,6 +2,7 @@ import { Link } from 'gatsby'
 import React, { FunctionComponent } from 'react'
 import styled from 'styled-components'
 import useSiteMetadata from '../../hooks/use-site-metadata'
+import { AnalysisResult } from '../../types'
 
 const Button = styled.a`
   align-items: center;

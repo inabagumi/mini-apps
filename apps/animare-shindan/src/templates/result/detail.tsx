@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { default as styled } from 'styled-components'
+import { AnalysisResult } from '../../types'
 
 const Container = styled.section``
 
