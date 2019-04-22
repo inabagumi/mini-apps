@@ -179,7 +179,7 @@ const PrevButton = styled.button<{ hide: boolean }>`
   margin: 20px 0 0 4px;
   opacity: ${props => (props.hide ? 0 : 1)};
   outline: 0;
-  transition: opacity ease-in 0.1s;
+  transition: opacity ease-in 0.2s;
   width: 140px;
 
   @media (min-width: 500px) {
@@ -257,6 +257,8 @@ const Questions: FunctionComponent<Props> = ({ data }): ReactElement => {
   }, [count, analysing])
 
   const handlePrev = useCallback(() => {
+    if (count < 1) return
+
     setCount(count - 1)
   }, [count])
 
