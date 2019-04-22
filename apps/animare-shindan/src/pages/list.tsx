@@ -112,6 +112,10 @@ type Props = {
 }
 
 const List: FunctionComponent<Props> = ({ data }): ReactElement => {
+  const {
+    allMarkdownRemark: { edges: releaseData }
+  } = data
+
   return (
     <Layout>
       <Helmet>
@@ -122,18 +126,22 @@ const List: FunctionComponent<Props> = ({ data }): ReactElement => {
 
       <Content>
         <Message>
-          {data.allMarkdownRemark.edges.map(edge => (
-            <Section key={edge.node.id}>
-              <Time dateTime={edge.node.frontmatter.date}>
-                {format(new Date(edge.node.frontmatter.date), 'yyyy.MM.dd')}
-              </Time>
-              <Title>{edge.node.frontmatter.title}</Title>
+          {releaseData.map(item => {
+            const { node: release } = item
 
-              <SectionBody
-                dangerouslySetInnerHTML={{ __html: edge.node.html }}
-              />
-            </Section>
-          ))}
+            return (
+              <Section key={release.id}>
+                <Time dateTime={release.frontmatter.date}>
+                  {format(new Date(release.frontmatter.date), 'yyyy.MM.dd')}
+                </Time>
+                <Title>{release.frontmatter.title}</Title>
+
+                <SectionBody
+                  dangerouslySetInnerHTML={{ __html: release.html }}
+                />
+              </Section>
+            )
+          })}
         </Message>
       </Content>
     </Layout>
@@ -145,7 +153,7 @@ export default List
 export const query = graphql`
   {
     allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "//versions/[^/]+.md$/" } }
+      filter: { fileAbsolutePath: { regex: "//releases/[^/]+.md$/" } }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {

@@ -12,7 +12,7 @@ const Content = styled.footer`
   padding: 20px 12px 32px;
 `
 
-const VersionLink = styled(Link)`
+const ReleaseLink = styled(Link)`
   color: #000;
   display: block;
   font-size: 1.2rem;
@@ -35,8 +35,8 @@ const Copyright = styled.p`
   }
 `
 
-type VersionData = {
-  version: {
+type ReleaseData = {
+  releases: {
     edges: {
       node: {
         frontmatter: {
@@ -48,11 +48,11 @@ type VersionData = {
 }
 
 const Footer: FunctionComponent = (): ReactElement => {
-  const { version }: VersionData = useStaticQuery(
+  const { releases }: ReleaseData = useStaticQuery(
     graphql`
       query {
-        version: allMarkdownRemark(
-          filter: { fileAbsolutePath: { regex: "//versions/[^/]+.md$/" } }
+        releases: allMarkdownRemark(
+          filter: { fileAbsolutePath: { regex: "//releases/[^/]+.md$/" } }
           limit: 1
           sort: { fields: [frontmatter___date], order: DESC }
         ) {
@@ -70,9 +70,9 @@ const Footer: FunctionComponent = (): ReactElement => {
 
   return (
     <Content>
-      <VersionLink to="/list">
-        {version.edges[0].node.frontmatter.title}
-      </VersionLink>
+      <ReleaseLink to="/list">
+        {releases.edges[0].node.frontmatter.title}
+      </ReleaseLink>
 
       <Copyright>
         {'Copyright 2018-2019 '}
