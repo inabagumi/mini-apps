@@ -2,7 +2,7 @@ attribute: うさぎ
 catchphrase: あなたの推しにしてください
 embedHTML: <iframe width="560" height="315" src="https://www.youtube.com/embed/UxBN_XsU0tU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 id: hUuAaZpw
-image: ./images/hUuAaZpw.jpg
+image: ./images/hUuAaZpw.png
 name: 因幡はねる
 parameters:
   - label: うさぎ
