@@ -1,5 +1,5 @@
-import * as React from 'react'
-import { default as styled } from 'styled-components'
+import styled from '@emotion/styled'
+import React, { FunctionComponent, ReactElement } from 'react'
 
 const Container = styled.div`
   background-color: rgba(0, 0, 0, 0.3);
@@ -14,13 +14,18 @@ const Bar = styled.div`
   transition: width 0.3s ease-out;
 `
 
-interface Props {
+type Props = {
   max: number
   value: number
 }
 
-export default (({ max, value }) => (
+const ProgressBar: FunctionComponent<Props> = ({
+  max,
+  value
+}): ReactElement => (
   <Container>
     <Bar style={{ width: `${(value / max) * 100}%` }} />
   </Container>
-)) as React.FunctionComponent<Props>
+)
+
+export default ProgressBar

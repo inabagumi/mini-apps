@@ -1,5 +1,5 @@
+import styled from '@emotion/styled'
 import React, { FunctionComponent, memo } from 'react'
-import { default as styled } from 'styled-components'
 
 const Container = styled.div`
   display: flex;
@@ -63,7 +63,7 @@ const Caption = styled.figcaption`
   text-align: center;
 `
 
-const Evaluation: FunctionComponent = () => (
+const ResultEvaluation: FunctionComponent = () => (
   <Container>
     <Avatar>
       <svg height="56" width="56">
@@ -77,4 +77,4 @@ const Evaluation: FunctionComponent = () => (
   </Container>
 )
 
-export default memo(Evaluation)
+export default memo(ResultEvaluation)

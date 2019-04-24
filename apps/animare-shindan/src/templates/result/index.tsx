@@ -1,6 +1,6 @@
+import styled from '@emotion/styled'
 import { Link, graphql } from 'gatsby'
 import React, { FunctionComponent, ReactElement } from 'react'
-import styled from 'styled-components'
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
 import { AnalysisResult } from '../../types'

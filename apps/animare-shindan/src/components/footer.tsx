@@ -1,6 +1,6 @@
+import styled from '@emotion/styled'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import React, { FunctionComponent, ReactElement } from 'react'
-import styled from 'styled-components'
 
 const Content = styled.footer`
   align-items: center;

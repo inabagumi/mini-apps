@@ -1,5 +1,6 @@
-import React, { FunctionComponent } from 'react'
-import styled, { keyframes } from 'styled-components'
+import { keyframes } from '@emotion/core'
+import styled from '@emotion/styled'
+import React, { FunctionComponent, ReactElement, memo } from 'react'
 import GraphBar from '../../components/graph-bar'
 import { AnalysisResult } from '../../types'
 
@@ -93,7 +94,7 @@ type Props = {
   result: AnalysisResult
 }
 
-const Graph: FunctionComponent<Props> = ({ result }) => {
+const ResultGraph: FunctionComponent<Props> = ({ result }): ReactElement => {
   return (
     <Container>
       <Title>オタクパラメーター</Title>
@@ -114,4 +115,4 @@ const Graph: FunctionComponent<Props> = ({ result }) => {
   )
 }
 
-export default Graph
+export default memo(ResultGraph)

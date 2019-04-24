@@ -1,3 +1,5 @@
+import { keyframes } from '@emotion/core'
+import styled from '@emotion/styled'
 import { graphql, navigate } from 'gatsby'
 import React, {
   FunctionComponent,
@@ -6,7 +8,6 @@ import React, {
   useState
 } from 'react'
 import { Helmet } from 'react-helmet'
-import styled, { keyframes } from 'styled-components'
 import Layout from '../components/layout'
 import ProgressBar from '../components/progress-bar'
 
@@ -153,7 +154,7 @@ const Answer = styled.button`
   padding: 0 20px;
   width: 100%;
 
-  :not(:first-child) {
+  :not(:first-of-type) {
     margin-top: 10px;
   }
 

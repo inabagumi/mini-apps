@@ -1,6 +1,6 @@
+import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 import React, { FunctionComponent, ReactElement } from 'react'
-import styled from 'styled-components'
 import Header from '../components/header'
 import Layout from '../components/layout'
 import Message from '../components/message'
@@ -25,14 +25,14 @@ const Title = styled.h1`
     display: block;
   }
 
-  span:first-child {
+  span:first-of-type {
     font-size: 2rem;
   }
 
   @media (min-width: 500px) {
     font-size: 4.6rem;
 
-    span:first-child {
+    span:first-of-type {
       font-size: 2.4rem;
     }
   }

@@ -1,5 +1,5 @@
-import React, { FunctionComponent } from 'react'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
+import React, { FunctionComponent, ReactElement } from 'react'
 import { AnalysisResult } from '../../types'
 import Evaluation from './evaluation'
 import Graph from './graph'
@@ -36,7 +36,7 @@ const MessageTitle = styled.h2`
     display: block;
   }
 
-  span:first-child {
+  span:first-of-type {
     font-size: 1.6rem;
     font-weight: 700;
     line-height: 1;
@@ -50,11 +50,11 @@ const MessageTitle = styled.h2`
     font-weight: 900;
   }
 
-  span:first-child mark {
+  span:first-of-type mark {
     margin-right: 2px;
   }
 
-  span:last-child mark {
+  span:last-of-type mark {
     display: inline-block;
     font-size: 3.6rem;
     height: 46px;
@@ -72,7 +72,10 @@ interface Props {
   result: AnalysisResult
 }
 
-const MessageBox: FunctionComponent<Props> = ({ location, result }) => {
+const MessageBox: FunctionComponent<Props> = ({
+  location,
+  result
+}): ReactElement => {
   const queryString = (typeof location !== 'undefined' && location.search) || ''
   const showShareButton = queryString.indexOf('s=true') < 1
 

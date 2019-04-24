@@ -2,6 +2,7 @@ const path = require('path')
 
 module.exports = {
   plugins: [
+    'gatsby-plugin-emotion',
     {
       options: {
         trackingId: 'UA-138698330-1'
@@ -87,7 +88,6 @@ module.exports = {
       },
       resolve: 'gatsby-plugin-sitemap'
     },
-    'gatsby-plugin-styled-components',
     'gatsby-plugin-typescript',
     {
       options: {

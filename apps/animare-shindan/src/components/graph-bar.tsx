@@ -1,5 +1,6 @@
+import { keyframes } from '@emotion/core'
+import styled from '@emotion/styled'
 import React, { FunctionComponent } from 'react'
-import styled, { keyframes } from 'styled-components'
 
 const show = keyframes`
   0% {

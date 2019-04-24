@@ -1,6 +1,6 @@
+import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 import React, { FunctionComponent, ReactElement } from 'react'
-import styled from 'styled-components'
 import useSiteMetadata from '../hooks/use-site-metadata'
 import lineLogo from '../images/line.svg'
 import twitterLogo from '../images/twitter.svg'

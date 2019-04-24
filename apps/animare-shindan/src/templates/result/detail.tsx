@@ -1,5 +1,5 @@
-import * as React from 'react'
-import { default as styled } from 'styled-components'
+import styled from '@emotion/styled'
+import React, { FunctionComponent, ReactElement, memo } from 'react'
 import { AnalysisResult } from '../../types'
 
 const Container = styled.section``
@@ -107,11 +107,11 @@ const Button = styled.a`
   }
 `
 
-interface Props {
+type Props = {
   result: AnalysisResult
 }
 
-export default React.memo((({ result }) => (
+const ResultDetail: FunctionComponent<Props> = ({ result }): ReactElement => (
   <Container>
     <Label>「{result.name}」のおすすめ動画はこちら!</Label>
 
@@ -143,4 +143,6 @@ export default React.memo((({ result }) => (
       このVTuberに会いに行く!
     </Button>
   </Container>
-)) as React.FunctionComponent<Props>)
+)
+
+export default memo(ResultDetail)

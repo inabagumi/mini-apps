@@ -1,9 +1,9 @@
-import * as React from 'react'
+import styled from '@emotion/styled'
+import React, { FunctionComponent, ReactElement } from 'react'
 import { Helmet } from 'react-helmet'
-import { default as styled } from 'styled-components'
-import { default as Header } from '../components/header'
-import { default as Layout } from '../components/layout'
-import { default as Message } from '../components/message'
+import Header from '../components/header'
+import Layout from '../components/layout'
+import Message from '../components/message'
 
 const Title = styled.h1`
   font-size: 2rem;
@@ -16,7 +16,7 @@ const Description = styled.p`
   margin: 10px 24px 0;
 `
 
-export default (() => (
+const NotFound: FunctionComponent = (): ReactElement => (
   <Layout>
     <Helmet>
       <title>404 Not found</title>
@@ -32,4 +32,6 @@ export default (() => (
       </Description>
     </Message>
   </Layout>
-)) as React.FunctionComponent
+)
+
+export default NotFound

@@ -1,15 +1,16 @@
 {
   "author": "Haneru Developers",
   "dependencies": {
-    "babel-plugin-styled-components": "^1.10.0",
+    "@emotion/core": "^10.0.10",
+    "@emotion/styled": "^10.0.10",
     "date-fns": "^2.0.0-alpha.27",
     "gatsby": "^2.3.27",
+    "gatsby-plugin-emotion": "^4.0.6",
     "gatsby-plugin-google-analytics": "^2.0.18",
     "gatsby-plugin-manifest": "^2.0.29",
     "gatsby-plugin-offline": "^2.0.25",
     "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-sitemap": "^2.0.12",
-    "gatsby-plugin-styled-components": "^3.0.7",
     "gatsby-plugin-typescript": "^2.0.13",
     "gatsby-source-filesystem": "^2.0.31",
     "gatsby-transformer-json": "^2.1.11",
@@ -18,14 +19,12 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
-    "styled-components": "^4.2.0",
     "typescript": "~3.4.5"
   },
   "description": "Shindan by AniMare",
   "devDependencies": {
     "@types/react": "^16.8.14",
     "@types/react-helmet": "^5.0.8",
-    "@types/styled-components": "^4.1.14",
     "gatsby-plugin-nprogress": "^2.0.10",
     "prettier": "^1.17.0"
   },

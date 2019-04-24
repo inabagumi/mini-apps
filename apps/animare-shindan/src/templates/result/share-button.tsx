@@ -1,6 +1,6 @@
+import styled from '@emotion/styled'
 import { Link } from 'gatsby'
-import React, { FunctionComponent } from 'react'
-import styled from 'styled-components'
+import React, { FunctionComponent, ReactElement, memo } from 'react'
 import useSiteMetadata from '../../hooks/use-site-metadata'
 import { AnalysisResult } from '../../types'
 
@@ -49,7 +49,7 @@ interface Props {
   result: AnalysisResult
 }
 
-const ShareButton: FunctionComponent<Props> = ({ result }) => {
+const ShareButton: FunctionComponent<Props> = ({ result }): ReactElement => {
   const { siteUrl } = useSiteMetadata()
   const hashtag = 'あにまーれオタクタイプ診断'
   const text = `アナタは${result.type}系【${result.attribute}好き】です！\n`
@@ -75,4 +75,4 @@ const ShareButton: FunctionComponent<Props> = ({ result }) => {
   )
 }
 
-export default ShareButton
+export default memo(ShareButton)

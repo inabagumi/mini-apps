@@ -1,5 +1,5 @@
-import * as React from 'react'
-import { default as styled } from 'styled-components'
+import styled from '@emotion/styled'
+import React, { FunctionComponent } from 'react'
 
 const Container = styled.div`
   background-color: #fff;
@@ -19,6 +19,8 @@ const Container = styled.div`
   }
 `
 
-export default (({ children }) => (
-  <Container>{children}</Container>
-)) as React.FunctionComponent
+const Message: FunctionComponent = ({ children }) => {
+  return <Container>{children}</Container>
+}
+
+export default Message
