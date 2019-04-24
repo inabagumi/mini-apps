@@ -1,6 +1,6 @@
-const React = require('react')
+import React from 'react'
 
-exports.onRenderBody = ({ setPostBodyComponents }) => {
+export const onRenderBody = ({ setPostBodyComponents }) => {
   setPostBodyComponents([
     <script
       src="https://polyfill.io/v3/polyfill.min.js?features=URL"
