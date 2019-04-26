@@ -36,9 +36,6 @@
     "type": "git",
     "url": "https://github.com/inabagumi/animare-shindan.git"
   },
-  "resolutions": {
-    "@babel/core": "^7.4.3"
-  },
   "scripts": {
     "build": "gatsby build",
     "format": "prettier --ignore-path .gitignore --write \"./**/*.{js,md,ts,tsx,yaml}\"",
