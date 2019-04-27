@@ -1,6 +1,11 @@
 import styled from '@emotion/styled'
 import { Link, graphql } from 'gatsby'
-import React, { FunctionComponent, ReactElement } from 'react'
+import React, {
+  FunctionComponent,
+  ReactElement,
+  useEffect,
+  useState
+} from 'react'
 import Layout from '../../components/layout'
 import MessageWindow from '../../components/message-window'
 import SEO from '../../components/seo'
@@ -117,9 +122,16 @@ interface Props {
 }
 
 const Result: FunctionComponent<Props> = ({ location, data }): ReactElement => {
+  const [isShared, setIsShared] = useState<boolean>(false)
+
+  useEffect(() => {
+    const queryString =
+      (typeof location !== 'undefined' && location.search) || ''
+
+    setIsShared(queryString.indexOf('s=true') < 1)
+  }, [location])
+
   const { result } = data
-  const queryString = (typeof location !== 'undefined' && location.search) || ''
-  const isShared = queryString.indexOf('s=true') < 1
 
   return (
     <Layout>
