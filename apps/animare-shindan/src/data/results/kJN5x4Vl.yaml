@@ -1,0 +1,16 @@
+attribute: 店員
+catchphrase: たくさん注文ありがと～♡♡
+embedHTML: <iframe width="560" height="315" src="https://www.youtube.com/embed/3M7qAnXcuJI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+id: kJN5x4Vl
+image: ./images/kJN5x4Vl.png
+name: 因幡はねる
+parameters:
+  - label: 料理上手
+    value: 1.05
+  - label: ウェートレス
+    value: 0.75
+  - label: 献身さ
+    value: 0.53
+type: 料理上手
+twitter: https://twitter.com/Haneru_Inaba
+youtube: https://www.youtube.com/channel/UC0Owc36U9lOyi9Gx9Ic-4qg?sub_confirmation=1
