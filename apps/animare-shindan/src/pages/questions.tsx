@@ -255,7 +255,7 @@ const Questions: FunctionComponent<Props> = ({ data }): ReactElement => {
         navigate(`/s/${id}`)
       }, 1500)
     }
-  }, [count, analysing])
+  }, [count, data.questions.nodes.length, data.results.nodes])
 
   const handlePrev = useCallback(() => {
     if (count < 1) return

@@ -14,16 +14,6 @@ const show = keyframes`
   }
 `
 
-const a = keyframes`
-  0% {
-    width: 0;
-  }
-
-  100% {
-    width: 100%;
-  }
-`
-
 const Container = styled.section`
   margin: 0 0 20px;
 `
