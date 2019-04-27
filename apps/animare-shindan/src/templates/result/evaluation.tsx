@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import React, { FunctionComponent, memo } from 'react'
+import nanashiAvatar from '../../images/avatar.svg'
 
 const Container = styled.div`
   display: flex;
@@ -35,7 +36,7 @@ const Comment = styled.p`
 const Avatar = styled.figure`
   margin: 2px 0 0;
 
-  svg {
+  img {
     border: solid #14b9ff 2px;
     border-radius: 50%;
     box-sizing: border-box;
@@ -45,7 +46,7 @@ const Avatar = styled.figure`
   }
 
   @media (min-width: 500px) {
-    svg {
+    img {
       border-width: 4px;
       height: 80px;
       text-align: center;
@@ -66,9 +67,7 @@ const Caption = styled.figcaption`
 const ResultEvaluation: FunctionComponent = () => (
   <Container>
     <Avatar>
-      <svg height="56" width="56">
-        <use xlinkHref="#nanashi" />
-      </svg>
+      <img alt="" height="128" src={nanashiAvatar} width="128" />
 
       <Caption>黒猫 ななし</Caption>
     </Avatar>

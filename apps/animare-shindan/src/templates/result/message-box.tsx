@@ -1,21 +1,12 @@
 import styled from '@emotion/styled'
 import React, { FunctionComponent, ReactElement } from 'react'
+import MessageWindow from '../../components/message-window'
 import { AnalysisResult } from '../../types'
 import Evaluation from './evaluation'
 import Graph from './graph'
 import ShareButton from './share-button'
 
-const Container = styled.div`
-  svg {
-    display: block;
-    margin: 0 auto;
-  }
-`
-
 const Content = styled.div`
-  background-color: #fff;
-  border: solid #000 3px;
-  border-radius: 20px;
   padding: 20px;
 
   @media (min-width: 500px) {
@@ -23,7 +14,7 @@ const Content = styled.div`
   }
 `
 
-const MessageTitle = styled.h2`
+const Title = styled.h2`
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -67,44 +58,36 @@ const MessageTitle = styled.h2`
   }
 `
 
-interface Props {
-  location: Location
+type Props = {
   result: AnalysisResult
+  showShareButton: boolean
 }
 
 const MessageBox: FunctionComponent<Props> = ({
-  location,
-  result
-}): ReactElement => {
-  const queryString = (typeof location !== 'undefined' && location.search) || ''
-  const showShareButton = queryString.indexOf('s=true') < 1
+  result,
+  showShareButton
+}): ReactElement => (
+  <MessageWindow>
+    <Content>
+      <Title>
+        <span>
+          アナタは
+          <mark>{result.type}</mark>
+          系の
+        </span>
+        <span>
+          <mark>{result.attribute}</mark>
+          好きです!
+        </span>
+      </Title>
 
-  return (
-    <Container>
-      <svg height="56" width="56">
-        <use xlinkHref="#nanashi" />
-      </svg>
-      <Content>
-        <MessageTitle>
-          <span>
-            アナタは
-            <mark>{result.type}</mark>
-            系の
-          </span>
-          <span>
-            <mark>{result.attribute}</mark>
-            好きです!
-          </span>
-        </MessageTitle>
+      <Evaluation />
 
-        <Evaluation />
+      {showShareButton && <ShareButton result={result} />}
 
-        {showShareButton && <ShareButton result={result} />}
-
-        <Graph result={result} />
-      </Content>
-    </Container>
-  )
-}
+      <Graph result={result} />
+    </Content>
+  </MessageWindow>
+)
 
 export default MessageBox
