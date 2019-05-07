@@ -153,7 +153,7 @@ const Result: FunctionComponent<Props> = ({ location, data }): ReactElement => {
         )}
 
         <SubTitle>
-          総勢約7,000名のVTuberの中から【{result.type}
+          総勢約8,000名のVTuberの中から【{result.type}
           好き】のアナタにマッチするVTuberが選ばれました!
         </SubTitle>
 
