@@ -50,6 +50,7 @@
     "build": "gatsby build",
     "format": "prettier --ignore-path .gitignore --write \"./**/*.{js,md,ts,tsx,yaml}\"",
     "lint": "eslint --ext .js,.ts,.tsx .",
+    "now-build": "${npm_execpath} run build",
     "start": "gatsby develop"
   },
   "version": "1.3.0"

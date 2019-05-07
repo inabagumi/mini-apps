@@ -1,0 +1,45 @@
+{
+  "alias": ["shindan.animare.cafe"],
+  "builds": [
+    {
+      "config": {
+        "distDir": "public"
+      },
+      "src": "package.json",
+      "use": "@now/static-build"
+    }
+  ],
+  "github": {
+    "silent": true
+  },
+  "name": "animare-shindan",
+  "routes": [
+    {
+      "headers": {
+        "cache-control": "max-age=0"
+      },
+      "src": "/sw\\.js"
+    },
+    {
+      "headers": {
+        "cache-control": "max-age=31536000"
+      },
+      "src": "/static/.+"
+    },
+    {
+      "headers": {
+        "cache-control": "max-age=31536000"
+      },
+      "src": "/.*\\.js"
+    },
+    {
+      "headers": {
+        "cache-control": "max-age=600, s-maxage=60"
+      },
+      "src": "/.*"
+    }
+  ],
+  "regions": ["hnd1"],
+  "scope": "inabagumi",
+  "version": 2
+}

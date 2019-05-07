@@ -1,8 +1,0 @@
-[build]
-  base    = "./"
-  command = "yarn build"
-  publish = "./public/"
-
-  [build.environment]
-    NODE_ENV     = "development"
-    NODE_VERSION = "10.14.2"
