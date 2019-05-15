@@ -133,11 +133,11 @@ const Index: FunctionComponent = (): ReactElement => (
         <Disclaimer>
           ※このサービスは
           <a
-            href="https://duo7.co.jp/"
+            href="https://zizai.co.jp/"
             rel="noopener noreferrer"
             target="_blank"
           >
-            株式会社DUO
+            株式会社ZIZAI
           </a>
           が提供するアプリである
           <a
