@@ -4,7 +4,7 @@
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.11",
     "date-fns": "^2.0.0-alpha.27",
-    "gatsby": "^2.5.1",
+    "gatsby": "^2.5.2",
     "gatsby-plugin-emotion": "^4.0.6",
     "gatsby-plugin-google-analytics": "^2.0.20",
     "gatsby-plugin-manifest": "^2.1.1",
