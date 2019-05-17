@@ -52,7 +52,7 @@ const Layout: FunctionComponent = ({ children }): ReactElement => (
       <link href="/assets/icon-128x128.png" rel="icon" />
       <link
         as="style"
-        href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700,900|Material+Icons"
+        href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700,900|Material+Icons&amp;display=swap"
         rel="preload"
       />
     </Helmet>
@@ -66,7 +66,7 @@ const Layout: FunctionComponent = ({ children }): ReactElement => (
     </Wrapper>
 
     <link
-      href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700,900|Material+Icons"
+      href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700,900|Material+Icons&amp;display=swap"
       key="fonts"
       rel="stylesheet"
     />
