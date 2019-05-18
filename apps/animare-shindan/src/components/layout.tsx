@@ -16,6 +16,7 @@ const globalStyles = css`
     );
     font-family: Noto Sans JP, sans-serif;
     font-size: 10px;
+    font-weight: 700;
     height: 100%;
     line-height: 1.8;
   }
@@ -50,11 +51,6 @@ const Layout: FunctionComponent = ({ children }): ReactElement => (
       <html lang="ja" />
       <title>あなたのオタクタイプ診断 by あにまーれ</title>
       <link href="/assets/icon-128x128.png" rel="icon" />
-      <link
-        as="style"
-        href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700,900|Material+Icons&amp;display=swap"
-        rel="preload"
-      />
     </Helmet>
 
     <Global styles={globalStyles} />
@@ -64,12 +60,6 @@ const Layout: FunctionComponent = ({ children }): ReactElement => (
 
       <Footer />
     </Wrapper>
-
-    <link
-      href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700,900|Material+Icons&amp;display=swap"
-      key="fonts"
-      rel="stylesheet"
-    />
   </>
 )
 
