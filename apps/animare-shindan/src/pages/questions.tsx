@@ -265,7 +265,7 @@ const Questions: FunctionComponent<Props> = ({ data }): ReactElement => {
 
   return (
     <Layout>
-      <Helmet>
+      <Helmet defer={false}>
         <title>診断中...</title>
         <meta content="noindex,follow" name="robots" />
       </Helmet>

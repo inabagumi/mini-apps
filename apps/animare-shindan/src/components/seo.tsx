@@ -25,7 +25,7 @@ const SEO: FunctionComponent<Props> = ({
   } = useSiteMetadata()
 
   return (
-    <Helmet>
+    <Helmet defer={false}>
       <link href={`${new URL(pathname, siteUrl)}`} rel="canonical" />
       <meta content={description || defaultDescription} name="description" />
       <meta content="website" property="og:type" />

@@ -18,7 +18,7 @@ const Description = styled.p`
 
 const NotFound: FunctionComponent = (): ReactElement => (
   <Layout>
-    <Helmet>
+    <Helmet defer={false}>
       <title>404 Not found</title>
     </Helmet>
 

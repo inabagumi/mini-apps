@@ -118,7 +118,7 @@ const List: FunctionComponent<Props> = ({ data }): ReactElement => {
 
   return (
     <Layout>
-      <Helmet>
+      <Helmet defer={false}>
         <title>お知らせ</title>
       </Helmet>
 
