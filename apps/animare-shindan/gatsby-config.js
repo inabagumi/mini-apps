@@ -69,6 +69,7 @@ module.exports = {
       resolve: 'gatsby-plugin-nprogress'
     },
     'gatsby-plugin-offline',
+    'gatsby-plugin-preact',
     'gatsby-plugin-react-helmet',
     {
       options: {
