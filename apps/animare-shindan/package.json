@@ -6,7 +6,7 @@
     "@types/react": "^16.8.23",
     "@types/react-helmet": "^5.0.8",
     "date-fns": "^2.0.0-beta.2",
-    "gatsby": "^2.13.6",
+    "gatsby": "^2.13.7",
     "gatsby-plugin-emotion": "^4.1.0",
     "gatsby-plugin-google-analytics": "^2.1.1",
     "gatsby-plugin-manifest": "^2.2.1",
