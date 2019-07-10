@@ -1,6 +1,6 @@
 import { keyframes } from '@emotion/core'
 import styled from '@emotion/styled'
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, ReactElement } from 'react'
 
 const show = keyframes`
   0% {
@@ -36,17 +36,17 @@ const Bar = styled.div<{ blue: boolean }>`
     transparent 0.75rem,
     transparent 1.5rem
   );
-  background-color: ${props => (props.blue ? '#14b9ff' : '#d1d1d1')};
+  background-color: ${(props): string => (props.blue ? '#14b9ff' : '#d1d1d1')};
   border-radius: 0 3px 3px 0;
   height: 44px;
 `
 
-type Props = {
+interface Props {
   blue: boolean
   value: number
 }
 
-const GraphBar: FunctionComponent<Props> = ({ blue, value }) => {
+const GraphBar: FunctionComponent<Props> = ({ blue, value }): ReactElement => {
   return (
     <Container style={{ width: `${value * 100}%` }}>
       <Bar blue={blue} />

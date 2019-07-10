@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import React, { FunctionComponent, memo } from 'react'
+import React, { FunctionComponent, ReactElement, memo } from 'react'
 import nanashiAvatar from '../../images/avatar.svg'
 
 const Container = styled.div`
@@ -64,7 +64,7 @@ const Caption = styled.figcaption`
   text-align: center;
 `
 
-const ResultEvaluation: FunctionComponent = () => (
+const ResultEvaluation: FunctionComponent = (): ReactElement => (
   <Container>
     <Avatar>
       <img alt="" height="128" src={nanashiAvatar} width="128" />

@@ -107,7 +107,7 @@ const Button = styled.a`
   }
 `
 
-type Props = {
+interface Props {
   result: AnalysisResult
 }
 

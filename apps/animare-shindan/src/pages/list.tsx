@@ -94,7 +94,7 @@ const SectionBody = styled.div`
   }
 `
 
-type Props = {
+interface Props {
   data: {
     allMarkdownRemark: {
       edges: {
@@ -126,22 +126,24 @@ const List: FunctionComponent<Props> = ({ data }): ReactElement => {
 
       <Content>
         <Message>
-          {releaseData.map(item => {
-            const { node: release } = item
+          {releaseData.map(
+            (item): ReactElement => {
+              const { node: release } = item
 
-            return (
-              <Section key={release.id}>
-                <Time dateTime={release.frontmatter.date}>
-                  {format(new Date(release.frontmatter.date), 'yyyy.MM.dd')}
-                </Time>
-                <Title>{release.frontmatter.title}</Title>
+              return (
+                <Section key={release.id}>
+                  <Time dateTime={release.frontmatter.date}>
+                    {format(new Date(release.frontmatter.date), 'yyyy.MM.dd')}
+                  </Time>
+                  <Title>{release.frontmatter.title}</Title>
 
-                <SectionBody
-                  dangerouslySetInnerHTML={{ __html: release.html }}
-                />
-              </Section>
-            )
-          })}
+                  <SectionBody
+                    dangerouslySetInnerHTML={{ __html: release.html }}
+                  />
+                </Section>
+              )
+            }
+          )}
         </Message>
       </Content>
     </Layout>

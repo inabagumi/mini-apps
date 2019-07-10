@@ -1,16 +1,16 @@
 import { graphql, useStaticQuery } from 'gatsby'
 
-type SiteMetadata = {
+interface SiteMetadata {
   description: string
   siteUrl: string
   title: string
 }
 
-type Site = {
+interface Site {
   siteMetadata: SiteMetadata
 }
 
-type SiteDate = {
+interface SiteDate {
   site: Site
 }
 

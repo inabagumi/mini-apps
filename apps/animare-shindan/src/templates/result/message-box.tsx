@@ -58,7 +58,7 @@ const Title = styled.h2`
   }
 `
 
-type Props = {
+interface Props {
   result: AnalysisResult
   showShareButton: boolean
 }

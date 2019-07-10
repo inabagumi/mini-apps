@@ -1,4 +1,4 @@
-export type AnalysisResult = {
+export interface AnalysisResult {
   attribute: string
   catchphrase: string
   embedHTML: string

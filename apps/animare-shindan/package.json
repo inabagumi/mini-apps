@@ -31,9 +31,7 @@
     "@typescript-eslint/parser": "^1.11.0",
     "babel-eslint": "^10.0.2",
     "eslint": "^5.16.0",
-    "eslint-config-react-app": "^4.0.1",
-    "eslint-plugin-flowtype": "^3.11.1",
-    "eslint-plugin-import": "^2.18.0",
+    "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.2",
     "eslint-plugin-react-hooks": "^1.6.1",
@@ -43,8 +41,31 @@
   },
   "eslintConfig": {
     "extends": [
-      "react-app"
-    ]
+      "plugin:@typescript-eslint/recommended",
+      "plugin:react/recommended",
+      "plugin:jsx-a11y/recommended",
+      "prettier/@typescript-eslint",
+      "prettier/react"
+    ],
+    "overrides": [
+      {
+        "files": ["*.js"],
+        "rules": {
+          "@typescript-eslint/no-var-requires": "off"
+        }
+      }
+    ],
+    "plugins": ["react-hooks"],
+    "rules": {
+      "react/prop-types": "off",
+      "react-hooks/exhaustive-deps": "error",
+      "react-hooks/rules-of-hooks": "error"
+    },
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    }
   },
   "homepage": "https://shindan.animare.cafe/",
   "license": "MIT",

@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet'
 import useSiteMetadata from '../hooks/use-site-metadata'
 import mainVisual from '../images/main-visual.jpg'
 
-type Props = {
+interface Props {
   description?: string
   image?: {
     publicURL: string

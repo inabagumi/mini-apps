@@ -35,7 +35,7 @@ const Copyright = styled.p`
   }
 `
 
-type ReleaseData = {
+interface ReleaseData {
   releases: {
     edges: {
       node: {

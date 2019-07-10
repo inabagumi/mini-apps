@@ -178,7 +178,7 @@ const PrevButton = styled.button<{ hide: boolean }>`
   height: 44px;
   justify-content: center;
   margin: 20px 0 0 4px;
-  opacity: ${props => (props.hide ? 0 : 1)};
+  opacity: ${(props): string => (props.hide ? 0 : 1)};
   outline: 0;
   transition: opacity ease-in 0.2s;
   width: 140px;
@@ -242,22 +242,22 @@ const Questions: FunctionComponent<Props> = ({ data }): ReactElement => {
   const [count, setCount] = useState<number>(0)
   const [analysing, setAnalysing] = useState<boolean>(false)
 
-  const handleAnswer = useCallback(() => {
+  const handleAnswer = useCallback((): void => {
     if (count < data.questions.nodes.length - 1) {
       setCount(count + 1)
     } else {
       setAnalysing(true)
 
-      const results = data.results.nodes.map(node => node.id)
+      const results = data.results.nodes.map((node): string => node.id)
       const id = results[Math.floor(Math.random() * results.length)]
 
-      setTimeout(() => {
+      setTimeout((): void => {
         navigate(`/s/${id}`)
       }, 1500)
     }
   }, [count, data.questions.nodes.length, data.results.nodes])
 
-  const handlePrev = useCallback(() => {
+  const handlePrev = useCallback((): void => {
     if (count < 1) return
 
     setCount(count - 1)
@@ -294,18 +294,22 @@ const Questions: FunctionComponent<Props> = ({ data }): ReactElement => {
           <AnswerContainer
             style={{ transform: `translateX(-${100 * count}%)` }}
           >
-            {data.questions.nodes.map((node, i) => (
-              <AnswerList
-                aria-hidden={count === i ? undefined : 'true'}
-                key={node.title}
-              >
-                {node.answers.map((answer, i) => (
-                  <Answer key={`answer-${i}`} onClick={handleAnswer}>
-                    {answer}
-                  </Answer>
-                ))}
-              </AnswerList>
-            ))}
+            {data.questions.nodes.map(
+              (node, i): ReactElement => (
+                <AnswerList
+                  aria-hidden={count === i ? undefined : 'true'}
+                  key={node.title}
+                >
+                  {node.answers.map(
+                    (answer, i): ReactElement => (
+                      <Answer key={`answer-${i}`} onClick={handleAnswer}>
+                        {answer}
+                      </Answer>
+                    )
+                  )}
+                </AnswerList>
+              )
+            )}
           </AnswerContainer>
         </Content>
 

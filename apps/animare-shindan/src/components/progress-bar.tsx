@@ -14,7 +14,7 @@ const Bar = styled.div`
   transition: width 0.3s ease-out;
 `
 
-type Props = {
+interface Props {
   max: number
   value: number
 }

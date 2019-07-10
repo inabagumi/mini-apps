@@ -80,7 +80,7 @@ const ParameterValue = styled.dd`
   position: relative;
 `
 
-type Props = {
+interface Props {
   result: AnalysisResult
 }
 
@@ -90,16 +90,18 @@ const ResultGraph: FunctionComponent<Props> = ({ result }): ReactElement => {
       <Title>オタクパラメーター</Title>
 
       <Body>
-        {result.parameters.map((parameter, i) => (
-          <Parameter key={parameter.label}>
-            <ParameterLabel>
-              <span>{parameter.label}</span>
-            </ParameterLabel>
-            <ParameterValue>
-              <GraphBar blue={i === 0} value={parameter.value} />
-            </ParameterValue>
-          </Parameter>
-        ))}
+        {result.parameters.map(
+          (parameter, i): ReactElement => (
+            <Parameter key={parameter.label}>
+              <ParameterLabel>
+                <span>{parameter.label}</span>
+              </ParameterLabel>
+              <ParameterValue>
+                <GraphBar blue={i === 0} value={parameter.value} />
+              </ParameterValue>
+            </Parameter>
+          )
+        )}
       </Body>
     </Container>
   )

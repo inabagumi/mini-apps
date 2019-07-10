@@ -124,7 +124,7 @@ interface Props {
 const Result: FunctionComponent<Props> = ({ location, data }): ReactElement => {
   const [isShared, setIsShared] = useState<boolean>(false)
 
-  useEffect(() => {
+  useEffect((): void => {
     const queryString =
       (typeof location !== 'undefined' && location.search) || ''
 

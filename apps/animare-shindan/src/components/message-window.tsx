@@ -26,7 +26,7 @@ const Root = styled.div`
   }
 `
 
-type Props = {
+interface Props {
   className?: string
 }
 
