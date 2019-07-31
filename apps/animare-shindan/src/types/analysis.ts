@@ -2,7 +2,9 @@ export interface AnalysisResult {
   attribute: string
   catchphrase: string
   embedHTML: string
-  id: string
+  fields: {
+    slug: string
+  }
   image?: {
     publicURL: string
   }

@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import React, { FunctionComponent, ReactElement } from 'react'
+import { Release } from '../types/release'
 
 const Content = styled.footer`
   align-items: center;
@@ -36,22 +37,18 @@ const Copyright = styled.p`
 `
 
 interface ReleaseData {
-  releases: {
+  allMarkdownRemark: {
     edges: {
-      node: {
-        frontmatter: {
-          title: string
-        }
-      }
+      node: Release
     }[]
   }
 }
 
 const Footer: FunctionComponent = (): ReactElement => {
-  const { releases }: ReleaseData = useStaticQuery(
+  const { allMarkdownRemark: releases }: ReleaseData = useStaticQuery(
     graphql`
       query {
-        releases: allMarkdownRemark(
+        allMarkdownRemark(
           filter: { fileAbsolutePath: { regex: "//releases/[^/]+.md$/" } }
           limit: 1
           sort: { fields: [frontmatter___date], order: DESC }

@@ -10,6 +10,7 @@ import React, {
 import { Helmet } from 'react-helmet'
 import Layout from '../components/layout'
 import ProgressBar from '../components/progress-bar'
+import { AnalysisResult } from '../types'
 
 const loading = keyframes`
   0% {
@@ -178,7 +179,7 @@ const PrevButton = styled.button<{ hide: boolean }>`
   height: 44px;
   justify-content: center;
   margin: 20px 0 0 4px;
-  opacity: ${(props): string => (props.hide ? 0 : 1)};
+  opacity: ${(props): number => (props.hide ? 0 : 1)};
   outline: 0;
   transition: opacity ease-in 0.2s;
   width: 140px;
@@ -224,15 +225,17 @@ const NowAnalysing = styled.div`
 
 interface Props {
   data: {
-    results: {
-      nodes: {
-        id: string
+    allResultsYaml: {
+      edges: {
+        node: AnalysisResult
       }[]
     }
-    questions: {
-      nodes: {
-        answers: string[]
-        title: string
+    allQuestionsYaml: {
+      edges: {
+        node: {
+          answers: string[]
+          title: string
+        }
       }[]
     }
   }
@@ -243,19 +246,21 @@ const Questions: FunctionComponent<Props> = ({ data }): ReactElement => {
   const [analysing, setAnalysing] = useState<boolean>(false)
 
   const handleAnswer = useCallback((): void => {
-    if (count < data.questions.nodes.length - 1) {
+    if (count < data.allQuestionsYaml.edges.length - 1) {
       setCount(count + 1)
     } else {
       setAnalysing(true)
 
-      const results = data.results.nodes.map((node): string => node.id)
-      const id = results[Math.floor(Math.random() * results.length)]
+      const results = data.allResultsYaml.edges.map(
+        ({ node }): string => node.fields.slug
+      )
+      const slug = results[Math.floor(Math.random() * results.length)]
 
       setTimeout((): void => {
-        navigate(`/s/${id}`)
+        navigate(slug)
       }, 1500)
     }
-  }, [count, data.questions.nodes.length, data.results.nodes])
+  }, [count, data.allQuestionsYaml.edges.length, data.allResultsYaml.edges])
 
   const handlePrev = useCallback((): void => {
     if (count < 1) return
@@ -273,29 +278,32 @@ const Questions: FunctionComponent<Props> = ({ data }): ReactElement => {
       <Question>
         <QuestionHeader>
           <Number>{`Q${count + 1}`}</Number>
-          <Title>{data.questions.nodes[count].title}</Title>
+          <Title>{data.allQuestionsYaml.edges[count].node.title}</Title>
         </QuestionHeader>
 
         <CounterContainer>
           <Counter>
-            {count < data.questions.nodes.length - 1 ? (
+            {count < data.allQuestionsYaml.edges.length - 1 ? (
               <>
                 残り
-                <mark>{data.questions.nodes.length - count}</mark>問
+                <mark>{data.allQuestionsYaml.edges.length - count}</mark>問
               </>
             ) : (
               <mark className="last">ラスト</mark>
             )}
           </Counter>
-          <ProgressBar max={data.questions.nodes.length} value={count + 1} />
+          <ProgressBar
+            max={data.allQuestionsYaml.edges.length}
+            value={count + 1}
+          />
         </CounterContainer>
 
         <Content>
           <AnswerContainer
             style={{ transform: `translateX(-${100 * count}%)` }}
           >
-            {data.questions.nodes.map(
-              (node, i): ReactElement => (
+            {data.allQuestionsYaml.edges.map(
+              ({ node }, i): ReactElement => (
                 <AnswerList
                   aria-hidden={count === i ? undefined : 'true'}
                   key={node.title}
@@ -331,16 +339,22 @@ export default Questions
 
 export const query = graphql`
   {
-    results: allResultsYaml {
-      nodes {
-        id
+    allResultsYaml {
+      edges {
+        node {
+          fields {
+            slug
+          }
+        }
       }
     }
 
-    questions: allQuestionsYaml {
-      nodes {
-        answers
-        title
+    allQuestionsYaml {
+      edges {
+        node {
+          answers
+          title
+        }
       }
     }
   }

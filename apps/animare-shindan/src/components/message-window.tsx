@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import React, { FunctionComponent, ReactElement } from 'react'
-import nanashi from '../images/nanashi.svg'
+import nanashi from '../assets/nanashi.svg'
 
 const Root = styled.div`
   background-color: #fff;

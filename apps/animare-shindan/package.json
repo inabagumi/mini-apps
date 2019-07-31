@@ -3,8 +3,6 @@
   "dependencies": {
     "@emotion/core": "^10.0.14",
     "@emotion/styled": "^10.0.14",
-    "@types/react": "^16.8.23",
-    "@types/react-helmet": "^5.0.8",
     "date-fns": "^2.0.0-beta.3",
     "gatsby": "^2.13.45",
     "gatsby-plugin-emotion": "^4.1.2",
@@ -13,18 +11,22 @@
     "gatsby-plugin-nprogress": "^2.1.2",
     "gatsby-plugin-offline": "^2.2.4",
     "gatsby-plugin-react-helmet": "^3.1.2",
+    "gatsby-plugin-remove-trailing-slashes": "^2.1.2",
     "gatsby-plugin-sitemap": "^2.2.4",
     "gatsby-plugin-typescript": "^2.1.2",
     "gatsby-source-filesystem": "^2.1.7",
     "gatsby-transformer-json": "^2.2.2",
     "gatsby-transformer-remark": "^2.6.10",
     "gatsby-transformer-yaml": "^2.2.4",
-    "react-helmet": "^5.2.1",
-    "typescript": "~3.5.3"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.1"
   },
   "description": "Shindan by AniMare",
   "devDependencies": {
     "@inabagumi/prettier-config": "^1.0.0",
+    "@types/react": "^16.8.23",
+    "@types/react-helmet": "^5.0.8",
     "@typescript-eslint/eslint-plugin": "^1.13.0",
     "@typescript-eslint/parser": "^1.13.0",
     "babel-eslint": "^10.0.2",
@@ -34,8 +36,7 @@
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^1.6.1",
     "prettier": "^1.18.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "typescript": "~3.5.3"
   },
   "eslintConfig": {
     "extends": [
@@ -47,13 +48,17 @@
     ],
     "overrides": [
       {
-        "files": ["*.js"],
+        "files": [
+          "*.js"
+        ],
         "rules": {
           "@typescript-eslint/no-var-requires": "off"
         }
       }
     ],
-    "plugins": ["react-hooks"],
+    "plugins": [
+      "react-hooks"
+    ],
     "rules": {
       "react/prop-types": "off",
       "react-hooks/exhaustive-deps": "error",
@@ -76,10 +81,10 @@
   },
   "scripts": {
     "build": "gatsby build",
+    "develop": "gatsby develop",
     "format": "prettier --ignore-path .gitignore --write \"./**/*.{js,md,ts,tsx,yaml}\"",
     "lint": "eslint --ext .js,.ts,.tsx  --ignore-path .gitignore .",
-    "now-build": "${npm_execpath} run build",
-    "start": "gatsby develop"
+    "now-build": "${npm_execpath} run build"
   },
   "version": "1.3.0"
 }

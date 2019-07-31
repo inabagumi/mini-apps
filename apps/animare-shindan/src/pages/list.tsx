@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet'
 import Header from '../components/header'
 import Layout from '../components/layout'
 import Message from '../components/message'
+import { Release } from '../types/release'
 
 const Content = styled.main`
   padding-top: 30px;
@@ -98,23 +99,14 @@ interface Props {
   data: {
     allMarkdownRemark: {
       edges: {
-        node: {
-          frontmatter: {
-            date: string
-            title: string
-          }
-          html: string
-          id: string
-        }
+        node: Release
       }[]
     }
   }
 }
 
 const List: FunctionComponent<Props> = ({ data }): ReactElement => {
-  const {
-    allMarkdownRemark: { edges: releaseData }
-  } = data
+  const { edges: releases } = data.allMarkdownRemark
 
   return (
     <Layout>
@@ -126,19 +118,17 @@ const List: FunctionComponent<Props> = ({ data }): ReactElement => {
 
       <Content>
         <Message>
-          {releaseData.map(
-            (item): ReactElement => {
-              const { node: release } = item
-
+          {releases.map(
+            ({ node }): ReactElement => {
               return (
-                <Section key={release.id}>
-                  <Time dateTime={release.frontmatter.date}>
-                    {format(new Date(release.frontmatter.date), 'yyyy.MM.dd')}
+                <Section key={node.id}>
+                  <Time dateTime={node.frontmatter.date}>
+                    {format(new Date(node.frontmatter.date), 'yyyy.MM.dd')}
                   </Time>
-                  <Title>{release.frontmatter.title}</Title>
+                  <Title>{node.frontmatter.title}</Title>
 
                   <SectionBody
-                    dangerouslySetInnerHTML={{ __html: release.html }}
+                    dangerouslySetInnerHTML={{ __html: node.html }}
                   />
                 </Section>
               )

@@ -1,9 +1,9 @@
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 import React, { FunctionComponent, ReactElement } from 'react'
+import lineLogo from '../assets/line.svg'
+import twitterLogo from '../assets/twitter.svg'
 import useSiteMetadata from '../hooks/use-site-metadata'
-import lineLogo from '../images/line.svg'
-import twitterLogo from '../images/twitter.svg'
 
 const Container = styled.header`
   align-items: center;

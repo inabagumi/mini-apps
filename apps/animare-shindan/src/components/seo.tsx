@@ -1,7 +1,7 @@
 import React, { FunctionComponent, ReactElement } from 'react'
 import { Helmet } from 'react-helmet'
+import mainVisual from '../assets/main-visual.jpg'
 import useSiteMetadata from '../hooks/use-site-metadata'
-import mainVisual from '../images/main-visual.jpg'
 
 interface Props {
   description?: string

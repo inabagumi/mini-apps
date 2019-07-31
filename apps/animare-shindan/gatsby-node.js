@@ -1,45 +1,55 @@
 const path = require('path')
-
-const resultTemplate = path.resolve('src', 'templates', 'result', 'index.tsx')
+const { createFilePath } = require('gatsby-source-filesystem')
 
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
 
-  const result = await graphql(`
-    {
-      results: allResultsYaml {
-        nodes {
-          id
+  const resultTemplate = path.resolve(
+    __dirname,
+    'src',
+    'templates',
+    'analysis-result.tsx'
+  )
+  const result = await graphql(
+    `
+      {
+        allResultsYaml {
+          edges {
+            node {
+              fields {
+                slug
+              }
+            }
+          }
         }
       }
-    }
-  `)
+    `
+  )
 
   if (result.errors) throw result.errors
 
-  result.data.results.nodes.forEach(node => {
+  result.data.allResultsYaml.edges.forEach(({ node }) => {
     createPage({
       component: resultTemplate,
-      context: { id: node.id },
-      path: `/s/${node.id}`
+      context: {
+        slug: node.fields.slug
+      },
+      path: node.fields.slug
     })
   })
 }
 
-exports.onCreatePage = ({ actions, page }) => {
-  const { createPage, deletePage } = actions
+exports.onCreateNode = ({ actions, getNode, node }) => {
+  const { createNodeField } = actions
 
-  return new Promise(resolve => {
-    const newPage = {
-      ...page,
-      path: page.path === '/' ? page.path : page.path.replace(/\/$/, '')
-    }
+  if (node.internal.type === 'ResultsYaml') {
+    const filePath = createFilePath({ node, getNode })
+    const [, , id] = filePath.split('/')
 
-    if (newPage.path !== page.path) {
-      deletePage(page)
-      createPage(newPage)
-    }
-
-    resolve()
-  })
+    createNodeField({
+      name: 'slug',
+      node,
+      value: `/s/${id}`
+    })
+  }
 }
