@@ -50,7 +50,6 @@ const Layout: FunctionComponent = ({ children }): ReactElement => (
     <Helmet defer={false} titleTemplate="%s | #あにまーれオタクタイプ診断">
       <html lang="ja" />
       <title>あなたのオタクタイプ診断 by あにまーれ</title>
-      <link href="/assets/icon-128x128.png" rel="icon" />
     </Helmet>
 
     <Global styles={globalStyles} />
