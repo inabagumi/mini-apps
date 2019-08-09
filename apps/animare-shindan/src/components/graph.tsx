@@ -82,7 +82,7 @@ interface Props {
   title: string
 }
 
-const Graph: FC<Props> = ({ parameters, title }) => {
+const Graph: FC<Props> = ({ parameters, title }): ReactElement => {
   return (
     <Container>
       <Title>{title}</Title>
