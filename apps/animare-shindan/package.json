@@ -18,8 +18,8 @@
     "gatsby-transformer-json": "^2.2.2",
     "gatsby-transformer-remark": "^2.6.12",
     "gatsby-transformer-yaml": "^2.2.4",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1"
   },
   "description": "Shindan by AniMare",
@@ -34,7 +34,7 @@
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
-    "eslint-plugin-react-hooks": "^1.6.1",
+    "eslint-plugin-react-hooks": "^1.7.0",
     "prettier": "^1.18.2",
     "typescript": "~3.5.3"
   },
