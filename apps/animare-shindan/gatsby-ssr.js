@@ -1,7 +1,4 @@
 import React from 'react'
-import { URL } from 'url'
-
-global.URL = URL
 
 export const onRenderBody = ({ setHeadComponents, setPostBodyComponents }) => {
   setHeadComponents([
