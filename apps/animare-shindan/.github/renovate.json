@@ -1,11 +1,3 @@
 {
-  "extends": [
-    "@inabagumi"
-  ],
-  "packageRules": [
-    {
-      "depTypeList": ["engines"],
-      "rangeStrategy": "auto"
-    }
-  ]
+  "extends": ["@inabagumi"]
 }
