@@ -1840,6 +1840,11 @@ babel-plugin-remove-graphql-queries@^2.7.3:
   resolved "https://registry.yarnpkg.com/babel-plugin-remove-graphql-queries/-/babel-plugin-remove-graphql-queries-2.7.3.tgz#01178cf925a09e67919d4b7180209055bb1920b7"
   integrity sha512-xuOzXil34XPhkIGE/1EmCyfPlMgX2sXBaNf3n+ico5pM3HNrKc8vHcng9CoK2jnSXEwoX5wASFfKZg1eNNdz1w==
 
+babel-plugin-remove-graphql-queries@^2.7.4:
+  version "2.7.4"
+  resolved "https://registry.yarnpkg.com/babel-plugin-remove-graphql-queries/-/babel-plugin-remove-graphql-queries-2.7.4.tgz#3d57063bacdf708a243e07403b67b88e7f3099c0"
+  integrity sha512-ZeyuATwk3jKo8IxApgSXSXfD2Pr4EbNvinsNSxs+/nefirUnHEi7KClW9lz2npczb85hIuJ5qzCSCU8RGBOttA==
+
 babel-plugin-syntax-dynamic-import@^6.18.0:
   version "6.18.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-dynamic-import/-/babel-plugin-syntax-dynamic-import-6.18.0.tgz#8d6a26229c83745a9982a441051572caa179b1da"
@@ -4773,10 +4778,10 @@ gatsby-plugin-emotion@^4.1.3:
     "@babel/runtime" "^7.0.0"
     "@emotion/babel-preset-css-prop" "^10.0.14"
 
-gatsby-plugin-google-analytics@^2.1.8:
-  version "2.1.8"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-2.1.8.tgz#889df3bff0228973aedacace5af2ce29fa850bf7"
-  integrity sha512-aPJMW58XpsisjjWmq71ukEv0LoUJe5I2M5yW8HVYLBYlPIBbzoozrKbYUXLU7Jz9ztp56hX9L+MtIdRiNwkKiQ==
+gatsby-plugin-google-analytics@^2.1.9:
+  version "2.1.9"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-2.1.9.tgz#14e077e2cf3c78516e3e56df91c3646ac4b5dd85"
+  integrity sha512-YceFMgLFzlOru1IzxGb0rxirePTkEcY7cz766SIRXE70ahNlEm6DroctjWVcaU2LVLURedQptYoKTykDbYzEcA==
   dependencies:
     "@babel/runtime" "^7.0.0"
 
@@ -4847,14 +4852,14 @@ gatsby-plugin-sitemap@^2.2.8:
     pify "^3.0.0"
     sitemap "^1.13.0"
 
-gatsby-plugin-typescript@^2.1.3:
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-typescript/-/gatsby-plugin-typescript-2.1.3.tgz#26a94d88e58750f5290609f59a5cff1f27c0a13b"
-  integrity sha512-Zad2WoIcNpzlEVMFFwP1tEa8tqq3qA2bP4ATs+ygapjFZPRGwCS44cUL6kAFQfZ2EjfGG2qRi9Ew7MMkS5+i6w==
+gatsby-plugin-typescript@^2.1.4:
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-typescript/-/gatsby-plugin-typescript-2.1.4.tgz#8d5b6888a037648de3c7f403dd2f74f08a82f55f"
+  integrity sha512-NDOx6hg1C7K2XwGK0vG1ROAFp5T5E4Mew+KHc4mpZ2EtnvWvP+ZtopkA3M/uK2rgAGRaXY+lEgPcW98/7TjO2A==
   dependencies:
     "@babel/preset-typescript" "^7.0.0"
     "@babel/runtime" "^7.0.0"
-    babel-plugin-remove-graphql-queries "^2.7.3"
+    babel-plugin-remove-graphql-queries "^2.7.4"
 
 gatsby-react-router-scroll@^2.1.5:
   version "2.1.5"
@@ -4865,10 +4870,10 @@ gatsby-react-router-scroll@^2.1.5:
     scroll-behavior "^0.9.10"
     warning "^3.0.0"
 
-gatsby-source-filesystem@^2.1.13:
-  version "2.1.13"
-  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.1.13.tgz#1ac9e3a64dc15c2dd45128a7434309b9a765a0f7"
-  integrity sha512-5TMJnevWvumCwD9c8m4ieAZtS3sMJyWfmlJe1x1Kzbnmgz/sUru+v3G0X35P9QbBApe2BLR0yhpSvSHfiDPTPw==
+gatsby-source-filesystem@^2.1.14:
+  version "2.1.14"
+  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.1.14.tgz#76a4a6510ee5957993c76a9d5a0e1514ed31f030"
+  integrity sha512-oumNHpfO3JUq4nUupMvh0Ix33WAHJr72zuEVN8LyEr+2IOTqS04lk3X+h/Y/IGRqHd81026Fkz0He2ensKmqYA==
   dependencies:
     "@babel/runtime" "^7.0.0"
     better-queue "^3.8.10"
@@ -4917,10 +4922,10 @@ gatsby-transformer-json@^2.2.4:
     "@babel/runtime" "^7.0.0"
     bluebird "^3.5.5"
 
-gatsby-transformer-remark@^2.6.17:
-  version "2.6.17"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-remark/-/gatsby-transformer-remark-2.6.17.tgz#5c61f76257b0141485db33d11fe718557e99a264"
-  integrity sha512-LZxBXQMZ+Q7HRLECMjGO9dCWwEz7Ct7rFdHH/jeqnOIQnVavDavjNjS5a//Xp+P2RU7SzoXcRqzHeFkHXJpibA==
+gatsby-transformer-remark@^2.6.18:
+  version "2.6.18"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-remark/-/gatsby-transformer-remark-2.6.18.tgz#0834017c5d11dccb80650d0b5e50feafc26c61fc"
+  integrity sha512-qPaNYzwYkQsSKS3ynJ2EWrI8jwAu/SBRvfVRMJI2mM6jKDWYhHIlKkzqZuOVVok1kKivagMLpZtJrDLvcDrthg==
   dependencies:
     "@babel/runtime" "^7.0.0"
     bluebird "^3.5.5"
