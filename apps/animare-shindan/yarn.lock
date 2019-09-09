@@ -4836,14 +4836,14 @@ gatsby-plugin-emotion@^4.1.5:
     "@babel/runtime" "^7.5.5"
     "@emotion/babel-preset-css-prop" "^10.0.17"
 
-gatsby-plugin-google-analytics@^2.1.14:
-  version "2.1.14"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-2.1.14.tgz#b7ad9020f1e47e8139d195997b6db044f882bf18"
-  integrity sha512-GCBnYjNMfu8Dd5USTS3qpE7I0Qxa9Hv3JzMan04U1Kk1ve8MNZ+vBW8qAQoVNOolyTCBqLbmaiGwC+aqqoVr+A==
+gatsby-plugin-google-analytics@^2.1.15:
+  version "2.1.15"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-2.1.15.tgz#49d9bc21992a6ecc675fcd351b00140cab50e829"
+  integrity sha512-K6luCp7UdPfNrWjsJ8W02neA4ajXfT6AV0+oTIqvR9Ldpu5mJUW3p5mVXpEwl85gm1J0Ng2lMChFHtfG7KkWYw==
   dependencies:
     "@babel/runtime" "^7.5.5"
 
-gatsby-plugin-manifest@^2.2.14:
+gatsby-plugin-manifest@^2.2.15:
   version "2.2.15"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.2.15.tgz#ad1574fa0375e37526b2a9368f7ea845082d42ee"
   integrity sha512-ttxKLUdfLmRZ17JnwzMLGSR9ILaLwOgCgcts6R2wJgj+UnmzKy8K3P8cNcw6dXlL+s90HTQ0IhCTSV5RyD1aog==
@@ -4861,7 +4861,7 @@ gatsby-plugin-nprogress@^2.1.5:
     "@babel/runtime" "^7.5.5"
     nprogress "^0.2.0"
 
-gatsby-plugin-offline@^3.0.3:
+gatsby-plugin-offline@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-offline/-/gatsby-plugin-offline-3.0.4.tgz#c7e3ab939fa07fbd613ebcccb88b21254bc23dab"
   integrity sha512-P0LK+I67/5D2oKJIQ0oxd/WJM+Ue8dfXuNl2q+fgemx+/tclowxN9rWJhTvw0ijTc662ANz9lEsjBL7kUZpznw==
@@ -4901,7 +4901,7 @@ gatsby-plugin-remove-trailing-slashes@^2.1.5:
   dependencies:
     "@babel/runtime" "^7.5.5"
 
-gatsby-plugin-sitemap@^2.2.10:
+gatsby-plugin-sitemap@^2.2.11:
   version "2.2.11"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-sitemap/-/gatsby-plugin-sitemap-2.2.11.tgz#0e6f372ae2710f3fa11ff9215ef3f11a20556539"
   integrity sha512-Tp3clZDISvSkhVj1vkKXl9BTpvJb9/SLOP3LDsjwXpubVOyFGb2LwuWF41fvTCRYKQXUOZodqWpcH0H0VXPFnw==
@@ -5018,10 +5018,10 @@ gatsby-transformer-yaml@^2.2.8:
     lodash "^4.17.15"
     unist-util-select "^1.5.0"
 
-gatsby@^2.15.9:
-  version "2.15.10"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.15.10.tgz#fa63a82dc92d7dbeb065659b547bf9be6bab3a14"
-  integrity sha512-X/bv+MCUNE3K24nCU4UHbsTBcHXmcYkz3JNYFwCRBPbUPIJxzMWmZRxnzX483rEYvHG7dO8xNs103YGRJe/4fQ==
+gatsby@^2.15.11:
+  version "2.15.11"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.15.11.tgz#8d66f47c35886455fa7be3ccd2fb1f751ed80ec0"
+  integrity sha512-jBVMhrSqUvnqD0Oy4f2kNdx38C/iFBMa/PRC7XdhK32Et/Um/uvwH3X8Lz8zB3lCjMFShFlgAIg2MhSDxrSzAA==
   dependencies:
     "@babel/code-frame" "^7.5.5"
     "@babel/core" "^7.5.5"
