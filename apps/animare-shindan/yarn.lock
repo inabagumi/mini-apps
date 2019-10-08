@@ -4773,10 +4773,10 @@ functional-red-black-tree@^1.0.1:
   resolved "https://registry.yarnpkg.com/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz#1b0ab3bd553b2a0d6399d29c0e3ea0b252078327"
   integrity sha1-GwqzvVU7Kg1jmdKcDj6gslIHgyc=
 
-gatsby-cli@^2.7.55:
-  version "2.7.55"
-  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-2.7.55.tgz#eec54a9e8af56b52c4437dbd908ad0b36a4095ee"
-  integrity sha512-9if+PMc0q0LpFeNUHDEuP0wFA1TFKQHi/+XcKacP5tWkTIf8nu1cDlNuVjybx65RXKwEN0KLp6ytu7uZ9Wwswg==
+gatsby-cli@^2.7.56:
+  version "2.7.56"
+  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-2.7.56.tgz#4ef7cb8bbe1e59d7138aaf428610629aa9a442cb"
+  integrity sha512-0Ht6G6CKhzpd/T8LoNr+VwntQNofHyf5BaVbPyx1su4/wK1DqYBdVteJHxMEZ2tEpdjgqrzb4hfxgNv6KrrZMQ==
   dependencies:
     "@babel/code-frame" "^7.5.5"
     "@babel/runtime" "^7.6.2"
@@ -4795,7 +4795,7 @@ gatsby-cli@^2.7.55:
     fs-exists-cached "^1.0.0"
     fs-extra "^8.1.0"
     gatsby-telemetry "^1.1.29"
-    hosted-git-info "^3.0.0"
+    hosted-git-info "^3.0.2"
     is-valid-path "^0.1.1"
     lodash "^4.17.15"
     meant "^1.0.1"
@@ -5044,10 +5044,10 @@ gatsby-transformer-yaml@^2.2.12:
     lodash "^4.17.15"
     unist-util-select "^1.5.0"
 
-gatsby@^2.15.30:
-  version "2.15.30"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.15.30.tgz#22d7606bab293a829a7d0bdc6129c7c19bbf64b7"
-  integrity sha512-LI3zu1Kiv1B6c8hBuOIrsIIre046bzJtH/lWfA1TM3m8zZbmupby+5Qg8rlqDYwIBSilOzNvcIoonMuxnj2bCw==
+gatsby@^2.15.31:
+  version "2.15.31"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.15.31.tgz#a9c4118b3859b3e1757d5022ff4dd8381554c325"
+  integrity sha512-YwcTb46vuMDzF2ugT07/ZV9FulECOBNwMJLm+tu1NY4RFqQz0A5PJTi3A70y+yv0Kml6JWaCUX3VhMwB7RXy3g==
   dependencies:
     "@babel/code-frame" "^7.5.5"
     "@babel/core" "^7.6.2"
@@ -5109,7 +5109,7 @@ gatsby@^2.15.30:
     flat "^4.1.0"
     fs-exists-cached "1.0.0"
     fs-extra "^8.1.0"
-    gatsby-cli "^2.7.55"
+    gatsby-cli "^2.7.56"
     gatsby-core-utils "^1.0.12"
     gatsby-graphiql-explorer "^0.2.22"
     gatsby-link "^2.2.18"
@@ -5153,7 +5153,7 @@ gatsby@^2.15.30:
     raw-loader "^0.5.1"
     react-dev-utils "^4.2.3"
     react-error-overlay "^3.0.0"
-    react-hot-loader "^4.12.14"
+    react-hot-loader "^4.12.15"
     redux "^4.0.4"
     redux-thunk "^2.3.0"
     semver "^5.7.1"
@@ -5728,10 +5728,10 @@ hosted-git-info@^2.1.4:
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.8.4.tgz#44119abaf4bc64692a16ace34700fed9c03e2546"
   integrity sha512-pzXIvANXEFrc5oFFXRMkbLPQ2rXRoDERwDLyrcUxGhaZhgP54BBSl9Oheh7Vv0T090cszWBxPjkQQ5Sq1PbBRQ==
 
-hosted-git-info@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-3.0.0.tgz#dd8af49cd01e73cc8e61ba13e217a772fd4ecd2d"
-  integrity sha512-zYSx1cP4MLsvKtTg8DF/PI6e6FHZ3wcawcTGsrLU2TM+UfD4jmSrn2wdQT16TFbH3lO4PIdjLG0E+cuYDgFD9g==
+hosted-git-info@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-3.0.2.tgz#8b7e3bd114b59b51786f8bade0f39ddc80275a97"
+  integrity sha512-ezZMWtHXm7Eb7Rq4Mwnx2vs79WUx2QmRg3+ZqeGroKzfDO+EprOcgRPYghsOP9JuYBfK18VojmRTGCg8Ma+ktw==
   dependencies:
     lru-cache "^5.1.1"
 
@@ -9178,10 +9178,10 @@ react-helmet@^5.2.1:
     react-fast-compare "^2.0.2"
     react-side-effect "^1.1.0"
 
-react-hot-loader@^4.12.14:
-  version "4.12.14"
-  resolved "https://registry.yarnpkg.com/react-hot-loader/-/react-hot-loader-4.12.14.tgz#81ca06ffda0b90aad15d6069339f73ed6428340a"
-  integrity sha512-ecxH4eBvEaJ9onT8vkEmK1FAAJUh1PqzGqds9S3k+GeihSp7nKAp4fOxytO+Ghr491LiBD38jaKyDXYnnpI9pQ==
+react-hot-loader@^4.12.15:
+  version "4.12.15"
+  resolved "https://registry.yarnpkg.com/react-hot-loader/-/react-hot-loader-4.12.15.tgz#6bf3984e52edbdf02ea8952777f53da1b3c68c95"
+  integrity sha512-sgkN6g+tgPE6xZzD0Ysqll7KUFYJbMX0DrczT5OxD6S7hZlSnmqSC3ceudwCkiDd65ZTtm+Ayk4Y9k5xxCvpOw==
   dependencies:
     fast-levenshtein "^2.0.6"
     global "^4.3.0"
