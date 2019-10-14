@@ -52,7 +52,8 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --ignore-path .gitignore --write \"./**/*.{js,md,ts,tsx,yaml}\"",
+    "format": "prettier --ignore-path .gitignore --write \"./**/*.{js,ts,tsx,yaml}\"",
+    "format-check": "prettier --ignore-path .gitignore --check \"./**/*.{js,ts,tsx,yaml}\"",
     "lint": "eslint --ext .js,.ts,.tsx  --ignore-path .gitignore .",
     "now-build": "${npm_execpath} run build"
   },
