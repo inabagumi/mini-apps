@@ -28,7 +28,7 @@
     "@inabagumi/prettier-config": "^1.1.0",
     "@types/react": "^16.9.13",
     "@types/react-helmet": "^5.0.14",
-    "eslint": "^6.7.1",
+    "eslint": "^6.7.2",
     "prettier": "^1.19.1",
     "typescript": "~3.7.2"
   },
