@@ -18,8 +18,8 @@
     "gatsby-transformer-json": "^2.2.26",
     "gatsby-transformer-remark": "^2.6.53",
     "gatsby-transformer-yaml": "^2.2.25",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
     "react-helmet": "^5.2.1"
   },
   "description": "Shindan by AniMare",
