@@ -36,7 +36,7 @@ module.exports = {
       options: {
         exclude: ['/questions'],
         serialize: ({ allSitePage, site }) =>
-          allSitePage.edges.map(edge => {
+          allSitePage.edges.map((edge) => {
             const path = edge.node.path.startsWith('/s/')
               ? `${edge.node.path}?s=true`
               : edge.node.path
