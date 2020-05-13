@@ -5403,10 +5403,10 @@ gatsby-recipes@^0.1.16:
     ws "^7.3.0"
     xstate "^4.9.1"
 
-gatsby-source-filesystem@^2.3.2:
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.3.2.tgz#169cb8e755ee1b13f18068c9e4109f6a7e4cf3ce"
-  integrity sha512-IpN9pAiWuG6eXZSyXaqmgyTMWj1V94qNEehWbltlkqmEyb48PcNp+j1ACqZ+vTYX43CVl2g4O9RwscZPD5aimQ==
+gatsby-source-filesystem@^2.3.3:
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.3.3.tgz#16a7be93c577da11137654cd04d4bcf0c73c1867"
+  integrity sha512-RsA6xssBKEel2e0Rj1hQZRNtPQ1lOh2ZlpXZr3CpE3W52F8bSrGnIBnqkmp4aPmtDGYgcw3okid0UNhBmUeiuA==
   dependencies:
     "@babel/runtime" "^7.9.6"
     better-queue "^3.8.10"
