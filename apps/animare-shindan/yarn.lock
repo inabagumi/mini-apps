@@ -944,7 +944,7 @@
     core-js-pure "^3.0.0"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.10.2", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
   version "7.10.2"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.10.2.tgz#d103f21f2602497d38348a32e008637d506db839"
   integrity sha512-6sF3uQw2ivImfVIl62RZ7MXhO2tap69WeWK57vAaimT6AZbE4FbqjdEJIN1UqoD6wI6B+1n9UiagafH1sxjOtg==
@@ -4381,13 +4381,6 @@ dom-converter@^0.2:
   dependencies:
     utila "~0.4"
 
-dom-helpers@^3.4.0:
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/dom-helpers/-/dom-helpers-3.4.0.tgz#e9b369700f959f62ecde5a6babde4bccd9169af8"
-  integrity sha512-LnuPJ+dwqKDIyotW1VzmOZ5TONUN7CwkCR5hrgawTUbkBGYdeoNLZo6nNfGkCrjtE1nXXaj7iMMpDa8/d9WoIA==
-  dependencies:
-    "@babel/runtime" "^7.1.2"
-
 dom-serializer@0, dom-serializer@^0.2.1:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/dom-serializer/-/dom-serializer-0.2.2.tgz#1afb81f533717175d478655debc5e332d9f9bb51"
@@ -5836,14 +5829,12 @@ gatsby-plugin-typescript@^2.4.6:
     "@babel/runtime" "^7.10.2"
     babel-plugin-remove-graphql-queries "^2.9.5"
 
-gatsby-react-router-scroll@^3.0.3:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/gatsby-react-router-scroll/-/gatsby-react-router-scroll-3.0.3.tgz#3c373fe96efe63259235bb5f5f79eca837ab19d1"
-  integrity sha512-VwwF1kmehIbjZek5MeMvf3SySoJUbUhQVQIsteWLqOPU3shz7b1sLpcLu3o0knUn7ml+8NB3rG2Yjb0a/LPBpA==
+gatsby-react-router-scroll@^3.0.4:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/gatsby-react-router-scroll/-/gatsby-react-router-scroll-3.0.4.tgz#8de6d0d09fc50541cd074ed9cf9f14124a4b1442"
+  integrity sha512-xGDAmwWw+BS6j8688DtIiZtbqmg4x1wQKyibj2cvm0O+q5NHXNmfX+a9HQbC7lf2pJHfjPW+YLoN5PX/sVP3uA==
   dependencies:
     "@babel/runtime" "^7.10.2"
-    scroll-behavior "^0.9.12"
-    warning "^3.0.0"
 
 gatsby-recipes@^0.1.41:
   version "0.1.41"
@@ -6002,10 +5993,10 @@ gatsby-transformer-yaml@^2.4.4:
     lodash "^4.17.15"
     unist-util-select "^1.5.0"
 
-gatsby@^2.23.5:
-  version "2.23.5"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.23.5.tgz#0d7b3c1e4074b382a3ea1d5808173c2c9eefbf14"
-  integrity sha512-0INXOY6YlLUX8k0CxQQ8fHqd89kfTkz6M1kiKhJCKtoQwJFnMTFu0mDO1mYBOj+yHI2Byjs/XyFbOagZnpJWcg==
+gatsby@^2.23.6:
+  version "2.23.6"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.23.6.tgz#01e626218b92570d0502eec00a187bb5acf5f0ec"
+  integrity sha512-lev/JqPb4yV9k84PJRdSqbOshWqypAa1VPkAKQvrS1UB6HQivT/gn4gxyACnhpR16/cE3WNrWRv45Ws8uN/6vw==
   dependencies:
     "@babel/code-frame" "^7.10.1"
     "@babel/core" "^7.10.2"
@@ -6075,7 +6066,7 @@ gatsby@^2.23.5:
     gatsby-link "^2.4.6"
     gatsby-plugin-page-creator "^2.3.10"
     gatsby-plugin-typescript "^2.4.6"
-    gatsby-react-router-scroll "^3.0.3"
+    gatsby-react-router-scroll "^3.0.4"
     gatsby-telemetry "^1.3.12"
     glob "^7.1.6"
     got "8.3.2"
@@ -11187,14 +11178,6 @@ schema-utils@^2.6.5:
     ajv "^6.12.2"
     ajv-keywords "^3.4.1"
 
-scroll-behavior@^0.9.12:
-  version "0.9.12"
-  resolved "https://registry.yarnpkg.com/scroll-behavior/-/scroll-behavior-0.9.12.tgz#1c22d273ec4ce6cd4714a443fead50227da9424c"
-  integrity sha512-18sirtyq1P/VsBX6O/vgw20Np+ngduFXEMO4/NDFXabdOKBL2kjPVUpz1y0+jm99EWwFJafxf5/tCyMeXt9Xyg==
-  dependencies:
-    dom-helpers "^3.4.0"
-    invariant "^2.2.4"
-
 section-matter@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/section-matter/-/section-matter-1.0.0.tgz#e9041953506780ec01d59f292a19c7b850b84167"
@@ -13054,13 +13037,6 @@ vue-template-compiler@^2.6.11:
   dependencies:
     de-indent "^1.0.2"
     he "^1.1.0"
-
-warning@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/warning/-/warning-3.0.0.tgz#32e5377cb572de4ab04753bdf8821c01ed605b7c"
-  integrity sha1-MuU3fLVy3kqwR1O9+IIcAe1gW3w=
-  dependencies:
-    loose-envify "^1.0.0"
 
 warning@^4.0.3:
   version "4.0.3"
