@@ -1,4 +1,5 @@
 /.cache/
+/.vercel/
 /build/
 /node_modules/
 /public/
