@@ -5584,10 +5584,10 @@ gatsby-transformer-json@^2.4.10:
     "@babel/runtime" "^7.10.3"
     bluebird "^3.7.2"
 
-gatsby-transformer-remark@^2.8.23:
-  version "2.8.23"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-remark/-/gatsby-transformer-remark-2.8.23.tgz#bb2408baf8d001ff574d146480f083455215def2"
-  integrity sha512-WkTHBDqpshmYtwEtCc9491cg8sGqsT/jmBh2KjqZRzap7v1PrC5DWMfdafbkli3UcvS0DEytB/ZtFDFtcRdr5g==
+gatsby-transformer-remark@^2.8.24:
+  version "2.8.24"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-remark/-/gatsby-transformer-remark-2.8.24.tgz#580c5906f4f356e6d1b6aecf62c77af7434d3e53"
+  integrity sha512-6DP4SVo8XDie6dxesBrkIi/zOpZF3RuMHAUTJj0kzPhPv15kARKGLoX1Lhy1gBWuZXGPxj6vV1AdA8vaJn/BYw==
   dependencies:
     "@babel/runtime" "^7.10.3"
     bluebird "^3.7.2"
@@ -5621,10 +5621,10 @@ gatsby-transformer-yaml@^2.4.9:
     lodash "^4.17.15"
     unist-util-select "^1.5.0"
 
-gatsby@^2.23.22:
-  version "2.23.22"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.23.22.tgz#40260b744c0d1537d5cad03c9d57f86fce67cf3f"
-  integrity sha512-3kQUOeYZDle17tgvBD8DHIv2jjjKISV6c/+adRPxIBtcsA/zc+otrLXDD8PL77jd2xiE8X7/lMq2O4LsvOx+qQ==
+gatsby@^2.23.23:
+  version "2.23.23"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.23.23.tgz#6797ba0c1b416bdfd86688155390055fd4b3185e"
+  integrity sha512-plpUIBEsXu1z7KeLCk/tgH+iQDugCB4QHNS1FJ8rXdOVq6+5qwRdHUI2cT1S8aRTizuQcfhoqAF5L2nnM+DNDw==
   dependencies:
     "@babel/code-frame" "^7.10.3"
     "@babel/core" "^7.10.3"
