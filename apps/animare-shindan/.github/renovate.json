@@ -1,12 +1,3 @@
 {
-  "extends": ["@inabagumi"],
-  "packageRules": [
-    {
-      "automerge": true,
-      "major": {
-        "automerge": false
-      },
-      "sourceUrlPrefixes": ["https://github.com/gatsbyjs/gatsby"]
-    }
-  ]
+  "extends": ["@inabagumi"]
 }
