@@ -126,18 +126,19 @@ const AnswerContainer = styled.div`
   transition: transform 0.3s ease;
 `
 
-const AnswerList = styled.div`
+type AnswerListProps = {
+  hide?: boolean
+}
+
+const AnswerList = styled.div<AnswerListProps>`
   box-sizing: border-box;
   flex-basis: 100%;
   flex-grow: 0;
   flex-shrink: 0;
   margin: 20px 0 0;
+  opacity: ${(props): number => (props.hide ? 0 : 1)};
   padding: 0 5px;
   transition: opacity 0.4s linear;
-
-  &[aria-hidden='true'] {
-    opacity: 0;
-  }
 `
 
 const Answer = styled.button`
@@ -305,7 +306,8 @@ const Questions: FunctionComponent<Props> = ({ data }): ReactElement => {
             {data.allQuestionsYaml.edges.map(
               ({ node }, i): ReactElement => (
                 <AnswerList
-                  aria-hidden={count === i ? undefined : 'true'}
+                  aria-hidden={count !== i ? 'true' : undefined}
+                  hide={count !== i}
                   key={node.title}
                 >
                   {node.answers.map(
