@@ -10,7 +10,7 @@ import React, {
 import { Helmet } from 'react-helmet'
 import Layout from '../components/layout'
 import ProgressBar from '../components/progress-bar'
-import { AnalysisResult } from '../types'
+import { AnalysisResult } from '../types/analysis'
 
 const loading = keyframes`
   0% {
@@ -131,6 +131,7 @@ type AnswerListProps = {
 }
 
 const AnswerList = styled.div<AnswerListProps>`
+  backface-visibility: hidden;
   box-sizing: border-box;
   flex-basis: 100%;
   flex-grow: 0;
