@@ -72,7 +72,7 @@ const Footer: FunctionComponent = (): ReactElement => {
       </ReleaseLink>
 
       <Copyright>
-        {'Copyright 2018-2019 '}
+        {'Copyright 2018-2020 '}
         <a href="https://haneru.dev/" rel="noopener noreferrer" target="_blank">
           Haneru Developers
         </a>
