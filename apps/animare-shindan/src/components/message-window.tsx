@@ -12,11 +12,11 @@ const Root = styled.div`
 
   ::before {
     background-color: transparent;
-    background-image: url("${nanashi}");
+    background-image: url('${nanashi}');
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    content: "";
+    content: '';
     display: block;
     height: 63px;
     left: 0;
