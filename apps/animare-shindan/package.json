@@ -26,7 +26,7 @@
   "devDependencies": {
     "@inabagumi/eslint-config-react": "^6.0.1",
     "@inabagumi/prettier-config": "^1.1.2",
-    "@types/react": "^16.9.50",
+    "@types/react": "^16.9.51",
     "@types/react-helmet": "^6.1.0",
     "eslint": "^7.10.0",
     "prettier": "^2.1.2",
