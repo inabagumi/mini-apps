@@ -1,7 +1,7 @@
 attribute: うさぎ
 catchphrase: “ALWAYS WATCHING YOU”
 embedHTML: <iframe width="560" height="315" src="https://www.youtube.com/embed/UxBN_XsU0tU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-image: ./images/hUuAaZpw.png
+image: /images/results/hUuAaZpw.png
 name: 因幡はねる
 parameters:
   - label: うさぎ

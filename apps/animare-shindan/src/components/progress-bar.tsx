@@ -1,5 +1,6 @@
-import styled from '@emotion/styled'
-import React, { FunctionComponent, ReactElement } from 'react'
+import React from 'react'
+import type { FC } from 'react'
+import styled from 'styled-components'
 
 const Container = styled.div`
   background-color: rgba(0, 0, 0, 0.3);
@@ -14,15 +15,12 @@ const Bar = styled.div`
   transition: width 0.3s ease-out;
 `
 
-interface Props {
+type Props = {
   max: number
   value: number
 }
 
-const ProgressBar: FunctionComponent<Props> = ({
-  max,
-  value
-}): ReactElement => (
+const ProgressBar: FC<Props> = ({ max, value }) => (
   <Container>
     <Bar style={{ width: `${(value / max) * 100}%` }} />
   </Container>

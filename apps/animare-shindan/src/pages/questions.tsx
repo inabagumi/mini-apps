@@ -1,40 +1,14 @@
-import { keyframes } from '@emotion/core'
-import styled from '@emotion/styled'
-import { graphql, navigate } from 'gatsby'
-import React, {
-  FunctionComponent,
-  ReactElement,
-  useCallback,
-  useState
-} from 'react'
-import { Helmet } from 'react-helmet'
+import type { GetStaticProps, NextPage } from 'next'
+import Head from 'next/head'
+import { useRouter } from 'next/router'
+import React, { useCallback, useState } from 'react'
+import styled, { keyframes } from 'styled-components'
 import Layout from '../components/layout'
 import ProgressBar from '../components/progress-bar'
-import { AnalysisResult } from '../types/analysis'
+import SEO from '../components/seo'
+import { Question, getAnalysisResultIDs, getQuestions } from '../utils/analysis'
 
-const loading = keyframes`
-  0% {
-    content: '';
-  }
-
-  25% {
-    content: '.';
-  }
-
-  50% {
-    content: '..';
-  }
-
-  75% {
-    content: '...';
-  }
-
-  100% {
-    content: '';
-  }
-`
-
-const Question = styled.section`
+const Container = styled.section`
   box-sizing: border-box;
   padding: 28px 0 200px;
 
@@ -46,7 +20,7 @@ const Question = styled.section`
   }
 `
 
-const QuestionHeader = styled.header`
+const Header = styled.header`
   align-items: center;
   box-sizing: border-box;
   display: flex;
@@ -137,7 +111,7 @@ const AnswerList = styled.div<AnswerListProps>`
   flex-grow: 0;
   flex-shrink: 0;
   margin: 20px 0 0;
-  opacity: ${(props): number => (props.hide ? 0 : 1)};
+  opacity: ${(props) => (props.hide ? 0 : 1)};
   padding: 0 5px;
   transition: opacity 0.4s linear;
 `
@@ -201,12 +175,38 @@ const PrevButton = styled.button<{ hide: boolean }>`
   }
 `
 
-const NowAnalysing = styled.div`
+const loading = keyframes`
+  0% {
+    content: '';
+  }
+
+  25% {
+    content: '.';
+  }
+
+  50% {
+    content: '..';
+  }
+
+  75% {
+    content: '...';
+  }
+
+  100% {
+    content: '';
+  }
+`
+
+type NowAnalysingProps = {
+  show?: boolean
+}
+
+const NowAnalysing = styled.div<NowAnalysingProps>`
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
   bottom: 0;
   color: #fff;
-  display: flex;
+  display: ${(props) => (props.show ? 'flex' : 'none')};
   font-size: 2rem;
   font-weight: 900;
   height: 100%;
@@ -225,140 +225,104 @@ const NowAnalysing = styled.div`
   }
 `
 
-interface Props {
-  data: {
-    allResultsYaml: {
-      edges: {
-        node: AnalysisResult
-      }[]
-    }
-    allQuestionsYaml: {
-      edges: {
-        node: {
-          answers: string[]
-          title: string
-        }
-      }[]
-    }
-  }
+type Props = {
+  questions: Question[]
+  results: string[]
 }
 
-const Questions: FunctionComponent<Props> = ({ data }): ReactElement => {
-  const [count, setCount] = useState<number>(0)
-  const [analysing, setAnalysing] = useState<boolean>(false)
+const Questions: NextPage<Props> = ({ questions, results }) => {
+  const [count, setCount] = useState(0)
+  const [analysing, setAnalysing] = useState(false)
+  const router = useRouter()
 
-  const handleAnswer = useCallback((): void => {
-    if (count < data.allQuestionsYaml.edges.length - 1) {
-      setCount(count + 1)
+  const handleAnswer = useCallback(() => {
+    if (count < questions.length - 1) {
+      setCount((count) => count + 1)
     } else {
       setAnalysing(true)
 
-      const results = data.allResultsYaml.edges.map(
-        ({ node }): string => node.fields.slug
-      )
       const slug = results[Math.floor(Math.random() * results.length)]
 
-      setTimeout((): void => {
-        navigate(slug)
-      }, 1500)
+      setTimeout(() => {
+        void router.push(`/s/${slug}`)
+      }, 1_500)
     }
-  }, [count, data.allQuestionsYaml.edges.length, data.allResultsYaml.edges])
+  }, [count, questions.length, results, router])
 
-  const handlePrev = useCallback((): void => {
-    if (count < 1) return
-
-    setCount(count - 1)
-  }, [count])
+  const handlePrev = useCallback(() => {
+    setCount((count) => count - 1)
+  }, [])
 
   return (
     <Layout>
-      <Helmet defer={false}>
-        <title>診断中...</title>
+      <Head>
         <meta content="noindex,follow" name="robots" />
-      </Helmet>
+      </Head>
 
-      <Question>
-        <QuestionHeader>
+      <SEO title="診断中..." />
+
+      <Container>
+        <Header>
           <Number>{`Q${count + 1}`}</Number>
-          <Title>{data.allQuestionsYaml.edges[count].node.title}</Title>
-        </QuestionHeader>
+          <Title>{questions[count].title}</Title>
+        </Header>
 
         <CounterContainer>
           <Counter>
-            {count < data.allQuestionsYaml.edges.length - 1 ? (
+            {count < questions.length - 1 ? (
               <>
                 残り
-                <mark>{data.allQuestionsYaml.edges.length - count}</mark>問
+                <mark>{questions.length - count}</mark>問
               </>
             ) : (
               <mark className="last">ラスト</mark>
             )}
           </Counter>
-          <ProgressBar
-            max={data.allQuestionsYaml.edges.length}
-            value={count + 1}
-          />
+          <ProgressBar max={questions.length} value={count + 1} />
         </CounterContainer>
 
         <Content>
           <AnswerContainer
             style={{ transform: `translateX(-${100 * count}%)` }}
           >
-            {data.allQuestionsYaml.edges.map(
-              ({ node }, i): ReactElement => (
-                <AnswerList
-                  aria-hidden={count !== i ? 'true' : undefined}
-                  hide={count !== i}
-                  key={node.title}
-                >
-                  {node.answers.map(
-                    (answer, i): ReactElement => (
-                      <Answer key={`answer-${i}`} onClick={handleAnswer}>
-                        {answer}
-                      </Answer>
-                    )
-                  )}
-                </AnswerList>
-              )
-            )}
+            {questions.map((question, i) => (
+              <AnswerList
+                aria-hidden={count !== i ? 'true' : undefined}
+                hide={count !== i}
+                key={question.title}
+              >
+                {question.answers.map((answer, i) => (
+                  <Answer key={`answer-${i}`} onClick={handleAnswer}>
+                    {answer}
+                  </Answer>
+                ))}
+              </AnswerList>
+            ))}
           </AnswerContainer>
         </Content>
 
         <PrevButton hide={count < 1} onClick={handlePrev} type="button">
           1つ前に戻る
         </PrevButton>
-      </Question>
+      </Container>
 
-      {analysing && (
-        <NowAnalysing>
-          <p>あなたのオタクタイプを分析中</p>
-        </NowAnalysing>
-      )}
+      <NowAnalysing show={analysing}>
+        <p>あなたのオタクタイプを分析中</p>
+      </NowAnalysing>
     </Layout>
   )
 }
 
 export default Questions
 
-export const query = graphql`
-  {
-    allResultsYaml {
-      edges {
-        node {
-          fields {
-            slug
-          }
-        }
-      }
-    }
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const questions = await getQuestions()
+  const results = await getAnalysisResultIDs()
 
-    allQuestionsYaml {
-      edges {
-        node {
-          answers
-          title
-        }
-      }
+  return {
+    props: {
+      questions,
+      results
     }
   }
-`
+}

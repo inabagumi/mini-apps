@@ -1,7 +1,7 @@
 attribute: うさぎ
 catchphrase: ねるちゃんですよ～！
 embedHTML: <iframe width="560" height="315" src="https://www.youtube.com/embed/cjoo08sI76w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-image: ./images/rKAeiUil.png
+image: /images/results/rKAeiUil.png
 name: 因幡はねる
 parameters:
   - label: うさぎ

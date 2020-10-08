@@ -1,7 +1,7 @@
 attribute: 彼女
 catchphrase: 今日は私と花火大会デートしよっか？
 embedHTML: <iframe width="560" height="315" src="https://www.youtube.com/embed/y6uNpxyqxL8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-image: ./images/xGr4nzdz.png
+image: /images/results/xGr4nzdz.png
 name: 因幡はねる
 parameters:
   - label: 彼女

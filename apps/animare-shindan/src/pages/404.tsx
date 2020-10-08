@@ -1,9 +1,10 @@
-import styled from '@emotion/styled'
-import React, { FunctionComponent, ReactElement } from 'react'
-import { Helmet } from 'react-helmet'
+import type { NextPage } from 'next'
+import React from 'react'
+import styled from 'styled-components'
 import Header from '../components/header'
 import Layout from '../components/layout'
 import Message from '../components/message'
+import SEO from '../components/seo'
 
 const Title = styled.h1`
   font-size: 2rem;
@@ -16,11 +17,9 @@ const Description = styled.p`
   margin: 10px 24px 0;
 `
 
-const NotFound: FunctionComponent = (): ReactElement => (
+const NotFound: NextPage = () => (
   <Layout>
-    <Helmet defer={false}>
-      <title>404 Not found</title>
-    </Helmet>
+    <SEO title="404 Not found" />
 
     <Header />
 

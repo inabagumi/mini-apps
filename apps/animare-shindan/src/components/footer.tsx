@@ -1,7 +1,8 @@
-import styled from '@emotion/styled'
-import { Link, graphql, useStaticQuery } from 'gatsby'
-import React, { FunctionComponent, ReactElement } from 'react'
-import { Release } from '../types/release'
+import Link from 'next/link'
+import React from 'react'
+import type { FC } from 'react'
+import styled from 'styled-components'
+import { version } from '../../package.json'
 
 const Content = styled.footer`
   align-items: center;
@@ -13,7 +14,7 @@ const Content = styled.footer`
   padding: 20px 12px 32px;
 `
 
-const ReleaseLink = styled(Link)`
+const ReleaseLink = styled.a`
   color: #000;
   display: block;
   font-size: 1.2rem;
@@ -36,40 +37,14 @@ const Copyright = styled.p`
   }
 `
 
-interface ReleaseData {
-  allMarkdownRemark: {
-    edges: {
-      node: Release
-    }[]
-  }
-}
-
-const Footer: FunctionComponent = (): ReactElement => {
-  const { allMarkdownRemark: releases }: ReleaseData = useStaticQuery(
-    graphql`
-      query {
-        allMarkdownRemark(
-          filter: { fileAbsolutePath: { regex: "//releases/[^/]+.md$/" } }
-          limit: 1
-          sort: { fields: [frontmatter___date], order: DESC }
-        ) {
-          edges {
-            node {
-              frontmatter {
-                title
-              }
-            }
-          }
-        }
-      }
-    `
-  )
-
+const Footer: FC = () => {
   return (
     <Content>
-      <ReleaseLink to="/list">
-        {releases.edges[0].node.frontmatter.title}
-      </ReleaseLink>
+      <Link href="/list" passHref prefetch={false}>
+        <ReleaseLink>
+          Version {version.split('.').slice(0, 2).join('.')}
+        </ReleaseLink>
+      </Link>
 
       <Copyright>
         {'Copyright 2018-2020 '}

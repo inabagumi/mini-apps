@@ -1,5 +1,6 @@
-import styled from '@emotion/styled'
-import React, { FC, ReactElement } from 'react'
+import React from 'react'
+import type { FC } from 'react'
+import styled from 'styled-components'
 
 const Image = styled.img`
   border: solid #14b9ff 2px;
@@ -17,11 +18,11 @@ const Image = styled.img`
   }
 `
 
-interface Props {
+type Props = {
   src: string
 }
 
-const Avatar: FC<Props> = ({ src }): ReactElement => {
+const Avatar: FC<Props> = ({ src }) => {
   return <Image alt="" height="128" src={src} width="128" />
 }
 

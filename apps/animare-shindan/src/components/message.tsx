@@ -1,5 +1,6 @@
-import styled from '@emotion/styled'
-import React, { FunctionComponent, ReactElement } from 'react'
+import React from 'react'
+import type { FC } from 'react'
+import styled from 'styled-components'
 
 const Container = styled.div`
   background-color: #fff;
@@ -19,7 +20,7 @@ const Container = styled.div`
   }
 `
 
-const Message: FunctionComponent = ({ children }): ReactElement => {
+const Message: FC = ({ children }) => {
   return <Container>{children}</Container>
 }
 

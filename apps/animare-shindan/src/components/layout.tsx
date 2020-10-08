@@ -1,10 +1,9 @@
-import { Global, css } from '@emotion/core'
-import styled from '@emotion/styled'
-import React, { FunctionComponent, ReactElement } from 'react'
-import { Helmet } from 'react-helmet'
+import React from 'react'
+import type { FC } from 'react'
+import styled, { createGlobalStyle } from 'styled-components'
 import Footer from './footer'
 
-const globalStyles = css`
+const GlobalStyle = createGlobalStyle`
   html {
     background-color: #0588f7;
     background-image: repeating-linear-gradient(
@@ -45,14 +44,9 @@ const Content = styled.div`
   }
 `
 
-const Layout: FunctionComponent = ({ children }): ReactElement => (
+const Layout: FC = ({ children }) => (
   <>
-    <Helmet defer={false} titleTemplate="%s | #あにまーれオタクタイプ診断">
-      <html lang="ja" />
-      <title>あなたのオタクタイプ診断 by あにまーれ</title>
-    </Helmet>
-
-    <Global styles={globalStyles} />
+    <GlobalStyle />
 
     <Wrapper>
       <Content>{children}</Content>

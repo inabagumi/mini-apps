@@ -1,7 +1,7 @@
 attribute: ゲーマー
 catchphrase: やった！やった！倒した～！
 embedHTML: <iframe width="560" height="315" src="https://www.youtube.com/embed/TzdMmvzYtCQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-image: ./images/jk54nVLu.png
+image: /images/results/jk54nVLu.png
 name: 因幡はねる
 parameters:
   - label: 努力

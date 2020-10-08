@@ -1,5 +1,6 @@
-import styled from '@emotion/styled'
-import React, { FunctionComponent, ReactElement } from 'react'
+import React from 'react'
+import type { FC } from 'react'
+import styled from 'styled-components'
 import nanashi from '../assets/nanashi.svg'
 
 const Root = styled.div`
@@ -26,13 +27,12 @@ const Root = styled.div`
   }
 `
 
-interface Props {
+type Props = {
   className?: string
 }
 
-const MessageWindow: FunctionComponent<Props> = ({
-  children,
-  className
-}): ReactElement => <Root className={className}>{children}</Root>
+const MessageWindow: FC<Props> = ({ children, className }) => (
+  <Root className={className}>{children}</Root>
+)
 
 export default MessageWindow

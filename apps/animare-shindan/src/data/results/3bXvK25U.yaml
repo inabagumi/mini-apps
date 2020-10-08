@@ -1,7 +1,7 @@
 attribute: メイド
 catchphrase: おかえりなさいませ♪ご主人さま！
 embedHTML: <iframe width="560" height="315" src="https://www.youtube.com/embed/5iLMsnNWuxY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-image: ./images/3bXvK25U.png
+image: /images/results/3bXvK25U.png
 name: 因幡はねる
 parameters:
   - label: メイド

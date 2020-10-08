@@ -1,12 +1,15 @@
-import styled from '@emotion/styled'
 import { format } from 'date-fns'
-import { graphql } from 'gatsby'
-import React, { FunctionComponent, ReactElement } from 'react'
-import { Helmet } from 'react-helmet'
+import type { GetStaticProps } from 'next'
+import React from 'react'
+import type { FC } from 'react'
+import remark from 'remark'
+import html from 'remark-html'
+import styled from 'styled-components'
 import Header from '../components/header'
 import Layout from '../components/layout'
 import Message from '../components/message'
-import { Release } from '../types/release'
+import SEO from '../components/seo'
+import { Release, getAllReleases } from '../utils/releases'
 
 const Content = styled.main`
   padding-top: 30px;
@@ -95,45 +98,33 @@ const SectionBody = styled.div`
   }
 `
 
-interface Props {
-  data: {
-    allMarkdownRemark: {
-      edges: {
-        node: Release
-      }[]
-    }
-  }
+type Props = {
+  releases: Release[]
 }
 
-const List: FunctionComponent<Props> = ({ data }): ReactElement => {
-  const { edges: releases } = data.allMarkdownRemark
-
+const List: FC<Props> = ({ releases }) => {
   return (
     <Layout>
-      <Helmet defer={false}>
-        <title>お知らせ</title>
-      </Helmet>
+      <SEO title="お知らせ" />
 
       <Header />
 
       <Content>
         <Message>
-          {releases.map(
-            ({ node }): ReactElement => {
-              return (
-                <Section key={node.id}>
-                  <Time dateTime={node.frontmatter.date}>
-                    {format(new Date(node.frontmatter.date), 'yyyy.MM.dd')}
-                  </Time>
-                  <Title>{node.frontmatter.title}</Title>
+          {releases.map((release) => {
+            return (
+              <Section key={release.slug}>
+                <Time dateTime={release.frontmatter.date}>
+                  {format(new Date(release.frontmatter.date), 'yyyy.MM.dd')}
+                </Time>
+                <Title>{release.frontmatter.title}</Title>
 
-                  <SectionBody
-                    dangerouslySetInnerHTML={{ __html: node.html }}
-                  />
-                </Section>
-              )
-            }
-          )}
+                <SectionBody
+                  dangerouslySetInnerHTML={{ __html: release.content }}
+                />
+              </Section>
+            )
+          })}
         </Message>
       </Content>
     </Layout>
@@ -142,22 +133,23 @@ const List: FunctionComponent<Props> = ({ data }): ReactElement => {
 
 export default List
 
-export const query = graphql`
-  {
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "//releases/[^/]+.md$/" } }
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            date
-            title
-          }
-          html
-          id
-        }
-      }
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const releases = await getAllReleases()
+  const parsedReleases = await Promise.all(
+    releases.map((release) =>
+      remark()
+        .use(html)
+        .process(release.content)
+        .then((content) => ({
+          ...release,
+          content: content.toString()
+        }))
+    )
+  )
+
+  return {
+    props: {
+      releases: parsedReleases
     }
   }
-`
+}

@@ -1,6 +1,7 @@
-import styled from '@emotion/styled'
-import { Link } from 'gatsby'
-import React, { FunctionComponent, ReactElement } from 'react'
+import type { NextPage } from 'next'
+import Link from 'next/link'
+import React from 'react'
+import styled from 'styled-components'
 import Header from '../components/header'
 import Layout from '../components/layout'
 import Message from '../components/message'
@@ -65,7 +66,7 @@ const Intro = styled.p`
   }
 `
 
-const Button = styled(Link)`
+const Button = styled.a`
   align-items: center;
   background-color: #0588f7;
   border: solid #000 4px;
@@ -105,7 +106,7 @@ const Disclaimer = styled.p`
   }
 `
 
-const Index: FunctionComponent = (): ReactElement => (
+const Index: NextPage = () => (
   <Layout>
     <SEO pathname="/" />
 
@@ -126,9 +127,9 @@ const Index: FunctionComponent = (): ReactElement => (
         </Description>
 
         <Intro>アナタはどんなオタクタイプ?</Intro>
-        <Button role="button" to="/questions">
-          診断スタート!
-        </Button>
+        <Link href="/questions" passHref>
+          <Button role="button">診断スタート!</Button>
+        </Link>
 
         <Disclaimer>
           ※このサービスは

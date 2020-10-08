@@ -1,6 +1,4 @@
-/.cache/
+/.next/
 /.vercel/
-/build/
 /node_modules/
-/public/
 yarn-error.log

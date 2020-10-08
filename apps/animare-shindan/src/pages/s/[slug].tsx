@@ -1,15 +1,21 @@
-import styled from '@emotion/styled'
-import { Link, graphql } from 'gatsby'
-import React, { FC, ReactElement, useEffect, useState } from 'react'
-import nanashiAvatar from '../assets/avatar.svg'
-import Avatar from '../components/avatar'
-import Graph from '../components/graph'
-import Layout from '../components/layout'
-import MessageWindow from '../components/message-window'
-import SEO from '../components/seo'
-import useSiteMetadata from '../hooks/use-site-metadata'
-import { AnalysisResult } from '../types/analysis'
-import generateTweetURL from '../utils/generateTweetURL'
+import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
+import Link from 'next/link'
+import React, { useEffect, useState } from 'react'
+import styled from 'styled-components'
+import { homepage as siteURL } from '../../../package.json'
+import nanashiAvatar from '../../assets/avatar.svg'
+import Avatar from '../../components/avatar'
+import Graph from '../../components/graph'
+import Layout from '../../components/layout'
+import MessageWindow from '../../components/message-window'
+import SEO from '../../components/seo'
+import {
+  Result as AnalysisResult,
+  getAnalysisResult,
+  getAnalysisResultIDs
+} from '../../utils/analysis'
+import { createTweetURL } from '../../utils/share'
+import NotFound from '../404'
 
 const Content = styled.main`
   box-sizing: border-box;
@@ -147,13 +153,14 @@ const ShareButton = styled.a`
   margin: 40px auto 0;
   text-decoration: none;
   width: 100%;
+
   @media (min-width: 500px) {
     font-size: 1.8rem;
     width: 320px;
   }
 `
 
-const RetryButton = styled(Link)`
+const RetryButton = styled.a`
   align-items: center;
   background-color: #fff;
   border: solid #ececec 3px;
@@ -174,7 +181,7 @@ const RetryButton = styled(Link)`
   }
 `
 
-const Button = styled(Link)`
+const Button = styled.a`
   align-items: center;
   background-color: #fff;
   border: solid #14b9ff 4px;
@@ -351,30 +358,26 @@ const MessageButton = styled.a`
   }
 `
 
-interface Props {
-  data: {
-    resultsYaml: AnalysisResult
-  }
-  location: Location
+type Props = {
+  result?: AnalysisResult
 }
 
-const AnalysisResultTemplate: FC<Props> = ({
-  location,
-  data
-}): ReactElement => {
-  const [isShared, setIsShared] = useState<boolean>(false)
+const AnalysisResultTemplate: NextPage<Props> = ({ result }) => {
+  const [isShared, setIsShared] = useState(true)
 
-  useEffect((): void => {
+  useEffect(() => {
     const queryString =
       (typeof location !== 'undefined' && location.search) || ''
 
     setIsShared(queryString.indexOf('s=true') < 1)
-  }, [location])
+  }, [])
 
-  const { resultsYaml: result } = data
-  const { siteUrl } = useSiteMetadata()
-  const path = `${result.fields.slug}?s=true`
-  const url = `${siteUrl}${path}`
+  if (!result) {
+    return <NotFound />
+  }
+
+  const path = `/s/${result.slug}?s=true`
+  const url = new URL(path, siteURL).toString()
 
   return (
     <Layout>
@@ -412,9 +415,9 @@ const AnalysisResultTemplate: FC<Props> = ({
           {isShared && (
             <>
               <ShareButton
-                href={generateTweetURL(
+                href={createTweetURL(
                   url,
-                  `アナタは${result.type}系【${result.attribute}好き】です！`
+                  `アナタは${result.type}系【${result.attribute}好き】です！\n`
                 )}
                 rel="noopener noreferrer"
                 role="button"
@@ -422,9 +425,9 @@ const AnalysisResultTemplate: FC<Props> = ({
               >
                 診断結果をツイートする
               </ShareButton>
-              <RetryButton role="button" to="/">
-                もう一度診断する
-              </RetryButton>
+              <Link href="/" passHref>
+                <RetryButton role="button">もう一度診断する</RetryButton>
+              </Link>
             </>
           )}
 
@@ -432,9 +435,9 @@ const AnalysisResultTemplate: FC<Props> = ({
         </MessageBox>
 
         {!isShared && (
-          <Button role="button" to="/">
-            オタクタイプを診断してみる
-          </Button>
+          <Link href="/" passHref>
+            <Button role="button">オタクタイプを診断してみる</Button>
+          </Link>
         )}
 
         <SubTitle>
@@ -496,9 +499,9 @@ const AnalysisResultTemplate: FC<Props> = ({
             </MessageButton>
           </Message>
 
-          <Button role="button" to="/">
-            オタクタイプを診断してみる
-          </Button>
+          <Link href="/" passHref>
+            <Button role="button">オタクタイプを診断してみる</Button>
+          </Link>
         </Footer>
       </Content>
     </Layout>
@@ -507,27 +510,33 @@ const AnalysisResultTemplate: FC<Props> = ({
 
 export default AnalysisResultTemplate
 
-export const pageQuery = graphql`
-  query ResultBySlug($slug: String!) {
-    resultsYaml(fields: { slug: { eq: $slug } }) {
-      attribute
-      catchphrase
-      embedHTML
-      fields {
-        slug
-      }
-      id
-      image {
-        publicURL
-      }
-      name
-      parameters {
-        label
-        value
-      }
-      type
-      twitter
-      youtube
+type Params = {
+  slug: string
+}
+
+export const getStaticProps: GetStaticProps<Props, Params> = async ({
+  params
+}) => {
+  if (!params?.slug) {
+    return {
+      props: {}
     }
   }
-`
+
+  const result = await getAnalysisResult(params.slug)
+
+  return {
+    props: {
+      result
+    }
+  }
+}
+
+export const getStaticPaths: GetStaticPaths<Params> = async () => {
+  const ids = await getAnalysisResultIDs()
+
+  return {
+    fallback: false,
+    paths: ids.map((id) => `/s/${id}`)
+  }
+}

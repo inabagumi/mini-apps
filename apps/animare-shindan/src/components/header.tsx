@@ -1,9 +1,11 @@
-import styled from '@emotion/styled'
-import { Link } from 'gatsby'
-import React, { FunctionComponent, ReactElement } from 'react'
+import Link from 'next/link'
+import React from 'react'
+import type { FC } from 'react'
+import styled from 'styled-components'
+import { homepage as siteURL } from '../../package.json'
 import lineLogo from '../assets/line.svg'
 import twitterLogo from '../assets/twitter.svg'
-import useSiteMetadata from '../hooks/use-site-metadata'
+import { createLineShareURL, createTweetURL } from '../utils/share'
 
 const Container = styled.header`
   align-items: center;
@@ -15,7 +17,7 @@ const Container = styled.header`
   width: 100%;
 `
 
-const Logo = styled(Link)`
+const Logo = styled.a`
   background-color: #212121;
   border-radius: 3px;
   color: #fff;
@@ -67,38 +69,18 @@ const ShareLogo = styled.img`
   }
 `
 
-const createLineShareURL = (url: string): string => {
-  const lineShareURL = new URL(
-    '/lineit/share',
-    'https://social-plugins.line.me'
-  )
-  lineShareURL.searchParams.set('url', url)
-
-  return lineShareURL.toString()
-}
-
-const createTweetURL = (url: string): string => {
-  const tweetURL = new URL('/intent/tweet', 'https://twitter.com')
-  tweetURL.searchParams.set('hashtags', 'あにまーれオタクタイプ診断')
-  tweetURL.searchParams.set('text', '')
-  tweetURL.searchParams.set('url', url)
-
-  return tweetURL.toString()
-}
-
-const Header: FunctionComponent = (): ReactElement => {
-  const { siteUrl } = useSiteMetadata()
-  const url = new URL('/', siteUrl).toString()
-
+const Header: FC = () => {
   return (
     <Container>
-      <Logo to="/">ANiMARE</Logo>
+      <Link href="/" passHref prefetch={false}>
+        <Logo>ANiMARE</Logo>
+      </Link>
 
       <Navigation>
         <ul>
           <li>
             <ShareButton
-              href={createTweetURL(url)}
+              href={createTweetURL(new URL('/', siteURL).toString())}
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -112,7 +94,7 @@ const Header: FunctionComponent = (): ReactElement => {
           </li>
           <li>
             <ShareButton
-              href={createLineShareURL(url)}
+              href={createLineShareURL(new URL('/', siteURL).toString())}
               rel="noopener noreferrer"
               target="_blank"
             >
