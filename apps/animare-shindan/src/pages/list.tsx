@@ -2,13 +2,12 @@ import { format } from 'date-fns'
 import type { GetStaticProps } from 'next'
 import React from 'react'
 import type { FC } from 'react'
-import remark from 'remark'
-import html from 'remark-html'
 import styled from 'styled-components'
 import Header from '../components/header'
 import Layout from '../components/layout'
 import Message from '../components/message'
 import SEO from '../components/seo'
+import { convert } from '../utils/markdown'
 import { Release, getAllReleases } from '../utils/releases'
 
 const Content = styled.main`
@@ -114,10 +113,10 @@ const List: FC<Props> = ({ releases }) => {
           {releases.map((release) => {
             return (
               <Section key={release.slug}>
-                <Time dateTime={release.frontmatter.date}>
-                  {format(new Date(release.frontmatter.date), 'yyyy.MM.dd')}
+                <Time dateTime={release.date}>
+                  {format(new Date(release.date), 'yyyy.MM.dd')}
                 </Time>
-                <Title>{release.frontmatter.title}</Title>
+                <Title>{release.title}</Title>
 
                 <SectionBody
                   dangerouslySetInnerHTML={{ __html: release.content }}
@@ -137,19 +136,17 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const releases = await getAllReleases()
   const parsedReleases = await Promise.all(
     releases.map((release) =>
-      remark()
-        .use(html)
-        .process(release.content)
-        .then((content) => ({
-          ...release,
-          content: content.toString()
-        }))
+      convert(release.content).then((content) => ({
+        ...release,
+        content
+      }))
     )
   )
 
   return {
     props: {
       releases: parsedReleases
-    }
+    },
+    revalidate: 5
   }
 }
