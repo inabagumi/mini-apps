@@ -20,3 +20,5 @@ jobs:
       - run: yarn format-check
       - run: yarn lint
       - run: yarn build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
