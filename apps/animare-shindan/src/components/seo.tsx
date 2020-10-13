@@ -37,7 +37,7 @@ const SEO: FC<Props> = ({
             content={new URL(image ?? mainVisual, siteUrl).toString()}
             property="og:image"
           />
-          <meta content={title} property="og:title" />
+          <meta content={title ?? defaultTitle} property="og:title" />
           <meta content={description} property="og:description" />
           <meta content="summary_large_image" name="twitter:card" />
 
