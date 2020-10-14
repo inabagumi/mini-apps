@@ -4558,13 +4558,14 @@ mdast-util-definitions@^4.0.0:
   dependencies:
     unist-util-visit "^2.0.0"
 
-mdast-util-from-markdown@^0.7.0:
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/mdast-util-from-markdown/-/mdast-util-from-markdown-0.7.1.tgz#1ca9189d051f26ce8d8a4fdd9e05515a5a6c80a1"
-  integrity sha512-ueQqksJ6WHqSOupnpMNgijmxdpkoKOgql7bdpmW0H6SYhJ2OOpDiRbJu9fTiMZvLk/fVDH9Z79GLhV6NBSazFQ==
+mdast-util-from-markdown@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/mdast-util-from-markdown/-/mdast-util-from-markdown-0.8.0.tgz#0a13c0161a2974246bcb294cc77ff6858ef9c082"
+  integrity sha512-x9b9ekG2IfeqHSUPhn4+o8SeXqual0/ZHzzugV/cC21L6s1KyKAwIHKBJ1NN9ZstIlY8YAefELRSWfJMby4a9Q==
   dependencies:
+    "@types/mdast" "^3.0.0"
     mdast-util-to-string "^1.0.0"
-    micromark "~2.9.0"
+    micromark "~2.10.0"
     parse-entities "^2.0.0"
 
 mdast-util-gfm-autolink-literal@^0.1.0:
@@ -4623,6 +4624,19 @@ mdast-util-to-markdown@^0.4.0:
   resolved "https://registry.yarnpkg.com/mdast-util-to-markdown/-/mdast-util-to-markdown-0.4.3.tgz#4f13a7ddff7e75a3369e0f2b4e7087045ec92e3b"
   integrity sha512-hGC1uAqmvCgCJ9m9JsyUi4UZ3+EZzk2qFJZx2IDv0sodg9LfoRiPKIpefTQdwdt1fANZRHupuZlPSV+UQMeRfw==
   dependencies:
+    longest-streak "^2.0.0"
+    mdast-util-to-string "^1.0.0"
+    parse-entities "^2.0.0"
+    repeat-string "^1.0.0"
+    stringify-entities "^3.0.0"
+    zwitch "^1.0.0"
+
+mdast-util-to-markdown@^0.5.0:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/mdast-util-to-markdown/-/mdast-util-to-markdown-0.5.1.tgz#4a72a168f8a7b2c5506877498095144d32dcb026"
+  integrity sha512-7WS59irdm7lwd8iyfu+kLF+ktfzlvxLJzI/SwysF1EFFGpkU/G60Q61k7xZ420gsMVkXZ3MlcL3bTYCz5QwDeg==
+  dependencies:
+    "@types/unist" "^2.0.0"
     longest-streak "^2.0.0"
     mdast-util-to-string "^1.0.0"
     parse-entities "^2.0.0"
@@ -4713,14 +4727,6 @@ micromark@~2.10.0:
   version "2.10.1"
   resolved "https://registry.yarnpkg.com/micromark/-/micromark-2.10.1.tgz#cd73f54e0656f10e633073db26b663a221a442a7"
   integrity sha512-fUuVF8sC1X7wsCS29SYQ2ZfIZYbTymp0EYr6sab3idFjigFFjGa5UwoniPlV9tAgntjuapW1t9U+S0yDYeGKHQ==
-  dependencies:
-    debug "^4.0.0"
-    parse-entities "^2.0.0"
-
-micromark@~2.9.0:
-  version "2.9.2"
-  resolved "https://registry.yarnpkg.com/micromark/-/micromark-2.9.2.tgz#dc8428f42c14ba831c52a6658e26d7d88926c68c"
-  integrity sha512-W9P8sexN1Erab68sZBz4ugkNmuHy1L6O9fwxQ6TVDbgqopAeJA3+d/Nsdq1ClydGqWc/c3tf4r7ZmLMHgxbdbQ==
   dependencies:
     debug "^4.0.0"
     parse-entities "^2.0.0"
@@ -5805,27 +5811,27 @@ remark-html@^13.0.1:
     hast-util-to-html "^7.0.0"
     mdast-util-to-hast "^10.0.0"
 
-remark-parse@^9.0.0-alpha.1:
-  version "9.0.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/remark-parse/-/remark-parse-9.0.0-alpha.1.tgz#2a81b92a3b1432e4de46d077374f10874197d9ed"
-  integrity sha512-8nbFmGcV1rYN6ILoyhdYL1Jh50ovzxa+vvnQEWoM5dNaFz19s5vfKaCa1PQCxK+4PksA5+GWHF2sIAqg1I7ytA==
+remark-parse@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/remark-parse/-/remark-parse-9.0.0.tgz#4d20a299665880e4f4af5d90b7c7b8a935853640"
+  integrity sha512-geKatMwSzEXKHuzBNU1z676sGcDcFoChMK38TgdHJNAYfFtsfHDQG7MoJAjs6sgYMqyLduCYWDIWZIxiPeafEw==
   dependencies:
-    mdast-util-from-markdown "^0.7.0"
+    mdast-util-from-markdown "^0.8.0"
 
-remark-stringify@^9.0.0-alpha.1:
-  version "9.0.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/remark-stringify/-/remark-stringify-9.0.0-alpha.1.tgz#39c94e0986df09472d63267554c7ba78fadd9365"
-  integrity sha512-/EvM6MUG3YJ8HEuZPVSL+I95M8+pokpPPQu84Oy3XM7d5xsaP1lmxe/8gHCpqR6JFg5qBq9wdOl0T1OLcu7TLw==
+remark-stringify@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/remark-stringify/-/remark-stringify-9.0.0.tgz#8ba0c9e4167c42733832215a81550489759e3793"
+  integrity sha512-8x29DpTbVzEc6Dwb90qhxCtbZ6hmj3BxWWDpMhA+1WM4dOEGH5U5/GFe3Be5Hns5MvPSFAr1e2KSVtKZkK5nUw==
   dependencies:
-    mdast-util-to-markdown "^0.4.0"
+    mdast-util-to-markdown "^0.5.0"
 
-remark@^13.0.0-alpha.1:
-  version "13.0.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/remark/-/remark-13.0.0-alpha.1.tgz#4a17c54963ea21789ed1e931b010f3dbc82440e3"
-  integrity sha512-SqCjLElkj+COghr1zi+xS1i0McK+K6D9NwORFUueLgnKEurIwXlXd6Hue8eIKbIajX+V/jPJg8gn90JdZ08LCg==
+remark@^13.0.0:
+  version "13.0.0"
+  resolved "https://registry.yarnpkg.com/remark/-/remark-13.0.0.tgz#d15d9bf71a402f40287ebe36067b66d54868e425"
+  integrity sha512-HDz1+IKGtOyWN+QgBiAT0kn+2s6ovOxHyPAFGKVE81VSzJ+mq7RwHFledEvB5F1p4iJvOah/LOKdFuzvRnNLCA==
   dependencies:
-    remark-parse "^9.0.0-alpha.1"
-    remark-stringify "^9.0.0-alpha.1"
+    remark-parse "^9.0.0"
+    remark-stringify "^9.0.0"
     unified "^9.1.0"
 
 remove-trailing-separator@^1.0.1:

@@ -10,7 +10,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
-    "remark": "^13.0.0-alpha.1",
+    "remark": "^13.0.0",
     "remark-gfm": "^1.0.0",
     "remark-html": "^13.0.1",
     "styled-components": "^5.2.0"
