@@ -134,47 +134,42 @@ const Index: NextPage = () => (
         <Disclaimer>
           ※このサービスは
           <a
-            href="https://zizai.co.jp/"
+            href="https://www.live.iriam.com/company"
             rel="noopener noreferrer"
             target="_blank"
           >
-            株式会社ZIZAI
+            株式会社IRIAM
           </a>
-          が提供するアプリである
+          が提供するアプリである『
           <a
-            href="https://iriam.com/"
+            href="https://www.live.iriam.com/"
             rel="noopener noreferrer"
             target="_blank"
           >
             IRIAM
           </a>
-          の関連サービスである
+          』 の関連サービスとして公開されていた『あなたのオタクタイプ診断 by
+          IRIAM』をオリジナルとして、
           <a
-            href="https://shindan.iriam.com/"
+            href="https://www.774.ai/"
             rel="noopener noreferrer"
             target="_blank"
           >
-            あなたのオタクタイプ診断 by IRIAM
-          </a>
-          をオリジナルとするファンメイドの非公式サービスです。
+            774 inc.
+          </a>{' '}
+          が運営しているバーチャルYouTuberグループ『有閑喫茶
+          あにまーれ』をモチーフにして株式会社IRIAMや774 inc. とは一切関係のない
           <a
-            href="https://animare-official.com/"
+            href="https://haneru.dev/"
             rel="noopener noreferrer"
             target="_blank"
           >
-            有閑喫茶あにまーれ
+            Haneru Developers
           </a>
-          やその運営者とは一切関係ない第三者である
-          <a
-            href="https://ykzts.com/"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            山岸 和利
-          </a>
-          によって制作されています。
+          によって開発と運営が行われている非公式のサービスになります。
           <br />
-          制作者である山岸和利以外の人物や団体に対してこのサービスに関する問い合わせを行うのはお止めください。
+          このサービスに関するお問い合わせをHaneru
+          Developers以外の団体や個人に対して行うのはお止めください。
         </Disclaimer>
       </Message>
     </Content>
