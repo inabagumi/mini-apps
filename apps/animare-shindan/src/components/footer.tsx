@@ -2,7 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 import type { FC } from 'react'
 import styled from 'styled-components'
-import { version } from '../../package.json'
+import pkg from '../../package.json'
 
 const Content = styled.footer`
   align-items: center;
@@ -42,7 +42,7 @@ const Footer: FC = () => {
     <Content>
       <Link href="/list" passHref prefetch={false}>
         <ReleaseLink>
-          Version {version.split('.').slice(0, 2).join('.')}
+          Version {pkg.version.split('.').slice(0, 2).join('.')}
         </ReleaseLink>
       </Link>
 

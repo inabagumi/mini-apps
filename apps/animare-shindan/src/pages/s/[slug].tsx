@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import { homepage as siteURL } from '../../../package.json'
+import pkg from '../../../package.json'
 import nanashiAvatar from '../../assets/avatar.svg'
 import Avatar from '../../components/avatar'
 import Graph from '../../components/graph'
@@ -377,7 +377,7 @@ const AnalysisResultTemplate: NextPage<Props> = ({ result }) => {
   }
 
   const path = `/s/${result.slug}?s=true`
-  const url = new URL(path, siteURL).toString()
+  const url = new URL(path, pkg.homepage).toString()
 
   return (
     <Layout>

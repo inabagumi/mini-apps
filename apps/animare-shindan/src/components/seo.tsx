@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import React from 'react'
 import type { FC } from 'react'
-import { homepage as siteUrl } from '../../package.json'
+import pkg from '../../package.json'
 import mainVisual from '../assets/main-visual.jpg'
 
 const defaultTitle = 'あなたのオタクタイプ診断 by あにまーれ'
@@ -30,18 +30,21 @@ const SEO: FC<Props> = ({
         <>
           <meta content="website" property="og:type" />
           <meta
-            content={new URL(pathname, siteUrl).toString()}
+            content={new URL(pathname, pkg.homepage).toString()}
             property="og:url"
           />
           <meta
-            content={new URL(image ?? mainVisual, siteUrl).toString()}
+            content={new URL(image ?? mainVisual, pkg.homepage).toString()}
             property="og:image"
           />
           <meta content={title ?? defaultTitle} property="og:title" />
           <meta content={description} property="og:description" />
           <meta content="summary_large_image" name="twitter:card" />
 
-          <link href={new URL(pathname, siteUrl).toString()} rel="canonical" />
+          <link
+            href={new URL(pathname, pkg.homepage).toString()}
+            rel="canonical"
+          />
         </>
       )}
     </Head>

@@ -2,7 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 import type { FC } from 'react'
 import styled from 'styled-components'
-import { homepage as siteURL } from '../../package.json'
+import pkg from '../../package.json'
 import lineLogo from '../assets/line.svg'
 import twitterLogo from '../assets/twitter.svg'
 import { createLineShareURL, createTweetURL } from '../utils/share'
@@ -80,7 +80,7 @@ const Header: FC = () => {
         <ul>
           <li>
             <ShareButton
-              href={createTweetURL(new URL('/', siteURL).toString())}
+              href={createTweetURL(new URL('/', pkg.homepage).toString())}
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -94,7 +94,7 @@ const Header: FC = () => {
           </li>
           <li>
             <ShareButton
-              href={createLineShareURL(new URL('/', siteURL).toString())}
+              href={createLineShareURL(new URL('/', pkg.homepage).toString())}
               rel="noopener noreferrer"
               target="_blank"
             >
