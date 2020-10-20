@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import React from 'react'
 import type { FC } from 'react'
 import pkg from '../../package.json'
 import mainVisual from '../assets/main-visual.jpg'

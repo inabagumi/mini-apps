@@ -1,7 +1,7 @@
 import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import React, { useCallback, useState } from 'react'
+import { useCallback, useState } from 'react'
 import styled, { keyframes } from 'styled-components'
 import Layout from '../components/layout'
 import ProgressBar from '../components/progress-bar'

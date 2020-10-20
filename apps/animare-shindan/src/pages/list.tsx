@@ -1,6 +1,5 @@
 import { format } from 'date-fns'
 import type { GetStaticProps } from 'next'
-import React from 'react'
 import type { FC } from 'react'
 import styled from 'styled-components'
 import Header from '../components/header'

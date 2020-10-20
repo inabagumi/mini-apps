@@ -1,4 +1,3 @@
-import React from 'react'
 import type { FC } from 'react'
 import styled, { createGlobalStyle } from 'styled-components'
 import Footer from './footer'
