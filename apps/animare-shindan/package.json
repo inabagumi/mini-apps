@@ -23,7 +23,7 @@
     "@types/styled-components": "^5.1.4",
     "@types/web-app-manifest": "^1.0.0",
     "babel-plugin-styled-components": "^1.11.1",
-    "eslint": "^7.12.0",
+    "eslint": "^7.12.1",
     "file-loader": "^6.1.1",
     "next-pwa": "^3.1.5",
     "prettier": "^2.1.2",
