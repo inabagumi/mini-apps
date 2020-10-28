@@ -19,7 +19,7 @@
     "@inabagumi/eslint-config-react": "^6.0.2",
     "@inabagumi/prettier-config": "^1.1.2",
     "@types/js-yaml": "^3.12.5",
-    "@types/react": "^16.9.54",
+    "@types/react": "^16.9.55",
     "@types/styled-components": "^5.1.4",
     "@types/web-app-manifest": "^1.0.0",
     "babel-plugin-styled-components": "^1.11.1",
