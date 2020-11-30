@@ -43,8 +43,8 @@
   },
   "resolutions": {
     "webpack": "^5.9.0",
-    "workbox-webpack-plugin": "^6.0.0-rc.0",
-    "workbox-window": "^6.0.0-rc.0"
+    "workbox-webpack-plugin": "^6.0.0",
+    "workbox-window": "^6.0.0"
   },
   "scripts": {
     "build": "next build",
