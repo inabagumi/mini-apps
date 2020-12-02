@@ -18,9 +18,9 @@ export async function getAllReleases(): Promise<Release[]> {
   })
 
   return releases.map<Release>((release) => ({
-    content: release.body,
+    content: release.body ?? '',
     date: release.created_at,
     slug: release.tag_name,
-    title: release.name
+    title: release.name || release.tag_name
   }))
 }
