@@ -11,7 +11,7 @@ export type Question = {
 export async function getQuestions(): Promise<Question[]> {
   const filePath = path.join(process.cwd(), 'src', 'data', 'questions.yaml')
   const content = await fs.readFile(filePath, 'utf-8')
-  const questions = yaml.safeLoad(content) as Question[]
+  const questions = yaml.load(content) as Question[]
 
   return questions
 }
@@ -39,7 +39,7 @@ const resultsDirectory = path.join(process.cwd(), 'src', 'data', 'results')
 export async function getAnalysisResult(slug: string): Promise<Result> {
   const filePath = path.join(resultsDirectory, `${slug}.yaml`)
   const content = await fs.readFile(filePath, 'utf-8')
-  const result = yaml.safeLoad(content) as Result
+  const result = yaml.load(content) as Result
 
   return {
     ...result,
