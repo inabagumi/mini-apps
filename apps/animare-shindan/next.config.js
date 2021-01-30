@@ -7,6 +7,9 @@ const nextConfig = {
   experimental: {
     plugins: true
   },
+  future: {
+    webpack5: true
+  },
   pwa: {
     dest: '.next/static',
     disable: process.env.NODE_ENV === 'development',
