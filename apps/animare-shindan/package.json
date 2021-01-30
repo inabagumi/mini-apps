@@ -42,7 +42,7 @@
     "url": "https://github.com/inabagumi/animare-shindan.git"
   },
   "resolutions": {
-    "webpack": "^5.18.0"
+    "webpack": "^5.19.0"
   },
   "scripts": {
     "build": "next build",
