@@ -30,9 +30,6 @@
     "typescript": "~4.1.3",
     "url-loader": "^4.1.1"
   },
-  "engines": {
-    "node": "12.x"
-  },
   "homepage": "https://shindan.animare.cafe/",
   "license": "MIT",
   "name": "animare-shindan",
