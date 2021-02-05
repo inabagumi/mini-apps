@@ -3,7 +3,7 @@
   "dependencies": {
     "@next/plugin-google-analytics": "^10.0.6",
     "@octokit/rest": "^18.1.0",
-    "date-fns": "^2.16.1",
+    "date-fns": "^2.17.0",
     "js-yaml": "^4.0.0",
     "next": "^10.0.6",
     "react": "^17.0.1",
