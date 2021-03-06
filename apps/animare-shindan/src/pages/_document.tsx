@@ -55,24 +55,6 @@ class Document extends NextDocument {
             href="https://fonts.googleapis.com/css?family=Material+Icons"
             rel="stylesheet"
           />
-          <link
-            href="/images/favicon-192x192.png"
-            rel="icon"
-            sizes="192x192"
-            type="image/png"
-          />
-          <link
-            href="/images/favicon-512x512.png"
-            rel="icon"
-            sizes="512x512"
-            type="image/png"
-          />
-          <link
-            href="/images/favicon-192x192.png"
-            rel="apple-touch-icon"
-            sizes="192x192"
-            type="image/png"
-          />
           <link href="/manifest.webmanifest" rel="manifest" />
           {process.env.NEXT_PUBLIC_GA_TRACKING_ID && (
             <>
