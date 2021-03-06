@@ -2,7 +2,7 @@
   "author": "Haneru Developers",
   "dependencies": {
     "@next/plugin-google-analytics": "^10.0.8",
-    "@octokit/rest": "^18.3.3",
+    "@octokit/rest": "^18.3.4",
     "date-fns": "^2.19.0",
     "js-yaml": "^4.0.0",
     "next": "^10.0.8",
