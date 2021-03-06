@@ -1,9 +1,6 @@
 const withPWA = require('next-pwa')
 
 const nextConfig = {
-  env: {
-    NEXT_PUBLIC_GA_TRACKING_ID: 'UA-138698330-1'
-  },
   experimental: {
     plugins: true
   },
