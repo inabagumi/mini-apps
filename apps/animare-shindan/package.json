@@ -11,7 +11,7 @@
     "remark": "^13.0.0",
     "remark-gfm": "^1.0.0",
     "remark-html": "^13.0.1",
-    "styled-components": "^5.2.2"
+    "styled-components": "^5.2.3"
   },
   "description": "Shindan by AniMare",
   "devDependencies": {
