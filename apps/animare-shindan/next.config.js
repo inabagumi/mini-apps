@@ -7,7 +7,7 @@ const nextConfig = {
   pwa: {
     dest: '.next/static',
     disable: process.env.NODE_ENV === 'development',
-    sw: '/sw.js'
+    sw: 'sw.js'
   },
   rewrites() {
     return [
