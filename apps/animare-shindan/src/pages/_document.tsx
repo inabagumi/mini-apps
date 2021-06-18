@@ -1,8 +1,8 @@
-import NextDocument, { Head, Html, Main, NextScript } from 'next/document'
+import Document, { Head, Html, Main, NextScript } from 'next/document'
 import type { DocumentContext, DocumentInitialProps } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
-class Document extends NextDocument {
+export default class MyDocument extends Document {
   static async getInitialProps(
     ctx: DocumentContext
   ): Promise<DocumentInitialProps> {
@@ -39,20 +39,20 @@ class Document extends NextDocument {
         <Head>
           <link
             as="style"
-            href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700,900&amp;display=swap"
+            href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700,900&amp;display=optional"
             rel="preload"
           />
           <link
             as="style"
-            href="https://fonts.googleapis.com/css?family=Material+Icons"
+            href="https://fonts.googleapis.com/css?family=Material+Icons&amp;display=swap"
             rel="preload"
           />
           <link
-            href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700,900&amp;display=swap"
+            href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700,900&amp;display=optional"
             rel="stylesheet"
           />
           <link
-            href="https://fonts.googleapis.com/css?family=Material+Icons"
+            href="https://fonts.googleapis.com/css?family=Material+Icons&amp;display=swap"
             rel="stylesheet"
           />
           <link href="/manifest.webmanifest" rel="manifest" />
@@ -82,5 +82,3 @@ gtag('config', '${process.env.NEXT_PUBLIC_GA_TRACKING_ID}');`
     )
   }
 }
-
-export default Document

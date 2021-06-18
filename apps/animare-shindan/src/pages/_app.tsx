@@ -35,21 +35,21 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
     <>
       <Head>
         <link
-          href={favicon192x192}
+          href={favicon192x192.src}
           rel="icon"
-          sizes="192x192"
+          sizes={`${favicon192x192.width}x${favicon192x192.height}`}
           type="image/png"
         />
         <link
-          href={favicon512x512}
+          href={favicon512x512.src}
           rel="icon"
-          sizes="512x512"
+          sizes={`${favicon512x512.width}x${favicon512x512.height}`}
           type="image/png"
         />
         <link
-          href={favicon192x192}
+          href={favicon192x192.src}
           rel="apple-touch-icon"
-          sizes="192x192"
+          sizes={`${favicon192x192.width}x${favicon192x192.height}`}
           type="image/png"
         />
       </Head>

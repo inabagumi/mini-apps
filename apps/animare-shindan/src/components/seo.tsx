@@ -33,7 +33,7 @@ const SEO: FC<Props> = ({
             property="og:url"
           />
           <meta
-            content={new URL(image ?? mainVisual, pkg.homepage).toString()}
+            content={new URL(image ?? mainVisual.src, pkg.homepage).toString()}
             property="og:image"
           />
           <meta content={title ?? defaultTitle} property="og:title" />

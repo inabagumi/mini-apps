@@ -12,7 +12,7 @@ const Root = styled.div`
 
   ::before {
     background-color: transparent;
-    background-image: url('${nanashi}');
+    background-image: url('${nanashi.src}');
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;

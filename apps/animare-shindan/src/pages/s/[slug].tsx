@@ -405,7 +405,7 @@ const AnalysisResultTemplate: NextPage<Props> = ({ result }) => {
 
           <Evaluation>
             <EvaluationAvatar>
-              <Avatar src={nanashiAvatar} />
+              <Avatar src={nanashiAvatar.src} />
               <EvaluationCaption>黒猫 ななし</EvaluationCaption>
             </EvaluationAvatar>
 

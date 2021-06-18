@@ -12,13 +12,13 @@ const handler: NextApiHandler<WebAppManifest> = (_req, res) => {
     display: 'standalone',
     icons: [
       {
-        sizes: '192x192',
-        src: favicon192x192,
+        sizes: `${favicon192x192.width}x${favicon192x192.height}`,
+        src: favicon192x192.src,
         type: 'image/png'
       },
       {
-        sizes: '512x512',
-        src: favicon512x512,
+        sizes: `${favicon512x512.width}x${favicon512x512.height}`,
+        src: favicon512x512.src,
         type: 'image/png'
       }
     ],

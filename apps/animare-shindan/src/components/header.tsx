@@ -86,7 +86,7 @@ const Header: FC = () => {
               <ShareLogo
                 alt="Twitter"
                 height="24"
-                src={twitterLogo}
+                src={twitterLogo.src}
                 width="24"
               />
             </ShareButton>
@@ -97,7 +97,7 @@ const Header: FC = () => {
               rel="noopener noreferrer"
               target="_blank"
             >
-              <ShareLogo alt="Line" height="24" src={lineLogo} width="24" />
+              <ShareLogo alt="Line" height="24" src={lineLogo.src} width="24" />
             </ShareButton>
           </li>
         </ul>
