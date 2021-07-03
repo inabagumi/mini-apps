@@ -1350,10 +1350,10 @@
   resolved "https://registry.yarnpkg.com/@types/unist/-/unist-2.0.3.tgz#9c088679876f374eb5983f150d4787aa6fb32d7e"
   integrity sha512-FvUupuM3rlRsRtCN+fDudtmytGO6iHJuuRKS1Ss0pG5z8oX0diNEw94UEL7hgDbpN94rgaK5R7sWm6RrSkZuAQ==
 
-"@types/web-app-manifest@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@types/web-app-manifest/-/web-app-manifest-1.0.1.tgz#f29e8775fd6e257dd51aa19d5c68d40e98b53a2a"
-  integrity sha512-8sRE9rPCFaCEful4rj2gggK7vab8Glc8F/6fqtRj/Gk47bfK0SJqXpqQFZcfVfeMWdDQMAx45cfWSnDRuIkmMg==
+"@types/web-app-manifest@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@types/web-app-manifest/-/web-app-manifest-1.0.2.tgz#e38b7a60f337ff86ed51480e76df7cf0300ce439"
+  integrity sha512-Dzq+rbsRHy+HLuDd4j/q8jTyW6Yte1dRihlBD0Xf5FTrnjFg8QgtzXySCahxy1VRreqASMBhn7amZIs8ZJ/T2Q==
 
 "@types/webpack-sources@*":
   version "2.1.0"
