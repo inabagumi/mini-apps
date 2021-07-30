@@ -1,7 +1,7 @@
 {
   "author": "Haneru Developers",
   "dependencies": {
-    "@octokit/rest": "^18.7.1",
+    "@octokit/rest": "^18.7.2",
     "date-fns": "^2.23.0",
     "js-yaml": "^4.1.0",
     "next": "^11.0.1",
