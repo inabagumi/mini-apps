@@ -1,6 +1,12 @@
 const withPWA = require('next-pwa')
 
+/**
+ * @type {import('next').NextConfig}
+ **/
 const nextConfig = {
+  experimental: {
+    esmExternals: true
+  },
   pwa: {
     dest: '.next/static',
     disable: process.env.NODE_ENV === 'development',
