@@ -1,18 +1,20 @@
 const withPWA = require('next-pwa')
 
-/**
- * @type {import('next').NextConfig}
- **/
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
     esmExternals: true
+  },
+  i18n: {
+    defaultLocale: 'ja',
+    locales: ['ja']
   },
   pwa: {
     dest: '.next/static',
     disable: process.env.NODE_ENV === 'development',
     sw: 'sw.js'
   },
-  rewrites() {
+  async rewrites() {
     return [
       {
         destination: '/_next/static/sw.js',
