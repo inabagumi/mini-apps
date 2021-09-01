@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import type { FC } from 'react'
-import pkg from '../../package.json'
+import pkg from '../package.json'
 import mainVisual from '../assets/main-visual.jpg'
 
 const defaultTitle = 'あなたのオタクタイプ診断 by あにまーれ'

@@ -2,13 +2,13 @@ import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import pkg from '../../../package.json'
 import nanashiAvatar from '../../assets/avatar.svg'
 import Avatar from '../../components/avatar'
 import Graph from '../../components/graph'
 import Layout from '../../components/layout'
 import MessageWindow from '../../components/message-window'
 import SEO from '../../components/seo'
+import pkg from '../../package.json'
 import {
   Result as AnalysisResult,
   getAnalysisResult,

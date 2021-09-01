@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import type { FC } from 'react'
 import styled from 'styled-components'
-import pkg from '../../package.json'
 import lineLogo from '../assets/line.svg'
 import twitterLogo from '../assets/twitter.svg'
+import pkg from '../package.json'
 import { createLineShareURL, createTweetURL } from '../utils/share'
 
 const Container = styled.header`

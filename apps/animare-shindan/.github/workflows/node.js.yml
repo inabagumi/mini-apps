@@ -20,6 +20,3 @@ jobs:
       - run: yarn install --frozen-lockfile
       - run: yarn format-check
       - run: yarn lint
-      - run: yarn build --no-lint
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

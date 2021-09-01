@@ -46,7 +46,7 @@
     "dev": "next",
     "format": "prettier --write './**/*.{json,yml}'",
     "format-check": "prettier --check './**/*.{json,yml}'",
-    "lint": "next lint -d ."
+    "lint": "next lint"
   },
   "version": "2.0.0"
 }

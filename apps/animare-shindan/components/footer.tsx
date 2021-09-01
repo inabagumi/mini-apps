@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import type { FC } from 'react'
 import styled from 'styled-components'
-import pkg from '../../package.json'
+import pkg from '../package.json'
 
 const Content = styled.footer`
   align-items: center;
