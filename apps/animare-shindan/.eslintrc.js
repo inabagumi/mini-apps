@@ -1,14 +1,7 @@
-/**
- * @type {import('eslint').Linter.Config}
- */
+/** @type {import('eslint').Linter.Config} */
 module.exports = {
-  env: {
-    browser: true,
-    node: true
-  },
   extends: [
     'eslint:recommended',
-    'next',
     'next/core-web-vitals',
     'plugin:prettier/recommended'
   ],
