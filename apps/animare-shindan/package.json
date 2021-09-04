@@ -20,7 +20,7 @@
     "@types/gtag.js": "^0.0.7",
     "@types/js-yaml": "^4.0.3",
     "@types/react": "^17.0.19",
-    "@types/styled-components": "^5.1.13",
+    "@types/styled-components": "^5.1.14",
     "@types/web-app-manifest": "^1.0.2",
     "@typescript-eslint/eslint-plugin": "^4.30.0",
     "@typescript-eslint/parser": "^4.30.0",
