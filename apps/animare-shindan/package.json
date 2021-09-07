@@ -10,7 +10,7 @@
     "react-helmet": "^6.1.0",
     "remark": "^14.0.1",
     "remark-gfm": "^2.0.0",
-    "remark-html": "^14.0.0",
+    "remark-html": "^14.0.1",
     "styled-components": "^5.3.1"
   },
   "description": "Shindan by AniMare",
