@@ -2,8 +2,8 @@
   "author": "Haneru Developers",
   "dependencies": {
     "@octokit/rest": "^18.11.4",
+    "@prisma/client": "^3.1.1",
     "date-fns": "^2.24.0",
-    "js-yaml": "^4.1.0",
     "next": "^11.1.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -18,7 +18,6 @@
     "@inabagumi/prettier-config": "^2.0.0",
     "@types/eslint": "^7.28.0",
     "@types/gtag.js": "^0.0.7",
-    "@types/js-yaml": "^4.0.3",
     "@types/react": "^17.0.27",
     "@types/styled-components": "^5.1.14",
     "@types/web-app-manifest": "^1.0.2",
@@ -31,6 +30,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "next-pwa": "^5.3.1",
     "prettier": "~2.4.1",
+    "prisma": "^3.1.1",
     "typescript": "~4.4.3"
   },
   "homepage": "https://shindan.animare.cafe/",
@@ -48,5 +48,5 @@
     "format-check": "prettier --check './**/*.{json,yml}'",
     "lint": "next lint"
   },
-  "version": "2.0.0"
+  "version": "3.0.0"
 }

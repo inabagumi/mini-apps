@@ -19,7 +19,8 @@ module.exports = {
     },
     {
       env: {
-        commonjs: true
+        commonjs: true,
+        es2020: true
       },
       files: [
         '.eslintrc.js',
@@ -28,6 +29,7 @@ module.exports = {
         'next.config.js',
         'postcss.config.js',
         'prettier.config.js',
+        'prisma/seed.js',
         'tailwind.config.js'
       ],
       parserOptions: {
@@ -35,5 +37,8 @@ module.exports = {
       }
     }
   ],
-  root: true
+  root: true,
+  rules: {
+    '@next/next/no-page-custom-font': 'off'
+  }
 }

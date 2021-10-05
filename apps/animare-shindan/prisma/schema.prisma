@@ -1,0 +1,54 @@
+datasource db {
+  provider             = "mysql"
+  referentialIntegrity = "prisma"
+  shadowDatabaseUrl    = env("SHADOW_DATABASE_URL")
+  url                  = env("DATABASE_URL")
+}
+
+generator client {
+  previewFeatures = ["referentialIntegrity"]
+  provider        = "prisma-client-js"
+}
+
+model Question {
+  answers Answer[]
+  id      Int      @id @default(autoincrement())
+  title   String
+}
+
+model Answer {
+  Question Question? @relation(fields: [questionId], references: [id])
+
+  id         Int    @id @default(autoincrement())
+  questionId Int?
+  value      String
+}
+
+model Result {
+  attribute          String
+  catchphrase        String
+  id                 Int              @id @default(autoincrement())
+  parameters         Json
+  recommendedVideoId Int
+  recommendedVideo   RecommendedVideo @relation(fields: [recommendedVideoId], references: [id])
+  slug               String           @unique
+  talent             Talent           @relation(fields: [talentId], references: [id])
+  type               String
+  talentId           Int
+}
+
+model Talent {
+  Result Result[]
+
+  id      Int     @id @default(autoincrement())
+  name    String
+  twitter String?
+  youtube String?
+}
+
+model RecommendedVideo {
+  Result Result[]
+
+  id  Int    @id @default(autoincrement())
+  url String
+}

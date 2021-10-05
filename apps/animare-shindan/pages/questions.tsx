@@ -1,12 +1,15 @@
-import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useCallback, useState } from 'react'
 import styled, { keyframes } from 'styled-components'
+
 import Layout from '../components/layout'
 import ProgressBar from '../components/progress-bar'
 import SEO from '../components/seo'
-import { Question, getAnalysisResultIDs, getQuestions } from '../utils/analysis'
+import { getAnalysisResultIDs, getQuestions } from '../lib/analysis'
+
+import type { GetStaticProps, NextPage } from 'next'
+import type { Question } from '../lib/analysis'
 
 const Container = styled.section`
   box-sizing: border-box;
@@ -316,13 +319,16 @@ const Questions: NextPage<Props> = ({ questions, results }) => {
 export default Questions
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const questions = await getQuestions()
-  const results = await getAnalysisResultIDs()
+  const [questions, results] = await Promise.all([
+    getQuestions(),
+    getAnalysisResultIDs()
+  ])
 
   return {
     props: {
       questions,
       results
-    }
+    },
+    revalidate: 30
   }
 }

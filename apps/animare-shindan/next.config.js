@@ -3,7 +3,7 @@ const withPWA = require('next-pwa')
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: {
-    dirs: ['components', 'pages', 'utils']
+    dirs: ['components', 'lib', 'pages', 'prisma', 'utils']
   },
   experimental: {
     esmExternals: true

@@ -146,6 +146,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     props: {
       releases: parsedReleases
     },
-    revalidate: 5
+    revalidate: 600
   }
 }

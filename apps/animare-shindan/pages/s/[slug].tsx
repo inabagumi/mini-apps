@@ -1,21 +1,37 @@
-import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
+
 import nanashiAvatar from '../../assets/avatar.svg'
 import Avatar from '../../components/avatar'
 import Graph from '../../components/graph'
 import Layout from '../../components/layout'
 import MessageWindow from '../../components/message-window'
 import SEO from '../../components/seo'
+import { getAnalysisResultIDs, getAnalysisResult } from '../../lib/analysis'
 import pkg from '../../package.json'
-import {
-  Result as AnalysisResult,
-  getAnalysisResult,
-  getAnalysisResultIDs
-} from '../../utils/analysis'
 import { createTweetURL } from '../../utils/share'
-import NotFound from '../404'
+
+import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
+import type { Result } from '../../lib/analysis'
+
+function createYouTubeEmbedURL(url: string): string {
+  const { pathname, searchParams } = new URL(url)
+
+  let id: string | null = null
+
+  if (pathname === '/watch' && searchParams.has('id')) {
+    id = searchParams.get('v')
+  } else {
+    id = pathname.slice(1)
+  }
+
+  if (!id) {
+    throw new TypeError('An invalid URL was given as an argument.')
+  }
+
+  return `https://www.youtube.com/embed/${id}`
+}
 
 const Content = styled.main`
   box-sizing: border-box;
@@ -359,10 +375,10 @@ const MessageButton = styled.a`
 `
 
 type Props = {
-  result?: AnalysisResult
+  result: Result
 }
 
-const AnalysisResultTemplate: NextPage<Props> = ({ result }) => {
+const AnalysisResult: NextPage<Props> = ({ result }) => {
   const [isShared, setIsShared] = useState(true)
 
   useEffect(() => {
@@ -372,19 +388,15 @@ const AnalysisResultTemplate: NextPage<Props> = ({ result }) => {
     setIsShared(queryString.indexOf('s=true') < 1)
   }, [])
 
-  if (!result) {
-    return <NotFound />
-  }
-
   const path = `/s/${result.slug}?s=true`
   const url = new URL(path, pkg.homepage).toString()
 
   return (
     <Layout>
       <SEO
-        image={result.image}
+        image={`/images/results/${result.slug}.png`}
         pathname={path}
-        title={`${result.name}が選ばれました！`}
+        title={`${result.talent.name}が選ばれました！`}
       />
 
       <Content>
@@ -445,41 +457,66 @@ const AnalysisResultTemplate: NextPage<Props> = ({ result }) => {
           好き】のアナタにマッチするVTuberが選ばれました!
         </SubTitle>
 
-        <section>
-          <DetailTitle>「{result.name}」のおすすめ動画はこちら!</DetailTitle>
+        {(result.recommendedVideo || result.talent.youtube) && (
+          <section>
+            {result.recommendedVideo && (
+              <>
+                <DetailTitle>
+                  「{result.talent.name}」のおすすめ動画はこちら!
+                </DetailTitle>
 
-          <DetailContent>
-            <Profile>
-              <Catchphrase>{result.catchphrase}</Catchphrase>
-              <ProfileName>
-                <a
-                  href={result.twitter}
+                <DetailContent>
+                  <Profile>
+                    <Catchphrase>{result.catchphrase}</Catchphrase>
+                    <ProfileName>
+                      {result.talent.twitter ? (
+                        <a
+                          href={result.talent.twitter}
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          {result.talent.name}
+                        </a>
+                      ) : (
+                        result.talent.name
+                      )}
+                    </ProfileName>
+                  </Profile>
+                  <div>
+                    <Movie>
+                      <iframe
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        frameBorder={0}
+                        height={315}
+                        src={createYouTubeEmbedURL(result.recommendedVideo.url)}
+                        width={560}
+                      ></iframe>
+                    </Movie>
+                  </div>
+                </DetailContent>
+              </>
+            )}
+
+            {result.talent.youtube && (
+              <>
+                <Headline>
+                  YouTubeにアクセスして、
+                  <br />「{result.talent.name}」と会話しよう!
+                </Headline>
+
+                <DetailButton
+                  href={result.talent.youtube}
                   rel="noopener noreferrer"
+                  role="button"
                   target="_blank"
                 >
-                  {result.name}
-                </a>
-              </ProfileName>
-            </Profile>
-            <div>
-              <Movie dangerouslySetInnerHTML={{ __html: result.embedHTML }} />
-            </div>
-          </DetailContent>
-
-          <Headline>
-            YouTubeにアクセスして、
-            <br />「{result.name}」と会話しよう!
-          </Headline>
-
-          <DetailButton
-            href={result.youtube}
-            rel="noopener noreferrer"
-            role="button"
-            target="_blank"
-          >
-            このVTuberに会いに行く!
-          </DetailButton>
-        </section>
+                  このVTuberに会いに行く!
+                </DetailButton>
+              </>
+            )}
+          </section>
+        )}
 
         <Footer>
           <Message>
@@ -508,7 +545,7 @@ const AnalysisResultTemplate: NextPage<Props> = ({ result }) => {
   )
 }
 
-export default AnalysisResultTemplate
+export default AnalysisResult
 
 type Params = {
   slug: string
@@ -517,26 +554,30 @@ type Params = {
 export const getStaticProps: GetStaticProps<Props, Params> = async ({
   params
 }) => {
-  if (!params?.slug) {
-    return {
-      props: {}
+  if (params?.slug) {
+    const result = await getAnalysisResult(params.slug)
+
+    if (result) {
+      return {
+        props: {
+          result
+        },
+        revalidate: 30
+      }
     }
   }
 
-  const result = await getAnalysisResult(params.slug)
-
   return {
-    props: {
-      result
-    }
+    notFound: true,
+    revalidate: 5
   }
 }
 
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
-  const ids = await getAnalysisResultIDs()
+  const results = await getAnalysisResultIDs()
 
   return {
-    fallback: false,
-    paths: ids.map((id) => `/s/${id}`)
+    fallback: 'blocking',
+    paths: results.map((slug) => `/s/${slug}`)
   }
 }
