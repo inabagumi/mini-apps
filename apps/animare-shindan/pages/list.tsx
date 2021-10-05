@@ -1,13 +1,16 @@
 import { format } from 'date-fns'
-import type { GetStaticProps } from 'next'
-import type { FC } from 'react'
+import { MDXRemote } from 'next-mdx-remote'
 import styled from 'styled-components'
+
 import Header from '../components/header'
 import Layout from '../components/layout'
 import Message from '../components/message'
 import SEO from '../components/seo'
-import { convert } from '../utils/markdown'
-import { Release, getAllReleases } from '../utils/releases'
+import { getAllReleases } from '../lib/releases'
+
+import type { GetStaticProps } from 'next'
+import type { VFC } from 'react'
+import type { Release } from '../lib/releases'
 
 const Content = styled.main`
   padding-top: 30px;
@@ -100,7 +103,7 @@ type Props = {
   releases: Release[]
 }
 
-const List: FC<Props> = ({ releases }) => {
+const List: VFC<Props> = ({ releases }) => {
   return (
     <Layout>
       <SEO title="お知らせ" />
@@ -117,9 +120,9 @@ const List: FC<Props> = ({ releases }) => {
                 </Time>
                 <Title>{release.title}</Title>
 
-                <SectionBody
-                  dangerouslySetInnerHTML={{ __html: release.content }}
-                />
+                <SectionBody>
+                  <MDXRemote {...release.contentSource} />
+                </SectionBody>
               </Section>
             )
           })}
@@ -133,18 +136,10 @@ export default List
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const releases = await getAllReleases()
-  const parsedReleases = await Promise.all(
-    releases.map((release) =>
-      convert(release.content).then((content) => ({
-        ...release,
-        content
-      }))
-    )
-  )
 
   return {
     props: {
-      releases: parsedReleases
+      releases
     },
     revalidate: 600
   }

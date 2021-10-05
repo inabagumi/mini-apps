@@ -1,10 +1,12 @@
 import Link from 'next/link'
-import type { FC } from 'react'
 import styled from 'styled-components'
+
 import lineLogo from '../assets/line.svg'
 import twitterLogo from '../assets/twitter.svg'
+import { createLineShareURL, createTweetURL } from '../lib/share'
 import pkg from '../package.json'
-import { createLineShareURL, createTweetURL } from '../utils/share'
+
+import type { VFC } from 'react'
 
 const Container = styled.header`
   align-items: center;
@@ -68,7 +70,7 @@ const ShareLogo = styled.img`
   }
 `
 
-const Header: FC = () => {
+const Header: VFC = () => {
   return (
     <Container>
       <Link href="/" passHref prefetch={false}>
