@@ -471,7 +471,7 @@ const AnalysisResult: NextPage<Props> = ({ result }) => {
                     <ProfileName>
                       {result.talent.twitter ? (
                         <a
-                          href={result.talent.twitter}
+                          href={`https://twitter.com/${result.talent.twitter}`}
                           rel="noopener noreferrer"
                           target="_blank"
                         >
@@ -506,7 +506,7 @@ const AnalysisResult: NextPage<Props> = ({ result }) => {
                 </Headline>
 
                 <DetailButton
-                  href={result.talent.youtube}
+                  href={`https://www.youtube.com/channel/${result.talent.youtube}`}
                   rel="noopener noreferrer"
                   role="button"
                   target="_blank"
