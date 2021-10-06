@@ -1,5 +1,8 @@
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
+  env: {
+    es2020: true
+  },
   extends: ['eslint:recommended', 'next/core-web-vitals', 'prettier'],
   overrides: [
     {
@@ -15,19 +18,9 @@ module.exports = {
     },
     {
       env: {
-        commonjs: true,
-        es2020: true
+        commonjs: true
       },
-      files: [
-        '.eslintrc.js',
-        'commitlint.config.js',
-        'lint-staged.config.js',
-        'next.config.js',
-        'postcss.config.js',
-        'prettier.config.js',
-        'prisma/seed.js',
-        'tailwind.config.js'
-      ],
+      files: ['.*rc.js', '*.config.js'],
       parserOptions: {
         sourceType: 'script'
       }

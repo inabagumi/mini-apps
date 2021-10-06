@@ -1,4 +1,11 @@
-const { PrismaClient } = require('@prisma/client')
+import nextEnv from '@next/env'
+import prismaClient from '@prisma/client'
+
+const { loadEnvConfig } = nextEnv
+const { PrismaClient } = prismaClient
+
+const projectDir = process.cwd()
+loadEnvConfig(projectDir)
 
 const prisma = new PrismaClient()
 
