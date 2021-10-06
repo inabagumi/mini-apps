@@ -1,6 +1,8 @@
-import type { FC } from 'react'
 import styled, { createGlobalStyle } from 'styled-components'
+
 import Footer from './footer'
+
+import type { ReactNode, VFC } from 'react'
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -43,7 +45,11 @@ const Content = styled.div`
   }
 `
 
-const Layout: FC = ({ children }) => (
+type Props = {
+  children: ReactNode
+}
+
+const Layout: VFC<Props> = ({ children }) => (
   <>
     <GlobalStyle />
 

@@ -8,8 +8,8 @@ import ProgressBar from '../components/progress-bar'
 import SEO from '../components/seo'
 import { getAnalysisResultIDs, getQuestions } from '../lib/analysis'
 
-import type { GetStaticProps, NextPage } from 'next'
 import type { Question } from '../lib/analysis'
+import type { GetStaticProps, NextPage } from 'next'
 
 const Container = styled.section`
   box-sizing: border-box;

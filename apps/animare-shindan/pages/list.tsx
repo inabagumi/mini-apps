@@ -8,9 +8,9 @@ import Message from '../components/message'
 import SEO from '../components/seo'
 import { getAllReleases } from '../lib/releases'
 
+import type { Release } from '../lib/releases'
 import type { GetStaticProps } from 'next'
 import type { VFC } from 'react'
-import type { Release } from '../lib/releases'
 
 const Content = styled.main`
   padding-top: 30px;

@@ -25,7 +25,6 @@
     "eslint": "^7.32.0",
     "eslint-config-next": "^11.1.2",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^4.0.0",
     "next-pwa": "^5.3.1",
     "prettier": "~2.4.1",
     "prisma": "^3.2.0",
@@ -42,8 +41,8 @@
   "scripts": {
     "build": "next build",
     "dev": "next",
-    "format": "prettier --write './**/*.{json,yml}'",
-    "format-check": "prettier --check './**/*.{json,yml}'",
+    "format": "prettier -w .",
+    "format-check": "prettier -c .",
     "lint": "next lint"
   },
   "version": "3.0.0"

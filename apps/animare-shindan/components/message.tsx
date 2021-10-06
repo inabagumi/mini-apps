@@ -1,5 +1,6 @@
-import type { FC } from 'react'
 import styled from 'styled-components'
+
+import type { ReactNode, VFC } from 'react'
 
 const Container = styled.div`
   background-color: #fff;
@@ -19,7 +20,11 @@ const Container = styled.div`
   }
 `
 
-const Message: FC = ({ children }) => {
+type Props = {
+  children: ReactNode
+}
+
+const Message: VFC<Props> = ({ children }) => {
   return <Container>{children}</Container>
 }
 

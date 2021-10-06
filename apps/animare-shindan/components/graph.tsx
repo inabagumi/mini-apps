@@ -2,8 +2,8 @@ import styled, { keyframes } from 'styled-components'
 
 import GraphBar from './graph-bar'
 
-import type { VFC } from 'react'
 import type { ResultParameter } from '../lib/analysis'
+import type { VFC } from 'react'
 
 const Container = styled.section`
   margin: 0 0 20px;

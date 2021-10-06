@@ -1,7 +1,9 @@
 import Link from 'next/link'
-import type { FC } from 'react'
 import styled from 'styled-components'
+
 import pkg from '../package.json'
+
+import type { VFC } from 'react'
 
 const Content = styled.footer`
   align-items: center;
@@ -36,7 +38,7 @@ const Copyright = styled.p`
   }
 `
 
-const Footer: FC = () => {
+const Footer: VFC = () => {
   return (
     <Content>
       <Link href="/list" passHref prefetch={false}>

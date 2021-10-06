@@ -1,10 +1,11 @@
 import Document, { Head, Html, Main, NextScript } from 'next/document'
+import { ServerStyleSheet } from 'styled-components'
+
 import type {
   DocumentContext,
   DocumentInitialProps,
   DocumentProps
 } from 'next/document'
-import { ServerStyleSheet } from 'styled-components'
 
 const MyDocument = (props: DocumentProps): JSX.Element => {
   return (
