@@ -3,7 +3,7 @@
   "dependencies": {
     "@octokit/rest": "^18.12.0",
     "@prisma/client": "^3.5.0",
-    "date-fns": "^2.25.0",
+    "date-fns": "^2.26.0",
     "next": "^12.0.4",
     "next-mdx-remote": "^3.0.8",
     "react": "^17.0.2",
