@@ -17,7 +17,7 @@
     "@types/eslint": "^8.2.0",
     "@types/gtag.js": "^0.0.8",
     "@types/react": "^17.0.37",
-    "@types/styled-components": "^5.1.15",
+    "@types/styled-components": "^5.1.16",
     "@types/web-app-manifest": "^1.0.2",
     "@typescript-eslint/eslint-plugin": "^5.5.0",
     "@typescript-eslint/parser": "^5.5.0",
