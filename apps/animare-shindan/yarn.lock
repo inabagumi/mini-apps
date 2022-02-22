@@ -1713,10 +1713,10 @@ babel-plugin-polyfill-regenerator@^0.3.0:
   dependencies:
     "@babel/helper-define-polyfill-provider" "^0.3.1"
 
-"babel-plugin-styled-components@>= 1.12.0", babel-plugin-styled-components@^2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/babel-plugin-styled-components/-/babel-plugin-styled-components-2.0.3.tgz#68a040a511ea260d3ea330bc43c1882d5134e707"
-  integrity sha512-lMrl3GdPrTl9daQJ70eRCPM9fHlvQx6YJNM7RqojKGbRnvG2AL7qvURlZ3L0GzRGnGr19SjvBKWcnlZZkgQ8/Q==
+"babel-plugin-styled-components@>= 1.12.0", babel-plugin-styled-components@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/babel-plugin-styled-components/-/babel-plugin-styled-components-2.0.4.tgz#2ee2574e4044f2e6dea443111aa2f3219271b181"
+  integrity sha512-qOQpu/f0cLzn6qUZ9BlIM693fMsBQt+QGbij0uHLd27FMzd2VMf0mBPr7r3CETzulXlNsHXVw5khzhnrvmPU/g==
   dependencies:
     "@babel/helper-annotate-as-pure" "^7.16.0"
     "@babel/helper-module-imports" "^7.16.0"
