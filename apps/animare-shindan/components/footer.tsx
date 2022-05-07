@@ -48,7 +48,7 @@ const Footer: VFC = () => {
       </Link>
 
       <Copyright>
-        {'Copyright 2018-2020 '}
+        {'Copyright 2018-2022 '}
         <a href="https://haneru.dev/" rel="noopener noreferrer" target="_blank">
           Haneru Developers
         </a>
