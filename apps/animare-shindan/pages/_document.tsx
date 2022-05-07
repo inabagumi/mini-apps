@@ -1,11 +1,13 @@
-import Document, { Head, Html, Main, NextScript } from 'next/document'
-import { ServerStyleSheet } from 'styled-components'
-
-import type {
-  DocumentContext,
-  DocumentInitialProps,
-  DocumentProps
+import Document, {
+  type DocumentContext,
+  type DocumentInitialProps,
+  type DocumentProps,
+  Head,
+  Html,
+  Main,
+  NextScript
 } from 'next/document'
+import { ServerStyleSheet } from 'styled-components'
 
 const MyDocument = (props: DocumentProps): JSX.Element => {
   return (
@@ -65,12 +67,7 @@ MyDocument.getInitialProps = async (
             }
         })
     })
-    initialProps.styles = (
-      <>
-        {initialProps.styles}
-        {sheet.getStyleElement()}
-      </>
-    )
+    initialProps.styles = [initialProps.styles, sheet.getStyleElement()]
   } catch {
     initialProps = await Document.getInitialProps(ctx)
   } finally {
