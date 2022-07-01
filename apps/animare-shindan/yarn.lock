@@ -1492,7 +1492,7 @@
   resolved "https://registry.yarnpkg.com/@types/web-app-manifest/-/web-app-manifest-1.0.2.tgz#e38b7a60f337ff86ed51480e76df7cf0300ce439"
   integrity sha512-Dzq+rbsRHy+HLuDd4j/q8jTyW6Yte1dRihlBD0Xf5FTrnjFg8QgtzXySCahxy1VRreqASMBhn7amZIs8ZJ/T2Q==
 
-"@typescript-eslint/eslint-plugin@^5.30.1":
+"@typescript-eslint/eslint-plugin@^5.30.2":
   version "5.30.2"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-5.30.2.tgz#8c8c445f18fd2818703395be8e52c713c85bd442"
   integrity sha512-x7JyswEltTMiYP9wnO6Bq7qtV+WXu6NidxJfQZgLPRRVTFK8WNbtPwG6toPqreLfA/vU58psT/0e1l4EhQgKSQ==
@@ -1507,7 +1507,7 @@
     semver "^7.3.7"
     tsutils "^3.21.0"
 
-"@typescript-eslint/parser@^5.21.0", "@typescript-eslint/parser@^5.30.1":
+"@typescript-eslint/parser@^5.21.0", "@typescript-eslint/parser@^5.30.2":
   version "5.30.2"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-5.30.2.tgz#a0858b578ce390c3aae9a892ccb8444278920da1"
   integrity sha512-Y99lcn3sshcwWDfQX9x2ohKTnPISBRI1vvwKEDdpFPZL9XNpCK1YqNsRSgTqZgz3IkxwmFi2xawwnznqDq3+Ng==
