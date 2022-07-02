@@ -14,7 +14,7 @@
   "description": "Shindan by AniMare",
   "devDependencies": {
     "@inabagumi/prettier-config": "^2.0.0",
-    "@types/eslint": "^8.4.3",
+    "@types/eslint": "^8.4.5",
     "@types/gtag.js": "^0.0.10",
     "@types/react": "^18.0.14",
     "@types/styled-components": "^5.1.25",
@@ -22,7 +22,7 @@
     "@typescript-eslint/eslint-plugin": "^5.30.3",
     "@typescript-eslint/parser": "^5.30.3",
     "babel-plugin-styled-components": "^2.0.7",
-    "eslint": "^8.18.0",
+    "eslint": "^8.19.0",
     "eslint-config-next": "^12.2.0",
     "eslint-config-prettier": "^8.5.0",
     "next-pwa": "^5.5.4",
