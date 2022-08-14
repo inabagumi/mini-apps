@@ -22,7 +22,7 @@
     "@typescript-eslint/eslint-plugin": "^5.33.0",
     "@typescript-eslint/parser": "^5.33.0",
     "babel-plugin-styled-components": "^2.0.7",
-    "eslint": "^8.21.0",
+    "eslint": "^8.22.0",
     "eslint-config-next": "^12.2.5",
     "eslint-config-prettier": "^8.5.0",
     "next-pwa": "^5.5.5",
