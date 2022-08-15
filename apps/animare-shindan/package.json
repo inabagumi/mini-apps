@@ -1,7 +1,7 @@
 {
   "author": "Haneru Developers",
   "dependencies": {
-    "@octokit/rest": "^19.0.3",
+    "@octokit/rest": "^19.0.4",
     "@prisma/client": "^4.2.1",
     "date-fns": "^2.29.1",
     "next": "^12.2.5",
