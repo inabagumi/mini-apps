@@ -28,7 +28,7 @@
     "next-pwa": "^5.5.5",
     "prettier": "~2.7.1",
     "prisma": "^4.5.0",
-    "typescript": "~4.7.4"
+    "typescript": "~4.8.4"
   },
   "homepage": "https://shindan.animare.cafe/",
   "license": "MIT",
