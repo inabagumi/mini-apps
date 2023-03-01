@@ -5,7 +5,7 @@
     "@prisma/client": "^4.11.0",
     "date-fns": "^2.29.3",
     "next": "^13.2.3",
-    "next-mdx-remote": "^4.4.0",
+    "next-mdx-remote": "^4.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
