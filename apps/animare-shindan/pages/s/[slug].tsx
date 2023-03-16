@@ -1,3 +1,4 @@
+import { type GetStaticPaths, type GetStaticProps } from 'next'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
@@ -7,14 +8,12 @@ import Avatar from '../../components/avatar'
 import Graph from '../../components/graph'
 import Layout from '../../components/layout'
 import MessageWindow from '../../components/message-window'
-
-import type { Result } from '../../lib/analysis'
-
 import SEO from '../../components/seo'
-
-import type { GetStaticPaths, GetStaticProps, NextPage } from 'next'
-
-import { getAnalysisResult, getAnalysisResultIDs } from '../../lib/analysis'
+import {
+  type Result,
+  getAnalysisResult,
+  getAnalysisResultIDs
+} from '../../lib/analysis'
 import { createTweetURL } from '../../lib/share'
 import pkg from '../../package.json'
 
@@ -179,7 +178,7 @@ const ShareButton = styled.a`
   }
 `
 
-const RetryButton = styled.a`
+const RetryButton = styled(Link)`
   align-items: center;
   background-color: #fff;
   border: solid #ececec 3px;
@@ -200,7 +199,7 @@ const RetryButton = styled.a`
   }
 `
 
-const Button = styled.a`
+const Button = styled(Link)`
   align-items: center;
   background-color: #fff;
   border: solid #14b9ff 4px;
@@ -381,7 +380,7 @@ type Props = {
   result: Result
 }
 
-const AnalysisResult: NextPage<Props> = ({ result }) => {
+export default function AnalysisResult({ result }: Props): JSX.Element {
   const [isShared, setIsShared] = useState(true)
 
   useEffect(() => {
@@ -440,9 +439,9 @@ const AnalysisResult: NextPage<Props> = ({ result }) => {
               >
                 診断結果をツイートする
               </ShareButton>
-              <Link href="/" passHref>
-                <RetryButton role="button">もう一度診断する</RetryButton>
-              </Link>
+              <RetryButton href="/" role="button">
+                もう一度診断する
+              </RetryButton>
             </>
           )}
 
@@ -450,9 +449,9 @@ const AnalysisResult: NextPage<Props> = ({ result }) => {
         </MessageBox>
 
         {!isShared && (
-          <Link href="/" passHref>
-            <Button role="button">オタクタイプを診断してみる</Button>
-          </Link>
+          <Button href="/" role="button">
+            オタクタイプを診断してみる
+          </Button>
         )}
 
         <SubTitle>
@@ -539,16 +538,14 @@ const AnalysisResult: NextPage<Props> = ({ result }) => {
             </MessageButton>
           </Message>
 
-          <Link href="/" passHref>
-            <Button role="button">オタクタイプを診断してみる</Button>
-          </Link>
+          <Button href="/" role="button">
+            オタクタイプを診断してみる
+          </Button>
         </Footer>
       </Content>
     </Layout>
   )
 }
-
-export default AnalysisResult
 
 type Params = {
   slug: string

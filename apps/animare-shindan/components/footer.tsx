@@ -3,8 +3,6 @@ import styled from 'styled-components'
 
 import pkg from '../package.json'
 
-import type { VFC } from 'react'
-
 const Content = styled.footer`
   align-items: center;
   background-color: #fff;
@@ -15,7 +13,7 @@ const Content = styled.footer`
   padding: 20px 12px 32px;
 `
 
-const ReleaseLink = styled.a`
+const ReleaseLink = styled(Link)`
   color: #000;
   display: block;
   font-size: 1.2rem;
@@ -38,17 +36,15 @@ const Copyright = styled.p`
   }
 `
 
-const Footer: VFC = () => {
+export default function Footer(): JSX.Element {
   return (
     <Content>
-      <Link href="/list" passHref prefetch={false}>
-        <ReleaseLink>
-          Version {pkg.version.split('.').slice(0, 2).join('.')}
-        </ReleaseLink>
-      </Link>
+      <ReleaseLink href="/list" prefetch={false}>
+        Version {pkg.version.split('.').slice(0, 2).join('.')}
+      </ReleaseLink>
 
       <Copyright>
-        {'Copyright 2018-2022 '}
+        {'Copyright 2018-2023 '}
         <a href="https://haneru.dev/" rel="noopener noreferrer" target="_blank">
           Haneru Developers
         </a>
@@ -56,5 +52,3 @@ const Footer: VFC = () => {
     </Content>
   )
 }
-
-export default Footer

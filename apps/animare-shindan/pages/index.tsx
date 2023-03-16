@@ -6,8 +6,6 @@ import Layout from '../components/layout'
 import Message from '../components/message'
 import SEO from '../components/seo'
 
-import type { NextPage } from 'next'
-
 const Content = styled.main`
   padding-top: 30px;
 `
@@ -67,7 +65,7 @@ const Intro = styled.p`
   }
 `
 
-const Button = styled.a`
+const Button = styled(Link)`
   align-items: center;
   background-color: #0588f7;
   border: solid #000 4px;
@@ -107,74 +105,75 @@ const Disclaimer = styled.p`
   }
 `
 
-const Index: NextPage = () => (
-  <Layout>
-    <SEO pathname="/" />
+export default function IndexPage(): JSX.Element {
+  return (
+    <Layout>
+      <SEO pathname="/" />
 
-    <Header />
+      <Header />
 
-    <Content>
-      <Message>
-        <Title>
-          <span>アナタの</span>
-          <span>オタクタイプ診断</span>
-        </Title>
-        <Description>
-          アナタの隠されたオタクタイプを徹底診断!
-          <br />
-          アナタにマッチするVTuberの、
-          <br />
-          オススメ動画も…?
-        </Description>
+      <Content>
+        <Message>
+          <Title>
+            <span>アナタの</span>
+            <span>オタクタイプ診断</span>
+          </Title>
+          <Description>
+            アナタの隠されたオタクタイプを徹底診断!
+            <br />
+            アナタにマッチするVTuberの、
+            <br />
+            オススメ動画も…?
+          </Description>
 
-        <Intro>アナタはどんなオタクタイプ?</Intro>
-        <Link href="/questions" passHref>
-          <Button role="button">診断スタート!</Button>
-        </Link>
+          <Intro>アナタはどんなオタクタイプ?</Intro>
+          <Button href="/questions" role="button">
+            診断スタート!
+          </Button>
 
-        <Disclaimer>
-          ※このサービスは
-          <a
-            href="https://www.live.iriam.com/company"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            株式会社IRIAM
-          </a>
-          が提供するアプリである『
-          <a
-            href="https://www.live.iriam.com/"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            IRIAM
-          </a>
-          』 の関連サービスとして公開されていた『あなたのオタクタイプ診断 by
-          IRIAM』をオリジナルとして、
-          <a
-            href="https://www.774.ai/"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            774 inc.
-          </a>{' '}
-          が運営しているバーチャルYouTuberグループ『有閑喫茶
-          あにまーれ』をモチーフにして株式会社IRIAMや774 inc. とは一切関係のない
-          <a
-            href="https://haneru.dev/"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Haneru Developers
-          </a>
-          によって開発と運営が行われている非公式のサービスになります。
-          <br />
-          このサービスに関するお問い合わせをHaneru
-          Developers以外の団体や個人に対して行うのはお止めください。
-        </Disclaimer>
-      </Message>
-    </Content>
-  </Layout>
-)
-
-export default Index
+          <Disclaimer>
+            ※このサービスは
+            <a
+              href="https://www.live.iriam.com/company"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              株式会社IRIAM
+            </a>
+            が提供するアプリである『
+            <a
+              href="https://www.live.iriam.com/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              IRIAM
+            </a>
+            』 の関連サービスとして公開されていた『あなたのオタクタイプ診断 by
+            IRIAM』をオリジナルとして、
+            <a
+              href="https://www.774.ai/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              774 inc.
+            </a>{' '}
+            が運営しているバーチャルYouTuberグループ『有閑喫茶
+            あにまーれ』をモチーフにして株式会社IRIAMや774 inc.
+            とは一切関係のない
+            <a
+              href="https://haneru.dev/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Haneru Developers
+            </a>
+            によって開発と運営が行われている非公式のサービスになります。
+            <br />
+            このサービスに関するお問い合わせをHaneru
+            Developers以外の団体や個人に対して行うのはお止めください。
+          </Disclaimer>
+        </Message>
+      </Content>
+    </Layout>
+  )
+}

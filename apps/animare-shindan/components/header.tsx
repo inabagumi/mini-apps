@@ -6,8 +6,6 @@ import twitterLogo from '../assets/twitter.svg'
 import { createLineShareURL, createTweetURL } from '../lib/share'
 import pkg from '../package.json'
 
-import type { VFC } from 'react'
-
 const Container = styled.header`
   align-items: center;
   display: flex;
@@ -18,7 +16,7 @@ const Container = styled.header`
   width: 100%;
 `
 
-const Logo = styled.a`
+const Logo = styled(Link)`
   background-color: #212121;
   border-radius: 3px;
   color: #fff;
@@ -70,12 +68,12 @@ const ShareLogo = styled.img`
   }
 `
 
-const Header: VFC = () => {
+export default function Header(): JSX.Element {
   return (
     <Container>
-      <Link href="/" passHref prefetch={false}>
-        <Logo>ANiMARE</Logo>
-      </Link>
+      <Logo href="/" prefetch={false}>
+        ANiMARE
+      </Logo>
 
       <Navigation>
         <ul>
@@ -107,5 +105,3 @@ const Header: VFC = () => {
     </Container>
   )
 }
-
-export default Header
