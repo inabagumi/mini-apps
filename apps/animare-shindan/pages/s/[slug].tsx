@@ -7,13 +7,16 @@ import Avatar from '../../components/avatar'
 import Graph from '../../components/graph'
 import Layout from '../../components/layout'
 import MessageWindow from '../../components/message-window'
+
+import type { Result } from '../../lib/analysis'
+
 import SEO from '../../components/seo'
+
+import type { GetStaticPaths, GetStaticProps, NextPage } from 'next'
+
 import { getAnalysisResult, getAnalysisResultIDs } from '../../lib/analysis'
 import { createTweetURL } from '../../lib/share'
 import pkg from '../../package.json'
-
-import type { Result } from '../../lib/analysis'
-import type { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 
 function createYouTubeEmbedURL(url: string): string {
   const { pathname, searchParams } = new URL(url)

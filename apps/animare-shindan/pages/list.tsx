@@ -6,9 +6,11 @@ import Header from '../components/header'
 import Layout from '../components/layout'
 import Message from '../components/message'
 import SEO from '../components/seo'
-import { getAllReleases } from '../lib/releases'
 
 import type { Release } from '../lib/releases'
+
+import { getAllReleases } from '../lib/releases'
+
 import type { GetStaticProps } from 'next'
 import type { VFC } from 'react'
 
