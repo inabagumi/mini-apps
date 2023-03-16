@@ -11,10 +11,11 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
+      - run: corepack enable
       - uses: actions/setup-node@v3
         with:
           node-version: 18.x
-          cache: yarn
-      - run: yarn install --frozen-lockfile
-      - run: yarn format-check
-      - run: yarn lint
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm format-check
+      - run: pnpm lint
