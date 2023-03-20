@@ -15,7 +15,7 @@ specifiers:
   date-fns: ^2.29.3
   eslint: ^8.36.0
   eslint-config-next: ^13.2.4
-  eslint-config-prettier: ^8.7.0
+  eslint-config-prettier: ^8.8.0
   next: ^13.2.4
   next-mdx-remote: ^4.4.1
   next-pwa: ^5.6.0
@@ -50,7 +50,7 @@ devDependencies:
   babel-plugin-styled-components: 2.0.7_styled-components@5.3.9
   eslint: 8.36.0
   eslint-config-next: 13.2.4_j4766f7ecgqbon3u7zlxn5zszu
-  eslint-config-prettier: 8.7.0_eslint@8.36.0
+  eslint-config-prettier: 8.8.0_eslint@8.36.0
   next-pwa: 5.6.0_next@13.2.4
   prettier: 2.8.5
   prisma: 4.11.0
@@ -2711,8 +2711,8 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-config-prettier/8.7.0_eslint@8.36.0:
-    resolution: {integrity: sha512-HHVXLSlVUhMSmyW4ZzEuvjpwqamgmlfkutD53cYXLikh4pt/modINRcCIApJ84czDxM4GZInwUrromsDdTImTA==}
+  /eslint-config-prettier/8.8.0_eslint@8.36.0:
+    resolution: {integrity: sha512-wLbQiFre3tdGgpDv67NQKnJuTlcUVYHas3k+DZCc2U2BadthoEY4B7hLPvAxaqdyOGCzuLfii2fqGph10va7oA==}
     hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
