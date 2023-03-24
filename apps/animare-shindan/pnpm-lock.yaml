@@ -6,7 +6,7 @@ specifiers:
   '@prisma/client': ^4.11.0
   '@types/eslint': ^8.21.3
   '@types/gtag.js': ^0.0.12
-  '@types/react': ^18.0.28
+  '@types/react': ^18.0.29
   '@types/styled-components': ^5.1.26
   '@types/web-app-manifest': ^1.0.2
   '@typescript-eslint/eslint-plugin': ^5.56.0
@@ -42,7 +42,7 @@ devDependencies:
   '@inabagumi/prettier-config': 2.0.0_prettier@2.8.7
   '@types/eslint': 8.21.3
   '@types/gtag.js': 0.0.12
-  '@types/react': 18.0.28
+  '@types/react': 18.0.29
   '@types/styled-components': 5.1.26
   '@types/web-app-manifest': 1.0.2
   '@typescript-eslint/eslint-plugin': 5.56.0_2hcjazgfnbtq42tcc73br2vup4
@@ -1371,7 +1371,7 @@ packages:
       react: '>=16'
     dependencies:
       '@types/mdx': 2.0.3
-      '@types/react': 18.0.28
+      '@types/react': 18.0.29
       react: 18.2.0
     dev: false
 
@@ -1793,7 +1793,7 @@ packages:
   /@types/hoist-non-react-statics/3.3.1:
     resolution: {integrity: sha512-iMIqiko6ooLrTh1joXodJK5X9xeEALT1kM5G3ZLhD3hszxBdIEd5C75U834D9mLcINgD4OyZf5uQXjkuYydWvA==}
     dependencies:
-      '@types/react': 18.0.28
+      '@types/react': 18.0.29
       hoist-non-react-statics: 3.3.2
     dev: true
 
@@ -1834,8 +1834,8 @@ packages:
   /@types/prop-types/15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
 
-  /@types/react/18.0.28:
-    resolution: {integrity: sha512-RD0ivG1kEztNBdoAK7lekI9M+azSnitIn85h4iOiaLjaTrMjzslhaqCGaI4IyCJ1RljWiLCEu4jyrLLgqxBTew==}
+  /@types/react/18.0.29:
+    resolution: {integrity: sha512-wXHktgUABxplw1+UnljseDq4+uztQyp2tlWZRIxHlpchsCFqiYkvaDS8JR7eKOQm8wziTH/el5qL7D6gYNkYcw==}
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.2
@@ -1858,7 +1858,7 @@ packages:
     resolution: {integrity: sha512-KuKJ9Z6xb93uJiIyxo/+ksS7yLjS1KzG6iv5i78dhVg/X3u5t1H7juRWqVmodIdz6wGVaIApo1u01kmFRdJHVw==}
     dependencies:
       '@types/hoist-non-react-statics': 3.3.1
-      '@types/react': 18.0.28
+      '@types/react': 18.0.29
       csstype: 3.1.1
     dev: true
 
