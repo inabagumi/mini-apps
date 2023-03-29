@@ -1,9 +1,9 @@
+import { type FC } from 'react'
 import styled, { keyframes } from 'styled-components'
 
-import GraphBar from './graph-bar'
+import { type ResultParameter } from '../lib/analysis'
 
-import type { ResultParameter } from '../lib/analysis'
-import type { VFC } from 'react'
+import GraphBar from './graph-bar'
 
 const Container = styled.section`
   margin: 0 0 20px;
@@ -86,7 +86,7 @@ interface Props {
   title: string
 }
 
-const Graph: VFC<Props> = ({ parameters, title }) => {
+const Graph: FC<Props> = ({ parameters, title }) => {
   return (
     <Container>
       <Title>{title}</Title>

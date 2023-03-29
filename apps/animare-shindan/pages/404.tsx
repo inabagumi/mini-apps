@@ -1,11 +1,10 @@
+import { type NextPage } from 'next'
 import styled from 'styled-components'
 
 import Header from '../components/header'
 import Layout from '../components/layout'
 import Message from '../components/message'
 import SEO from '../components/seo'
-
-import type { NextPage } from 'next'
 
 const Title = styled.h1`
   font-size: 2rem;

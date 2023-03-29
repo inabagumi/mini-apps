@@ -1,6 +1,5 @@
+import { type FC } from 'react'
 import styled from 'styled-components'
-
-import type { VFC } from 'react'
 
 const Container = styled.div`
   background-color: rgba(0, 0, 0, 0.3);
@@ -20,7 +19,7 @@ type Props = {
   value: number
 }
 
-const ProgressBar: VFC<Props> = ({ max, value }) => (
+const ProgressBar: FC<Props> = ({ max, value }) => (
   <Container>
     <Bar style={{ width: `${(value / max) * 100}%` }} />
   </Container>

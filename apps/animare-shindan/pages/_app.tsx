@@ -1,14 +1,12 @@
+import { type AppProps } from 'next/app'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { useCallback, useEffect } from 'react'
+import { type FC, useCallback, useEffect } from 'react'
 
 import favicon192x192 from '../assets/favicon-192x192.png'
 import favicon512x512 from '../assets/favicon-512x512.png'
 
-import type { AppProps } from 'next/app'
-import type { VFC } from 'react'
-
-const App: VFC<AppProps> = ({ Component, pageProps }) => {
+const App: FC<AppProps> = ({ Component, pageProps }) => {
   const router = useRouter()
 
   const handleRouterChangeComplete = useCallback((url: string) => {

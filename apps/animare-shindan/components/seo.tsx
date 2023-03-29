@@ -1,9 +1,8 @@
 import Head from 'next/head'
+import { type FC } from 'react'
 
 import mainVisual from '../assets/main-visual.jpg'
 import pkg from '../package.json'
-
-import type { VFC } from 'react'
 
 const defaultTitle = 'あなたのオタクタイプ診断 by あにまーれ'
 
@@ -14,7 +13,7 @@ interface Props {
   title?: string
 }
 
-const SEO: VFC<Props> = ({
+const SEO: FC<Props> = ({
   description = '好みと推しVTuberを無意識から探る！',
   image,
   pathname,

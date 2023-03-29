@@ -1,6 +1,5 @@
+import { type FC } from 'react'
 import styled, { keyframes } from 'styled-components'
-
-import type { VFC } from 'react'
 
 const Container = styled.div`
   position: absolute;
@@ -46,7 +45,7 @@ type Props = {
   value: number
 }
 
-const GraphBar: VFC<Props> = ({ blue, value }) => {
+const GraphBar: FC<Props> = ({ blue, value }) => {
   return (
     <Container style={{ width: `${value * 100}%` }}>
       <Bar blue={blue} />

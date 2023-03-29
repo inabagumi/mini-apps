@@ -1,18 +1,14 @@
 import { format } from 'date-fns'
+import { type GetStaticProps } from 'next'
 import { MDXRemote } from 'next-mdx-remote'
+import { type FC } from 'react'
 import styled from 'styled-components'
 
 import Header from '../components/header'
 import Layout from '../components/layout'
 import Message from '../components/message'
 import SEO from '../components/seo'
-
-import type { Release } from '../lib/releases'
-
-import { getAllReleases } from '../lib/releases'
-
-import type { GetStaticProps } from 'next'
-import type { VFC } from 'react'
+import { type Release, getAllReleases } from '../lib/releases'
 
 const Content = styled.main`
   padding-top: 30px;
@@ -105,7 +101,7 @@ type Props = {
   releases: Release[]
 }
 
-const List: VFC<Props> = ({ releases }) => {
+const List: FC<Props> = ({ releases }) => {
   return (
     <Layout>
       <SEO title="お知らせ" />

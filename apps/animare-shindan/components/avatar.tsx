@@ -1,6 +1,5 @@
+import { type FC } from 'react'
 import styled from 'styled-components'
-
-import type { VFC } from 'react'
 
 const Image = styled.img`
   border: solid #14b9ff 2px;
@@ -22,7 +21,7 @@ type Props = {
   src: string
 }
 
-const Avatar: VFC<Props> = ({ src }) => {
+const Avatar: FC<Props> = ({ src }) => {
   return <Image alt="" height="128" src={src} width="128" />
 }
 

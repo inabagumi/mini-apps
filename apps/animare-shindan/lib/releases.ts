@@ -1,7 +1,6 @@
 import { Octokit } from '@octokit/rest'
+import { type MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
-
-import type { MDXRemoteSerializeResult } from 'next-mdx-remote'
 
 const octokit = new Octokit({
   auth: process.env.GITHUB_TOKEN

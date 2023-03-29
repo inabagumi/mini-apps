@@ -1,8 +1,7 @@
+import { type FC, type ReactNode } from 'react'
 import styled from 'styled-components'
 
 import nanashi from '../assets/nanashi.svg'
-
-import type { ReactNode, VFC } from 'react'
 
 const Root = styled.div`
   background-color: #fff;
@@ -33,7 +32,7 @@ type Props = {
   className?: string
 }
 
-const MessageWindow: VFC<Props> = ({ children, className }) => (
+const MessageWindow: FC<Props> = ({ children, className }) => (
   <Root className={className}>{children}</Root>
 )
 
