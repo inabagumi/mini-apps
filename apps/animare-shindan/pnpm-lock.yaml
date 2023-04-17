@@ -40,8 +40,8 @@ devDependencies:
     specifier: ^0.0.12
     version: 0.0.12
   '@types/react':
-    specifier: ^18.0.35
-    version: 18.0.35
+    specifier: ^18.0.37
+    version: 18.0.37
   '@types/styled-components':
     specifier: ^5.1.26
     version: 5.1.26
@@ -1368,7 +1368,7 @@ packages:
       react: '>=16'
     dependencies:
       '@types/mdx': 2.0.4
-      '@types/react': 18.0.35
+      '@types/react': 18.0.37
       react: 18.2.0
     dev: false
 
@@ -1759,7 +1759,7 @@ packages:
   /@types/hoist-non-react-statics@3.3.1:
     resolution: {integrity: sha512-iMIqiko6ooLrTh1joXodJK5X9xeEALT1kM5G3ZLhD3hszxBdIEd5C75U834D9mLcINgD4OyZf5uQXjkuYydWvA==}
     dependencies:
-      '@types/react': 18.0.35
+      '@types/react': 18.0.37
       hoist-non-react-statics: 3.3.2
     dev: true
 
@@ -1800,8 +1800,8 @@ packages:
   /@types/prop-types@15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
 
-  /@types/react@18.0.35:
-    resolution: {integrity: sha512-6Laome31HpetaIUGFWl1VQ3mdSImwxtFZ39rh059a1MNnKGqBpC88J6NJ8n/Is3Qx7CefDGLgf/KhN/sYCf7ag==}
+  /@types/react@18.0.37:
+    resolution: {integrity: sha512-4yaZZtkRN3ZIQD3KSEwkfcik8s0SWV+82dlJot1AbGYHCzJkWP3ENBY6wYeDRmKZ6HkrgoGAmR2HqdwYGp6OEw==}
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.3
@@ -1824,7 +1824,7 @@ packages:
     resolution: {integrity: sha512-KuKJ9Z6xb93uJiIyxo/+ksS7yLjS1KzG6iv5i78dhVg/X3u5t1H7juRWqVmodIdz6wGVaIApo1u01kmFRdJHVw==}
     dependencies:
       '@types/hoist-non-react-statics': 3.3.1
-      '@types/react': 18.0.35
+      '@types/react': 18.0.37
       csstype: 3.1.2
     dev: true
 
