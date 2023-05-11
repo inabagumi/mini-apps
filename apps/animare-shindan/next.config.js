@@ -8,19 +8,6 @@ const withPWA = nextPWA({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  compiler: {
-    styledComponents: true
-  },
-  eslint: {
-    dirs: ['components', 'lib', 'pages', 'prisma']
-  },
-  experimental: {
-    esmExternals: true
-  },
-  i18n: {
-    defaultLocale: 'ja',
-    locales: ['ja']
-  },
   async rewrites() {
     return [
       {
@@ -30,10 +17,6 @@ const nextConfig = {
       {
         destination: '/_next/static/workbox-:hash.js',
         source: '/workbox-:hash.js'
-      },
-      {
-        destination: '/api/manifest',
-        source: '/manifest.webmanifest'
       }
     ]
   }

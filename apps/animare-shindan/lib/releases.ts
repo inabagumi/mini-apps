@@ -1,13 +1,11 @@
 import { Octokit } from '@octokit/rest'
-import { type MDXRemoteSerializeResult } from 'next-mdx-remote'
-import { serialize } from 'next-mdx-remote/serialize'
 
 const octokit = new Octokit({
   auth: process.env.GITHUB_TOKEN
 })
 
 export type Release = {
-  contentSource: MDXRemoteSerializeResult
+  body: string
   date: string
   slug: string
   title: string
@@ -19,14 +17,22 @@ export async function getAllReleases(): Promise<Release[]> {
     repo: 'animare-shindan'
   })
 
-  return Promise.all(
-    releases.map<Promise<Release>>((release) =>
-      serialize(release.body ?? '').then((contentSource) => ({
-        contentSource,
-        date: release.created_at,
-        slug: release.tag_name,
-        title: release.name || release.tag_name
-      }))
-    )
-  )
+  return releases.map<Release>((release) => ({
+    body: release.body ?? '',
+    date: release.created_at,
+    slug: release.tag_name,
+    title: release.name || release.tag_name
+  }))
+}
+
+export async function getRecentReleaseTitle(): Promise<string> {
+  const {
+    data: [release]
+  } = await octokit.repos.listReleases({
+    owner: 'inabagumi',
+    per_page: 1,
+    repo: 'animare-shindan'
+  })
+
+  return release.name || release.tag_name
 }

@@ -1,0 +1,112 @@
+.container {
+  margin: 0 0 20px;
+}
+
+.title {
+  background-color: #ececec;
+  font-size: 1.4rem;
+  margin: 26px -20px 0;
+  padding: 8px;
+  text-align: center;
+}
+
+@media (min-width: 500px) {
+  .title {
+    font-size: 1.6rem;
+    margin: 28px 0 0;
+  }
+}
+
+.body {
+  margin: 0;
+  padding: 24px 0 20px;
+}
+
+@media (min-width: 500px) {
+  .body {
+    padding: 44px 0 0;
+  }
+}
+
+.parameter {
+  display: flex;
+  height: 44px;
+  margin: 16px 0;
+}
+
+.parameterLabel {
+  align-items: center;
+  display: flex;
+  flex-basis: 60px;
+  font-size: 1rem;
+  letter-spacing: 0.04rem;
+  line-height: 1.4;
+  position: relative;
+}
+
+.parameterLabel::after {
+  border-right: 1px solid #ececec;
+  content: '';
+  display: block;
+  height: 76px;
+  position: absolute;
+  right: 0;
+  top: -16px;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.parameterLabelText {
+  animation: show 0.4s linear;
+}
+
+.parameterValue {
+  align-items: center;
+  display: flex;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+  margin: 0;
+  position: relative;
+}
+
+@keyframes progress {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+.graphBar {
+  position: absolute;
+  width: 100%;
+}
+
+.graphBarValue {
+  animation: show 0.4s linear, progress 1.8s ease-in;
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0.15) 0.75rem,
+    transparent 0.75rem,
+    transparent 1.5rem
+  );
+  background-color: #d1d1d1;
+  border-radius: 0 3px 3px 0;
+  height: 44px;
+}
+
+.graphBarValueBlue {
+  background-color: #14b9ff;
+}

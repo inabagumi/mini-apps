@@ -1,0 +1,23 @@
+@layer base, state;
+
+html {
+  background-color: #0588f7;
+  background-image: repeating-linear-gradient(
+    150deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.05) 9px,
+    transparent 10px,
+    transparent 19px
+  );
+  font-family: var(--font-noto-sans), sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  height: 100%;
+  line-height: 1.8;
+}
+
+body {
+  font-size: 1.5rem;
+  height: 100%;
+  margin: 0;
+}

@@ -1,0 +1,87 @@
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 680px;
+  padding: 20px 0;
+  width: 100%;
+}
+
+.logo {
+  background-color: #212121;
+  border-radius: 3px;
+  color: #fff;
+  display: block;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 7px;
+  line-height: 2;
+  padding: 0 0.2em 0 0.5em;
+  text-decoration: none;
+}
+
+.navigationList {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navigationItem {
+  display: block;
+  margin: 0 4px;
+  padding: 0;
+}
+
+.shareButton {
+  align-items: center;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  height: 32px;
+  justify-content: center;
+  width: 32px;
+}
+
+@media (min-width: 500px) {
+  .shareButton {
+    height: 48px;
+    width: 48px;
+  }
+}
+
+.shareIcon {
+  height: 16px;
+  width: 16px;
+}
+
+@media (min-width: 500px) {
+  .shareIcon {
+    height: 24px;
+    width: 24px;
+  }
+}
+
+.content {
+  padding-top: 30px;
+}
+
+.message {
+  background-color: #fff;
+  border: solid #000 4px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  color: #000;
+  margin: 0 auto;
+  max-width: 680px;
+  padding: 25px 0;
+  width: 100%;
+}
+
+@media (min-width: 500px) {
+  .message {
+    margin-top: 50px;
+    padding-bottom: 40px;
+    padding-top: 40px;
+  }
+}

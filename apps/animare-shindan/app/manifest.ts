@@ -1,13 +1,13 @@
-import { type NextApiHandler } from 'next'
-import { type WebAppManifest } from 'web-app-manifest'
+import { type MetadataRoute } from 'next'
 
-import favicon192x192 from '../../assets/favicon-192x192.png'
-import favicon512x512 from '../../assets/favicon-512x512.png'
+import favicon512x512 from './icon1.png'
+import favicon192x192 from './icon2.png'
 
-const handler: NextApiHandler<WebAppManifest> = (_req, res) => {
-  res.setHeader('Cache-Control', 'max-age=60, s-maxage=120')
-  res.setHeader('Content-Type', 'application/manifest+json')
-  res.status(200).json({
+export const runtime = 'edge'
+export const revalidate = 120
+
+export default function manifest(): MetadataRoute.Manifest {
+  return {
     background_color: '#fff',
     display: 'standalone',
     icons: [
@@ -27,7 +27,5 @@ const handler: NextApiHandler<WebAppManifest> = (_req, res) => {
     short_name: 'あにまーれ診断',
     start_url: '/',
     theme_color: '#0588f7'
-  })
+  }
 }
-
-export default handler

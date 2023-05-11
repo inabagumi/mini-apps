@@ -1,0 +1,46 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  box-sizing: border-box;
+  flex-basis: 0;
+  flex-grow: 1;
+  padding: 0 20px;
+}
+
+@media (min-width: 500px) {
+  .content {
+    padding: 0;
+  }
+}
+
+.footer {
+  align-items: center;
+  background-color: #fff;
+  border-top: solid #000 6px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  padding: 20px 12px 32px;
+}
+
+.copyright {
+  font-size: 1.3rem;
+  margin: 28px 0 0;
+  letter-spacing: 0.04rem;
+  text-align: center;
+}
+
+@media (min-width: 500px) {
+  .copyright {
+    font-size: 1.5rem;
+  }
+}
+
+.copyrightLink {
+  color: inherit;
+  text-decoration: none;
+}
