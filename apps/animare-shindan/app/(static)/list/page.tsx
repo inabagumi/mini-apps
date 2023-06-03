@@ -29,7 +29,6 @@ export default async function ReleasesPage(): Promise<JSX.Element> {
             <h2 className={styles.releaseTitle}>{release.title}</h2>
 
             <div className={styles.releaseBody}>
-              {/* @ts-expect-error Async Server Component */}
               <MDXRemote source={release.body} />
             </div>
           </section>

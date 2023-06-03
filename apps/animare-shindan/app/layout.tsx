@@ -43,7 +43,6 @@ export default function RootLayout({ children }: Props): JSX.Element {
 
           <footer className={styles.footer}>
             <Suspense>
-              {/* @ts-expect-error Async Server Component */}
               <ReleaseLink href="/list" />
             </Suspense>
 
