@@ -1,7 +1,7 @@
 {
   "author": "Haneru Developers",
   "dependencies": {
-    "@octokit/rest": "^19.0.12",
+    "@octokit/rest": "^19.0.13",
     "@prisma/client": "^4.15.0",
     "@radix-ui/react-portal": "^1.0.3",
     "@vercel/analytics": "^1.0.1",

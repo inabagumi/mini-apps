@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@octokit/rest':
-    specifier: ^19.0.12
-    version: 19.0.12(encoding@0.1.13)
+    specifier: ^19.0.13
+    version: 19.0.13(encoding@0.1.13)
   '@prisma/client':
     specifier: ^4.15.0
     version: 4.15.0(prisma@4.15.0)
@@ -1601,14 +1601,14 @@ packages:
     resolution: {integrity: sha512-V8GImKs3TeQRxRtXFpG2wl19V7444NIOTDF24AWuIbmNaNYOQMWRbjcGDXV5B+0n887fgDcuMNOmlul+k+oJtw==}
     dev: false
 
-  /@octokit/plugin-paginate-rest@7.1.2(@octokit/core@4.2.1):
-    resolution: {integrity: sha512-Jx8KuKqEAVRsK6fMzZKv3h6UH9/NRDHsDRtUAROqqmZlCptM///Uef7A1ViZ/cbDplekz7VbDWdFLAZ/mpuDww==}
-    engines: {node: '>= 18'}
+  /@octokit/plugin-paginate-rest@6.1.2(@octokit/core@4.2.1):
+    resolution: {integrity: sha512-qhrmtQeHU/IivxucOV1bbI/xZyC/iOBhclokv7Sut5vnejAIAEXVcGQeRpQlU39E0WwK9lNvJHphHri/DB6lbQ==}
+    engines: {node: '>= 14'}
     peerDependencies:
       '@octokit/core': '>=4'
     dependencies:
       '@octokit/core': 4.2.1(encoding@0.1.13)
-      '@octokit/tsconfig': 2.0.0
+      '@octokit/tsconfig': 1.0.2
       '@octokit/types': 9.3.2
     dev: false
 
@@ -1654,20 +1654,20 @@ packages:
       - encoding
     dev: false
 
-  /@octokit/rest@19.0.12(encoding@0.1.13):
-    resolution: {integrity: sha512-oOeaUb9mmtLej6r0hjyT0KGN0NaT3BOMKLaloRrETWGeiLBWQaxaf8Z5dh7bduxxntxZoXSW5Sb5oyl0JKKAxg==}
+  /@octokit/rest@19.0.13(encoding@0.1.13):
+    resolution: {integrity: sha512-/EzVox5V9gYGdbAI+ovYj3nXQT1TtTHRT+0eZPcuC05UFSWO3mdO9UY1C0i2eLF9Un1ONJkAk+IEtYGAC+TahA==}
     engines: {node: '>= 14'}
     dependencies:
       '@octokit/core': 4.2.1(encoding@0.1.13)
-      '@octokit/plugin-paginate-rest': 7.1.2(@octokit/core@4.2.1)
+      '@octokit/plugin-paginate-rest': 6.1.2(@octokit/core@4.2.1)
       '@octokit/plugin-request-log': 1.0.4(@octokit/core@4.2.1)
       '@octokit/plugin-rest-endpoint-methods': 7.1.2(@octokit/core@4.2.1)
     transitivePeerDependencies:
       - encoding
     dev: false
 
-  /@octokit/tsconfig@2.0.0:
-    resolution: {integrity: sha512-tWnrai3quGt8+gRN2edzo9fmraWekeryXPeXDomMw2oFSpu/lH3VSWGn/q4V+rwjTRMeeXk/ci623/01Zet4VQ==}
+  /@octokit/tsconfig@1.0.2:
+    resolution: {integrity: sha512-I0vDR0rdtP8p2lGMzvsJzbhdOWy405HcGovrspJ8RRibHnyRgggUSNO5AIox5LmqiwmatHKYsvj6VGFHkqS7lA==}
     dev: false
 
   /@octokit/types@9.3.2:
