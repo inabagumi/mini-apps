@@ -32,7 +32,7 @@
     "next-pwa": "^5.6.0",
     "prettier": "~2.8.8",
     "prisma": "^4.16.1",
-    "typescript": "~5.1.5"
+    "typescript": "~5.1.6"
   },
   "homepage": "https://shindan.animare.cafe/",
   "license": "MIT",
