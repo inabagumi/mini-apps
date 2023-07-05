@@ -94,7 +94,9 @@
 }
 
 .graphBarValue {
-  animation: show 0.4s linear, progress 1.8s ease-in;
+  animation:
+    show 0.4s linear,
+    progress 1.8s ease-in;
   background-image: repeating-linear-gradient(
     45deg,
     rgba(255, 255, 255, 0.15),
