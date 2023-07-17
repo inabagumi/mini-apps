@@ -5,7 +5,7 @@
     "@prisma/client": "^4.16.2",
     "@radix-ui/react-portal": "^1.0.3",
     "@vercel/analytics": "^1.0.1",
-    "clsx": "^1.2.1",
+    "clsx": "^2.0.0",
     "date-fns": "^2.30.0",
     "next": "^13.4.10",
     "next-mdx-remote": "^4.4.1",
