@@ -56,7 +56,7 @@ devDependencies:
     specifier: ^18.2.21
     version: 18.2.21
   '@types/styled-components':
-    specifier: ^5.1.26
+    specifier: ^5.1.27
     version: 5.1.27
   '@types/web-app-manifest':
     specifier: ^1.0.4
