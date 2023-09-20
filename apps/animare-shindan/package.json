@@ -18,7 +18,7 @@
   "devDependencies": {
     "@inabagumi/prettier-config": "^2.0.0",
     "@types/eslint": "^8.44.2",
-    "@types/gtag.js": "^0.0.13",
+    "@types/gtag.js": "^0.0.14",
     "@types/react": "^18.2.22",
     "@types/styled-components": "^5.1.27",
     "@types/web-app-manifest": "^1.0.4",
