@@ -19,7 +19,7 @@
     "@inabagumi/prettier-config": "^2.0.0",
     "@types/eslint": "^8.44.3",
     "@types/gtag.js": "^0.0.16",
-    "@types/react": "^18.2.25",
+    "@types/react": "^18.2.26",
     "@types/styled-components": "^5.1.28",
     "@types/web-app-manifest": "^1.0.5",
     "@typescript-eslint/eslint-plugin": "^6.7.4",
