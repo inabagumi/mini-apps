@@ -39,8 +39,8 @@ dependencies:
     specifier: ^6.1.0
     version: 6.1.0(react@18.2.0)
   styled-components:
-    specifier: ^6.0.8
-    version: 6.0.8(babel-plugin-styled-components@2.1.4)(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^6.0.9
+    version: 6.0.9(babel-plugin-styled-components@2.1.4)(react-dom@18.2.0)(react@18.2.0)
 
 devDependencies:
   '@inabagumi/prettier-config':
@@ -69,7 +69,7 @@ devDependencies:
     version: 6.7.4(eslint@8.51.0)(typescript@5.2.2)
   babel-plugin-styled-components:
     specifier: ^2.1.4
-    version: 2.1.4(@babel/core@7.22.20)(styled-components@6.0.8)
+    version: 2.1.4(@babel/core@7.22.20)(styled-components@6.0.9)
   encoding:
     specifier: ^0.1.13
     version: 0.1.13
@@ -2490,7 +2490,7 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /babel-plugin-styled-components@2.1.4(@babel/core@7.22.20)(styled-components@6.0.8):
+  /babel-plugin-styled-components@2.1.4(@babel/core@7.22.20)(styled-components@6.0.9):
     resolution: {integrity: sha512-Xgp9g+A/cG47sUyRwwYxGM4bR/jDRg5N6it/8+HxCnbT5XNKSKDT9xm4oag/osgqjC2It/vH0yXsomOG6k558g==}
     peerDependencies:
       styled-components: '>= 2'
@@ -2500,7 +2500,7 @@ packages:
       '@babel/plugin-syntax-jsx': 7.22.5(@babel/core@7.22.20)
       lodash: 4.17.21
       picomatch: 2.3.1
-      styled-components: 6.0.8(babel-plugin-styled-components@2.1.4)(react-dom@18.2.0)(react@18.2.0)
+      styled-components: 6.0.9(babel-plugin-styled-components@2.1.4)(react-dom@18.2.0)(react@18.2.0)
     transitivePeerDependencies:
       - '@babel/core'
 
@@ -5480,8 +5480,8 @@ packages:
       inline-style-parser: 0.1.1
     dev: false
 
-  /styled-components@6.0.8(babel-plugin-styled-components@2.1.4)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-AwI02MTWZwqjzfXgR5QcbmcSn5xVjY4N2TLjSuYnmuBGF3y7GicHz3ysbpUq2EMJP5M8/Nc22vcmF3V3WNZDFA==}
+  /styled-components@6.0.9(babel-plugin-styled-components@2.1.4)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-dDEXXF66b4iQhI1YHgvkBqfdJPGj2EifyLd298PVs50nz7KDfBKnAmWVnkZtw6+Nb6Izf19BAUyfYy8p434JAg==}
     engines: {node: '>= 16'}
     peerDependencies:
       babel-plugin-styled-components: '>= 2'
@@ -5504,7 +5504,7 @@ packages:
       '@emotion/is-prop-valid': 1.2.1
       '@emotion/unitless': 0.8.1
       '@types/stylis': 4.2.0
-      babel-plugin-styled-components: 2.1.4(@babel/core@7.22.20)(styled-components@6.0.8)
+      babel-plugin-styled-components: 2.1.4(@babel/core@7.22.20)(styled-components@6.0.9)
       css-to-react-native: 3.2.0
       csstype: 3.1.2
       postcss: 8.4.31
