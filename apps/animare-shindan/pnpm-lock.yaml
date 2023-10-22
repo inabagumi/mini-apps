@@ -9,7 +9,7 @@ dependencies:
     specifier: ^20.0.2
     version: 20.0.2
   '@prisma/client':
-    specifier: ^5.4.0
+    specifier: ^5.4.2
     version: 5.4.2(prisma@5.4.2)
   '@radix-ui/react-portal':
     specifier: ^1.0.4
@@ -89,7 +89,7 @@ devDependencies:
     specifier: ~3.0.3
     version: 3.0.3
   prisma:
-    specifier: ^5.4.0
+    specifier: ^5.4.2
     version: 5.4.2
   typescript:
     specifier: ~5.2.2
