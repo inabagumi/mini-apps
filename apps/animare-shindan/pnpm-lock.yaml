@@ -56,8 +56,8 @@ devDependencies:
     specifier: ^18.2.38
     version: 18.2.38
   '@types/styled-components':
-    specifier: ^5.1.30
-    version: 5.1.30
+    specifier: ^5.1.31
+    version: 5.1.31
   '@types/web-app-manifest':
     specifier: ^1.0.7
     version: 1.0.7
@@ -1908,8 +1908,8 @@ packages:
     resolution: {integrity: sha512-+d+WYC1BxJ6yVOgUgzK8gWvp5qF8ssV5r4nsDcZWKRWcDQLQ619tvWAxJQYGgBrO1MnLJC7a5GtiYsAoQ47dJg==}
     dev: true
 
-  /@types/styled-components@5.1.30:
-    resolution: {integrity: sha512-xxJqw0s1myRTgrzHgG5tKHS9hK+KNhjbKMXDWlHRo9eDNVVUqf147QUGYUqwyCDkFyGr2pi1qJKFMEy0ACZb0A==}
+  /@types/styled-components@5.1.31:
+    resolution: {integrity: sha512-r7uTHGB2aQ1UWp9sN9nbQ69fSL7x8m5QhaMDa5m7mMPE+QMtZaS6Bvr5msE42y0CPRUaqTsHn+4f9z0MTfYxEA==}
     dependencies:
       '@types/hoist-non-react-statics': 3.3.5
       '@types/react': 18.2.38
