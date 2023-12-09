@@ -12,6 +12,8 @@ jobs:
   analyse:
     name: Analyse
     runs-on: ubuntu-22.04
+    permissions:
+      security-events: write
 
     steps:
       - uses: actions/checkout@v4
