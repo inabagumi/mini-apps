@@ -53,7 +53,7 @@ devDependencies:
     specifier: ^0.0.18
     version: 0.0.18
   '@types/react':
-    specifier: ^18.2.43
+    specifier: ^18.2.45
     version: 18.2.45
   '@types/styled-components':
     specifier: ^5.1.34
