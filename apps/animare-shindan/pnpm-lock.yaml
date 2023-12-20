@@ -39,8 +39,8 @@ dependencies:
     specifier: ^6.1.0
     version: 6.1.0(react@18.2.0)
   styled-components:
-    specifier: ^6.1.1
-    version: 6.1.1(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^6.1.2
+    version: 6.1.2(react-dom@18.2.0)(react@18.2.0)
 
 devDependencies:
   '@inabagumi/prettier-config':
@@ -69,7 +69,7 @@ devDependencies:
     version: 6.15.0(eslint@8.56.0)(typescript@5.3.3)
   babel-plugin-styled-components:
     specifier: ^2.1.4
-    version: 2.1.4(@babel/core@7.23.6)(styled-components@6.1.1)
+    version: 2.1.4(@babel/core@7.23.6)(styled-components@6.1.2)
   encoding:
     specifier: ^0.1.13
     version: 0.1.13
@@ -2456,7 +2456,7 @@ packages:
       - supports-color
     dev: true
 
-  /babel-plugin-styled-components@2.1.4(@babel/core@7.23.6)(styled-components@6.1.1):
+  /babel-plugin-styled-components@2.1.4(@babel/core@7.23.6)(styled-components@6.1.2):
     resolution: {integrity: sha512-Xgp9g+A/cG47sUyRwwYxGM4bR/jDRg5N6it/8+HxCnbT5XNKSKDT9xm4oag/osgqjC2It/vH0yXsomOG6k558g==}
     peerDependencies:
       styled-components: '>= 2'
@@ -2466,7 +2466,7 @@ packages:
       '@babel/plugin-syntax-jsx': 7.23.3(@babel/core@7.23.6)
       lodash: 4.17.21
       picomatch: 2.3.1
-      styled-components: 6.1.1(react-dom@18.2.0)(react@18.2.0)
+      styled-components: 6.1.2(react-dom@18.2.0)(react@18.2.0)
     transitivePeerDependencies:
       - '@babel/core'
     dev: true
@@ -5429,8 +5429,8 @@ packages:
       inline-style-parser: 0.1.1
     dev: false
 
-  /styled-components@6.1.1(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-cpZZP5RrKRIClBW5Eby4JM1wElLVP4NQrJbJ0h10TidTyJf4SIIwa3zLXOoPb4gJi8MsJ8mjq5mu2IrEhZIAcQ==}
+  /styled-components@6.1.2(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-LJjirciivbOKNuKKjheXMeNOlFspur4s2/AYW2hPyrL4RhwEFiowF9axgjeMVxX7siEoLJAitKrzpuNApJ5R/Q==}
     engines: {node: '>= 16'}
     peerDependencies:
       react: '>= 16.8.0'
