@@ -17,7 +17,7 @@
   "description": "Shindan by AniMare",
   "devDependencies": {
     "@inabagumi/prettier-config": "^2.0.2",
-    "@types/eslint": "^8.44.9",
+    "@types/eslint": "^8.56.0",
     "@types/gtag.js": "^0.0.18",
     "@types/react": "^18.2.45",
     "@types/styled-components": "^5.1.34",
