@@ -6,7 +6,7 @@
     "@radix-ui/react-portal": "^1.0.4",
     "@vercel/analytics": "^1.1.1",
     "clsx": "^2.0.0",
-    "date-fns": "^3.0.4",
+    "date-fns": "^3.0.5",
     "next": "^14.0.4",
     "next-mdx-remote": "^4.4.1",
     "react": "^18.2.0",
