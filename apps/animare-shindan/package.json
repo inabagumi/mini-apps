@@ -37,7 +37,7 @@
   "homepage": "https://shindan.animare.cafe/",
   "license": "MIT",
   "name": "animare-shindan",
-  "packageManager": "pnpm@8.15.3",
+  "packageManager": "pnpm@8.15.4",
   "private": true,
   "repository": {
     "type": "git",
