@@ -62,10 +62,10 @@ devDependencies:
     specifier: ^1.0.8
     version: 1.0.8
   '@typescript-eslint/eslint-plugin':
-    specifier: ^7.0.2
+    specifier: ^7.1.0
     version: 7.1.0(@typescript-eslint/parser@7.1.0)(eslint@8.57.0)(typescript@5.3.3)
   '@typescript-eslint/parser':
-    specifier: ^7.0.2
+    specifier: ^7.1.0
     version: 7.1.0(eslint@8.57.0)(typescript@5.3.3)
   babel-plugin-styled-components:
     specifier: ^2.1.4
