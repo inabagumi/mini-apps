@@ -6,7 +6,7 @@
     "@docusaurus/preset-classic": "^3.6.3",
     "@formspree/react": "^2.5.1",
     "@hookform/error-message": "^2.0.1",
-    "@slorber/react-ideal-image": "^0.0.12",
+    "@slorber/react-ideal-image": "^0.0.14",
     "clsx": "^2.1.1",
     "lodash": "^4.17.21",
     "react": "^19.0.0",
