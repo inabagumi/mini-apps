@@ -96,10 +96,6 @@ export default function IdealImage(props: Props): ReactNode {
 
   return (
     <ReactIdealImage
-      // @ts-expect-error: quick fix for  React >= 19 not applying defaultProps
-      icons={ReactIdealImage.defaultProps.icons}
-      // @ts-expect-error: quick fix for  React >= 19 not applying defaultProps
-      theme={ReactIdealImage.defaultProps.theme}
       {...propsRest}
       getMessage={getMessage}
       height={img.src.height ?? 100}

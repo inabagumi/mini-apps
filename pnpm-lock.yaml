@@ -465,8 +465,8 @@ importers:
         specifier: ^2.0.1
         version: 2.0.1(react-dom@19.0.0(react@19.0.0))(react-hook-form@7.54.2(react@19.0.0))(react@19.0.0)
       '@slorber/react-ideal-image':
-        specifier: ^0.0.12
-        version: 0.0.12(prop-types@15.8.1)(react-waypoint@10.3.0(react@19.0.0))(react@19.0.0)
+        specifier: ^0.0.14
+        version: 0.0.14(react-waypoint@10.3.0(react@19.0.0))(react@19.0.0)
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -3048,6 +3048,13 @@ packages:
     engines: {node: '>= 8.9.0', npm: '> 3'}
     peerDependencies:
       prop-types: '>=15'
+      react: '>=0.14.x'
+      react-waypoint: '>=9.0.2'
+
+  '@slorber/react-ideal-image@0.0.14':
+    resolution: {integrity: sha512-ULJ1VtNg+B5puJp4ZQzEnDqYyDT9erbABoQygmAovg35ltOymLMH8jXPuxJQBVskcmaG29bTZ+++hE/PAXRgxA==}
+    engines: {node: '>= 8.9.0', npm: '> 3'}
+    peerDependencies:
       react: '>=0.14.x'
       react-waypoint: '>=9.0.2'
 
@@ -13107,6 +13114,11 @@ snapshots:
   '@slorber/react-ideal-image@0.0.12(prop-types@15.8.1)(react-waypoint@10.3.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       prop-types: 15.8.1
+      react: 19.0.0
+      react-waypoint: 10.3.0(react@19.0.0)
+
+  '@slorber/react-ideal-image@0.0.14(react-waypoint@10.3.0(react@19.0.0))(react@19.0.0)':
+    dependencies:
       react: 19.0.0
       react-waypoint: 10.3.0(react@19.0.0)
 
