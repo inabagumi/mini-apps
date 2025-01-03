@@ -21,7 +21,7 @@
     "@docusaurus/types": "^3.6.3",
     "@formspree/cli": "^0.9.6",
     "@inabagumi/prettier-config": "^3.0.0",
-    "@types/lodash": "^4.17.13",
+    "@types/lodash": "^4.17.14",
     "@types/react": "^19.0.2",
     "@typescript-eslint/eslint-plugin": "^8.19.0",
     "@typescript-eslint/parser": "^8.19.0",
