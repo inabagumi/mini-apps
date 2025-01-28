@@ -249,8 +249,8 @@ importers:
         specifier: ^19.0.8
         version: 19.0.8
       '@types/webpack-env':
-        specifier: ^1.18.7
-        version: 1.18.7
+        specifier: ^1.18.8
+        version: 1.18.8
       '@typescript-eslint/eslint-plugin':
         specifier: ~8.22.0
         version: 8.22.0(@typescript-eslint/parser@8.22.0(eslint@8.57.1)(typescript@5.7.3))(eslint@8.57.1)(typescript@5.7.3)
@@ -3373,8 +3373,8 @@ packages:
   '@types/web-app-manifest@1.0.8':
     resolution: {integrity: sha512-LDEPk7Eghf71xpDL8SafB3v3rNzdKEVOJmrnx6dh/8tR5eMvI9bMY8CJBl6dPn5f2ZVfeJjXzO7NNd1kINbGVg==}
 
-  '@types/webpack-env@1.18.7':
-    resolution: {integrity: sha512-EUenEZ8xpaNKJnVbwEZq406UjWXskrNQj3l1KVCSqEPM6J4ItRxPJHgstdo6qSYSxgz677GOoAHVU0nIZiPIww==}
+  '@types/webpack-env@1.18.8':
+    resolution: {integrity: sha512-G9eAoJRMLjcvN4I08wB5I7YofOb/kaJNd5uoCMX+LbKXTPCF+ZIHuqTnFaK9Jz1rgs035f9JUPUhNFtqgucy/A==}
 
   '@types/ws@8.5.13':
     resolution: {integrity: sha512-osM/gWBTPKgHV8XkTunnegTRIsvF6owmf5w+JtAfOw472dptdm0dlGv4xCt6GwQRcC2XVOvvRE/0bAoQcL2QkA==}
@@ -13449,7 +13449,7 @@ snapshots:
 
   '@types/web-app-manifest@1.0.8': {}
 
-  '@types/webpack-env@1.18.7': {}
+  '@types/webpack-env@1.18.8': {}
 
   '@types/ws@8.5.13':
     dependencies:
