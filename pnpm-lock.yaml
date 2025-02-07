@@ -298,7 +298,7 @@ importers:
         version: 2.2.0(react@19.0.0)
       '@pixi/react':
         specifier: ^7.1.2
-        version: 7.1.2(plrdat23cb5n6mv5bsd7geu2e4)
+        version: 7.1.2(9a1b04545fe61fa895ee32e33cc8580b)
       '@reach/alert-dialog':
         specifier: ^0.18.0
         version: 0.18.0(@types/react@19.0.8)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -12568,7 +12568,7 @@ snapshots:
       '@pixi/graphics': 7.4.2(@pixi/core@7.4.2)(@pixi/display@7.4.2(@pixi/core@7.4.2))(@pixi/sprite@7.4.2(@pixi/core@7.4.2)(@pixi/display@7.4.2(@pixi/core@7.4.2)))
       '@pixi/text': 7.4.2(@pixi/core@7.4.2)(@pixi/sprite@7.4.2(@pixi/core@7.4.2)(@pixi/display@7.4.2(@pixi/core@7.4.2)))
 
-  '@pixi/react@7.1.2(plrdat23cb5n6mv5bsd7geu2e4)':
+  '@pixi/react@7.1.2(9a1b04545fe61fa895ee32e33cc8580b)':
     dependencies:
       '@babel/runtime': 7.26.0
       '@pixi/app': 7.4.2(@pixi/core@7.4.2)(@pixi/display@7.4.2(@pixi/core@7.4.2))
