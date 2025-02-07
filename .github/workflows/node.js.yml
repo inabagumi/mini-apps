@@ -7,6 +7,12 @@ on:
     branches: [main]
     tags: ['!v*']
 
+env:
+  # renovate: datasource=npm depName=corepack
+  COREPACK_VERSION: 0.31.0
+  # renovate: datasource=node-version depName=node
+  NODE_VERSION: 22.13.1
+
 jobs:
   build:
     runs-on: ubuntu-24.04
@@ -15,11 +21,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Enable corepack
-        run: corepack enable
-      - name: Use Node.js 22.x
+        run: |
+          npm install -g corepack@${COREPACK_VERSION}
+          corepack enable
+      - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v4
         with:
-          node-version: 22.x
+          node-version: ${{ env.NODE_VERSION }}
           cache: pnpm
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
