@@ -11,9 +11,9 @@
   "dependencies": {},
   "description": "Mini apps by Haneru Developers.",
   "devDependencies": {
-    "@commitlint/cli": "^19.7.1",
-    "@commitlint/config-conventional": "^19.7.1",
-    "@commitlint/types": "^19.5.0",
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "@commitlint/types": "^19.8.0",
     "@inabagumi/prettier-config": "^3.0.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.4.3",
