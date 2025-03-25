@@ -22,7 +22,7 @@
     "@formspree/cli": "^0.9.6",
     "@inabagumi/prettier-config": "^3.0.0",
     "@types/lodash": "^4.17.16",
-    "@types/react": "^19.0.10",
+    "@types/react": "^19.0.12",
     "@typescript-eslint/eslint-plugin": "^8.24.1",
     "@typescript-eslint/parser": "^8.24.1",
     "eslint": "^8.57.1",
@@ -30,7 +30,7 @@
     "eslint-import-resolver-typescript": "^3.7.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-react": "^7.37.4",
-    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
     "typescript": "~5.7.3"
   },
   "license": "MIT",
