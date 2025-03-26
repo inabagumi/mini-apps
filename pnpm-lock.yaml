@@ -58,7 +58,7 @@ importers:
         specifier: ^9.6.1
         version: 9.6.1
       '@types/node':
-        specifier: ^22.13.4
+        specifier: ^22.13.13
         version: 22.13.13
       '@types/react':
         specifier: ^19.0.12
@@ -119,7 +119,7 @@ importers:
         specifier: ^9.6.1
         version: 9.6.1
       '@types/node':
-        specifier: ^22.13.4
+        specifier: ^22.13.13
         version: 22.13.13
       '@types/react':
         specifier: ^19.0.12
@@ -243,7 +243,7 @@ importers:
         specifier: ^2.0.13
         version: 2.0.13
       '@types/node':
-        specifier: ^22.13.4
+        specifier: ^22.13.13
         version: 22.13.13
       '@types/react':
         specifier: ^19.0.12
@@ -358,7 +358,7 @@ importers:
         specifier: ^9.6.1
         version: 9.6.1
       '@types/node':
-        specifier: ^22.13.4
+        specifier: ^22.13.13
         version: 22.13.13
       '@types/react':
         specifier: ^19.0.12
