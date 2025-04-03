@@ -19,7 +19,7 @@
     "lint-staged": "^15.5.0",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
-    "turbo": "^2.4.2"
+    "turbo": "^2.5.0"
   },
   "homepage": "https://inaba-jinja.com",
   "license": "MIT",
