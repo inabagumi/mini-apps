@@ -39,7 +39,7 @@
     "next-pwa": "^5.6.0",
     "postcss": "^8.5.3",
     "prettier": "~3.5.3",
-    "typescript": "~5.8.2"
+    "typescript": "~5.8.3"
   },
   "license": "MIT",
   "name": "neru-camera",
