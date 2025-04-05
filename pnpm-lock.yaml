@@ -61,7 +61,7 @@ importers:
         specifier: ^22.14.0
         version: 22.14.0
       '@types/react':
-        specifier: ^19.0.12
+        specifier: ^19.1.0
         version: 19.1.0
       '@types/web-app-manifest':
         specifier: ^1.0.9
@@ -122,10 +122,10 @@ importers:
         specifier: ^22.14.0
         version: 22.14.0
       '@types/react':
-        specifier: ^19.0.12
+        specifier: ^19.1.0
         version: 19.1.0
       '@types/react-dom':
-        specifier: ^19.0.4
+        specifier: ^19.1.1
         version: 19.1.1(@types/react@19.1.0)
       '@typescript-eslint/eslint-plugin':
         specifier: ^8.29.0
@@ -246,7 +246,7 @@ importers:
         specifier: ^22.14.0
         version: 22.14.0
       '@types/react':
-        specifier: ^19.0.12
+        specifier: ^19.1.0
         version: 19.1.0
       '@types/webpack-env':
         specifier: ^1.18.8
@@ -361,7 +361,7 @@ importers:
         specifier: ^22.14.0
         version: 22.14.0
       '@types/react':
-        specifier: ^19.0.12
+        specifier: ^19.1.0
         version: 19.1.0
       '@typescript-eslint/eslint-plugin':
         specifier: ^8.29.0
@@ -419,7 +419,7 @@ importers:
         specifier: ^2.0.5
         version: 2.0.5
       '@types/react':
-        specifier: ^19.0.12
+        specifier: ^19.1.0
         version: 19.1.0
       tsup:
         specifier: ^8.4.0
@@ -505,7 +505,7 @@ importers:
         specifier: ^4.17.16
         version: 4.17.16
       '@types/react':
-        specifier: ^19.0.12
+        specifier: ^19.1.0
         version: 19.1.0
       '@typescript-eslint/eslint-plugin':
         specifier: ^8.29.0
