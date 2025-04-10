@@ -32,7 +32,7 @@
     "autoprefixer": "^10.4.21",
     "eslint": "^8.57.1",
     "eslint-config-next": "^15.3.0",
-    "eslint-config-prettier": "^10.1.1",
+    "eslint-config-prettier": "^10.1.2",
     "husky": "^9.1.7",
     "is-ci": "^4.1.0",
     "lint-staged": "^15.5.0",
