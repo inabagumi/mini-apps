@@ -29,7 +29,7 @@
     "@inaba-jinja/tailwind-config": "workspace:*",
     "@jest/types": "^29.6.3",
     "@mdx-js/loader": "^3.1.0",
-    "@next/mdx": "^15.3.0",
+    "@next/mdx": "^15.3.1",
     "@svgr/webpack": "^8.1.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
