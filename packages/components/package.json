@@ -14,7 +14,7 @@
     "@tsconfig/node20": "^20.1.5",
     "@tsconfig/strictest": "^2.0.5",
     "@types/react": "^19.1.4",
-    "tsup": "^8.4.0"
+    "tsup": "^8.5.0"
   },
   "exports": {
     ".": {
