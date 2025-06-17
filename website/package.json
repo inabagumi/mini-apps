@@ -11,7 +11,7 @@
     "lodash": "^4.17.21",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-hook-form": "^7.58.0",
+    "react-hook-form": "^7.58.1",
     "react-textarea-autosize": "^8.5.9"
   },
   "description": "We are Haneru Developers!",
