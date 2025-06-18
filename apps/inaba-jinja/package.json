@@ -27,7 +27,7 @@
   "description": "The source code for the Inaba Jinja.",
   "devDependencies": {
     "@inaba-jinja/tailwind-config": "workspace:*",
-    "@jest/types": "^30.0.0",
+    "@jest/types": "^30.0.1",
     "@mdx-js/loader": "^3.1.0",
     "@next/mdx": "^15.3.4",
     "@svgr/webpack": "^8.1.0",
@@ -47,7 +47,7 @@
     "eslint-config-next": "^15.3.4",
     "eslint-config-prettier": "~10.1.5",
     "eslint-config-turbo": "^2.5.4",
-    "jest": "^30.0.0",
+    "jest": "^30.0.1",
     "postcss": "^8.5.6",
     "postcss-load-config": "^6.0.1",
     "rehype-external-links": "^3.0.0",
