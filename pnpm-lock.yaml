@@ -79,11 +79,11 @@ importers:
         specifier: ^15.4.1
         version: 15.4.1(eslint@8.57.1)(typescript@5.8.3)
       eslint-config-prettier:
-        specifier: ^10.1.5
-        version: 10.1.5(eslint@8.57.1)
+        specifier: ^10.1.7
+        version: 10.1.7(eslint@8.57.1)
       eslint-plugin-prettier:
         specifier: ^5.5.1
-        version: 5.5.1(@types/eslint@9.6.1)(eslint-config-prettier@10.1.5(eslint@8.57.1))(eslint@8.57.1)(prettier@3.6.2)
+        version: 5.5.1(@types/eslint@9.6.1)(eslint-config-prettier@10.1.7(eslint@8.57.1))(eslint@8.57.1)(prettier@3.6.2)
       file-loader:
         specifier: ^6.2.0
         version: 6.2.0(webpack@5.100.1)
@@ -140,11 +140,11 @@ importers:
         specifier: ^15.4.1
         version: 15.4.1(eslint@8.57.1)(typescript@5.8.3)
       eslint-config-prettier:
-        specifier: ^10.1.5
-        version: 10.1.5(eslint@8.57.1)
+        specifier: ^10.1.7
+        version: 10.1.7(eslint@8.57.1)
       eslint-plugin-prettier:
         specifier: ^5.5.1
-        version: 5.5.1(@types/eslint@9.6.1)(eslint-config-prettier@10.1.5(eslint@8.57.1))(eslint@8.57.1)(prettier@3.6.2)
+        version: 5.5.1(@types/eslint@9.6.1)(eslint-config-prettier@10.1.7(eslint@8.57.1))(eslint@8.57.1)(prettier@3.6.2)
       file-loader:
         specifier: ^6.2.0
         version: 6.2.0(webpack@5.100.1)
@@ -264,8 +264,8 @@ importers:
         specifier: ^15.4.1
         version: 15.4.1(eslint@8.57.1)(typescript@5.8.3)
       eslint-config-prettier:
-        specifier: ~10.1.5
-        version: 10.1.5(eslint@8.57.1)
+        specifier: ~10.1.7
+        version: 10.1.7(eslint@8.57.1)
       eslint-config-turbo:
         specifier: ^2.5.5
         version: 2.5.5(eslint@8.57.1)(turbo@2.5.5)
@@ -379,8 +379,8 @@ importers:
         specifier: ^15.4.1
         version: 15.4.1(eslint@8.57.1)(typescript@5.8.3)
       eslint-config-prettier:
-        specifier: ^10.1.5
-        version: 10.1.5(eslint@8.57.1)
+        specifier: ^10.1.7
+        version: 10.1.7(eslint@8.57.1)
       husky:
         specifier: ^9.1.7
         version: 9.1.7
@@ -517,8 +517,8 @@ importers:
         specifier: ^8.57.1
         version: 8.57.1
       eslint-config-prettier:
-        specifier: ^10.1.5
-        version: 10.1.5(eslint@8.57.1)
+        specifier: ^10.1.7
+        version: 10.1.7(eslint@8.57.1)
       eslint-import-resolver-typescript:
         specifier: ^4.4.4
         version: 4.4.4(eslint-plugin-import@2.32.0)(eslint@8.57.1)
@@ -5147,8 +5147,8 @@ packages:
       typescript:
         optional: true
 
-  eslint-config-prettier@10.1.5:
-    resolution: {integrity: sha512-zc1UmCpNltmVY34vuLRV61r1K27sWuX39E+uyUnY8xS2Bex88VV9cugG+UZbRSRGtGyFboj+D8JODyme1plMpw==}
+  eslint-config-prettier@10.1.7:
+    resolution: {integrity: sha512-xztdELuHs7grBM+qdMUF4M4SjPpeOMN3kx7sGU6ifl5yibck/GRa0+0d+m1lPsGNkd+2bIWh2lUUTzX7MX/obw==}
     hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
@@ -15574,7 +15574,7 @@ snapshots:
       - eslint-plugin-import-x
       - supports-color
 
-  eslint-config-prettier@10.1.5(eslint@8.57.1):
+  eslint-config-prettier@10.1.7(eslint@8.57.1):
     dependencies:
       eslint: 8.57.1
 
@@ -15728,7 +15728,7 @@ snapshots:
       safe-regex-test: 1.1.0
       string.prototype.includes: 2.0.1
 
-  eslint-plugin-prettier@5.5.1(@types/eslint@9.6.1)(eslint-config-prettier@10.1.5(eslint@8.57.1))(eslint@8.57.1)(prettier@3.6.2):
+  eslint-plugin-prettier@5.5.1(@types/eslint@9.6.1)(eslint-config-prettier@10.1.7(eslint@8.57.1))(eslint@8.57.1)(prettier@3.6.2):
     dependencies:
       eslint: 8.57.1
       prettier: 3.6.2
@@ -15736,7 +15736,7 @@ snapshots:
       synckit: 0.11.8
     optionalDependencies:
       '@types/eslint': 9.6.1
-      eslint-config-prettier: 10.1.5(eslint@8.57.1)
+      eslint-config-prettier: 10.1.7(eslint@8.57.1)
 
   eslint-plugin-react-hooks@5.2.0(eslint@8.57.1):
     dependencies:
