@@ -20,8 +20,8 @@
     "dedent": "^1.6.0",
     "edge-sitemap": "^1.1.1",
     "next": "^15.4.4",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
     "tailwind-merge": "^2.6.0"
   },
   "description": "The source code for the Inaba Jinja.",

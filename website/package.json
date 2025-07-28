@@ -9,8 +9,8 @@
     "@slorber/react-ideal-image": "^0.0.14",
     "clsx": "^2.1.1",
     "lodash": "^4.17.21",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
     "react-hook-form": "^7.61.1",
     "react-textarea-autosize": "^8.5.9"
   },
