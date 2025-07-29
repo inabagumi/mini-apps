@@ -173,8 +173,8 @@ importers:
         specifier: ^1.1.14
         version: 1.1.14(@types/react-dom@19.1.6(@types/react@19.1.8))(@types/react@19.1.8)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@upstash/redis':
-        specifier: ^1.35.1
-        version: 1.35.1
+        specifier: ^1.35.2
+        version: 1.35.2
       '@vercel/analytics':
         specifier: ^1.5.0
         version: 1.5.0(next@15.4.4(@babel/core@7.28.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)
@@ -3635,8 +3635,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@upstash/redis@1.35.1':
-    resolution: {integrity: sha512-sIMuAMU9IYbE2bkgDby8KLoQKRiBMXn0moXxqLvUmQ7VUu2CvulZLtK8O0x3WQZFvvZhU5sRC2/lOVZdGfudkA==}
+  '@upstash/redis@1.35.2':
+    resolution: {integrity: sha512-QlEI77M/qfSA7G6yioKrUiKCueewONb7P0Xe4Pr42RSJHs8S+UkBwY2unEiTWtONC4L6ngKjbtQJgpXzxbnRpw==}
 
   '@vercel/analytics@1.5.0':
     resolution: {integrity: sha512-MYsBzfPki4gthY5HnYN7jgInhAZ7Ac1cYDoRWFomwGHWEX7odTEzbtg9kf/QSo7XEsEAqlQugA6gJ2WS2DEa3g==}
@@ -13913,7 +13913,7 @@ snapshots:
   '@unrs/resolver-binding-win32-x64-msvc@1.11.1':
     optional: true
 
-  '@upstash/redis@1.35.1':
+  '@upstash/redis@1.35.2':
     dependencies:
       uncrypto: 0.1.3
 
