@@ -19,7 +19,7 @@
     "contentful": "^11.7.15",
     "dedent": "^1.6.0",
     "edge-sitemap": "^1.1.1",
-    "next": "^15.4.4",
+    "next": "^15.4.5",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "tailwind-merge": "^2.6.0"
@@ -29,7 +29,7 @@
     "@inaba-jinja/tailwind-config": "workspace:*",
     "@jest/types": "^30.0.5",
     "@mdx-js/loader": "^3.1.0",
-    "@next/mdx": "^15.4.4",
+    "@next/mdx": "^15.4.5",
     "@svgr/webpack": "^8.1.0",
     "@testing-library/jest-dom": "^6.6.4",
     "@testing-library/react": "^16.3.0",
