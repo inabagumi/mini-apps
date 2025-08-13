@@ -11,7 +11,7 @@
   "dependencies": {
     "@inaba-jinja/components": "workspace:*",
     "@mdx-js/react": "^3.1.0",
-    "@radix-ui/react-dialog": "^1.1.14",
+    "@radix-ui/react-dialog": "^1.1.15",
     "@upstash/redis": "^1.35.3",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
