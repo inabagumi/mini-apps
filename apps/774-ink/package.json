@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "next": "^15.4.6",
+    "next": "^15.4.7",
     "next-seo": "^6.8.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
@@ -14,7 +14,7 @@
     "@typescript-eslint/eslint-plugin": "^8.35.1",
     "@typescript-eslint/parser": "^8.35.1",
     "eslint": "^8.57.1",
-    "eslint-config-next": "^15.4.6",
+    "eslint-config-next": "^15.4.7",
     "eslint-config-prettier": "^10.1.7",
     "eslint-plugin-prettier": "^5.5.4",
     "file-loader": "^6.2.0",
