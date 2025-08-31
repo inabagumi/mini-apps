@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@inaba-jinja/components": "workspace:*",
-    "@mdx-js/react": "^3.1.0",
+    "@mdx-js/react": "^3.1.1",
     "@radix-ui/react-dialog": "^1.1.15",
     "@upstash/redis": "^1.35.3",
     "@vercel/analytics": "^1.5.0",
@@ -28,7 +28,7 @@
   "devDependencies": {
     "@inaba-jinja/tailwind-config": "workspace:*",
     "@jest/types": "^30.0.5",
-    "@mdx-js/loader": "^3.1.0",
+    "@mdx-js/loader": "^3.1.1",
     "@next/mdx": "^15.4.7",
     "@svgr/webpack": "^8.1.0",
     "@testing-library/jest-dom": "^6.8.0",
