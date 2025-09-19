@@ -428,8 +428,8 @@ importers:
   packages/tailwind-config:
     dependencies:
       '@tailwindcss/typography':
-        specifier: ^0.5.17
-        version: 0.5.17(tailwindcss@3.4.17)
+        specifier: ^0.5.18
+        version: 0.5.18(tailwindcss@3.4.17)
       tailwindcss:
         specifier: ^3.4.17
         version: 3.4.17
@@ -3224,8 +3224,8 @@ packages:
     resolution: {integrity: sha512-+PmQX0PiAYPMeVYe237LJAYvOMYW1j2rH5YROyS3b4CTVJum34HfRvKvAzozHAQG0TnHNdUfY9nCeUyRAs//cw==}
     engines: {node: '>=14.16'}
 
-  '@tailwindcss/typography@0.5.17':
-    resolution: {integrity: sha512-Ll/jGz1flUVaSxK/Y7OqT+kHOhrbDpSXpAszhEBCE82yTcs47bJJLI0MB5Peoh9TgBOMUjJpsGez9MECzXLw9Q==}
+  '@tailwindcss/typography@0.5.18':
+    resolution: {integrity: sha512-dDIgwZOlf+tVkZ7A029VvQ1+ngKATENDjMEx2N35s2yPjfTS05RWSM8ilhEWSa5DMJ6ci2Ha9WNZEd2GQjrdQg==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders || >=4.0.0-alpha.20 || >=4.0.0-beta.1'
 
@@ -13478,7 +13478,7 @@ snapshots:
     dependencies:
       defer-to-connect: 2.0.1
 
-  '@tailwindcss/typography@0.5.17(tailwindcss@3.4.17)':
+  '@tailwindcss/typography@0.5.18(tailwindcss@3.4.17)':
     dependencies:
       postcss-selector-parser: 6.0.10
       tailwindcss: 3.4.17
