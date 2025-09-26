@@ -185,8 +185,8 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
       contentful:
-        specifier: ^11.7.19
-        version: 11.7.19
+        specifier: ^11.8.1
+        version: 11.8.1
       dedent:
         specifier: ^1.7.0
         version: 1.7.0
@@ -318,8 +318,8 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
       contentful:
-        specifier: ^11.7.19
-        version: 11.7.19
+        specifier: ^11.8.1
+        version: 11.8.1
       next:
         specifier: ^15.4.7
         version: 15.4.7(@babel/core@7.28.3)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -1352,8 +1352,8 @@ packages:
     resolution: {integrity: sha512-/yCrWGCoA1SVKOks25EGadP9Pnj0oAIHGpl2wH2M2Y46dPM2ueb8wyCVOD7O3WCTkaJ0IkKvzhl1JY7+uCT2Dw==}
     engines: {node: '>=v18'}
 
-  '@contentful/content-source-maps@0.11.31':
-    resolution: {integrity: sha512-b7EYMnBI93LWAL+uH/he6/miWNPjM8SIGyHkKtvAssziHbcKaq0470sxXxqokL5jo5bUvkX2XME+MNV9Tktn7g==}
+  '@contentful/content-source-maps@0.11.33':
+    resolution: {integrity: sha512-5C5dLmG9L7se9i+DvO+sT3AocyRNmqVXWO/zoDKUsu7PuyWhDFbZHh/eZQCd0D15bGKOm3jN+lwxW13f8ogiYA==}
 
   '@contentful/rich-text-types@16.8.5':
     resolution: {integrity: sha512-q18RJuJCOuYveGiCIjE5xLCQc5lZ3L2Qgxrlg/H2YEobDFqdtmklazRi1XwEWaK3tMg6yVXBzKKkQfLB4qW14A==}
@@ -4051,8 +4051,8 @@ packages:
   axios@0.21.4:
     resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
 
-  axios@1.11.0:
-    resolution: {integrity: sha512-1Lx3WLFQWm3ooKDYZD1eXmoGO9fxYQjrycfHFC8P0sCfQVXyROp0p9PFWBehewBOdCwHc+f/b8I0fMto5eSfwA==}
+  axios@1.12.2:
+    resolution: {integrity: sha512-vMJzPewAlRyOgxV2dU0Cuz2O8zzzx9VYtbJOaBgXFeLc4IV/Eg50n4LowmehOOR61S8ZMpc2K5Sa7g6A4jfkUw==}
 
   axobject-query@4.1.0:
     resolution: {integrity: sha512-qIj0G9wZbMGNLjLmg1PT6v2mE9AH2zlnADJD/2tC6E00hgmhUOfEB6greHPAfLRSufHqROIUTkw6E+M3lH0PTQ==}
@@ -4581,8 +4581,8 @@ packages:
     resolution: {integrity: sha512-cUvHbC2u8ouJHhG3tofQhUc0FAmM/QBcalYjiczMtFKrR77BW+eSPcPg+A9DQlhIP0UGcQ/knXxoJpBvrERXTA==}
     engines: {node: '>=18'}
 
-  contentful@11.7.19:
-    resolution: {integrity: sha512-5nRYjU3Pug3iY/s4Ze9XpNoCqLHqYEZwJfABjKon4SovRO/T//jcZjPCiiEugJoR9ATEayOZX69te6u24Kzy6A==}
+  contentful@11.8.1:
+    resolution: {integrity: sha512-EoSDFCEfoUgBvSQRZXTGB+lVxNRgWAd+pJMq2lg6zoqRdkt86h2SkUqF652e8sx45ykvlOqH7hC0sg4DG9jpgA==}
     engines: {node: '>=18'}
 
   conventional-changelog-angular@7.0.0:
@@ -11078,7 +11078,7 @@ snapshots:
       '@types/conventional-commits-parser': 5.0.1
       chalk: 5.6.0
 
-  '@contentful/content-source-maps@0.11.31':
+  '@contentful/content-source-maps@0.11.33':
     dependencies:
       '@vercel/stega': 0.1.2
       json-pointer: 0.6.2
@@ -14437,7 +14437,7 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  axios@1.11.0:
+  axios@1.12.2:
     dependencies:
       follow-redirects: 1.15.11
       form-data: 4.0.4
@@ -15035,11 +15035,11 @@ snapshots:
     optionalDependencies:
       '@rollup/rollup-linux-x64-gnu': 4.46.2
 
-  contentful@11.7.19:
+  contentful@11.8.1:
     dependencies:
-      '@contentful/content-source-maps': 0.11.31
+      '@contentful/content-source-maps': 0.11.33
       '@contentful/rich-text-types': 16.8.5
-      axios: 1.11.0
+      axios: 1.12.2
       contentful-resolve-response: 1.9.3
       contentful-sdk-core: 9.2.0
       json-stringify-safe: 5.0.1
