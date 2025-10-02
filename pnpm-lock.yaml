@@ -434,8 +434,8 @@ importers:
         specifier: ^3.4.18
         version: 3.4.18(yaml@2.8.1)
       tailwindcss-safe-area:
-        specifier: ^0.8.0
-        version: 0.8.0(tailwindcss@3.4.18(yaml@2.8.1))
+        specifier: ^1.1.0
+        version: 1.1.0(tailwindcss@3.4.18(yaml@2.8.1))
     devDependencies:
       '@tsconfig/node20':
         specifier: ^20.1.6
@@ -9206,11 +9206,11 @@ packages:
   tailwind-merge@2.6.0:
     resolution: {integrity: sha512-P+Vu1qXfzediirmHOC3xKGAYeZtPcV9g76X+xg2FD4tYgR71ewMA35Y3sCz3zhiN/dwefRpJX0yBcgwi1fXNQA==}
 
-  tailwindcss-safe-area@0.8.0:
-    resolution: {integrity: sha512-OIKZfSvinI9kZ3hduoSxqP8EfW2rXoKvHnNyTDY2zwem06IIRtLcKdMe0nF98o+Xluk5Fy7mmesr1rSXg/wkhA==}
-    engines: {node: '>=16'}
+  tailwindcss-safe-area@1.1.0:
+    resolution: {integrity: sha512-wuPUeW5BhWNv9yr3OzaGgpqImQG9FBM4mQIQh2C6yjHmOOZsJ3gh5RfNHt+TM16TMtpQs/8k2TWx8yQTFG7Fcw==}
+    engines: {node: '>=22'}
     peerDependencies:
-      tailwindcss: ^2.0.0 || >=3.0.0
+      tailwindcss: ^4.0.0
 
   tailwindcss@3.4.18:
     resolution: {integrity: sha512-6A2rnmW5xZMdw11LYjhcI5846rt9pbLSabY5XPxo+XWdxwZaFEn47Go4NzFiHu9sNNmr/kXivP1vStfvMaK1GQ==}
@@ -20760,7 +20760,7 @@ snapshots:
 
   tailwind-merge@2.6.0: {}
 
-  tailwindcss-safe-area@0.8.0(tailwindcss@3.4.18(yaml@2.8.1)):
+  tailwindcss-safe-area@1.1.0(tailwindcss@3.4.18(yaml@2.8.1)):
     dependencies:
       tailwindcss: 3.4.18(yaml@2.8.1)
 
