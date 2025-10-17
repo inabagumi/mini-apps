@@ -39,7 +39,7 @@ export default function LotteryPage() {
         <Redirect idPromise={idPromise} />
       </Suspense>
 
-      <div className="animate-shake mx-auto max-w-full">
+      <div className="mx-auto max-w-full animate-shake">
         <Image
           alt="くじ引き中..."
           className="h-auto max-w-full"
