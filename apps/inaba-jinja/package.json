@@ -68,7 +68,7 @@
   "scripts": {
     "build": "next build",
     "dev": "next",
-    "lint": "next lint",
+    "lint": "eslint",
     "start": "next start",
     "test": "jest"
   },

@@ -42,7 +42,7 @@
     "dev": "docusaurus start",
     "format": "prettier -w .",
     "format-check": "prettier -c .",
-    "lint": "eslint .",
+    "lint": "eslint",
     "swizzle": "docusaurus swizzle"
   },
   "version": "2.0.0"

@@ -22,6 +22,16 @@
     "test": {
       "dependsOn": ["build"],
       "inputs": ["src/**/*.ts", "src/**/*.tsx", "test/**/*.ts", "test/**/*.tsx"]
+    },
+    "typegen": {
+      "dependsOn": ["^build"],
+      "outputs": [
+        ".docusaurus/**",
+        ".next/**",
+        "!.next/cache/**",
+        "build/**",
+        "dist/**"
+      ]
     }
   }
 }

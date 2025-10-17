@@ -26,7 +26,7 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "lint": "next lint -d .",
+    "lint": "eslint",
     "start": "next start"
   },
   "version": "1.0.0"
