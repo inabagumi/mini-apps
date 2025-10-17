@@ -15,7 +15,7 @@
     "memory": "8gb",
     "storage": "32gb"
   },
-  "image": "mcr.microsoft.com/devcontainers/typescript-node:3-20-bookworm",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:4-20-bookworm",
   "name": "Inaba Jinja",
   "postCreateCommand": "./.devcontainer/post-create.sh",
   "waitFor": "postCreateCommand"
