@@ -1,5 +1,5 @@
-import { type OverlayEntrySkeleton, createClient } from '@/lib/contentful'
 import type { ReactNode } from 'react'
+import { createClient, type OverlayEntrySkeleton } from '@/lib/contentful'
 import { AssetProvider, type OverlayEntry } from './asset'
 import HeaderMenu from './menu'
 

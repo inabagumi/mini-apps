@@ -1,7 +1,7 @@
 import { useForm } from '@formspree/react'
 import { useMemo } from 'react'
-import { useFormContext } from 'react-hook-form'
 import type { FormState } from 'react-hook-form'
+import { useFormContext } from 'react-hook-form'
 import type { FormData, HandleSubmit } from './types'
 
 export function useHandleSubmit(

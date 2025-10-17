@@ -1,7 +1,7 @@
 import typographyPlugin from '@tailwindcss/typography'
 import type { Config } from 'tailwindcss'
-import safeAreaPlugin from 'tailwindcss-safe-area'
 import { fontFamily as defaultFontFamily } from 'tailwindcss/defaultTheme.js'
+import safeAreaPlugin from 'tailwindcss-safe-area'
 
 const tailwindConfig: Config = {
   content: [],

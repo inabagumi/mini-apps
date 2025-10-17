@@ -1,10 +1,10 @@
 import './globals.css'
-import { description, title as siteName, themeColor } from '@/lib/constants'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import type { Metadata, Viewport } from 'next'
 import Link from 'next/link'
 import type { ReactNode } from 'react'
+import { description, title as siteName, themeColor } from '@/lib/constants'
 import Background from './_components/background'
 import MobileMenu from './_components/mobile-menu'
 

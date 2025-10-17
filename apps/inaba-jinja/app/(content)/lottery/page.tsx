@@ -1,9 +1,9 @@
-import { title as siteName, twitterAccount } from '@/lib/constants'
-import { getAnyFortuneID } from '@/lib/contentful'
 import type { Metadata } from 'next'
 import { unstable_noStore as noStore } from 'next/cache'
 import Image from 'next/image'
 import { Suspense } from 'react'
+import { title as siteName, twitterAccount } from '@/lib/constants'
+import { getAnyFortuneID } from '@/lib/contentful'
 import Redirect from './_components/redirect'
 import kujiImage from './kuji.png'
 

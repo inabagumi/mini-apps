@@ -1,6 +1,5 @@
 'use client'
 
-import Logo from '@/components/logo.svg'
 import {
   Dialog,
   DialogClose,
@@ -11,6 +10,7 @@ import {
 } from '@radix-ui/react-dialog'
 import Link from 'next/link'
 import { twMerge } from 'tailwind-merge'
+import Logo from '@/components/logo.svg'
 
 type Props = {
   className?: string

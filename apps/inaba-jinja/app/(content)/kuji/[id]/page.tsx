@@ -1,10 +1,10 @@
+import type { Metadata } from 'next'
+import Image from 'next/image'
+import { notFound } from 'next/navigation'
 import SimpleTitle from '@/components/simple-title'
 import { title as siteName, twitterAccount } from '@/lib/constants'
 import { type FortuneEntry, getFortune, getFortuneIDs } from '@/lib/contentful'
 import { generateFortuneName, getImageURL } from '@/lib/fortune'
-import type { Metadata } from 'next'
-import Image from 'next/image'
-import { notFound } from 'next/navigation'
 import ShareLinks from './_components/share-links'
 
 // export const runtime = 'edge'

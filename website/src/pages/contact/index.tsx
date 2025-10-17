@@ -1,5 +1,5 @@
-import ContactForm from '@site/src/components/ContactForm'
 import type { FormData } from '@site/src/components/ContactForm'
+import ContactForm from '@site/src/components/ContactForm'
 import Layout from '@theme/Layout'
 import { FormProvider, useForm } from 'react-hook-form'
 

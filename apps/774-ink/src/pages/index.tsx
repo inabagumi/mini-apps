@@ -1,6 +1,6 @@
-import { card } from '@/assets'
 import type { NextPage } from 'next'
 import { NextSeo } from 'next-seo'
+import { card } from '@/assets'
 
 const canonical = 'https://774.ink/'
 

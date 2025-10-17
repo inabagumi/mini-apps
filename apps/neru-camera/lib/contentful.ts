@@ -1,8 +1,8 @@
 import {
   type ContentfulClientApi,
+  createClient as createContentfulClient,
   type EntryFieldTypes,
   type EntrySkeletonType,
-  createClient as createContentfulClient,
 } from 'contentful'
 
 export type OverlayEntrySkeleton = EntrySkeletonType<

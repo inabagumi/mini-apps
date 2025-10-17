@@ -1,5 +1,5 @@
-import { getFortuneIDs } from '@/lib/contentful'
 import type { MetadataRoute } from 'next'
+import { getFortuneIDs } from '@/lib/contentful'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const items: MetadataRoute.Sitemap = [
