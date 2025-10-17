@@ -38,7 +38,8 @@
     "format-check": "prettier -c .",
     "lint": "turbo lint",
     "prepare": "husky",
-    "test": "turbo test"
+    "test": "turbo test",
+    "typegen": "turbo typegen"
   },
   "type": "module",
   "version": "3.5.0"
