@@ -11,14 +11,12 @@
   "dependencies": {},
   "description": "Mini apps by Haneru Developers.",
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
     "@commitlint/cli": "20.1.0",
     "@commitlint/config-conventional": "20.0.0",
     "@commitlint/types": "20.0.0",
-    "@inabagumi/prettier-config": "3.0.0",
     "husky": "9.1.7",
     "lint-staged": "16.2.4",
-    "prettier": "3.6.2",
-    "prettier-plugin-tailwindcss": "0.7.0",
     "turbo": "2.5.8"
   },
   "homepage": "https://inaba-jinja.com",
@@ -34,9 +32,9 @@
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
-    "format": "prettier -w .",
-    "format-check": "prettier -c .",
-    "lint": "turbo lint",
+    "format": "biome format --write .",
+    "format-check": "biome format .",
+    "lint": "biome check --write .",
     "prepare": "husky",
     "test": "turbo test",
     "typegen": "turbo typegen"

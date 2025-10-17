@@ -1,7 +1,7 @@
 import { type NextRequest, userAgent } from 'next/server'
 
 export const config = {
-  matcher: ['/share/:id*']
+  matcher: ['/share/:id*'],
 }
 
 export function middleware(request: NextRequest) {

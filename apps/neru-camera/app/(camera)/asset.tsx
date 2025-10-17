@@ -1,6 +1,7 @@
 'use client'
 
-import { type Entry } from 'contentful'
+import type { OverlayEntrySkeleton } from '@/lib/contentful'
+import type { Entry } from 'contentful'
 import {
   type Dispatch,
   type ReactNode,
@@ -8,9 +9,8 @@ import {
   createContext,
   useCallback,
   useContext,
-  useState
+  useState,
 } from 'react'
-import { type OverlayEntrySkeleton } from '@/lib/contentful'
 
 export type OverlayEntry = Entry<
   OverlayEntrySkeleton,
@@ -24,7 +24,7 @@ type AssetValues = {
 }
 
 const AssetContext = createContext<AssetValues>({
-  values: []
+  values: [],
 })
 
 type SetAssetIDFn = (id: string) => void
@@ -61,7 +61,7 @@ export function useAsset(): UseAsset {
   return {
     assets: values,
     currentAsset: current,
-    setAssetID
+    setAssetID,
   }
 }
 

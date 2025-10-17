@@ -1,23 +1,23 @@
-import { type Metadata } from 'next'
-import { type ReactNode } from 'react'
 import SimpleTitle from '@/components/simple-title'
 import { title as siteName, twitterAccount } from '@/lib/constants'
+import type { Metadata } from 'next'
+import type { ReactNode } from 'react'
 
 export const metadata = {
   alternates: {
-    canonical: '/privacy'
+    canonical: '/privacy',
   },
   openGraph: {
     siteName,
     title: 'プライバシーポリシー',
     type: 'article',
-    url: '/privacy'
+    url: '/privacy',
   },
   title: 'プライバシーポリシー',
   twitter: {
     site: `@${twitterAccount}`,
-    title: `プライバシーポリシー - ${siteName}`
-  }
+    title: `プライバシーポリシー - ${siteName}`,
+  },
 } satisfies Metadata
 
 type Props = {

@@ -55,9 +55,7 @@
   "types": "dist/index.d.ts",
   "typesVersions": {
     "*": {
-      "skeleton": [
-        "./dist/skeleton/index.d.ts"
-      ]
+      "skeleton": ["./dist/skeleton/index.d.ts"]
     }
   },
   "version": "1.0.0"

@@ -6,14 +6,14 @@ const sidebars: SidebarsConfig = {
     {
       items: ['neru-camera', 'animare-shindan', 'hanerubeat', 'inaba-jinja'],
       label: 'ねるねるアプリ',
-      type: 'category'
+      type: 'category',
     },
     {
       items: ['shinju-date'],
       label: 'プロダクト',
-      type: 'category'
-    }
-  ]
+      type: 'category',
+    },
+  ],
 }
 
 export default sidebars

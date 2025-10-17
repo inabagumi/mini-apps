@@ -8,7 +8,7 @@ export type UseVideoTextureOptions = {
 
 export function useVideoTexture({
   src,
-  srcObject
+  srcObject,
 }: UseVideoTextureOptions): Texture | undefined {
   const [texture, setTexture] = useState<Texture>()
 

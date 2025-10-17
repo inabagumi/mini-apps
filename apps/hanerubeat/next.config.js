@@ -7,23 +7,23 @@ const nextConfig = {
         headers: [
           {
             key: 'cache-control',
-            value: 'public,max-age=31536000,immutable'
-          }
+            value: 'public,max-age=31536000,immutable',
+          },
         ],
-        source: '/workbox-:hash.js'
-      }
+        source: '/workbox-:hash.js',
+      },
     ]
   },
   rewrites() {
     return [
       {
         destination: '/_next/static/service-worker.js',
-        source: '/service-worker.js'
+        source: '/service-worker.js',
       },
       {
         destination: '/_next/static/workbox-:hash.js',
-        source: '/workbox-:hash.js'
-      }
+        source: '/workbox-:hash.js',
+      },
     ]
   },
   webpack(config, { defaultLoaders, dev }) {
@@ -39,20 +39,20 @@ const nextConfig = {
               ? '[name].[ext]?[contenthash:8]'
               : '[name].[contenthash:8].[ext]',
             outputPath: 'static/media',
-            publicPath: '/_next/static/media'
-          }
-        }
-      ]
+            publicPath: '/_next/static/media',
+          },
+        },
+      ],
     })
 
     return config
-  }
+  },
 }
 
 const withPWA = nextPWA({
   dest: '.next/static',
   disable: process.env.NODE_ENV === 'development',
-  sw: 'service-worker.js'
+  sw: 'service-worker.js',
 })
 
 module.exports = withPWA(nextConfig)

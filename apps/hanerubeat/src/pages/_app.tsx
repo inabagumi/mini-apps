@@ -1,5 +1,5 @@
-import type { AppProps } from 'next/app'
 import { DefaultSeo } from 'next-seo'
+import type { AppProps } from 'next/app'
 import type { FC } from 'react'
 
 import 'styles/globals.css'
@@ -20,14 +20,14 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
                 '/img/main-visual.jpg',
                 process.env.NEXT_PUBLIC_BASE_URL
               ).toString(),
-              width: 1200
-            }
+              width: 1200,
+            },
           ],
-          type: 'website'
+          type: 'website',
         }}
         titleTemplate={`%s - ${title}`}
         twitter={{
-          cardType: 'summary_large_image'
+          cardType: 'summary_large_image',
         }}
       />
 

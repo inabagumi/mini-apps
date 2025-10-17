@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import { NextSeo } from 'next-seo'
-import { useCallback, useEffect, useState, useRef } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { MdVolumeOff, MdVolumeUp } from 'react-icons/md'
 
 import Heart from 'components/heart'
@@ -80,7 +80,7 @@ const Heartbeat: NextPage = () => {
             disabled={isLoading}
             onClick={handleButtonClick}
           >
-            <ButtonIcon className={styles['button__icon']} />
+            <ButtonIcon className={styles.button__icon} />
           </button>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { type FC } from 'react'
+import type { FC } from 'react'
 
 type Props = Omit<JSX.IntrinsicElements['svg'], 'ref'>
 

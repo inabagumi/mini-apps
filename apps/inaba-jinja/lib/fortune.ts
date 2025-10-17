@@ -1,5 +1,5 @@
-import { type Asset } from 'contentful'
-import { type FortuneEntry } from './contentful'
+import type { Asset } from 'contentful'
+import type { FortuneEntry } from './contentful'
 
 export function generateFortuneName(fortune: FortuneEntry): string {
   return `第${fortune.fields.number}番『${fortune.fields.blessing}』`

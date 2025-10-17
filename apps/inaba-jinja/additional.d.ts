@@ -8,7 +8,7 @@ declare namespace NodeJS {
 }
 
 declare module '*.svg' {
-  import { type FC, type SVGProps } from 'react'
+  import type { FC, SVGProps } from 'react'
 
   type Props = SVGProps<SVGSVGElement>
   const content: FC<Props>

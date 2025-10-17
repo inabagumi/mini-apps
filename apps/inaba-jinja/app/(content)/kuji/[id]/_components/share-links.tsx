@@ -11,7 +11,7 @@ type ShareLinkOptions = {
 function generateTweetShareURL({
   hashtags = DEFAULT_HASHTAGS,
   text,
-  url
+  url,
 }: ShareLinkOptions): string {
   const tweetShareURL = new URL('https://twitter.com/intent/tweet')
   tweetShareURL.searchParams.append('hashtags', hashtags.join(','))
@@ -30,7 +30,7 @@ function generateTweetShareURL({
 export default function ShareLinks({
   hashtags,
   text,
-  url
+  url,
 }: {
   hashtags?: string[]
   text?: string
@@ -43,7 +43,7 @@ export default function ShareLinks({
       <ul className="flex items-center justify-center">
         <li>
           <a
-            className="inline-block rounded-full bg-[#0f1419] px-6 py-2 text-sm font-semibold tracking-wide text-white"
+            className="inline-block rounded-full bg-[#0f1419] px-6 py-2 font-semibold text-sm text-white tracking-wide"
             href={tweetShereURL}
             rel="noopener noreferrer"
             role="button"

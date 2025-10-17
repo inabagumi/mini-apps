@@ -9,12 +9,12 @@ const withMDX = nextMDX({
         rehypeExternalLinks,
         {
           rel: ['noopener', 'noreferrer'],
-          target: '_blank'
-        }
-      ]
+          target: '_blank',
+        },
+      ],
     ],
-    remarkPlugins: [remarkGfm]
-  }
+    remarkPlugins: [remarkGfm],
+  },
 })
 
 /** @type {import('next').NextConfig} */
@@ -25,20 +25,20 @@ const nextConfig = {
         headers: [
           {
             key: 'referrer-policy',
-            value: 'same-origin, strict-origin-when-cross-origin'
-          }
+            value: 'same-origin, strict-origin-when-cross-origin',
+          },
         ],
-        source: '/(.*)'
-      }
+        source: '/(.*)',
+      },
     ]
   },
   images: {
     remotePatterns: [
       {
         hostname: 'images.ctfassets.net',
-        pathname: `/${process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID}/**`
-      }
-    ]
+        pathname: `/${process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID}/**`,
+      },
+    ],
   },
   pageExtensions: ['tsx', 'mdx', 'ts'],
   reactStrictMode: true,
@@ -47,13 +47,13 @@ const nextConfig = {
       {
         destination: '/lottery',
         permanent: true,
-        source: '/kuji'
+        source: '/kuji',
       },
       {
         destination: '/about',
         permanent: true,
-        source: '/disclaimer'
-      }
+        source: '/disclaimer',
+      },
     ]
   },
   webpack(config, { defaultLoaders }) {
@@ -65,14 +65,14 @@ const nextConfig = {
           loader: '@svgr/webpack',
           options: {
             babel: false,
-            dimensions: false
-          }
-        }
-      ]
+            dimensions: false,
+          },
+        },
+      ],
     })
 
     return config
-  }
+  },
 }
 
 export default withMDX(nextConfig)

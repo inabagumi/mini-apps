@@ -1,18 +1,18 @@
 'use client'
 
 import '@reach/dialog/styles.css'
+import processing from '@/lib/processing'
 import { Sprite, Stage } from '@pixi/react'
 import {
   AlertDialog,
   AlertDialogDescription,
-  AlertDialogLabel
+  AlertDialogLabel,
 } from '@reach/alert-dialog'
 import { track } from '@vercel/analytics'
 import { fileSave } from 'browser-fs-access'
 import clsx from 'clsx'
-import { type Application } from 'pixi.js'
+import type { Application } from 'pixi.js'
 import { useCallback, useEffect, useState } from 'react'
-import processing from '@/lib/processing'
 import { useAsset } from './asset'
 import styles from './camera.module.css'
 import { useVideoTexture } from './hooks'
@@ -23,8 +23,8 @@ const mediaStreamConstraints: MediaStreamConstraints = {
   video: {
     facingMode: 'environment',
     height: 960,
-    width: 1280
-  }
+    width: 1280,
+  },
 }
 
 export default function Camera() {
@@ -51,7 +51,7 @@ export default function Camera() {
       .then((blob) =>
         fileSave(blob, {
           extensions: ['.jpg', '.jpeg'],
-          fileName: `NeruCamera-${Date.now()}.jpg`
+          fileName: `NeruCamera-${Date.now()}.jpg`,
         })
       )
       .then(() => {
@@ -85,7 +85,7 @@ export default function Camera() {
             height={texture.height}
             options={{
               autoDensity: false,
-              preserveDrawingBuffer: true
+              preserveDrawingBuffer: true,
             }}
             onMount={handleMount}
             onUnmount={handleUnmount}
@@ -114,7 +114,7 @@ export default function Camera() {
         )}
       </div>
 
-      <div className="flex justify-around px-4 pb-6 pt-2">
+      <div className="flex justify-around px-4 pt-2 pb-6">
         <button
           className={clsx(
             'bg-gray-50',

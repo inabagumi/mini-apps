@@ -1,21 +1,21 @@
-import type { Metadata } from 'next'
 import { description, title } from '@/lib/constants'
+import type { Metadata } from 'next'
 import WrappedCamera from './wrapped-camera'
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: '/'
+    canonical: '/',
   },
   description,
   openGraph: {
     description,
     title,
     type: 'website',
-    url: '/'
+    url: '/',
   },
   twitter: {
-    card: 'summary_large_image'
-  }
+    card: 'summary_large_image',
+  },
 }
 
 export default function CameraPage() {

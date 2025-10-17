@@ -20,8 +20,8 @@ export default function ContactForm() {
           registerOptions={{
             required: {
               message: 'お名前の入力は必須です。',
-              value: true
-            }
+              value: true,
+            },
           }}
           type="text"
         />
@@ -34,12 +34,12 @@ export default function ContactForm() {
           registerOptions={{
             pattern: {
               message: 'メールアドレスには@が必要です。',
-              value: /.+@.+/
+              value: /.+@.+/,
             },
             required: {
               message: 'メールアドレスは必須です。',
-              value: true
-            }
+              value: true,
+            },
           }}
           type="email"
         />
@@ -52,8 +52,8 @@ export default function ContactForm() {
           registerOptions={{
             required: {
               message: '本文の入力は必須です。',
-              value: true
-            }
+              value: true,
+            },
           }}
         />
       </dl>

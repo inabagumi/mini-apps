@@ -12,10 +12,10 @@
 import { translate } from '@docusaurus/Translate'
 import ReactIdealImage, {
   type IconKey,
-  type State
+  type State,
 } from '@slorber/react-ideal-image'
-import React, { type ReactNode } from 'react'
 import type { Props } from '@theme/IdealImage'
+import React, { type ReactNode } from 'react'
 
 // Adopted from https://github.com/endiliey/react-ideal-image/blob/master/src/components/helpers.js#L59-L65
 function bytesToSize(bytes: number) {
@@ -40,7 +40,7 @@ function getMessage(icon: IconKey, state: State) {
       return translate({
         id: 'theme.IdealImageMessage.loading',
         message: 'Loading...',
-        description: 'When the full-scale image is loading'
+        description: 'When the full-scale image is loading',
       })
     case 'load': {
       // We can show `alt` here
@@ -52,7 +52,7 @@ function getMessage(icon: IconKey, state: State) {
           id: 'theme.IdealImageMessage.load',
           message: 'Click to load{sizeMessage}',
           description:
-            'To prompt users to load the full image. sizeMessage is a parenthesized size figure.'
+            'To prompt users to load the full image. sizeMessage is a parenthesized size figure.',
         },
         { sizeMessage }
       )
@@ -61,7 +61,7 @@ function getMessage(icon: IconKey, state: State) {
       return translate({
         id: 'theme.IdealImageMessage.offline',
         message: 'Your browser is offline. Image not loaded',
-        description: 'When the user is viewing an offline document'
+        description: 'When the user is viewing an offline document',
       })
     case 'error': {
       const { loadInfo } = state
@@ -69,13 +69,13 @@ function getMessage(icon: IconKey, state: State) {
         return translate({
           id: 'theme.IdealImageMessage.404error',
           message: '404. Image not found',
-          description: 'When the image is not found'
+          description: 'When the image is not found',
         })
       }
       return translate({
         id: 'theme.IdealImageMessage.error',
         message: 'Error. Click to reload',
-        description: 'When the image fails to load for unknown error'
+        description: 'When the image fails to load for unknown error',
       })
     }
     default:
@@ -103,7 +103,7 @@ export default function IdealImage(props: Props): ReactNode {
       src={img.src.src}
       srcSet={img.src.images.map((image) => ({
         ...image,
-        src: image.path
+        src: image.path,
       }))}
       width={img.src.width ?? 100}
     />
