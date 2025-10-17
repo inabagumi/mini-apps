@@ -1,4 +1,4 @@
-import Skeleton from '@inaba-jinja/components/skeleton'
+import Skeleton from '@inabagumi/components/skeleton'
 import SimpleTitle from '@/components/simple-title'
 
 export default function KujiLoading() {

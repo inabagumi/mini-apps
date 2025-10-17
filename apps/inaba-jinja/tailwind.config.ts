@@ -1,11 +1,11 @@
-import sharedTailwindConfig from '@inaba-jinja/tailwind-config'
+import sharedTailwindConfig from '@inabagumi/tailwind-config'
 import { type Config } from 'tailwindcss'
 
 const tailwindConfig = {
   content: [
     './app/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
-    './node_modules/@inaba-jinja/components/**/*.js'
+    './node_modules/@inabagumi/components/**/*.js'
   ],
   presets: [sharedTailwindConfig],
   theme: {

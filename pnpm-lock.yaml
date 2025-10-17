@@ -9,398 +9,398 @@ importers:
   .:
     devDependencies:
       '@commitlint/cli':
-        specifier: ^20.1.0
+        specifier: 20.1.0
         version: 20.1.0(@types/node@22.18.11)(typescript@5.9.3)
       '@commitlint/config-conventional':
-        specifier: ^20.0.0
+        specifier: 20.0.0
         version: 20.0.0
       '@commitlint/types':
-        specifier: ^20.0.0
+        specifier: 20.0.0
         version: 20.0.0
       '@inabagumi/prettier-config':
-        specifier: ^3.0.0
+        specifier: 3.0.0
         version: 3.0.0(prettier@3.6.2)
       husky:
-        specifier: ^9.1.7
+        specifier: 9.1.7
         version: 9.1.7
       lint-staged:
-        specifier: ^16.2.4
+        specifier: 16.2.4
         version: 16.2.4
       prettier:
-        specifier: ^3.6.2
+        specifier: 3.6.2
         version: 3.6.2
       prettier-plugin-tailwindcss:
-        specifier: ^0.7.0
+        specifier: 0.7.0
         version: 0.7.0(prettier@3.6.2)
       turbo:
-        specifier: ^2.5.8
+        specifier: 2.5.8
         version: 2.5.8
 
   apps/774-ink:
     dependencies:
       next:
-        specifier: ^15.5.6
+        specifier: 15.5.6
         version: 15.5.6(@babel/core@7.28.4)(@opentelemetry/api@1.9.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       next-seo:
-        specifier: ^6.8.0
+        specifier: 6.8.0
         version: 6.8.0(next@15.5.6(@babel/core@7.28.4)(@opentelemetry/api@1.9.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       react:
-        specifier: ^19.2.0
+        specifier: 19.2.0
         version: 19.2.0
       react-dom:
-        specifier: ^19.2.0
+        specifier: 19.2.0
         version: 19.2.0(react@19.2.0)
     devDependencies:
       '@inabagumi/prettier-config':
-        specifier: ^3.0.0
+        specifier: 3.0.0
         version: 3.0.0(prettier@3.6.2)
       '@types/eslint':
-        specifier: ^9.6.1
+        specifier: 9.6.1
         version: 9.6.1
       '@types/node':
-        specifier: ^22.18.11
+        specifier: 22.18.11
         version: 22.18.11
       '@types/react':
-        specifier: ^19.2.2
+        specifier: 19.2.2
         version: 19.2.2
       '@types/web-app-manifest':
-        specifier: ^1.0.9
+        specifier: 1.0.9
         version: 1.0.9
       '@typescript-eslint/eslint-plugin':
-        specifier: ^8.46.1
+        specifier: 8.46.1
         version: 8.46.1(@typescript-eslint/parser@8.46.1(eslint@8.57.1)(typescript@5.9.3))(eslint@8.57.1)(typescript@5.9.3)
       '@typescript-eslint/parser':
-        specifier: ^8.46.1
+        specifier: 8.46.1
         version: 8.46.1(eslint@8.57.1)(typescript@5.9.3)
       eslint:
-        specifier: ^8.57.1
+        specifier: 8.57.1
         version: 8.57.1
       eslint-config-next:
-        specifier: ^15.5.6
+        specifier: 15.5.6
         version: 15.5.6(eslint@8.57.1)(typescript@5.9.3)
       eslint-config-prettier:
-        specifier: ^10.1.7
+        specifier: 10.1.8
         version: 10.1.8(eslint@8.57.1)
       eslint-plugin-prettier:
-        specifier: ^5.5.4
+        specifier: 5.5.4
         version: 5.5.4(@types/eslint@9.6.1)(eslint-config-prettier@10.1.8(eslint@8.57.1))(eslint@8.57.1)(prettier@3.6.2)
       file-loader:
-        specifier: ^6.2.0
+        specifier: 6.2.0
         version: 6.2.0(webpack@5.102.1)
       prettier:
-        specifier: ~3.6.2
+        specifier: 3.6.2
         version: 3.6.2
       typescript:
-        specifier: ~5.9.3
+        specifier: 5.9.3
         version: 5.9.3
 
   apps/hanerubeat:
     dependencies:
       next:
-        specifier: ^15.5.6
+        specifier: 15.5.6
         version: 15.5.6(@babel/core@7.28.4)(@opentelemetry/api@1.9.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       next-seo:
-        specifier: ^6.8.0
+        specifier: 6.8.0
         version: 6.8.0(next@15.5.6(@babel/core@7.28.4)(@opentelemetry/api@1.9.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       react:
-        specifier: ^19.2.0
+        specifier: 19.2.0
         version: 19.2.0
       react-dom:
-        specifier: ^19.2.0
+        specifier: 19.2.0
         version: 19.2.0(react@19.2.0)
       react-icons:
-        specifier: ^5.5.0
+        specifier: 5.5.0
         version: 5.5.0(react@19.2.0)
     devDependencies:
       '@inabagumi/prettier-config':
-        specifier: ^3.0.0
+        specifier: 3.0.0
         version: 3.0.0(prettier@3.6.2)
       '@types/eslint':
-        specifier: ^9.6.1
+        specifier: 9.6.1
         version: 9.6.1
       '@types/node':
-        specifier: ^22.18.11
+        specifier: 22.18.11
         version: 22.18.11
       '@types/react':
-        specifier: ^19.2.2
+        specifier: 19.2.2
         version: 19.2.2
       '@types/react-dom':
-        specifier: ^19.2.2
+        specifier: 19.2.2
         version: 19.2.2(@types/react@19.2.2)
       '@typescript-eslint/eslint-plugin':
-        specifier: ^8.46.1
+        specifier: 8.46.1
         version: 8.46.1(@typescript-eslint/parser@8.46.1(eslint@8.57.1)(typescript@5.9.3))(eslint@8.57.1)(typescript@5.9.3)
       '@typescript-eslint/parser':
-        specifier: ^8.46.1
+        specifier: 8.46.1
         version: 8.46.1(eslint@8.57.1)(typescript@5.9.3)
       eslint:
-        specifier: ^8.57.1
+        specifier: 8.57.1
         version: 8.57.1
       eslint-config-next:
-        specifier: ^15.5.6
+        specifier: 15.5.6
         version: 15.5.6(eslint@8.57.1)(typescript@5.9.3)
       eslint-config-prettier:
-        specifier: ^10.1.7
+        specifier: 10.1.8
         version: 10.1.8(eslint@8.57.1)
       eslint-plugin-prettier:
-        specifier: ^5.5.4
+        specifier: 5.5.4
         version: 5.5.4(@types/eslint@9.6.1)(eslint-config-prettier@10.1.8(eslint@8.57.1))(eslint@8.57.1)(prettier@3.6.2)
       file-loader:
-        specifier: ^6.2.0
+        specifier: 6.2.0
         version: 6.2.0(webpack@5.102.1)
       next-pwa:
-        specifier: ^5.6.0
+        specifier: 5.6.0
         version: 5.6.0(@babel/core@7.28.4)(@types/babel__core@7.20.5)(next@15.5.6(@babel/core@7.28.4)(@opentelemetry/api@1.9.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(webpack@5.102.1)
       prettier:
-        specifier: ~3.6.2
+        specifier: 3.6.2
         version: 3.6.2
       typescript:
-        specifier: ~5.9.3
+        specifier: 5.9.3
         version: 5.9.3
       url-loader:
-        specifier: ^4.1.1
+        specifier: 4.1.1
         version: 4.1.1(file-loader@6.2.0(webpack@5.102.1))(webpack@5.102.1)
 
   apps/inaba-jinja:
     dependencies:
-      '@inaba-jinja/components':
+      '@inabagumi/components':
         specifier: workspace:*
         version: link:../../packages/components
       '@mdx-js/react':
-        specifier: ^3.1.1
+        specifier: 3.1.1
         version: 3.1.1(@types/react@19.2.2)(react@19.2.0)
       '@radix-ui/react-dialog':
-        specifier: ^1.1.15
+        specifier: 1.1.15
         version: 1.1.15(@types/react-dom@19.2.2(@types/react@19.2.2))(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@upstash/redis':
-        specifier: ^1.35.6
+        specifier: 1.35.6
         version: 1.35.6
       '@vercel/analytics':
-        specifier: ^1.5.0
+        specifier: 1.5.0
         version: 1.5.0(next@15.5.6(@babel/core@7.28.4)(@opentelemetry/api@1.9.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react@19.2.0)
       '@vercel/speed-insights':
-        specifier: ^1.2.0
+        specifier: 1.2.0
         version: 1.2.0(next@15.5.6(@babel/core@7.28.4)(@opentelemetry/api@1.9.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react@19.2.0)
       clsx:
-        specifier: ^2.1.1
+        specifier: 2.1.1
         version: 2.1.1
       contentful:
-        specifier: ^11.8.6
+        specifier: 11.8.6
         version: 11.8.6
       dedent:
-        specifier: ^1.7.0
+        specifier: 1.7.0
         version: 1.7.0
       edge-sitemap:
-        specifier: ^1.1.1
+        specifier: 1.1.1
         version: 1.1.1
       next:
-        specifier: ^15.5.6
+        specifier: 15.5.6
         version: 15.5.6(@babel/core@7.28.4)(@opentelemetry/api@1.9.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       react:
-        specifier: ^19.2.0
+        specifier: 19.2.0
         version: 19.2.0
       react-dom:
-        specifier: ^19.2.0
+        specifier: 19.2.0
         version: 19.2.0(react@19.2.0)
       tailwind-merge:
-        specifier: ^2.6.0
+        specifier: 2.6.0
         version: 2.6.0
     devDependencies:
-      '@inaba-jinja/tailwind-config':
+      '@inabagumi/tailwind-config':
         specifier: workspace:*
         version: link:../../packages/tailwind-config
       '@jest/types':
-        specifier: ^30.2.0
+        specifier: 30.2.0
         version: 30.2.0
       '@mdx-js/loader':
-        specifier: ^3.1.1
+        specifier: 3.1.1
         version: 3.1.1(webpack@5.102.1)
       '@next/mdx':
-        specifier: ^15.5.6
+        specifier: 15.5.6
         version: 15.5.6(@mdx-js/loader@3.1.1(webpack@5.102.1))(@mdx-js/react@3.1.1(@types/react@19.2.2)(react@19.2.0))
       '@svgr/webpack':
-        specifier: ^8.1.0
+        specifier: 8.1.0
         version: 8.1.0(typescript@5.9.3)
       '@testing-library/jest-dom':
-        specifier: ^6.9.1
+        specifier: 6.9.1
         version: 6.9.1
       '@testing-library/react':
-        specifier: ^16.3.0
+        specifier: 16.3.0
         version: 16.3.0(@testing-library/dom@10.4.1)(@types/react-dom@19.2.2(@types/react@19.2.2))(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@types/dedent':
-        specifier: ^0.7.2
+        specifier: 0.7.2
         version: 0.7.2
       '@types/eslint':
-        specifier: ^9.6.1
+        specifier: 9.6.1
         version: 9.6.1
       '@types/gtag.js':
-        specifier: ^0.0.20
+        specifier: 0.0.20
         version: 0.0.20
       '@types/jest':
-        specifier: ^30.0.0
+        specifier: 30.0.0
         version: 30.0.0
       '@types/mdx':
-        specifier: ^2.0.13
+        specifier: 2.0.13
         version: 2.0.13
       '@types/node':
-        specifier: ^22.18.11
+        specifier: 22.18.11
         version: 22.18.11
       '@types/react':
-        specifier: ^19.2.2
+        specifier: 19.2.2
         version: 19.2.2
       '@types/webpack-env':
-        specifier: ^1.18.8
+        specifier: 1.18.8
         version: 1.18.8
       '@typescript-eslint/eslint-plugin':
-        specifier: ~8.46.1
+        specifier: 8.46.1
         version: 8.46.1(@typescript-eslint/parser@8.46.1(eslint@8.57.1)(typescript@5.9.3))(eslint@8.57.1)(typescript@5.9.3)
       '@typescript-eslint/parser':
-        specifier: ~8.46.1
+        specifier: 8.46.1
         version: 8.46.1(eslint@8.57.1)(typescript@5.9.3)
       eslint:
-        specifier: ~8.57.1
+        specifier: 8.57.1
         version: 8.57.1
       eslint-config-next:
-        specifier: ^15.5.6
+        specifier: 15.5.6
         version: 15.5.6(eslint@8.57.1)(typescript@5.9.3)
       eslint-config-prettier:
-        specifier: ~10.1.7
+        specifier: 10.1.8
         version: 10.1.8(eslint@8.57.1)
       eslint-config-turbo:
-        specifier: ^2.5.8
+        specifier: 2.5.8
         version: 2.5.8(eslint@8.57.1)(turbo@2.5.8)
       jest:
-        specifier: ^30.2.0
+        specifier: 30.2.0
         version: 30.2.0(@types/node@22.18.11)
       postcss:
-        specifier: ^8.5.6
+        specifier: 8.5.6
         version: 8.5.6
       postcss-load-config:
-        specifier: ^6.0.1
+        specifier: 6.0.1
         version: 6.0.1(jiti@1.21.7)(postcss@8.5.6)(yaml@2.8.1)
       rehype-external-links:
-        specifier: ^3.0.0
+        specifier: 3.0.0
         version: 3.0.0
       remark-gfm:
-        specifier: ^4.0.1
+        specifier: 4.0.1
         version: 4.0.1
       tailwindcss:
-        specifier: ^3.4.18
+        specifier: 3.4.18
         version: 3.4.18(yaml@2.8.1)
       typescript:
-        specifier: ~5.9.3
+        specifier: 5.9.3
         version: 5.9.3
 
   apps/neru-camera:
     dependencies:
       '@heroicons/react':
-        specifier: ^2.2.0
+        specifier: 2.2.0
         version: 2.2.0(react@19.2.0)
       '@pixi/react':
-        specifier: ^7.1.2
+        specifier: 7.1.2
         version: 7.1.2(cf4641e54e772fede42eef1980cfb002)
       '@reach/alert-dialog':
-        specifier: ^0.18.0
+        specifier: 0.18.0
         version: 0.18.0(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@reach/dialog':
-        specifier: ^0.18.0
+        specifier: 0.18.0
         version: 0.18.0(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@reach/menu-button':
-        specifier: ^0.18.0
+        specifier: 0.18.0
         version: 0.18.0(react-dom@19.2.0(react@19.2.0))(react-is@18.3.1)(react@19.2.0)
       '@vercel/analytics':
-        specifier: ^1.5.0
+        specifier: 1.5.0
         version: 1.5.0(next@15.5.6(@babel/core@7.28.4)(@opentelemetry/api@1.9.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react@19.2.0)
       browser-fs-access:
-        specifier: ^0.38.0
+        specifier: 0.38.0
         version: 0.38.0
       clsx:
-        specifier: ^2.1.1
+        specifier: 2.1.1
         version: 2.1.1
       contentful:
-        specifier: ^11.8.6
+        specifier: 11.8.6
         version: 11.8.6
       next:
-        specifier: ^15.5.6
+        specifier: 15.5.6
         version: 15.5.6(@babel/core@7.28.4)(@opentelemetry/api@1.9.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       next-seo:
-        specifier: ^6.8.0
+        specifier: 6.8.0
         version: 6.8.0(next@15.5.6(@babel/core@7.28.4)(@opentelemetry/api@1.9.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       pixi-viewport:
-        specifier: ^6.0.3
+        specifier: 6.0.3
         version: 6.0.3(pixi.js@7.4.3)
       pixi.js:
-        specifier: ^7.4.3
+        specifier: 7.4.3
         version: 7.4.3
       react:
-        specifier: ^19.2.0
+        specifier: 19.2.0
         version: 19.2.0
       react-dom:
-        specifier: ^19.2.0
+        specifier: 19.2.0
         version: 19.2.0(react@19.2.0)
       tailwindcss:
-        specifier: ^3.4.18
+        specifier: 3.4.18
         version: 3.4.18(yaml@2.8.1)
     devDependencies:
       '@commitlint/cli':
-        specifier: ^20.1.0
+        specifier: 20.1.0
         version: 20.1.0(@types/node@22.18.11)(typescript@5.9.3)
       '@commitlint/config-conventional':
-        specifier: ^20.0.0
+        specifier: 20.0.0
         version: 20.0.0
       '@inabagumi/prettier-config':
-        specifier: ^3.0.0
+        specifier: 3.0.0
         version: 3.0.0(prettier@3.6.2)
       '@next/eslint-plugin-next':
-        specifier: ^15.5.6
+        specifier: 15.5.6
         version: 15.5.6
       '@types/eslint':
-        specifier: ^9.6.1
+        specifier: 9.6.1
         version: 9.6.1
       '@types/node':
-        specifier: ^22.18.11
+        specifier: 22.18.11
         version: 22.18.11
       '@types/react':
-        specifier: ^19.2.2
+        specifier: 19.2.2
         version: 19.2.2
       '@typescript-eslint/eslint-plugin':
-        specifier: ^8.46.1
+        specifier: 8.46.1
         version: 8.46.1(@typescript-eslint/parser@8.46.1(eslint@8.57.1)(typescript@5.9.3))(eslint@8.57.1)(typescript@5.9.3)
       '@typescript-eslint/parser':
-        specifier: ^8.46.1
+        specifier: 8.46.1
         version: 8.46.1(eslint@8.57.1)(typescript@5.9.3)
       autoprefixer:
-        specifier: ^10.4.21
+        specifier: 10.4.21
         version: 10.4.21(postcss@8.5.6)
       eslint:
-        specifier: ^8.57.1
+        specifier: 8.57.1
         version: 8.57.1
       eslint-config-next:
-        specifier: ^15.5.6
+        specifier: 15.5.6
         version: 15.5.6(eslint@8.57.1)(typescript@5.9.3)
       eslint-config-prettier:
-        specifier: ^10.1.7
+        specifier: 10.1.8
         version: 10.1.8(eslint@8.57.1)
       husky:
-        specifier: ^9.1.7
+        specifier: 9.1.7
         version: 9.1.7
       is-ci:
-        specifier: ^4.1.0
+        specifier: 4.1.0
         version: 4.1.0
       lint-staged:
-        specifier: ^16.2.4
+        specifier: 16.2.4
         version: 16.2.4
       next-pwa:
-        specifier: ^5.6.0
+        specifier: 5.6.0
         version: 5.6.0(@babel/core@7.28.4)(@types/babel__core@7.20.5)(next@15.5.6(@babel/core@7.28.4)(@opentelemetry/api@1.9.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(webpack@5.102.1)
       postcss:
-        specifier: ^8.5.6
+        specifier: 8.5.6
         version: 8.5.6
       prettier:
-        specifier: ~3.6.2
+        specifier: 3.6.2
         version: 3.6.2
       typescript:
-        specifier: ~5.9.3
+        specifier: 5.9.3
         version: 5.9.3
 
   packages/components:
@@ -413,126 +413,126 @@ importers:
         version: 2.6.0
     devDependencies:
       '@tsconfig/node20':
-        specifier: ^20.1.6
+        specifier: 20.1.6
         version: 20.1.6
       '@tsconfig/strictest':
-        specifier: ^2.0.6
+        specifier: 2.0.6
         version: 2.0.6
       '@types/react':
-        specifier: ^19.2.2
+        specifier: 19.2.2
         version: 19.2.2
       tsup:
-        specifier: ^8.5.0
+        specifier: 8.5.0
         version: 8.5.0(jiti@2.6.1)(postcss@8.5.6)(typescript@5.9.3)(yaml@2.8.1)
 
   packages/tailwind-config:
     dependencies:
       '@tailwindcss/typography':
-        specifier: ^0.5.19
+        specifier: 0.5.19
         version: 0.5.19(tailwindcss@3.4.18(yaml@2.8.1))
       tailwindcss:
-        specifier: ^3.4.18
+        specifier: 3.4.18
         version: 3.4.18(yaml@2.8.1)
       tailwindcss-safe-area:
-        specifier: ^0.8.0
+        specifier: 0.8.0
         version: 0.8.0(tailwindcss@3.4.18(yaml@2.8.1))
     devDependencies:
       '@tsconfig/node20':
-        specifier: ^20.1.6
+        specifier: 20.1.6
         version: 20.1.6
       '@tsconfig/strictest':
-        specifier: ^2.0.6
+        specifier: 2.0.6
         version: 2.0.6
       tsup:
-        specifier: ^8.5.0
+        specifier: 8.5.0
         version: 8.5.0(jiti@2.6.1)(postcss@8.5.6)(typescript@5.9.3)(yaml@2.8.1)
 
   website:
     dependencies:
       '@docusaurus/core':
-        specifier: ^3.9.1
+        specifier: 3.9.1
         version: 3.9.1(@mdx-js/react@3.1.1(@types/react@19.2.2)(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(typescript@5.9.3)
       '@docusaurus/plugin-ideal-image':
-        specifier: ^3.9.1
+        specifier: 3.9.1
         version: 3.9.1(@mdx-js/react@3.1.1(@types/react@19.2.2)(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(typescript@5.9.3)
       '@docusaurus/preset-classic':
-        specifier: ^3.9.1
+        specifier: 3.9.1
         version: 3.9.1(@algolia/client-search@5.40.1)(@mdx-js/react@3.1.1(@types/react@19.2.2)(react@19.2.0))(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(search-insights@2.17.3)(typescript@5.9.3)
       '@formspree/react':
-        specifier: ^3.0.0
+        specifier: 3.0.0
         version: 3.0.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@hookform/error-message':
-        specifier: ^2.0.1
+        specifier: 2.0.1
         version: 2.0.1(react-dom@19.2.0(react@19.2.0))(react-hook-form@7.65.0(react@19.2.0))(react@19.2.0)
       '@slorber/react-ideal-image':
-        specifier: ^0.0.14
+        specifier: 0.0.14
         version: 0.0.14(react-waypoint@10.3.0(react@19.2.0))(react@19.2.0)
       clsx:
-        specifier: ^2.1.1
+        specifier: 2.1.1
         version: 2.1.1
       lodash:
-        specifier: ^4.17.21
+        specifier: 4.17.21
         version: 4.17.21
       react:
-        specifier: ^19.2.0
+        specifier: 19.2.0
         version: 19.2.0
       react-dom:
-        specifier: ^19.2.0
+        specifier: 19.2.0
         version: 19.2.0(react@19.2.0)
       react-hook-form:
-        specifier: ^7.65.0
+        specifier: 7.65.0
         version: 7.65.0(react@19.2.0)
       react-textarea-autosize:
-        specifier: ^8.5.9
+        specifier: 8.5.9
         version: 8.5.9(@types/react@19.2.2)(react@19.2.0)
     devDependencies:
       '@docusaurus/module-type-aliases':
-        specifier: ^3.9.1
+        specifier: 3.9.1
         version: 3.9.1(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@docusaurus/tsconfig':
-        specifier: ^3.9.1
+        specifier: 3.9.1
         version: 3.9.1
       '@docusaurus/types':
-        specifier: ^3.9.1
+        specifier: 3.9.1
         version: 3.9.1(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@formspree/cli':
-        specifier: ^0.9.6
+        specifier: 0.9.6
         version: 0.9.6
       '@inabagumi/prettier-config':
-        specifier: ^3.0.0
+        specifier: 3.0.0
         version: 3.0.0(prettier@3.6.2)
       '@types/lodash':
-        specifier: ^4.17.20
+        specifier: 4.17.20
         version: 4.17.20
       '@types/react':
-        specifier: ^19.2.2
+        specifier: 19.2.2
         version: 19.2.2
       '@typescript-eslint/eslint-plugin':
-        specifier: ^8.46.1
+        specifier: 8.46.1
         version: 8.46.1(@typescript-eslint/parser@8.46.1(eslint@8.57.1)(typescript@5.9.3))(eslint@8.57.1)(typescript@5.9.3)
       '@typescript-eslint/parser':
-        specifier: ^8.46.1
+        specifier: 8.46.1
         version: 8.46.1(eslint@8.57.1)(typescript@5.9.3)
       eslint:
-        specifier: ^8.57.1
+        specifier: 8.57.1
         version: 8.57.1
       eslint-config-prettier:
-        specifier: ^10.1.7
+        specifier: 10.1.8
         version: 10.1.8(eslint@8.57.1)
       eslint-import-resolver-typescript:
-        specifier: ^4.4.4
+        specifier: 4.4.4
         version: 4.4.4(eslint-plugin-import@2.32.0)(eslint@8.57.1)
       eslint-plugin-import:
-        specifier: ^2.32.0
+        specifier: 2.32.0
         version: 2.32.0(@typescript-eslint/parser@8.46.1(eslint@8.57.1)(typescript@5.9.3))(eslint-import-resolver-typescript@4.4.4)(eslint@8.57.1)
       eslint-plugin-react:
-        specifier: ^7.37.5
+        specifier: 7.37.5
         version: 7.37.5(eslint@8.57.1)
       eslint-plugin-react-hooks:
-        specifier: ^7.0.0
+        specifier: 7.0.0
         version: 7.0.0(eslint@8.57.1)
       typescript:
-        specifier: ~5.9.3
+        specifier: 5.9.3
         version: 5.9.3
 
 packages:
