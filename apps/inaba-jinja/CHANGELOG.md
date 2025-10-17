@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.0.3](https://github.com/inabagumi/mini-apps/compare/inaba-jinja-v4.0.2...inaba-jinja-v4.0.3) (2025-10-17)
+
+
+### Bug Fixes
+
+* update package.json and pnpm-lock.yaml to use exact versioning f… ([#4260](https://github.com/inabagumi/mini-apps/issues/4260)) ([090252d](https://github.com/inabagumi/mini-apps/commit/090252d208b94cfe70790087314089c0652662a2))
+
 ## [4.0.2](https://github.com/inabagumi/inaba-jinja/compare/inaba-jinja-v4.0.1...inaba-jinja-v4.0.2) (2024-03-17)
 
 
