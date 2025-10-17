@@ -1,7 +1,6 @@
 'use client'
 
 import '@reach/dialog/styles.css'
-import processing from '@/lib/processing'
 import { Sprite, Stage } from '@pixi/react'
 import {
   AlertDialog,
@@ -13,6 +12,7 @@ import { fileSave } from 'browser-fs-access'
 import clsx from 'clsx'
 import type { Application } from 'pixi.js'
 import { useCallback, useEffect, useState } from 'react'
+import processing from '@/lib/processing'
 import { useAsset } from './asset'
 import styles from './camera.module.css'
 import { useVideoTexture } from './hooks'

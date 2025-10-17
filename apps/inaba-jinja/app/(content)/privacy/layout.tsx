@@ -1,7 +1,7 @@
-import SimpleTitle from '@/components/simple-title'
-import { title as siteName, twitterAccount } from '@/lib/constants'
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
+import SimpleTitle from '@/components/simple-title'
+import { title as siteName, twitterAccount } from '@/lib/constants'
 
 export const metadata = {
   alternates: {

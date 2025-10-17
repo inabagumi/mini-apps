@@ -1,6 +1,6 @@
-import { description, title, twitterAccount } from '@/lib/constants'
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { description, title, twitterAccount } from '@/lib/constants'
 import Logo from './_components/logo.svg'
 
 export const metadata = {

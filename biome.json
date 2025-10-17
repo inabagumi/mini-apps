@@ -6,18 +6,7 @@
     "useIgnoreFile": true
   },
   "files": {
-    "ignore": [
-      ".next",
-      ".turbo",
-      ".vercel",
-      "node_modules",
-      "dist",
-      "build",
-      "out",
-      "*.tsbuildinfo",
-      "pnpm-lock.yaml",
-      ".docusaurus"
-    ]
+    "ignoreUnknown": false
   },
   "formatter": {
     "enabled": true,
@@ -27,14 +16,15 @@
     "lineWidth": 80,
     "lineEnding": "lf"
   },
-  "organizeImports": {
-    "enabled": true
-  },
   "linter": {
     "enabled": true,
+    "domains": {
+      "next": "recommended"
+    },
     "rules": {
       "recommended": true,
       "a11y": {
+        "noNoninteractiveElementToInteractiveRole": "warn",
         "noSvgWithoutTitle": "warn",
         "useAltText": "warn",
         "useButtonType": "warn",
@@ -61,5 +51,17 @@
       "trailingCommas": "es5",
       "semicolons": "asNeeded"
     }
-  }
+  },
+  "overrides": [
+    {
+      "includes": ["**/globals.css"],
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "noUnknownAtRules": "off"
+          }
+        }
+      }
+    }
+  ]
 }

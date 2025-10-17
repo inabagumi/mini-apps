@@ -1,5 +1,5 @@
-import { description, title } from '@/lib/constants'
 import type { Metadata } from 'next'
+import { description, title } from '@/lib/constants'
 import WrappedCamera from './wrapped-camera'
 
 export const metadata: Metadata = {

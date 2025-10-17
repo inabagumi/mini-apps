@@ -1,15 +1,15 @@
-import { redisClient } from '@/lib/redis'
 import {
   type ContentfulClientApi,
+  createClient,
   type Entry,
   type EntryCollection,
   type EntryFieldTypes,
   type EntrySkeletonType,
-  createClient,
 } from 'contentful'
 import dedent from 'dedent'
 import { unstable_cache as cache } from 'next/cache'
 import { cache as reactCache } from 'react'
+import { redisClient } from '@/lib/redis'
 
 let client: ContentfulClientApi<'WITHOUT_UNRESOLVABLE_LINKS'>
 

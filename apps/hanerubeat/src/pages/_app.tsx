@@ -1,5 +1,5 @@
-import { DefaultSeo } from 'next-seo'
 import type { AppProps } from 'next/app'
+import { DefaultSeo } from 'next-seo'
 import type { FC } from 'react'
 
 import 'styles/globals.css'

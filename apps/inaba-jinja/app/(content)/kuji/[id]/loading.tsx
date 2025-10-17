@@ -1,5 +1,5 @@
-import SimpleTitle from '@/components/simple-title'
 import Skeleton from '@inabagumi/components/skeleton'
+import SimpleTitle from '@/components/simple-title'
 
 export default function KujiLoading() {
   return (

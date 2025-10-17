@@ -1,16 +1,16 @@
 'use client'
 
-import type { OverlayEntrySkeleton } from '@/lib/contentful'
 import type { Entry } from 'contentful'
 import {
+  createContext,
   type Dispatch,
   type ReactNode,
   type SetStateAction,
-  createContext,
   useCallback,
   useContext,
   useState,
 } from 'react'
+import type { OverlayEntrySkeleton } from '@/lib/contentful'
 
 export type OverlayEntry = Entry<
   OverlayEntrySkeleton,

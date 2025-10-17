@@ -1,9 +1,8 @@
+import Heart from 'components/heart'
 import type { NextPage } from 'next'
 import { NextSeo } from 'next-seo'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { MdVolumeOff, MdVolumeUp } from 'react-icons/md'
-
-import Heart from 'components/heart'
 import styles from 'styles/pages/index.module.css'
 
 const Heartbeat: NextPage = () => {

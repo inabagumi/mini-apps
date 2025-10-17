@@ -1,8 +1,8 @@
 'use client'
 
-import { delay } from '@/lib/timer'
 import { useRouter } from 'next/navigation'
 import { use, useEffect } from 'react'
+import { delay } from '@/lib/timer'
 
 type Props = {
   idPromise: Promise<string>

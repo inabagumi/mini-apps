@@ -1,8 +1,8 @@
 import 'tailwindcss/tailwind.css'
-import { title } from '@/lib/constants'
 import { Analytics } from '@vercel/analytics/react'
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
+import { title } from '@/lib/constants'
 
 export const metadata: Metadata = {
   metadataBase: process.env.NEXT_PUBLIC_BASE_URL

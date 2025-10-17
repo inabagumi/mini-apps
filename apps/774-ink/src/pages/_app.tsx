@@ -1,8 +1,8 @@
-import { appleTouchIcon, favicon256x256 } from '@/assets'
-import { DefaultSeo } from 'next-seo'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
+import { DefaultSeo } from 'next-seo'
 import type { FC } from 'react'
+import { appleTouchIcon, favicon256x256 } from '@/assets'
 
 const MyApp: FC<AppProps> = ({ Component, pageProps }) => (
   <>

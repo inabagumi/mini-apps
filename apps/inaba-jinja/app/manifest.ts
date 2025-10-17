@@ -1,5 +1,5 @@
-import { description, themeColor, title } from '@/lib/constants'
 import type { MetadataRoute } from 'next'
+import { description, themeColor, title } from '@/lib/constants'
 import favicon512x512 from './icon1.png'
 import favicon192x192 from './icon2.png'
 
