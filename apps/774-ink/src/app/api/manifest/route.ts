@@ -1,8 +1,8 @@
-import type { NextApiHandler } from 'next'
+import { NextResponse } from 'next/server'
 import type { WebAppManifest } from 'web-app-manifest'
 import { favicon192x192, favicon512x512 } from '@/assets'
 
-const handler: NextApiHandler<WebAppManifest> = (_req, res) => {
+export async function GET() {
   const name = '774 ink.'
   const manifest: WebAppManifest = {
     background_color: '#fff',
@@ -26,9 +26,10 @@ const handler: NextApiHandler<WebAppManifest> = (_req, res) => {
     theme_color: '#544643',
   }
 
-  res.setHeader('Cache-Control', 'max-age=60,s-maxage=120')
-  res.setHeader('Content-Type', 'application/manifest+json')
-  res.status(200).json(manifest)
+  return NextResponse.json(manifest, {
+    headers: {
+      'Cache-Control': 'max-age=60,s-maxage=120',
+      'Content-Type': 'application/manifest+json',
+    },
+  })
 }
-
-export default handler
