@@ -1,12 +1,3 @@
-const nextConfig = {
-  async rewrites() {
-    return [
-      {
-        destination: '/api/manifest',
-        source: '/manifest.webmanifest',
-      },
-    ]
-  },
-}
+const nextConfig = {}
 
 module.exports = nextConfig
