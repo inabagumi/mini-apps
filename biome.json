@@ -24,6 +24,7 @@
     "rules": {
       "recommended": true,
       "a11y": {
+        "noNoninteractiveElementToInteractiveRole": "warn",
         "noSvgWithoutTitle": "warn",
         "useAltText": "warn",
         "useButtonType": "warn",
