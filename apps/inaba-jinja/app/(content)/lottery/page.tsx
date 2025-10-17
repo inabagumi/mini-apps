@@ -1,9 +1,9 @@
-import { type Metadata } from 'next'
+import { title as siteName, twitterAccount } from '@/lib/constants'
+import { getAnyFortuneID } from '@/lib/contentful'
+import type { Metadata } from 'next'
 import { unstable_noStore as noStore } from 'next/cache'
 import Image from 'next/image'
 import { Suspense } from 'react'
-import { title as siteName, twitterAccount } from '@/lib/constants'
-import { getAnyFortuneID } from '@/lib/contentful'
 import Redirect from './_components/redirect'
 import kujiImage from './kuji.png'
 
@@ -11,21 +11,21 @@ const title = 'おみくじを引いています...'
 
 export const metadata = {
   alternates: {
-    canonical: '/lottery'
+    canonical: '/lottery',
   },
   openGraph: {
     title,
-    url: '/lottery'
+    url: '/lottery',
   },
   robots: {
     follow: true,
-    index: false
+    index: false,
   },
   title,
   twitter: {
     site: `@${twitterAccount}`,
-    title: `${title} - ${siteName}`
-  }
+    title: `${title} - ${siteName}`,
+  },
 } satisfies Metadata
 
 export default function LotteryPage() {
@@ -34,7 +34,7 @@ export default function LotteryPage() {
   const idPromise = getAnyFortuneID()
 
   return (
-    <div className="mb-4 mt-8 flex h-full flex-col items-center justify-center">
+    <div className="mt-8 mb-4 flex h-full flex-col items-center justify-center">
       <Suspense fallback={null}>
         <Redirect idPromise={idPromise} />
       </Suspense>

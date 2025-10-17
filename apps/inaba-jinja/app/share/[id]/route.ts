@@ -13,7 +13,7 @@ export async function GET(
     fortune = await getFortune(id)
   } catch {
     return new Response('not found', {
-      status: 404
+      status: 404,
     })
   }
 

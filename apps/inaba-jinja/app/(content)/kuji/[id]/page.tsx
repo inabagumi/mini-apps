@@ -1,11 +1,11 @@
-import Image from 'next/image'
-import { notFound } from 'next/navigation'
 import SimpleTitle from '@/components/simple-title'
 import { title as siteName, twitterAccount } from '@/lib/constants'
 import { type FortuneEntry, getFortune, getFortuneIDs } from '@/lib/contentful'
 import { generateFortuneName, getImageURL } from '@/lib/fortune'
-import ShareLinks from './_components/share-links'
 import type { Metadata } from 'next'
+import Image from 'next/image'
+import { notFound } from 'next/navigation'
+import ShareLinks from './_components/share-links'
 
 // export const runtime = 'edge'
 export const revalidate = 30
@@ -17,7 +17,7 @@ export async function generateStaticParams(): Promise<{ id: string }[]> {
 }
 
 export async function generateMetadata({
-  params
+  params,
 }: {
   params: Promise<{
     id: string
@@ -42,7 +42,7 @@ export async function generateMetadata({
 
   return {
     alternates: {
-      canonical: `/kuji/${fortune.sys.id}`
+      canonical: `/kuji/${fortune.sys.id}`,
     },
     description: fortune.fields.description,
     openGraph: {
@@ -51,25 +51,25 @@ export async function generateMetadata({
         {
           height: card.fields.file.details.image?.height ?? 630,
           url: getImageURL(card),
-          width: card.fields.file.details.image?.width ?? 1200
-        }
+          width: card.fields.file.details.image?.width ?? 1200,
+        },
       ],
       siteName,
       title,
       type: 'article',
-      url: `/kuji/${fortune.sys.id}`
+      url: `/kuji/${fortune.sys.id}`,
     },
     title,
     twitter: {
       card: 'summary_large_image',
       site: `@${twitterAccount}`,
-      title: `${title} - ${siteName}`
-    }
+      title: `${title} - ${siteName}`,
+    },
   }
 }
 
 export default async function Page({
-  params
+  params,
 }: {
   params: Promise<{
     id: string

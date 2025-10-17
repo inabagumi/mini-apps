@@ -3,10 +3,10 @@ const nextConfig = {
     return [
       {
         destination: '/api/manifest',
-        source: '/manifest.webmanifest'
-      }
+        source: '/manifest.webmanifest',
+      },
     ]
-  }
+  },
 }
 
 module.exports = nextConfig

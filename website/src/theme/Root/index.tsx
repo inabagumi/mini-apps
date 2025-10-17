@@ -2,7 +2,7 @@ import { FormspreeProvider } from '@formspree/react'
 import type { ReactNode } from 'react'
 
 export default function Root({
-  children
+  children,
 }: Readonly<{
   children: ReactNode
 }>) {

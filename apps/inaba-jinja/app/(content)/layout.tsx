@@ -1,7 +1,7 @@
-import Link from 'next/link'
-import { type ReactNode } from 'react'
 import Logo from '@/components/logo.svg'
 import { title as siteName } from '@/lib/constants'
+import Link from 'next/link'
+import type { ReactNode } from 'react'
 
 type Props = {
   children: ReactNode

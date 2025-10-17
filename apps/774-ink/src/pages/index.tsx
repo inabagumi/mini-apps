@@ -1,6 +1,6 @@
-import { NextPage } from 'next'
-import { NextSeo } from 'next-seo'
 import { card } from '@/assets'
+import type { NextPage } from 'next'
+import { NextSeo } from 'next-seo'
 
 const canonical = 'https://774.ink/'
 
@@ -15,14 +15,14 @@ const Home: NextPage = () => (
             alt: 'Did you mean: 774 inc.',
             height: card.height,
             url: new URL(card.src, canonical).toString(),
-            width: card.width
-          }
+            width: card.width,
+          },
         ],
-        type: 'website'
+        type: 'website',
       }}
       title="774 ink."
       twitter={{
-        cardType: 'summary_large_image'
+        cardType: 'summary_large_image',
       }}
     />
 

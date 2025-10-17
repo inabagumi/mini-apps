@@ -1,16 +1,16 @@
 'use client'
 
+import Logo from '@/components/logo.svg'
 import {
   Dialog,
   DialogClose,
   DialogContent,
   DialogOverlay,
   DialogPortal,
-  DialogTrigger
+  DialogTrigger,
 } from '@radix-ui/react-dialog'
 import Link from 'next/link'
 import { twMerge } from 'tailwind-merge'
-import Logo from '@/components/logo.svg'
 
 type Props = {
   className?: string
@@ -42,7 +42,7 @@ export default function MobileMenu({ className }: Props) {
       <DialogPortal>
         <DialogOverlay className="fixed inset-0 z-20 bg-black/50 transition-opacity" />
         <DialogContent asChild>
-          <nav className="fixed inset-y-0 right-0 z-30 grid w-72 max-w-full grid-rows-[1fr_auto] border-l border-slate-400 bg-white">
+          <nav className="fixed inset-y-0 right-0 z-30 grid w-72 max-w-full grid-rows-[1fr_auto] border-slate-400 border-l bg-white">
             <div className="flex flex-col items-center py-2">
               <DialogClose asChild>
                 <Link aria-label="因幡神社" className="block" href="/">
@@ -54,21 +54,21 @@ export default function MobileMenu({ className }: Props) {
               className="supports-[padding-bottom:env(safe-area-inset-bottom)]:pb-[env(safe-area-inset-bottom,0)]"
               role="menu"
             >
-              <li className="border-t border-slate-400" role="menuitem">
+              <li className="border-slate-400 border-t">
                 <DialogClose asChild>
                   <Link className="block px-4 py-3 text-right" href="/about">
                     因幡神社とは
                   </Link>
                 </DialogClose>
               </li>
-              <li className="border-t border-slate-400" role="menuitem">
+              <li className="border-slate-400 border-t">
                 <DialogClose asChild>
                   <Link className="block px-4 py-3 text-right" href="/privacy">
                     プライバシーポリシー
                   </Link>
                 </DialogClose>
               </li>
-              <li className="border-t border-slate-400" role="menuitem">
+              <li className="border-slate-400 border-t">
                 <DialogClose asChild>
                   <a
                     className="block px-4 py-3 text-right"

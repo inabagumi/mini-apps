@@ -1,11 +1,11 @@
 import { ErrorMessage } from '@hookform/error-message'
+import TextField from '@site/src/components/TextField'
 import { clsx } from 'clsx'
 import { useFormContext } from 'react-hook-form'
+import type { RegisterOptions } from 'react-hook-form'
 import TextareaAutosize from 'react-textarea-autosize'
-import TextField from '@site/src/components/TextField'
 import styles from './FormControl.module.css'
 import type { FormData } from './types'
-import type { RegisterOptions } from 'react-hook-form'
 
 export default function FormControl<Name extends keyof FormData>({
   disabled = false,
@@ -14,7 +14,7 @@ export default function FormControl<Name extends keyof FormData>({
   name,
   placeholder,
   registerOptions,
-  type = 'text'
+  type = 'text',
 }: Readonly<{
   disabled?: boolean
   label: string
@@ -26,7 +26,7 @@ export default function FormControl<Name extends keyof FormData>({
 }>) {
   const {
     formState: { errors },
-    register
+    register,
   } = useFormContext<FormData>()
 
   const isRequired =

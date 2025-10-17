@@ -20,17 +20,8 @@
     "@docusaurus/tsconfig": "3.9.1",
     "@docusaurus/types": "3.9.1",
     "@formspree/cli": "0.9.6",
-    "@inabagumi/prettier-config": "3.0.0",
     "@types/lodash": "4.17.20",
     "@types/react": "19.2.2",
-    "@typescript-eslint/eslint-plugin": "8.46.1",
-    "@typescript-eslint/parser": "8.46.1",
-    "eslint": "8.57.1",
-    "eslint-config-prettier": "10.1.8",
-    "eslint-import-resolver-typescript": "4.4.4",
-    "eslint-plugin-import": "2.32.0",
-    "eslint-plugin-react": "7.37.5",
-    "eslint-plugin-react-hooks": "7.0.0",
     "typescript": "5.9.3"
   },
   "license": "MIT",
@@ -40,9 +31,6 @@
     "build": "docusaurus build",
     "deploy": "docusaurus deploy",
     "dev": "docusaurus start",
-    "format": "prettier -w .",
-    "format-check": "prettier -c .",
-    "lint": "eslint",
     "swizzle": "docusaurus swizzle"
   },
   "version": "2.0.0"

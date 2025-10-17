@@ -8,10 +8,10 @@ const config: Config = {
     defaultLocale: 'ja',
     localeConfigs: {
       ja: {
-        label: '日本語'
-      }
+        label: '日本語',
+      },
     },
-    locales: ['ja']
+    locales: ['ja'],
   },
   organizationName: 'inabagumi',
   plugins: ['@docusaurus/plugin-ideal-image'],
@@ -21,16 +21,16 @@ const config: Config = {
       {
         debug: true,
         docs: {
-          sidebarPath: './sidebars.ts'
+          sidebarPath: './sidebars.ts',
         },
         googleAnalytics: {
-          trackingID: 'UA-140696242-1'
+          trackingID: 'UA-140696242-1',
         },
         theme: {
-          customCss: './src/css/custom.css'
-        }
-      } satisfies Preset.Options
-    ]
+          customCss: './src/css/custom.css',
+        },
+      } satisfies Preset.Options,
+    ],
   ],
   projectName: 'website',
   tagline: 'ねるねるアプリの世界へようこそ',
@@ -42,47 +42,47 @@ const config: Config = {
           items: [
             {
               label: 'ねるカメラ',
-              to: 'docs/neru-camera'
+              to: 'docs/neru-camera',
             },
             {
               label: 'あにまーれ診断',
-              to: 'docs/animare-shindan'
+              to: 'docs/animare-shindan',
             },
             {
               label: 'Haneru Beat!',
-              to: 'docs/hanerubeat'
+              to: 'docs/hanerubeat',
             },
             {
               label: '因幡神社',
-              to: 'docs/inaba-jinja'
-            }
+              to: 'docs/inaba-jinja',
+            },
           ],
-          title: 'ねるねるアプリ'
+          title: 'ねるねるアプリ',
         },
         {
           items: [
             {
               label: 'SHINJU DATE',
-              to: 'docs/shinju-date'
-            }
+              to: 'docs/shinju-date',
+            },
           ],
-          title: 'プロダクト'
+          title: 'プロダクト',
         },
         {
           items: [
             {
               href: 'https://github.com/inabagumi',
-              label: 'GitHub'
+              label: 'GitHub',
             },
             {
               href: 'https://discord.gg/d9V3PSj',
-              label: 'Discord'
-            }
+              label: 'Discord',
+            },
           ],
-          title: 'ソーシャル'
-        }
+          title: 'ソーシャル',
+        },
       ],
-      style: 'dark'
+      style: 'dark',
     },
     image: 'https://haneru.dev/img/haneru-dev.jpg',
     navbar: {
@@ -92,23 +92,23 @@ const config: Config = {
           activeBasePath: 'docs',
           label: 'ドキュメント',
           position: 'left',
-          to: 'docs'
+          to: 'docs',
         },
         {
           label: 'お問い合わせ',
           position: 'right',
-          to: 'contact'
-        }
+          to: 'contact',
+        },
       ],
       logo: {
         alt: 'Haneru Developers Logo',
-        src: 'img/logo.svg'
+        src: 'img/logo.svg',
       },
-      title: 'Haneru Developers'
-    }
+      title: 'Haneru Developers',
+    },
   } satisfies Preset.ThemeConfig,
   title: 'Haneru Developers',
-  url: 'https://haneru.dev'
+  url: 'https://haneru.dev',
 }
 
 export default config

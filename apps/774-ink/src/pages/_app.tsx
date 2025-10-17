@@ -1,8 +1,8 @@
-import { AppProps } from 'next/app'
-import Head from 'next/head'
-import { DefaultSeo } from 'next-seo'
-import { FC } from 'react'
 import { appleTouchIcon, favicon256x256 } from '@/assets'
+import { DefaultSeo } from 'next-seo'
+import type { AppProps } from 'next/app'
+import Head from 'next/head'
+import type { FC } from 'react'
 
 const MyApp: FC<AppProps> = ({ Component, pageProps }) => (
   <>
@@ -15,8 +15,8 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }) => (
       additionalMetaTags={[
         {
           content: '#544643',
-          name: 'theme_color'
-        }
+          name: 'theme_color',
+        },
       ]}
     />
 

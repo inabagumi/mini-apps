@@ -1,4 +1,4 @@
-import { type ComponentProps } from 'react'
+import type { ComponentProps } from 'react'
 import { MdFavorite } from 'react-icons/md'
 
 import mp3Path from 'assets/heartbeat.mp3'

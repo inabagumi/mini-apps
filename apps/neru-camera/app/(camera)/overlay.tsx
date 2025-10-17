@@ -3,19 +3,19 @@
 import { Sprite, useApp } from '@pixi/react'
 import { Point } from 'pixi.js'
 import { useMemo } from 'react'
-import { type OverlayEntry } from './asset'
+import type { OverlayEntry } from './asset'
 import { ChromaKeyFilter } from './filters'
 import { useVideoTexture } from './hooks'
 import Viewport from './viewport'
 
 export default function Overlay({
-  asset
+  asset,
 }: Readonly<{
   asset: OverlayEntry
 }>) {
   const app = useApp()
   const texture = useVideoTexture({
-    src: asset.fields.media?.fields.file?.url
+    src: asset.fields.media?.fields.file?.url,
   })
   const chromaKeyFilter = useMemo(
     () => new ChromaKeyFilter(asset.fields.keyColor),

@@ -2,7 +2,7 @@
 
 import { PixiComponent } from '@pixi/react'
 import { type IViewportOptions, Viewport } from 'pixi-viewport'
-import { type ReactNode } from 'react'
+import type { ReactNode } from 'react'
 
 type Props = IViewportOptions & {
   children: ReactNode
@@ -15,5 +15,5 @@ export default PixiComponent<Props, Viewport>('Viewport', {
     viewport.drag({}).pinch({}).wheel({}).decelerate({})
 
     return viewport
-  }
+  },
 })

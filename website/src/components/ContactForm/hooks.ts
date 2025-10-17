@@ -1,8 +1,8 @@
 import { useForm } from '@formspree/react'
 import { useMemo } from 'react'
 import { useFormContext } from 'react-hook-form'
-import type { FormData, HandleSubmit } from './types'
 import type { FormState } from 'react-hook-form'
+import type { FormData, HandleSubmit } from './types'
 
 export function useHandleSubmit(
   formKey: string
@@ -10,7 +10,7 @@ export function useHandleSubmit(
   const {
     formState,
     handleSubmit: createHandleSubmit,
-    reset
+    reset,
   } = useFormContext<FormData>()
   const [, sendEmail] = useForm(formKey)
   const handleSubmit = useMemo<HandleSubmit>(

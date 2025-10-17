@@ -15,7 +15,7 @@ const products: Product[] = [
     learnMore: 'docs/neru-camera',
     preview: require('./showcase/neru-camera.jpg'),
     title: 'ねるカメラ',
-    website: 'https://neru.camera/'
+    website: 'https://neru.camera/',
   },
   {
     description:
@@ -23,7 +23,7 @@ const products: Product[] = [
     learnMore: 'docs/animare-shindan',
     preview: require('./showcase/animare-shindan.jpg'),
     title: 'あにまーれ診断',
-    website: 'https://shindan.animare.cafe/'
+    website: 'https://shindan.animare.cafe/',
   },
   {
     description:
@@ -31,22 +31,22 @@ const products: Product[] = [
     learnMore: 'docs/hanerubeat',
     preview: require('./showcase/hanerubeat.jpg'),
     title: 'Haneru Beat!',
-    website: 'https://hanerubeat.app/'
+    website: 'https://hanerubeat.app/',
   },
   {
     description: '774 inc. 所属タレントの動画を検索できるウェブサービスです。',
     learnMore: 'docs/shinju-date',
     preview: require('./showcase/shinju-date.jpg'),
     title: 'SHINJU DATE',
-    website: 'https://shinju.date/'
+    website: 'https://shinju.date/',
   },
   {
     description: '因幡神社は東京都北区赤羽のどこかにある神社です。',
     learnMore: 'docs/inaba-jinja',
     preview: require('./showcase/inaba-jinja.jpg'),
     title: '因幡神社',
-    website: 'https://inaba-jinja.com/'
-  }
+    website: 'https://inaba-jinja.com/',
+  },
 ]
 
 export default products

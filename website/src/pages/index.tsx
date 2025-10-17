@@ -30,7 +30,7 @@ export default function Home() {
         </div>
       </header>
       <main>
-        {products && products.length && (
+        {products?.length && (
           <section className="margin-top--lg container">
             {chunk(products, 3).map((row, i) => (
               <div className="row" key={`row-${i}`}>

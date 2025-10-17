@@ -1,5 +1,5 @@
-import type { ReactNode } from 'react'
 import { type OverlayEntrySkeleton, createClient } from '@/lib/contentful'
+import type { ReactNode } from 'react'
 import { AssetProvider, type OverlayEntry } from './asset'
 import HeaderMenu from './menu'
 
@@ -10,14 +10,14 @@ async function getAssets(): Promise<OverlayEntry[]> {
       content_type: 'overlay',
       limit: 100,
       order: ['-sys.createdAt'],
-      select: ['sys.id', 'fields.keyColor', 'fields.media', 'fields.name']
+      select: ['sys.id', 'fields.keyColor', 'fields.media', 'fields.name'],
     })
 
   return items
 }
 
 export default async function CameraLayout({
-  children
+  children,
 }: Readonly<{
   children: ReactNode
 }>) {

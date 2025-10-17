@@ -1,6 +1,6 @@
 import { clsx } from 'clsx'
-import styles from './TextField.module.css'
 import type { ComponentProps } from 'react'
+import styles from './TextField.module.css'
 
 export default function TextField({
   block = false,
@@ -12,7 +12,7 @@ export default function TextField({
   const className = clsx(
     styles.root,
     {
-      [styles.block]: block
+      [styles.block]: block,
     },
     additionalClassName
   )

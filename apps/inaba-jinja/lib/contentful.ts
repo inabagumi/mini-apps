@@ -1,15 +1,15 @@
+import { redisClient } from '@/lib/redis'
 import {
   type ContentfulClientApi,
   type Entry,
   type EntryCollection,
   type EntryFieldTypes,
   type EntrySkeletonType,
-  createClient
+  createClient,
 } from 'contentful'
 import dedent from 'dedent'
 import { unstable_cache as cache } from 'next/cache'
 import { cache as reactCache } from 'react'
-import { redisClient } from '@/lib/redis'
 
 let client: ContentfulClientApi<'WITHOUT_UNRESOLVABLE_LINKS'>
 
@@ -23,7 +23,7 @@ export function getClient(
 
     client = createClient({
       accessToken,
-      space
+      space,
     }).withoutUnresolvableLinks
   }
 
@@ -64,7 +64,7 @@ export const getFortuneIDs = cache(
       await getClient().getEntries<FortuneEntrySkeleton>({
         content_type: 'fortune',
         limit: 100,
-        select: ['sys.id']
+        select: ['sys.id'],
       })
 
     results.push(...items.map((entry) => entry.sys.id))
@@ -77,7 +77,7 @@ export const getFortuneIDs = cache(
           getClient().getEntries<FortuneEntrySkeleton>({
             content_type: 'fortune',
             limit,
-            select: ['sys.id']
+            select: ['sys.id'],
           })
         )
       }

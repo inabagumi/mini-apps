@@ -2,7 +2,7 @@ import {
   type ContentfulClientApi,
   type EntryFieldTypes,
   type EntrySkeletonType,
-  createClient as createContentfulClient
+  createClient as createContentfulClient,
 } from 'contentful'
 
 export type OverlayEntrySkeleton = EntrySkeletonType<
@@ -20,6 +20,6 @@ export const createClient = (): ContentfulClientApi<undefined> => {
 
   return createContentfulClient({
     accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
-    space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID
+    space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
   })
 }

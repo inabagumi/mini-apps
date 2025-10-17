@@ -3,7 +3,7 @@ import mainVisual from './main-visual.jpg'
 
 export default function Background() {
   return (
-    <div aria-hidden className="fixed inset-0 -z-10 h-full h-lvh">
+    <div aria-hidden className="-z-10 fixed inset-0 h-full h-lvh">
       <Image
         alt=""
         className="object-cover"
