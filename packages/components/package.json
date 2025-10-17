@@ -6,15 +6,15 @@
   },
   "bugs": {
     "email": "contact@haneru.dev",
-    "url": "https://github.com/inabagumi/inaba-jinja/issues"
+    "url": "https://github.com/inabagumi/mini-apps/issues"
   },
   "dependencies": {},
   "description": "This is a tailwind.config for Inaba Jinja.",
   "devDependencies": {
-    "@tsconfig/node20": "^20.1.6",
-    "@tsconfig/strictest": "^2.0.6",
-    "@types/react": "^19.2.2",
-    "tsup": "^8.5.0"
+    "@tsconfig/node20": "20.1.6",
+    "@tsconfig/strictest": "2.0.6",
+    "@types/react": "19.2.2",
+    "tsup": "8.5.0"
   },
   "exports": {
     ".": {
@@ -28,10 +28,10 @@
       "default": "./dist/skeleton/index.js"
     }
   },
-  "homepage": "https://inaba-jinja.com",
+  "homepage": "https://haneru.dev/",
   "license": "MIT",
   "main": "dist/index.js",
-  "name": "@inaba-jinja/components",
+  "name": "@inabagumi/components",
   "peerDependencies": {
     "@types/react": "^19.0.0",
     "react": "^19.0.0",
@@ -46,7 +46,7 @@
   "repository": {
     "directory": "packages/components",
     "type": "git",
-    "url": "https://github.com/inabagumi/inaba-jinja.git"
+    "url": "https://github.com/inabagumi/mini-apps.git"
   },
   "scripts": {
     "build": "tsup"

@@ -6,28 +6,28 @@
   },
   "bugs": {
     "email": "contact@haneru.dev",
-    "url": "https://github.com/inabagumi/inaba-jinja/issues"
+    "url": "https://github.com/inabagumi/mini-apps/issues"
   },
   "dependencies": {
-    "@tailwindcss/typography": "^0.5.19",
-    "tailwindcss": "^3.4.18",
-    "tailwindcss-safe-area": "^0.8.0"
+    "@tailwindcss/typography": "0.5.19",
+    "tailwindcss": "3.4.18",
+    "tailwindcss-safe-area": "0.8.0"
   },
   "description": "This is a tailwind.config for Inaba Jinja.",
   "devDependencies": {
-    "@tsconfig/node20": "^20.1.6",
-    "@tsconfig/strictest": "^2.0.6",
-    "tsup": "^8.5.0"
+    "@tsconfig/node20": "20.1.6",
+    "@tsconfig/strictest": "2.0.6",
+    "tsup": "8.5.0"
   },
-  "homepage": "https://inaba-jinja.com",
+  "homepage": "https://haneru.dev",
   "license": "MIT",
   "main": "dist/index.js",
-  "name": "@inaba-jinja/tailwind-config",
+  "name": "@inabagumi/tailwind-config",
   "private": true,
   "repository": {
     "directory": "packages/tailwind-config",
     "type": "git",
-    "url": "https://github.com/inabagumi/inaba-jinja.git"
+    "url": "https://github.com/inabagumi/mini-apps.git"
   },
   "scripts": {
     "build": "tsup"

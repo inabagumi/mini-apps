@@ -1,6 +1,6 @@
 # 因幡神社
 
-[![GitHub Actions](https://github.com/inabagumi/inaba-jinja/workflows/Test/badge.svg)](https://github.com/inabagumi/inaba-jinja/actions?query=workflow%3A%22Test%22)
+[![GitHub Actions](https://github.com/inabagumi/mini-apps/workflows/Test/badge.svg)](https://github.com/inabagumi/mini-apps/actions?query=workflow%3A%22Test%22)
 
 因幡神社へようこそ!
 
