@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/inabagumi/mini-apps/compare/774-ink-v1.0.1...774-ink-v1.1.0) (2025-10-20)
+
+
+### Features
+
+* **774-ink:** migrate from Pages Router to App Router ([#4268](https://github.com/inabagumi/mini-apps/issues/4268)) ([cf56c12](https://github.com/inabagumi/mini-apps/commit/cf56c1278d20fcf8e89c94159f72508c142dcd15))
+
 ## [1.0.1](https://github.com/inabagumi/mini-apps/compare/774-ink-v1.0.0...774-ink-v1.0.1) (2025-10-17)
 
 
