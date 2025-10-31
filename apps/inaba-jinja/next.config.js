@@ -56,6 +56,7 @@ const nextConfig = {
       },
     ]
   },
+  turbopack: {},
   webpack(config, { defaultLoaders }) {
     config.module.rules.push({
       test: /\.svg$/,

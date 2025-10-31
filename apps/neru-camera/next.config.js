@@ -49,6 +49,7 @@ const nextConfig = {
       },
     ]
   },
+  turbopack: {},
 }
 
 const withPWA = nextPWA({
