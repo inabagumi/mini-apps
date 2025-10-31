@@ -26,6 +26,7 @@ const nextConfig = {
       },
     ]
   },
+  turbopack: {},
   webpack(config, { defaultLoaders, dev }) {
     config.module.rules.push({
       test: /\.(?:mp3|ogg|vtt)$/i,
