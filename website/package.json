@@ -21,7 +21,7 @@
     "@docusaurus/types": "3.9.2",
     "@formspree/cli": "0.9.6",
     "@types/lodash": "4.17.20",
-    "@types/react": "19.2.5",
+    "@types/react": "19.2.6",
     "typescript": "5.9.3"
   },
   "license": "MIT",
