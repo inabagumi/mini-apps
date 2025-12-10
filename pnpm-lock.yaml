@@ -125,8 +125,8 @@ importers:
         specifier: 2.1.1
         version: 2.1.1
       contentful:
-        specifier: 11.9.0
-        version: 11.9.0
+        specifier: 11.10.0
+        version: 11.10.0
       dedent:
         specifier: 1.7.0
         version: 1.7.0
@@ -237,8 +237,8 @@ importers:
         specifier: 2.1.1
         version: 2.1.1
       contentful:
-        specifier: 11.9.0
-        version: 11.9.0
+        specifier: 11.10.0
+        version: 11.10.0
       next:
         specifier: 16.0.8
         version: 16.0.8(@babel/core@7.28.5)(@opentelemetry/api@1.9.0)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
@@ -4461,8 +4461,8 @@ packages:
     resolution: {integrity: sha512-Y+Qz2tGYE2ia6o42R8DG4uFSMSLJ6qfAbKQLU6p2+KxsqvbK1Fg60wKVKF+FHMShuCnlg2EwToOvxVsM2N+BrQ==}
     engines: {node: '>=18'}
 
-  contentful@11.9.0:
-    resolution: {integrity: sha512-nQAiYWyDWec+LaXSiclYnmK0QZ65dGqBnMKzffrqW0Q1B2SQ9LW0b07UshN56aPXDfX7sf5MRvlUVTW9v5+iLw==}
+  contentful@11.10.0:
+    resolution: {integrity: sha512-w1akW/pzxN+KAST8/jUbSauWmwKiCweqKYF208JScivBf1687QKSeCusLzrYFz46hCN5KoISCamiEd21R9yDOQ==}
     engines: {node: '>=18'}
 
   conventional-changelog-angular@7.0.0:
@@ -14377,7 +14377,7 @@ snapshots:
     optionalDependencies:
       '@rollup/rollup-linux-x64-gnu': 4.53.3
 
-  contentful@11.9.0:
+  contentful@11.10.0:
     dependencies:
       '@contentful/content-source-maps': 0.11.43
       '@contentful/rich-text-types': 16.8.5
