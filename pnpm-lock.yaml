@@ -204,8 +204,8 @@ importers:
         specifier: 4.0.1
         version: 4.0.1
       tailwindcss:
-        specifier: 3.4.18
-        version: 3.4.18(yaml@2.8.2)
+        specifier: 3.4.19
+        version: 3.4.19(yaml@2.8.2)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -258,8 +258,8 @@ importers:
         specifier: 19.2.1
         version: 19.2.1(react@19.2.1)
       tailwindcss:
-        specifier: 3.4.18
-        version: 3.4.18(yaml@2.8.2)
+        specifier: 3.4.19
+        version: 3.4.19(yaml@2.8.2)
     devDependencies:
       '@commitlint/cli':
         specifier: 20.2.0
@@ -321,13 +321,13 @@ importers:
     dependencies:
       '@tailwindcss/typography':
         specifier: 0.5.19
-        version: 0.5.19(tailwindcss@3.4.18(yaml@2.8.2))
+        version: 0.5.19(tailwindcss@3.4.19(yaml@2.8.2))
       tailwindcss:
-        specifier: 3.4.18
-        version: 3.4.18(yaml@2.8.2)
+        specifier: 3.4.19
+        version: 3.4.19(yaml@2.8.2)
       tailwindcss-safe-area:
         specifier: 0.8.0
-        version: 0.8.0(tailwindcss@3.4.18(yaml@2.8.2))
+        version: 0.8.0(tailwindcss@3.4.19(yaml@2.8.2))
     devDependencies:
       '@tsconfig/node20':
         specifier: 20.1.8
@@ -8663,8 +8663,8 @@ packages:
     peerDependencies:
       tailwindcss: ^2.0.0 || >=3.0.0
 
-  tailwindcss@3.4.18:
-    resolution: {integrity: sha512-6A2rnmW5xZMdw11LYjhcI5846rt9pbLSabY5XPxo+XWdxwZaFEn47Go4NzFiHu9sNNmr/kXivP1vStfvMaK1GQ==}
+  tailwindcss@3.4.19:
+    resolution: {integrity: sha512-3ofp+LL8E+pK/JuPLPggVAIaEuhvIz4qNcf3nA1Xn2o/7fb7s/TYpHhwGDv1ZU3PkBluUVaF8PyCHcm48cKLWQ==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -13089,10 +13089,10 @@ snapshots:
     dependencies:
       defer-to-connect: 2.0.1
 
-  '@tailwindcss/typography@0.5.19(tailwindcss@3.4.18(yaml@2.8.2))':
+  '@tailwindcss/typography@0.5.19(tailwindcss@3.4.19(yaml@2.8.2))':
     dependencies:
       postcss-selector-parser: 6.0.10
-      tailwindcss: 3.4.18(yaml@2.8.2)
+      tailwindcss: 3.4.19(yaml@2.8.2)
 
   '@testing-library/dom@10.4.1':
     dependencies:
@@ -19608,11 +19608,11 @@ snapshots:
 
   tailwind-merge@2.6.0: {}
 
-  tailwindcss-safe-area@0.8.0(tailwindcss@3.4.18(yaml@2.8.2)):
+  tailwindcss-safe-area@0.8.0(tailwindcss@3.4.19(yaml@2.8.2)):
     dependencies:
-      tailwindcss: 3.4.18(yaml@2.8.2)
+      tailwindcss: 3.4.19(yaml@2.8.2)
 
-  tailwindcss@3.4.18(yaml@2.8.2):
+  tailwindcss@3.4.19(yaml@2.8.2):
     dependencies:
       '@alloc/quick-lru': 5.2.0
       arg: 5.0.2
