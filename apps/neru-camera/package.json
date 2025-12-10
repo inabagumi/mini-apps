@@ -9,7 +9,7 @@
     "@vercel/analytics": "1.6.1",
     "browser-fs-access": "0.38.0",
     "clsx": "2.1.1",
-    "contentful": "11.9.0",
+    "contentful": "11.10.0",
     "next": "16.0.8",
     "next-seo": "6.8.0",
     "pixi-viewport": "6.0.3",
