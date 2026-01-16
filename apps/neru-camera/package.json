@@ -23,7 +23,7 @@
     "@commitlint/cli": "20.2.0",
     "@commitlint/config-conventional": "20.2.0",
     "@types/node": "22.19.7",
-    "@types/react": "19.2.7",
+    "@types/react": "19.2.8",
     "autoprefixer": "10.4.23",
     "husky": "9.1.7",
     "is-ci": "4.1.0",
