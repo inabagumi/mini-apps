@@ -9,7 +9,7 @@
   },
   "description": "Feel the life of Neru-chan!",
   "devDependencies": {
-    "@types/node": "22.19.7",
+    "@types/node": "24.10.9",
     "@types/react": "19.2.8",
     "@types/react-dom": "19.2.3",
     "file-loader": "6.2.0",

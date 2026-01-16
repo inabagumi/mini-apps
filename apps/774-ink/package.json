@@ -6,7 +6,7 @@
     "react-dom": "19.2.3"
   },
   "devDependencies": {
-    "@types/node": "22.19.7",
+    "@types/node": "24.10.9",
     "@types/react": "19.2.8",
     "@types/web-app-manifest": "1.0.9",
     "file-loader": "6.2.0",
