@@ -20,7 +20,7 @@
     "@docusaurus/tsconfig": "3.9.2",
     "@docusaurus/types": "3.9.2",
     "@formspree/cli": "0.9.6",
-    "@types/lodash": "4.17.21",
+    "@types/lodash": "4.17.23",
     "@types/react": "19.2.8",
     "typescript": "5.9.3"
   },
