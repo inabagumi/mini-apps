@@ -8,7 +8,7 @@
     "@hookform/error-message": "2.0.1",
     "@slorber/react-ideal-image": "0.0.14",
     "clsx": "2.1.1",
-    "lodash": "4.17.21",
+    "lodash": "4.17.23",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-hook-form": "7.71.1",
