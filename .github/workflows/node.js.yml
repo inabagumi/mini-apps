@@ -9,7 +9,7 @@ on:
 
 env:
   # renovate: datasource=npm depName=corepack
-  COREPACK_VERSION: 0.34.5
+  COREPACK_VERSION: 0.34.6
   # renovate: datasource=node-version depName=node
   NODE_VERSION: 24.13.0
 
