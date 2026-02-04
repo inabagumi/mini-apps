@@ -7,7 +7,7 @@
   },
   "devDependencies": {
     "@types/node": "24.10.10",
-    "@types/react": "19.2.10",
+    "@types/react": "19.2.11",
     "@types/web-app-manifest": "1.0.9",
     "file-loader": "6.2.0",
     "typescript": "5.9.3"
