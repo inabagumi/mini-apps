@@ -305,8 +305,8 @@ importers:
         version: 2.6.1
     devDependencies:
       '@tsconfig/node20':
-        specifier: 20.1.8
-        version: 20.1.8
+        specifier: 20.1.9
+        version: 20.1.9
       '@tsconfig/strictest':
         specifier: 2.0.8
         version: 2.0.8
@@ -330,8 +330,8 @@ importers:
         version: 0.8.0(tailwindcss@3.4.19(yaml@2.8.2))
     devDependencies:
       '@tsconfig/node20':
-        specifier: 20.1.8
-        version: 20.1.8
+        specifier: 20.1.9
+        version: 20.1.9
       '@tsconfig/strictest':
         specifier: 2.0.8
         version: 2.0.8
@@ -3358,8 +3358,8 @@ packages:
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
     engines: {node: '>=10.13.0'}
 
-  '@tsconfig/node20@20.1.8':
-    resolution: {integrity: sha512-Em+IdPfByIzWRRpqWL4Z7ArLHZGxmc36BxE3jCz9nBFSm+5aLaPMZyjwu4yetvyKXeogWcxik4L1jB5JTWfw7A==}
+  '@tsconfig/node20@20.1.9':
+    resolution: {integrity: sha512-IjlTv1RsvnPtUcjTqtVsZExKVq+KQx4g5pCP5tI7rAs6Xesl2qFwSz/tPDBC4JajkL/MlezBu3gPUwqRHl+RIg==}
 
   '@tsconfig/strictest@2.0.8':
     resolution: {integrity: sha512-XnQ7vNz5HRN0r88GYf1J9JJjqtZPiHt2woGJOo2dYqyHGGcd6OLGqSlBB6p1j9mpzja6Oe5BoPqWmeDx6X9rLw==}
@@ -13299,7 +13299,7 @@ snapshots:
 
   '@trysound/sax@0.2.0': {}
 
-  '@tsconfig/node20@20.1.8': {}
+  '@tsconfig/node20@20.1.9': {}
 
   '@tsconfig/strictest@2.0.8': {}
 
