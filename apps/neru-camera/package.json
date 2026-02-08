@@ -22,7 +22,7 @@
   "devDependencies": {
     "@commitlint/cli": "20.4.1",
     "@commitlint/config-conventional": "20.4.1",
-    "@types/node": "24.10.11",
+    "@types/node": "24.10.12",
     "@types/react": "19.2.13",
     "autoprefixer": "10.4.24",
     "husky": "9.1.7",
