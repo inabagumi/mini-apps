@@ -24,7 +24,7 @@
     "@commitlint/config-conventional": "20.4.2",
     "@types/node": "24.10.13",
     "@types/react": "19.2.14",
-    "autoprefixer": "10.4.24",
+    "autoprefixer": "10.4.25",
     "husky": "9.1.7",
     "is-ci": "4.1.0",
     "lint-staged": "16.2.7",
