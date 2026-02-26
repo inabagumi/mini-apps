@@ -37,7 +37,7 @@
     "@types/gtag.js": "0.0.20",
     "@types/jest": "30.0.0",
     "@types/mdx": "2.0.13",
-    "@types/node": "24.10.13",
+    "@types/node": "24.10.14",
     "@types/react": "19.2.14",
     "@types/webpack-env": "1.18.8",
     "jest": "30.2.0",
