@@ -9,8 +9,8 @@
     "@slorber/react-ideal-image": "0.0.14",
     "clsx": "2.1.1",
     "lodash": "4.18.1",
-    "react": "19.2.4",
-    "react-dom": "19.2.4",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
     "react-hook-form": "7.84.0",
     "react-textarea-autosize": "8.5.9"
   },
@@ -21,7 +21,7 @@
     "@docusaurus/types": "3.10.2",
     "@formspree/cli": "0.9.6",
     "@types/lodash": "4.17.25",
-    "@types/react": "19.2.14",
+    "@types/react": "19.2.18",
     "typescript": "5.9.3"
   },
   "license": "MIT",
