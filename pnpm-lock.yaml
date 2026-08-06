@@ -125,8 +125,8 @@ importers:
         specifier: 2.1.1
         version: 2.1.1
       contentful:
-        specifier: 11.12.8
-        version: 11.12.8
+        specifier: 11.12.9
+        version: 11.12.9
       dedent:
         specifier: 1.7.2
         version: 1.7.2
@@ -237,8 +237,8 @@ importers:
         specifier: 2.1.1
         version: 2.1.1
       contentful:
-        specifier: 11.12.8
-        version: 11.12.8
+        specifier: 11.12.9
+        version: 11.12.9
       next:
         specifier: 16.2.12
         version: 16.2.12(@babel/core@7.29.7)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
@@ -4689,16 +4689,16 @@ packages:
     resolution: {integrity: sha512-nTjqfcBFEipKdXCv4YDQWCfmcLZKm81ldF0pAopTvyrFGVbcR6P/VAAd5G7N+0tTr8QqiU0tFadD6FK4NtJwOA==}
     engines: {node: '>= 0.6'}
 
-  contentful-resolve-response@1.9.9:
-    resolution: {integrity: sha512-ApbQGPuMJe/jJOlYzO1cMpIXpE3MG8actgkaJO8lbbh9GrTOIStR35RJ1W8dcpb20KCuueSBcOWFIn2y6LnOog==}
-    engines: {node: '>=4.7.2'}
+  contentful-resolve-response@2.0.1:
+    resolution: {integrity: sha512-IYjx6oI1G4wSlLecceDBKuXZRezVrNwZSxfmM0ZjwWtCeyR0B0iYPGNgEu3/p1kGJliFziZRFA61jM8wa1Trcg==}
+    engines: {node: '>=22'}
 
   contentful-sdk-core@9.4.5:
     resolution: {integrity: sha512-8eGTMO11LXFAiosaiV38bjvW6cjoQFtNE38pNtVilZTXpmGFinClljihH0eriv11Ispd4q82TqtsXMJPYD/C+A==}
     engines: {node: '>=18'}
 
-  contentful@11.12.8:
-    resolution: {integrity: sha512-b7UumRsBvw5xWN5fHt1HQeXuxMp9QeQtaqPMAtAN6KqMRLsXmSFQOfyukPGFUpXJvqqBmp1I1h/rcTnoWh8Sbg==}
+  contentful@11.12.9:
+    resolution: {integrity: sha512-3eSYeXRiQOOmkwwAqwPXeTE37iiE/Ku4LOh1p5bj2CxgaLVLk6O2Ep1DdDwoGMonyTNrkbCFXfbXCkrTPYBWHw==}
     engines: {node: '>=18'}
 
   conventional-changelog-angular@9.2.1:
@@ -14877,7 +14877,7 @@ snapshots:
 
   content-type@1.0.5: {}
 
-  contentful-resolve-response@1.9.9:
+  contentful-resolve-response@2.0.1:
     dependencies:
       fast-copy: 3.0.2
 
@@ -14890,12 +14890,12 @@ snapshots:
     optionalDependencies:
       '@rollup/rollup-linux-x64-gnu': 4.62.4
 
-  contentful@11.12.8:
+  contentful@11.12.9:
     dependencies:
       '@contentful/content-source-maps': 0.12.3
       '@contentful/rich-text-types': 17.2.7
       axios: 1.19.0
-      contentful-resolve-response: 1.9.9
+      contentful-resolve-response: 2.0.1
       contentful-sdk-core: 9.4.5
       json-stringify-safe: 5.0.1
       tslib: 2.8.1
