@@ -125,8 +125,8 @@ importers:
         specifier: 2.1.1
         version: 2.1.1
       contentful:
-        specifier: 11.12.7
-        version: 11.12.7
+        specifier: 11.12.8
+        version: 11.12.8
       dedent:
         specifier: 1.7.2
         version: 1.7.2
@@ -237,8 +237,8 @@ importers:
         specifier: 2.1.1
         version: 2.1.1
       contentful:
-        specifier: 11.12.7
-        version: 11.12.7
+        specifier: 11.12.8
+        version: 11.12.8
       next:
         specifier: 16.2.12
         version: 16.2.12(@babel/core@7.29.7)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
@@ -1284,8 +1284,8 @@ packages:
     resolution: {integrity: sha512-7zVFCDB2reMvJH5dmbKnOQPjZEvjdJTH8jc0U/PIPU1r3/+vf5pD1HlfitV2MWsWXrvu7u39iY1lyLUPOaN0Gw==}
     engines: {node: '>=22.12.0'}
 
-  '@contentful/content-source-maps@0.11.44':
-    resolution: {integrity: sha512-tu1gfmZI59hQ7qKhmGOV0dA5brxhsc+LOfPwBsQQMDAVy5kVpTrKf/AGlL2y9QhKHu/NtCrwX/ZrmRFgtGEtIA==}
+  '@contentful/content-source-maps@0.12.3':
+    resolution: {integrity: sha512-HzimXvs48eg+tjWtDuOIZzjbSYxfC8CLMZaTwzPqF6wW0TM5KoQIfDJZrGlnpGrZ66lXvyEc5nuYCa58ow8C7g==}
 
   '@contentful/rich-text-types@17.2.7':
     resolution: {integrity: sha512-aIdozk8vk5gsYcallOrwEiL6+GSlMXZorDOmiVELfpbVaXMJPJPlf2CBw3LUzviAqCw0UPQcKHHCwG7SdY7u5w==}
@@ -3870,8 +3870,8 @@ packages:
       vue-router:
         optional: true
 
-  '@vercel/stega@0.1.2':
-    resolution: {integrity: sha512-P7mafQXjkrsoyTRppnt0N21udKS9wUmLXHRyP9saLXLHw32j/FgUJ3FscSWgvSqRs4cj7wKZtwqJEvWJ2jbGmA==}
+  '@vercel/stega@1.1.0':
+    resolution: {integrity: sha512-DFOm3Gk78nKDkppQEG5aj8Wj8R8hPKu/xrz4Rtp0AfiaNbZNCoJbxn7VI6iMxqhGeLdUDy/8mTuTWMz/izAtPA==}
 
   '@webassemblyjs/ast@1.14.1':
     resolution: {integrity: sha512-nuBEDgQfm1ccRp/8bCQrx1frohyufl4JlbMMZ4P1wpeOfDhF6FQkxZJ1b/e+PLwr6X1Nhw6OLme5usuBWYBvuQ==}
@@ -4697,8 +4697,8 @@ packages:
     resolution: {integrity: sha512-8eGTMO11LXFAiosaiV38bjvW6cjoQFtNE38pNtVilZTXpmGFinClljihH0eriv11Ispd4q82TqtsXMJPYD/C+A==}
     engines: {node: '>=18'}
 
-  contentful@11.12.7:
-    resolution: {integrity: sha512-5FtYGlPcjJf0wXysf5hl0sWKovpkoVRY55s6P5HFos5NBBMXliyPz5WMpuejahCAkrTpPqWnso2vGPfCdkgyxw==}
+  contentful@11.12.8:
+    resolution: {integrity: sha512-b7UumRsBvw5xWN5fHt1HQeXuxMp9QeQtaqPMAtAN6KqMRLsXmSFQOfyukPGFUpXJvqqBmp1I1h/rcTnoWh8Sbg==}
     engines: {node: '>=18'}
 
   conventional-changelog-angular@9.2.1:
@@ -10692,9 +10692,9 @@ snapshots:
       conventional-commits-parser: 7.1.2
       picocolors: 1.1.1
 
-  '@contentful/content-source-maps@0.11.44':
+  '@contentful/content-source-maps@0.12.3':
     dependencies:
-      '@vercel/stega': 0.1.2
+      '@vercel/stega': 1.1.0
       json-pointer: 0.6.2
 
   '@contentful/rich-text-types@17.2.7': {}
@@ -13969,7 +13969,7 @@ snapshots:
       next: 16.2.12(@babel/core@7.29.7)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       react: 19.2.8
 
-  '@vercel/stega@0.1.2': {}
+  '@vercel/stega@1.1.0': {}
 
   '@webassemblyjs/ast@1.14.1':
     dependencies:
@@ -14890,9 +14890,9 @@ snapshots:
     optionalDependencies:
       '@rollup/rollup-linux-x64-gnu': 4.62.4
 
-  contentful@11.12.7:
+  contentful@11.12.8:
     dependencies:
-      '@contentful/content-source-maps': 0.11.44
+      '@contentful/content-source-maps': 0.12.3
       '@contentful/rich-text-types': 17.2.7
       axios: 1.19.0
       contentful-resolve-response: 1.9.9
