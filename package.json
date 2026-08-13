@@ -12,8 +12,8 @@
   "description": "Mini apps by Haneru Developers.",
   "devDependencies": {
     "@biomejs/biome": "2.5.8",
-    "@commitlint/cli": "21.2.1",
-    "@commitlint/config-conventional": "21.2.0",
+    "@commitlint/cli": "21.2.2",
+    "@commitlint/config-conventional": "21.2.2",
     "@commitlint/types": "21.2.0",
     "husky": "9.1.7",
     "lint-staged": "17.3.0",
