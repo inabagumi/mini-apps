@@ -12,7 +12,7 @@
     "@inabagumi/components": "workspace:*",
     "@mdx-js/react": "3.1.1",
     "@radix-ui/react-dialog": "1.1.23",
-    "@upstash/redis": "1.38.2",
+    "@upstash/redis": "1.38.3",
     "@vercel/analytics": "2.0.1",
     "@vercel/speed-insights": "2.0.0",
     "clsx": "2.1.1",
