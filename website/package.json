@@ -22,7 +22,7 @@
     "@formspree/cli": "0.9.6",
     "@types/lodash": "4.17.25",
     "@types/react": "19.2.18",
-    "typescript": "5.9.3"
+    "typescript": "6.0.3"
   },
   "license": "MIT",
   "name": "@inabagumi/website",
