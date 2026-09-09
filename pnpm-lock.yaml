@@ -125,8 +125,8 @@ importers:
         specifier: 2.1.1
         version: 2.1.1
       contentful:
-        specifier: 11.12.9
-        version: 11.12.9
+        specifier: 11.12.10
+        version: 11.12.10
       dedent:
         specifier: 1.7.2
         version: 1.7.2
@@ -237,8 +237,8 @@ importers:
         specifier: 2.1.1
         version: 2.1.1
       contentful:
-        specifier: 11.12.9
-        version: 11.12.9
+        specifier: 11.12.10
+        version: 11.12.10
       next:
         specifier: 16.2.12
         version: 16.2.12(@babel/core@7.29.7)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
@@ -4789,12 +4789,12 @@ packages:
     resolution: {integrity: sha512-IYjx6oI1G4wSlLecceDBKuXZRezVrNwZSxfmM0ZjwWtCeyR0B0iYPGNgEu3/p1kGJliFziZRFA61jM8wa1Trcg==}
     engines: {node: '>=22'}
 
-  contentful-sdk-core@9.4.5:
-    resolution: {integrity: sha512-8eGTMO11LXFAiosaiV38bjvW6cjoQFtNE38pNtVilZTXpmGFinClljihH0eriv11Ispd4q82TqtsXMJPYD/C+A==}
-    engines: {node: '>=18'}
+  contentful-sdk-core@10.0.0:
+    resolution: {integrity: sha512-4uNgDmAWYqvjQpc/nNQ2GkY/DuyFBivcoPPFFqvT9pWyQqLgxb46gTKdk5sc3YxjLv5tLSDKksRG/OC1uRbktw==}
+    engines: {node: '>=22'}
 
-  contentful@11.12.9:
-    resolution: {integrity: sha512-3eSYeXRiQOOmkwwAqwPXeTE37iiE/Ku4LOh1p5bj2CxgaLVLk6O2Ep1DdDwoGMonyTNrkbCFXfbXCkrTPYBWHw==}
+  contentful@11.12.10:
+    resolution: {integrity: sha512-/fUK6ySEZzLhiKFuUAxO7sFXxZeuEGKmhKQFdV/Iikm430up8v85PAkyi1N/dYTBS3l+yww9bfNssWHljExn+g==}
     engines: {node: '>=18'}
 
   conventional-changelog-angular@9.4.0:
@@ -15123,7 +15123,7 @@ snapshots:
     dependencies:
       fast-copy: 3.1.0
 
-  contentful-sdk-core@9.4.5:
+  contentful-sdk-core@10.0.0:
     dependencies:
       fast-copy: 3.1.0
       lodash: 4.18.1
@@ -15132,13 +15132,13 @@ snapshots:
     optionalDependencies:
       '@rollup/rollup-linux-x64-gnu': 4.63.1
 
-  contentful@11.12.9:
+  contentful@11.12.10:
     dependencies:
       '@contentful/content-source-maps': 0.12.3
       '@contentful/rich-text-types': 17.2.7
       axios: 1.20.0
       contentful-resolve-response: 2.0.1
-      contentful-sdk-core: 9.4.5
+      contentful-sdk-core: 10.0.0
       json-stringify-safe: 5.0.1
       tslib: 2.8.1
       type-fest: 4.41.0
