@@ -17,7 +17,7 @@
     "@commitlint/types": "21.2.3",
     "husky": "9.1.7",
     "lint-staged": "17.5.1",
-    "turbo": "2.11.2"
+    "turbo": "2.11.3"
   },
   "homepage": "https://inaba-jinja.com",
   "license": "MIT",
