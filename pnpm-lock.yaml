@@ -305,8 +305,8 @@ importers:
         version: 2.6.1
     devDependencies:
       '@tsconfig/node20':
-        specifier: 20.1.9
-        version: 20.1.9
+        specifier: 20.1.11
+        version: 20.1.11
       '@tsconfig/strictest':
         specifier: 2.0.9
         version: 2.0.9
@@ -330,8 +330,8 @@ importers:
         version: 0.8.0(tailwindcss@3.4.19(yaml@2.9.1))
     devDependencies:
       '@tsconfig/node20':
-        specifier: 20.1.9
-        version: 20.1.9
+        specifier: 20.1.11
+        version: 20.1.11
       '@tsconfig/strictest':
         specifier: 2.0.9
         version: 2.0.9
@@ -3543,8 +3543,8 @@ packages:
     resolution: {integrity: sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==}
     engines: {node: '>= 6'}
 
-  '@tsconfig/node20@20.1.9':
-    resolution: {integrity: sha512-IjlTv1RsvnPtUcjTqtVsZExKVq+KQx4g5pCP5tI7rAs6Xesl2qFwSz/tPDBC4JajkL/MlezBu3gPUwqRHl+RIg==}
+  '@tsconfig/node20@20.1.11':
+    resolution: {integrity: sha512-QVKMhWQl38o/z1+O6xAFjpYhmUi6a/WLuCDiwKOmRSw8MaI/RrV7LwQAjl87cX0GUdu3c0kzmIsOaycXko+iHQ==}
 
   '@tsconfig/strictest@2.0.9':
     resolution: {integrity: sha512-CbwIySRXoGapLZYXqQHF15cg0wQImJa25Ynmubb7816vnHqTdQrmQlSbZxkJrrBusHLbF1kFbNVn8XtxmQ3EpQ==}
@@ -13860,7 +13860,7 @@ snapshots:
 
   '@tootallnate/once@1.1.2': {}
 
-  '@tsconfig/node20@20.1.9': {}
+  '@tsconfig/node20@20.1.11': {}
 
   '@tsconfig/strictest@2.0.9': {}
 
