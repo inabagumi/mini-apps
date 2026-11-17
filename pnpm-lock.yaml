@@ -231,8 +231,8 @@ importers:
         specifier: 2.0.1
         version: 2.0.1(next@16.2.12(@babel/core@7.29.7)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react@19.3.1)
       browser-fs-access:
-        specifier: 0.38.0
-        version: 0.38.0
+        specifier: 0.39.0
+        version: 0.39.0
       clsx:
         specifier: 2.1.1
         version: 2.1.1
@@ -4405,8 +4405,8 @@ packages:
     resolution: {integrity: sha512-yQbXgO/OSZVD2IsiLlro+7Hf6Q18EJrKSEsdoMzKePKXct3gvD8oLcOQdIzGupr5Fj+EDe8gO/lxc1BzfMpxvA==}
     engines: {node: '>=8'}
 
-  browser-fs-access@0.38.0:
-    resolution: {integrity: sha512-JveqW2w6pEZqFEEfMgCszXzYpE89dG+nPsmOdcs741mFFAROeL+iqjGEpR07RI+s0YY0EFr+4KnOoACprJTpOw==}
+  browser-fs-access@0.39.0:
+    resolution: {integrity: sha512-YAU4731mBk3CyUP7pXOFRKr2PyxBQN5cIdg2QHKX1v0573O5HpIUTFobOYCthzTGS5aRXeMVad7pNGSIASjuQQ==}
 
   browserslist@4.29.5:
     resolution: {integrity: sha512-khTmKu5NGYTotqcYo8Bew2k4RAE9PuXRSFRXG2lQBrCEQHyeQ/vX6gKMxfokwywBsLiXZMnHsmWMG1pnO8J7uQ==}
@@ -14730,7 +14730,7 @@ snapshots:
     dependencies:
       fill-range: 7.1.1
 
-  browser-fs-access@0.38.0: {}
+  browser-fs-access@0.39.0: {}
 
   browserslist@4.29.5:
     dependencies:
