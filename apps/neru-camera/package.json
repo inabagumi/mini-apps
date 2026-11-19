@@ -30,7 +30,7 @@
   },
   "scripts": {
     "build": "next build",
-    "dev": "next dev",
+    "dev": "next dev --port 3003",
     "start": "next start",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",

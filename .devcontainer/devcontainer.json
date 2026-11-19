@@ -9,7 +9,7 @@
       ]
     }
   },
-  "forwardPorts": [3000],
+  "forwardPorts": [3000, 3001, 3002, 3003, 3004],
   "hostRequirements": {
     "cpus": 4,
     "memory": "8gb",

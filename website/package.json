@@ -7,7 +7,7 @@
   "author": "Haneru Developers",
   "scripts": {
     "build": "docusaurus build",
-    "dev": "docusaurus start",
+    "dev": "docusaurus start --port 3004",
     "swizzle": "docusaurus swizzle",
     "test": "vitest run",
     "typecheck": "tsc --noEmit"
