@@ -1,0 +1,26 @@
+{
+  "name": "@inabagumi/tsconfig",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Shared TypeScript configurations for Haneru Developers' mini apps.",
+  "homepage": "https://haneru.dev",
+  "bugs": {
+    "url": "https://github.com/inabagumi/mini-apps/issues",
+    "email": "contact@haneru.dev"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Haneru Developers",
+    "email": "contact@haneru.dev",
+    "url": "https://haneru.dev/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/inabagumi/mini-apps.git",
+    "directory": "packages/tsconfig"
+  },
+  "type": "module",
+  "exports": {
+    "./nextjs.json": "./nextjs.json"
+  }
+}
