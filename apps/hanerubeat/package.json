@@ -5,6 +5,7 @@
   "description": "Feel the life of Neru-chan!",
   "homepage": "https://hanerubeat.app/",
   "author": "Haneru Developers",
+  "type": "module",
   "scripts": {
     "build": "next build",
     "dev": "next",

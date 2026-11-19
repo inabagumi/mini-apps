@@ -1,5 +1,6 @@
-const { withSerwist } = require("@serwist/turbopack");
+import { withSerwist } from "@serwist/turbopack";
 
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   rewrites() {
     return [
@@ -11,4 +12,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withSerwist(nextConfig);
+export default withSerwist(nextConfig);
