@@ -52,7 +52,7 @@ export default async function LotteryPage() {
           alt="くじ引き中..."
           className="h-auto max-w-full"
           height={kujiImage.height / 2}
-          priority
+          preload
           quality={80}
           src={kujiImage}
           width={kujiImage.width / 2}
