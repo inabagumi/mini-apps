@@ -25,7 +25,7 @@ export const useVideoTexture = ({
     const video = document.createElement("video");
 
     video.autoplay = true;
-    video.crossOrigin = "anonymouse";
+    video.crossOrigin = "anonymous";
     video.loop = true;
     video.muted = true;
     video.playsInline = true;
