@@ -21,6 +21,28 @@
   },
   "type": "module",
   "exports": {
+    "./next": "./next/index.ts",
+    "./next/serwist": "./next/serwist.ts",
     "./tsconfig/nextjs.json": "./tsconfig/nextjs.json"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@serwist/turbopack": "9.5.15",
+    "next": "16.4.6",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "typescript": "6.0.3"
+  },
+  "peerDependencies": {
+    "@serwist/turbopack": "^9.0.0",
+    "@tailwindcss/turbopack": "^4.0.0",
+    "next": "^16.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@serwist/turbopack": {
+      "optional": true
+    }
   }
 }
