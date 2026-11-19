@@ -1,8 +1,8 @@
-import FormControl from './FormControl'
-import { useHandleSubmit } from './hooks'
+import FormControl from "./form-control";
+import { useHandleSubmit } from "./hooks";
 
 export default function ContactForm() {
-  const [formState, handleSubmit] = useHandleSubmit('contact-form')
+  const [formState, handleSubmit] = useHandleSubmit("contact-form");
 
   return (
     <form
@@ -19,7 +19,7 @@ export default function ContactForm() {
           placeholder=""
           registerOptions={{
             required: {
-              message: 'お名前の入力は必須です。',
+              message: "お名前の入力は必須です。",
               value: true,
             },
           }}
@@ -33,11 +33,11 @@ export default function ContactForm() {
           placeholder="you@example.com"
           registerOptions={{
             pattern: {
-              message: 'メールアドレスには@が必要です。',
-              value: /.+@.+/,
+              message: "メールアドレスには@が必要です。",
+              value: /.+@.+/u,
             },
             required: {
-              message: 'メールアドレスは必須です。',
+              message: "メールアドレスは必須です。",
               value: true,
             },
           }}
@@ -51,7 +51,7 @@ export default function ContactForm() {
           name="message"
           registerOptions={{
             required: {
-              message: '本文の入力は必須です。',
+              message: "本文の入力は必須です。",
               value: true,
             },
           }}
@@ -68,5 +68,5 @@ export default function ContactForm() {
         </button>
       </div>
     </form>
-  )
+  );
 }

@@ -1,27 +1,28 @@
-import type { Metadata } from 'next'
-import type { ReactNode } from 'react'
-import SimpleTitle from '@/components/simple-title'
-import { title as siteName, twitterAccount } from '@/lib/constants'
+import type { Metadata } from "next";
+import type { ReactNode } from "react";
+
+import SimpleTitle from "@/components/simple-title";
+import { title as siteName, twitterAccount } from "@/lib/constants";
 
 export const metadata = {
   alternates: {
-    canonical: '/privacy',
+    canonical: "/privacy",
   },
   openGraph: {
     siteName,
-    title: 'プライバシーポリシー',
-    type: 'article',
-    url: '/privacy',
+    title: "プライバシーポリシー",
+    type: "article",
+    url: "/privacy",
   },
-  title: 'プライバシーポリシー',
+  title: "プライバシーポリシー",
   twitter: {
     site: `@${twitterAccount}`,
     title: `プライバシーポリシー - ${siteName}`,
   },
-} satisfies Metadata
+} satisfies Metadata;
 
-type Props = {
-  children: ReactNode
+interface Props {
+  children: ReactNode;
 }
 
 export default function PrivacyLayout({ children }: Props) {
@@ -30,5 +31,5 @@ export default function PrivacyLayout({ children }: Props) {
       <SimpleTitle>プライバシーポリシー</SimpleTitle>
       {children}
     </div>
-  )
+  );
 }

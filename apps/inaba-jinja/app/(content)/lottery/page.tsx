@@ -1,21 +1,23 @@
-import type { Metadata } from 'next'
-import { unstable_noStore as noStore } from 'next/cache'
-import Image from 'next/image'
-import { Suspense } from 'react'
-import { title as siteName, twitterAccount } from '@/lib/constants'
-import { getAnyFortuneID } from '@/lib/contentful'
-import Redirect from './_components/redirect'
-import kujiImage from './kuji.png'
+import type { Metadata } from "next";
+import { unstable_noStore as noStore } from "next/cache";
+import Image from "next/image";
+import { Suspense } from "react";
 
-const title = 'おみくじを引いています...'
+import { title as siteName, twitterAccount } from "@/lib/constants";
+import { getAnyFortuneID } from "@/lib/contentful";
+
+import Redirect from "./_components/redirect";
+import kujiImage from "./kuji.png";
+
+const title = "おみくじを引いています...";
 
 export const metadata = {
   alternates: {
-    canonical: '/lottery',
+    canonical: "/lottery",
   },
   openGraph: {
     title,
-    url: '/lottery',
+    url: "/lottery",
   },
   robots: {
     follow: true,
@@ -26,15 +28,15 @@ export const metadata = {
     site: `@${twitterAccount}`,
     title: `${title} - ${siteName}`,
   },
-} satisfies Metadata
+} satisfies Metadata;
 
 export default function LotteryPage() {
-  noStore()
+  noStore();
 
-  const idPromise = getAnyFortuneID()
+  const idPromise = getAnyFortuneID();
 
   return (
-    <div className="mt-8 mb-4 flex h-full flex-col items-center justify-center">
+    <div className="mb-4 mt-8 flex h-full flex-col items-center justify-center">
       <Suspense fallback={null}>
         <Redirect idPromise={idPromise} />
       </Suspense>
@@ -51,5 +53,5 @@ export default function LotteryPage() {
         />
       </div>
     </div>
-  )
+  );
 }

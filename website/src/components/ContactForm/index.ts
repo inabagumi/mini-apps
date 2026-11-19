@@ -1,3 +1,3 @@
-export { default } from './ContactForm'
-export { default as FormControl } from './FormControl'
-export * from './types'
+export { default } from "./contact-form";
+export { default as FormControl } from "./form-control";
+export * from "./types";

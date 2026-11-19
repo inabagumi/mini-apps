@@ -1,6 +1,6 @@
 /** @type {import('lint-staged').Config} */
 const lintstagedrc = {
-  '*.{css,js,json,ts,tsx,md,mdx,yml}': 'biome check --write',
-}
+  "*.{css,js,json,jsonc,md,mdx,mjs,ts,tsx,yaml,yml}": "ultracite fix",
+};
 
-export default lintstagedrc
+export default lintstagedrc;

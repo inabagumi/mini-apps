@@ -1,9 +1,10 @@
-import Image from 'next/image'
-import mainVisual from './main-visual.jpg'
+import Image from "next/image";
+
+import mainVisual from "./main-visual.jpg";
 
 export default function Background() {
   return (
-    <div aria-hidden className="-z-10 fixed inset-0 h-full h-lvh">
+    <div aria-hidden className="fixed inset-0 -z-10 h-full h-lvh">
       <Image
         alt=""
         className="object-cover"
@@ -16,5 +17,5 @@ export default function Background() {
       />
       <div className="absolute inset-0 h-full bg-black/50" />
     </div>
-  )
+  );
 }

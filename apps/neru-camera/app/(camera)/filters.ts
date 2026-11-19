@@ -1,4 +1,4 @@
-import { Filter, utils } from 'pixi.js'
+import { Filter, utils } from "pixi.js";
 
 const fragmentShader = `precision mediump float;
 uniform vec3 keyColor;
@@ -15,27 +15,27 @@ void main(void) {
     gl_FragColor = smpColor;
   }
 }
-`
+`;
 
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 export class ChromaKeyFilter extends Filter {
-  constructor(keyColor = '#00ff00') {
-    super(undefined, fragmentShader)
+  constructor(keyColor = "#00ff00") {
+    super(undefined, fragmentShader);
 
-    this.uniforms.keyColor = new Float32Array(3)
-    this.keyColor = keyColor
+    this.uniforms.keyColor = new Float32Array(3);
+    this.keyColor = keyColor;
   }
 
   get keyColor(): string {
-    const hex = utils.rgb2hex(this.uniforms.keyColor)
+    const hex = utils.rgb2hex(this.uniforms.keyColor);
 
-    return utils.hex2string(hex)
+    return utils.hex2string(hex);
   }
 
   set keyColor(value: string) {
-    const hex = utils.string2hex(value)
+    const hex = utils.string2hex(value);
 
-    utils.hex2rgb(hex, this.uniforms.keyColor)
+    utils.hex2rgb(hex, this.uniforms.keyColor);
   }
 }
 /* eslint-enable @typescript-eslint/no-unsafe-argument */

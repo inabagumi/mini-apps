@@ -1,71 +1,63 @@
-import Heart from 'components/heart'
-import type { NextPage } from 'next'
-import { NextSeo } from 'next-seo'
-import { useCallback, useEffect, useRef, useState } from 'react'
-import { MdVolumeOff, MdVolumeUp } from 'react-icons/md'
-import styles from 'styles/pages/index.module.css'
+import Heart from "components/heart";
+import type { NextPage } from "next";
+import { NextSeo } from "next-seo";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { MdVolumeOff, MdVolumeUp } from "react-icons/md";
+
+import styles from "styles/pages/index.module.css";
+
+const tryToPlay = async (audio: HTMLAudioElement): Promise<boolean> => {
+  try {
+    await audio.play();
+
+    return true;
+  } catch {
+    return false;
+  }
+};
 
 const Heartbeat: NextPage = () => {
-  const heartRef = useRef<HTMLAudioElement>(null)
-  const [isLoading, setIsLoading] = useState<boolean>(true)
-  const [muted, setMuted] = useState<boolean>(true)
+  const heartRef = useRef<HTMLAudioElement>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [muted, setMuted] = useState<boolean>(true);
 
-  const handleButtonClick = useCallback(() => {
-    if (isLoading || !heartRef.current) return
+  const play = useCallback(async (audio: HTMLAudioElement) => {
+    const isPlaying = await tryToPlay(audio);
 
-    if (!heartRef.current.paused) {
-      heartRef.current.muted = !muted
+    setMuted(!isPlaying);
+    setIsLoading(false);
+  }, []);
 
-      setMuted(!muted)
-    } else {
-      setIsLoading(true)
-
-      const playPromise = heartRef.current.play()
-
-      if (typeof playPromise !== 'undefined') {
-        playPromise
-          .then(() => {
-            setMuted(false)
-          })
-          .catch(() => {
-            setMuted(true)
-          })
-          .finally(() => {
-            setIsLoading(false)
-          })
-      } else {
-        setMuted(heartRef.current.paused)
-      }
+  const handleButtonClick = useCallback(async () => {
+    if (isLoading || !heartRef.current) {
+      return;
     }
-  }, [muted, isLoading])
+
+    if (heartRef.current.paused) {
+      setIsLoading(true);
+
+      await play(heartRef.current);
+    } else {
+      heartRef.current.muted = !muted;
+
+      setMuted(!muted);
+    }
+  }, [muted, isLoading, play]);
 
   useEffect(() => {
-    if (!heartRef.current) return
-
-    const playPromise = heartRef.current.play()
-
-    if (typeof playPromise !== 'undefined') {
-      playPromise
-        .then(() => {
-          setMuted(false)
-        })
-        .catch(() => {
-          setMuted(true)
-        })
-        .finally(() => {
-          setIsLoading(false)
-        })
-    } else {
-      setMuted(heartRef.current.paused)
+    if (!heartRef.current) {
+      return;
     }
-  }, [])
 
-  const ButtonIcon = muted ? MdVolumeOff : MdVolumeUp
+    play(heartRef.current);
+  }, [play]);
+
+  const ButtonIcon = muted ? MdVolumeOff : MdVolumeUp;
 
   return (
     <>
       <NextSeo
-        canonical={new URL('/', process.env.NEXT_PUBLIC_BASE_URL).toString()}
+        canonical={new URL("/", process.env.NEXT_PUBLIC_BASE_URL).toString()}
         title={process.env.NEXT_PUBLIC_TITLE}
         titleTemplate="%s"
       />
@@ -78,13 +70,14 @@ const Heartbeat: NextPage = () => {
             className={styles.button}
             disabled={isLoading}
             onClick={handleButtonClick}
+            type="button"
           >
             <ButtonIcon className={styles.button__icon} />
           </button>
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Heartbeat
+export default Heartbeat;

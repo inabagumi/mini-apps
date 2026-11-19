@@ -1,114 +1,114 @@
-import type * as Preset from '@docusaurus/preset-classic'
-import type { Config } from '@docusaurus/types'
+import type * as Preset from "@docusaurus/preset-classic";
+import type { Config } from "@docusaurus/types";
 
 const config: Config = {
-  baseUrl: '/',
-  favicon: 'img/favicon.png',
+  baseUrl: "/",
+  favicon: "img/favicon.png",
   i18n: {
-    defaultLocale: 'ja',
+    defaultLocale: "ja",
     localeConfigs: {
       ja: {
-        label: '日本語',
+        label: "日本語",
       },
     },
-    locales: ['ja'],
+    locales: ["ja"],
   },
-  organizationName: 'inabagumi',
-  plugins: ['@docusaurus/plugin-ideal-image'],
+  organizationName: "inabagumi",
+  plugins: ["@docusaurus/plugin-ideal-image"],
   presets: [
     [
-      '@docusaurus/preset-classic',
+      "@docusaurus/preset-classic",
       {
         debug: true,
         docs: {
-          sidebarPath: './sidebars.ts',
+          sidebarPath: "./sidebars.ts",
         },
         googleAnalytics: {
-          trackingID: 'UA-140696242-1',
+          trackingID: "UA-140696242-1",
         },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: "./src/css/custom.css",
         },
       } satisfies Preset.Options,
     ],
   ],
-  projectName: 'website',
-  tagline: 'ねるねるアプリの世界へようこそ',
+  projectName: "website",
+  tagline: "ねるねるアプリの世界へようこそ",
   themeConfig: {
     footer: {
-      copyright: 'Copyright © 2019 Haneru Developers.',
+      copyright: "Copyright © 2019 Haneru Developers.",
       links: [
         {
           items: [
             {
-              label: 'ねるカメラ',
-              to: 'docs/neru-camera',
+              label: "ねるカメラ",
+              to: "docs/neru-camera",
             },
             {
-              label: 'あにまーれ診断',
-              to: 'docs/animare-shindan',
+              label: "あにまーれ診断",
+              to: "docs/animare-shindan",
             },
             {
-              label: 'Haneru Beat!',
-              to: 'docs/hanerubeat',
+              label: "Haneru Beat!",
+              to: "docs/hanerubeat",
             },
             {
-              label: '因幡神社',
-              to: 'docs/inaba-jinja',
+              label: "因幡神社",
+              to: "docs/inaba-jinja",
             },
           ],
-          title: 'ねるねるアプリ',
+          title: "ねるねるアプリ",
         },
         {
           items: [
             {
-              label: 'SHINJU DATE',
-              to: 'docs/shinju-date',
+              label: "SHINJU DATE",
+              to: "docs/shinju-date",
             },
           ],
-          title: 'プロダクト',
+          title: "プロダクト",
         },
         {
           items: [
             {
-              href: 'https://github.com/inabagumi',
-              label: 'GitHub',
+              href: "https://github.com/inabagumi",
+              label: "GitHub",
             },
             {
-              href: 'https://discord.gg/d9V3PSj',
-              label: 'Discord',
+              href: "https://discord.gg/d9V3PSj",
+              label: "Discord",
             },
           ],
-          title: 'ソーシャル',
+          title: "ソーシャル",
         },
       ],
-      style: 'dark',
+      style: "dark",
     },
-    image: 'https://haneru.dev/img/haneru-dev.jpg',
+    image: "https://haneru.dev/img/haneru-dev.jpg",
     navbar: {
       hideOnScroll: true,
       items: [
         {
-          activeBasePath: 'docs',
-          label: 'ドキュメント',
-          position: 'left',
-          to: 'docs',
+          activeBasePath: "docs",
+          label: "ドキュメント",
+          position: "left",
+          to: "docs",
         },
         {
-          label: 'お問い合わせ',
-          position: 'right',
-          to: 'contact',
+          label: "お問い合わせ",
+          position: "right",
+          to: "contact",
         },
       ],
       logo: {
-        alt: 'Haneru Developers Logo',
-        src: 'img/logo.svg',
+        alt: "Haneru Developers Logo",
+        src: "img/logo.svg",
       },
-      title: 'Haneru Developers',
+      title: "Haneru Developers",
     },
   } satisfies Preset.ThemeConfig,
-  title: 'Haneru Developers',
-  url: 'https://haneru.dev',
-}
+  title: "Haneru Developers",
+  url: "https://haneru.dev",
+};
 
-export default config
+export default config;

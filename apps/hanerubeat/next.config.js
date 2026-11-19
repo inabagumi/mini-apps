@@ -1,4 +1,4 @@
-const nextPWA = require('next-pwa')
+const nextPWA = require("next-pwa");
 
 const nextConfig = {
   headers() {
@@ -6,54 +6,54 @@ const nextConfig = {
       {
         headers: [
           {
-            key: 'cache-control',
-            value: 'public,max-age=31536000,immutable',
+            key: "cache-control",
+            value: "public,max-age=31536000,immutable",
           },
         ],
-        source: '/workbox-:hash.js',
+        source: "/workbox-:hash.js",
       },
-    ]
+    ];
   },
   rewrites() {
     return [
       {
-        destination: '/_next/static/service-worker.js',
-        source: '/service-worker.js',
+        destination: "/_next/static/service-worker.js",
+        source: "/service-worker.js",
       },
       {
-        destination: '/_next/static/workbox-:hash.js',
-        source: '/workbox-:hash.js',
+        destination: "/_next/static/workbox-:hash.js",
+        source: "/workbox-:hash.js",
       },
-    ]
+    ];
   },
   turbopack: {},
   webpack(config, { defaultLoaders, dev }) {
     config.module.rules.push({
-      test: /\.(?:mp3|ogg|vtt)$/i,
+      test: /\.(?:mp3|ogg|vtt)$/iu,
       use: [
         defaultLoaders.babel,
         {
-          loader: 'url-loader',
+          loader: "url-loader",
           options: {
             limit: 2 * 1024,
             name: dev
-              ? '[name].[ext]?[contenthash:8]'
-              : '[name].[contenthash:8].[ext]',
-            outputPath: 'static/media',
-            publicPath: '/_next/static/media',
+              ? "[name].[ext]?[contenthash:8]"
+              : "[name].[contenthash:8].[ext]",
+            outputPath: "static/media",
+            publicPath: "/_next/static/media",
           },
         },
       ],
-    })
+    });
 
-    return config
+    return config;
   },
-}
+};
 
 const withPWA = nextPWA({
-  dest: '.next/static',
-  disable: process.env.NODE_ENV === 'development',
-  sw: 'service-worker.js',
-})
+  dest: ".next/static",
+  disable: process.env.NODE_ENV === "development",
+  sw: "service-worker.js",
+});
 
-module.exports = withPWA(nextConfig)
+module.exports = withPWA(nextConfig);

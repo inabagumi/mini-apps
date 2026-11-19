@@ -1,19 +1,20 @@
-'use client'
+"use client";
 
-import { PixiComponent } from '@pixi/react'
-import { type IViewportOptions, Viewport } from 'pixi-viewport'
-import type { ReactNode } from 'react'
+import { PixiComponent } from "@pixi/react";
+import { Viewport } from "pixi-viewport";
+import type { IViewportOptions } from "pixi-viewport";
+import type { ReactNode } from "react";
 
 type Props = IViewportOptions & {
-  children: ReactNode
-}
+  children: ReactNode;
+};
 
-export default PixiComponent<Props, Viewport>('Viewport', {
+export default PixiComponent<Props, Viewport>("Viewport", {
   create: (props: IViewportOptions) => {
-    const viewport = new Viewport(props)
+    const viewport = new Viewport(props);
 
-    viewport.drag({}).pinch({}).wheel({}).decelerate({})
+    viewport.drag({}).pinch({}).wheel({}).decelerate({});
 
-    return viewport
+    return viewport;
   },
-})
+});

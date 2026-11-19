@@ -1,18 +1,18 @@
-import type { Asset } from 'contentful'
-import type { FortuneEntry } from './contentful'
+import type { Asset } from "contentful";
 
-export function generateFortuneName(fortune: FortuneEntry): string {
-  return `第${fortune.fields.number}番『${fortune.fields.blessing}』`
-}
+import type { FortuneEntry } from "./contentful";
 
-export function getImageURL(
-  asset: Asset<'WITHOUT_UNRESOLVABLE_LINKS'>
-): string {
+export const generateFortuneName = (fortune: FortuneEntry): string =>
+  `第${fortune.fields.number}番『${fortune.fields.blessing}』`;
+
+export const getImageURL = (
+  asset: Asset<"WITHOUT_UNRESOLVABLE_LINKS">
+): string => {
   if (!asset.fields.file?.url) {
-    throw new TypeError('')
+    throw new TypeError("The asset file URL is required.");
   }
 
-  const url = new URL(asset.fields.file.url, 'https://images.ctfassets.net')
+  const url = new URL(asset.fields.file.url, "https://images.ctfassets.net");
 
-  return url.toString()
-}
+  return url.toString();
+};

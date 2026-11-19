@@ -9,89 +9,89 @@
 // @ts-nocheck
 // copy from https://github.com/facebook/docusaurus/blob/06781f024ec70c53c5467f691250a7f3584a5b48/packages/docusaurus-plugin-ideal-image/src/theme/IdealImage/index.tsx
 
-import { translate } from '@docusaurus/Translate'
+import { translate } from "@docusaurus/Translate";
 import ReactIdealImage, {
   type IconKey,
   type State,
-} from '@slorber/react-ideal-image'
-import type { Props } from '@theme/IdealImage'
-import React, { type ReactNode } from 'react'
+} from "@slorber/react-ideal-image";
+import type { Props } from "@theme/IdealImage";
+import React, { type ReactNode } from "react";
 
 // Adopted from https://github.com/endiliey/react-ideal-image/blob/master/src/components/helpers.js#L59-L65
 function bytesToSize(bytes: number) {
-  const sizes = ['B', 'KB', 'MB', 'GB', 'TB']
+  const sizes = ["B", "KB", "MB", "GB", "TB"];
   if (bytes === 0) {
-    return 'n/a'
+    return "n/a";
   }
-  const scale = Math.floor(Math.log(bytes) / Math.log(1024))
+  const scale = Math.floor(Math.log(bytes) / Math.log(1024));
   if (scale === 0) {
-    return `${bytes} ${sizes[scale]}`
+    return `${bytes} ${sizes[scale]}`;
   }
-  return `${(bytes / 1024 ** scale).toFixed(1)} ${sizes[scale]}`
+  return `${(bytes / 1024 ** scale).toFixed(1)} ${sizes[scale]}`;
 }
 
 // Adopted from https://github.com/endiliey/react-ideal-image/blob/master/src/components/IdealImage/index.js#L43-L75
 function getMessage(icon: IconKey, state: State) {
   switch (icon) {
-    case 'noicon':
-    case 'loaded':
-      return null
-    case 'loading':
+    case "noicon":
+    case "loaded":
+      return null;
+    case "loading":
       return translate({
-        id: 'theme.IdealImageMessage.loading',
-        message: 'Loading...',
-        description: 'When the full-scale image is loading',
-      })
-    case 'load': {
+        id: "theme.IdealImageMessage.loading",
+        message: "Loading...",
+        description: "When the full-scale image is loading",
+      });
+    case "load": {
       // We can show `alt` here
-      const { pickedSrc } = state
-      const { size } = pickedSrc
-      const sizeMessage = size ? ` (${bytesToSize(size)})` : ''
+      const { pickedSrc } = state;
+      const { size } = pickedSrc;
+      const sizeMessage = size ? ` (${bytesToSize(size)})` : "";
       return translate(
         {
-          id: 'theme.IdealImageMessage.load',
-          message: 'Click to load{sizeMessage}',
+          id: "theme.IdealImageMessage.load",
+          message: "Click to load{sizeMessage}",
           description:
-            'To prompt users to load the full image. sizeMessage is a parenthesized size figure.',
+            "To prompt users to load the full image. sizeMessage is a parenthesized size figure.",
         },
         { sizeMessage }
-      )
+      );
     }
-    case 'offline':
+    case "offline":
       return translate({
-        id: 'theme.IdealImageMessage.offline',
-        message: 'Your browser is offline. Image not loaded',
-        description: 'When the user is viewing an offline document',
-      })
-    case 'error': {
-      const { loadInfo } = state
+        id: "theme.IdealImageMessage.offline",
+        message: "Your browser is offline. Image not loaded",
+        description: "When the user is viewing an offline document",
+      });
+    case "error": {
+      const { loadInfo } = state;
       if (loadInfo === 404) {
         return translate({
-          id: 'theme.IdealImageMessage.404error',
-          message: '404. Image not found',
-          description: 'When the image is not found',
-        })
+          id: "theme.IdealImageMessage.404error",
+          message: "404. Image not found",
+          description: "When the image is not found",
+        });
       }
       return translate({
-        id: 'theme.IdealImageMessage.error',
-        message: 'Error. Click to reload',
-        description: 'When the image fails to load for unknown error',
-      })
+        id: "theme.IdealImageMessage.error",
+        message: "Error. Click to reload",
+        description: "When the image fails to load for unknown error",
+      });
     }
     default:
-      throw new Error(`Wrong icon: ${icon}`)
+      throw new Error(`Wrong icon: ${icon}`);
   }
 }
 
 export default function IdealImage(props: Props): ReactNode {
-  const { img, ...propsRest } = props
+  const { img, ...propsRest } = props;
 
   // In dev env just use regular img with original file
-  if (typeof img === 'string' || 'default' in img) {
+  if (typeof img === "string" || "default" in img) {
     return (
       // eslint-disable-next-line jsx-a11y/alt-text
-      <img src={typeof img === 'string' ? img : img.default} {...propsRest} />
-    )
+      <img src={typeof img === "string" ? img : img.default} {...propsRest} />
+    );
   }
 
   return (
@@ -107,5 +107,5 @@ export default function IdealImage(props: Props): ReactNode {
       }))}
       width={img.src.width ?? 100}
     />
-  )
+  );
 }

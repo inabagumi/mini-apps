@@ -1,4 +1,12 @@
 {
+  "name": "774-ink",
+  "version": "1.1.0",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "start": "next start"
+  },
   "dependencies": {
     "next": "16.2.12",
     "next-seo": "6.8.0",
@@ -11,13 +19,5 @@
     "@types/web-app-manifest": "1.0.9",
     "file-loader": "6.2.0",
     "typescript": "5.9.3"
-  },
-  "name": "774-ink",
-  "private": true,
-  "scripts": {
-    "build": "next build",
-    "dev": "next dev",
-    "start": "next start"
-  },
-  "version": "1.1.0"
+  }
 }

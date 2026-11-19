@@ -1,20 +1,33 @@
 {
+  "name": "@inabagumi/components",
+  "version": "1.0.0",
+  "private": true,
+  "description": "This is a tailwind.config for Inaba Jinja.",
+  "homepage": "https://haneru.dev/",
+  "bugs": {
+    "url": "https://github.com/inabagumi/mini-apps/issues",
+    "email": "contact@haneru.dev"
+  },
+  "license": "MIT",
   "author": {
-    "email": "contact@haneru.dev",
     "name": "Haneru Developers",
+    "email": "contact@haneru.dev",
     "url": "https://haneru.dev/"
   },
-  "bugs": {
-    "email": "contact@haneru.dev",
-    "url": "https://github.com/inabagumi/mini-apps/issues"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/inabagumi/mini-apps.git",
+    "directory": "packages/components"
   },
-  "dependencies": {},
-  "description": "This is a tailwind.config for Inaba Jinja.",
-  "devDependencies": {
-    "@tsconfig/node20": "20.1.9",
-    "@tsconfig/strictest": "2.0.9",
-    "@types/react": "19.3.0",
-    "tsup": "9.0.0"
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "skeleton": [
+        "./dist/skeleton/index.d.ts"
+      ]
+    }
   },
   "exports": {
     ".": {
@@ -28,10 +41,16 @@
       "default": "./dist/skeleton/index.js"
     }
   },
-  "homepage": "https://haneru.dev/",
-  "license": "MIT",
-  "main": "dist/index.js",
-  "name": "@inabagumi/components",
+  "scripts": {
+    "build": "tsup"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@tsconfig/node20": "20.1.9",
+    "@tsconfig/strictest": "2.0.9",
+    "@types/react": "19.3.0",
+    "tsup": "9.0.0"
+  },
   "peerDependencies": {
     "@types/react": "^19.0.0",
     "react": "^19.0.0",
@@ -41,24 +60,5 @@
     "@types/react": {
       "optional": true
     }
-  },
-  "private": true,
-  "repository": {
-    "directory": "packages/components",
-    "type": "git",
-    "url": "https://github.com/inabagumi/mini-apps.git"
-  },
-  "scripts": {
-    "build": "tsup"
-  },
-  "type": "module",
-  "types": "dist/index.d.ts",
-  "typesVersions": {
-    "*": {
-      "skeleton": [
-        "./dist/skeleton/index.d.ts"
-      ]
-    }
-  },
-  "version": "1.0.0"
+  }
 }

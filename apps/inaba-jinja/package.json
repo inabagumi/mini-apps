@@ -1,12 +1,31 @@
 {
+  "name": "inaba-jinja",
+  "version": "4.0.3",
+  "private": true,
+  "description": "The source code for the Inaba Jinja.",
+  "homepage": "https://inaba-jinja.com",
+  "bugs": {
+    "url": "https://github.com/inabagumi/mini-apps/issues",
+    "email": "contact@haneru.dev"
+  },
+  "license": "MIT",
   "author": {
-    "email": "contact@haneru.dev",
     "name": "Haneru Developers",
+    "email": "contact@haneru.dev",
     "url": "https://haneru.dev/"
   },
-  "bugs": {
-    "email": "contact@haneru.dev",
-    "url": "https://github.com/inabagumi/mini-apps/issues"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/inabagumi/mini-apps.git",
+    "directory": "apps/inaba-jinja"
+  },
+  "type": "module",
+  "main": "n/a",
+  "scripts": {
+    "build": "next build --webpack",
+    "dev": "next",
+    "start": "next start",
+    "test": "jest"
   },
   "dependencies": {
     "@inabagumi/components": "workspace:*",
@@ -24,7 +43,6 @@
     "react-dom": "19.3.1",
     "tailwind-merge": "2.6.2"
   },
-  "description": "The source code for the Inaba Jinja.",
   "devDependencies": {
     "@inabagumi/tailwind-config": "workspace:*",
     "@jest/types": "30.5.1",
@@ -47,23 +65,5 @@
     "remark-gfm": "4.0.1",
     "tailwindcss": "3.4.19",
     "typescript": "5.9.3"
-  },
-  "homepage": "https://inaba-jinja.com",
-  "license": "MIT",
-  "main": "n/a",
-  "name": "inaba-jinja",
-  "private": true,
-  "repository": {
-    "directory": "apps/inaba-jinja",
-    "type": "git",
-    "url": "https://github.com/inabagumi/mini-apps.git"
-  },
-  "scripts": {
-    "build": "next build --webpack",
-    "dev": "next",
-    "start": "next start",
-    "test": "jest"
-  },
-  "type": "module",
-  "version": "4.0.3"
+  }
 }

@@ -1,20 +1,21 @@
-'use client'
+"use client";
 
-import { useRouter } from 'next/navigation'
-import { use, useEffect } from 'react'
-import { delay } from '@/lib/timer'
+import { useRouter } from "next/navigation";
+import { use, useEffect } from "react";
 
-type Props = {
-  idPromise: Promise<string>
+import { delay } from "@/lib/timer";
+
+interface Props {
+  idPromise: Promise<string>;
 }
 
 export default function Redirect({ idPromise }: Props) {
-  const router = useRouter()
-  const [id] = use(Promise.all([idPromise, delay(2)]))
+  const router = useRouter();
+  const [id] = use(Promise.all([idPromise, delay(2)]));
 
   useEffect(() => {
-    router.push(`/kuji/${id}`)
-  }, [router, id])
+    router.push(`/kuji/${id}`);
+  }, [router, id]);
 
-  return null
+  return null;
 }

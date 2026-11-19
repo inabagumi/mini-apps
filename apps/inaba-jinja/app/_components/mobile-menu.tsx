@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import {
   Dialog,
@@ -7,13 +7,14 @@ import {
   DialogOverlay,
   DialogPortal,
   DialogTrigger,
-} from '@radix-ui/react-dialog'
-import Link from 'next/link'
-import { twMerge } from 'tailwind-merge'
-import Logo from '@/components/logo.svg'
+} from "@radix-ui/react-dialog";
+import Link from "next/link";
+import { twMerge } from "tailwind-merge";
 
-type Props = {
-  className?: string
+import Logo from "@/components/logo.svg";
+
+interface Props {
+  className?: string;
 }
 
 export default function MobileMenu({ className }: Props) {
@@ -22,7 +23,7 @@ export default function MobileMenu({ className }: Props) {
       <DialogTrigger
         aria-label="メニューを開く"
         className={twMerge(
-          'm-2 w-10 space-y-1.5 p-2 text-slate-100',
+          "m-2 w-10 space-y-1.5 p-2 text-slate-100",
           className
         )}
       >
@@ -42,7 +43,7 @@ export default function MobileMenu({ className }: Props) {
       <DialogPortal>
         <DialogOverlay className="fixed inset-0 z-20 bg-black/50 transition-opacity" />
         <DialogContent asChild>
-          <nav className="fixed inset-y-0 right-0 z-30 grid w-72 max-w-full grid-rows-[1fr_auto] border-slate-400 border-l bg-white">
+          <nav className="fixed inset-y-0 right-0 z-30 grid w-72 max-w-full grid-rows-[1fr_auto] border-l border-slate-400 bg-white">
             <div className="flex flex-col items-center py-2">
               <DialogClose asChild>
                 <Link aria-label="因幡神社" className="block" href="/">
@@ -54,21 +55,21 @@ export default function MobileMenu({ className }: Props) {
               className="supports-[padding-bottom:env(safe-area-inset-bottom)]:pb-[env(safe-area-inset-bottom,0)]"
               role="menu"
             >
-              <li className="border-slate-400 border-t">
+              <li className="border-t border-slate-400">
                 <DialogClose asChild>
                   <Link className="block px-4 py-3 text-right" href="/about">
                     因幡神社とは
                   </Link>
                 </DialogClose>
               </li>
-              <li className="border-slate-400 border-t">
+              <li className="border-t border-slate-400">
                 <DialogClose asChild>
                   <Link className="block px-4 py-3 text-right" href="/privacy">
                     プライバシーポリシー
                   </Link>
                 </DialogClose>
               </li>
-              <li className="border-slate-400 border-t">
+              <li className="border-t border-slate-400">
                 <DialogClose asChild>
                   <a
                     className="block px-4 py-3 text-right"
@@ -85,5 +86,5 @@ export default function MobileMenu({ className }: Props) {
         </DialogContent>
       </DialogPortal>
     </Dialog>
-  )
+  );
 }

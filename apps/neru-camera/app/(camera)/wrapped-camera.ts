@@ -1,7 +1,7 @@
-'use client'
+"use client";
 
-import dynamic from 'next/dynamic'
+import dynamic from "next/dynamic";
 
-const WrappedCamera = dynamic(() => import('./camera'), { ssr: false })
+const WrappedCamera = dynamic(() => import("./camera"), { ssr: false });
 
-export default WrappedCamera
+export default WrappedCamera;

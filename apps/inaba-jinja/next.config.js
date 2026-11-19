@@ -1,6 +1,6 @@
-import nextMDX from '@next/mdx'
-import rehypeExternalLinks from 'rehype-external-links'
-import remarkGfm from 'remark-gfm'
+import nextMDX from "@next/mdx";
+import rehypeExternalLinks from "rehype-external-links";
+import remarkGfm from "remark-gfm";
 
 const withMDX = nextMDX({
   options: {
@@ -8,72 +8,72 @@ const withMDX = nextMDX({
       [
         rehypeExternalLinks,
         {
-          rel: ['noopener', 'noreferrer'],
-          target: '_blank',
+          rel: ["noopener", "noreferrer"],
+          target: "_blank",
         },
       ],
     ],
     remarkPlugins: [remarkGfm],
   },
-})
+});
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  async headers() {
+  headers() {
     return [
       {
         headers: [
           {
-            key: 'referrer-policy',
-            value: 'same-origin, strict-origin-when-cross-origin',
+            key: "referrer-policy",
+            value: "same-origin, strict-origin-when-cross-origin",
           },
         ],
-        source: '/(.*)',
+        source: "/(.*)",
       },
-    ]
+    ];
   },
   images: {
     remotePatterns: [
       {
-        hostname: 'images.ctfassets.net',
+        hostname: "images.ctfassets.net",
         pathname: `/${process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID}/**`,
       },
     ],
   },
-  pageExtensions: ['tsx', 'mdx', 'ts'],
+  pageExtensions: ["tsx", "mdx", "ts"],
   reactStrictMode: true,
-  async redirects() {
+  redirects() {
     return [
       {
-        destination: '/lottery',
+        destination: "/lottery",
         permanent: true,
-        source: '/kuji',
+        source: "/kuji",
       },
       {
-        destination: '/about',
+        destination: "/about",
         permanent: true,
-        source: '/disclaimer',
+        source: "/disclaimer",
       },
-    ]
+    ];
   },
   turbopack: {},
   webpack(config, { defaultLoaders }) {
     config.module.rules.push({
-      test: /\.svg$/,
+      test: /\.svg$/u,
       use: [
         defaultLoaders.babel,
         {
-          loader: '@svgr/webpack',
+          loader: "@svgr/webpack",
           options: {
             babel: false,
             dimensions: false,
           },
         },
       ],
-    })
+    });
 
-    return config
+    return config;
   },
-}
+};
 
-export default withMDX(nextConfig)
+export default withMDX(nextConfig);

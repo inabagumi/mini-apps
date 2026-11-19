@@ -1,52 +1,51 @@
-import { twitterAccount } from '@/lib/constants'
+import { twitterAccount } from "@/lib/constants";
 
-const DEFAULT_HASHTAGS = ['ねるくじ']
+const DEFAULT_HASHTAGS = ["ねるくじ"];
 
-type ShareLinkOptions = {
-  text?: string
-  url: string
-  hashtags?: string[]
+interface ShareLinkOptions {
+  text?: string;
+  url: string;
+  hashtags?: string[];
 }
 
-function generateTweetShareURL({
+const generateTweetShareURL = ({
   hashtags = DEFAULT_HASHTAGS,
   text,
   url,
-}: ShareLinkOptions): string {
-  const tweetShareURL = new URL('https://twitter.com/intent/tweet')
-  tweetShareURL.searchParams.append('hashtags', hashtags.join(','))
-  tweetShareURL.searchParams.append('related', 'Haneru_Inaba')
+}: ShareLinkOptions): string => {
+  const tweetShareURL = new URL("https://twitter.com/intent/tweet");
+  tweetShareURL.searchParams.append("hashtags", hashtags.join(","));
+  tweetShareURL.searchParams.append("related", "Haneru_Inaba");
 
   if (text) {
-    tweetShareURL.searchParams.append('text', text)
+    tweetShareURL.searchParams.append("text", text);
   }
 
-  tweetShareURL.searchParams.append('url', url)
-  tweetShareURL.searchParams.append('via', twitterAccount)
+  tweetShareURL.searchParams.append("url", url);
+  tweetShareURL.searchParams.append("via", twitterAccount);
 
-  return tweetShareURL.toString()
-}
+  return tweetShareURL.toString();
+};
 
 export default function ShareLinks({
   hashtags,
   text,
   url,
 }: {
-  hashtags?: string[]
-  text?: string
-  url: string
+  hashtags?: string[];
+  text?: string;
+  url: string;
 }) {
-  const tweetShereURL = generateTweetShareURL({ hashtags, text, url })
+  const tweetShereURL = generateTweetShareURL({ hashtags, text, url });
 
   return (
     <nav className="mt-12">
       <ul className="flex items-center justify-center">
         <li>
           <a
-            className="inline-block rounded-full bg-[#0f1419] px-6 py-2 font-semibold text-sm text-white tracking-wide"
+            className="inline-block rounded-full bg-[#0f1419] px-6 py-2 text-sm font-semibold tracking-wide text-white"
             href={tweetShereURL}
             rel="noopener noreferrer"
-            role="button"
             target="_blank"
           >
             Xに共有する
@@ -54,5 +53,5 @@ export default function ShareLinks({
         </li>
       </ul>
     </nav>
-  )
+  );
 }

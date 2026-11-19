@@ -1,16 +1,18 @@
-import './globals.css'
-import { Analytics } from '@vercel/analytics/react'
-import { SpeedInsights } from '@vercel/speed-insights/next'
-import type { Metadata, Viewport } from 'next'
-import Link from 'next/link'
-import type { ReactNode } from 'react'
-import { description, title as siteName, themeColor } from '@/lib/constants'
-import Background from './_components/background'
-import MobileMenu from './_components/mobile-menu'
+import "./globals.css";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import type { Metadata, Viewport } from "next";
+import Link from "next/link";
+import type { ReactNode } from "react";
+
+import { description, title as siteName, themeColor } from "@/lib/constants";
+
+import Background from "./_components/background";
+import MobileMenu from "./_components/mobile-menu";
 
 export const metadata: Metadata = {
   description,
-  manifest: '/manifest.webmanifest',
+  manifest: "/manifest.webmanifest",
   metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL),
   robots: {
     follow: true,
@@ -20,15 +22,15 @@ export const metadata: Metadata = {
     default: siteName,
     template: `%s - ${siteName}`,
   },
-}
+};
 
 export const viewport: Viewport = {
   themeColor,
-  viewportFit: 'cover',
-}
+  viewportFit: "cover",
+};
 
-type Props = {
-  children: ReactNode
+interface Props {
+  children: ReactNode;
 }
 
 export default function RootLayout({ children }: Props) {
@@ -37,11 +39,11 @@ export default function RootLayout({ children }: Props) {
       <head prefix="og: http://ogp.me/ns#" />
       <body>
         <div className="md:grid md:min-h-dvh md:grid-rows-[1fr_auto]">
-          <MobileMenu className="fixed top-0 right-0 supports-[top:env(safe-area-inset-top)]:top-safe supports-[right:env(safe-area-inset-right)]:right-safe md:hidden" />
+          <MobileMenu className="fixed right-0 top-0 supports-[top:env(safe-area-inset-top)]:top-safe supports-[right:env(safe-area-inset-right)]:right-safe md:hidden" />
 
           <div className="pt-safe pr-safe pl-safe">{children}</div>
 
-          <footer className="hidden bg-black/80 pr-safe pb-safe pl-safe text-slate-100 text-sm md:block">
+          <footer className="hidden bg-black/80 text-sm text-slate-100 pr-safe pb-safe pl-safe md:block">
             <nav className="p-4">
               <ul className="flex items-center justify-end gap-4">
                 <li>
@@ -75,5 +77,5 @@ export default function RootLayout({ children }: Props) {
         <SpeedInsights />
       </body>
     </html>
-  )
+  );
 }

@@ -1,44 +1,47 @@
-import type { Metadata } from 'next'
-import Image from 'next/image'
-import { notFound } from 'next/navigation'
-import SimpleTitle from '@/components/simple-title'
-import { title as siteName, twitterAccount } from '@/lib/constants'
-import { type FortuneEntry, getFortune, getFortuneIDs } from '@/lib/contentful'
-import { generateFortuneName, getImageURL } from '@/lib/fortune'
-import ShareLinks from './_components/share-links'
+import type { Metadata } from "next";
+import Image from "next/image";
+import { notFound } from "next/navigation";
+
+import SimpleTitle from "@/components/simple-title";
+import { title as siteName, twitterAccount } from "@/lib/constants";
+import { getFortune, getFortuneIDs } from "@/lib/contentful";
+import type { FortuneEntry } from "@/lib/contentful";
+import { generateFortuneName, getImageURL } from "@/lib/fortune";
+
+import ShareLinks from "./_components/share-links";
 
 // export const runtime = 'edge'
-export const revalidate = 30
+export const revalidate = 30;
 
-export async function generateStaticParams(): Promise<{ id: string }[]> {
-  const ids = await getFortuneIDs()
+export const generateStaticParams = async (): Promise<{ id: string }[]> => {
+  const ids = await getFortuneIDs();
 
-  return ids.map((id) => ({ id }))
-}
+  return ids.map((id) => ({ id }));
+};
 
-export async function generateMetadata({
+export const generateMetadata = async ({
   params,
 }: {
   params: Promise<{
-    id: string
-  }>
-}): Promise<Metadata | null> {
-  const { id } = await params
-  let fortune: FortuneEntry
+    id: string;
+  }>;
+}): Promise<Metadata | null> => {
+  const { id } = await params;
+  let fortune: FortuneEntry;
   try {
-    fortune = await getFortune(id)
+    fortune = await getFortune(id);
   } catch {
-    notFound()
+    notFound();
   }
 
-  const name = generateFortuneName(fortune)
-  const card = fortune.fields.card
+  const name = generateFortuneName(fortune);
+  const { card } = fortune.fields;
 
   if (!card?.fields.file) {
-    notFound()
+    notFound();
   }
 
-  const title = `因幡はねるくじ ${name}`
+  const title = `因幡はねるくじ ${name}`;
 
   return {
     alternates: {
@@ -56,41 +59,41 @@ export async function generateMetadata({
       ],
       siteName,
       title,
-      type: 'article',
+      type: "article",
       url: `/kuji/${fortune.sys.id}`,
     },
     title,
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       site: `@${twitterAccount}`,
       title: `${title} - ${siteName}`,
     },
-  }
-}
+  };
+};
 
 export default async function Page({
   params,
 }: {
   params: Promise<{
-    id: string
-  }>
+    id: string;
+  }>;
 }) {
-  const { id } = await params
-  let fortune: FortuneEntry
+  const { id } = await params;
+  let fortune: FortuneEntry;
   try {
-    fortune = await getFortune(id)
+    fortune = await getFortune(id);
   } catch {
-    notFound()
+    notFound();
   }
 
-  const paper = fortune.fields.paper
+  const { paper } = fortune.fields;
 
   if (!paper?.fields.file) {
-    notFound()
+    notFound();
   }
 
-  const name = generateFortuneName(fortune)
-  const imageDetails = paper.fields.file.details.image
+  const name = generateFortuneName(fortune);
+  const imageDetails = paper.fields.file.details.image;
 
   return (
     <>
@@ -118,5 +121,5 @@ export default async function Page({
         ).toString()}
       />
     </>
-  )
+  );
 }

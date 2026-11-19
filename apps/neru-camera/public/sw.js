@@ -1,10 +1,13 @@
-self.addEventListener('install', () => {
-  self.skipWaiting()
-})
+self.addEventListener("install", () => {
+  self.skipWaiting();
+});
 
-self.addEventListener('activate', (event) => {
-  event.waitUntil(self.clients.claim())
-  self.registration.unregister().then(() => {
-    console.log('unregistered old service worker')
-  })
-})
+const unregister = async () => {
+  await self.registration.unregister();
+  console.log("unregistered old service worker");
+};
+
+self.addEventListener("activate", (event) => {
+  event.waitUntil(self.clients.claim());
+  event.waitUntil(unregister());
+});
