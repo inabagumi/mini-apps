@@ -27,7 +27,7 @@ interface Props {
 
 export default function AboutLayout({ children }: Props) {
   return (
-    <div className="prose prose-orange prose-invert max-w-none [&_em]:font-semibold [&_em]:not-italic">
+    <div className="prose max-w-none prose-invert prose-orange [&_em]:font-semibold [&_em]:not-italic">
       <SimpleTitle>{siteName}とは</SimpleTitle>
       {children}
     </div>

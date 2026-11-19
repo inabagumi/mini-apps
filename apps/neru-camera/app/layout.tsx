@@ -1,4 +1,4 @@
-import "tailwindcss/tailwind.css";
+import "./globals.css";
 import { SerwistProvider } from "@serwist/turbopack/react";
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";

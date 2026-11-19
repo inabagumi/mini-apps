@@ -27,7 +27,7 @@ interface Props {
 
 export default function PrivacyLayout({ children }: Props) {
   return (
-    <div className="prose prose-orange prose-invert max-w-none">
+    <div className="prose max-w-none prose-invert prose-orange">
       <SimpleTitle>プライバシーポリシー</SimpleTitle>
       {children}
     </div>

@@ -36,7 +36,7 @@ export default function LotteryPage() {
   const idPromise = getAnyFortuneID();
 
   return (
-    <div className="mb-4 mt-8 flex h-full flex-col items-center justify-center">
+    <div className="mt-8 mb-4 flex h-full flex-col items-center justify-center">
       <Suspense fallback={null}>
         <Redirect idPromise={idPromise} />
       </Suspense>

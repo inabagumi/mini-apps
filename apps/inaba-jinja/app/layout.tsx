@@ -39,11 +39,11 @@ export default function RootLayout({ children }: Props) {
       <head prefix="og: http://ogp.me/ns#" />
       <body>
         <div className="md:grid md:min-h-dvh md:grid-rows-[1fr_auto]">
-          <MobileMenu className="fixed right-0 top-0 supports-[top:env(safe-area-inset-top)]:top-safe supports-[right:env(safe-area-inset-right)]:right-safe md:hidden" />
+          <MobileMenu className="fixed top-0 right-0 supports-[right:env(safe-area-inset-right)]:right-safe supports-[top:env(safe-area-inset-top)]:top-safe md:hidden" />
 
           <div className="pt-safe pr-safe pl-safe">{children}</div>
 
-          <footer className="hidden bg-black/80 text-sm text-slate-100 pr-safe pb-safe pl-safe md:block">
+          <footer className="hidden bg-black/80 pr-safe pb-safe pl-safe text-sm text-slate-100 md:block">
             <nav className="p-4">
               <ul className="flex items-center justify-end gap-4">
                 <li>

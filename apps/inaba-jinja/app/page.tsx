@@ -24,7 +24,7 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <main className="flex flex-col items-center justify-center pb-8 pt-20 text-slate-100 md:h-full md:p-4">
+    <main className="flex flex-col items-center justify-center pt-20 pb-8 text-slate-100 md:h-full md:p-4">
       <header className="mx-auto flex max-w-2xl flex-col items-center justify-center px-4 pb-12">
         <h1>
           <Logo aria-label={title} className="h-auto w-16 fill-current" />
