@@ -22,7 +22,6 @@ const config: Config = {
     [
       "@docusaurus/preset-classic",
       {
-        debug: true,
         docs: {
           sidebarPath: "./sidebars.ts",
         },
