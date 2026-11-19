@@ -3,7 +3,7 @@
   "extends": ["//"],
   "tasks": {
     "test": {
-      "inputs": ["app/**", "lib/**", "*.ts", "tsconfig.json"]
+      "inputs": ["src/**", "*.ts", "tsconfig.json"]
     }
   }
 }

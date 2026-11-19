@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-import { favicon192x192, favicon512x512 } from "@/assets";
+import { favicon192x192, favicon512x512 } from "#/assets";
 
 export default function manifest(): MetadataRoute.Manifest {
   const name = "774 ink.";

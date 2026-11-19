@@ -6,6 +6,14 @@
   "license": "MIT",
   "author": "Haneru Developers",
   "type": "module",
+  "imports": {
+    "#/*": [
+      "./src/*",
+      "./src/*.ts",
+      "./src/*.tsx",
+      "./src/*/index.ts"
+    ]
+  },
   "scripts": {
     "build": "next build",
     "dev": "next",

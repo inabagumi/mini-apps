@@ -2,7 +2,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 
 describe("manifest", () => {
   afterEach(() => {
-    vi.doUnmock("@/assets");
+    vi.doUnmock("#/assets");
     vi.resetModules();
   });
 
@@ -24,7 +24,7 @@ describe("manifest", () => {
   });
 
   it("builds sizes in the order of width and height", async () => {
-    vi.doMock(import("@/assets"), () => ({
+    vi.doMock(import("#/assets"), () => ({
       favicon192x192: { height: 96, src: "/a.png", width: 192 },
       favicon512x512: { height: 256, src: "/b.png", width: 512 },
     }));

@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 
 import { SerwistProvider } from "./serwist";
 
-import "styles/globals.css";
+import "#/styles/globals.css";
 
 const title = process.env.NEXT_PUBLIC_TITLE || "";
 const description = process.env.NEXT_PUBLIC_DESCRIPTION;

@@ -1,8 +1,9 @@
 "use client";
 
-import Heart from "components/heart";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { MdVolumeOff, MdVolumeUp } from "react-icons/md";
+
+import Heart from "#/components/heart";
 
 const tryToPlay = async (audio: HTMLAudioElement): Promise<boolean> => {
   try {

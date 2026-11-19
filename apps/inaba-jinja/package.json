@@ -21,6 +21,14 @@
   },
   "type": "module",
   "main": "n/a",
+  "imports": {
+    "#/*": [
+      "./src/*",
+      "./src/*.ts",
+      "./src/*.tsx",
+      "./src/*/index.ts"
+    ]
+  },
   "scripts": {
     "build": "next build",
     "dev": "next",

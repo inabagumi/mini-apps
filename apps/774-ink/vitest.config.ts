@@ -29,9 +29,6 @@ const staticImage = (): Plugin => ({
 
 export default defineConfig({
   plugins: [react(), staticImage()],
-  resolve: {
-    tsconfigPaths: true,
-  },
   test: {
     environment: "jsdom",
   },
