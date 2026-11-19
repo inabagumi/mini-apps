@@ -39,7 +39,6 @@ const nextConfig = defineNextConfig({
     ],
   },
   pageExtensions: ["tsx", "mdx", "ts"],
-  reactStrictMode: true,
   redirects() {
     return [
       {
