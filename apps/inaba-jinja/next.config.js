@@ -1,19 +1,17 @@
 import nextMDX from "@next/mdx";
-import rehypeExternalLinks from "rehype-external-links";
-import remarkGfm from "remark-gfm";
 
 const withMDX = nextMDX({
   options: {
     rehypePlugins: [
       [
-        rehypeExternalLinks,
+        "rehype-external-links",
         {
           rel: ["noopener", "noreferrer"],
           target: "_blank",
         },
       ],
     ],
-    remarkPlugins: [remarkGfm],
+    remarkPlugins: ["remark-gfm"],
   },
 });
 
@@ -56,23 +54,21 @@ const nextConfig = {
       },
     ];
   },
-  turbopack: {},
-  webpack(config, { defaultLoaders }) {
-    config.module.rules.push({
-      test: /\.svg$/u,
-      use: [
-        defaultLoaders.babel,
-        {
-          loader: "@svgr/webpack",
-          options: {
-            babel: false,
-            dimensions: false,
+  turbopack: {
+    rules: {
+      "*.svg": {
+        as: "*.js",
+        loaders: [
+          {
+            loader: "@svgr/webpack",
+            options: {
+              babel: false,
+              dimensions: false,
+            },
           },
-        },
-      ],
-    });
-
-    return config;
+        ],
+      },
+    },
   },
 };
 
