@@ -31,7 +31,7 @@
     "tailwindcss-safe-area": "0.8.0"
   },
   "devDependencies": {
-    "@tsconfig/node20": "20.1.9",
+    "@tsconfig/node20": "20.1.11",
     "@tsconfig/strictest": "2.0.9",
     "tsup": "9.0.0"
   }
