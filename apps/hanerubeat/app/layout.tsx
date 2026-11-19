@@ -43,7 +43,6 @@ interface Props {
 export default function RootLayout({ children }: Props) {
   return (
     <html lang="ja">
-      <head prefix="og: http://ogp.me/ns#" />
       <body className="fixed inset-0 bg-[#222]">
         <SerwistProvider
           disable={process.env.NODE_ENV === "development"}

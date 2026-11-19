@@ -25,7 +25,6 @@ interface Props {
 export default function RootLayout({ children }: Props) {
   return (
     <html lang="ja">
-      <head />
       <body>
         <SerwistProvider
           disable={process.env.NODE_ENV === "development"}
