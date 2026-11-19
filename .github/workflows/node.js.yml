@@ -23,5 +23,5 @@ jobs:
         run: pnpm typecheck
       - name: Lint and format check
         run: pnpm check
-      # - name: Test
-      #   run: pnpm test --ci --coverage
+      - name: Test
+        run: pnpm test
