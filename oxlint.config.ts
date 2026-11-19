@@ -12,18 +12,4 @@ export default defineConfig({
     // Copied from Docusaurus as is.
     "website/src/theme/IdealImage/**",
   ],
-  overrides: [
-    {
-      // These packages are not ES modules, so their config files must be
-      // written in CommonJS.
-      files: [
-        "apps/774-ink/*.config.js",
-        "apps/hanerubeat/*.config.js",
-        "apps/neru-camera/*.config.js",
-      ],
-      rules: {
-        "unicorn/prefer-module": "off",
-      },
-    },
-  ],
 });
