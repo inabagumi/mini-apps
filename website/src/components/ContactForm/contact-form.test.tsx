@@ -27,19 +27,12 @@ const Wrapper = ({ children }: Readonly<{ children: ReactNode }>) => {
 };
 
 const renderContactForm = () => {
-  const { container } = render(<ContactForm />, { wrapper: Wrapper });
-  const message = container.querySelector<HTMLTextAreaElement>(
-    "textarea[name='message']"
-  );
-
-  if (!message) {
-    throw new Error("The message field is not found.");
-  }
+  render(<ContactForm />, { wrapper: Wrapper });
 
   return {
     email: screen.getByRole("textbox", { name: "メールアドレス" }),
     form: screen.getByRole("form", { name: "お問い合わせ" }),
-    message,
+    message: screen.getByRole("textbox", { name: "本文" }),
     name: screen.getByRole("textbox", { name: "お名前" }),
   };
 };
