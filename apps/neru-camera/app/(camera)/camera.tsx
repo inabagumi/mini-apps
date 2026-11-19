@@ -1,18 +1,21 @@
 "use client";
 
 import { AlertDialog } from "@base-ui/react/alert-dialog";
-import { Sprite, Stage } from "@pixi/react";
+import { Application, extend } from "@pixi/react";
+import type { ApplicationRef } from "@pixi/react";
 import { track } from "@vercel/analytics";
 import { fileSave } from "browser-fs-access";
 import { clsx } from "clsx";
-import type { Application } from "pixi.js";
-import { useCallback, useEffect, useState } from "react";
+import { Sprite } from "pixi.js";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import processing from "@/lib/processing";
 
 import { useAsset } from "./asset";
 import { useVideoTexture } from "./hooks";
 import Overlay from "./overlay";
+
+extend({ Sprite });
 
 const mediaStreamConstraints: MediaStreamConstraints = {
   audio: false,
@@ -25,20 +28,15 @@ const mediaStreamConstraints: MediaStreamConstraints = {
 
 export default function Camera() {
   const { currentAsset: asset } = useAsset();
-  const [pixiView, setPixiView] = useState<HTMLCanvasElement>();
+  const applicationRef = useRef<ApplicationRef>(null);
   const [cameraStream, setCameraStream] = useState<MediaStream>();
   const [isShooting, setIsShooting] = useState(false);
   const [hasError, setHasError] = useState(false);
   const texture = useVideoTexture({ srcObject: cameraStream });
 
-  const handleMount = useCallback(
-    (app: Application<HTMLCanvasElement>) => setPixiView(app.view),
-    []
-  );
-
-  const handleUnmount = useCallback(() => setPixiView(undefined), []);
-
   const takePhoto = useCallback(async () => {
+    const pixiView = applicationRef.current?.getCanvas();
+
     if (isShooting || !pixiView) {
       return;
     }
@@ -59,7 +57,7 @@ export default function Camera() {
     }
 
     setIsShooting(false);
-  }, [pixiView, isShooting]);
+  }, [isShooting]);
 
   useEffect(() => {
     const startCamera = async () => {
@@ -82,21 +80,19 @@ export default function Camera() {
     <div className="flex h-full flex-col">
       <div className="flex grow items-center justify-center overflow-hidden">
         {texture ? (
-          <Stage
+          <Application
+            autoDensity={false}
             className="block h-auto w-full"
             height={texture.height}
-            options={{
-              autoDensity: false,
-              preserveDrawingBuffer: true,
-            }}
-            onMount={handleMount}
-            onUnmount={handleUnmount}
+            preference="webgl"
+            preserveDrawingBuffer
+            ref={applicationRef}
             width={texture.width}
           >
-            <Sprite texture={texture} />
+            <pixiSprite texture={texture} />
 
             {asset && <Overlay asset={asset} />}
-          </Stage>
+          </Application>
         ) : (
           <svg
             className="h-10 w-10 animate-spin text-yellow-400"

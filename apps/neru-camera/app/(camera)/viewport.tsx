@@ -1,20 +1,28 @@
 "use client";
 
-import { PixiComponent } from "@pixi/react";
+import { extend } from "@pixi/react";
+import type { PixiReactElementProps } from "@pixi/react";
 import { Viewport } from "pixi-viewport";
 import type { IViewportOptions } from "pixi-viewport";
-import type { ReactNode } from "react";
 
-type Props = IViewportOptions & {
-  children: ReactNode;
-};
+class InteractiveViewport extends Viewport {
+  constructor(options: IViewportOptions) {
+    super(options);
 
-export default PixiComponent<Props, Viewport>("Viewport", {
-  create: (props: IViewportOptions) => {
-    const viewport = new Viewport(props);
+    this.drag().pinch().wheel().decelerate();
+  }
+}
 
-    viewport.drag({}).pinch({}).wheel({}).decelerate({});
+extend({ InteractiveViewport });
 
-    return viewport;
-  },
-});
+declare module "@pixi/react" {
+  interface PixiElements {
+    interactiveViewport: PixiReactElementProps<typeof InteractiveViewport>;
+  }
+}
+
+export default function InteractiveViewportComponent(
+  props: PixiReactElementProps<typeof InteractiveViewport>
+) {
+  return <interactiveViewport {...props} />;
+}
