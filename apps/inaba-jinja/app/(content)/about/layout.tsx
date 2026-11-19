@@ -6,13 +6,13 @@ import { title as siteName, twitterAccount } from "@/lib/constants";
 
 export const metadata = {
   alternates: {
-    canonical: "/privacy",
+    canonical: "/about",
   },
   openGraph: {
     siteName,
     title: `${siteName}とは`,
     type: "article",
-    url: "/privacy",
+    url: "/about",
   },
   title: `${siteName}とは`,
   twitter: {
