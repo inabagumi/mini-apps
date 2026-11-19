@@ -13,21 +13,19 @@ on:
 jobs:
   analyse:
     name: Analyse
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
 
     permissions:
+      actions: read
+      contents: read
+      packages: read
       security-events: write
 
     steps:
       - uses: actions/checkout@v7
-        with:
-          fetch-depth: 2
-
-      - run: git checkout HEAD^2
-        if: ${{ github.event_name == 'pull_request' }}
 
       - uses: github/codeql-action/init@v4
         with:
-          languages: javascript
+          languages: javascript-typescript
 
       - uses: github/codeql-action/analyze@v4
