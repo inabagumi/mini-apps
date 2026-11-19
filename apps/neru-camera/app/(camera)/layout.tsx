@@ -1,8 +1,10 @@
 import type { ReactNode } from "react";
 
-import { createClient, type OverlayEntrySkeleton } from "@/lib/contentful";
+import { createClient } from "@/lib/contentful";
+import type { OverlayEntrySkeleton } from "@/lib/contentful";
 
-import { AssetProvider, type OverlayEntry } from "./asset";
+import { AssetProvider } from "./asset";
+import type { OverlayEntry } from "./asset";
 import HeaderMenu from "./menu";
 
 async function getAssets(): Promise<OverlayEntry[]> {

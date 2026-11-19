@@ -1,7 +1,8 @@
 "use client";
 
 import { PixiComponent } from "@pixi/react";
-import { type IViewportOptions, Viewport } from "pixi-viewport";
+import { Viewport } from "pixi-viewport";
+import type { IViewportOptions } from "pixi-viewport";
 import type { ReactNode } from "react";
 
 type Props = IViewportOptions & {

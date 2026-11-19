@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/no-require-imports, @typescript-eslint/no-unsafe-assignment */
 
-type Product = {
+interface Product {
   description: string;
   learnMore: string;
   preview: any;
   title: string;
   website: string;
-};
+}
 
 const products: Product[] = [
   {

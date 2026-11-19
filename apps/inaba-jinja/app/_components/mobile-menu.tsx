@@ -13,9 +13,9 @@ import { twMerge } from "tailwind-merge";
 
 import Logo from "@/components/logo.svg";
 
-type Props = {
+interface Props {
   className?: string;
-};
+}
 
 export default function MobileMenu({ className }: Props) {
   return (

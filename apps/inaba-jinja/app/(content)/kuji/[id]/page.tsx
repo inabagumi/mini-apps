@@ -4,7 +4,8 @@ import { notFound } from "next/navigation";
 
 import SimpleTitle from "@/components/simple-title";
 import { title as siteName, twitterAccount } from "@/lib/constants";
-import { type FortuneEntry, getFortune, getFortuneIDs } from "@/lib/contentful";
+import { getFortune, getFortuneIDs } from "@/lib/contentful";
+import type { FortuneEntry } from "@/lib/contentful";
 import { generateFortuneName, getImageURL } from "@/lib/fortune";
 
 import ShareLinks from "./_components/share-links";
@@ -34,7 +35,7 @@ export async function generateMetadata({
   }
 
   const name = generateFortuneName(fortune);
-  const card = fortune.fields.card;
+  const { card } = fortune.fields;
 
   if (!card?.fields.file) {
     notFound();
@@ -85,7 +86,7 @@ export default async function Page({
     notFound();
   }
 
-  const paper = fortune.fields.paper;
+  const { paper } = fortune.fields;
 
   if (!paper?.fields.file) {
     notFound();

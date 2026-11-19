@@ -5,9 +5,9 @@ import { use, useEffect } from "react";
 
 import { delay } from "@/lib/timer";
 
-type Props = {
+interface Props {
   idPromise: Promise<string>;
-};
+}
 
 export default function Redirect({ idPromise }: Props) {
   const router = useRouter();

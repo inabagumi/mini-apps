@@ -1,7 +1,7 @@
 export default function processing(
   pixiView: HTMLCanvasElement,
   type = "image/png",
-  quality = 1.0
+  quality = 1
 ): Promise<Blob> {
   return new Promise((resolve, reject) => {
     const canvas = document.createElement("canvas");

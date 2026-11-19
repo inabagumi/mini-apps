@@ -4,9 +4,9 @@ import type { ReactNode } from "react";
 import Logo from "@/components/logo.svg";
 import { title as siteName } from "@/lib/constants";
 
-type Props = {
+interface Props {
   children: ReactNode;
-};
+}
 
 export default function ContentLayout({ children }: Props) {
   return (

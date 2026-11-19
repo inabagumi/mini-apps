@@ -2,11 +2,11 @@ import { twitterAccount } from "@/lib/constants";
 
 const DEFAULT_HASHTAGS = ["ねるくじ"];
 
-type ShareLinkOptions = {
+interface ShareLinkOptions {
   text?: string;
   url: string;
   hashtags?: string[];
-};
+}
 
 function generateTweetShareURL({
   hashtags = DEFAULT_HASHTAGS,

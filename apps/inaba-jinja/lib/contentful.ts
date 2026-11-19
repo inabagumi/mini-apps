@@ -1,10 +1,10 @@
-import {
-  type ContentfulClientApi,
-  createClient,
-  type Entry,
-  type EntryCollection,
-  type EntryFieldTypes,
-  type EntrySkeletonType,
+import { createClient } from "contentful";
+import type {
+  ContentfulClientApi,
+  Entry,
+  EntryCollection,
+  EntryFieldTypes,
+  EntrySkeletonType,
 } from "contentful";
 import dedent from "dedent";
 import { unstable_cache as cache } from "next/cache";
@@ -19,8 +19,12 @@ export function getClient(
   space = process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID
 ): ContentfulClientApi<"WITHOUT_UNRESOLVABLE_LINKS"> {
   if (!client) {
-    if (!accessToken) throw new TypeError("The access token is required.");
-    if (!space) throw new TypeError("The space ID is required.");
+    if (!accessToken) {
+      throw new TypeError("The access token is required.");
+    }
+    if (!space) {
+      throw new TypeError("The space ID is required.");
+    }
 
     client = createClient({
       accessToken,
@@ -49,7 +53,7 @@ export type FortuneEntry = Entry<
 >;
 
 export const getFortune = cache(
-  async function getFortune(id?: string): Promise<FortuneEntry> {
+  async (id?: string): Promise<FortuneEntry> => {
     if (!id) throw new TypeError("The fortune ID is required.");
 
     return getClient().getEntry<FortuneEntrySkeleton>(id);
@@ -57,44 +61,41 @@ export const getFortune = cache(
   ["fortune"]
 );
 
-export const getFortuneIDs = cache(
-  async function getFortuneIDs(): Promise<string[]> {
-    const results: string[] = [];
+export const getFortuneIDs = cache(async (): Promise<string[]> => {
+  const results: string[] = [];
 
-    const { items, limit, total } =
-      await getClient().getEntries<FortuneEntrySkeleton>({
-        content_type: "fortune",
-        limit: 100,
-        select: ["sys.id"],
-      });
+  const { items, limit, total } =
+    await getClient().getEntries<FortuneEntrySkeleton>({
+      content_type: "fortune",
+      limit: 100,
+      select: ["sys.id"],
+    });
 
-    results.push(...items.map((entry) => entry.sys.id));
+  results.push(...items.map((entry) => entry.sys.id));
 
-    if (items.length < total) {
-      const promises: Promise<EntryCollection<FortuneEntrySkeleton>>[] = [];
+  if (items.length < total) {
+    const promises: Promise<EntryCollection<FortuneEntrySkeleton>>[] = [];
 
-      for (let skip = limit; skip < total; skip += limit) {
-        promises.push(
-          getClient().getEntries<FortuneEntrySkeleton>({
-            content_type: "fortune",
-            limit,
-            select: ["sys.id"],
-          })
-        );
-      }
-
-      const collectionList = await Promise.all(promises);
-      for (const { items: collectionItems } of collectionList) {
-        results.push(...collectionItems.map((entry) => entry.sys.id));
-      }
+    for (let skip = limit; skip < total; skip += limit) {
+      promises.push(
+        getClient().getEntries<FortuneEntrySkeleton>({
+          content_type: "fortune",
+          limit,
+          select: ["sys.id"],
+        })
+      );
     }
 
-    return results;
-  },
-  ["fortunes"]
-);
+    const collectionList = await Promise.all(promises);
+    for (const { items: collectionItems } of collectionList) {
+      results.push(...collectionItems.map((entry) => entry.sys.id));
+    }
+  }
 
-export const getAnyFortuneID = reactCache(async function getAnyFortuneID() {
+  return results;
+}, ["fortunes"]);
+
+export const getAnyFortuneID = reactCache(async () => {
   const id = await redisClient.spop<string>("fortunes");
 
   if (id) {

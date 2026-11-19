@@ -1,15 +1,8 @@
 "use client";
 
 import type { Entry } from "contentful";
-import {
-  createContext,
-  type Dispatch,
-  type ReactNode,
-  type SetStateAction,
-  useCallback,
-  useContext,
-  useState,
-} from "react";
+import { createContext, useCallback, useContext, useState } from "react";
+import type { Dispatch, ReactNode, SetStateAction } from "react";
 
 import type { OverlayEntrySkeleton } from "@/lib/contentful";
 
@@ -18,22 +11,22 @@ export type OverlayEntry = Entry<
   "WITHOUT_UNRESOLVABLE_LINKS"
 >;
 
-type AssetValues = {
+interface AssetValues {
   current?: OverlayEntry;
   setAsset?: Dispatch<SetStateAction<OverlayEntry>>;
   values: OverlayEntry[];
-};
+}
 
 const AssetContext = createContext<AssetValues>({
   values: [],
 });
 
 type SetAssetIDFn = (id: string) => void;
-type UseAsset = {
+interface UseAsset {
   assets: OverlayEntry[];
   currentAsset: OverlayEntry;
   setAssetID: SetAssetIDFn;
-};
+}
 
 export function useAsset(): UseAsset {
   const { current, setAsset, values } = useContext(AssetContext);
@@ -66,10 +59,10 @@ export function useAsset(): UseAsset {
   };
 }
 
-type AssetProviderProps = {
+interface AssetProviderProps {
   assets: OverlayEntry[];
   children: ReactNode;
-};
+}
 
 export function AssetProvider({ assets, children }: AssetProviderProps) {
   const [current, setAsset] = useState(() => assets[0]);

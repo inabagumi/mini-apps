@@ -1,8 +1,8 @@
 import { twMerge } from "tailwind-merge";
 
-type Props = {
+interface Props {
   className?: string;
-};
+}
 
 export default function Skeleton({ className }: Props) {
   return (

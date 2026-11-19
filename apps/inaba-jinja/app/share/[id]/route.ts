@@ -1,4 +1,5 @@
-import { type FortuneEntry, getFortune } from "@/lib/contentful";
+import { getFortune } from "@/lib/contentful";
+import type { FortuneEntry } from "@/lib/contentful";
 
 // export const runtime = 'edge'
 

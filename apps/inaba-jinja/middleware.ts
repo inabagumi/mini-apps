@@ -1,4 +1,5 @@
-import { type NextRequest, userAgent } from "next/server";
+import { userAgent } from "next/server";
+import type { NextRequest } from "next/server";
 
 export const config = {
   matcher: ["/share/:id*"],

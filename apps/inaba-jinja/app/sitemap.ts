@@ -6,7 +6,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const items: MetadataRoute.Sitemap = [
     {
       changeFrequency: "monthly",
-      priority: 1.0,
+      priority: 1,
       url: new URL("/", process.env.NEXT_PUBLIC_BASE_URL).toString(),
     },
     {

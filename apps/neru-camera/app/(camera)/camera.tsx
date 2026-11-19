@@ -46,7 +46,9 @@ export default function Camera() {
   const handleUnmount = useCallback(() => setPixiView(undefined), []);
 
   const takePhoto = useCallback(() => {
-    if (isShooting || !pixiView) return;
+    if (isShooting || !pixiView) {
+      return;
+    }
 
     setIsShooting(true);
 

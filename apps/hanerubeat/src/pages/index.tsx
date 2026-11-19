@@ -12,13 +12,11 @@ const Heartbeat: NextPage = () => {
   const [muted, setMuted] = useState<boolean>(true);
 
   const handleButtonClick = useCallback(() => {
-    if (isLoading || !heartRef.current) return;
+    if (isLoading || !heartRef.current) {
+      return;
+    }
 
-    if (!heartRef.current.paused) {
-      heartRef.current.muted = !muted;
-
-      setMuted(!muted);
-    } else {
+    if (heartRef.current.paused) {
       setIsLoading(true);
 
       const playPromise = heartRef.current.play();
@@ -37,15 +35,21 @@ const Heartbeat: NextPage = () => {
       } else {
         setMuted(heartRef.current.paused);
       }
+    } else {
+      heartRef.current.muted = !muted;
+
+      setMuted(!muted);
     }
   }, [muted, isLoading]);
 
   useEffect(() => {
-    if (!heartRef.current) return;
+    if (!heartRef.current) {
+      return;
+    }
 
     const playPromise = heartRef.current.play();
 
-    if (typeof playPromise !== "undefined") {
+    if (playPromise !== undefined) {
       playPromise
         .then(() => {
           setMuted(false);

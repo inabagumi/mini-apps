@@ -21,9 +21,9 @@ export const metadata = {
   },
 } satisfies Metadata;
 
-type Props = {
+interface Props {
   children: ReactNode;
-};
+}
 
 export default function PrivacyLayout({ children }: Props) {
   return (

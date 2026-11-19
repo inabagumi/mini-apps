@@ -1,10 +1,10 @@
 import { Texture } from "pixi.js";
 import { useCallback, useEffect, useState } from "react";
 
-export type UseVideoTextureOptions = {
+export interface UseVideoTextureOptions {
   src?: string;
   srcObject?: MediaStream;
-};
+}
 
 export function useVideoTexture({
   src,
@@ -20,7 +20,9 @@ export function useVideoTexture({
   }, []);
 
   useEffect(() => {
-    if (!src && !srcObject) return;
+    if (!src && !srcObject) {
+      return;
+    }
 
     const video = document.createElement("video");
 
