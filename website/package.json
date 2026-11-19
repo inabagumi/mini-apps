@@ -10,6 +10,7 @@
     "deploy": "docusaurus deploy",
     "dev": "docusaurus start",
     "swizzle": "docusaurus swizzle",
+    "test": "vitest run",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -31,8 +32,13 @@
     "@docusaurus/tsconfig": "3.10.2",
     "@docusaurus/types": "3.10.2",
     "@formspree/cli": "0.9.6",
+    "@testing-library/react": "16.3.3",
     "@types/lodash": "4.17.27",
     "@types/react": "19.3.0",
-    "typescript": "6.0.3"
+    "@vitejs/plugin-react": "6.3.0",
+    "jsdom": "31.0.1",
+    "typescript": "6.0.3",
+    "vite": "8.3.8",
+    "vitest": "5.1.1"
   }
 }
