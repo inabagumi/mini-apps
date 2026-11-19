@@ -77,7 +77,5 @@ export const AssetProvider = ({ assets, children }: AssetProviderProps) => {
     [asset, assets]
   );
 
-  return (
-    <AssetContext.Provider value={value}>{children}</AssetContext.Provider>
-  );
+  return <AssetContext value={value}>{children}</AssetContext>;
 };

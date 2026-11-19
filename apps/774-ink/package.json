@@ -47,7 +47,6 @@
     "@tailwindcss/turbopack": "4.3.5",
     "@types/node": "26.6.6",
     "@types/react": "19.3.0",
-    "@vitejs/plugin-react": "6.3.0",
     "jsdom": "31.0.1",
     "tailwindcss": "4.3.5",
     "typescript": "6.0.3",

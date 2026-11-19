@@ -21,7 +21,16 @@
     },
     "test": {
       "dependsOn": ["^build"],
-      "inputs": ["src/**/*.ts", "src/**/*.tsx", "test/**/*.ts", "test/**/*.tsx"]
+      "inputs": [
+        "__mocks__/**",
+        "app/**",
+        "assets/**",
+        "components/**",
+        "lib/**",
+        "*.ts",
+        "*.tsx",
+        "tsconfig.json"
+      ]
     },
     "typecheck": {
       "dependsOn": ["^build", "typegen"]

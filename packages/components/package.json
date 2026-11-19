@@ -48,12 +48,12 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "@inabagumi/config": "workspace:*",
     "@testing-library/react": "16.3.3",
     "@tsconfig/node20": "20.1.11",
     "@tsconfig/strictest": "2.0.9",
     "@types/node": "26.6.6",
     "@types/react": "19.3.0",
-    "@vitejs/plugin-react": "6.3.0",
     "jsdom": "31.0.1",
     "react": "19.3.1",
     "react-dom": "19.3.1",

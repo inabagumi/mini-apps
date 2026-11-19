@@ -5,7 +5,7 @@ export const config = {
   matcher: ["/share/:id*"],
 };
 
-export const middleware = (request: NextRequest) => {
+export const proxy = (request: NextRequest) => {
   const ua = userAgent(request);
 
   if (!ua.isBot) {

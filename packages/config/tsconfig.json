@@ -11,5 +11,5 @@
     "target": "es2022",
     "verbatimModuleSyntax": true
   },
-  "include": ["next/**/*.ts"]
+  "include": ["next/**/*.ts", "vitest/**/*.ts"]
 }
