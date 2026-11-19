@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.0.2](https://github.com/inabagumi/mini-apps/compare/neru-camera-v8.0.1...neru-camera-v8.0.2) (2026-11-19)
+
+
+### Bug Fixes
+
+* **neru-camera:** update @pixi/react to v8 for React 19 support ([#4712](https://github.com/inabagumi/mini-apps/issues/4712)) ([b451999](https://github.com/inabagumi/mini-apps/commit/b4519996a66615972c1510e82bf4620e6fb6c59a))
+
 ## [8.0.1](https://github.com/inabagumi/mini-apps/compare/neru-camera-v8.0.0...neru-camera-v8.0.1) (2025-10-17)
 
 
