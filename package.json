@@ -1,9 +1,8 @@
 {
   "name": "@inabagumi/mini-apps",
-  "version": "3.5.0",
   "private": true,
   "description": "Mini apps by Haneru Developers.",
-  "homepage": "https://inaba-jinja.com",
+  "homepage": "https://github.com/inabagumi/mini-apps#readme",
   "bugs": {
     "url": "https://github.com/inabagumi/mini-apps/issues",
     "email": "contact@haneru.dev"
@@ -19,7 +18,6 @@
     "url": "https://github.com/inabagumi/mini-apps.git"
   },
   "type": "module",
-  "main": "n/a",
   "scripts": {
     "build": "turbo build",
     "check": "ultracite check",
@@ -30,7 +28,6 @@
     "typecheck": "turbo typecheck",
     "typegen": "turbo typegen"
   },
-  "dependencies": {},
   "devDependencies": {
     "@commitlint/cli": "21.2.4",
     "@commitlint/config-conventional": "21.2.4",
