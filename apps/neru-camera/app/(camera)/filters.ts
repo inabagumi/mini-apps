@@ -1,41 +1,61 @@
-import { Filter, utils } from "pixi.js";
+import {
+  Color,
+  defaultFilterVert,
+  Filter,
+  GlProgram,
+  UniformGroup,
+} from "pixi.js";
 
-const fragmentShader = `precision mediump float;
-uniform vec3 keyColor;
-uniform sampler2D uSampler;
-varying vec2 vTextureCoord;
+const fragmentShader = `in vec2 vTextureCoord;
+
+out vec4 finalColor;
+
+uniform vec3 uKeyColor;
+uniform sampler2D uTexture;
 
 void main(void) {
-  vec4 smpColor = texture2D(uSampler, vTextureCoord);
-  float diff = length(keyColor - smpColor.rgb);
+  vec4 smpColor = texture(uTexture, vTextureCoord);
+  float diff = length(uKeyColor - smpColor.rgb);
 
   if (diff < 0.6) {
     discard;
   } else {
-    gl_FragColor = smpColor;
+    finalColor = smpColor;
   }
 }
 `;
 
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
 export class ChromaKeyFilter extends Filter {
-  constructor(keyColor = "#00ff00") {
-    super(undefined, fragmentShader);
+  readonly #chromaKeyUniforms: UniformGroup<{
+    uKeyColor: { type: "vec3<f32>"; value: Float32Array };
+  }>;
 
-    this.uniforms.keyColor = new Float32Array(3);
+  constructor(keyColor = "#00ff00") {
+    const chromaKeyUniforms = new UniformGroup({
+      uKeyColor: { type: "vec3<f32>", value: new Float32Array(3) },
+    });
+
+    super({
+      glProgram: GlProgram.from({
+        fragment: fragmentShader,
+        name: "chroma-key-filter",
+        vertex: defaultFilterVert,
+      }),
+      resources: {
+        chromaKeyUniforms,
+      },
+    });
+
+    this.#chromaKeyUniforms = chromaKeyUniforms;
     this.keyColor = keyColor;
   }
 
   get keyColor(): string {
-    const hex = utils.rgb2hex(this.uniforms.keyColor);
-
-    return utils.hex2string(hex);
+    return new Color(this.#chromaKeyUniforms.uniforms.uKeyColor).toHex();
   }
 
   set keyColor(value: string) {
-    const hex = utils.string2hex(value);
-
-    utils.hex2rgb(hex, this.uniforms.keyColor);
+    new Color(value).toRgbArray(this.#chromaKeyUniforms.uniforms.uKeyColor);
+    this.#chromaKeyUniforms.update();
   }
 }
-/* eslint-enable @typescript-eslint/no-unsafe-argument */

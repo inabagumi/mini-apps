@@ -1,7 +1,7 @@
 "use client";
 
-import { Sprite, useApp } from "@pixi/react";
-import { Point } from "pixi.js";
+import { extend, useApplication } from "@pixi/react";
+import { Point, Sprite } from "pixi.js";
 import { useMemo } from "react";
 
 import type { OverlayEntry } from "./asset";
@@ -9,12 +9,14 @@ import { ChromaKeyFilter } from "./filters";
 import { useVideoTexture } from "./hooks";
 import Viewport from "./viewport";
 
+extend({ Sprite });
+
 export default function Overlay({
   asset,
 }: Readonly<{
   asset: OverlayEntry;
 }>) {
-  const app = useApp();
+  const { app } = useApplication();
   const texture = useVideoTexture({
     src: asset.fields.media?.fields.file?.url,
   });
@@ -38,7 +40,7 @@ export default function Overlay({
       worldWidth={app.screen.width}
     >
       {texture && (
-        <Sprite
+        <pixiSprite
           anchor={new Point(anchor, anchor)}
           position={position}
           texture={texture}
