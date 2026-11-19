@@ -2,7 +2,7 @@
   "name": "@inabagumi/components",
   "version": "1.0.0",
   "private": true,
-  "description": "This is a tailwind.config for Inaba Jinja.",
+  "description": "Shared React components for Haneru Developers' mini apps.",
   "homepage": "https://haneru.dev/",
   "bugs": {
     "url": "https://github.com/inabagumi/mini-apps/issues",

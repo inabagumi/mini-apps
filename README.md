@@ -57,7 +57,7 @@ $ pnpm install
 特定のアプリやパッケージだけを対象にする場合は `--filter` にパッケージ名を指定します。
 
 ```console
-$ pnpm dev --filter inaba-jinja
+$ pnpm dev --filter @inabagumi/inaba-jinja
 ```
 
 ## ライセンス
