@@ -1,34 +1,17 @@
 # Haneru Beat!
 
-Feel the life of Neru-chan!
+「Haneru Beat!」は因幡はねるさんの鼓動を感じるためのアプリです。因幡はねるさんの鼓動を感じて、因幡はねるさんに包まれて眠りましょう。
 
-## Development
+## デプロイ
 
-### Requirements
+[Vercel](https://vercel.com/home)にデプロイすることを前提として開発されています。そのためVercel以外の環境へデプロイを行った際の動作については保証できません。
 
-- [Node.js](https://nodejs.org/en/)
-- [Yarn](https://yarnpkg.com/en/)
+## ライセンス
 
-### Install
+[MIT](../../LICENSE)
 
-```console
-$ git clone https://github.com/inabagumi/hanerubeat.git
-$ cd hanerubeat
-$ yarn install
-```
+ただし画像ファイルなどのソースコード以外のファイルについてはそれぞれの著作者が権利を有しています。
 
-### Start
+## 免責事項
 
-```console
-$ yarn serve
-```
-
-### Build
-
-```console
-$ yarn build
-```
-
-## License
-
-[MIT](LICENSE)
+このアプリケーションは因幡はねるさんのファンによって開発と運用が行われている非公式なものです。このアプリケーションに対する問い合わせを因幡はねるさんや関連する個人、もしくは団体に対して行うのはお止めください。

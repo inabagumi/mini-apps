@@ -1,8 +1,6 @@
 # 因幡神社
 
-[![GitHub Actions](https://github.com/inabagumi/mini-apps/workflows/Test/badge.svg)](https://github.com/inabagumi/mini-apps/actions?query=workflow%3A%22Test%22)
-
-因幡神社へようこそ!
+[因幡神社](https://inaba-jinja.com/)へようこそ!
 
 ## デプロイ
 
@@ -10,7 +8,7 @@
 
 ## ライセンス
 
-[MIT](LICENSE)
+[MIT](../../LICENSE)
 
 ただしメインビジュアルやくじ箱のイラストといった画像ファイルなどのソースコード以外のファイルについてはそれぞれの著作者が権利を有しています。
 
