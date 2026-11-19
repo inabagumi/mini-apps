@@ -84,6 +84,7 @@ export const getFortuneIDs = cache(async (): Promise<string[]> => {
           content_type: "fortune",
           limit,
           select: ["sys.id"],
+          skip,
         })
       );
     }
