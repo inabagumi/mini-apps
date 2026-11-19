@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { describe, expect, it, vi } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 
 import LotteryPage, { metadata } from "./page";
 
@@ -20,16 +20,30 @@ vi.mock(import("./_components/redirect"), () => ({
 }));
 
 describe(LotteryPage, () => {
-  it("opts out of caching and passes a fortune ID to the redirect", async () => {
+  afterEach(() => {
+    vi.useRealTimers();
+  });
+
+  it("opts out of caching and passes a fortune ID to the redirect after 2 seconds", async () => {
+    vi.useFakeTimers();
     mocks.getAnyFortuneID.mockResolvedValueOnce("fortune-1");
 
     render(<LotteryPage />);
 
     expect(mocks.noStore).toHaveBeenCalledOnce();
     expect(mocks.getAnyFortuneID).toHaveBeenCalledOnce();
-    await expect(mocks.redirect.mock.lastCall?.[0].idPromise).resolves.toBe(
-      "fortune-1"
-    );
+
+    const onResolve = vi.fn<(id: string) => void>();
+    const idPromise =
+      mocks.redirect.mock.lastCall?.[0].idPromise.then(onResolve);
+
+    await vi.advanceTimersByTimeAsync(1999);
+    expect(onResolve).not.toHaveBeenCalled();
+
+    await vi.advanceTimersByTimeAsync(1);
+    expect(onResolve).toHaveBeenCalledExactlyOnceWith("fortune-1");
+
+    await idPromise;
   });
 
   it("renders the lottery image", () => {

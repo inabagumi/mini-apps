@@ -5,6 +5,7 @@ import { Suspense } from "react";
 
 import { title as siteName, twitterAccount } from "@/lib/constants";
 import { getAnyFortuneID } from "@/lib/contentful";
+import { delay } from "@/lib/timer";
 
 import Redirect from "./_components/redirect";
 import kujiImage from "./kuji.png";
@@ -33,7 +34,12 @@ export const metadata = {
 export default function LotteryPage() {
   noStore();
 
-  const idPromise = getAnyFortuneID();
+  // Create the promise here rather than in `Redirect`: a promise created in a
+  // Client Component is recreated on every render, so it never settles while
+  // the component is suspended.
+  const idPromise = Promise.all([getAnyFortuneID(), delay(2)]).then(
+    ([id]) => id
+  );
 
   return (
     <div className="mt-8 mb-4 flex h-full flex-col items-center justify-center">
