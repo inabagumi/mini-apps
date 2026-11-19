@@ -8,7 +8,7 @@
   "scripts": {
     "build": "docusaurus build",
     "deploy": "docusaurus deploy",
-    "dev": "docusaurus start",
+    "dev": "docusaurus start --port 3004",
     "swizzle": "docusaurus swizzle",
     "test": "vitest run",
     "typecheck": "tsc --noEmit"

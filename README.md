@@ -60,6 +60,18 @@ $ pnpm install
 $ pnpm dev --filter @inabagumi/inaba-jinja
 ```
 
+### 開発サーバーのポート
+
+`pnpm dev` ですべての開発サーバーを同時に起動できるように、それぞれのポートを固定しています。
+
+| ディレクトリ       | URL                   |
+| ------------------ | --------------------- |
+| `apps/774-ink`     | http://localhost:3000 |
+| `apps/hanerubeat`  | http://localhost:3001 |
+| `apps/inaba-jinja` | http://localhost:3002 |
+| `apps/neru-camera` | http://localhost:3003 |
+| `website`          | http://localhost:3004 |
+
 ## ライセンス
 
 [MIT](LICENSE)
