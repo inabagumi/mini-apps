@@ -1,26 +1,5 @@
 {
-  "compilerOptions": {
-    "allowImportingTsExtensions": true,
-    "allowJs": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "incremental": true,
-    "isolatedModules": true,
-    "jsx": "react-jsx",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "noEmit": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "target": "es2022"
-  },
+  "extends": "@inabagumi/config/tsconfig/nextjs.json",
   "exclude": ["node_modules"],
   "include": [
     "next-env.d.ts",
