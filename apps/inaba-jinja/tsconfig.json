@@ -11,9 +11,6 @@
     "module": "esnext",
     "moduleResolution": "bundler",
     "noEmit": true,
-    "paths": {
-      "@/*": ["./*"]
-    },
     "plugins": [
       {
         "name": "next"

@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 
-import { appleTouchIcon, card, favicon256x256 } from "@/assets";
+import { appleTouchIcon, card, favicon256x256 } from "#/assets";
 
 import "./globals.css";
 

@@ -11,10 +11,6 @@
     "module": "esnext",
     "moduleResolution": "bundler",
     "noEmit": true,
-    "paths": {
-      "components/*": ["./src/components/*"],
-      "styles/*": ["./src/styles/*"]
-    },
     "resolveJsonModule": true,
     "target": "esnext",
     "skipLibCheck": true,

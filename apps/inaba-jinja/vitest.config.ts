@@ -38,7 +38,6 @@ export default defineConfig({
         ),
       },
     ],
-    tsconfigPaths: true,
   },
   test: {
     env: {
