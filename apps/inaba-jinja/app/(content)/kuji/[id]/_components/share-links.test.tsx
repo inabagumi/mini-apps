@@ -17,9 +17,7 @@ describe(ShareLinks, () => {
 
     const url = getShareURL();
 
-    expect(`${url.origin}${url.pathname}`).toBe(
-      "https://twitter.com/intent/tweet"
-    );
+    expect(`${url.origin}${url.pathname}`).toBe("https://x.com/intent/post");
     expect(Object.fromEntries(url.searchParams)).toStrictEqual({
       hashtags: "ねるくじ",
       related: "Haneru_Inaba",

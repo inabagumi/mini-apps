@@ -13,7 +13,7 @@ const generateTweetShareURL = ({
   text,
   url,
 }: ShareLinkOptions): string => {
-  const tweetShareURL = new URL("https://twitter.com/intent/tweet");
+  const tweetShareURL = new URL("https://x.com/intent/post");
   tweetShareURL.searchParams.append("hashtags", hashtags.join(","));
   tweetShareURL.searchParams.append("related", "Haneru_Inaba");
 
