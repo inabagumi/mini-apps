@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.0.5](https://github.com/inabagumi/mini-apps/compare/inaba-jinja-v4.0.4...inaba-jinja-v4.0.5) (2026-11-19)
+
+
+### Bug Fixes
+
+* assign a fixed port to each dev server ([#4839](https://github.com/inabagumi/mini-apps/issues/4839)) ([0d2f35e](https://github.com/inabagumi/mini-apps/commit/0d2f35e966a16cc6a5a15f99578537b3d74d47e8))
+* **inaba-jinja:** allow the image qualities used by next/image ([#4838](https://github.com/inabagumi/mini-apps/issues/4838)) ([7031d46](https://github.com/inabagumi/mini-apps/commit/7031d46e93141c8c0247d60c6b4710fe4762709f))
+* **inaba-jinja:** correct the YouTube link URL on the about page ([#4824](https://github.com/inabagumi/mini-apps/issues/4824)) ([4aa2a0a](https://github.com/inabagumi/mini-apps/commit/4aa2a0a0c73101bc6729df58e535f395d70fdabe))
+* **inaba-jinja:** create the delayed fortune ID promise in the Server Component ([#4746](https://github.com/inabagumi/mini-apps/issues/4746)) ([bedad36](https://github.com/inabagumi/mini-apps/commit/bedad361caadfd0268bf5e6c9a2430976dd2f65a))
+* **inaba-jinja:** describe Vercel Web Analytics and Speed Insights in the privacy policy ([#4837](https://github.com/inabagumi/mini-apps/issues/4837)) ([2800442](https://github.com/inabagumi/mini-apps/commit/280044215cf7afdc3ff06221eebdf5b7caceb930))
+* **inaba-jinja:** link to x.com instead of twitter.com ([#4818](https://github.com/inabagumi/mini-apps/issues/4818)) ([5a7c3cf](https://github.com/inabagumi/mini-apps/commit/5a7c3cf3ca6870b00026a3f2a341d36dea290535))
+* **inaba-jinja:** remove role="menu" from the mobile menu link list ([#4820](https://github.com/inabagumi/mini-apps/issues/4820)) ([a186d8c](https://github.com/inabagumi/mini-apps/commit/a186d8ccfd5ebe849c45b8dafe2ac7e8f21b3003))
+* **inaba-jinja:** set the canonical URL and og:url of /about to /about ([#4751](https://github.com/inabagumi/mini-apps/issues/4751)) ([8b78ddd](https://github.com/inabagumi/mini-apps/commit/8b78ddd31bc602e984ebeec5aee3ff7e58bcbc04))
+
 ## [4.0.4](https://github.com/inabagumi/mini-apps/compare/inaba-jinja-v4.0.3...inaba-jinja-v4.0.4) (2026-11-19)
 
 

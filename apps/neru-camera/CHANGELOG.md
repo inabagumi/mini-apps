@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.0.4](https://github.com/inabagumi/mini-apps/compare/neru-camera-v8.0.3...neru-camera-v8.0.4) (2026-11-19)
+
+
+### Bug Fixes
+
+* add .env.local.example to apps that require NEXT_PUBLIC_BASE_URL ([#4843](https://github.com/inabagumi/mini-apps/issues/4843)) ([1be6d31](https://github.com/inabagumi/mini-apps/commit/1be6d31441409b8fa6ee114781c51711ec3e7ecf)), closes [#4835](https://github.com/inabagumi/mini-apps/issues/4835)
+* assign a fixed port to each dev server ([#4839](https://github.com/inabagumi/mini-apps/issues/4839)) ([0d2f35e](https://github.com/inabagumi/mini-apps/commit/0d2f35e966a16cc6a5a15f99578537b3d74d47e8))
+
 ## [8.0.3](https://github.com/inabagumi/mini-apps/compare/neru-camera-v8.0.2...neru-camera-v8.0.3) (2026-11-19)
 
 
