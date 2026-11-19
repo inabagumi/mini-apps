@@ -1,12 +1,7 @@
 "use client";
 
-import "@reach/dialog/styles.css";
+import { AlertDialog } from "@base-ui/react/alert-dialog";
 import { Sprite, Stage } from "@pixi/react";
-import {
-  AlertDialog,
-  AlertDialogDescription,
-  AlertDialogLabel,
-} from "@reach/alert-dialog";
 import { track } from "@vercel/analytics";
 import { fileSave } from "browser-fs-access";
 import { clsx } from "clsx";
@@ -147,15 +142,20 @@ export default function Camera() {
         </button>
       </div>
 
-      {hasError && (
-        <AlertDialog>
-          <AlertDialogLabel>エラー</AlertDialogLabel>
+      <AlertDialog.Root open={hasError}>
+        <AlertDialog.Portal>
+          <AlertDialog.Backdrop className="fixed inset-0 bg-black/33" />
+          <AlertDialog.Viewport className="fixed inset-0 overflow-auto">
+            <AlertDialog.Popup className="mx-auto my-[10vh] w-[50vw] bg-white p-8 outline-hidden">
+              <AlertDialog.Title>エラー</AlertDialog.Title>
 
-          <AlertDialogDescription>
-            カメラの取得に失敗しました。
-          </AlertDialogDescription>
-        </AlertDialog>
-      )}
+              <AlertDialog.Description>
+                カメラの取得に失敗しました。
+              </AlertDialog.Description>
+            </AlertDialog.Popup>
+          </AlertDialog.Viewport>
+        </AlertDialog.Portal>
+      </AlertDialog.Root>
     </div>
   );
 }
