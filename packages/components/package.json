@@ -42,7 +42,7 @@
     }
   },
   "scripts": {
-    "build": "tsup",
+    "build": "tsdown",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {},
@@ -51,7 +51,7 @@
     "@tsconfig/strictest": "2.0.9",
     "@types/node": "26.6.6",
     "@types/react": "19.3.0",
-    "tsup": "9.0.0",
+    "tsdown": "0.23.7",
     "typescript": "6.0.3"
   },
   "peerDependencies": {
