@@ -12,7 +12,15 @@
       ]
     },
     "test": {
-      "inputs": ["__mocks__/**", "src/**", "*.ts", "tsconfig.json"]
+      "inputs": [
+        "__mocks__/**",
+        "app/**",
+        "components/**",
+        "lib/**",
+        "*.ts",
+        "*.tsx",
+        "tsconfig.json"
+      ]
     }
   }
 }
