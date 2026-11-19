@@ -53,6 +53,8 @@ export default function FormControl<Name extends keyof FormData>({
             aria-invalid={isInvalid || undefined}
             aria-required={isRequired}
             className={styles.textarea}
+            disabled={disabled}
+            id={name}
             minRows={10}
             placeholder={placeholder}
             {...register(name, registerOptions)}
