@@ -16,6 +16,7 @@
   "dependencies": {
     "@docusaurus/core": "3.10.2",
     "@docusaurus/plugin-ideal-image": "3.10.2",
+    "@docusaurus/plugin-vercel-analytics": "3.10.2",
     "@docusaurus/preset-classic": "3.10.2",
     "@formspree/react": "3.0.0",
     "@hookform/error-message": "2.0.1",

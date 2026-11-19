@@ -599,6 +599,9 @@ importers:
       '@docusaurus/plugin-ideal-image':
         specifier: 3.10.2
         version: 3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(@swc/core@1.16.13(@swc/helpers@0.5.23))(@types/node@26.6.6)(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.33))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(esbuild@0.28.2)(html-minifier-terser@7.2.0)(lightningcss@1.33.0)(postcss@8.5.33)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.1.1)(svgo@3.3.5)(typescript@6.0.3)
+      '@docusaurus/plugin-vercel-analytics':
+        specifier: 3.10.2
+        version: 3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(@swc/core@1.16.13(@swc/helpers@0.5.23))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.33))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(esbuild@0.28.2)(html-minifier-terser@7.2.0)(lightningcss@1.33.0)(next@16.4.6(@babel/core@7.29.13(supports-color@8.1.1))(@types/node@26.6.6)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(postcss@8.5.33)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sharp@0.35.5(@types/node@26.6.6))(supports-color@8.1.1)(svgo@3.3.5)(typescript@6.0.3)
       '@docusaurus/preset-classic':
         specifier: 3.10.2
         version: 3.10.2(@algolia/client-search@5.65.0)(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(@swc/core@1.16.13(@swc/helpers@0.5.23))(@types/react@19.3.0)(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.33))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(esbuild@0.28.2)(html-minifier-terser@7.2.0)(lightningcss@1.33.0)(postcss@8.5.33)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(search-insights@2.17.3)(sharp@0.35.5(@types/node@26.6.6))(supports-color@8.1.1)(svgo@3.3.5)(typescript@6.0.3)
@@ -1933,6 +1936,13 @@ packages:
 
   '@docusaurus/plugin-svgr@3.10.2':
     resolution: {integrity: sha512-JgfT3jWM0TJ8Uw0cEcqxHpybngQY1vlBYpuuNO+gEh5iPh5Ar+vxq/u9CFrYsWeXy48BN7Db76Pzp2edNXUQ8A==}
+    engines: {node: '>=20.0'}
+    peerDependencies:
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+
+  '@docusaurus/plugin-vercel-analytics@3.10.2':
+    resolution: {integrity: sha512-HqpkNTn0KodZYYzOso1PneReTOhffG/XJ/EtKeMtc3a79isM33dz2pZaR/ynMO0Y13qkXTJxvvxF/Fjv5DL2fg==}
     engines: {node: '>=20.0'}
     peerDependencies:
       react: ^18.0.0 || ^19.0.0
@@ -3878,6 +3888,32 @@ packages:
 
   '@upstash/redis@1.41.0':
     resolution: {integrity: sha512-TIu9C1B0ToXQLXt2M1LQuGZ6nkMjOZPIdJyU0GGWKZToa/MvJF8x2IRDOPMIAw2BLGXGhi1aZr5AnhlXu4YLXg==}
+
+  '@vercel/analytics@1.6.1':
+    resolution: {integrity: sha512-oH9He/bEM+6oKlv3chWuOOcp8Y6fo6/PSro8hEkgCW3pu9/OiCXiUpRUogDh3Fs3LH2sosDrx8CxeOLBEE+afg==}
+    peerDependencies:
+      '@remix-run/react': ^2
+      '@sveltejs/kit': ^1 || ^2
+      next: '>= 13'
+      react: ^18 || ^19 || ^19.0.0-rc
+      svelte: '>= 4'
+      vue: ^3
+      vue-router: ^4
+    peerDependenciesMeta:
+      '@remix-run/react':
+        optional: true
+      '@sveltejs/kit':
+        optional: true
+      next:
+        optional: true
+      react:
+        optional: true
+      svelte:
+        optional: true
+      vue:
+        optional: true
+      vue-router:
+        optional: true
 
   '@vercel/analytics@2.0.1':
     resolution: {integrity: sha512-MTQG6V9qQrt1tsDeF+2Uoo5aPjqbVPys1xvnIftXSJYG2SrwXRHnqEvVoYID7BTruDz4lCd2Z7rM1BdkUehk2g==}
@@ -11157,6 +11193,51 @@ snapshots:
       - utf-8-validate
       - webpack-cli
 
+  '@docusaurus/plugin-vercel-analytics@3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(@swc/core@1.16.13(@swc/helpers@0.5.23))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.33))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(esbuild@0.28.2)(html-minifier-terser@7.2.0)(lightningcss@1.33.0)(next@16.4.6(@babel/core@7.29.13(supports-color@8.1.1))(@types/node@26.6.6)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(postcss@8.5.33)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sharp@0.35.5(@types/node@26.6.6))(supports-color@8.1.1)(svgo@3.3.5)(typescript@6.0.3)':
+    dependencies:
+      '@docusaurus/core': 3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(@swc/core@1.16.13(@swc/helpers@0.5.23))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.33))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(esbuild@0.28.2)(html-minifier-terser@7.2.0)(lightningcss@1.33.0)(postcss@8.5.33)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sharp@0.35.5(@types/node@26.6.6))(supports-color@8.1.1)(svgo@3.3.5)(typescript@6.0.3)
+      '@docusaurus/logger': 3.10.2
+      '@docusaurus/types': 3.10.2(@swc/core@1.16.13(@swc/helpers@0.5.23))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.33))(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@7.2.0)(lightningcss@1.33.0)(postcss@8.5.33)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sharp@0.35.5(@types/node@26.6.6))(supports-color@8.1.1)(svgo@3.3.5)
+      '@docusaurus/utils': 3.10.2(@swc/core@1.16.13(@swc/helpers@0.5.23))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.33))(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@7.2.0)(lightningcss@1.33.0)(postcss@8.5.33)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sharp@0.35.5(@types/node@26.6.6))(supports-color@8.1.1)(svgo@3.3.5)
+      '@docusaurus/utils-validation': 3.10.2(@swc/core@1.16.13(@swc/helpers@0.5.23))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.33))(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@7.2.0)(lightningcss@1.33.0)(postcss@8.5.33)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sharp@0.35.5(@types/node@26.6.6))(supports-color@8.1.1)(svgo@3.3.5)
+      '@vercel/analytics': 1.6.1(next@16.4.6(@babel/core@7.29.13(supports-color@8.1.1))(@types/node@26.6.6)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react@19.3.1)
+      react: 19.3.1
+      react-dom: 19.3.1(react@19.3.1)
+      tslib: 2.9.1
+    transitivePeerDependencies:
+      - '@docusaurus/faster'
+      - '@mdx-js/react'
+      - '@minify-html/node'
+      - '@napi-rs/image'
+      - '@parcel/css'
+      - '@remix-run/react'
+      - '@rspack/core'
+      - '@sveltejs/kit'
+      - '@swc/core'
+      - '@swc/css'
+      - '@swc/html'
+      - bufferutil
+      - clean-css
+      - cssnano
+      - csso
+      - debug
+      - esbuild
+      - html-minifier-terser
+      - imagemin
+      - lightningcss
+      - next
+      - postcss
+      - sharp
+      - supports-color
+      - svelte
+      - svgo
+      - typescript
+      - uglify-js
+      - utf-8-validate
+      - vue
+      - vue-router
+      - webpack-cli
+
   '@docusaurus/preset-classic@3.10.2(@algolia/client-search@5.65.0)(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(@swc/core@1.16.13(@swc/helpers@0.5.23))(@types/react@19.3.0)(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.33))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(esbuild@0.28.2)(html-minifier-terser@7.2.0)(lightningcss@1.33.0)(postcss@8.5.33)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(search-insights@2.17.3)(sharp@0.35.5(@types/node@26.6.6))(supports-color@8.1.1)(svgo@3.3.5)(typescript@6.0.3)':
     dependencies:
       '@docusaurus/core': 3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.1))(@swc/core@1.16.13(@swc/helpers@0.5.23))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.33))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(esbuild@0.28.2)(html-minifier-terser@7.2.0)(lightningcss@1.33.0)(postcss@8.5.33)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sharp@0.35.5(@types/node@26.6.6))(supports-color@8.1.1)(svgo@3.3.5)(typescript@6.0.3)
@@ -13084,6 +13165,11 @@ snapshots:
   '@upstash/redis@1.41.0':
     dependencies:
       uncrypto: 0.1.3
+
+  '@vercel/analytics@1.6.1(next@16.4.6(@babel/core@7.29.13(supports-color@8.1.1))(@types/node@26.6.6)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react@19.3.1)':
+    optionalDependencies:
+      next: 16.4.6(@babel/core@7.29.13(supports-color@8.1.1))(@types/node@26.6.6)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
+      react: 19.3.1
 
   '@vercel/analytics@2.0.1(next@16.4.6(@babel/core@7.29.13(supports-color@8.1.1))(@types/node@26.6.6)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react@19.3.1)':
     optionalDependencies:
