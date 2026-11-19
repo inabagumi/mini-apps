@@ -29,7 +29,6 @@
   },
   "devDependencies": {
     "@inabagumi/config": "workspace:*",
-    "@inabagumi/vitest-config": "workspace:*",
     "@serwist/turbopack": "9.5.15",
     "@tailwindcss/turbopack": "4.3.5",
     "@testing-library/react": "16.3.3",

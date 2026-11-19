@@ -1,6 +1,6 @@
 import { fileURLToPath } from "node:url";
 
-import baseConfig from "@inabagumi/vitest-config";
+import baseConfig from "@inabagumi/config/vitest";
 import { defineConfig, mergeConfig } from "vitest/config";
 
 export default mergeConfig(

@@ -48,7 +48,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@inabagumi/vitest-config": "workspace:*",
+    "@inabagumi/config": "workspace:*",
     "@testing-library/react": "16.3.3",
     "@tsconfig/node20": "20.1.11",
     "@tsconfig/strictest": "2.0.9",
