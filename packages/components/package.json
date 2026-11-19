@@ -20,29 +20,29 @@
     "directory": "packages/components"
   },
   "type": "module",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/index.mjs",
+  "types": "dist/index.d.mts",
   "typesVersions": {
     "*": {
       "skeleton": [
-        "./dist/skeleton/index.d.ts"
+        "./dist/skeleton/index.d.mts"
       ]
     }
   },
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "default": "./dist/index.js"
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs",
+      "default": "./dist/index.mjs"
     },
     "./skeleton": {
-      "types": "./dist/skeleton/index.d.ts",
-      "import": "./dist/skeleton/index.js",
-      "default": "./dist/skeleton/index.js"
+      "types": "./dist/skeleton/index.d.mts",
+      "import": "./dist/skeleton/index.mjs",
+      "default": "./dist/skeleton/index.mjs"
     }
   },
   "scripts": {
-    "build": "tsup",
+    "build": "tsdown",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {},
@@ -51,7 +51,7 @@
     "@tsconfig/strictest": "2.0.9",
     "@types/node": "26.6.6",
     "@types/react": "19.3.0",
-    "tsup": "9.0.0",
+    "tsdown": "0.23.7",
     "typescript": "6.0.3"
   },
   "peerDependencies": {
