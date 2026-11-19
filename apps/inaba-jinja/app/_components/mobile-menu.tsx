@@ -60,7 +60,7 @@ export default function MobileMenu({ className }: Props) {
               <Logo aria-hidden className="block h-8 w-auto fill-current" />
             </Link>
           </div>
-          <ul className="pb-safe" role="menu">
+          <ul className="pb-safe">
             <li className="border-t border-slate-400">
               <Link
                 className="block px-4 py-3 text-right"
