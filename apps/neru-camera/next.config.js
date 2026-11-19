@@ -1,4 +1,4 @@
-const nextPWA = require("next-pwa");
+const { withSerwist } = require("@serwist/turbopack");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -22,26 +22,13 @@ const nextConfig = {
         ],
         source: "/service-worker.js",
       },
-      {
-        headers: [
-          {
-            key: "cache-control",
-            value: "immutable, max-age=31536000",
-          },
-        ],
-        source: "/workbox-:hash.js",
-      },
     ];
   },
   rewrites() {
     return [
       {
-        destination: "/_next/static/service-worker.js",
+        destination: "/serwist/sw.js",
         source: "/service-worker.js",
-      },
-      {
-        destination: "/_next/static/workbox-:hash.js",
-        source: "/workbox-:hash.js",
       },
       {
         destination: "/manifest.webmanifest",
@@ -49,13 +36,6 @@ const nextConfig = {
       },
     ];
   },
-  turbopack: {},
 };
 
-const withPWA = nextPWA({
-  dest: ".next/static",
-  disable: process.env.NODE_ENV === "development",
-  sw: "service-worker.js",
-});
-
-module.exports = withPWA(nextConfig);
+module.exports = withSerwist(nextConfig);
