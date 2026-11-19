@@ -106,7 +106,7 @@ export default async function Page({
           className="h-auto max-w-full rounded-md"
           height={imageDetails ? imageDetails.height / 2 : 540}
           placeholder="blur"
-          priority
+          preload
           quality={80}
           src={getImageURL(paper)}
           width={imageDetails ? imageDetails.width / 2 : 254}

@@ -10,7 +10,7 @@ export default function Background() {
         className="object-cover"
         fill
         placeholder="blur"
-        priority
+        preload
         quality={70}
         sizes="100vw"
         src={mainVisual}
