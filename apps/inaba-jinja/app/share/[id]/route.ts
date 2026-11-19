@@ -1,8 +1,6 @@
 import { getFortune } from "#/lib/contentful";
 import type { FortuneEntry } from "#/lib/contentful";
 
-// export const runtime = 'edge'
-
 export const GET = async (
   request: Request,
   { params }: { params: Promise<{ id: string }> }
