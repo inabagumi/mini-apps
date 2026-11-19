@@ -46,7 +46,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@tsconfig/node20": "20.1.9",
+    "@tsconfig/node20": "20.1.11",
     "@tsconfig/strictest": "2.0.9",
     "@types/react": "19.3.0",
     "tsup": "9.0.0"
