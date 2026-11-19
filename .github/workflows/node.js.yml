@@ -7,12 +7,6 @@ on:
     branches: [main]
     tags: ["!v*"]
 
-env:
-  # renovate: datasource=npm depName=corepack
-  COREPACK_VERSION: 0.36.0
-  # renovate: datasource=node-version depName=node
-  NODE_VERSION: 26.13.1
-
 jobs:
   build:
     runs-on: ubuntu-26.04
@@ -20,17 +14,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
-      - name: Enable corepack
-        run: |
-          npm install -g corepack@${COREPACK_VERSION}
-          corepack enable
-      - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v7
+      - name: Setup pnpm and Node.js
+        uses: pnpm/setup@v3
         with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: pnpm
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+          cache: true
       - run: pnpm typegen
       - name: Lint and format check
         run: pnpm check

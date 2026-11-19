@@ -41,5 +41,16 @@
     "turbo": "2.11.13",
     "ultracite": "8.3.0"
   },
-  "packageManager": "pnpm@10.34.9"
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.21.0",
+      "onFail": "download"
+    },
+    "runtime": {
+      "name": "node",
+      "version": "26.13.1",
+      "onFail": "download"
+    }
+  }
 }

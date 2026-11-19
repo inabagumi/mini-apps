@@ -2,3 +2,27 @@ packages:
   - apps/*
   - packages/*
   - website
+
+strictPeerDependencies: false
+
+allowBuilds:
+  "@parcel/watcher": false
+  core-js: false
+  esbuild: false
+  sharp: true
+
+permissions:
+  ultracite:
+    skills: false
+
+# TODO: Remove once these versions are older than minimumReleaseAge (1 day).
+minimumReleaseAgeExclude:
+  - "@turbo/darwin-64@2.11.13"
+  - "@turbo/darwin-arm64@2.11.13"
+  - "@turbo/linux-64@2.11.13"
+  - "@turbo/linux-arm64@2.11.13"
+  - "@turbo/windows-64@2.11.13"
+  - "@turbo/windows-arm64@2.11.13"
+  - tailwind-merge@2.6.2
+  - turbo@2.11.13
+  - ultracite@8.3.0
