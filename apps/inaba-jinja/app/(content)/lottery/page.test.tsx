@@ -5,11 +5,11 @@ import LotteryPage, { metadata } from "./page";
 
 const mocks = vi.hoisted(() => ({
   getAnyFortuneID: vi.fn<() => Promise<string>>(),
-  noStore: vi.fn<() => void>(),
+  connection: vi.fn<() => Promise<void>>(async () => {}),
   redirect: vi.fn<(props: { idPromise: Promise<string> }) => null>(() => null),
 }));
 
-vi.mock(import("next/cache"), () => ({ unstable_noStore: mocks.noStore }));
+vi.mock(import("next/server"), () => ({ connection: mocks.connection }));
 
 vi.mock(import("#/lib/contentful"), () => ({
   getAnyFortuneID: mocks.getAnyFortuneID,
@@ -24,13 +24,13 @@ describe(LotteryPage, () => {
     vi.useRealTimers();
   });
 
-  it("opts out of caching and passes a fortune ID to the redirect after 2 seconds", async () => {
+  it("waits for an incoming request and passes a fortune ID to the redirect after 2 seconds", async () => {
     vi.useFakeTimers();
     mocks.getAnyFortuneID.mockResolvedValueOnce("fortune-1");
 
-    render(<LotteryPage />);
+    render(await LotteryPage());
 
-    expect(mocks.noStore).toHaveBeenCalledOnce();
+    expect(mocks.connection).toHaveBeenCalledOnce();
     expect(mocks.getAnyFortuneID).toHaveBeenCalledOnce();
 
     const onResolve = vi.fn<(id: string) => void>();
@@ -46,10 +46,10 @@ describe(LotteryPage, () => {
     await idPromise;
   });
 
-  it("renders the lottery image", () => {
+  it("renders the lottery image", async () => {
     mocks.getAnyFortuneID.mockResolvedValueOnce("fortune-1");
 
-    render(<LotteryPage />);
+    render(await LotteryPage());
 
     expect(screen.getByRole("img", { name: "くじ引き中..." })).toHaveAttribute(
       "width",

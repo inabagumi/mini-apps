@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { unstable_noStore as noStore } from "next/cache";
 import Image from "next/image";
+import { connection } from "next/server";
 import { Suspense } from "react";
 
 import { title as siteName, twitterAccount } from "#/lib/constants";
@@ -31,8 +31,8 @@ export const metadata = {
   },
 } satisfies Metadata;
 
-export default function LotteryPage() {
-  noStore();
+export default async function LotteryPage() {
+  await connection();
 
   // Create the promise here rather than in `Redirect`: a promise created in a
   // Client Component is recreated on every render, so it never settles while
