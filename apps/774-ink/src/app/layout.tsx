@@ -1,8 +1,7 @@
+import "./globals.css";
 import type { Metadata, Viewport } from "next";
 
 import { appleTouchIcon, card, favicon256x256 } from "#/assets";
-
-import "./globals.css";
 
 const canonical = "https://774.ink/";
 
