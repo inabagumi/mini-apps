@@ -1,5 +1,21 @@
-当ウェブサービスでは[Googleアナリティクス](https://developers.google.com/analytics/?hl=ja)を利用してトラフィックデータを収集しています。
-収集されたトラフィックデータは匿名化され、あなたの個人が特定されることはありません。
-Googleアナリティクスの詳細は[Googleアナリティクス利用規約](https://marketingplatform.google.com/about/analytics/terms/jp/)を参照してください。
+当ウェブサービスでは、アクセス状況や表示速度を把握してサービスの改善に役立てるため、以下のサービスを利用しています。
 
-これらの情報の取得はCookieやJavaScriptを無効にすることによって拒否できます。
+## Vercel Web Analytics
+
+当ウェブサービスでは[Vercel Web Analytics](https://vercel.com/docs/analytics)を利用してアクセス状況を収集しています。収集される情報は、閲覧したページのURLと参照元、おおよその地域、OSやブラウザーの種類とバージョン、端末の種類などです。
+
+Vercel Web AnalyticsはCookieを使用せず、訪問者の識別にはリクエストの内容から生成したハッシュを用いています。このハッシュは24時間で破棄されます。収集された情報は匿名で記録され、あなた個人が特定されることはありません。
+
+Vercel Web Analyticsの詳細は[Vercel Web Analyticsのプライバシーとコンプライアンスに関する説明](https://vercel.com/docs/analytics/privacy-policy)を参照してください。
+
+## Vercel Speed Insights
+
+当ウェブサービスでは[Vercel Speed Insights](https://vercel.com/docs/speed-insights)を利用してページの表示速度に関する指標 ([Core Web Vitals](https://vercel.com/docs/speed-insights/metrics)) を収集しています。収集される情報は、表示速度の指標のほか、閲覧したページのURL、通信速度、OSやブラウザーの種類、端末の種類、国などです。
+
+Vercel Speed InsightsはCookieを使用しません。収集された情報は匿名で記録され、ページをまたいだ閲覧履歴の再現や、あなた個人の特定に使える情報は収集されません。
+
+Vercel Speed Insightsの詳細は[Vercel Speed Insightsのプライバシーとコンプライアンスに関する説明](https://vercel.com/docs/speed-insights/privacy-policy)を参照してください。
+
+## 情報の収集を拒否する方法
+
+これらの情報は、いずれもブラウザー上で実行されるJavaScriptによって送信されます。ブラウザーの設定でJavaScriptを無効にすることで、これらの情報の収集を拒否できます。
