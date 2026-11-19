@@ -4,8 +4,6 @@ import Heart from "components/heart";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { MdVolumeOff, MdVolumeUp } from "react-icons/md";
 
-import styles from "styles/pages/index.module.css";
-
 const tryToPlay = async (audio: HTMLAudioElement): Promise<boolean> => {
   try {
     await audio.play();
@@ -55,17 +53,17 @@ export default function Heartbeat() {
   const ButtonIcon = muted ? MdVolumeOff : MdVolumeUp;
 
   return (
-    <div className={styles.container}>
+    <div className="relative flex h-full flex-col items-center justify-center">
       <Heart ref={heartRef} />
 
-      <div className={styles.controls}>
+      <div className="absolute inset-x-0 bottom-0 flex items-center justify-center">
         <button
-          className={styles.button}
+          className="block text-[64px] leading-[normal] text-[#eee] focus:outline-none disabled:text-[#aaa]"
           disabled={isLoading}
           onClick={handleButtonClick}
           type="button"
         >
-          <ButtonIcon className={styles.button__icon} />
+          <ButtonIcon className="inline h-auto w-[1em] align-baseline" />
         </button>
       </div>
     </div>

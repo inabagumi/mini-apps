@@ -41,7 +41,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ja">
+    <html
+      className="bg-[#544643] font-[sans-serif] leading-none text-white"
+      lang="ja"
+    >
       <body>{children}</body>
     </html>
   );
