@@ -5,7 +5,7 @@ const tailwindConfig = {
   content: [
     "./app/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
-    "./node_modules/@inabagumi/components/**/*.js",
+    "./node_modules/@inabagumi/components/dist/**/*.mjs",
   ],
   presets: [sharedTailwindConfig],
   theme: {
