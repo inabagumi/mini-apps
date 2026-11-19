@@ -7,7 +7,6 @@
   "author": "Haneru Developers",
   "scripts": {
     "build": "docusaurus build",
-    "deploy": "docusaurus deploy",
     "dev": "docusaurus start",
     "swizzle": "docusaurus swizzle",
     "test": "vitest run",

@@ -13,7 +13,6 @@ const config: Config = {
     },
     locales: ["ja"],
   },
-  organizationName: "inabagumi",
   plugins: [
     "@docusaurus/plugin-ideal-image",
     "@docusaurus/plugin-vercel-analytics",
@@ -31,7 +30,6 @@ const config: Config = {
       } satisfies Preset.Options,
     ],
   ],
-  projectName: "website",
   tagline: "ねるねるアプリの世界へようこそ",
   themeConfig: {
     footer: {
