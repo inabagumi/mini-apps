@@ -7,7 +7,7 @@ import type {
   EntrySkeletonType,
 } from "contentful";
 import dedent from "dedent";
-import { unstable_cache as cache } from "next/cache";
+import { cacheLife } from "next/cache";
 import { cache as reactCache } from "react";
 
 import { redisClient } from "#/lib/redis";
@@ -52,18 +52,21 @@ export type FortuneEntry = Entry<
   "WITHOUT_UNRESOLVABLE_LINKS"
 >;
 
-export const getFortune = cache(
-  (id?: string): Promise<FortuneEntry> => {
-    if (!id) {
-      throw new TypeError("The fortune ID is required.");
-    }
+export const getFortune = async (id?: string): Promise<FortuneEntry> => {
+  "use cache";
+  cacheLife({ revalidate: 30 });
 
-    return getClient().getEntry<FortuneEntrySkeleton>(id);
-  },
-  ["fortune"]
-);
+  if (!id) {
+    throw new TypeError("The fortune ID is required.");
+  }
 
-export const getFortuneIDs = cache(async (): Promise<string[]> => {
+  return await getClient().getEntry<FortuneEntrySkeleton>(id);
+};
+
+export const getFortuneIDs = async (): Promise<string[]> => {
+  "use cache";
+  cacheLife("max");
+
   const results: string[] = [];
 
   const { items, limit, total } =
@@ -96,7 +99,7 @@ export const getFortuneIDs = cache(async (): Promise<string[]> => {
   }
 
   return results;
-}, ["fortunes"]);
+};
 
 export const getAnyFortuneID = reactCache(async () => {
   const id = await redisClient.spop<string>("fortunes");

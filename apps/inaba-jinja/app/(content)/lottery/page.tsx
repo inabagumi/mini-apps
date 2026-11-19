@@ -1,13 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { connection } from "next/server";
 import { Suspense } from "react";
 
 import { title as siteName, twitterAccount } from "#/lib/constants";
-import { getAnyFortuneID } from "#/lib/contentful";
-import { delay } from "#/lib/timer";
 
-import Redirect from "./_components/redirect";
+import FortuneRedirect from "./_components/fortune-redirect";
 import kujiImage from "./kuji.png";
 
 const title = "おみくじを引いています...";
@@ -31,20 +28,11 @@ export const metadata = {
   },
 } satisfies Metadata;
 
-export default async function LotteryPage() {
-  await connection();
-
-  // Create the promise here rather than in `Redirect`: a promise created in a
-  // Client Component is recreated on every render, so it never settles while
-  // the component is suspended.
-  const idPromise = Promise.all([getAnyFortuneID(), delay(2)]).then(
-    ([id]) => id
-  );
-
+export default function LotteryPage() {
   return (
     <div className="mt-8 mb-4 flex h-full flex-col items-center justify-center">
       <Suspense fallback={null}>
-        <Redirect idPromise={idPromise} />
+        <FortuneRedirect />
       </Suspense>
 
       <div className="mx-auto max-w-full animate-shake">

@@ -10,8 +10,6 @@ import { generateFortuneName, getImageURL } from "#/lib/fortune";
 
 import ShareLinks from "./_components/share-links";
 
-export const revalidate = 30;
-
 export const generateStaticParams = async (): Promise<{ id: string }[]> => {
   const ids = await getFortuneIDs();
 
