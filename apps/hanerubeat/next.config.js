@@ -29,7 +29,7 @@ const nextConfig = {
   turbopack: {},
   webpack(config, { defaultLoaders, dev }) {
     config.module.rules.push({
-      test: /\.(?:mp3|ogg|vtt)$/i,
+      test: /\.(?:mp3|ogg|vtt)$/iu,
       use: [
         defaultLoaders.babel,
         {

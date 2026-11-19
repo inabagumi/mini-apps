@@ -7,7 +7,7 @@ import { AssetProvider } from "./asset";
 import type { OverlayEntry } from "./asset";
 import HeaderMenu from "./menu";
 
-async function getAssets(): Promise<OverlayEntry[]> {
+const getAssets = async (): Promise<OverlayEntry[]> => {
   const client = createClient();
   const { items } =
     await client.withoutUnresolvableLinks.getEntries<OverlayEntrySkeleton>({
@@ -18,7 +18,7 @@ async function getAssets(): Promise<OverlayEntry[]> {
     });
 
   return items;
-}
+};
 
 export default async function CameraLayout({
   children,

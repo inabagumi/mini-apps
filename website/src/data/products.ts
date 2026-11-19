@@ -1,9 +1,12 @@
-/* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/no-require-imports, @typescript-eslint/no-unsafe-assignment */
+// Docusaurus ideal-image requires images to be loaded with `require()`.
+/* oxlint-disable node/global-require, unicorn/prefer-module */
+
+import type { Props as IdealImageProps } from "@theme/IdealImage";
 
 interface Product {
   description: string;
   learnMore: string;
-  preview: any;
+  preview: IdealImageProps["img"];
   title: string;
   website: string;
 }

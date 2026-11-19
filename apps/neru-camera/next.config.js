@@ -2,7 +2,7 @@ const nextPWA = require("next-pwa");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  async headers() {
+  headers() {
     return [
       {
         headers: [
@@ -33,7 +33,7 @@ const nextConfig = {
       },
     ];
   },
-  async rewrites() {
+  rewrites() {
     return [
       {
         destination: "/_next/static/service-worker.js",

@@ -1,5 +1,5 @@
 import { ErrorMessage } from "@hookform/error-message";
-import TextField from "@site/src/components/TextField";
+import TextField from "@site/src/components/text-field";
 import { clsx } from "clsx";
 import type { RegisterOptions } from "react-hook-form";
 import { useFormContext } from "react-hook-form";
@@ -7,7 +7,7 @@ import TextareaAutosize from "react-textarea-autosize";
 
 import type { FormData } from "./types";
 
-import styles from "./FormControl.module.css";
+import styles from "./form-control.module.css";
 
 export default function FormControl<Name extends keyof FormData>({
   disabled = false,
@@ -31,12 +31,13 @@ export default function FormControl<Name extends keyof FormData>({
     register,
   } = useFormContext<FormData>();
 
-  const isRequired =
-    "required" in registerOptions
-      ? typeof registerOptions.required === "object"
+  let isRequired = false;
+  if ("required" in registerOptions) {
+    isRequired =
+      typeof registerOptions.required === "object"
         ? registerOptions.required.value
-        : registerOptions.required !== false
-      : false;
+        : registerOptions.required !== false;
+  }
   const isInvalid = name in errors;
 
   return (

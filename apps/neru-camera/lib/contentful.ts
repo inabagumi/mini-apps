@@ -16,10 +16,10 @@ export type OverlayEntrySkeleton = EntrySkeletonType<
 
 export const createClient = (): ContentfulClientApi<undefined> => {
   if (!process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN) {
-    throw new TypeError();
+    throw new TypeError("The access token is required.");
   }
   if (!process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID) {
-    throw new TypeError();
+    throw new TypeError("The space ID is required.");
   }
 
   return createContentfulClient({

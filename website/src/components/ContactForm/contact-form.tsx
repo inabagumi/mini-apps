@@ -1,4 +1,4 @@
-import FormControl from "./FormControl";
+import FormControl from "./form-control";
 import { useHandleSubmit } from "./hooks";
 
 export default function ContactForm() {
@@ -34,7 +34,7 @@ export default function ContactForm() {
           registerOptions={{
             pattern: {
               message: "メールアドレスには@が必要です。",
-              value: /.+@.+/,
+              value: /.+@.+/u,
             },
             required: {
               message: "メールアドレスは必須です。",

@@ -3,10 +3,10 @@ import type { FortuneEntry } from "@/lib/contentful";
 
 // export const runtime = 'edge'
 
-export async function GET(
+export const GET = async (
   request: Request,
   { params }: { params: Promise<{ id: string }> }
-): Promise<Response> {
+): Promise<Response> => {
   const { id } = await params;
   let fortune: FortuneEntry;
 
@@ -19,4 +19,4 @@ export async function GET(
   }
 
   return Response.redirect(new URL(`/kuji/${fortune.sys.id}`, request.url));
-}
+};

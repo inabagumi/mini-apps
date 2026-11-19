@@ -3,6 +3,7 @@ export default function processing(
   type = "image/png",
   quality = 1
 ): Promise<Blob> {
+  // oxlint-disable-next-line promise/avoid-new -- canvas.toBlob() only provides a callback-based API.
   return new Promise((resolve, reject) => {
     const canvas = document.createElement("canvas");
     const context = canvas.getContext("2d");

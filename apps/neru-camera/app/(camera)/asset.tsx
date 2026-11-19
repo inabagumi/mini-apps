@@ -1,7 +1,13 @@
 "use client";
 
 import type { Entry } from "contentful";
-import { createContext, useCallback, useContext, useState } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useMemo,
+  useState,
+} from "react";
 import type { Dispatch, ReactNode, SetStateAction } from "react";
 
 import type { OverlayEntrySkeleton } from "@/lib/contentful";
@@ -28,7 +34,7 @@ interface UseAsset {
   setAssetID: SetAssetIDFn;
 }
 
-export function useAsset(): UseAsset {
+export const useAsset = (): UseAsset => {
   const { current, setAsset, values } = useContext(AssetContext);
 
   const setAssetID = useCallback<SetAssetIDFn>(
@@ -57,19 +63,21 @@ export function useAsset(): UseAsset {
     currentAsset: current,
     setAssetID,
   };
-}
+};
 
 interface AssetProviderProps {
   assets: OverlayEntry[];
   children: ReactNode;
 }
 
-export function AssetProvider({ assets, children }: AssetProviderProps) {
-  const [current, setAsset] = useState(() => assets[0]);
+export const AssetProvider = ({ assets, children }: AssetProviderProps) => {
+  const [asset, setAsset] = useState(() => assets[0]);
+  const value = useMemo(
+    () => ({ current: asset, setAsset, values: assets }),
+    [asset, assets]
+  );
 
   return (
-    <AssetContext.Provider value={{ current, setAsset, values: assets }}>
-      {children}
-    </AssetContext.Provider>
+    <AssetContext.Provider value={value}>{children}</AssetContext.Provider>
   );
-}
+};

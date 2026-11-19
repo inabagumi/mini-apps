@@ -7,5 +7,23 @@ import react from "ultracite/oxlint/react";
 export default defineConfig({
   env: core.env,
   extends: [core, react, next, jest],
-  ignorePatterns: core.ignorePatterns,
+  ignorePatterns: [
+    ...core.ignorePatterns,
+    // Copied from Docusaurus as is.
+    "website/src/theme/IdealImage/**",
+  ],
+  overrides: [
+    {
+      // These packages are not ES modules, so their config files must be
+      // written in CommonJS.
+      files: [
+        "apps/774-ink/*.config.js",
+        "apps/hanerubeat/*.config.js",
+        "apps/neru-camera/*.config.js",
+      ],
+      rules: {
+        "unicorn/prefer-module": "off",
+      },
+    },
+  ],
 });

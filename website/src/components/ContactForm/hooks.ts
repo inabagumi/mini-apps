@@ -5,9 +5,9 @@ import { useFormContext } from "react-hook-form";
 
 import type { FormData, HandleSubmit } from "./types";
 
-export function useHandleSubmit(
+export const useHandleSubmit = (
   formKey: string
-): [FormState<FormData>, HandleSubmit] {
+): [FormState<FormData>, HandleSubmit] => {
   const {
     formState,
     handleSubmit: createHandleSubmit,
@@ -29,4 +29,4 @@ export function useHandleSubmit(
   );
 
   return [formState, handleSubmit];
-}
+};

@@ -14,10 +14,10 @@ import { redisClient } from "@/lib/redis";
 
 let client: ContentfulClientApi<"WITHOUT_UNRESOLVABLE_LINKS">;
 
-export function getClient(
+export const getClient = (
   accessToken = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
   space = process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID
-): ContentfulClientApi<"WITHOUT_UNRESOLVABLE_LINKS"> {
+): ContentfulClientApi<"WITHOUT_UNRESOLVABLE_LINKS"> => {
   if (!client) {
     if (!accessToken) {
       throw new TypeError("The access token is required.");
@@ -33,7 +33,7 @@ export function getClient(
   }
 
   return client;
-}
+};
 
 export type FortuneEntrySkeleton = EntrySkeletonType<
   {
@@ -53,8 +53,10 @@ export type FortuneEntry = Entry<
 >;
 
 export const getFortune = cache(
-  async (id?: string): Promise<FortuneEntry> => {
-    if (!id) throw new TypeError("The fortune ID is required.");
+  (id?: string): Promise<FortuneEntry> => {
+    if (!id) {
+      throw new TypeError("The fortune ID is required.");
+    }
 
     return getClient().getEntry<FortuneEntrySkeleton>(id);
   },

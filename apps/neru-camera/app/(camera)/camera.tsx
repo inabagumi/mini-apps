@@ -9,7 +9,7 @@ import {
 } from "@reach/alert-dialog";
 import { track } from "@vercel/analytics";
 import { fileSave } from "browser-fs-access";
-import clsx from "clsx";
+import { clsx } from "clsx";
 import type { Application } from "pixi.js";
 import { useCallback, useEffect, useState } from "react";
 
@@ -45,40 +45,44 @@ export default function Camera() {
 
   const handleUnmount = useCallback(() => setPixiView(undefined), []);
 
-  const takePhoto = useCallback(() => {
+  const takePhoto = useCallback(async () => {
     if (isShooting || !pixiView) {
       return;
     }
 
     setIsShooting(true);
 
-    processing(pixiView, "image/jpeg", 0.8)
-      .then((blob) =>
-        fileSave(blob, {
-          extensions: [".jpg", ".jpeg"],
-          fileName: `NeruCamera-${Date.now()}.jpg`,
-        })
-      )
-      .then(() => {
-        track("takePhoto");
-      })
-      .catch((error) => {
-        console.error(error);
-      })
-      .finally(() => setIsShooting(false));
+    try {
+      const blob = await processing(pixiView, "image/jpeg", 0.8);
+
+      await fileSave(blob, {
+        extensions: [".jpg", ".jpeg"],
+        fileName: `NeruCamera-${Date.now()}.jpg`,
+      });
+
+      track("takePhoto");
+    } catch (error) {
+      console.error(error);
+    }
+
+    setIsShooting(false);
   }, [pixiView, isShooting]);
 
   useEffect(() => {
-    if (!navigator.mediaDevices) {
-      setHasError(true);
+    const startCamera = async () => {
+      try {
+        // `navigator.mediaDevices` is undefined in insecure contexts.
+        const stream = await navigator.mediaDevices.getUserMedia(
+          mediaStreamConstraints
+        );
 
-      return;
-    }
+        setCameraStream(stream);
+      } catch {
+        setHasError(true);
+      }
+    };
 
-    navigator.mediaDevices
-      .getUserMedia(mediaStreamConstraints)
-      .then((cameraStream) => setCameraStream(cameraStream))
-      .catch(() => setHasError(true));
+    startCamera();
   }, []);
 
   return (
@@ -142,6 +146,7 @@ export default function Camera() {
           disabled={isShooting}
           onClick={takePhoto}
           tabIndex={-1}
+          type="button"
         >
           <span className="sr-only">写真を撮る</span>
         </button>

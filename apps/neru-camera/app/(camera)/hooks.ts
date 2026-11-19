@@ -6,17 +6,15 @@ export interface UseVideoTextureOptions {
   srcObject?: MediaStream;
 }
 
-export function useVideoTexture({
+export const useVideoTexture = ({
   src,
   srcObject,
-}: UseVideoTextureOptions): Texture | undefined {
+}: UseVideoTextureOptions): Texture | undefined => {
   const [texture, setTexture] = useState<Texture>();
 
   const handleLoadedData = useCallback((event: Event) => {
     const target = event.currentTarget as HTMLVideoElement;
-    const texture = Texture.from(target);
-
-    setTexture(texture);
+    setTexture(Texture.from(target));
   }, []);
 
   useEffect(() => {
@@ -46,4 +44,4 @@ export function useVideoTexture({
   }, [handleLoadedData, src, srcObject]);
 
   return texture;
-}
+};

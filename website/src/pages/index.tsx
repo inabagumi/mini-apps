@@ -52,14 +52,12 @@ export default function Home() {
                             className="button button--block button--secondary button--small"
                             href={product.website}
                             rel="noopener noreferrer"
-                            role="button"
                             target="_blank"
                           >
                             ウェブサイト
                           </a>
                           <Link
                             className="button button--block button--secondary button--small"
-                            role="button"
                             to={product.learnMore}
                           >
                             もっと詳しく

@@ -6,7 +6,7 @@ const createJestConfig = nextJest();
 const jestConfig = {
   collectCoverageFrom: ["**/*.{ts,tsx}", "!**/*.d.ts"],
   moduleNameMapper: {
-    "\\.svg": "<rootDir>/__mocks__/svgMock.tsx",
+    "\\.svg": "<rootDir>/__mocks__/svg-mock.tsx",
   },
   setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
   testURL: "https://inaba-jinja.test",

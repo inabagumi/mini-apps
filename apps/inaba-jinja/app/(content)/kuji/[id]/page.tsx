@@ -13,19 +13,19 @@ import ShareLinks from "./_components/share-links";
 // export const runtime = 'edge'
 export const revalidate = 30;
 
-export async function generateStaticParams(): Promise<{ id: string }[]> {
+export const generateStaticParams = async (): Promise<{ id: string }[]> => {
   const ids = await getFortuneIDs();
 
   return ids.map((id) => ({ id }));
-}
+};
 
-export async function generateMetadata({
+export const generateMetadata = async ({
   params,
 }: {
   params: Promise<{
     id: string;
   }>;
-}): Promise<Metadata | null> {
+}): Promise<Metadata | null> => {
   const { id } = await params;
   let fortune: FortuneEntry;
   try {
@@ -69,7 +69,7 @@ export async function generateMetadata({
       title: `${title} - ${siteName}`,
     },
   };
-}
+};
 
 export default async function Page({
   params,

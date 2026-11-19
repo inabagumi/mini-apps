@@ -19,7 +19,7 @@ const withMDX = nextMDX({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  async headers() {
+  headers() {
     return [
       {
         headers: [
@@ -42,7 +42,7 @@ const nextConfig = {
   },
   pageExtensions: ["tsx", "mdx", "ts"],
   reactStrictMode: true,
-  async redirects() {
+  redirects() {
     return [
       {
         destination: "/lottery",
@@ -59,7 +59,7 @@ const nextConfig = {
   turbopack: {},
   webpack(config, { defaultLoaders }) {
     config.module.rules.push({
-      test: /\.svg$/,
+      test: /\.svg$/u,
       use: [
         defaultLoaders.babel,
         {

@@ -1,7 +1,7 @@
 import { clsx } from "clsx";
 import type { ComponentProps } from "react";
 
-import styles from "./TextField.module.css";
+import styles from "./text-field.module.css";
 
 export default function TextField({
   block = false,

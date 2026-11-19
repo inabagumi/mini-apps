@@ -30,23 +30,21 @@ export default function Overlay({
   );
 
   return (
-    <>
-      <Viewport
-        events={app.renderer.events}
-        screenHeight={app.screen.height}
-        screenWidth={app.screen.width}
-        worldHeight={app.screen.height}
-        worldWidth={app.screen.width}
-      >
-        {texture && (
-          <Sprite
-            anchor={new Point(anchor, anchor)}
-            position={position}
-            texture={texture}
-            filters={[chromaKeyFilter]}
-          />
-        )}
-      </Viewport>
-    </>
+    <Viewport
+      events={app.renderer.events}
+      screenHeight={app.screen.height}
+      screenWidth={app.screen.width}
+      worldHeight={app.screen.height}
+      worldWidth={app.screen.width}
+    >
+      {texture && (
+        <Sprite
+          anchor={new Point(anchor, anchor)}
+          position={position}
+          texture={texture}
+          filters={[chromaKeyFilter]}
+        />
+      )}
+    </Viewport>
   );
 }

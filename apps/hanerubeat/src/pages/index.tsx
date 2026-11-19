@@ -6,12 +6,29 @@ import { MdVolumeOff, MdVolumeUp } from "react-icons/md";
 
 import styles from "styles/pages/index.module.css";
 
+const tryToPlay = async (audio: HTMLAudioElement): Promise<boolean> => {
+  try {
+    await audio.play();
+
+    return true;
+  } catch {
+    return false;
+  }
+};
+
 const Heartbeat: NextPage = () => {
   const heartRef = useRef<HTMLAudioElement>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [muted, setMuted] = useState<boolean>(true);
 
-  const handleButtonClick = useCallback(() => {
+  const play = useCallback(async (audio: HTMLAudioElement) => {
+    const isPlaying = await tryToPlay(audio);
+
+    setMuted(!isPlaying);
+    setIsLoading(false);
+  }, []);
+
+  const handleButtonClick = useCallback(async () => {
     if (isLoading || !heartRef.current) {
       return;
     }
@@ -19,51 +36,21 @@ const Heartbeat: NextPage = () => {
     if (heartRef.current.paused) {
       setIsLoading(true);
 
-      const playPromise = heartRef.current.play();
-
-      if (typeof playPromise !== "undefined") {
-        playPromise
-          .then(() => {
-            setMuted(false);
-          })
-          .catch(() => {
-            setMuted(true);
-          })
-          .finally(() => {
-            setIsLoading(false);
-          });
-      } else {
-        setMuted(heartRef.current.paused);
-      }
+      await play(heartRef.current);
     } else {
       heartRef.current.muted = !muted;
 
       setMuted(!muted);
     }
-  }, [muted, isLoading]);
+  }, [muted, isLoading, play]);
 
   useEffect(() => {
     if (!heartRef.current) {
       return;
     }
 
-    const playPromise = heartRef.current.play();
-
-    if (playPromise !== undefined) {
-      playPromise
-        .then(() => {
-          setMuted(false);
-        })
-        .catch(() => {
-          setMuted(true);
-        })
-        .finally(() => {
-          setIsLoading(false);
-        });
-    } else {
-      setMuted(heartRef.current.paused);
-    }
-  }, []);
+    play(heartRef.current);
+  }, [play]);
 
   const ButtonIcon = muted ? MdVolumeOff : MdVolumeUp;
 
@@ -83,6 +70,7 @@ const Heartbeat: NextPage = () => {
             className={styles.button}
             disabled={isLoading}
             onClick={handleButtonClick}
+            type="button"
           >
             <ButtonIcon className={styles.button__icon} />
           </button>
