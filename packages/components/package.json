@@ -20,15 +20,6 @@
     "directory": "packages/components"
   },
   "type": "module",
-  "main": "dist/index.mjs",
-  "types": "dist/index.d.mts",
-  "typesVersions": {
-    "*": {
-      "skeleton": [
-        "./dist/skeleton/index.d.mts"
-      ]
-    }
-  },
   "exports": {
     ".": {
       "types": "./dist/index.d.mts",
@@ -50,7 +41,6 @@
   "devDependencies": {
     "@inabagumi/config": "workspace:*",
     "@testing-library/react": "16.3.3",
-    "@tsconfig/node20": "20.1.11",
     "@tsconfig/strictest": "2.0.9",
     "@types/node": "26.6.6",
     "@types/react": "19.3.0",
