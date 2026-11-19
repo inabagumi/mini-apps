@@ -1,3 +1,4 @@
+import { SerwistProvider } from "@serwist/turbopack/react";
 import { DefaultSeo } from "next-seo";
 import type { AppProps } from "next/app";
 import type { FC } from "react";
@@ -9,7 +10,10 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
   const description = process.env.NEXT_PUBLIC_DESCRIPTION;
 
   return (
-    <>
+    <SerwistProvider
+      disable={process.env.NODE_ENV === "development"}
+      swUrl="/service-worker.js"
+    >
       <DefaultSeo
         description={description}
         openGraph={{
@@ -32,7 +36,7 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
       />
 
       <Component {...pageProps} />
-    </>
+    </SerwistProvider>
   );
 };
 
