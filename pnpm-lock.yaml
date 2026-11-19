@@ -483,14 +483,10 @@ importers:
         version: 6.0.3
 
   packages/components:
-    dependencies:
-      react:
-        specifier: ^19.0.0
-        version: 19.3.1
-      tailwind-merge:
-        specifier: ^3.0.0
-        version: 3.7.0
     devDependencies:
+      '@testing-library/react':
+        specifier: 16.3.3
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@tsconfig/node20':
         specifier: 20.1.11
         version: 20.1.11
@@ -503,12 +499,33 @@ importers:
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
+      '@vitejs/plugin-react':
+        specifier: 6.3.0
+        version: 6.3.0(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1))
+      jsdom:
+        specifier: 31.0.1
+        version: 31.0.1(@noble/hashes@1.8.0)
+      react:
+        specifier: 19.3.1
+        version: 19.3.1
+      react-dom:
+        specifier: 19.3.1
+        version: 19.3.1(react@19.3.1)
+      tailwind-merge:
+        specifier: 3.7.0
+        version: 3.7.0
       tsdown:
         specifier: 0.23.7
         version: 0.23.7(typescript@6.0.3)
       typescript:
         specifier: 6.0.3
         version: 6.0.3
+      vite:
+        specifier: 8.3.8
+        version: 8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1)
+      vitest:
+        specifier: 5.1.1
+        version: 5.1.1(@types/node@26.6.6)(jsdom@31.0.1(@noble/hashes@1.8.0))(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1))
 
   packages/theme:
     dependencies:
