@@ -1,5 +1,5 @@
 {
-  "extends": "@inabagumi/tsconfig/nextjs.json",
+  "extends": "@inabagumi/config/tsconfig/nextjs.json",
   "exclude": ["node_modules"],
   "include": [
     "next-env.d.ts",
