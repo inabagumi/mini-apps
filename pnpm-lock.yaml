@@ -232,6 +232,9 @@ importers:
       '@inabagumi/config':
         specifier: workspace:*
         version: link:../../packages/config
+      '@inabagumi/vitest-config':
+        specifier: workspace:*
+        version: link:../../packages/vitest-config
       '@tailwindcss/turbopack':
         specifier: 4.3.5
         version: 4.3.5
@@ -244,9 +247,6 @@ importers:
       '@types/web-app-manifest':
         specifier: 1.0.9
         version: 1.0.9
-      '@vitejs/plugin-react':
-        specifier: 6.3.0
-        version: 6.3.0(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1))
       file-loader:
         specifier: 6.2.0
         version: 6.2.0(webpack@5.112.2(@swc/core@1.16.13(@swc/helpers@0.5.23))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.33))(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@7.2.0)(lightningcss@1.33.0)(postcss@8.5.33)(sharp@0.35.5(@types/node@26.6.6))(svgo@3.3.5))
@@ -284,6 +284,9 @@ importers:
       '@inabagumi/config':
         specifier: workspace:*
         version: link:../../packages/config
+      '@inabagumi/vitest-config':
+        specifier: workspace:*
+        version: link:../../packages/vitest-config
       '@serwist/turbopack':
         specifier: 9.5.15
         version: 9.5.15(@swc/helpers@0.5.23)(esbuild-wasm@0.28.2)(esbuild@0.28.2)(next@16.4.6(@babel/core@7.29.13(supports-color@8.1.1))(@types/node@26.6.6)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react@19.3.1)(typescript@6.0.3)
@@ -302,9 +305,6 @@ importers:
       '@types/react-dom':
         specifier: 19.3.0
         version: 19.3.0(@types/react@19.3.0)
-      '@vitejs/plugin-react':
-        specifier: 6.3.0
-        version: 6.3.0(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1))
       esbuild-wasm:
         specifier: 0.28.2
         version: 0.28.2
@@ -378,6 +378,9 @@ importers:
       '@inabagumi/theme':
         specifier: workspace:*
         version: link:../../packages/theme
+      '@inabagumi/vitest-config':
+        specifier: workspace:*
+        version: link:../../packages/vitest-config
       '@mdx-js/loader':
         specifier: 3.1.1
         version: 3.1.1(supports-color@8.1.1)(webpack@5.112.2(@swc/core@1.16.13(@swc/helpers@0.5.23))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.33))(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@7.2.0)(lightningcss@1.33.0)(postcss@8.5.33)(sharp@0.35.5(@types/node@26.6.6))(svgo@3.3.5))
@@ -390,9 +393,6 @@ importers:
       '@tailwindcss/turbopack':
         specifier: 4.3.5
         version: 4.3.5
-      '@testing-library/jest-dom':
-        specifier: 7.0.1
-        version: 7.0.1(@testing-library/dom@10.4.2)(vitest@5.1.1(@types/node@26.6.6)(jsdom@31.0.1(@noble/hashes@1.8.0))(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1)))
       '@testing-library/react':
         specifier: 16.3.3
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
@@ -414,9 +414,6 @@ importers:
       '@types/webpack-env':
         specifier: 1.18.8
         version: 1.18.8
-      '@vitejs/plugin-react':
-        specifier: 6.3.0
-        version: 6.3.0(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1))
       jsdom:
         specifier: 31.0.1
         version: 31.0.1(@noble/hashes@1.8.0)
@@ -490,6 +487,9 @@ importers:
       '@inabagumi/config':
         specifier: workspace:*
         version: link:../../packages/config
+      '@inabagumi/vitest-config':
+        specifier: workspace:*
+        version: link:../../packages/vitest-config
       '@serwist/turbopack':
         specifier: 9.5.15
         version: 9.5.15(@swc/helpers@0.5.23)(esbuild-wasm@0.28.2)(esbuild@0.28.2)(next@16.4.6(@babel/core@7.29.13(supports-color@8.1.1))(@types/node@26.6.6)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react@19.3.1)(typescript@6.0.3)
@@ -502,9 +502,6 @@ importers:
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
-      '@vitejs/plugin-react':
-        specifier: 6.3.0
-        version: 6.3.0(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1))
       esbuild-wasm:
         specifier: 0.28.2
         version: 0.28.2
@@ -535,6 +532,9 @@ importers:
 
   packages/components:
     devDependencies:
+      '@inabagumi/vitest-config':
+        specifier: workspace:*
+        version: link:../vitest-config
       '@testing-library/react':
         specifier: 16.3.3
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
@@ -550,9 +550,6 @@ importers:
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
-      '@vitejs/plugin-react':
-        specifier: 6.3.0
-        version: 6.3.0(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1))
       jsdom:
         specifier: 31.0.1
         version: 31.0.1(@noble/hashes@1.8.0)
@@ -591,6 +588,52 @@ importers:
       tailwindcss-safe-area:
         specifier: 1.3.0
         version: 1.3.0(tailwindcss@4.3.5)
+
+  packages/vitest-config:
+    dependencies:
+      '@testing-library/jest-dom':
+        specifier: 7.0.1
+        version: 7.0.1(@testing-library/dom@10.4.2)(vitest@5.1.1(@types/node@26.6.6)(jsdom@31.0.1(@noble/hashes@1.8.0))(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1)))
+      '@vitejs/plugin-react':
+        specifier: 6.3.0
+        version: 6.3.0(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1))
+    devDependencies:
+      '@testing-library/react':
+        specifier: 16.3.3
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
+      '@tsconfig/node20':
+        specifier: 20.1.11
+        version: 20.1.11
+      '@tsconfig/strictest':
+        specifier: 2.0.9
+        version: 2.0.9
+      '@types/node':
+        specifier: 26.6.6
+        version: 26.6.6
+      '@types/react':
+        specifier: 19.3.0
+        version: 19.3.0
+      '@types/react-dom':
+        specifier: 19.3.0
+        version: 19.3.0(@types/react@19.3.0)
+      jsdom:
+        specifier: 31.0.1
+        version: 31.0.1(@noble/hashes@1.8.0)
+      react:
+        specifier: 19.3.1
+        version: 19.3.1
+      react-dom:
+        specifier: 19.3.1
+        version: 19.3.1(react@19.3.1)
+      typescript:
+        specifier: 6.0.3
+        version: 6.0.3
+      vite:
+        specifier: 8.3.8
+        version: 8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1)
+      vitest:
+        specifier: 5.1.1
+        version: 5.1.1(@types/node@26.6.6)(jsdom@31.0.1(@noble/hashes@1.8.0))(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1))
 
   website:
     dependencies:
