@@ -39,7 +39,6 @@ export default function Home() {
                   <div className="col col--4" key={product.website}>
                     <div className="card margin-bottom--md">
                       <div className="card__image">
-                        {/* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */}
                         <Image alt={product.title} img={product.preview} />
                       </div>
                       <div className="card__body">
