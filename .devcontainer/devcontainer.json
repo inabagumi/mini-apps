@@ -16,7 +16,7 @@
     "storage": "32gb"
   },
   "image": "mcr.microsoft.com/devcontainers/typescript-node:5-26-bookworm",
-  "name": "Inaba Jinja",
+  "name": "mini-apps",
   "postCreateCommand": "./.devcontainer/post-create.sh",
   "waitFor": "postCreateCommand"
 }
