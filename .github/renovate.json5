@@ -9,5 +9,4 @@
       matchUpdateTypes: ["major"],
     },
   ],
-  reviewers: ["ykzts"],
 }
