@@ -14,7 +14,10 @@ const config: Config = {
     locales: ["ja"],
   },
   organizationName: "inabagumi",
-  plugins: ["@docusaurus/plugin-ideal-image"],
+  plugins: [
+    "@docusaurus/plugin-ideal-image",
+    "@docusaurus/plugin-vercel-analytics",
+  ],
   presets: [
     [
       "@docusaurus/preset-classic",
