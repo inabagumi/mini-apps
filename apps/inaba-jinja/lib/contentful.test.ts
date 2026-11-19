@@ -16,16 +16,22 @@ interface Query {
 
 const mocks = vi.hoisted(() => {
   const getEntries = vi.fn<(query: Query) => Promise<Collection>>();
+  const getEntry = vi.fn<(id: string) => Promise<{ sys: { id: string } }>>();
 
   return {
+    cacheLife: vi.fn<(profile: unknown) => void>(),
     createClient: vi.fn<
       (params: { accessToken: string; space: string }) => {
-        withoutUnresolvableLinks: { getEntries: typeof getEntries };
+        withoutUnresolvableLinks: {
+          getEntries: typeof getEntries;
+          getEntry: typeof getEntry;
+        };
       }
-    >(() => ({ withoutUnresolvableLinks: { getEntries } })),
+    >(() => ({ withoutUnresolvableLinks: { getEntries, getEntry } })),
     eval: vi.fn<(script: string, keys: string[], args: string[]) => void>(),
     exec: vi.fn<() => Promise<[string | null]>>(),
     getEntries,
+    getEntry,
     spop: vi.fn<(key: string) => Promise<string | null>>(),
   };
 });
@@ -35,7 +41,7 @@ vi.mock(import("contentful"), () => ({
 }));
 
 vi.mock(import("next/cache"), () => ({
-  unstable_cache: <T>(fn: T): T => fn,
+  cacheLife: mocks.cacheLife,
 }));
 
 vi.mock(import("#/lib/redis"), () => ({
@@ -111,7 +117,48 @@ describe("lib/contentful", () => {
     });
   });
 
+  describe("getFortune", () => {
+    it("returns the entry for the ID", async () => {
+      mocks.getEntry.mockResolvedValueOnce({ sys: { id: "fortune-1" } });
+      const { getFortune } = await loadModule();
+
+      await expect(getFortune("fortune-1")).resolves.toStrictEqual({
+        sys: { id: "fortune-1" },
+      });
+      expect(mocks.getEntry).toHaveBeenCalledWith("fortune-1");
+    });
+
+    it("revalidates the entry every 30 seconds", async () => {
+      mocks.getEntry.mockResolvedValueOnce({ sys: { id: "fortune-1" } });
+      const { getFortune } = await loadModule();
+
+      await getFortune("fortune-1");
+
+      expect(mocks.cacheLife).toHaveBeenCalledExactlyOnceWith({
+        revalidate: 30,
+      });
+    });
+
+    it("throws a TypeError when the ID is missing", async () => {
+      const { getFortune } = await loadModule();
+
+      await expect(getFortune()).rejects.toThrow(
+        new TypeError("The fortune ID is required.")
+      );
+      expect(mocks.getEntry).not.toHaveBeenCalled();
+    });
+  });
+
   describe("getFortuneIDs", () => {
+    it("caches the IDs with the max profile", async () => {
+      mocks.getEntries.mockResolvedValueOnce(createCollection(["a"], 1));
+      const { getFortuneIDs } = await loadModule();
+
+      await getFortuneIDs();
+
+      expect(mocks.cacheLife).toHaveBeenCalledExactlyOnceWith("max");
+    });
+
     it("returns the IDs of a single page", async () => {
       mocks.getEntries.mockResolvedValueOnce(
         createCollection(["a", "b", "c"], 3)
