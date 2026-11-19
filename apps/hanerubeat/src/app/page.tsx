@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import Heartbeat from "#/components/heartbeat";
+import Heartbeat from "./_components/heartbeat";
 
 export const metadata: Metadata = {
   alternates: {

@@ -1,9 +1,9 @@
 import type { ComponentProps } from "react";
 import { MdFavorite } from "react-icons/md";
 
-const mp3Path = new URL("../assets/heartbeat.mp3", import.meta.url).pathname;
-const oggPath = new URL("../assets/heartbeat.ogg", import.meta.url).pathname;
-const captionPath = new URL("../assets/heartbeat.vtt", import.meta.url)
+const mp3Path = new URL("../../assets/heartbeat.mp3", import.meta.url).pathname;
+const oggPath = new URL("../../assets/heartbeat.ogg", import.meta.url).pathname;
+const captionPath = new URL("../../assets/heartbeat.vtt", import.meta.url)
   .pathname;
 
 export default function Heart({ ref }: ComponentProps<"audio">) {

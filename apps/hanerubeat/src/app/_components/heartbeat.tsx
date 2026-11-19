@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { MdVolumeOff, MdVolumeUp } from "react-icons/md";
 
-import Heart from "#/components/heart";
+import Heart from "./heart";
 
 const tryToPlay = async (audio: HTMLAudioElement): Promise<boolean> => {
   try {

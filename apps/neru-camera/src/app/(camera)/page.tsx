@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import { description, title } from "#/lib/constants";
 
-import WrappedCamera from "./wrapped-camera";
+import WrappedCamera from "./_components/wrapped-camera";
 
 export const metadata: Metadata = {
   alternates: {
