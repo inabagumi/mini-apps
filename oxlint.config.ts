@@ -1,12 +1,12 @@
 import { defineConfig } from "oxlint";
 import core from "ultracite/oxlint/core";
-import jest from "ultracite/oxlint/jest";
 import next from "ultracite/oxlint/next";
 import react from "ultracite/oxlint/react";
+import vitest from "ultracite/oxlint/vitest";
 
 export default defineConfig({
   env: core.env,
-  extends: [core, react, next, jest],
+  extends: [core, react, next, vitest],
   ignorePatterns: [
     ...core.ignorePatterns,
     // Copied from Docusaurus as is.
