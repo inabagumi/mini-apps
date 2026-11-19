@@ -5,7 +5,7 @@ on:
     branches: [main]
   push:
     branches: [main]
-    tags: ['!v*']
+    tags: ["!v*"]
 
 env:
   # renovate: datasource=npm depName=corepack
@@ -32,9 +32,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - run: pnpm typegen
-      - name: Format check
-        run: pnpm format-check
-      - name: Lint
-        run: pnpm lint
+      - name: Lint and format check
+        run: pnpm check
       # - name: Test
       #   run: pnpm test --ci --coverage
