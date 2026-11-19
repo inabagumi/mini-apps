@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
 import { appleTouchIcon, card, favicon256x256 } from "@/assets";
 
@@ -12,9 +12,6 @@ export const metadata: Metadata = {
   icons: {
     icon: favicon256x256.src,
     apple: appleTouchIcon.src,
-  },
-  other: {
-    theme_color: "#544643",
   },
   alternates: {
     canonical,
@@ -33,6 +30,10 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#544643",
 };
 
 export default function RootLayout({
