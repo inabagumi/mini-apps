@@ -1,19 +1,21 @@
 import "./globals.css";
 import { SerwistProvider } from "@serwist/turbopack/react";
 import { Analytics } from "@vercel/analytics/react";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 
-import { title } from "#/lib/constants";
+import { themeColor, title } from "#/lib/constants";
 
 export const metadata: Metadata = {
-  metadataBase: process.env.NEXT_PUBLIC_BASE_URL
-    ? new URL(process.env.NEXT_PUBLIC_BASE_URL)
-    : null,
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL),
   title: {
     default: title,
     template: `%s - ${title}`,
   },
+};
+
+export const viewport: Viewport = {
+  themeColor,
 };
 
 interface Props {

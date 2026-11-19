@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 
+import { title } from "#/lib/constants";
+
 import Heartbeat from "./_components/heartbeat";
 
 export const metadata: Metadata = {
@@ -7,7 +9,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   title: {
-    absolute: process.env.NEXT_PUBLIC_TITLE || "",
+    absolute: title,
   },
 };
 

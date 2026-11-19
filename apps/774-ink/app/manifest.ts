@@ -1,29 +1,27 @@
 import type { MetadataRoute } from "next";
 
-import { favicon192x192, favicon512x512 } from "#/assets";
+import { themeColor, title } from "#/lib/constants";
+
+import favicon192x192 from "./manifest-icon-192x192.png";
+import favicon512x512 from "./manifest-icon-512x512.png";
+
+const ICONS = [favicon192x192, favicon512x512];
 
 export default function manifest(): MetadataRoute.Manifest {
-  const name = "774 ink.";
+  const icons = ICONS.map((icon) => ({
+    sizes: `${icon.width}x${icon.height}`,
+    src: icon.src,
+    type: "image/png",
+  }));
 
   return {
     background_color: "#fff",
     display: "standalone",
-    icons: [
-      {
-        sizes: `${favicon192x192.width}x${favicon192x192.height}`,
-        src: favicon192x192.src,
-        type: "image/png",
-      },
-      {
-        sizes: `${favicon512x512.width}x${favicon512x512.height}`,
-        src: favicon512x512.src,
-        type: "image/png",
-      },
-    ],
-    name,
+    icons,
+    name: title,
     scope: "/",
-    short_name: name,
+    short_name: title,
     start_url: "/",
-    theme_color: "#544643",
+    theme_color: themeColor,
   };
 }
