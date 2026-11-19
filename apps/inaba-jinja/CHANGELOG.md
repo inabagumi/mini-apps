@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.1.0](https://github.com/inabagumi/mini-apps/compare/inaba-jinja-v4.0.5...inaba-jinja-v4.1.0) (2026-11-19)
+
+
+### Features
+
+* **inaba-jinja:** enable Partial Prefetching ([#4849](https://github.com/inabagumi/mini-apps/issues/4849)) ([d66d599](https://github.com/inabagumi/mini-apps/commit/d66d599c88cf3f290baf76abcef97011b0b4fb90))
+
+
+### Bug Fixes
+
+* **inaba-jinja:** register every fortune ID when refilling Redis ([#4847](https://github.com/inabagumi/mini-apps/issues/4847)) ([b03ab45](https://github.com/inabagumi/mini-apps/commit/b03ab45c3c3b12eef342e94bf1040a8d2c5d851b))
+
 ## [4.0.5](https://github.com/inabagumi/mini-apps/compare/inaba-jinja-v4.0.4...inaba-jinja-v4.0.5) (2026-11-19)
 
 
