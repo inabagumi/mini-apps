@@ -1,3 +1,3 @@
-import baseConfig from "@inabagumi/config/vitest";
+import { defineVitestConfig } from "@inabagumi/config/vitest";
 
-export default baseConfig;
+export default defineVitestConfig();

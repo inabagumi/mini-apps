@@ -5,8 +5,8 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import react from "@vitejs/plugin-react";
-import type { Plugin } from "vite";
-import { defineConfig } from "vitest/config";
+import { defineConfig, mergeConfig } from "vitest/config";
+import type { Plugin, ViteUserConfig } from "vitest/config";
 
 interface ImageSize {
   height: number;
@@ -92,7 +92,7 @@ const staticImage = (): Plugin => ({
   name: "static-image",
 });
 
-export default defineConfig({
+const sharedConfig = defineConfig({
   plugins: [react(), staticImage()],
   test: {
     environment: "jsdom",
@@ -100,3 +100,14 @@ export default defineConfig({
     setupFiles: [fileURLToPath(new URL("setup.ts", import.meta.url))],
   },
 });
+
+/**
+ * Creates a Vitest config with the settings shared by all packages.
+ *
+ * The given config is merged with the shared settings by `mergeConfig`, so
+ * package-specific plugins, aliases and test options can be added without
+ * losing them.
+ */
+export const defineVitestConfig = (
+  config: ViteUserConfig = {}
+): ViteUserConfig => mergeConfig(sharedConfig, config);
