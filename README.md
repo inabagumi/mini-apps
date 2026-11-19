@@ -18,8 +18,8 @@
 
 | ディレクトリ | パッケージ名 | 説明 |
 | --- | --- | --- |
-| [`packages/components`](packages/components) | `@inabagumi/components` | `apps/inaba-jinja` で使用する React コンポーネント |
-| [`packages/theme`](packages/theme) | `@inabagumi/theme` | `apps/inaba-jinja` で使用する Tailwind CSS のテーマ |
+| [`packages/components`](packages/components) | `@inabagumi/components` | 共有の React コンポーネント |
+| [`packages/theme`](packages/theme) | `@inabagumi/theme` | 共有の Tailwind CSS のテーマ |
 
 ## 開発
 
