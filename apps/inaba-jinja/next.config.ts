@@ -1,5 +1,5 @@
+import { defineNextConfig } from "@inabagumi/config/next";
 import nextMDX from "@next/mdx";
-import type { NextConfig } from "next";
 
 const withMDX = nextMDX({
   options: {
@@ -16,7 +16,7 @@ const withMDX = nextMDX({
   },
 });
 
-const nextConfig: NextConfig = {
+const nextConfig = defineNextConfig({
   headers() {
     return [
       {
@@ -56,9 +56,6 @@ const nextConfig: NextConfig = {
   },
   turbopack: {
     rules: {
-      "*.css": {
-        loaders: ["@tailwindcss/turbopack"],
-      },
       "*.svg": {
         as: "*.js",
         loaders: [
@@ -73,6 +70,6 @@ const nextConfig: NextConfig = {
       },
     },
   },
-};
+});
 
 export default withMDX(nextConfig);

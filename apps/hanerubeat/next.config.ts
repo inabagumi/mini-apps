@@ -1,22 +1,4 @@
-import { withSerwist } from "@serwist/turbopack";
-import type { NextConfig } from "next";
+import { defineNextConfig } from "@inabagumi/config/next";
+import { withSerwist } from "@inabagumi/config/next/serwist";
 
-const nextConfig: NextConfig = {
-  rewrites() {
-    return [
-      {
-        destination: "/serwist/sw.js",
-        source: "/service-worker.js",
-      },
-    ];
-  },
-  turbopack: {
-    rules: {
-      "*.css": {
-        loaders: ["@tailwindcss/turbopack"],
-      },
-    },
-  },
-};
-
-export default withSerwist(nextConfig);
+export default withSerwist(defineNextConfig());

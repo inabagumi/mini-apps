@@ -1,10 +1,24 @@
 {
-  "name": "neru-camera",
+  "name": "@inabagumi/neru-camera",
   "version": "8.0.3",
   "private": true,
-  "description": "Neru Camera is an app to take a photos with Neru-chan!",
+  "description": "Neru Camera is an app to take photos with Neru-chan!",
+  "homepage": "https://neru.camera/",
+  "bugs": {
+    "url": "https://github.com/inabagumi/mini-apps/issues",
+    "email": "contact@haneru.dev"
+  },
   "license": "MIT",
-  "author": "Haneru Developers",
+  "author": {
+    "name": "Haneru Developers",
+    "email": "contact@haneru.dev",
+    "url": "https://haneru.dev/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/inabagumi/mini-apps.git",
+    "directory": "apps/neru-camera"
+  },
   "type": "module",
   "imports": {
     "#/*": [
@@ -16,7 +30,7 @@
   },
   "scripts": {
     "build": "next build",
-    "dev": "next",
+    "dev": "next dev",
     "start": "next start",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
@@ -34,23 +48,18 @@
     "pixi-viewport": "7.0.3",
     "pixi.js": "8.23.0",
     "react": "19.3.1",
-    "react-dom": "19.3.1",
-    "tailwindcss": "4.3.5"
+    "react-dom": "19.3.1"
   },
   "devDependencies": {
-    "@commitlint/cli": "21.2.4",
-    "@commitlint/config-conventional": "21.2.4",
     "@inabagumi/config": "workspace:*",
     "@serwist/turbopack": "9.5.15",
     "@tailwindcss/turbopack": "4.3.5",
     "@types/node": "26.6.6",
     "@types/react": "19.3.0",
     "esbuild-wasm": "0.28.2",
-    "husky": "9.1.7",
-    "is-ci": "4.1.0",
     "jsdom": "31.0.1",
-    "lint-staged": "17.6.1",
     "serwist": "9.5.15",
+    "tailwindcss": "4.3.5",
     "typescript": "6.0.3",
     "vite": "8.3.8",
     "vitest": "5.1.1"

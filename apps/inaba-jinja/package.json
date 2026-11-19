@@ -1,8 +1,8 @@
 {
-  "name": "inaba-jinja",
+  "name": "@inabagumi/inaba-jinja",
   "version": "4.0.4",
   "private": true,
-  "description": "The source code for the Inaba Jinja.",
+  "description": "Inaba Jinja is a shrine somewhere in Akabane, Kita, Tokyo, where Haneru Inaba of Nanashi Inc. is enshrined.",
   "homepage": "https://inaba-jinja.com",
   "bugs": {
     "url": "https://github.com/inabagumi/mini-apps/issues",
@@ -31,7 +31,7 @@
   },
   "scripts": {
     "build": "next build",
-    "dev": "next",
+    "dev": "next dev",
     "start": "next start",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
