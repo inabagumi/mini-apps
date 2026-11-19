@@ -25,7 +25,9 @@
     "build": "next build --webpack",
     "dev": "next",
     "start": "next start",
-    "test": "jest"
+    "test": "jest",
+    "typecheck": "tsc --noEmit",
+    "typegen": "next typegen"
   },
   "dependencies": {
     "@inabagumi/components": "workspace:*",

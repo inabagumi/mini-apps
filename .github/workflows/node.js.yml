@@ -19,6 +19,8 @@ jobs:
         with:
           cache: true
       - run: pnpm typegen
+      - name: Type check
+        run: pnpm typecheck
       - name: Lint and format check
         run: pnpm check
       # - name: Test

@@ -8,7 +8,9 @@
   "scripts": {
     "build": "next build --webpack",
     "dev": "next",
-    "start": "next start"
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "typegen": "next typegen"
   },
   "dependencies": {
     "@heroicons/react": "2.2.0",
