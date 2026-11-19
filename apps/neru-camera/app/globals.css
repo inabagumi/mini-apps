@@ -1,5 +1,27 @@
 @import "tailwindcss";
 
+@theme {
+  --animate-dash: dash 1s ease-in infinite;
+
+  /* ref: https://codepen.io/supah/pen/BjYLdW */
+  @keyframes dash {
+    0% {
+      stroke-dasharray: 1, 150;
+      stroke-dashoffset: 0;
+    }
+
+    50% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -35;
+    }
+
+    100% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -124;
+    }
+  }
+}
+
 /*
  * Tailwind CSS v4 changed the cursor of buttons to `default`.
  * Keep the pointer cursor used in v3.

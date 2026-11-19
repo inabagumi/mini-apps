@@ -19,8 +19,6 @@ import { useAsset } from "./asset";
 import { useVideoTexture } from "./hooks";
 import Overlay from "./overlay";
 
-import styles from "./camera.module.css";
-
 const mediaStreamConstraints: MediaStreamConstraints = {
   audio: false,
   video: {
@@ -111,7 +109,7 @@ export default function Camera() {
             viewBox="0 0 24 24"
           >
             <circle
-              className={clsx("opacity-75", styles.animateDash)}
+              className="animate-dash opacity-75"
               cx="12"
               cy="12"
               r="10"
