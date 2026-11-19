@@ -5,6 +5,7 @@
   "description": "Neru Camera is an app to take a photos with Neru-chan!",
   "license": "MIT",
   "author": "Haneru Developers",
+  "type": "module",
   "scripts": {
     "build": "next build",
     "dev": "next",
