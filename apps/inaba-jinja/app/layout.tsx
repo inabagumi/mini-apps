@@ -37,7 +37,7 @@ export default function RootLayout({ children }: Props) {
     <html lang="ja">
       <body>
         <div className="md:grid md:min-h-dvh md:grid-rows-[1fr_auto]">
-          <MobileMenu className="fixed top-0 right-0 supports-[right:env(safe-area-inset-right)]:right-safe supports-[top:env(safe-area-inset-top)]:top-safe md:hidden" />
+          <MobileMenu className="fixed top-safe right-safe md:hidden" />
 
           <div className="pt-safe pr-safe pl-safe">{children}</div>
 

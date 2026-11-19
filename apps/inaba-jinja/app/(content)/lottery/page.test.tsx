@@ -53,7 +53,7 @@ describe(LotteryPage, () => {
 
     expect(screen.getByRole("img", { name: "くじ引き中..." })).toHaveAttribute(
       "width",
-      "600"
+      "225"
     );
   });
 
