@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-import { title } from "#/lib/constants";
+import { themeColor, title } from "#/lib/constants";
 
 import favicon512x512 from "./icon1.png";
 import favicon192x192 from "./icon2.png";
@@ -24,6 +24,6 @@ export default function manifest(): MetadataRoute.Manifest {
     name: title,
     short_name: title,
     start_url: "/",
-    theme_color: "#ff9800",
+    theme_color: themeColor,
   };
 }
