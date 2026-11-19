@@ -2,7 +2,7 @@
   "name": "@inabagumi/neru-camera",
   "version": "8.0.3",
   "private": true,
-  "description": "Neru Camera is an app to take a photos with Neru-chan!",
+  "description": "Neru Camera is an app to take photos with Neru-chan!",
   "homepage": "https://neru.camera/",
   "bugs": {
     "url": "https://github.com/inabagumi/mini-apps/issues",
