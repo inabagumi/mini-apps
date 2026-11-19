@@ -7,9 +7,5 @@ import vitest from "ultracite/oxlint/vitest";
 export default defineConfig({
   env: core.env,
   extends: [core, react, next, vitest],
-  ignorePatterns: [
-    ...core.ignorePatterns,
-    // Copied from Docusaurus as is.
-    "website/src/theme/IdealImage/**",
-  ],
+  ignorePatterns: core.ignorePatterns,
 });
