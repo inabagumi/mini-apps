@@ -1,5 +1,5 @@
 {
-  "name": "neru-camera",
+  "name": "@inabagumi/neru-camera",
   "version": "8.0.3",
   "private": true,
   "description": "Neru Camera is an app to take a photos with Neru-chan!",
