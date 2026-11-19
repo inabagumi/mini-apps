@@ -1,0 +1,12 @@
+{
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  extends: ["github>inabagumi/.github//renovate-config/default.json5"],
+  packageRules: [
+    {
+      dependencyDashboardApproval: true,
+      matchManagers: ["npm"],
+      matchPackageNames: ["@pixi/**", "pixi.js"],
+      matchUpdateTypes: ["major"],
+    },
+  ],
+}
