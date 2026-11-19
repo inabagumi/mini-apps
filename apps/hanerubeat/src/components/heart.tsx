@@ -1,11 +1,12 @@
-import mp3Path from 'assets/heartbeat.mp3'
-import oggPath from 'assets/heartbeat.ogg'
-import captionPath from 'assets/heartbeat.vtt'
-import type { ComponentProps } from 'react'
-import { MdFavorite } from 'react-icons/md'
-import styles from 'styles/components/heart.module.css'
+import mp3Path from "assets/heartbeat.mp3";
+import oggPath from "assets/heartbeat.ogg";
+import captionPath from "assets/heartbeat.vtt";
+import type { ComponentProps } from "react";
+import { MdFavorite } from "react-icons/md";
 
-export default function Heart({ ref }: ComponentProps<'audio'>) {
+import styles from "styles/components/heart.module.css";
+
+export default function Heart({ ref }: ComponentProps<"audio">) {
   return (
     <>
       <MdFavorite className={styles.heart} />
@@ -16,5 +17,5 @@ export default function Heart({ ref }: ComponentProps<'audio'>) {
         <track default kind="captions" src={captionPath} srcLang="ja" />
       </audio>
     </>
-  )
+  );
 }

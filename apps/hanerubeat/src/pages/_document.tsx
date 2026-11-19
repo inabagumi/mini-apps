@@ -1,9 +1,9 @@
-import Document, { Head, Html, Main, NextScript } from 'next/document'
+import Document, { Head, Html, Main, NextScript } from "next/document";
 
 class MyDocument extends Document {
   render() {
-    const title = process.env.NEXT_PUBLIC_TITLE || ''
-    const themeColor = '#fff59d'
+    const title = process.env.NEXT_PUBLIC_TITLE || "";
+    const themeColor = "#fff59d";
 
     return (
       <Html lang="ja">
@@ -38,8 +38,8 @@ class MyDocument extends Document {
           <NextScript />
         </body>
       </Html>
-    )
+    );
   }
 }
 
-export default MyDocument
+export default MyDocument;

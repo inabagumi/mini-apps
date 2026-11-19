@@ -1,12 +1,13 @@
-'use client'
+"use client";
 
-import '@reach/menu-button/styles.css'
-import { EllipsisVerticalIcon } from '@heroicons/react/24/solid'
-import { Menu, MenuButton, MenuItem, MenuList } from '@reach/menu-button'
-import { useAsset } from './asset'
+import "@reach/menu-button/styles.css";
+import { EllipsisVerticalIcon } from "@heroicons/react/24/solid";
+import { Menu, MenuButton, MenuItem, MenuList } from "@reach/menu-button";
+
+import { useAsset } from "./asset";
 
 export default function HeaderMenu() {
-  const { assets, setAssetID } = useAsset()
+  const { assets, setAssetID } = useAsset();
 
   return (
     <Menu>
@@ -25,5 +26,5 @@ export default function HeaderMenu() {
         ))}
       </MenuList>
     </Menu>
-  )
+  );
 }

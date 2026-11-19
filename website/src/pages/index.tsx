@@ -1,14 +1,15 @@
-import Link from '@docusaurus/Link'
-import { useBaseUrlUtils } from '@docusaurus/useBaseUrl'
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
-import Image from '@theme/IdealImage'
-import Layout from '@theme/Layout'
-import chunk from 'lodash/chunk'
-import products from '../data/products'
+import Link from "@docusaurus/Link";
+import { useBaseUrlUtils } from "@docusaurus/useBaseUrl";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import Image from "@theme/IdealImage";
+import Layout from "@theme/Layout";
+import chunk from "lodash/chunk";
+
+import products from "../data/products";
 
 export default function Home() {
-  const { siteConfig } = useDocusaurusContext()
-  const { withBaseUrl } = useBaseUrlUtils()
+  const { siteConfig } = useDocusaurusContext();
+  const { withBaseUrl } = useBaseUrlUtils();
 
   return (
     <Layout
@@ -22,7 +23,7 @@ export default function Home() {
           <div>
             <Link
               className="button button--primary button--outline button--lg"
-              to={withBaseUrl('docs')}
+              to={withBaseUrl("docs")}
             >
               Get Started
             </Link>
@@ -74,5 +75,5 @@ export default function Home() {
         )}
       </main>
     </Layout>
-  )
+  );
 }

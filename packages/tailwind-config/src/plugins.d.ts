@@ -1,7 +1,7 @@
-declare module 'tailwindcss-safe-area' {
-  import type { PluginCreator } from 'tailwindcss'
+declare module "tailwindcss-safe-area" {
+  import type { PluginCreator } from "tailwindcss";
 
-  const plugin: PluginCreator
+  const plugin: PluginCreator;
 
-  export default plugin
+  export default plugin;
 }

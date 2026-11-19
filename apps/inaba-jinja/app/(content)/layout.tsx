@@ -1,11 +1,12 @@
-import Link from 'next/link'
-import type { ReactNode } from 'react'
-import Logo from '@/components/logo.svg'
-import { title as siteName } from '@/lib/constants'
+import Link from "next/link";
+import type { ReactNode } from "react";
+
+import Logo from "@/components/logo.svg";
+import { title as siteName } from "@/lib/constants";
 
 type Props = {
-  children: ReactNode
-}
+  children: ReactNode;
+};
 
 export default function ContentLayout({ children }: Props) {
   return (
@@ -25,5 +26,5 @@ export default function ContentLayout({ children }: Props) {
         </div>
       </main>
     </div>
-  )
+  );
 }

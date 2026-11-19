@@ -1,28 +1,29 @@
-import type { Metadata } from 'next'
-import type { ReactNode } from 'react'
-import SimpleTitle from '@/components/simple-title'
-import { title as siteName, twitterAccount } from '@/lib/constants'
+import type { Metadata } from "next";
+import type { ReactNode } from "react";
+
+import SimpleTitle from "@/components/simple-title";
+import { title as siteName, twitterAccount } from "@/lib/constants";
 
 export const metadata = {
   alternates: {
-    canonical: '/privacy',
+    canonical: "/privacy",
   },
   openGraph: {
     siteName,
     title: `${siteName}とは`,
-    type: 'article',
-    url: '/privacy',
+    type: "article",
+    url: "/privacy",
   },
   title: `${siteName}とは`,
   twitter: {
     site: `@${twitterAccount}`,
     title: `${siteName}とは - ${siteName}`,
   },
-} satisfies Metadata
+} satisfies Metadata;
 
 type Props = {
-  children: ReactNode
-}
+  children: ReactNode;
+};
 
 export default function AboutLayout({ children }: Props) {
   return (
@@ -30,5 +31,5 @@ export default function AboutLayout({ children }: Props) {
       <SimpleTitle>{siteName}とは</SimpleTitle>
       {children}
     </div>
-  )
+  );
 }

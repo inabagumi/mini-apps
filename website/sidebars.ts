@@ -1,19 +1,19 @@
-import type { SidebarsConfig } from '@docusaurus/plugin-content-docs'
+import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
 
 const sidebars: SidebarsConfig = {
   docs: [
-    'introduction',
+    "introduction",
     {
-      items: ['neru-camera', 'animare-shindan', 'hanerubeat', 'inaba-jinja'],
-      label: 'ねるねるアプリ',
-      type: 'category',
+      items: ["neru-camera", "animare-shindan", "hanerubeat", "inaba-jinja"],
+      label: "ねるねるアプリ",
+      type: "category",
     },
     {
-      items: ['shinju-date'],
-      label: 'プロダクト',
-      type: 'category',
+      items: ["shinju-date"],
+      label: "プロダクト",
+      type: "category",
     },
   ],
-}
+};
 
-export default sidebars
+export default sidebars;

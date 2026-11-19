@@ -1,5 +1,16 @@
 {
+  "name": "@inabagumi/website",
+  "version": "2.0.0",
+  "private": true,
+  "description": "We are Haneru Developers!",
+  "license": "MIT",
   "author": "Haneru Developers",
+  "scripts": {
+    "build": "docusaurus build",
+    "deploy": "docusaurus deploy",
+    "dev": "docusaurus start",
+    "swizzle": "docusaurus swizzle"
+  },
   "dependencies": {
     "@docusaurus/core": "3.10.2",
     "@docusaurus/plugin-ideal-image": "3.10.2",
@@ -14,7 +25,6 @@
     "react-hook-form": "7.92.0",
     "react-textarea-autosize": "8.5.9"
   },
-  "description": "We are Haneru Developers!",
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.10.2",
     "@docusaurus/tsconfig": "3.10.2",
@@ -23,15 +33,5 @@
     "@types/lodash": "4.17.27",
     "@types/react": "19.3.0",
     "typescript": "5.9.3"
-  },
-  "license": "MIT",
-  "name": "@inabagumi/website",
-  "private": true,
-  "scripts": {
-    "build": "docusaurus build",
-    "deploy": "docusaurus deploy",
-    "dev": "docusaurus start",
-    "swizzle": "docusaurus swizzle"
-  },
-  "version": "2.0.0"
+  }
 }

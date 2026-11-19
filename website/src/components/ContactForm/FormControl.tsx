@@ -1,11 +1,13 @@
-import { ErrorMessage } from '@hookform/error-message'
-import TextField from '@site/src/components/TextField'
-import { clsx } from 'clsx'
-import type { RegisterOptions } from 'react-hook-form'
-import { useFormContext } from 'react-hook-form'
-import TextareaAutosize from 'react-textarea-autosize'
-import styles from './FormControl.module.css'
-import type { FormData } from './types'
+import { ErrorMessage } from "@hookform/error-message";
+import TextField from "@site/src/components/TextField";
+import { clsx } from "clsx";
+import type { RegisterOptions } from "react-hook-form";
+import { useFormContext } from "react-hook-form";
+import TextareaAutosize from "react-textarea-autosize";
+
+import type { FormData } from "./types";
+
+import styles from "./FormControl.module.css";
 
 export default function FormControl<Name extends keyof FormData>({
   disabled = false,
@@ -14,28 +16,28 @@ export default function FormControl<Name extends keyof FormData>({
   name,
   placeholder,
   registerOptions,
-  type = 'text',
+  type = "text",
 }: Readonly<{
-  disabled?: boolean
-  label: string
-  multiline?: boolean
-  name: Name
-  placeholder?: string
-  registerOptions?: RegisterOptions<FormData, Name>
-  type?: string
+  disabled?: boolean;
+  label: string;
+  multiline?: boolean;
+  name: Name;
+  placeholder?: string;
+  registerOptions?: RegisterOptions<FormData, Name>;
+  type?: string;
 }>) {
   const {
     formState: { errors },
     register,
-  } = useFormContext<FormData>()
+  } = useFormContext<FormData>();
 
   const isRequired =
-    'required' in registerOptions
-      ? typeof registerOptions.required === 'object'
+    "required" in registerOptions
+      ? typeof registerOptions.required === "object"
         ? registerOptions.required.value
         : registerOptions.required !== false
-      : false
-  const isInvalid = name in errors
+      : false;
+  const isInvalid = name in errors;
 
   return (
     <div className="margin-top--sm">
@@ -70,9 +72,9 @@ export default function FormControl<Name extends keyof FormData>({
 
         <p
           className={clsx(
-            'margin-bottom--none',
-            'margin-left--sm',
-            'margin-top--xs',
+            "margin-bottom--none",
+            "margin-left--sm",
+            "margin-top--xs",
             styles.notice
           )}
         >
@@ -87,5 +89,5 @@ export default function FormControl<Name extends keyof FormData>({
         </p>
       </dd>
     </div>
-  )
+  );
 }

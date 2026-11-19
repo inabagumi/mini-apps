@@ -1,9 +1,9 @@
-import type { FormEventHandler } from 'react'
+import type { FormEventHandler } from "react";
 
 export type FormData = {
-  email: string
-  message: string
-  name: string
-}
+  email: string;
+  message: string;
+  name: string;
+};
 
-export type HandleSubmit = FormEventHandler<HTMLFormElement>
+export type HandleSubmit = FormEventHandler<HTMLFormElement>;

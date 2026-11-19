@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 export default function Home() {
   return (
@@ -46,5 +46,5 @@ export default function Home() {
         }
       `}</style>
     </>
-  )
+  );
 }

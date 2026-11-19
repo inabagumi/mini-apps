@@ -1,16 +1,16 @@
-import { twMerge } from 'tailwind-merge'
+import { twMerge } from "tailwind-merge";
 
 type Props = {
-  className?: string
-}
+  className?: string;
+};
 
 export default function Skeleton({ className }: Props) {
   return (
     <span
       className={twMerge(
-        'inline-block animate-pulse rounded-md bg-slate-200',
+        "inline-block animate-pulse rounded-md bg-slate-200",
         className
       )}
     />
-  )
+  );
 }

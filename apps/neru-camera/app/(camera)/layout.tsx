@@ -1,27 +1,29 @@
-import type { ReactNode } from 'react'
-import { createClient, type OverlayEntrySkeleton } from '@/lib/contentful'
-import { AssetProvider, type OverlayEntry } from './asset'
-import HeaderMenu from './menu'
+import type { ReactNode } from "react";
+
+import { createClient, type OverlayEntrySkeleton } from "@/lib/contentful";
+
+import { AssetProvider, type OverlayEntry } from "./asset";
+import HeaderMenu from "./menu";
 
 async function getAssets(): Promise<OverlayEntry[]> {
-  const client = createClient()
+  const client = createClient();
   const { items } =
     await client.withoutUnresolvableLinks.getEntries<OverlayEntrySkeleton>({
-      content_type: 'overlay',
+      content_type: "overlay",
       limit: 100,
-      order: ['-sys.createdAt'],
-      select: ['sys.id', 'fields.keyColor', 'fields.media', 'fields.name'],
-    })
+      order: ["-sys.createdAt"],
+      select: ["sys.id", "fields.keyColor", "fields.media", "fields.name"],
+    });
 
-  return items
+  return items;
 }
 
 export default async function CameraLayout({
   children,
 }: Readonly<{
-  children: ReactNode
+  children: ReactNode;
 }>) {
-  const assets = await getAssets()
+  const assets = await getAssets();
 
   return (
     <AssetProvider assets={assets}>
@@ -31,5 +33,5 @@ export default async function CameraLayout({
 
       <main className="fixed inset-0 z-0 bg-black">{children}</main>
     </AssetProvider>
-  )
+  );
 }
