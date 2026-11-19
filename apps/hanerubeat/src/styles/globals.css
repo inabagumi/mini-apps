@@ -1,9 +1,19 @@
-body {
-  background-color: #222;
-  bottom: 0;
-  left: 0;
-  margin: 0;
-  position: fixed;
-  right: 0;
-  top: 0;
+@import "tailwindcss";
+
+@theme {
+  --animate-beat: beat 0.8s ease-in-out infinite;
+
+  @keyframes beat {
+    0% {
+      transform: scale(0.8);
+    }
+
+    50% {
+      transform: scale(1);
+    }
+
+    100% {
+      transform: scale(0.8);
+    }
+  }
 }

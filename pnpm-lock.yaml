@@ -258,6 +258,9 @@ importers:
       '@serwist/turbopack':
         specifier: 9.5.15
         version: 9.5.15(@swc/helpers@0.5.23)(esbuild-wasm@0.28.2)(esbuild@0.28.2)(next@16.4.6(@babel/core@7.29.13(supports-color@8.1.1))(@types/node@26.6.6)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react@19.3.1)(typescript@6.0.3)
+      '@tailwindcss/turbopack':
+        specifier: 4.3.5
+        version: 4.3.5
       '@types/node':
         specifier: 26.6.6
         version: 26.6.6
@@ -273,6 +276,9 @@ importers:
       serwist:
         specifier: 9.5.15
         version: 9.5.15(browserslist@4.29.3)(typescript@6.0.3)
+      tailwindcss:
+        specifier: 4.3.5
+        version: 4.3.5
       typescript:
         specifier: 6.0.3
         version: 6.0.3

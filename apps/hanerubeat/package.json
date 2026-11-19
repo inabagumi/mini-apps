@@ -20,11 +20,13 @@
   },
   "devDependencies": {
     "@serwist/turbopack": "9.5.15",
+    "@tailwindcss/turbopack": "4.3.5",
     "@types/node": "26.6.6",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
     "esbuild-wasm": "0.28.2",
     "serwist": "9.5.15",
+    "tailwindcss": "4.3.5",
     "typescript": "6.0.3"
   }
 }

@@ -10,6 +10,13 @@ const nextConfig = {
       },
     ];
   },
+  turbopack: {
+    rules: {
+      "*.css": {
+        loaders: ["@tailwindcss/turbopack"],
+      },
+    },
+  },
 };
 
 export default withSerwist(nextConfig);
