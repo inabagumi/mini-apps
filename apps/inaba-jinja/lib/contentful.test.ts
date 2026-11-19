@@ -217,7 +217,7 @@ describe("lib/contentful", () => {
 
       await expect(getAnyFortuneID()).resolves.toBe("b");
       expect(mocks.eval).toHaveBeenCalledWith(
-        expect.any(String),
+        expect.stringContaining("redis.call('SADD', KEYS[1], unpack(ARGV))"),
         ["fortunes"],
         ["a", "b", "c"]
       );

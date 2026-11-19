@@ -116,7 +116,7 @@ export const getAnyFortuneID = reactCache(async () => {
       local expire = 60 * 60 * 24 * 30
 
       if redis.call('SCARD', KEYS[1]) < 1 then
-        redis.call('SADD', KEYS[1], unpack(ARGV, 2))
+        redis.call('SADD', KEYS[1], unpack(ARGV))
         redis.call('EXPIRE', KEYS[1], expire)
       end
 
