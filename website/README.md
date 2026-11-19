@@ -1,16 +1,17 @@
 # Haneru Developers Website
 
-[Haneru Developers (haneru.dev)](https://haneru.dev/) のソースファイルです。[Docusaurus](https://docusaurus.io/) を使って構築され、[Vercel](https://vercel.com/home) にデプロイされます。
+[Haneru Developers (haneru.dev)](https://haneru.dev/) のソースファイルです。[Docusaurus](https://docusaurus.io/) を使って構築されています。
 
-## セットアップ
+## デプロイ
 
-```console
-$ git clone https://github.com/inabagumi/website.git haneru.dev
-$ cd ./haneru.dev
-$ yarn install
-$ yarn build
-```
+[Vercel](https://vercel.com/home)にデプロイすることを前提として開発されています。そのためVercel以外の環境へデプロイを行った際の動作については保証できません。
 
 ## ライセンス
 
-[MIT](LICENSE)
+[MIT](../LICENSE)
+
+ただし画像ファイルなどのソースコード以外のファイルについてはそれぞれの著作者が権利を有しています。
+
+## 免責事項
+
+このウェブサイトは因幡はねるさんのファンによって開発と運用が行われている非公式なものです。このウェブサイトに対する問い合わせを因幡はねるさんや関連する個人、もしくは団体に対して行うのはお止めください。
