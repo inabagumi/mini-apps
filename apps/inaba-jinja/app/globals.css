@@ -1,3 +1,29 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "@inabagumi/theme";
+
+@source "../node_modules/@inabagumi/components/dist";
+
+@theme {
+  --animate-shake: shake 0.3s infinite alternate linear;
+
+  @keyframes shake {
+    from {
+      transform: translateY(0) rotate(180deg);
+    }
+
+    to {
+      transform: translateY(20px) rotate(170deg);
+    }
+  }
+}
+
+/*
+ * Tailwind CSS v4 changed the cursor of buttons to `default`.
+ * Keep the pointer cursor used in v3.
+ */
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}

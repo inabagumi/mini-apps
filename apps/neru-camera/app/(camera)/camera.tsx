@@ -87,7 +87,7 @@ export default function Camera() {
 
   return (
     <div className="flex h-full flex-col">
-      <div className="flex flex-grow items-center justify-center overflow-hidden">
+      <div className="flex grow items-center justify-center overflow-hidden">
         {texture ? (
           <Stage
             className="block h-auto w-full"
@@ -123,22 +123,19 @@ export default function Camera() {
         )}
       </div>
 
-      <div className="flex justify-around px-4 pb-6 pt-2">
+      <div className="flex justify-around px-4 pt-2 pb-6">
         <button
           className={clsx(
-            "bg-gray-50",
-            "bg-opacity-95",
+            "bg-gray-50/95",
             isShooting ? "border-2" : "border-0",
-            "border-black",
-            "border-opacity-95",
+            "border-black/95",
             "ease-linear",
             "h-14",
-            "focus:outline-none",
+            "focus:outline-hidden",
             "ring-2",
             "ring-offset-2",
             "ring-offset-black",
-            "ring-opacity-95",
-            "ring-white",
+            "ring-white/95",
             "rounded-full",
             "transition-all",
             "w-14"

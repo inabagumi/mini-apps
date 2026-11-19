@@ -11,7 +11,7 @@ export default function HeaderMenu() {
 
   return (
     <Menu>
-      <MenuButton className="m-2 rounded-full p-2 focus:bg-white focus:bg-opacity-25 focus:outline-none">
+      <MenuButton className="m-2 rounded-full p-2 focus:bg-white/25 focus:outline-hidden">
         <EllipsisVerticalIcon className="h-5 w-5" />
       </MenuButton>
       <MenuList className="p-0">

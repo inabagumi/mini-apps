@@ -1,0 +1,12 @@
+@import "tailwindcss-safe-area";
+
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans:
+    YuGothic, "Yu Gothic", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-serif:
+    YuMincho, "Yu Mincho", ui-serif, Georgia, Cambria, "Times New Roman", Times,
+    serif;
+}
