@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.0.4](https://github.com/inabagumi/mini-apps/compare/inaba-jinja-v4.0.3...inaba-jinja-v4.0.4) (2026-11-19)
+
+
+### Bug Fixes
+
+* **inaba-jinja:** pass skip to subsequent pages in getFortuneIDs ([#4720](https://github.com/inabagumi/mini-apps/issues/4720)) ([7dcdd5a](https://github.com/inabagumi/mini-apps/commit/7dcdd5ab04424b01b82bfd253a4ea684427ec923))
+
 ## [4.0.3](https://github.com/inabagumi/mini-apps/compare/inaba-jinja-v4.0.2...inaba-jinja-v4.0.3) (2025-10-17)
 
 
