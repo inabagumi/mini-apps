@@ -18,6 +18,7 @@ const withMDX = nextMDX({
 
 const nextConfig = defineNextConfig({
   cacheComponents: true,
+  partialPrefetching: true,
   headers() {
     return [
       {
