@@ -22,7 +22,7 @@
   "type": "module",
   "main": "n/a",
   "scripts": {
-    "build": "next build --webpack",
+    "build": "next build",
     "dev": "next",
     "start": "next start",
     "test": "jest",
