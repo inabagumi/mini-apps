@@ -23,9 +23,6 @@ const config: Config = {
         docs: {
           sidebarPath: "./sidebars.ts",
         },
-        googleAnalytics: {
-          trackingID: "UA-140696242-1",
-        },
         theme: {
           customCss: "./src/css/custom.css",
         },
