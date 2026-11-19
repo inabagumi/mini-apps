@@ -32,10 +32,10 @@ export default function FormControl<Name extends keyof FormData>({
   } = useFormContext<FormData>();
 
   let isRequired = false;
-  if ("required" in registerOptions) {
+  if (registerOptions && "required" in registerOptions) {
     isRequired =
       typeof registerOptions.required === "object"
-        ? registerOptions.required.value
+        ? (registerOptions.required.value ?? false)
         : registerOptions.required !== false;
   }
   const isInvalid = name in errors;
