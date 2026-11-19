@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.0.3](https://github.com/inabagumi/mini-apps/compare/neru-camera-v8.0.2...neru-camera-v8.0.3) (2026-11-19)
+
+
+### Bug Fixes
+
+* **neru-camera:** correct crossOrigin typo in useVideoTexture ([#4719](https://github.com/inabagumi/mini-apps/issues/4719)) ([c01362e](https://github.com/inabagumi/mini-apps/commit/c01362ec4876c59cb5aa6f10aa9afe3e9ed0e750))
+
 ## [8.0.2](https://github.com/inabagumi/mini-apps/compare/neru-camera-v8.0.1...neru-camera-v8.0.2) (2026-11-19)
 
 
