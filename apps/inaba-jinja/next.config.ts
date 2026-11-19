@@ -31,6 +31,7 @@ const nextConfig = defineNextConfig({
     ];
   },
   images: {
+    qualities: [70, 75, 80],
     remotePatterns: [
       {
         hostname: "images.ctfassets.net",
