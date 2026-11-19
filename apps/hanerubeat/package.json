@@ -1,10 +1,24 @@
 {
-  "name": "@inabagumi/hanerubeat",
+  "name": "hanerubeat",
   "version": "2.0.1",
   "private": true,
   "description": "Feel the life of Neru-chan!",
   "homepage": "https://hanerubeat.app/",
-  "author": "Haneru Developers",
+  "bugs": {
+    "url": "https://github.com/inabagumi/mini-apps/issues",
+    "email": "contact@haneru.dev"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Haneru Developers",
+    "email": "contact@haneru.dev",
+    "url": "https://haneru.dev/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/inabagumi/mini-apps.git",
+    "directory": "apps/hanerubeat"
+  },
   "type": "module",
   "imports": {
     "#/*": [
@@ -16,7 +30,8 @@
   },
   "scripts": {
     "build": "next build",
-    "dev": "next",
+    "dev": "next dev",
+    "start": "next start",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
     "typegen": "next typegen"
