@@ -319,9 +319,9 @@ importers:
         specifier: 3.7.0
         version: 3.7.0
     devDependencies:
-      '@inabagumi/tailwind-config':
+      '@inabagumi/theme':
         specifier: workspace:*
-        version: link:../../packages/tailwind-config
+        version: link:../../packages/theme
       '@jest/types':
         specifier: 30.5.1
         version: 30.5.1
@@ -496,7 +496,7 @@ importers:
         specifier: 6.0.3
         version: 6.0.3
 
-  packages/tailwind-config:
+  packages/theme:
     dependencies:
       '@tailwindcss/typography':
         specifier: 0.5.20

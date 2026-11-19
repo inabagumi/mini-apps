@@ -46,7 +46,7 @@
     "tailwind-merge": "3.7.0"
   },
   "devDependencies": {
-    "@inabagumi/tailwind-config": "workspace:*",
+    "@inabagumi/theme": "workspace:*",
     "@jest/types": "30.5.1",
     "@mdx-js/loader": "3.1.1",
     "@next/mdx": "16.4.6",
