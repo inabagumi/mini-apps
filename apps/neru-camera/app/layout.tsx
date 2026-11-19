@@ -1,4 +1,5 @@
 import "tailwindcss/tailwind.css";
+import { SerwistProvider } from "@serwist/turbopack/react";
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
@@ -24,7 +25,12 @@ export default function RootLayout({ children }: Props) {
     <html lang="ja">
       <head />
       <body>
-        {children}
+        <SerwistProvider
+          disable={process.env.NODE_ENV === "development"}
+          swUrl="/service-worker.js"
+        >
+          {children}
+        </SerwistProvider>
 
         <Analytics />
       </body>
