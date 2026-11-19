@@ -5,10 +5,10 @@
   "type": "module",
   "imports": {
     "#/*": [
-      "./src/*",
-      "./src/*.ts",
-      "./src/*.tsx",
-      "./src/*/index.ts"
+      "./*",
+      "./*.ts",
+      "./*.tsx",
+      "./*/index.ts"
     ]
   },
   "scripts": {

@@ -6,6 +6,6 @@ export default defineConfig({
   ...root,
   sortTailwindcss: {
     ...root.sortTailwindcss,
-    stylesheet: "./src/app/globals.css",
+    stylesheet: "./app/globals.css",
   },
 });
