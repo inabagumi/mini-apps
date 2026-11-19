@@ -35,7 +35,6 @@ interface Props {
 export default function RootLayout({ children }: Props) {
   return (
     <html lang="ja">
-      <head prefix="og: http://ogp.me/ns#" />
       <body>
         <div className="md:grid md:min-h-dvh md:grid-rows-[1fr_auto]">
           <MobileMenu className="fixed top-0 right-0 supports-[right:env(safe-area-inset-right)]:right-safe supports-[top:env(safe-area-inset-top)]:top-safe md:hidden" />

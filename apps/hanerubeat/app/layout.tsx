@@ -45,7 +45,7 @@ interface Props {
 export default function RootLayout({ children }: Props) {
   return (
     <html lang="ja">
-      <head prefix="og: http://ogp.me/ns#">
+      <head>
         {/* `metadata.icons` を指定するとファイル規約のアイコンが出力されなくなるため、直接出力する。 */}
         <link color={themeColor} href="/img/heart.svg" rel="mask-icon" />
       </head>
