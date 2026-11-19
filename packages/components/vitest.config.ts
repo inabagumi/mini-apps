@@ -1,10 +1,3 @@
-import react from "@vitejs/plugin-react";
-import { defineConfig } from "vitest/config";
+import { defineVitestConfig } from "@inabagumi/config/vitest";
 
-export default defineConfig({
-  plugins: [react()],
-  test: {
-    environment: "jsdom",
-    setupFiles: ["vitest.setup.ts"],
-  },
-});
+export default defineVitestConfig();

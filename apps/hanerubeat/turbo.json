@@ -4,9 +4,6 @@
   "tasks": {
     "build": {
       "env": ["NEXT_PUBLIC_BASE_URL"]
-    },
-    "test": {
-      "inputs": ["app/**", "assets/**", "lib/**", "*.ts", "tsconfig.json"]
     }
   }
 }

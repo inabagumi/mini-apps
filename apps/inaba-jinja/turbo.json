@@ -10,17 +10,6 @@
         "UPSTASH_REDIS_REST_TOKEN",
         "UPSTASH_REDIS_REST_URL"
       ]
-    },
-    "test": {
-      "inputs": [
-        "__mocks__/**",
-        "app/**",
-        "components/**",
-        "lib/**",
-        "*.ts",
-        "*.tsx",
-        "tsconfig.json"
-      ]
     }
   }
 }
