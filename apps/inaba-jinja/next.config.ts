@@ -1,4 +1,5 @@
 import nextMDX from "@next/mdx";
+import type { NextConfig } from "next";
 
 const withMDX = nextMDX({
   options: {
@@ -15,8 +16,7 @@ const withMDX = nextMDX({
   },
 });
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: NextConfig = {
   headers() {
     return [
       {
