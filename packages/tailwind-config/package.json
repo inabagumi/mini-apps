@@ -23,7 +23,8 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsup"
+    "build": "tsup",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@tailwindcss/typography": "0.5.20",
@@ -33,6 +34,8 @@
   "devDependencies": {
     "@tsconfig/node20": "20.1.11",
     "@tsconfig/strictest": "2.0.9",
-    "tsup": "9.0.0"
+    "@types/node": "26.6.6",
+    "tsup": "9.0.0",
+    "typescript": "6.0.3"
   }
 }

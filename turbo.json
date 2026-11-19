@@ -23,6 +23,9 @@
       "dependsOn": ["build"],
       "inputs": ["src/**/*.ts", "src/**/*.tsx", "test/**/*.ts", "test/**/*.tsx"]
     },
+    "typecheck": {
+      "dependsOn": ["^build", "typegen"]
+    },
     "typegen": {
       "dependsOn": ["^build"],
       "outputs": [

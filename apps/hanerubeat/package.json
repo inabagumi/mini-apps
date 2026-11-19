@@ -7,7 +7,9 @@
   "author": "Haneru Developers",
   "scripts": {
     "build": "next build --webpack",
-    "dev": "next"
+    "dev": "next",
+    "typecheck": "tsc --noEmit",
+    "typegen": "next typegen"
   },
   "dependencies": {
     "next": "16.2.12",

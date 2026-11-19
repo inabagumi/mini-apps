@@ -9,7 +9,8 @@
     "build": "docusaurus build",
     "deploy": "docusaurus deploy",
     "dev": "docusaurus start",
-    "swizzle": "docusaurus swizzle"
+    "swizzle": "docusaurus swizzle",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@docusaurus/core": "3.10.2",
