@@ -172,7 +172,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  axios@<0.33.0: ^0.35.0
+  axios@<0.33.0: ^1.21.1
   glob@>=9.0.0 <14.0.2: ^14.0.2
   minimatch@>=7.0.0 <11.0.1: ^11.0.1
   pacote@<21.5.1: ^21.5.1
@@ -4393,9 +4393,6 @@ packages:
     peerDependencies:
       postcss: ^8.1.0
 
-  axios@0.35.0:
-    resolution: {integrity: sha512-nIDzOGsDEAQZot5aP5ZZ6y/GRDv8woMaDJMab/VxlZIRw0OG6GPbkAMca55+AO1JgvRZquh5pp+RjzBDt0N2fQ==}
-
   axios@1.21.1:
     resolution: {integrity: sha512-6eI5Q/Y4u/Um9dDlsRoq5pY2rxnUTv+L4PpLitnbk/i4jb3MxLZ5CsN5Ih3IysbeRYK4pR+P7qfMsOQl9fwwFQ==}
 
@@ -7936,9 +7933,6 @@ packages:
   proxy-addr@2.0.8:
     resolution: {integrity: sha512-5nnx0yGyVUcY6t9RnWcARWtwT9F1D8O9rt08htPvnd49W1IgZtmLkhu9WfMzQj1cFxjHIO6connUNVW5k7AVyQ==}
     engines: {node: '>= 0.10'}
-
-  proxy-from-env@1.1.0:
-    resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
 
   proxy-from-env@2.1.0:
     resolution: {integrity: sha512-cJ+oHTW1VAEa8cJslgmUZrc+sjRKgAKl3Zyse6+PV38hZe/V6Z14TbCuXcan9F9ghlz4QrFr2c92TNF82UkYHA==}
@@ -12025,8 +12019,8 @@ snapshots:
 
   '@formspree/cli@0.9.6(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
-      '@formspree/deploy': 0.3.4(debug@4.4.3(supports-color@8.1.1))
-      axios: 0.35.0(debug@4.4.3(supports-color@8.1.1))
+      '@formspree/deploy': 0.3.4(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1)
+      axios: 1.21.1(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1)
       chalk: 2.4.2
       common-tags: 1.8.2
       dotenv: 8.6.0
@@ -12042,11 +12036,12 @@ snapshots:
     dependencies:
       '@stripe/stripe-js': 5.10.0
 
-  '@formspree/deploy@0.3.4(debug@4.4.3(supports-color@8.1.1))':
+  '@formspree/deploy@0.3.4(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
-      axios: 0.35.0(debug@4.4.3(supports-color@8.1.1))
+      axios: 1.21.1(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1)
     transitivePeerDependencies:
       - debug
+      - supports-color
 
   '@formspree/react@3.0.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
     dependencies:
@@ -14049,14 +14044,6 @@ snapshots:
       picocolors: 1.1.1
       postcss: 8.5.33
       postcss-value-parser: 4.2.0
-
-  axios@0.35.0(debug@4.4.3(supports-color@8.1.1)):
-    dependencies:
-      follow-redirects: 1.16.3(debug@4.4.3(supports-color@8.1.1))
-      form-data: 4.0.6
-      proxy-from-env: 1.1.0
-    transitivePeerDependencies:
-      - debug
 
   axios@1.21.1(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1):
     dependencies:
@@ -18164,8 +18151,6 @@ snapshots:
     dependencies:
       forwarded: 0.2.0
       ipaddr.js: 1.9.1
-
-  proxy-from-env@1.1.0: {}
 
   proxy-from-env@2.1.0: {}
 
