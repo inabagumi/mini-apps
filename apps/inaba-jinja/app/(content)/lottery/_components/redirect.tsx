@@ -3,15 +3,13 @@
 import { useRouter } from "next/navigation";
 import { use, useEffect } from "react";
 
-import { delay } from "@/lib/timer";
-
 interface Props {
   idPromise: Promise<string>;
 }
 
 export default function Redirect({ idPromise }: Props) {
   const router = useRouter();
-  const [id] = use(Promise.all([idPromise, delay(2)]));
+  const id = use(idPromise);
 
   useEffect(() => {
     router.push(`/kuji/${id}`);
