@@ -30,6 +30,9 @@ const staticImage = (): Plugin => ({
 export default defineConfig({
   plugins: [react(), staticImage()],
   test: {
+    env: {
+      NEXT_PUBLIC_BASE_URL: "https://774.test",
+    },
     environment: "jsdom",
   },
 });

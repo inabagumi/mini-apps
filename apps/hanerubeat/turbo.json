@@ -2,8 +2,11 @@
   "$schema": "https://turbo.build/schema.json",
   "extends": ["//"],
   "tasks": {
+    "build": {
+      "env": ["NEXT_PUBLIC_BASE_URL"]
+    },
     "test": {
-      "inputs": ["app/**", "assets/**", "*.ts", "tsconfig.json"]
+      "inputs": ["app/**", "assets/**", "lib/**", "*.ts", "tsconfig.json"]
     }
   }
 }

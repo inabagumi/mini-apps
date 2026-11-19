@@ -12,7 +12,6 @@ import MobileMenu from "./_components/mobile-menu";
 
 export const metadata: Metadata = {
   description,
-  manifest: "/manifest.webmanifest",
   metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL),
   robots: {
     follow: true,
