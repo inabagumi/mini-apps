@@ -1,0 +1,40 @@
+{
+  "items": [
+    {
+      "sys": {
+        "id": "fortune-1",
+        "type": "Entry"
+      }
+    },
+    {
+      "sys": {
+        "id": "fortune-2",
+        "type": "Entry"
+      }
+    },
+    {
+      "sys": {
+        "id": "fortune-3",
+        "type": "Entry"
+      }
+    },
+    {
+      "sys": {
+        "id": "fortune-4",
+        "type": "Entry"
+      }
+    },
+    {
+      "sys": {
+        "id": "fortune-5",
+        "type": "Entry"
+      }
+    }
+  ],
+  "limit": 100,
+  "skip": 0,
+  "sys": {
+    "type": "Array"
+  },
+  "total": 5
+}

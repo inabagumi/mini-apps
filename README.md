@@ -60,6 +60,23 @@ $ pnpm install
 $ pnpm dev --filter @inabagumi/inaba-jinja
 ```
 
+### モックサーバー
+
+`apps/inaba-jinja` と `apps/neru-camera` は Contentful からデータを取得します。認証情報がない環境では、[`compose.yaml`](compose.yaml) で定義しているモックサーバー ([`mocks/contentful`](mocks/contentful/README.md)) に接続することで、コードを書き換えずにビルドや動作確認ができます。
+
+| 環境 | セットアップ |
+| --- | --- |
+| Dev Container | Dev Container の作成時にモックサーバーが起動し、各アプリの `.env.local` が作成されます。 |
+| Claude Code のクラウドセッション | SessionStart フック ([`.claude/hooks/session-start.sh`](.claude/hooks/session-start.sh)) で Docker デーモンとモックサーバーが起動し、各アプリの `.env.local` が作成されます。 |
+| その他の環境 | 以下のコマンドを実行してください。Docker と Docker Compose が必要です。 |
+
+```console
+$ ./scripts/start-mocks.sh
+$ ./scripts/setup-mock-env.sh
+```
+
+`scripts/setup-mock-env.sh` は `.env.local.example` のモックサーバー向けの設定をもとに `.env.local` を作成します。すでに `.env.local` がある場合は変更しないので、必要に応じて `.env.local.example` を参考に設定してください。
+
 ### 開発サーバーのポート
 
 `pnpm dev` ですべての開発サーバーを同時に起動できるように、それぞれのポートを固定しています。
@@ -71,6 +88,8 @@ $ pnpm dev --filter @inabagumi/inaba-jinja
 | `apps/inaba-jinja` | http://localhost:3002 |
 | `apps/neru-camera` | http://localhost:3003 |
 | `website`          | http://localhost:3004 |
+
+モックサーバーは http://localhost:4000 で起動します。
 
 ## ライセンス
 

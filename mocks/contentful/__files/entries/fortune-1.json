@@ -1,0 +1,158 @@
+{
+  "items": [
+    {
+      "fields": {
+        "number": 1,
+        "blessing": "大吉",
+        "description": "これはモックの第1番『大吉』のおみくじです。",
+        "prePaper": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAKCAIAAAAcmWhZAAAACXBIWXMAAAABAAAAAQBPJcTWAAAAEUlEQVR4nGO4EeQLRwwDwQEA96Q6mXslhGUAAAAASUVORK5CYII=",
+        "card": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Asset",
+            "id": "fortune-1-card"
+          }
+        },
+        "paper": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Asset",
+            "id": "fortune-1-paper"
+          }
+        }
+      },
+      "metadata": {
+        "concepts": [],
+        "tags": []
+      },
+      "sys": {
+        "createdAt": "2026-01-01T00:00:00.000Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "linkType": "Environment",
+            "type": "Link"
+          }
+        },
+        "id": "fortune-1",
+        "locale": "en-US",
+        "publishedVersion": 1,
+        "revision": 1,
+        "space": {
+          "sys": {
+            "id": "mock",
+            "linkType": "Space",
+            "type": "Link"
+          }
+        },
+        "type": "Entry",
+        "updatedAt": "2026-01-01T00:00:00.000Z",
+        "contentType": {
+          "sys": {
+            "id": "fortune",
+            "linkType": "ContentType",
+            "type": "Link"
+          }
+        }
+      }
+    }
+  ],
+  "limit": 100,
+  "skip": 0,
+  "sys": {
+    "type": "Array"
+  },
+  "total": 1,
+  "includes": {
+    "Asset": [
+      {
+        "fields": {
+          "title": "第1番 カード",
+          "file": {
+            "contentType": "image/png",
+            "details": {
+              "image": {
+                "height": 630,
+                "width": 1200
+              },
+              "size": 4975
+            },
+            "fileName": "fortune-1-card.png",
+            "url": "http://localhost:4000/mock/fortune-1-card/fortune-1-card.png"
+          }
+        },
+        "metadata": {
+          "concepts": [],
+          "tags": []
+        },
+        "sys": {
+          "createdAt": "2026-01-01T00:00:00.000Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "linkType": "Environment",
+              "type": "Link"
+            }
+          },
+          "id": "fortune-1-card",
+          "locale": "en-US",
+          "publishedVersion": 1,
+          "revision": 1,
+          "space": {
+            "sys": {
+              "id": "mock",
+              "linkType": "Space",
+              "type": "Link"
+            }
+          },
+          "type": "Asset",
+          "updatedAt": "2026-01-01T00:00:00.000Z"
+        }
+      },
+      {
+        "fields": {
+          "title": "第1番 おみくじ",
+          "file": {
+            "contentType": "image/png",
+            "details": {
+              "image": {
+                "height": 1080,
+                "width": 508
+              },
+              "size": 3906
+            },
+            "fileName": "fortune-1-paper.png",
+            "url": "http://localhost:4000/mock/fortune-1-paper/fortune-1-paper.png"
+          }
+        },
+        "metadata": {
+          "concepts": [],
+          "tags": []
+        },
+        "sys": {
+          "createdAt": "2026-01-01T00:00:00.000Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "linkType": "Environment",
+              "type": "Link"
+            }
+          },
+          "id": "fortune-1-paper",
+          "locale": "en-US",
+          "publishedVersion": 1,
+          "revision": 1,
+          "space": {
+            "sys": {
+              "id": "mock",
+              "linkType": "Space",
+              "type": "Link"
+            }
+          },
+          "type": "Asset",
+          "updatedAt": "2026-01-01T00:00:00.000Z"
+        }
+      }
+    ]
+  }
+}

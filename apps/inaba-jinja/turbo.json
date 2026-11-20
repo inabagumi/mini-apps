@@ -4,6 +4,8 @@
   "tasks": {
     "build": {
       "env": [
+        "CONTENTFUL_HOST",
+        "CONTENTFUL_INSECURE",
         "NEXT_PUBLIC_BASE_URL",
         "NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN",
         "NEXT_PUBLIC_CONTENTFUL_SPACE_ID",

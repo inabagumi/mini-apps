@@ -1,0 +1,14 @@
+# Adds the Dev Container to the services in `../compose.yaml`. Paths are
+# relative to the directory of `../compose.yaml`.
+services:
+  app:
+    image: mcr.microsoft.com/devcontainers/typescript-node:5-26-bookworm
+    command: ["sleep", "infinity"]
+    volumes:
+      - .:/workspaces/mini-apps:cached
+
+  # Share the network with the Dev Container so that the mock servers are
+  # reachable at localhost as in Claude Code cloud sessions.
+  contentful:
+    network_mode: service:app
+    ports: !reset []

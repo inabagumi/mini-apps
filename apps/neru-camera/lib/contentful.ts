@@ -25,5 +25,10 @@ export const createClient = (): ContentfulClientApi<undefined> => {
   return createContentfulClient({
     accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
     space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
+    // Connect to a mock server such as `mocks/contentful`.
+    ...(process.env.CONTENTFUL_HOST && {
+      host: process.env.CONTENTFUL_HOST,
+      insecure: process.env.CONTENTFUL_INSECURE === "true",
+    }),
   });
 };

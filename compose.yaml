@@ -1,0 +1,32 @@
+# Mock servers for development and testing.
+#
+# The images are pulled from GHCR to avoid the rate limit of Docker Hub.
+name: mini-apps
+
+services:
+  # A mock server of the Contentful Content Delivery API. See
+  # mocks/contentful/README.md for details.
+  contentful:
+    image: ghcr.io/wiremock/wiremock:3.13.2-3-alpine
+    command:
+      - --port=4000
+      - --enable-stub-cors
+      # Read the fixtures on every request so that changes are reflected
+      # without restarting.
+      - --max-template-cache-entries=0
+      - --disable-banner
+    healthcheck:
+      test:
+        - CMD
+        - wget
+        - --quiet
+        - --output-document=/dev/null
+        - http://localhost:4000/__admin/health
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 10s
+    ports:
+      - 127.0.0.1:4000:4000
+    volumes:
+      - ./mocks/contentful:/home/wiremock:ro

@@ -1,0 +1,188 @@
+{
+  "items": [
+    {
+      "fields": {
+        "name": "ブルーバック",
+        "keyColor": "#0000ff",
+        "media": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Asset",
+            "id": "overlay-2"
+          }
+        }
+      },
+      "metadata": {
+        "concepts": [],
+        "tags": []
+      },
+      "sys": {
+        "createdAt": "2026-02-02T00:00:00.000Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "linkType": "Environment",
+            "type": "Link"
+          }
+        },
+        "id": "overlay-2",
+        "locale": "en-US",
+        "publishedVersion": 1,
+        "revision": 1,
+        "space": {
+          "sys": {
+            "id": "mock",
+            "linkType": "Space",
+            "type": "Link"
+          }
+        },
+        "type": "Entry",
+        "updatedAt": "2026-02-02T00:00:00.000Z",
+        "contentType": {
+          "sys": {
+            "id": "overlay",
+            "linkType": "ContentType",
+            "type": "Link"
+          }
+        }
+      }
+    },
+    {
+      "fields": {
+        "name": "グリーンバック",
+        "keyColor": "#00ff00",
+        "media": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Asset",
+            "id": "overlay-1"
+          }
+        }
+      },
+      "metadata": {
+        "concepts": [],
+        "tags": []
+      },
+      "sys": {
+        "createdAt": "2026-02-01T00:00:00.000Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "linkType": "Environment",
+            "type": "Link"
+          }
+        },
+        "id": "overlay-1",
+        "locale": "en-US",
+        "publishedVersion": 1,
+        "revision": 1,
+        "space": {
+          "sys": {
+            "id": "mock",
+            "linkType": "Space",
+            "type": "Link"
+          }
+        },
+        "type": "Entry",
+        "updatedAt": "2026-02-01T00:00:00.000Z",
+        "contentType": {
+          "sys": {
+            "id": "overlay",
+            "linkType": "ContentType",
+            "type": "Link"
+          }
+        }
+      }
+    }
+  ],
+  "limit": 100,
+  "skip": 0,
+  "sys": {
+    "type": "Array"
+  },
+  "total": 2,
+  "includes": {
+    "Asset": [
+      {
+        "fields": {
+          "title": "ブルーバック",
+          "file": {
+            "contentType": "video/mp4",
+            "details": {
+              "size": 3793
+            },
+            "fileName": "overlay-2.mp4",
+            "url": "http://localhost:4000/mock/overlay-2/overlay-2.mp4"
+          }
+        },
+        "metadata": {
+          "concepts": [],
+          "tags": []
+        },
+        "sys": {
+          "createdAt": "2026-02-02T00:00:00.000Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "linkType": "Environment",
+              "type": "Link"
+            }
+          },
+          "id": "overlay-2",
+          "locale": "en-US",
+          "publishedVersion": 1,
+          "revision": 1,
+          "space": {
+            "sys": {
+              "id": "mock",
+              "linkType": "Space",
+              "type": "Link"
+            }
+          },
+          "type": "Asset",
+          "updatedAt": "2026-02-02T00:00:00.000Z"
+        }
+      },
+      {
+        "fields": {
+          "title": "グリーンバック",
+          "file": {
+            "contentType": "video/mp4",
+            "details": {
+              "size": 3689
+            },
+            "fileName": "overlay-1.mp4",
+            "url": "http://localhost:4000/mock/overlay-1/overlay-1.mp4"
+          }
+        },
+        "metadata": {
+          "concepts": [],
+          "tags": []
+        },
+        "sys": {
+          "createdAt": "2026-02-01T00:00:00.000Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "linkType": "Environment",
+              "type": "Link"
+            }
+          },
+          "id": "overlay-1",
+          "locale": "en-US",
+          "publishedVersion": 1,
+          "revision": 1,
+          "space": {
+            "sys": {
+              "id": "mock",
+              "linkType": "Space",
+              "type": "Link"
+            }
+          },
+          "type": "Asset",
+          "updatedAt": "2026-02-01T00:00:00.000Z"
+        }
+      }
+    ]
+  }
+}

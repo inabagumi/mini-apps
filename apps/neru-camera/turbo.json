@@ -3,7 +3,7 @@
   "extends": ["//"],
   "tasks": {
     "build": {
-      "env": ["NEXT_PUBLIC_BASE_URL"]
+      "env": ["CONTENTFUL_HOST", "CONTENTFUL_INSECURE", "NEXT_PUBLIC_BASE_URL"]
     }
   }
 }
