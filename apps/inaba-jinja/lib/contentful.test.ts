@@ -73,6 +73,8 @@ describe("lib/contentful", () => {
     vi.clearAllMocks();
     vi.stubEnv("NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN", "access-token");
     vi.stubEnv("NEXT_PUBLIC_CONTENTFUL_SPACE_ID", "space-id");
+    vi.stubEnv("CONTENTFUL_HOST", "");
+    vi.stubEnv("CONTENTFUL_INSECURE", "");
   });
 
   afterEach(() => {
@@ -87,6 +89,35 @@ describe("lib/contentful", () => {
 
       expect(mocks.createClient).toHaveBeenCalledWith({
         accessToken: "access-token",
+        space: "space-id",
+      });
+    });
+
+    it("connects to the host given by CONTENTFUL_HOST", async () => {
+      vi.stubEnv("CONTENTFUL_HOST", "localhost:4000");
+      vi.stubEnv("CONTENTFUL_INSECURE", "true");
+      const { getClient } = await loadModule();
+
+      getClient();
+
+      expect(mocks.createClient).toHaveBeenCalledWith({
+        accessToken: "access-token",
+        host: "localhost:4000",
+        insecure: true,
+        space: "space-id",
+      });
+    });
+
+    it("uses HTTPS unless CONTENTFUL_INSECURE is true", async () => {
+      vi.stubEnv("CONTENTFUL_HOST", "preview.contentful.com");
+      const { getClient } = await loadModule();
+
+      getClient();
+
+      expect(mocks.createClient).toHaveBeenCalledWith({
+        accessToken: "access-token",
+        host: "preview.contentful.com",
+        insecure: false,
         space: "space-id",
       });
     });

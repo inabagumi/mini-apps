@@ -1,0 +1,158 @@
+{
+  "items": [
+    {
+      "fields": {
+        "number": 3,
+        "blessing": "小吉",
+        "description": "これはモックの第3番『小吉』のおみくじです。",
+        "prePaper": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAKCAIAAAAcmWhZAAAACXBIWXMAAAABAAAAAQBPJcTWAAAAEUlEQVR4nGOI2hYFRwwDwQEAXeQ4kb68DlIAAAAASUVORK5CYII=",
+        "card": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Asset",
+            "id": "fortune-3-card"
+          }
+        },
+        "paper": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Asset",
+            "id": "fortune-3-paper"
+          }
+        }
+      },
+      "metadata": {
+        "concepts": [],
+        "tags": []
+      },
+      "sys": {
+        "createdAt": "2026-01-03T00:00:00.000Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "linkType": "Environment",
+            "type": "Link"
+          }
+        },
+        "id": "fortune-3",
+        "locale": "en-US",
+        "publishedVersion": 1,
+        "revision": 1,
+        "space": {
+          "sys": {
+            "id": "mock",
+            "linkType": "Space",
+            "type": "Link"
+          }
+        },
+        "type": "Entry",
+        "updatedAt": "2026-01-03T00:00:00.000Z",
+        "contentType": {
+          "sys": {
+            "id": "fortune",
+            "linkType": "ContentType",
+            "type": "Link"
+          }
+        }
+      }
+    }
+  ],
+  "limit": 100,
+  "skip": 0,
+  "sys": {
+    "type": "Array"
+  },
+  "total": 1,
+  "includes": {
+    "Asset": [
+      {
+        "fields": {
+          "title": "第3番 カード",
+          "file": {
+            "contentType": "image/png",
+            "details": {
+              "image": {
+                "height": 630,
+                "width": 1200
+              },
+              "size": 4974
+            },
+            "fileName": "fortune-3-card.png",
+            "url": "http://localhost:4000/mock/fortune-3-card/fortune-3-card.png"
+          }
+        },
+        "metadata": {
+          "concepts": [],
+          "tags": []
+        },
+        "sys": {
+          "createdAt": "2026-01-03T00:00:00.000Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "linkType": "Environment",
+              "type": "Link"
+            }
+          },
+          "id": "fortune-3-card",
+          "locale": "en-US",
+          "publishedVersion": 1,
+          "revision": 1,
+          "space": {
+            "sys": {
+              "id": "mock",
+              "linkType": "Space",
+              "type": "Link"
+            }
+          },
+          "type": "Asset",
+          "updatedAt": "2026-01-03T00:00:00.000Z"
+        }
+      },
+      {
+        "fields": {
+          "title": "第3番 おみくじ",
+          "file": {
+            "contentType": "image/png",
+            "details": {
+              "image": {
+                "height": 1080,
+                "width": 508
+              },
+              "size": 3905
+            },
+            "fileName": "fortune-3-paper.png",
+            "url": "http://localhost:4000/mock/fortune-3-paper/fortune-3-paper.png"
+          }
+        },
+        "metadata": {
+          "concepts": [],
+          "tags": []
+        },
+        "sys": {
+          "createdAt": "2026-01-03T00:00:00.000Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "linkType": "Environment",
+              "type": "Link"
+            }
+          },
+          "id": "fortune-3-paper",
+          "locale": "en-US",
+          "publishedVersion": 1,
+          "revision": 1,
+          "space": {
+            "sys": {
+              "id": "mock",
+              "linkType": "Space",
+              "type": "Link"
+            }
+          },
+          "type": "Asset",
+          "updatedAt": "2026-01-03T00:00:00.000Z"
+        }
+      }
+    ]
+  }
+}

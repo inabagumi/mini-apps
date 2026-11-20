@@ -18,6 +18,8 @@ describe(createClient, () => {
     vi.clearAllMocks();
     vi.stubEnv("NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN", "access-token");
     vi.stubEnv("NEXT_PUBLIC_CONTENTFUL_SPACE_ID", "space-id");
+    vi.stubEnv("CONTENTFUL_HOST", "");
+    vi.stubEnv("CONTENTFUL_INSECURE", "");
   });
 
   afterEach(() => {
@@ -32,6 +34,33 @@ describe(createClient, () => {
       space: "space-id",
     });
     expect(client).toBe(mocks.createClient.mock.results[0]?.value);
+  });
+
+  it("connects to the host given by CONTENTFUL_HOST", () => {
+    vi.stubEnv("CONTENTFUL_HOST", "localhost:4000");
+    vi.stubEnv("CONTENTFUL_INSECURE", "true");
+
+    createClient();
+
+    expect(mocks.createClient).toHaveBeenCalledExactlyOnceWith({
+      accessToken: "access-token",
+      host: "localhost:4000",
+      insecure: true,
+      space: "space-id",
+    });
+  });
+
+  it("uses HTTPS unless CONTENTFUL_INSECURE is true", () => {
+    vi.stubEnv("CONTENTFUL_HOST", "preview.contentful.com");
+
+    createClient();
+
+    expect(mocks.createClient).toHaveBeenCalledExactlyOnceWith({
+      accessToken: "access-token",
+      host: "preview.contentful.com",
+      insecure: false,
+      space: "space-id",
+    });
   });
 
   it("throws a TypeError when the access token is missing", () => {

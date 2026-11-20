@@ -29,6 +29,11 @@ export const getClient = (
     client = createClient({
       accessToken,
       space,
+      // Connect to a mock server such as `mocks/contentful`.
+      ...(process.env.CONTENTFUL_HOST && {
+        host: process.env.CONTENTFUL_HOST,
+        insecure: process.env.CONTENTFUL_INSECURE === "true",
+      }),
     }).withoutUnresolvableLinks;
   }
 

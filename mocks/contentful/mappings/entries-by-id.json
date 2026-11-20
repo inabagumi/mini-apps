@@ -1,0 +1,24 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathTemplate": "/spaces/{space}/environments/{environment}/entries",
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .+"
+      }
+    },
+    "queryParameters": {
+      "sys.id": {
+        "matches": "[\\w-]+"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "bodyFileName": "entries/{{request.query.[sys.id]}}.json",
+    "headers": {
+      "Content-Type": "application/vnd.contentful.delivery.v1+json"
+    },
+    "transformers": ["response-template"]
+  }
+}

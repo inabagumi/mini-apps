@@ -9,14 +9,16 @@
       ]
     }
   },
-  "forwardPorts": [3000, 3001, 3002, 3003, 3004],
+  "dockerComposeFile": ["../compose.yaml", "compose.yaml"],
+  "forwardPorts": [3000, 3001, 3002, 3003, 3004, 4000],
   "hostRequirements": {
     "cpus": 4,
     "memory": "8gb",
     "storage": "32gb"
   },
-  "image": "mcr.microsoft.com/devcontainers/typescript-node:5-26-bookworm",
   "name": "mini-apps",
   "postCreateCommand": "./.devcontainer/post-create.sh",
-  "waitFor": "postCreateCommand"
+  "service": "app",
+  "waitFor": "postCreateCommand",
+  "workspaceFolder": "/workspaces/mini-apps"
 }
