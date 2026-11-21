@@ -62,7 +62,12 @@ $ pnpm dev --filter @inabagumi/inaba-jinja
 
 ### モックサーバー
 
-`apps/inaba-jinja` と `apps/neru-camera` は Contentful からデータを取得します。認証情報がない環境では、[`compose.yaml`](compose.yaml) で定義しているモックサーバー ([`mocks/contentful`](mocks/contentful/README.md)) に接続することで、コードを書き換えずにビルドや動作確認ができます。
+`apps/inaba-jinja` と `apps/neru-camera` は Contentful からデータを取得します。`apps/inaba-jinja` はおみくじの抽選に Upstash Redis も使います。認証情報がない環境では、[`compose.yaml`](compose.yaml) で定義しているモックサーバーに接続することで、コードを書き換えずにビルドや動作確認ができます。
+
+| モックサーバー | URL | 使用するアプリ |
+| --- | --- | --- |
+| [`mocks/contentful`](mocks/contentful/README.md) | http://localhost:4000 | `apps/inaba-jinja`, `apps/neru-camera` |
+| [`mocks/upstash-redis`](mocks/upstash-redis/README.md) | http://localhost:4001 | `apps/inaba-jinja` |
 
 | 環境 | セットアップ |
 | --- | --- |
@@ -89,7 +94,7 @@ $ ./scripts/setup-mock-env.sh
 | `apps/neru-camera` | http://localhost:3003 |
 | `website`          | http://localhost:3004 |
 
-モックサーバーは http://localhost:4000 で起動します。
+モックサーバーは http://localhost:4000 と http://localhost:4001 で起動します。
 
 ## ライセンス
 

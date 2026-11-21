@@ -12,3 +12,7 @@ services:
   contentful:
     network_mode: service:app
     ports: !reset []
+
+  upstash-redis:
+    network_mode: service:app
+    ports: !reset []

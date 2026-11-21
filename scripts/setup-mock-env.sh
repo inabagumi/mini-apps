@@ -15,8 +15,8 @@ for app in apps/inaba-jinja apps/neru-camera; do
   fi
 
   sed -E \
-    -e '/^NEXT_PUBLIC_CONTENTFUL_(ACCESS_TOKEN|SPACE_ID)=$/d' \
-    -e 's/^# ((NEXT_PUBLIC_)?CONTENTFUL_[A-Z_]+=)/\1/' \
+    -e '/^(NEXT_PUBLIC_CONTENTFUL_(ACCESS_TOKEN|SPACE_ID)|UPSTASH_REDIS_REST_(TOKEN|URL))=$/d' \
+    -e 's/^# (((NEXT_PUBLIC_)?CONTENTFUL|UPSTASH_REDIS_REST)_[A-Z_]+=)/\1/' \
     "$app/.env.local.example" > "$app/.env.local"
   echo "Created $app/.env.local."
 done

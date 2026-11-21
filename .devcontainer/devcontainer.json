@@ -10,7 +10,7 @@
     }
   },
   "dockerComposeFile": ["../compose.yaml", "compose.yaml"],
-  "forwardPorts": [3000, 3001, 3002, 3003, 3004, 4000],
+  "forwardPorts": [3000, 3001, 3002, 3003, 3004, 4000, 4001],
   "hostRequirements": {
     "cpus": 4,
     "memory": "8gb",
