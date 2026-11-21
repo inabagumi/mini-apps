@@ -29,6 +29,6 @@
   "dependencies": {
     "@tailwindcss/typography": "0.5.20",
     "tailwindcss": "4.3.5",
-    "tailwindcss-safe-area": "1.3.0"
+    "tailwindcss-safe-area": "1.4.0"
   }
 }
