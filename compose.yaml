@@ -1,6 +1,7 @@
 # Mock servers for development and testing.
 #
-# The images are pulled from GHCR to avoid the rate limit of Docker Hub.
+# The images are pulled from GHCR or the mirror of Docker Hub (mirror.gcr.io)
+# to avoid the rate limit of Docker Hub.
 name: mini-apps
 
 services:
@@ -30,3 +31,49 @@ services:
       - 127.0.0.1:4000:4000
     volumes:
       - ./mocks/contentful:/home/wiremock:ro
+
+  # A mock server of the Upstash Redis REST API. See
+  # mocks/upstash-redis/README.md for details.
+  upstash-redis:
+    image: mirror.gcr.io/hiett/serverless-redis-http:0.0.10
+    depends_on:
+      valkey:
+        condition: service_healthy
+    environment:
+      SRH_CONNECTION_STRING: redis://valkey:6379
+      SRH_MODE: env
+      SRH_PORT: "4001"
+      SRH_TOKEN: mock
+    healthcheck:
+      # Send a command to make sure that the server can connect to Valkey.
+      test:
+        - CMD
+        - wget
+        - --quiet
+        - --output-document=/dev/null
+        - "--header=Authorization: Bearer mock"
+        - "--header=Content-Type: application/json"
+        - '--post-data=["PING"]'
+        - http://localhost:4001/
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 10s
+    ports:
+      - 127.0.0.1:4001:4001
+
+  # The data store of the `upstash-redis` service. The data is not persisted.
+  valkey:
+    image: ghcr.io/valkey-io/valkey:9.2.0-alpine
+    command:
+      - valkey-server
+      - --save
+      - ""
+      - --appendonly
+      - "no"
+    healthcheck:
+      test: [CMD, valkey-cli, ping]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 5s
