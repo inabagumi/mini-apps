@@ -585,8 +585,8 @@ importers:
         specifier: 4.3.5
         version: 4.3.5
       tailwindcss-safe-area:
-        specifier: 1.4.0
-        version: 1.4.0(tailwindcss@4.3.5)
+        specifier: 2.0.0
+        version: 2.0.0(tailwindcss@4.3.5)
 
   website:
     dependencies:
@@ -8301,8 +8301,8 @@ packages:
   tailwind-merge@3.7.1:
     resolution: {integrity: sha512-v7y4BV4FUlO8exj/4M5UXKeoowDiuugVUg3tkMNIyOUCOHy5xp8+5aWQeXCtZ2491sUV1YPsVeM9EveZ6/xuZQ==}
 
-  tailwindcss-safe-area@1.4.0:
-    resolution: {integrity: sha512-G6Ydm1vVLaDse8qe/taf8Bp4ZqAII9lhXD4DNcZu9nreMTBdr584UYfyUPuzxzPOakdRviU3GzjsyQOYGKH8AQ==}
+  tailwindcss-safe-area@2.0.0:
+    resolution: {integrity: sha512-pUk35FGSAmptpZ5JJQCk6uTKecQjYutvPYAEiof1Cs5WbI6aQwo13icrmQoCYPslm1+hFoIjNYYkHq4i+PPyAw==}
     engines: {node: '>=20'}
     peerDependencies:
       tailwindcss: ^4.0.0
@@ -18017,7 +18017,7 @@ snapshots:
 
   tailwind-merge@3.7.1: {}
 
-  tailwindcss-safe-area@1.4.0(tailwindcss@4.3.5):
+  tailwindcss-safe-area@2.0.0(tailwindcss@4.3.5):
     dependencies:
       tailwindcss: 4.3.5
 
