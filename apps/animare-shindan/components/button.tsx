@@ -1,6 +1,7 @@
-import { cn } from "cn";
 import Link from "next/link";
 import type { ComponentProps, JSX } from "react";
+
+import { cn } from "@/lib/cn";
 
 const variants = {
   /** A filled blue button on a white surface. */

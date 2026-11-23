@@ -1,7 +1,7 @@
-import { cn } from "cn";
 import type { JSX } from "react";
 
 import type { ResultParameter } from "@/lib/analysis";
+import { cn } from "@/lib/cn";
 
 interface Props {
   parameters: ResultParameter[];
@@ -34,7 +34,7 @@ export default function Graph({ parameters, title }: Props): JSX.Element {
               >
                 <div
                   className={cn(
-                    "h-full rounded-r-subtle bar-stripes motion-safe:animate-bar-in",
+                    "h-full rounded-r-subtle bg-bar-stripes motion-safe:animate-bar-in",
                     i === 0 ? "bg-sky" : "bg-bar"
                   )}
                 />

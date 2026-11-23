@@ -1,4 +1,3 @@
-import { cn } from "cn";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
@@ -6,6 +5,7 @@ import type { HTMLAttributes, JSX, ReactNode } from "react";
 
 import { ButtonLink, ExternalButtonLink } from "@/components/button";
 import { getAnalysisResult, getAnalysisResultIDs } from "@/lib/analysis";
+import { cn } from "@/lib/cn";
 import { createTweetURL } from "@/lib/share";
 import pkg from "@/package.json";
 

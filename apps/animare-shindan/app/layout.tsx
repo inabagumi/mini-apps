@@ -1,12 +1,12 @@
 import "./globals.css";
 import { SerwistProvider } from "@serwist/turbopack/react";
 import { Analytics } from "@vercel/analytics/next";
-import { cn } from "cn";
 import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import { Suspense } from "react";
 import type { JSX } from "react";
 
+import { cn } from "@/lib/cn";
 import pkg from "@/package.json";
 
 import ReleaseLink from "./release-link";
@@ -32,7 +32,7 @@ export default function RootLayout({
     <html
       className={cn(
         notoSans.variable,
-        "bg-brand page-pattern font-sans leading-body font-bold"
+        "bg-brand bg-page-pattern font-sans leading-body font-bold"
       )}
       lang="ja"
     >

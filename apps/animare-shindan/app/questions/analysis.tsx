@@ -1,7 +1,6 @@
 "use client";
 
 import { Root as Portal } from "@radix-ui/react-portal";
-import { cn } from "cn";
 import { useRouter } from "next/navigation";
 import {
   createContext,
@@ -22,6 +21,7 @@ import type {
 
 import { Button } from "@/components/button";
 import type { Question } from "@/lib/analysis";
+import { cn } from "@/lib/cn";
 
 const noop = (): void => {
   throw new TypeError("Cannot be executed before initialization.");

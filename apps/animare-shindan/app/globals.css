@@ -133,13 +133,8 @@
   word-break: auto-phrase;
 }
 
-/*
- * Background patterns. They are not named `bg-*`, because `cn` would take them
- * for background colors and drop them when merged with a `bg-*` color.
- */
-
 /* The diagonal lines on the page background. */
-@utility page-pattern {
+@utility bg-page-pattern {
   background-image: repeating-linear-gradient(
     150deg,
     rgb(255 255 255 / 0.05),
@@ -150,7 +145,7 @@
 }
 
 /* The stripes on the bars of the result graph. */
-@utility bar-stripes {
+@utility bg-bar-stripes {
   background-image: repeating-linear-gradient(
     45deg,
     rgb(255 255 255 / 0.15),
