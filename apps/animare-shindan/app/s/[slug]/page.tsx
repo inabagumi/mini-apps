@@ -1,18 +1,17 @@
-import { clsx } from "clsx";
+import { cn } from "cn";
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import type { HTMLAttributes, JSX, ReactNode } from "react";
 
+import { ButtonLink, ExternalButtonLink } from "@/components/button";
 import { getAnalysisResult, getAnalysisResultIDs } from "@/lib/analysis";
 import { createTweetURL } from "@/lib/share";
 import pkg from "@/package.json";
 
 import nanashiAvatar from "./avatar.svg";
 import Graph from "./graph";
-
-import styles from "./page.module.css";
+import nanashiIllust from "./nanashi.svg";
 
 const createYouTubeEmbedURL = (url: string): string => {
   const { pathname, searchParams } = new URL(url);
@@ -32,10 +31,27 @@ const createYouTubeEmbedURL = (url: string): string => {
 type MessageWindowProps = HTMLAttributes<HTMLDivElement>;
 
 const MessageWindow = ({
+  children,
   className,
   ...props
 }: MessageWindowProps): JSX.Element => (
-  <div className={clsx(styles.messageWindow, className)} {...props} />
+  <div
+    className={cn(
+      "relative mt-16 rounded-[20px] border-3 border-ink bg-white",
+      className
+    )}
+    {...props}
+  >
+    {/* oxlint-disable-next-line nextjs/no-img-element */}
+    <img
+      alt=""
+      className="pointer-events-none absolute inset-x-0 -top-16 mx-auto h-16 w-auto select-none"
+      height={nanashiIllust.height}
+      src={nanashiIllust.src}
+      width={nanashiIllust.width}
+    />
+    {children}
+  </div>
 );
 
 type Props = PageProps<"/s/[slug]">;
@@ -124,53 +140,58 @@ const ResultDetails = async ({
 
   return (
     <>
-      <MessageWindow className={styles.messageBox}>
-        <h2 className={styles.messageTitle}>
-          <span className={styles.messageTitleLine}>
+      <MessageWindow className="p-5 sm:p-10">
+        <h2 className="m-0 flex flex-col items-center justify-center text-center text-lg font-bold sm:text-[1.375rem]">
+          <span className="my-1 block text-base leading-normal">
             アナタは
-            <mark className={styles.messageTitleMark}>{result.type}</mark>
+            <mark className="mr-0.5 bg-transparent bg-[linear-gradient(transparent_80%,var(--color-highlight)_80%)] text-lg font-black">
+              {result.type}
+            </mark>
             系の
           </span>
-          <span className={styles.messageTitleLine}>
-            <mark className={styles.messageTitleMark}>{result.attribute}</mark>
+          <span className="block text-balance wrap-anywhere break-auto-phrase">
+            <mark className="inline bg-transparent bg-[linear-gradient(transparent_80%,var(--color-highlight)_80%)] box-decoration-clone text-[clamp(1.75rem,9vw,2.25rem)] leading-[1.4] font-black tracking-[0.08rem]">
+              {result.attribute}
+            </mark>
             好きです!
           </span>
         </h2>
 
-        <div className={styles.evaluation}>
-          <figure className={styles.evaluationAvatar}>
+        <div className="mt-5 flex items-start">
+          <figure className="m-0 mt-0.5 shrink-0">
             {/* oxlint-disable-next-line nextjs/no-img-element */}
             <img
               alt=""
-              className={styles.avatar}
+              className="mx-auto block size-14 rounded-full border-2 border-sky sm:size-20 sm:border-4"
               height={128}
               src={nanashiAvatar.src}
               width={128}
             />
-            <figcaption className={styles.evaluationCaption}>
+            <figcaption className="mt-1 text-center text-xs leading-tight font-bold text-ink">
               黒猫 ななし
             </figcaption>
           </figure>
 
-          <p className={styles.evaluationComment}>あにまーれは仲良しです♩</p>
+          <p className="relative mt-2 ml-4 flex-1 rounded-[10px] bg-line p-2.5 after:absolute after:top-4 after:-left-2.5 after:border-y-7 after:border-r-10 after:border-y-transparent after:border-r-line sm:mt-5">
+            あにまーれは仲良しです♩
+          </p>
         </div>
 
         <Suspense>
           <ShareVisibility searchParams={searchParams} shared={false}>
-            <a
-              className={styles.shareButton}
+            <ExternalButtonLink
+              className="mt-10 sm:max-w-80"
               href={createTweetURL(
                 shareURL,
                 `アナタは${result.type}系【${result.attribute}好き】です！\n`
               )}
-              rel="noopener noreferrer"
-              target="_blank"
+              variant="share"
             >
               診断結果をツイートする
-            </a>
-            <Link className={styles.retryButton} href="/">
+            </ExternalButtonLink>
+            <ButtonLink className="mt-3 sm:max-w-80" href="/" variant="subtle">
               もう一度診断する
-            </Link>
+            </ButtonLink>
           </ShareVisibility>
         </Suspense>
 
@@ -179,13 +200,13 @@ const ResultDetails = async ({
 
       <Suspense>
         <ShareVisibility searchParams={searchParams} shared>
-          <Link className={styles.button} href="/">
+          <ButtonLink className="mt-10 max-w-104" href="/" variant="outline">
             オタクタイプを診断してみる
-          </Link>
+          </ButtonLink>
         </ShareVisibility>
       </Suspense>
 
-      <h2 className={styles.subtitle}>
+      <h2 className="mx-auto mt-11 mb-2 px-2 text-2xl leading-[1.4] font-black tracking-[0.08rem] text-balance wrap-anywhere break-auto-phrase text-white sm:mt-16 sm:text-4xl">
         総勢約8,000名のVTuberの中から【{result.type}
         好き】のアナタにマッチするVTuberが選ばれました!
       </h2>
@@ -194,18 +215,20 @@ const ResultDetails = async ({
         <section>
           {result.recommendedVideo && (
             <>
-              <h2 className={styles.detailTitle}>
+              <h2 className="mt-6 mb-0 px-2 text-center text-base text-balance wrap-anywhere break-auto-phrase text-white sm:text-xl">
                 「{result.talent.name}」のおすすめ動画はこちら!
               </h2>
 
-              <div className={styles.detailContent}>
-                <header className={styles.profile}>
-                  <p className={styles.catchphrase}>{result.catchphrase}</p>
+              <div className="mx-auto mt-3 w-full max-w-94">
+                <header className="rounded-t-[20px] bg-white p-3">
+                  <p className="m-0 text-center text-xs leading-[1.4] text-[#595959]">
+                    {result.catchphrase}
+                  </p>
 
-                  <h3 className={styles.profileName}>
+                  <h3 className="m-0 text-center text-2xl leading-[1.6] font-black text-balance wrap-anywhere break-auto-phrase text-brand-strong">
                     {result.talent.twitter ? (
                       <a
-                        className={styles.profileNameLink}
+                        className="block rounded-md text-inherit no-underline hover:underline"
                         href={`https://twitter.com/${result.talent.twitter}`}
                         rel="noopener noreferrer"
                         target="_blank"
@@ -219,14 +242,14 @@ const ResultDetails = async ({
                 </header>
 
                 <div>
-                  <div className={styles.movie}>
+                  <div className="relative z-1 aspect-video w-full overflow-hidden rounded-b-[20px] bg-black">
                     {/* The YouTube player needs both `allow-scripts` and
                         `allow-same-origin`, which the rule disallows. */}
                     {/* oxlint-disable-next-line react/iframe-missing-sandbox */}
                     <iframe
                       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
-                      className={styles.movieFrame}
+                      className="absolute inset-0 size-full border-0"
                       height={315}
                       src={createYouTubeEmbedURL(result.recommendedVideo.url)}
                       title={`「${result.talent.name}」のおすすめ動画`}
@@ -240,19 +263,19 @@ const ResultDetails = async ({
 
           {result.talent.youtube && (
             <>
-              <h4 className={styles.headline}>
+              <h3 className="mt-5 mb-0 text-center text-lg leading-[1.6] font-black text-balance wrap-anywhere break-auto-phrase text-white sm:text-[1.75rem]">
                 YouTubeにアクセスして、
                 <br />「{result.talent.name}」と会話しよう!
-              </h4>
+              </h3>
 
-              <a
-                className={styles.detailButton}
+              <ExternalButtonLink
+                className="mt-3 max-w-95"
                 href={`https://www.youtube.com/channel/${result.talent.youtube}`}
-                rel="noopener noreferrer"
-                target="_blank"
+                size="lg"
+                variant="sun"
               >
                 このVTuberに会いに行く!
-              </a>
+              </ExternalButtonLink>
             </>
           )}
         </section>
@@ -266,8 +289,10 @@ export default function ResultPage({
   searchParams,
 }: Props): JSX.Element {
   return (
-    <main className={styles.content}>
-      <h1 className={styles.title}>オタクタイプ 診断結果</h1>
+    <main className="mx-auto w-full max-w-narrow pt-5 pb-8 sm:pt-6">
+      <h1 className="m-0 p-2 text-center text-xl font-black tracking-[0.08rem] text-white sm:px-0 sm:pt-0 sm:pb-6 sm:text-2xl">
+        オタクタイプ 診断結果
+      </h1>
 
       {/*
        * Everything that depends on the URL (`params` / `searchParams`) is
@@ -278,27 +303,33 @@ export default function ResultPage({
         <ResultDetails params={params} searchParams={searchParams} />
       </Suspense>
 
-      <div className={styles.footer}>
-        <MessageWindow className={styles.message}>
-          <p className={styles.messageParagraph}>
+      <div className="pt-10">
+        <MessageWindow className="mx-auto w-full max-w-104">
+          <p className="mx-5 mt-4 mb-0 text-center text-[1.0625rem] leading-[1.6] font-black">
             その他のVTuberや詳しい情報は
             <br />
             YouTubeをチェックしてみてね！
           </p>
 
-          <a
-            className={styles.messageButton}
+          <ExternalButtonLink
+            className="mx-5 mt-3 mb-5 w-auto"
             href="https://www.youtube.com/"
-            rel="noreferrer noopener"
-            target="_blank"
+            variant="brand"
           >
             YouTube公式ウェブサイト
-          </a>
+            <span
+              aria-hidden="true"
+              className="material-icons text-lg leading-none"
+            >
+              launch
+            </span>
+            <span className="sr-only">（新しいタブで開きます）</span>
+          </ExternalButtonLink>
         </MessageWindow>
 
-        <Link className={styles.button} href="/">
+        <ButtonLink className="mt-10 max-w-104" href="/" variant="outline">
           オタクタイプを診断してみる
-        </Link>
+        </ButtonLink>
       </div>
     </main>
   );

@@ -8,4 +8,10 @@ export default defineConfig({
     ...ultracite.ignorePatterns,
     "prisma/migrations/migration_lock.toml",
   ],
+  sortTailwindcss: {
+    ...(typeof ultracite.sortTailwindcss === "object"
+      ? ultracite.sortTailwindcss
+      : {}),
+    stylesheet: "./app/globals.css",
+  },
 });

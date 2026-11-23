@@ -4,15 +4,16 @@ import type { JSX } from "react";
 
 import { getRecentReleaseTitle } from "@/lib/releases";
 
-import styles from "./release-link.module.css";
-
 export default async function ReleaseLink(
   props: LinkProps
 ): Promise<JSX.Element> {
   const title = await getRecentReleaseTitle();
 
   return (
-    <Link className={styles.releaseLink} {...props}>
+    <Link
+      className="block rounded-sm text-sm text-ink underline underline-offset-4 hover:text-brand-strong hover:decoration-2"
+      {...props}
+    >
       {title}
     </Link>
   );

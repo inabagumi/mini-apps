@@ -5,8 +5,6 @@ import { getAnalysisResultIDs, getQuestions } from "@/lib/analysis";
 
 import Analysis, { AnswerList, Header, PrevButton } from "./analysis";
 
-import styles from "./page.module.css";
-
 export const metadata: Metadata = {
   alternates: {
     canonical: "/questions",
@@ -22,15 +20,29 @@ export default async function QuestionsPage(): Promise<JSX.Element> {
 
   return (
     <Analysis questions={questions} resultIDs={resultIDs}>
-      <div className={styles.container}>
+      <main className="mx-auto w-full max-w-narrow pt-7 pb-24 sm:pb-50">
+        <h1 className="sr-only">オタクタイプ診断</h1>
+
         <Header />
 
-        <div className={styles.content}>
-          <AnswerList className={styles.answerList} />
+        <div className="overflow-x-hidden">
+          <AnswerList className="flex -translate-x-[calc(100%*(var(--answer-count)-1))] flex-row motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-in-out" />
         </div>
 
-        <PrevButton className={styles.prevButton}>1つ前に戻る</PrevButton>
-      </div>
+        <PrevButton
+          className="mt-5 ml-1 w-fit pr-5 pl-2"
+          size="sm"
+          variant="secondary"
+        >
+          <span
+            aria-hidden="true"
+            className="material-icons text-2xl leading-none"
+          >
+            keyboard_arrow_left
+          </span>
+          1つ前に戻る
+        </PrevButton>
+      </main>
     </Analysis>
   );
 }

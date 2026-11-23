@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import type { JSX } from "react";
 
-import styles from "./page.module.css";
+import { ButtonLink } from "@/components/button";
 
 const description = "好みと推しVTuberを無意識から探る！";
 
@@ -25,12 +24,14 @@ export const metadata: Metadata = {
 export default function Home(): JSX.Element {
   return (
     <>
-      <h1 className={styles.title}>
-        <span className={styles.titleLine}>アナタの</span>
-        <span className={styles.titleLine}>オタクタイプ診断</span>
+      <h1 className="m-0 flex flex-col items-center justify-center text-center leading-[1.4] font-bold tracking-wide">
+        <span className="block text-xl sm:text-2xl">アナタの</span>
+        <span className="block text-[clamp(1.75rem,8.5vw,2.875rem)] break-keep">
+          オタクタイプ診断
+        </span>
       </h1>
 
-      <p className={styles.description}>
+      <p className="mt-5 text-center text-sm leading-[1.7] tracking-wide break-auto-phrase sm:mt-8 sm:text-base sm:leading-[1.8]">
         アナタの隠されたオタクタイプを徹底診断!
         <br />
         アナタにマッチするVTuberの、
@@ -38,16 +39,18 @@ export default function Home(): JSX.Element {
         オススメ動画も…?
       </p>
 
-      <p className={styles.intro}>アナタはどんなオタクタイプ?</p>
+      <p className="mt-6 text-center text-base font-black tracking-wide sm:text-lg">
+        アナタはどんなオタクタイプ?
+      </p>
 
-      <Link className={styles.button} href="/questions">
+      <ButtonLink className="mt-3 max-w-95" href="/questions" size="lg">
         診断スタート!
-      </Link>
+      </ButtonLink>
 
-      <p className={styles.disclaimer}>
+      <p className="mt-8 text-xs leading-[1.8] sm:text-[0.8125rem]">
         ※このサービスは
         <a
-          className={styles.disclaimerLink}
+          className="text-brand-strong underline decoration-1 underline-offset-2 transition-colors hover:text-brand hover:decoration-2"
           href="https://www.live.iriam.com/company"
           rel="noopener noreferrer"
           target="_blank"
@@ -56,7 +59,7 @@ export default function Home(): JSX.Element {
         </a>
         が提供するアプリである『
         <a
-          className={styles.disclaimerLink}
+          className="text-brand-strong underline decoration-1 underline-offset-2 transition-colors hover:text-brand hover:decoration-2"
           href="https://www.live.iriam.com/"
           rel="noopener noreferrer"
           target="_blank"
@@ -66,7 +69,7 @@ export default function Home(): JSX.Element {
         』 の関連サービスとして公開されていた『あなたのオタクタイプ診断 by
         IRIAM』をオリジナルとして、
         <a
-          className={styles.disclaimerLink}
+          className="text-brand-strong underline decoration-1 underline-offset-2 transition-colors hover:text-brand hover:decoration-2"
           href="https://www.774.ai/"
           rel="noopener noreferrer"
           target="_blank"
@@ -76,7 +79,7 @@ export default function Home(): JSX.Element {
         が運営しているバーチャルYouTuberグループ『有閑喫茶
         あにまーれ』をモチーフにして株式会社IRIAMや774 inc. とは一切関係のない
         <a
-          className={styles.disclaimerLink}
+          className="text-brand-strong underline decoration-1 underline-offset-2 transition-colors hover:text-brand hover:decoration-2"
           href="https://haneru.dev/"
           rel="noopener noreferrer"
           target="_blank"

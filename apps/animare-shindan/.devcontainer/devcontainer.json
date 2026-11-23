@@ -1,7 +1,11 @@
 {
   "customizations": {
     "vscode": {
-      "extensions": ["EditorConfig.EditorConfig", "oxc.oxc-vscode"]
+      "extensions": [
+        "bradlc.vscode-tailwindcss",
+        "EditorConfig.EditorConfig",
+        "oxc.oxc-vscode"
+      ]
     }
   },
   "forwardPorts": [3000],

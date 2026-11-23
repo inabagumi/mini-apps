@@ -1,23 +1,92 @@
-@layer base, state;
+@import "tailwindcss";
 
-html {
-  background-color: #0588f7;
-  background-image: repeating-linear-gradient(
-    150deg,
-    rgba(255, 255, 255, 0.05),
-    rgba(255, 255, 255, 0.05) 9px,
-    transparent 10px,
-    transparent 19px
-  );
-  font-family: var(--font-noto-sans), sans-serif;
-  font-size: 10px;
-  font-weight: 700;
-  height: 100%;
-  line-height: 1.8;
+@theme inline {
+  --font-sans: var(--font-noto-sans), sans-serif;
 }
 
-body {
-  font-size: 1.5rem;
-  height: 100%;
-  margin: 0;
+@theme {
+  /* Brand colors */
+  --color-brand: #0588f7;
+  --color-brand-strong: #0068c9;
+  --color-sky: #14b9ff;
+  --color-sun: #fbc02d;
+  --color-highlight: #fff263;
+  --color-share: #1d7fc8;
+
+  /* Opaque tints for hover states (the page background must not show through) */
+  --color-brand-tint: #e6f3fe;
+  --color-sky-tint: #e8f8ff;
+  --color-highlight-tint: #fffac1;
+  --color-line-tint: #f6f6f6;
+
+  /* Neutral colors */
+  --color-ink: #000;
+  --color-line: #ececec;
+  --color-bar: #d1d1d1;
+  --color-muted: #505050;
+
+  /* Content widths */
+  --container-page: 42.5rem;
+  --container-narrow: 31.25rem;
+
+  /* Animations */
+  --animate-fade-in: fade-in 0.4s linear;
+  --animate-grow: grow 1.8s ease-in;
+  --animate-loading-dots: loading-dots 1s infinite;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes grow {
+    from {
+      width: 0;
+    }
+
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes loading-dots {
+    0%,
+    100% {
+      content: "";
+    }
+
+    25% {
+      content: ".";
+    }
+
+    50% {
+      content: "..";
+    }
+
+    75% {
+      content: "...";
+    }
+  }
+}
+
+@layer base {
+  /* A focus ring that stays visible on both the blue background and white surfaces. */
+  :focus-visible {
+    @apply ring-3 ring-highlight outline-3 outline-offset-3 outline-ink;
+  }
+
+  /* Elements that only receive the focus programmatically (e.g. headings). */
+  [tabindex="-1"]:focus {
+    @apply ring-0 outline-none;
+  }
+}
+
+/* Lets Japanese text break between phrases instead of between any characters. */
+@utility break-auto-phrase {
+  word-break: auto-phrase;
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { Root as Portal } from "@radix-ui/react-portal";
-import { clsx } from "clsx";
+import { cn } from "cn";
 import { useRouter } from "next/navigation";
 import {
   createContext,
@@ -9,19 +9,26 @@ import {
   useCallback,
   useEffect,
   useMemo,
+  useRef,
   useState,
 } from "react";
-import type { HTMLAttributes, JSX, MouseEventHandler, ReactNode } from "react";
+import type {
+  ComponentProps,
+  HTMLAttributes,
+  JSX,
+  MouseEventHandler,
+  ReactNode,
+} from "react";
 
+import { Button } from "@/components/button";
 import type { Question } from "@/lib/analysis";
-
-import styles from "./analysis.module.css";
 
 const noop = (): void => {
   throw new TypeError("Cannot be executed before initialization.");
 };
 
 interface AnalysisContextValue {
+  analyzing: boolean;
   count: number;
   questions: Question[];
   setCount: (value: number) => void;
@@ -29,6 +36,7 @@ interface AnalysisContextValue {
 }
 
 const AnalysisContext = createContext<AnalysisContextValue>({
+  analyzing: false,
   count: 0,
   questions: [],
   setCount: noop,
@@ -38,13 +46,14 @@ const AnalysisContext = createContext<AnalysisContextValue>({
 const useAnalysisContext = (): AnalysisContextValue => use(AnalysisContext);
 
 interface UseAnalyzerReturn {
+  analyzing: boolean;
   startAnalyze: () => void;
 }
 
 const useAnalyzer = (): UseAnalyzerReturn => {
-  const { startAnalyze } = useAnalysisContext();
+  const { analyzing, startAnalyze } = useAnalysisContext();
 
-  return { startAnalyze };
+  return { analyzing, startAnalyze };
 };
 
 interface UseCounterReturn {
@@ -70,34 +79,58 @@ const useCurrentQuestion = (): Question => {
 export const Header = (): JSX.Element => {
   const { currentCount: count, maxCount } = useCounter();
   const question = useCurrentQuestion();
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const prevCount = useRef(count);
+
+  // Move the focus to the new question so that keyboard and screen reader
+  // users can follow the transition. Nothing is done on the initial render to
+  // keep the default focus position when the page is opened.
+  useEffect(() => {
+    if (prevCount.current !== count) {
+      titleRef.current?.focus({ preventScroll: true });
+    }
+
+    prevCount.current = count;
+  }, [count]);
 
   return (
     <>
-      <header className={styles.header}>
-        <h3 className={styles.number}>Q{count}</h3>
-        <h2 className={styles.title}>{question.title}</h2>
+      <header className="flex min-h-41 flex-col items-center justify-center gap-4 sm:min-h-49">
+        <p className="m-0 flex h-10 min-w-20 items-center justify-center rounded-full bg-sun px-4 pb-1 text-[1.375rem] font-black tracking-[0.16rem] text-ink">
+          <span className="sr-only">質問</span>Q{count}
+        </p>
+        <h2
+          className="m-0 w-full px-2 text-center text-2xl leading-normal font-black tracking-wide text-balance wrap-anywhere break-auto-phrase text-white sm:text-3xl"
+          ref={titleRef}
+          tabIndex={-1}
+        >
+          {question.title}
+        </h2>
       </header>
 
-      <div className={styles.counter}>
-        {maxCount === count ? (
-          <p className={styles.counterContent}>
-            <mark
-              className={clsx(styles.counterValue, styles.counterValueLast)}
-            >
+      <div className="mt-2 px-1.5">
+        <p className="m-0 flex h-10 items-baseline justify-end gap-0.5 text-sm leading-9 font-black text-white">
+          {maxCount === count ? (
+            <mark className="bg-transparent text-lg text-highlight">
               ラスト
             </mark>
-          </p>
-        ) : (
-          <p className={styles.counterContent}>
-            残り
-            <mark className={styles.counterValue}>
-              {maxCount - (count - 1)}
-            </mark>
-            問
-          </p>
-        )}
+          ) : (
+            <>
+              残り
+              <mark className="bg-transparent text-2xl text-highlight">
+                {maxCount - (count - 1)}
+              </mark>
+              問
+            </>
+          )}
+        </p>
 
-        <progress className={styles.progressBar} max={maxCount} value={count} />
+        <progress
+          aria-label="診断の進み具合"
+          className="block h-3 w-full appearance-none overflow-hidden rounded-md border-0 bg-black/30 [&::-moz-progress-bar]:rounded-md [&::-moz-progress-bar]:bg-highlight [&::-webkit-progress-bar]:bg-transparent [&::-webkit-progress-value]:rounded-md [&::-webkit-progress-value]:bg-highlight motion-safe:[&::-webkit-progress-value]:transition-[width] motion-safe:[&::-webkit-progress-value]:duration-300 motion-safe:[&::-webkit-progress-value]:ease-out"
+          max={maxCount}
+          value={count}
+        />
       </div>
     </>
   );
@@ -109,7 +142,7 @@ interface AnswerProps {
 }
 
 const Answer = ({ question, show = false }: AnswerProps): JSX.Element => {
-  const { startAnalyze } = useAnalyzer();
+  const { analyzing, startAnalyze } = useAnalyzer();
   const { currentCount, maxCount, setCount } = useCounter();
 
   const handleClickAnswer = useCallback<
@@ -123,13 +156,22 @@ const Answer = ({ question, show = false }: AnswerProps): JSX.Element => {
   }, [currentCount, maxCount, setCount, startAnalyze]);
 
   return (
-    <div
+    <fieldset
       aria-hidden={!show}
-      className={clsx(styles.answer, { [styles.answerShow]: show })}
+      className={cn(
+        "mt-5 flex min-w-0 shrink-0 grow-0 basis-full flex-col gap-2.5 px-1.5 py-1.5 backface-hidden motion-safe:transition-opacity motion-safe:duration-400 motion-safe:ease-linear sm:gap-3",
+        show ? "opacity-100" : "opacity-0"
+      )}
+      // Answers of the other questions are kept in the DOM for the slide
+      // animation, so they must not be focusable.
+      inert={!show}
     >
+      <legend className="sr-only">{question.title}</legend>
+
       {question.answers.map((answer, i) => (
         <button
-          className={styles.answerButton}
+          className="flex min-h-17.5 w-full items-center justify-start rounded-2xl border-3 border-ink bg-white px-5 py-3 text-left text-base leading-[1.4] font-bold break-words text-ink transition-[background-color,box-shadow] duration-150 ease-out hover:bg-highlight-tint hover:shadow-[0_4px_0_rgb(0_0_0/0.2)] active:bg-highlight disabled:cursor-default sm:min-h-21.5 sm:text-xl sm:leading-[1.6]"
+          disabled={analyzing}
           key={`answer-${i}`}
           onClick={handleClickAnswer}
           type="button"
@@ -137,7 +179,7 @@ const Answer = ({ question, show = false }: AnswerProps): JSX.Element => {
           {answer}
         </button>
       ))}
-    </div>
+    </fieldset>
   );
 };
 
@@ -170,7 +212,7 @@ export const AnswerList = ({
   );
 };
 
-type PrevButtonProps = HTMLAttributes<HTMLButtonElement>;
+type PrevButtonProps = ComponentProps<typeof Button>;
 
 export const PrevButton = ({
   className,
@@ -191,10 +233,9 @@ export const PrevButton = ({
   );
 
   return (
-    <button
-      className={clsx(className, { [styles.prevButtonHide]: currentCount < 2 })}
+    <Button
+      className={cn(className, currentCount < 2 && "invisible opacity-0")}
       onClick={handleClick}
-      type="button"
       {...props}
     />
   );
@@ -218,8 +259,10 @@ const Analyzing = ({ resultURL }: AnalyzingProps): JSX.Element => {
   }, [resultURL, router]);
 
   return (
-    <Portal className={styles.nowAnalyzing}>
-      <p className={styles.nowAnalyzingText}>あなたのオタクタイプを分析中</p>
+    <Portal className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4 text-center text-xl font-black text-white motion-safe:animate-fade-in sm:text-2xl">
+      <output className="after:absolute after:ml-0.5 after:inline-block after:content-[''] motion-safe:after:animate-loading-dots motion-reduce:after:content-['...']">
+        あなたのオタクタイプを分析中
+      </output>
     </Portal>
   );
 };
@@ -259,8 +302,14 @@ export default function Analysis({
   }, [resultIDs]);
 
   const contextValue = useMemo(
-    () => ({ count, questions, setCount: wrappedSetCount, startAnalyze }),
-    [count, questions, wrappedSetCount, startAnalyze]
+    () => ({
+      analyzing: resultURL !== null,
+      count,
+      questions,
+      setCount: wrappedSetCount,
+      startAnalyze,
+    }),
+    [count, questions, resultURL, wrappedSetCount, startAnalyze]
   );
 
   return (
