@@ -61,3 +61,13 @@ model RecommendedVideo {
 
   @@map("recommended_videos")
 }
+
+model Release {
+  body        String
+  id          String   @id @default(dbgenerated("uuidv7()")) @db.Uuid
+  publishedAt DateTime @map("published_at")
+  slug        String   @unique
+  title       String
+
+  @@map("releases")
+}

@@ -30,7 +30,6 @@
   },
   "dependencies": {
     "@neondatabase/serverless": "1.2.1",
-    "@octokit/rest": "22.0.1",
     "@prisma/adapter-neon": "7.10.1",
     "@prisma/client": "7.10.1",
     "@radix-ui/react-portal": "1.2.0",

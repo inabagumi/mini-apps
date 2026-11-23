@@ -6,8 +6,12 @@ import { getRecentReleaseTitle } from "@/lib/releases";
 
 export default async function ReleaseLink(
   props: LinkProps
-): Promise<JSX.Element> {
+): Promise<JSX.Element | null> {
   const title = await getRecentReleaseTitle();
+
+  if (!title) {
+    return null;
+  }
 
   return (
     <Link
