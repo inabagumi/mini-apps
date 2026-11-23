@@ -20,8 +20,8 @@ import type {
 } from "react";
 
 import { Button } from "@/components/button";
-import type { Question } from "@/lib/analysis";
 import { cn } from "@/lib/cn";
+import type { Question } from "@/lib/questions";
 import { decideResult } from "@/lib/scoring";
 
 const noop = (): void => {

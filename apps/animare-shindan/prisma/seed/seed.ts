@@ -73,6 +73,8 @@ const TRANSACTION_TIMEOUT = 60_000;
  *
  * The seed is idempotent and runs in a transaction, so running it again does
  * not duplicate the records, and a failure leaves the database unchanged.
+ * The questions and the answers are shown in the order of the arrays in the
+ * seed data, so reordering the arrays reorders them in the database too.
  * Records that are not in the seed data are left as they are, which means
  * removing an item from the seed data does not delete it from the database.
  * The exception is the scores between the answers and the results in the seed
@@ -94,17 +96,31 @@ export const seed = async (
       // The queries in a transaction are sent one by one anyway, so run them
       // in order to make the failure easy to follow.
       /* oxlint-disable no-await-in-loop */
-      for (const { answers, id, title } of data.questions) {
+      // The questions and the answers are shown in the order of the arrays,
+      // so their positions are renumbered from the indexes every time.
+      for (const [
+        position,
+        { answers, id, title },
+      ] of data.questions.entries()) {
         await tx.question.upsert({
-          create: { id, title },
-          update: { title },
+          create: { id, position, title },
+          update: { position, title },
           where: { id },
         });
 
-        for (const answer of answers) {
+        for (const [answerPosition, answer] of answers.entries()) {
           await tx.answer.upsert({
-            create: { id: answer.id, questionId: id, value: answer.value },
-            update: { questionId: id, value: answer.value },
+            create: {
+              id: answer.id,
+              position: answerPosition,
+              questionId: id,
+              value: answer.value,
+            },
+            update: {
+              position: answerPosition,
+              questionId: id,
+              value: answer.value,
+            },
             where: { id: answer.id },
           });
         }
