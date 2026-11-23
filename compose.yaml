@@ -1,4 +1,4 @@
-# Mock servers for development and testing.
+# Mock servers and other services for development and testing.
 #
 # The images are pulled from GHCR or the mirror of Docker Hub (mirror.gcr.io)
 # to avoid the rate limit of Docker Hub.
@@ -61,6 +61,25 @@ services:
       start_period: 10s
     ports:
       - 127.0.0.1:4001:4001
+
+  # A PostgreSQL server for the tests that need a database (e.g. the seed of
+  # animare-shindan). Set `TEST_DATABASE_URL` to
+  # `postgres://postgres:postgres@127.0.0.1:5432/postgres` to use it. The data
+  # is not persisted.
+  postgres:
+    image: mirror.gcr.io/library/postgres:18-alpine
+    environment:
+      POSTGRES_PASSWORD: postgres
+    healthcheck:
+      test: [CMD, pg_isready, --username=postgres]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 10s
+    ports:
+      - 127.0.0.1:5432:5432
+    tmpfs:
+      - /var/lib/postgresql
 
   # The data store of the `upstash-redis` service. The data is not persisted.
   valkey:

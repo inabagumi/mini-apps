@@ -4,6 +4,11 @@
   "tasks": {
     "build": {
       "env": ["DATABASE_URL"]
+    },
+    "test": {
+      "env": ["TEST_DATABASE_URL"],
+      "inputs": ["$TURBO_EXTENDS$", "prisma/**"],
+      "passThroughEnv": ["CI"]
     }
   }
 }
