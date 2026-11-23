@@ -16,7 +16,7 @@ export default function StaticLayout({ children }: Props): JSX.Element {
     <>
       <header className="mx-auto flex w-full max-w-page items-center justify-between gap-4 py-5">
         <Link
-          className="block rounded-[3px] bg-[#212121] py-0 pr-[0.2em] pl-[0.5em] text-[1.0625rem] leading-loose tracking-[7px] text-white no-underline"
+          className="block rounded-sm bg-logo py-0 pr-[0.2em] pl-[0.5em] text-lg leading-loose tracking-logo text-white no-underline"
           href="/"
         >
           ANiMARE
@@ -26,7 +26,7 @@ export default function StaticLayout({ children }: Props): JSX.Element {
           <ul className="m-0 flex list-none gap-2 p-0">
             <li className="block">
               <a
-                className="flex size-11 items-center justify-center rounded-full bg-white transition-[box-shadow] duration-150 hover:shadow-[0_4px_0_rgb(0_0_0/0.2)] active:shadow-[inset_0_3px_0_rgb(0_0_0/0.2)] sm:size-12"
+                className="flex size-11 items-center justify-center rounded-full bg-white transition-shadow duration-150 hover:shadow-raised active:shadow-pressed sm:size-12"
                 href={createTweetURL(new URL("/", pkg.homepage).toString())}
                 rel="noopener noreferrer"
                 target="_blank"
@@ -43,7 +43,7 @@ export default function StaticLayout({ children }: Props): JSX.Element {
             </li>
             <li className="block">
               <a
-                className="flex size-11 items-center justify-center rounded-full bg-white transition-[box-shadow] duration-150 hover:shadow-[0_4px_0_rgb(0_0_0/0.2)] active:shadow-[inset_0_3px_0_rgb(0_0_0/0.2)] sm:size-12"
+                className="flex size-11 items-center justify-center rounded-full bg-white transition-shadow duration-150 hover:shadow-raised active:shadow-pressed sm:size-12"
                 href={createLineShareURL(new URL("/", pkg.homepage).toString())}
                 rel="noopener noreferrer"
                 target="_blank"
@@ -63,7 +63,7 @@ export default function StaticLayout({ children }: Props): JSX.Element {
       </header>
 
       <main className="pt-6 sm:pt-16">
-        <div className="mx-auto w-full max-w-page rounded-[20px] border-4 border-ink bg-white px-5 py-7 text-ink sm:px-8 sm:py-10">
+        <div className="mx-auto w-full max-w-page rounded-3xl border-4 border-ink bg-white px-5 py-7 text-ink sm:px-8 sm:py-10">
           {children}
         </div>
       </main>

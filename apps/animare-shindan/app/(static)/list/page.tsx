@@ -26,17 +26,17 @@ const components: MDXRemoteProps["components"] = {
     <li className="m-0 flex items-start p-0" {...props}>
       <span
         aria-hidden="true"
-        className="material-icons -ml-1.5 shrink-0 text-xl/[1.8] text-brand"
+        className="material-icons -ml-1.5 shrink-0 text-xl/body text-brand"
       >
         arrow_right
       </span>
       <span className="min-w-0">{children}</span>
     </li>
   ),
-  p: (props) => <p className="my-3 text-sm leading-[1.6]" {...props} />,
+  p: (props) => <p className="my-3 text-sm leading-relaxed" {...props} />,
   ul: (props) => (
     <ul
-      className="m-0 mt-3 grid list-none grid-cols-1 gap-x-4 p-0 text-[0.9375rem] min-[25rem]:grid-cols-2 sm:mt-4.5"
+      className="m-0 mt-3 grid list-none grid-cols-1 gap-x-4 p-0 text-base xs:grid-cols-2 sm:mt-4.5"
       {...props}
     />
   ),
@@ -55,13 +55,13 @@ export default async function ReleasesPage(): Promise<JSX.Element> {
           key={release.slug}
         >
           <time
-            className="block text-sm leading-none sm:text-[0.9375rem]"
+            className="block text-sm leading-none sm:text-base"
             dateTime={release.date}
           >
             {format(new Date(release.date), "yyyy.MM.dd")}
           </time>
 
-          <h2 className="mt-2 mb-1.5 text-[clamp(1.75rem,7vw,2.25rem)] leading-[1.4] font-black tracking-wide text-balance wrap-anywhere break-auto-phrase text-brand-strong sm:mb-3">
+          <h2 className="mt-2 mb-1.5 text-fluid-title leading-snug font-black tracking-wide text-balance wrap-anywhere break-auto-phrase text-brand-strong sm:mb-3">
             {release.title}
           </h2>
           <div className="min-w-0">

@@ -10,6 +10,7 @@
   --color-brand-strong: #0068c9;
   --color-sky: #14b9ff;
   --color-sun: #fbc02d;
+  --color-sun-strong: #f9a825;
   --color-highlight: #fff263;
   --color-share: #1d7fc8;
 
@@ -24,14 +25,38 @@
   --color-line: #ececec;
   --color-bar: #d1d1d1;
   --color-muted: #505050;
+  --color-caption: #595959;
+  --color-logo: #212121;
 
   /* Content widths */
   --container-page: 42.5rem;
   --container-narrow: 31.25rem;
 
+  /* Breakpoints */
+  --breakpoint-xs: 25rem;
+
+  /* Font sizes that scale with the viewport */
+  --text-fluid-hero: clamp(1.75rem, 8.5vw, 2.875rem);
+  --text-fluid-title: clamp(1.75rem, 7vw, 2.25rem);
+  --text-fluid-result: clamp(1.75rem, 9vw, 2.25rem);
+
+  /* The line height of the body text */
+  --leading-body: 1.8;
+
+  /* The letter spacing of the logo */
+  --tracking-logo: 7px;
+
+  /*
+   * Shadows of controls that are raised on hover and pressed on click. The
+   * pressed one is also a `--shadow-*` (not an `--inset-shadow-*`) so that it
+   * replaces the raised one instead of being drawn on top of it.
+   */
+  --shadow-raised: 0 4px 0 rgb(0 0 0 / 0.2);
+  --shadow-pressed: inset 0 3px 0 rgb(0 0 0 / 0.2);
+
   /* Animations */
   --animate-fade-in: fade-in 0.4s linear;
-  --animate-grow: grow 1.8s ease-in;
+  --animate-bar-in: fade-in 0.4s linear, grow 1.8s ease-in;
   --animate-loading-dots: loading-dots 1s infinite;
 
   @keyframes fade-in {
@@ -89,4 +114,26 @@
 /* Lets Japanese text break between phrases instead of between any characters. */
 @utility break-auto-phrase {
   word-break: auto-phrase;
+}
+
+/* The diagonal lines on the page background. */
+@utility bg-page-pattern {
+  background-image: repeating-linear-gradient(
+    150deg,
+    rgb(255 255 255 / 0.05),
+    rgb(255 255 255 / 0.05) 9px,
+    transparent 10px,
+    transparent 19px
+  );
+}
+
+/* The stripes on the bars of the result graph. */
+@utility bg-bar-stripes {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgb(255 255 255 / 0.15),
+    rgb(255 255 255 / 0.15) 0.75rem,
+    transparent 0.75rem,
+    transparent 1.5rem
+  );
 }

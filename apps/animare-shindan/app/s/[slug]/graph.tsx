@@ -1,7 +1,7 @@
-import { cn } from "cn";
 import type { JSX } from "react";
 
 import type { ResultParameter } from "@/lib/analysis";
+import { cn } from "@/lib/cn";
 
 interface Props {
   parameters: ResultParameter[];
@@ -18,7 +18,7 @@ export default function Graph({ parameters, title }: Props): JSX.Element {
       <dl className="m-0 pt-4 pb-3 sm:pt-9 sm:pb-0">
         {parameters.map((parameter, i) => (
           <div className="flex" key={parameter.label}>
-            <dt className="flex w-22 shrink-0 items-center border-r border-line py-2 pr-1 text-xs leading-[1.4] tracking-wide break-auto-phrase">
+            <dt className="flex w-22 shrink-0 items-center border-r border-line py-2 pr-1 text-xs leading-snug tracking-wide break-auto-phrase">
               <span className="motion-safe:animate-fade-in">
                 {parameter.label}
               </span>
@@ -34,7 +34,7 @@ export default function Graph({ parameters, title }: Props): JSX.Element {
               >
                 <div
                   className={cn(
-                    "h-full rounded-r-[3px] bg-[repeating-linear-gradient(45deg,rgb(255_255_255/0.15),rgb(255_255_255/0.15)_0.75rem,transparent_0.75rem,transparent_1.5rem)] motion-safe:animate-[fade-in_0.4s_linear,grow_1.8s_ease-in]",
+                    "h-full rounded-r-sm bg-bar-stripes motion-safe:animate-bar-in",
                     i === 0 ? "bg-sky" : "bg-bar"
                   )}
                 />

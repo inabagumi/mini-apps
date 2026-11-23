@@ -24,14 +24,14 @@ export const metadata: Metadata = {
 export default function Home(): JSX.Element {
   return (
     <>
-      <h1 className="m-0 flex flex-col items-center justify-center text-center leading-[1.4] font-bold tracking-wide">
+      <h1 className="m-0 flex flex-col items-center justify-center text-center leading-snug font-bold tracking-wide">
         <span className="block text-xl sm:text-2xl">アナタの</span>
-        <span className="block text-[clamp(1.75rem,8.5vw,2.875rem)] break-keep">
+        <span className="block text-fluid-hero break-keep">
           オタクタイプ診断
         </span>
       </h1>
 
-      <p className="mt-5 text-center text-sm leading-[1.7] tracking-wide break-auto-phrase sm:mt-8 sm:text-base sm:leading-[1.8]">
+      <p className="mt-5 text-center text-sm leading-relaxed tracking-wide break-auto-phrase sm:mt-8 sm:text-base sm:leading-body">
         アナタの隠されたオタクタイプを徹底診断!
         <br />
         アナタにマッチするVTuberの、
@@ -47,7 +47,7 @@ export default function Home(): JSX.Element {
         診断スタート!
       </ButtonLink>
 
-      <p className="mt-8 text-xs leading-[1.8] sm:text-[0.8125rem]">
+      <p className="mt-8 text-xs leading-body sm:text-sm">
         ※このサービスは
         <a
           className="text-brand-strong underline decoration-1 underline-offset-2 transition-colors hover:text-brand hover:decoration-2"
