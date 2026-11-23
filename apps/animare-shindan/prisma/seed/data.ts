@@ -154,7 +154,7 @@ export const seedData: SeedData = {
     },
     {
       attribute: "ゲーマー",
-      catchphrase: "おかえりなさいませ♪ご主人さま！",
+      catchphrase: "やった！やった！倒した～！",
       parameters: [
         { label: "努力", value: 1.05 },
         { label: "ゲーマー", value: 0.32 },
