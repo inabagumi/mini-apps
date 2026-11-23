@@ -27,7 +27,7 @@ const components: MDXRemoteProps["components"] = {
     <li className="m-0 flex items-start p-0" {...props}>
       <ChevronRight
         aria-hidden="true"
-        className="my-2 -ml-1.5 size-5 shrink-0 text-brand"
+        className="-ml-1.5 size-6 shrink-0 text-brand"
       />
       <span className="min-w-0">{children}</span>
     </li>

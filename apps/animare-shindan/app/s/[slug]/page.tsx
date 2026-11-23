@@ -318,7 +318,7 @@ export default function ResultPage({
             variant="brand"
           >
             YouTube公式ウェブサイト
-            <ExternalLink aria-hidden="true" className="size-4.5 shrink-0" />
+            <ExternalLink aria-hidden="true" className="size-6 shrink-0" />
             <span className="sr-only">（新しいタブで開きます）</span>
           </ExternalButtonLink>
         </MessageWindow>
