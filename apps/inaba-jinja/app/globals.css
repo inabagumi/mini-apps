@@ -4,6 +4,8 @@
 @source "../node_modules/@inabagumi/components/dist";
 
 @theme {
+  --color-x: #0f1419;
+
   --animate-shake: shake 0.3s infinite alternate linear;
 
   @keyframes shake {

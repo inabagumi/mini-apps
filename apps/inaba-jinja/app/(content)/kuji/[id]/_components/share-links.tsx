@@ -43,7 +43,7 @@ export default function ShareLinks({
       <ul className="flex items-center justify-center">
         <li>
           <a
-            className="inline-block rounded-full bg-[#0f1419] px-6 py-2 text-sm font-semibold tracking-wide text-white"
+            className="inline-block rounded-full bg-x px-6 py-2 text-sm font-semibold tracking-wide text-white"
             href={tweetShereURL}
             rel="noopener noreferrer"
             target="_blank"
