@@ -12,6 +12,9 @@ export async function getQuestions(): Promise<Question[]> {
     },
     select: {
       answers: {
+        orderBy: {
+          id: 'asc'
+        },
         select: {
           value: true
         }
