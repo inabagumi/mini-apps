@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 @theme {
+  --color-highlight: hsl(211 81% 36%);
+
   --animate-dash: dash 1s ease-in infinite;
 
   /* ref: https://codepen.io/supah/pen/BjYLdW */

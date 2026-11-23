@@ -15,10 +15,10 @@ export default function HeaderMenu() {
       </Menu.Trigger>
       <Menu.Portal>
         <Menu.Positioner align="end">
-          <Menu.Popup className="block border border-black/25 bg-white/99 p-0 text-[85%] whitespace-nowrap outline-hidden">
+          <Menu.Popup className="block border border-black/25 bg-white/99 p-0 text-sm whitespace-nowrap outline-hidden">
             {assets.map((asset) => (
               <Menu.Item
-                className="block cursor-pointer px-5 py-1.25 select-none data-highlighted:bg-[hsl(211_81%_36%)] data-highlighted:text-white data-highlighted:outline-hidden"
+                className="block cursor-pointer px-5 py-1.25 select-none data-highlighted:bg-highlight data-highlighted:text-white data-highlighted:outline-hidden"
                 data-asset-id={asset.sys.id}
                 key={asset.sys.id}
                 onClick={() => setAssetID(asset.sys.id)}

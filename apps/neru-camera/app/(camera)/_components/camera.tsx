@@ -5,10 +5,10 @@ import { Application, extend } from "@pixi/react";
 import type { ApplicationRef } from "@pixi/react";
 import { track } from "@vercel/analytics";
 import { fileSave } from "browser-fs-access";
-import { cn } from "cn";
 import { Sprite } from "pixi.js";
 import { useCallback, useEffect, useRef, useState } from "react";
 
+import { cn } from "#/lib/cn";
 import processing from "#/lib/processing";
 
 import { useAsset } from "./asset";
@@ -142,7 +142,7 @@ export default function Camera() {
         <AlertDialog.Portal>
           <AlertDialog.Backdrop className="fixed inset-0 bg-black/33" />
           <AlertDialog.Viewport className="fixed inset-0 overflow-auto">
-            <AlertDialog.Popup className="mx-auto my-[10vh] w-[50vw] bg-white p-8 outline-hidden">
+            <AlertDialog.Popup className="mx-auto my-[10vh] w-1/2 bg-white p-8 outline-hidden">
               <AlertDialog.Title>エラー</AlertDialog.Title>
 
               <AlertDialog.Description>
