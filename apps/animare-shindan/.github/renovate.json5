@@ -1,4 +1,4 @@
 {
-  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
-  extends: ['github>inabagumi/.github//renovate-config/default.json5']
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  extends: ["github>inabagumi/.github//renovate-config/default.json5"],
 }

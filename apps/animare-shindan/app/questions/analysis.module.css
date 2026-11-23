@@ -169,29 +169,29 @@
 
 @keyframes loading {
   0% {
-    content: '';
+    content: "";
   }
 
   25% {
-    content: '.';
+    content: ".";
   }
 
   50% {
-    content: '..';
+    content: "..";
   }
 
   75% {
-    content: '...';
+    content: "...";
   }
 
   100% {
-    content: '';
+    content: "";
   }
 }
 
 .nowAnalyzingText::after {
   animation: loading 1s infinite;
-  content: '';
+  content: "";
   display: inline-block;
   margin: 0 0 0 2px;
   position: absolute;

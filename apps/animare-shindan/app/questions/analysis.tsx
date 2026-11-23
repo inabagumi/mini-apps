@@ -1,80 +1,75 @@
-'use client'
+"use client";
 
-import { Root as Portal } from '@radix-ui/react-portal'
-import clsx from 'clsx'
-import { useRouter } from 'next/navigation'
+import { Root as Portal } from "@radix-ui/react-portal";
+import { clsx } from "clsx";
+import { useRouter } from "next/navigation";
 import {
-  type HTMLAttributes,
-  type JSX,
-  type MouseEventHandler,
-  type ReactNode,
   createContext,
   use,
   useCallback,
   useEffect,
   useMemo,
-  useState
-} from 'react'
+  useState,
+} from "react";
+import type { HTMLAttributes, JSX, MouseEventHandler, ReactNode } from "react";
 
-import { type Question } from '@/lib/analysis'
+import type { Question } from "@/lib/analysis";
 
-import styles from './analysis.module.css'
+import styles from "./analysis.module.css";
 
-function noop(): void {
-  throw new TypeError('Cannot be executed before initialization.')
-}
+const noop = (): void => {
+  throw new TypeError("Cannot be executed before initialization.");
+};
 
-type AnalysisContextValue = {
-  count: number
-  questions: Question[]
-  setCount: (value: number) => void
-  startAnalyze: () => void
+interface AnalysisContextValue {
+  count: number;
+  questions: Question[];
+  setCount: (value: number) => void;
+  startAnalyze: () => void;
 }
 
 const AnalysisContext = createContext<AnalysisContextValue>({
   count: 0,
   questions: [],
   setCount: noop,
-  startAnalyze: noop
-})
+  startAnalyze: noop,
+});
 
-function useAnalysisContext(): AnalysisContextValue {
-  return use(AnalysisContext)
+const useAnalysisContext = (): AnalysisContextValue => use(AnalysisContext);
+
+interface UseAnalyzerReturn {
+  startAnalyze: () => void;
 }
 
-type UseAnalyzerReturn = {
-  startAnalyze: () => void
+const useAnalyzer = (): UseAnalyzerReturn => {
+  const { startAnalyze } = useAnalysisContext();
+
+  return { startAnalyze };
+};
+
+interface UseCounterReturn {
+  currentCount: number;
+  maxCount: number;
+  setCount: (count: number) => void;
 }
 
-function useAnalyzer(): UseAnalyzerReturn {
-  const { startAnalyze } = useAnalysisContext()
+const useCounter = (): UseCounterReturn => {
+  const { count: currentCount, questions, setCount } = useAnalysisContext();
+  const maxCount = useMemo(() => questions.length, [questions]);
 
-  return { startAnalyze }
-}
+  return { currentCount, maxCount, setCount };
+};
 
-type UseCounterReturn = {
-  currentCount: number
-  maxCount: number
-  setCount: (count: number) => void
-}
+const useCurrentQuestion = (): Question => {
+  const { count, questions } = useAnalysisContext();
+  const question = questions[count - 1];
 
-function useCounter(): UseCounterReturn {
-  const { count: currentCount, questions, setCount } = useAnalysisContext()
-  const maxCount = useMemo(() => questions.length, [questions])
+  return question;
+};
 
-  return { currentCount, maxCount, setCount }
-}
-
-function useCurrentQuestion(): Question {
-  const { count, questions } = useAnalysisContext()
-  const question = questions[count - 1]
-
-  return question
-}
-
-export function Header(): JSX.Element {
-  const { currentCount: count, maxCount } = useCounter()
-  const question = useCurrentQuestion()
+export const Header = (): JSX.Element => {
+  const { currentCount: count, maxCount } = useCounter();
+  const question = useCurrentQuestion();
 
   return (
     <>
@@ -105,27 +100,27 @@ export function Header(): JSX.Element {
         <progress className={styles.progressBar} max={maxCount} value={count} />
       </div>
     </>
-  )
+  );
+};
+
+interface AnswerProps {
+  question: Question;
+  show?: boolean;
 }
 
-type AnswerProps = {
-  question: Question
-  show?: boolean
-}
-
-function Answer({ question, show = false }: AnswerProps): JSX.Element {
-  const { startAnalyze } = useAnalyzer()
-  const { currentCount, maxCount, setCount } = useCounter()
+const Answer = ({ question, show = false }: AnswerProps): JSX.Element => {
+  const { startAnalyze } = useAnalyzer();
+  const { currentCount, maxCount, setCount } = useCounter();
 
   const handleClickAnswer = useCallback<
     MouseEventHandler<HTMLButtonElement>
   >(() => {
     if (currentCount < maxCount) {
-      setCount(currentCount + 1)
+      setCount(currentCount + 1);
     } else {
-      startAnalyze()
+      startAnalyze();
     }
-  }, [currentCount, maxCount, setCount, startAnalyze])
+  }, [currentCount, maxCount, setCount, startAnalyze]);
 
   return (
     <div
@@ -143,22 +138,25 @@ function Answer({ question, show = false }: AnswerProps): JSX.Element {
         </button>
       ))}
     </div>
-  )
-}
+  );
+};
 
-type AnswerListProps = HTMLAttributes<HTMLDivElement>
+type AnswerListProps = HTMLAttributes<HTMLDivElement>;
 
-export function AnswerList({ style, ...props }: AnswerListProps): JSX.Element {
-  const { questions } = useAnalysisContext()
-  const { currentCount } = useCounter()
+export const AnswerList = ({
+  style,
+  ...props
+}: AnswerListProps): JSX.Element => {
+  const { questions } = useAnalysisContext();
+  const { currentCount } = useCounter();
 
   return (
     <div
       {...props}
       style={{
         // @ts-expect-error CSS Variables
-        '--answer-count': currentCount,
-        ...style
+        "--answer-count": currentCount,
+        ...style,
       }}
     >
       {questions.map((question, i) => (
@@ -169,28 +167,28 @@ export function AnswerList({ style, ...props }: AnswerListProps): JSX.Element {
         />
       ))}
     </div>
-  )
-}
+  );
+};
 
-type PrevButtonProps = HTMLAttributes<HTMLButtonElement>
+type PrevButtonProps = HTMLAttributes<HTMLButtonElement>;
 
-export function PrevButton({
+export const PrevButton = ({
   className,
   onClick,
   ...props
-}: PrevButtonProps): JSX.Element {
-  const { currentCount, setCount } = useCounter()
+}: PrevButtonProps): JSX.Element => {
+  const { currentCount, setCount } = useCounter();
 
   const handleClick = useCallback<MouseEventHandler<HTMLButtonElement>>(
     (event) => {
-      if (typeof onClick === 'function') {
-        onClick(event)
+      if (typeof onClick === "function") {
+        onClick(event);
       }
 
-      setCount(currentCount - 1)
+      setCount(currentCount - 1);
     },
     [currentCount, setCount, onClick]
-  )
+  );
 
   return (
     <button
@@ -199,74 +197,77 @@ export function PrevButton({
       type="button"
       {...props}
     />
-  )
+  );
+};
+
+interface AnalyzingProps {
+  resultURL: string;
 }
 
-type AnalyzingProps = {
-  resultURL: string
-}
-
-function Analyzing({ resultURL }: AnalyzingProps): JSX.Element {
-  const router = useRouter()
+const Analyzing = ({ resultURL }: AnalyzingProps): JSX.Element => {
+  const router = useRouter();
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      router.push(resultURL)
-    }, 1_500)
+      router.push(resultURL);
+    }, 1500);
 
     return () => {
-      clearTimeout(timer)
-    }
-  }, [resultURL, router])
+      clearTimeout(timer);
+    };
+  }, [resultURL, router]);
 
   return (
     <Portal className={styles.nowAnalyzing}>
       <p className={styles.nowAnalyzingText}>あなたのオタクタイプを分析中</p>
     </Portal>
-  )
-}
+  );
+};
 
-type Props = {
-  children: ReactNode
-  questions: Question[]
-  resultIDs: string[]
+interface Props {
+  children: ReactNode;
+  questions: Question[];
+  resultIDs: string[];
 }
 
 export default function Analysis({
   children,
   questions,
-  resultIDs
+  resultIDs,
 }: Props): JSX.Element {
-  const [count, setCount] = useState(1)
-  const [resultURL, setResultURL] = useState<string | null>(null)
-  const maxCount = useMemo(() => questions.length, [questions])
+  const [count, setCount] = useState(1);
+  const [resultURL, setResultURL] = useState<string | null>(null);
+  const maxCount = useMemo(() => questions.length, [questions]);
 
   const wrappedSetCount = useCallback(
-    (count: number) => {
-      if (!(1 <= count && count <= maxCount)) {
-        throw new RangeError(`The argument must be between 1 and ${maxCount}.`)
+    (value: number) => {
+      if (!(value >= 1 && value <= maxCount)) {
+        throw new RangeError(`The argument must be between 1 and ${maxCount}.`);
       }
 
-      setCount(count)
+      setCount(value);
     },
     [maxCount, setCount]
-  )
+  );
 
   const startAnalyze = useCallback(() => {
     // Pick the result in the browser when the last question is answered so
     // that every visitor gets their own random result.
-    const resultID = resultIDs[Math.floor(resultIDs.length * Math.random())]
+    const resultID = resultIDs[Math.floor(resultIDs.length * Math.random())];
 
-    setResultURL(`/s/${resultID}`)
-  }, [resultIDs])
+    setResultURL(`/s/${resultID}`);
+  }, [resultIDs]);
+
+  const contextValue = useMemo(
+    () => ({ count, questions, setCount: wrappedSetCount, startAnalyze }),
+    [count, questions, wrappedSetCount, startAnalyze]
+  );
 
   return (
-    <AnalysisContext
-      value={{ count, questions, setCount: wrappedSetCount, startAnalyze }}
-    >
+    <AnalysisContext value={contextValue}>
       {children}
 
       {resultURL && <Analyzing resultURL={resultURL} />}
     </AnalysisContext>
-  )
+  );
 }

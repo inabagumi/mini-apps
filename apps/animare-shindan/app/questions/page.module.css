@@ -52,7 +52,7 @@
   }
 
   .prevButton::before {
-    content: 'keyboard_arrow_left';
+    content: "keyboard_arrow_left";
     display: inline-block;
     font-family: Material Icons;
     font-size: 24px;

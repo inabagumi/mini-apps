@@ -15,6 +15,5 @@ jobs:
         with:
           cache: true
           require-lockfile: true
-      - run: pnpm format-check
       - run: pnpm typecheck
-      - run: pnpm lint
+      - run: pnpm check

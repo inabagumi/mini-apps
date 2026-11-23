@@ -46,7 +46,7 @@
 
 .parameterLabel::after {
   border-right: 1px solid #ececec;
-  content: '';
+  content: "";
   display: block;
   height: 76px;
   position: absolute;

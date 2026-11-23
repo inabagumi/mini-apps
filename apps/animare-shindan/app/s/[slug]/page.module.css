@@ -9,11 +9,11 @@
 
 .messageWindow::before {
   background-color: transparent;
-  background-image: url('./nanashi.svg');
+  background-image: url("./nanashi.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  content: '';
+  content: "";
   display: block;
   height: 63px;
   left: 0;
@@ -164,7 +164,7 @@
   border-color: transparent #ececec transparent transparent;
   border-style: solid;
   border-width: 7px 10px 7px 0;
-  content: '';
+  content: "";
   display: block;
   height: 0;
   left: -10px;
@@ -397,7 +397,7 @@
 }
 
 .messageButton::after {
-  content: 'launch';
+  content: "launch";
   display: inline-block;
   font-family: Material Icons;
   font-size: 1.8rem;

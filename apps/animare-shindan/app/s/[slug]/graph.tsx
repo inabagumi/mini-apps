@@ -1,13 +1,13 @@
-import clsx from 'clsx'
-import { type JSX } from 'react'
+import { clsx } from "clsx";
+import type { JSX } from "react";
 
-import { type ResultParameter } from '@/lib/analysis'
+import type { ResultParameter } from "@/lib/analysis";
 
-import styles from './graph.module.css'
+import styles from "./graph.module.css";
 
-type Props = {
-  parameters: ResultParameter[]
-  title: string
+interface Props {
+  parameters: ResultParameter[];
+  title: string;
 }
 
 export default function Graph({ parameters, title }: Props): JSX.Element {
@@ -30,7 +30,7 @@ export default function Graph({ parameters, title }: Props): JSX.Element {
               >
                 <div
                   className={clsx(styles.graphBarValue, {
-                    [styles.graphBarValueBlue]: i === 0
+                    [styles.graphBarValueBlue]: i === 0,
                   })}
                 />
               </div>
@@ -39,5 +39,5 @@ export default function Graph({ parameters, title }: Props): JSX.Element {
         ))}
       </dl>
     </div>
-  )
+  );
 }

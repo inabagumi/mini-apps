@@ -1,15 +1,16 @@
-import Link from 'next/link'
-import { type JSX, type ReactNode } from 'react'
+import Link from "next/link";
+import type { JSX, ReactNode } from "react";
 
-import { createLineShareURL, createTweetURL } from '@/lib/share'
-import pkg from '@/package.json'
+import { createLineShareURL, createTweetURL } from "@/lib/share";
+import pkg from "@/package.json";
 
-import styles from './layout.module.css'
-import lineLogo from './line.svg'
-import twitterLogo from './twitter.svg'
+import lineLogo from "./line.svg";
+import twitterLogo from "./twitter.svg";
 
-type Props = {
-  children: ReactNode
+import styles from "./layout.module.css";
+
+interface Props {
+  children: ReactNode;
 }
 
 export default function StaticLayout({ children }: Props): JSX.Element {
@@ -25,11 +26,11 @@ export default function StaticLayout({ children }: Props): JSX.Element {
             <li className={styles.navigationItem}>
               <a
                 className={styles.shareButton}
-                href={createTweetURL(new URL('/', pkg.homepage).toString())}
+                href={createTweetURL(new URL("/", pkg.homepage).toString())}
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
+                {/* oxlint-disable-next-line nextjs/no-img-element */}
                 <img
                   alt="Twitter"
                   className={styles.shareIcon}
@@ -42,11 +43,11 @@ export default function StaticLayout({ children }: Props): JSX.Element {
             <li className={styles.navigationItem}>
               <a
                 className={styles.shareButton}
-                href={createLineShareURL(new URL('/', pkg.homepage).toString())}
+                href={createLineShareURL(new URL("/", pkg.homepage).toString())}
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
+                {/* oxlint-disable-next-line nextjs/no-img-element */}
                 <img
                   alt="Line"
                   className={styles.shareIcon}
@@ -64,5 +65,5 @@ export default function StaticLayout({ children }: Props): JSX.Element {
         <div className={styles.message}>{children}</div>
       </main>
     </>
-  )
+  );
 }

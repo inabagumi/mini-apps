@@ -72,7 +72,7 @@
 
 .releaseBody :global(li::before) {
   color: #0588f7;
-  content: 'arrow_right';
+  content: "arrow_right";
   display: block;
   font-family: Material Icons;
   font-size: 2rem;

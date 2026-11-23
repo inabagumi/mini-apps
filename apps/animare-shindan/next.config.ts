@@ -1,5 +1,5 @@
-import { withSerwist } from '@serwist/turbopack'
-import { type NextConfig } from 'next'
+import { withSerwist } from "@serwist/turbopack";
+import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   cacheComponents: true,
@@ -9,11 +9,11 @@ const nextConfig: NextConfig = {
   rewrites() {
     return Promise.resolve([
       {
-        destination: '/serwist/sw.js',
-        source: '/sw.js'
-      }
-    ])
-  }
-}
+        destination: "/serwist/sw.js",
+        source: "/sw.js",
+      },
+    ]);
+  },
+};
 
-export default withSerwist(nextConfig)
+export default withSerwist(nextConfig);

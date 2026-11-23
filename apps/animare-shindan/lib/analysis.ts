@@ -1,67 +1,69 @@
-import { cacheLife } from 'next/cache'
+import { cacheLife } from "next/cache";
 
-import prisma from './prisma'
+import prisma from "./prisma";
 
-export type Question = {
-  answers: string[]
-  title: string
+export interface Question {
+  answers: string[];
+  title: string;
 }
 
-export async function getQuestions(): Promise<Question[]> {
-  'use cache'
-  cacheLife('minutes')
+export const getQuestions = async (): Promise<Question[]> => {
+  "use cache";
+  cacheLife("minutes");
 
   const questions = await prisma.question.findMany({
     orderBy: {
-      id: 'desc'
+      id: "desc",
     },
     select: {
       answers: {
         orderBy: {
-          id: 'asc'
+          id: "asc",
         },
         select: {
-          value: true
-        }
+          value: true,
+        },
       },
-      title: true
-    }
-  })
+      title: true,
+    },
+  });
 
   return questions.map(({ answers, title }) => ({
     answers: answers.map((answer) => answer.value),
-    title
-  }))
+    title,
+  }));
+};
+
+export interface Talent {
+  name: string;
+  twitter?: string | null;
+  youtube?: string | null;
 }
 
-export type Talent = {
-  name: string
-  twitter?: string | null
-  youtube?: string | null
+export interface RecommendedVideo {
+  url: string;
 }
 
-export type RecommendedVideo = {
-  url: string
+export interface ResultParameter {
+  label: string;
+  value: number;
 }
 
-export type ResultParameter = {
-  label: string
-  value: number
+export interface Result {
+  attribute: string;
+  catchphrase: string;
+  parameters: ResultParameter[];
+  recommendedVideo: RecommendedVideo;
+  slug: string;
+  talent: Talent;
+  type: string;
 }
 
-export type Result = {
-  attribute: string
-  catchphrase: string
-  parameters: ResultParameter[]
-  recommendedVideo: RecommendedVideo
+export const getAnalysisResult = async (
   slug: string
-  talent: Talent
-  type: string
-}
-
-export async function getAnalysisResult(slug: string): Promise<Result | null> {
-  'use cache'
-  cacheLife('minutes')
+): Promise<Result | null> => {
+  "use cache";
+  cacheLife("minutes");
 
   const result = await prisma.result.findFirst({
     select: {
@@ -70,41 +72,41 @@ export async function getAnalysisResult(slug: string): Promise<Result | null> {
       parameters: true,
       recommendedVideo: {
         select: {
-          url: true
-        }
+          url: true,
+        },
       },
       slug: true,
       talent: {
         select: {
           name: true,
           twitter: true,
-          youtube: true
-        }
+          youtube: true,
+        },
       },
-      type: true
+      type: true,
     },
     where: {
-      slug: slug
-    }
-  })
+      slug,
+    },
+  });
 
   return result
     ? {
         ...result,
-        parameters: result.parameters as ResultParameter[]
+        parameters: result.parameters as unknown as ResultParameter[],
       }
-    : null
-}
+    : null;
+};
 
-export async function getAnalysisResultIDs(): Promise<string[]> {
-  'use cache'
-  cacheLife('minutes')
+export const getAnalysisResultIDs = async (): Promise<string[]> => {
+  "use cache";
+  cacheLife("minutes");
 
   const results = await prisma.result.findMany({
     select: {
-      slug: true
-    }
-  })
+      slug: true,
+    },
+  });
 
-  return results.map((result) => result.slug)
-}
+  return results.map((result) => result.slug);
+};

@@ -1,23 +1,24 @@
-import { type Metadata } from 'next'
-import { type JSX } from 'react'
+import type { Metadata } from "next";
+import type { JSX } from "react";
 
-import { getAnalysisResultIDs, getQuestions } from '@/lib/analysis'
+import { getAnalysisResultIDs, getQuestions } from "@/lib/analysis";
 
-import Analysis, { AnswerList, Header, PrevButton } from './analysis'
-import styles from './page.module.css'
+import Analysis, { AnswerList, Header, PrevButton } from "./analysis";
+
+import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: '/questions'
+    canonical: "/questions",
   },
-  title: '診断中...'
-}
+  title: "診断中...",
+};
 
 export default async function QuestionsPage(): Promise<JSX.Element> {
   const [questions, resultIDs] = await Promise.all([
     getQuestions(),
-    getAnalysisResultIDs()
-  ])
+    getAnalysisResultIDs(),
+  ]);
 
   return (
     <Analysis questions={questions} resultIDs={resultIDs}>
@@ -31,5 +32,5 @@ export default async function QuestionsPage(): Promise<JSX.Element> {
         <PrevButton className={styles.prevButton}>1つ前に戻る</PrevButton>
       </div>
     </Analysis>
-  )
+  );
 }

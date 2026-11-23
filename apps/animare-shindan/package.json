@@ -1,5 +1,25 @@
 {
+  "name": "animare-shindan",
+  "version": "4.0.0",
+  "private": true,
+  "description": "Shindan by AniMare",
+  "homepage": "https://shindan.animare.cafe/",
+  "license": "MIT",
   "author": "Haneru Developers",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/inabagumi/animare-shindan.git"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "next build",
+    "check": "ultracite check",
+    "dev": "next dev",
+    "fix": "ultracite fix",
+    "postinstall": "prisma generate",
+    "start": "next start",
+    "typecheck": "next typegen && tsc --noEmit"
+  },
   "dependencies": {
     "@neondatabase/serverless": "^1.2.1",
     "@octokit/rest": "^22.0.1",
@@ -14,7 +34,6 @@
     "react": "^19.3.1",
     "react-dom": "^19.3.1"
   },
-  "description": "Shindan by AniMare",
   "devDependencies": {
     "@next/env": "^16.4.6",
     "@serwist/turbopack": "^9.5.15",
@@ -22,14 +41,12 @@
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "esbuild": "^0.28.2",
-    "eslint": "^9.39.5",
-    "eslint-config-next": "^16.4.6",
-    "eslint-config-prettier": "^10.1.8",
-    "prettier": "~3.10.1",
+    "oxfmt": "0.79.0",
+    "oxlint": "1.94.0",
     "prisma": "^7.10.1",
     "serwist": "^9.5.15",
     "typescript": "~6.0.3",
-    "typescript-eslint": "^8.73.0"
+    "ultracite": "8.3.1"
   },
   "devEngines": {
     "packageManager": {
@@ -46,25 +63,5 @@
   "engines": {
     "node": "26.13.1"
   },
-  "homepage": "https://shindan.animare.cafe/",
-  "license": "MIT",
-  "name": "animare-shindan",
-  "packageManager": "pnpm@12.21.0",
-  "private": true,
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/inabagumi/animare-shindan.git"
-  },
-  "scripts": {
-    "build": "next build",
-    "dev": "next dev",
-    "format": "prettier -w .",
-    "format-check": "prettier -c .",
-    "lint": "eslint",
-    "postinstall": "prisma generate",
-    "start": "next start",
-    "typecheck": "next typegen && tsc --noEmit"
-  },
-  "type": "module",
-  "version": "4.0.0"
+  "packageManager": "pnpm@12.21.0"
 }

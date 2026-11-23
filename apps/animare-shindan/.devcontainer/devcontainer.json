@@ -1,7 +1,7 @@
 {
   "customizations": {
     "vscode": {
-      "extensions": ["EditorConfig.EditorConfig", "esbenp.prettier-vscode"]
+      "extensions": ["EditorConfig.EditorConfig", "oxc.oxc-vscode"]
     }
   },
   "forwardPorts": [3000],

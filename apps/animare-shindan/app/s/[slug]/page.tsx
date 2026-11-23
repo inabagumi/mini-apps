@@ -1,50 +1,49 @@
-import clsx from 'clsx'
-import { type Metadata } from 'next'
-import Link from 'next/link'
-import { notFound } from 'next/navigation'
-import { type HTMLAttributes, type JSX, type ReactNode, Suspense } from 'react'
+import { clsx } from "clsx";
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { Suspense } from "react";
+import type { HTMLAttributes, JSX, ReactNode } from "react";
 
-import { getAnalysisResult, getAnalysisResultIDs } from '@/lib/analysis'
-import { createTweetURL } from '@/lib/share'
-import pkg from '@/package.json'
+import { getAnalysisResult, getAnalysisResultIDs } from "@/lib/analysis";
+import { createTweetURL } from "@/lib/share";
+import pkg from "@/package.json";
 
-import nanashiAvatar from './avatar.svg'
-import Graph from './graph'
-import styles from './page.module.css'
+import nanashiAvatar from "./avatar.svg";
+import Graph from "./graph";
 
-function createYouTubeEmbedURL(url: string): string {
-  const { pathname, searchParams } = new URL(url)
+import styles from "./page.module.css";
 
-  let id: string | null = null
+const createYouTubeEmbedURL = (url: string): string => {
+  const { pathname, searchParams } = new URL(url);
 
-  if (pathname === '/watch' && searchParams.has('id')) {
-    id = searchParams.get('v')
-  } else {
-    id = pathname.slice(1)
-  }
+  const id =
+    pathname === "/watch" && searchParams.has("id")
+      ? searchParams.get("v")
+      : pathname.slice(1);
 
   if (!id) {
-    throw new TypeError('An invalid URL was given as an argument.')
+    throw new TypeError("An invalid URL was given as an argument.");
   }
 
-  return `https://www.youtube.com/embed/${id}`
-}
+  return `https://www.youtube.com/embed/${id}`;
+};
 
-type MessageWindowProps = HTMLAttributes<HTMLDivElement>
+type MessageWindowProps = HTMLAttributes<HTMLDivElement>;
 
-function MessageWindow({
+const MessageWindow = ({
   className,
   ...props
-}: MessageWindowProps): JSX.Element {
-  return <div className={clsx(styles.messageWindow, className)} {...props} />
-}
+}: MessageWindowProps): JSX.Element => (
+  <div className={clsx(styles.messageWindow, className)} {...props} />
+);
 
-type Props = PageProps<'/s/[slug]'>
+type Props = PageProps<"/s/[slug]">;
 
-type ShareVisibilityProps = {
-  children: ReactNode
-  searchParams: Props['searchParams']
-  shared: boolean
+interface ShareVisibilityProps {
+  children: ReactNode;
+  searchParams: Props["searchParams"];
+  shared: boolean;
 }
 
 /**
@@ -52,40 +51,42 @@ type ShareVisibilityProps = {
  * link (`?s=true`) matches `shared`. This reads `searchParams`, so it has to
  * be wrapped in `<Suspense>` to keep the rest of the page prerendered.
  */
-async function ShareVisibility({
+const ShareVisibility = async ({
   children,
   searchParams,
-  shared
-}: ShareVisibilityProps): Promise<ReactNode> {
-  const { s } = await searchParams
-  const sharedParam = (Array.isArray(s) ? s.at(-1) : s) ?? 'false'
-  const isShared = ['1', 'true'].includes(sharedParam)
+  shared,
+}: ShareVisibilityProps): Promise<ReactNode> => {
+  const { s } = await searchParams;
+  const sharedParam = (Array.isArray(s) ? s.at(-1) : s) ?? "false";
+  const isShared = ["1", "true"].includes(sharedParam);
 
-  return isShared === shared ? children : null
-}
+  return isShared === shared ? children : null;
+};
 
-export async function generateStaticParams(): Promise<
-  Awaited<Props['params']>[]
-> {
-  const resultIDs = await getAnalysisResultIDs()
+export const generateStaticParams = async (): Promise<
+  Awaited<Props["params"]>[]
+> => {
+  const resultIDs = await getAnalysisResultIDs();
 
-  return resultIDs.map((slug) => ({ slug }))
-}
+  return resultIDs.map((slug) => ({ slug }));
+};
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params
-  const result = await getAnalysisResult(slug)
+export const generateMetadata = async ({
+  params,
+}: Props): Promise<Metadata> => {
+  const { slug } = await params;
+  const result = await getAnalysisResult(slug);
 
   if (!result) {
-    notFound()
+    notFound();
   }
 
-  const title = `${result.talent.name}が選ばれました！`
-  const description = '好みと推しVTuberを無意識から探る！'
+  const title = `${result.talent.name}が選ばれました！`;
+  const description = "好みと推しVTuberを無意識から探る！";
 
   return {
     alternates: {
-      canonical: `/s/${result.slug}`
+      canonical: `/s/${result.slug}`,
     },
     description,
     openGraph: {
@@ -94,32 +95,32 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         {
           height: 630,
           url: `/images/results/${result.slug}.png`,
-          width: 1200
-        }
+          width: 1200,
+        },
       ],
       title,
-      type: 'article',
-      url: `/s/${result.slug}`
+      type: "article",
+      url: `/s/${result.slug}`,
     },
     title,
     twitter: {
-      card: 'summary_large_image'
-    }
-  }
-}
+      card: "summary_large_image",
+    },
+  };
+};
 
-async function ResultDetails({
+const ResultDetails = async ({
   params,
-  searchParams
-}: Props): Promise<JSX.Element> {
-  const { slug } = await params
-  const result = await getAnalysisResult(slug)
+  searchParams,
+}: Props): Promise<JSX.Element> => {
+  const { slug } = await params;
+  const result = await getAnalysisResult(slug);
 
   if (!result) {
-    notFound()
+    notFound();
   }
 
-  const shareURL = new URL(`/s/${result.slug}?s=true`, pkg.homepage).toString()
+  const shareURL = new URL(`/s/${result.slug}?s=true`, pkg.homepage).toString();
 
   return (
     <>
@@ -138,7 +139,7 @@ async function ResultDetails({
 
         <div className={styles.evaluation}>
           <figure className={styles.evaluationAvatar}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
+            {/* oxlint-disable-next-line nextjs/no-img-element */}
             <img
               alt=""
               className={styles.avatar}
@@ -163,12 +164,11 @@ async function ResultDetails({
                 `アナタは${result.type}系【${result.attribute}好き】です！\n`
               )}
               rel="noopener noreferrer"
-              role="button"
               target="_blank"
             >
               診断結果をツイートする
             </a>
-            <Link className={styles.retryButton} href="/" role="button">
+            <Link className={styles.retryButton} href="/">
               もう一度診断する
             </Link>
           </ShareVisibility>
@@ -179,7 +179,7 @@ async function ResultDetails({
 
       <Suspense>
         <ShareVisibility searchParams={searchParams} shared>
-          <Link className={styles.button} href="/" role="button">
+          <Link className={styles.button} href="/">
             オタクタイプを診断してみる
           </Link>
         </ShareVisibility>
@@ -220,12 +220,16 @@ async function ResultDetails({
 
                 <div>
                   <div className={styles.movie}>
+                    {/* The YouTube player needs both `allow-scripts` and
+                        `allow-same-origin`, which the rule disallows. */}
+                    {/* oxlint-disable-next-line react/iframe-missing-sandbox */}
                     <iframe
                       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                       className={styles.movieFrame}
                       height={315}
                       src={createYouTubeEmbedURL(result.recommendedVideo.url)}
+                      title={`「${result.talent.name}」のおすすめ動画`}
                       width={560}
                     />
                   </div>
@@ -245,7 +249,6 @@ async function ResultDetails({
                 className={styles.detailButton}
                 href={`https://www.youtube.com/channel/${result.talent.youtube}`}
                 rel="noopener noreferrer"
-                role="button"
                 target="_blank"
               >
                 このVTuberに会いに行く!
@@ -255,12 +258,12 @@ async function ResultDetails({
         </section>
       )}
     </>
-  )
-}
+  );
+};
 
 export default function ResultPage({
   params,
-  searchParams
+  searchParams,
 }: Props): JSX.Element {
   return (
     <main className={styles.content}>
@@ -287,17 +290,16 @@ export default function ResultPage({
             className={styles.messageButton}
             href="https://www.youtube.com/"
             rel="noreferrer noopener"
-            role="button"
             target="_blank"
           >
             YouTube公式ウェブサイト
           </a>
         </MessageWindow>
 
-        <Link className={styles.button} href="/" role="button">
+        <Link className={styles.button} href="/">
           オタクタイプを診断してみる
         </Link>
       </div>
     </main>
-  )
+  );
 }

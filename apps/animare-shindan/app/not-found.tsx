@@ -1,12 +1,13 @@
-import { type Metadata } from 'next'
-import { type JSX } from 'react'
+import type { Metadata } from "next";
+import type { JSX } from "react";
 
-import Layout from './(static)/layout'
-import styles from './not-found.module.css'
+import Layout from "./(static)/layout";
+
+import styles from "./not-found.module.css";
 
 export const metadata: Metadata = {
-  title: '404 Not found'
-}
+  title: "404 Not found",
+};
 
 export default function NotFound(): JSX.Element {
   return (
@@ -17,5 +18,5 @@ export default function NotFound(): JSX.Element {
         おさがしのページを見つけることができませんでした。
       </p>
     </Layout>
-  )
+  );
 }
