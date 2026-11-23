@@ -3,7 +3,7 @@
   "extends": ["//"],
   "tasks": {
     "build": {
-      "env": ["DATABASE_URL", "GITHUB_TOKEN"]
+      "env": ["DATABASE_URL"]
     }
   }
 }

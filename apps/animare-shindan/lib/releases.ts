@@ -1,9 +1,6 @@
-import { Octokit } from "@octokit/rest";
 import { cacheLife } from "next/cache";
 
-const octokit = new Octokit({
-  auth: process.env.GITHUB_TOKEN,
-});
+import prisma from "./prisma";
 
 export interface Release {
   body: string;
@@ -14,32 +11,40 @@ export interface Release {
 
 export const getAllReleases = async (): Promise<Release[]> => {
   "use cache";
-  cacheLife({ revalidate: 120 });
+  cacheLife("minutes");
 
-  const { data: releases } = await octokit.repos.listReleases({
-    owner: "inabagumi",
-    repo: "animare-shindan",
+  const releases = await prisma.release.findMany({
+    orderBy: {
+      publishedAt: "desc",
+    },
+    select: {
+      body: true,
+      publishedAt: true,
+      slug: true,
+      title: true,
+    },
   });
 
   return releases.map<Release>((release) => ({
-    body: release.body ?? "",
-    date: release.created_at,
-    slug: release.tag_name,
-    title: release.name || release.tag_name,
+    body: release.body,
+    date: release.publishedAt.toISOString(),
+    slug: release.slug,
+    title: release.title,
   }));
 };
 
-export const getRecentReleaseTitle = async (): Promise<string> => {
+export const getRecentReleaseTitle = async (): Promise<string | null> => {
   "use cache";
-  cacheLife({ revalidate: 120 });
+  cacheLife("minutes");
 
-  const {
-    data: [release],
-  } = await octokit.repos.listReleases({
-    owner: "inabagumi",
-    per_page: 1,
-    repo: "animare-shindan",
+  const release = await prisma.release.findFirst({
+    orderBy: {
+      publishedAt: "desc",
+    },
+    select: {
+      title: true,
+    },
   });
 
-  return release.name || release.tag_name;
+  return release?.title ?? null;
 };
