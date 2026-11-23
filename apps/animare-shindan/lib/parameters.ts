@@ -6,8 +6,9 @@
 // order of the array is the order of the graph, and the first parameter is
 // highlighted as the main one.
 //
-// The value is a ratio where 1 means 100%. A value may exceed 100% (up to
-// {@link MAX_PARAMETER_VALUE}) to emphasize the parameter, as in "105%".
+// The value is a ratio where 1 means 100%, which is the full length of the bar
+// graph. A value may exceed 100% (up to {@link MAX_PARAMETER_VALUE}) to
+// emphasize the parameter, as in "105%", and its bar overflows the graph.
 //
 // This module has no dependencies on the database or the UI, so that it can
 // be tested on its own.
@@ -113,32 +114,17 @@ export const parseParameters = (json: unknown): ResultParameter[] => {
 };
 
 /**
- * Returns the value that a full bar stands for: 100%, or the highest value of
- * the parameters if it exceeds 100%. Every bar fits in the graph this way,
- * and the bars of the same values have the same length in every result unless
- * a value exceeds 100%.
+ * Returns the length of the bar for the value relative to the graph, where 1
+ * is the full length. A value over 100% gives a ratio over 1, which overflows
+ * the graph. The ratio is clamped from {@link MIN_PARAMETER_VALUE} to
+ * {@link MAX_PARAMETER_VALUE}, and an invalid value gives 0.
  */
-export const getParameterScale = (
-  parameters: readonly ResultParameter[]
-): number =>
-  Math.max(
-    1,
-    ...parameters
-      .map(({ value }) => value)
-      .filter((value) => isValidParameterValue(value))
-  );
-
-/**
- * Returns the length of the bar for the value relative to the full bar, from
- * 0 to 1. Invalid values and scales give 0, and values out of the scale are
- * clamped.
- */
-export const getParameterBarRatio = (value: number, scale: number): number => {
-  if (!Number.isFinite(value) || !Number.isFinite(scale) || scale <= 0) {
+export const getParameterBarRatio = (value: number): number => {
+  if (!Number.isFinite(value)) {
     return 0;
   }
 
-  return Math.min(Math.max(value / scale, 0), 1);
+  return Math.min(Math.max(value, MIN_PARAMETER_VALUE), MAX_PARAMETER_VALUE);
 };
 
 /** Formats the value as a percentage rounded to an integer, such as "105%". */

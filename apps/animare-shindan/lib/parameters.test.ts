@@ -6,7 +6,6 @@ import {
   findParameterProblems,
   formatParameterValue,
   getParameterBarRatio,
-  getParameterScale,
   isValidParameterValue,
   parseParameters,
 } from "./parameters";
@@ -113,60 +112,27 @@ describe("parseParameters", () => {
   );
 });
 
-describe("getParameterScale", () => {
-  it("is 100% when no value exceeds 100%", () => {
-    expect(
-      getParameterScale([
-        { label: "a", value: 0.8 },
-        { label: "b", value: 1 },
-      ])
-    ).toBe(1);
-  });
-
-  it("is the highest value when a value exceeds 100%", () => {
-    expect(
-      getParameterScale([
-        { label: "a", value: 1.05 },
-        { label: "b", value: 0.8 },
-      ])
-    ).toBe(1.05);
-  });
-
-  it("is 100% without parameters", () => {
-    expect(getParameterScale([])).toBe(1);
-  });
-
-  it("ignores invalid values", () => {
-    expect(
-      getParameterScale([
-        { label: "a", value: Number.POSITIVE_INFINITY },
-        { label: "b", value: 105 },
-        { label: "c", value: 0.5 },
-      ])
-    ).toBe(1);
-  });
-});
-
 describe("getParameterBarRatio", () => {
-  it("divides the value by the scale", () => {
-    expect(getParameterBarRatio(0.5, 1)).toBe(0.5);
-    expect(getParameterBarRatio(1.05, 1.05)).toBe(1);
-  });
-
-  it("clamps the ratio from 0 to 1", () => {
-    expect(getParameterBarRatio(-0.5, 1)).toBe(0);
-    expect(getParameterBarRatio(105, 1.05)).toBe(1);
-  });
-
   it.each([
-    [Number.NaN, 1],
-    [Number.POSITIVE_INFINITY, 1],
-    [0.5, 0],
-    [0.5, -1],
-    [0.5, Number.NaN],
-  ])("is 0 for the value %d and the scale %d", (value, scale) => {
-    expect(getParameterBarRatio(value, scale)).toBe(0);
+    [0, 0],
+    [0.5, 0.5],
+    [1, 1],
+    [1.05, 1.05],
+  ])("is %d for the value %d", (value, expected) => {
+    expect(getParameterBarRatio(value)).toBe(expected);
   });
+
+  it("clamps the ratio to the range of the values", () => {
+    expect(getParameterBarRatio(-0.5)).toBe(MIN_PARAMETER_VALUE);
+    expect(getParameterBarRatio(105)).toBe(MAX_PARAMETER_VALUE);
+  });
+
+  it.each([Number.NaN, Number.POSITIVE_INFINITY, Number.NEGATIVE_INFINITY])(
+    "is 0 for %d",
+    (value) => {
+      expect(getParameterBarRatio(value)).toBe(0);
+    }
+  );
 });
 
 describe("formatParameterValue", () => {

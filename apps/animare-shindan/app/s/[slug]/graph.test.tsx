@@ -38,24 +38,7 @@ describe(Graph, () => {
     ]);
   });
 
-  it("scales the bars to the highest value when it exceeds 100%", () => {
-    render(
-      <Graph
-        parameters={[
-          { label: "a", value: 1.05 },
-          { label: "b", value: 0.21 },
-        ]}
-        title={TITLE}
-      />
-    );
-
-    expect(getRows().map((row) => getBarWidth(row))).toStrictEqual([
-      "100%",
-      "20%",
-    ]);
-  });
-
-  it("does not scale the bars when no value exceeds 100%", () => {
+  it("draws the bars at the length of their values", () => {
     render(
       <Graph
         parameters={[
@@ -67,8 +50,27 @@ describe(Graph, () => {
     );
 
     expect(getRows().map((row) => getBarWidth(row))).toStrictEqual([
-      "50%",
-      "25%",
+      "min(50%, 100% + 0.75rem)",
+      "min(25%, 100% + 0.75rem)",
+    ]);
+  });
+
+  // A bar over 100% overflows the graph, but no more than the padding around
+  // it.
+  it("lets a bar over 100% overflow the graph by up to 0.75rem", () => {
+    render(
+      <Graph
+        parameters={[
+          { label: "a", value: 1.05 },
+          { label: "b", value: 0.8 },
+        ]}
+        title={TITLE}
+      />
+    );
+
+    expect(getRows().map((row) => getBarWidth(row))).toStrictEqual([
+      "min(105%, 100% + 0.75rem)",
+      "min(80%, 100% + 0.75rem)",
     ]);
   });
 
