@@ -27,6 +27,10 @@ services:
       timeout: 3s
       retries: 10
       start_period: 10s
+    # The Alpine variant of the WireMock image is only published for
+    # linux/amd64, so pin the platform to run it under emulation on other
+    # architectures (e.g. Apple silicon).
+    platform: linux/amd64
     ports:
       - 127.0.0.1:4000:4000
     volumes:
