@@ -9,7 +9,7 @@ const captionPath = new URL("../../assets/heartbeat.vtt", import.meta.url)
 export default function Heart({ ref }: ComponentProps<"audio">) {
   return (
     <>
-      <MdFavorite className="block h-auto w-full animate-beat fill-current text-[#fff59d]" />
+      <MdFavorite className="block h-auto w-full animate-beat fill-current text-heart" />
 
       <audio crossOrigin="anonymous" loop preload="none" ref={ref}>
         <source src={oggPath} type="audio/ogg" />

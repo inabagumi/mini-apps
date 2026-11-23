@@ -43,7 +43,7 @@ interface Props {
 export default function RootLayout({ children }: Props) {
   return (
     <html lang="ja">
-      <body className="fixed inset-0 bg-[#222]">
+      <body className="fixed inset-0 bg-background">
         <SerwistProvider
           disable={process.env.NODE_ENV === "development"}
           swUrl="/service-worker.js"

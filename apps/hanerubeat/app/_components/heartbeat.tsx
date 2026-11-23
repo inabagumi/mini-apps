@@ -59,7 +59,7 @@ export default function Heartbeat() {
 
       <div className="absolute inset-x-0 bottom-0 flex items-center justify-center">
         <button
-          className="block text-[64px] leading-[normal] text-[#eee] focus:outline-none disabled:text-[#aaa]"
+          className="block text-6xl text-control focus:outline-none disabled:text-control-disabled"
           disabled={isLoading}
           onClick={handleButtonClick}
           type="button"
