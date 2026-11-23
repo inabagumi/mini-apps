@@ -52,6 +52,7 @@ export default function Heartbeat() {
   }, [play]);
 
   const ButtonIcon = muted ? VolumeOff : Volume2;
+  const buttonLabel = muted ? "音を出す" : "ミュートする";
 
   return (
     <div className="relative flex h-full flex-col items-center justify-center">
@@ -65,6 +66,7 @@ export default function Heartbeat() {
           type="button"
         >
           <ButtonIcon className="inline h-auto w-[1em] align-baseline" />
+          <span className="sr-only">{buttonLabel}</span>
         </button>
       </div>
     </div>

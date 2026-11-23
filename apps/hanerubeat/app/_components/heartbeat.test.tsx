@@ -21,8 +21,12 @@ const getAudio = (container: HTMLElement): HTMLAudioElement => {
   return audio;
 };
 
-const getIcon = (): string | null =>
-  screen.getByRole("button").querySelector("svg")?.dataset.testid ?? null;
+const MUTED_LABEL = "音を出す";
+const UNMUTED_LABEL = "ミュートする";
+
+const getIcon = (name: string): string | null =>
+  screen.getByRole("button", { name }).querySelector("svg")?.dataset.testid ??
+  null;
 
 const waitForButtonEnabled = async (): Promise<void> => {
   await vi.waitFor(() => {
@@ -63,7 +67,7 @@ describe(Heartbeat, () => {
 
     await waitForButtonEnabled();
 
-    expect(getIcon()).toBe("volume-up");
+    expect(getIcon(UNMUTED_LABEL)).toBe("volume-up");
   });
 
   it("shows the muted icon when autoplay fails", async () => {
@@ -73,7 +77,7 @@ describe(Heartbeat, () => {
 
     await waitForButtonEnabled();
 
-    expect(getIcon()).toBe("volume-off");
+    expect(getIcon(MUTED_LABEL)).toBe("volume-off");
   });
 
   it("toggles mute when the button is clicked while playing", async () => {
@@ -86,15 +90,15 @@ describe(Heartbeat, () => {
 
     await waitForButtonEnabled();
 
-    fireEvent.click(screen.getByRole("button"));
+    fireEvent.click(screen.getByRole("button", { name: UNMUTED_LABEL }));
 
     expect(audio.muted).toBeTruthy();
-    expect(getIcon()).toBe("volume-off");
+    expect(getIcon(MUTED_LABEL)).toBe("volume-off");
 
-    fireEvent.click(screen.getByRole("button"));
+    fireEvent.click(screen.getByRole("button", { name: MUTED_LABEL }));
 
     expect(audio.muted).toBeFalsy();
-    expect(getIcon()).toBe("volume-up");
+    expect(getIcon(UNMUTED_LABEL)).toBe("volume-up");
     expect(play).toHaveBeenCalledOnce();
   });
 
@@ -105,12 +109,12 @@ describe(Heartbeat, () => {
 
     await waitForButtonEnabled();
 
-    expect(getIcon()).toBe("volume-off");
+    expect(getIcon(MUTED_LABEL)).toBe("volume-off");
 
     const { promise, resolve } = Promise.withResolvers<undefined>();
     play.mockReturnValueOnce(promise);
 
-    fireEvent.click(screen.getByRole("button"));
+    fireEvent.click(screen.getByRole("button", { name: MUTED_LABEL }));
 
     expect(play).toHaveBeenCalledTimes(2);
     expect(screen.getByRole("button")).toHaveProperty("disabled", true);
@@ -121,6 +125,6 @@ describe(Heartbeat, () => {
     });
 
     expect(screen.getByRole("button")).toHaveProperty("disabled", false);
-    expect(getIcon()).toBe("volume-up");
+    expect(getIcon(UNMUTED_LABEL)).toBe("volume-up");
   });
 });
