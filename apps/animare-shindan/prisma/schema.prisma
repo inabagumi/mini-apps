@@ -1,0 +1,63 @@
+datasource db {
+  provider = "postgresql"
+}
+
+generator client {
+  importFileExtension = "ts"
+  moduleFormat        = "esm"
+  output              = "../lib/generated/prisma"
+  provider            = "prisma-client"
+}
+
+model Question {
+  answers Answer[]
+  id      String   @id @default(dbgenerated("uuidv7()")) @db.Uuid
+  title   String
+
+  @@map("questions")
+}
+
+model Answer {
+  Question Question? @relation(fields: [questionId], references: [id])
+
+  id         String  @id @default(dbgenerated("uuidv7()")) @db.Uuid
+  questionId String? @map("question_id") @db.Uuid
+  value      String
+
+  @@map("answers")
+}
+
+model Result {
+  attribute          String
+  catchphrase        String
+  id                 String           @id @default(dbgenerated("uuidv7()")) @db.Uuid
+  parameters         Json
+  recommendedVideoId String           @map("recommended_video_id") @db.Uuid
+  recommendedVideo   RecommendedVideo @relation(fields: [recommendedVideoId], references: [id])
+  slug               String           @unique
+  talent             Talent           @relation(fields: [talentId], references: [id])
+  type               String
+  talentId           String           @map("talent_id") @db.Uuid
+
+  @@map("results")
+}
+
+model Talent {
+  Result Result[]
+
+  id      String  @id @default(dbgenerated("uuidv7()")) @db.Uuid
+  name    String
+  twitter String?
+  youtube String?
+
+  @@map("talents")
+}
+
+model RecommendedVideo {
+  Result Result[]
+
+  id  String @id @default(dbgenerated("uuidv7()")) @db.Uuid
+  url String
+
+  @@map("recommended_videos")
+}

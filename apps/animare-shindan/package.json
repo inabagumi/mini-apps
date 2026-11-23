@@ -1,0 +1,69 @@
+{
+  "name": "animare-shindan",
+  "version": "4.0.0",
+  "private": true,
+  "description": "Shindan by AniMare",
+  "homepage": "https://shindan.animare.cafe/",
+  "license": "MIT",
+  "author": "Haneru Developers",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/inabagumi/animare-shindan.git"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "next build",
+    "check": "ultracite check",
+    "dev": "next dev",
+    "fix": "ultracite fix",
+    "postinstall": "prisma generate",
+    "start": "next start",
+    "typecheck": "next typegen && tsc --noEmit"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^1.2.1",
+    "@octokit/rest": "^22.0.1",
+    "@prisma/adapter-neon": "^7.10.1",
+    "@prisma/client": "^7.10.1",
+    "@radix-ui/react-portal": "^1.2.0",
+    "@vercel/analytics": "^2.0.1",
+    "cn": "^0.5.2",
+    "date-fns": "^4.4.0",
+    "next": "^16.4.6",
+    "next-mdx-remote": "^6.0.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@next/env": "^16.4.6",
+    "@serwist/turbopack": "^9.5.15",
+    "@tailwindcss/turbopack": "^4.3.5",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "esbuild": "^0.28.2",
+    "oxfmt": "0.79.0",
+    "oxlint": "1.94.0",
+    "prisma": "^7.10.1",
+    "serwist": "^9.5.15",
+    "tailwindcss": "^4.3.5",
+    "typescript": "~6.0.3",
+    "ultracite": "8.3.1"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.21.0",
+      "onFail": "download"
+    },
+    "runtime": {
+      "name": "node",
+      "version": "26.13.1",
+      "onFail": "download"
+    }
+  },
+  "engines": {
+    "node": "26.13.1"
+  },
+  "packageManager": "pnpm@12.21.0"
+}
