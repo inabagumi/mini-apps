@@ -1,13 +1,14 @@
 import { act, fireEvent, render, screen } from "@testing-library/react";
+import { forwardRef } from "react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import type { MockInstance } from "vitest";
 
 import Heartbeat from "./heartbeat";
 
-vi.mock(import("react-icons/md"), async (importOriginal) => ({
+vi.mock(import("lucide-react"), async (importOriginal) => ({
   ...(await importOriginal()),
-  MdVolumeOff: () => <svg data-testid="volume-off" />,
-  MdVolumeUp: () => <svg data-testid="volume-up" />,
+  Volume2: forwardRef(() => <svg data-testid="volume-up" />),
+  VolumeOff: forwardRef(() => <svg data-testid="volume-off" />),
 }));
 
 const getAudio = (container: HTMLElement): HTMLAudioElement => {

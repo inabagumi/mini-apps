@@ -1,7 +1,7 @@
 "use client";
 
+import { Volume2, VolumeOff } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { MdVolumeOff, MdVolumeUp } from "react-icons/md";
 
 import Heart from "./heart";
 
@@ -51,7 +51,7 @@ export default function Heartbeat() {
     play(heartRef.current);
   }, [play]);
 
-  const ButtonIcon = muted ? MdVolumeOff : MdVolumeUp;
+  const ButtonIcon = muted ? VolumeOff : Volume2;
 
   return (
     <div className="relative flex h-full flex-col items-center justify-center">
