@@ -414,6 +414,9 @@ importers:
       '@vercel/speed-insights':
         specifier: 2.1.0
         version: 2.1.0(next@16.4.6(@babel/core@7.29.13(supports-color@8.1.1))(@types/node@26.6.6)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react@19.3.1)
+      cn:
+        specifier: 0.5.2
+        version: 0.5.2
       contentful:
         specifier: 11.12.10
         version: 11.12.10(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1)
@@ -429,9 +432,6 @@ importers:
       react-dom:
         specifier: 19.3.1
         version: 19.3.1(react@19.3.1)
-      tailwind-merge:
-        specifier: 3.7.1
-        version: 3.7.1
     devDependencies:
       '@inabagumi/config':
         specifier: workspace:*
@@ -502,9 +502,9 @@ importers:
       browser-fs-access:
         specifier: 0.39.0
         version: 0.39.0
-      clsx:
-        specifier: 2.1.1
-        version: 2.1.1
+      cn:
+        specifier: 0.5.2
+        version: 0.5.2
       contentful:
         specifier: 11.12.10
         version: 11.12.10(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1)
@@ -578,6 +578,9 @@ importers:
       '@types/react':
         specifier: 19.3.0
         version: 19.3.0
+      cn:
+        specifier: 0.5.2
+        version: 0.5.2
       jsdom:
         specifier: 31.0.1
         version: 31.0.1(@noble/hashes@1.8.0)
@@ -587,9 +590,6 @@ importers:
       react-dom:
         specifier: 19.3.1
         version: 19.3.1(react@19.3.1)
-      tailwind-merge:
-        specifier: 3.7.1
-        version: 3.7.1
       tsdown:
         specifier: 0.23.7
         version: 0.23.7(typescript@6.0.3)
@@ -8900,9 +8900,6 @@ packages:
   tagged-tag@1.0.0:
     resolution: {integrity: sha512-yEFYrVhod+hdNyx7g5Bnkkb0G6si8HJurOoOEgC8B/O0uXLHlaey/65KRv6cuWBNhBgHKAROVpc7QyYqE5gFng==}
     engines: {node: '>=20'}
-
-  tailwind-merge@3.7.1:
-    resolution: {integrity: sha512-v7y4BV4FUlO8exj/4M5UXKeoowDiuugVUg3tkMNIyOUCOHy5xp8+5aWQeXCtZ2491sUV1YPsVeM9EveZ6/xuZQ==}
 
   tailwindcss-safe-area@2.0.0:
     resolution: {integrity: sha512-pUk35FGSAmptpZ5JJQCk6uTKecQjYutvPYAEiof1Cs5WbI6aQwo13icrmQoCYPslm1+hFoIjNYYkHq4i+PPyAw==}
@@ -19190,8 +19187,6 @@ snapshots:
       sax: 1.6.1
 
   tagged-tag@1.0.0: {}
-
-  tailwind-merge@3.7.1: {}
 
   tailwindcss-safe-area@2.0.0(tailwindcss@4.3.5):
     dependencies:

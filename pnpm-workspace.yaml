@@ -37,6 +37,5 @@ minimumReleaseAgeExclude:
   - "@turbo/linux-arm64@2.11.13"
   - "@turbo/windows-64@2.11.13"
   - "@turbo/windows-arm64@2.11.13"
-  - tailwind-merge@2.6.2
   - turbo@2.11.13
   - ultracite@8.3.0
