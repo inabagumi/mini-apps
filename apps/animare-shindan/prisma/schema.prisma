@@ -20,14 +20,31 @@ model Question {
 model Answer {
   Question Question? @relation(fields: [questionId], references: [id])
 
-  id         String  @id @default(dbgenerated("uuidv7()")) @db.Uuid
-  questionId String? @map("question_id") @db.Uuid
+  id         String        @id @default(dbgenerated("uuidv7()")) @db.Uuid
+  questionId String?       @map("question_id") @db.Uuid
+  scores     AnswerScore[]
   value      String
 
   @@map("answers")
 }
 
+// The score (0 to 3) that an answer adds to a result. The range of the score
+// is also guaranteed by a CHECK constraint in the migration.
+model AnswerScore {
+  answerId String @map("answer_id") @db.Uuid
+  resultId String @map("result_id") @db.Uuid
+  score    Int
+
+  answer Answer @relation(fields: [answerId], references: [id])
+  result Result @relation(fields: [resultId], references: [id])
+
+  @@id([answerId, resultId])
+  @@index([resultId])
+  @@map("answer_scores")
+}
+
 model Result {
+  answerScores       AnswerScore[]
   attribute          String
   catchphrase        String
   id                 String           @id @default(dbgenerated("uuidv7()")) @db.Uuid

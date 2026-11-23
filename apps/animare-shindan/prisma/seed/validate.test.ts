@@ -64,10 +64,14 @@ describe("findSeedDataProblems", () => {
 
   it("reports duplicate result slugs once for each slug", () => {
     const data = cloneSeedData();
-    const [first, second, third] = data.results;
+    const [first] = data.results;
     const { slug } = first;
-    second.slug = slug;
-    third.slug = slug;
+    // Add copies instead of renaming the other results, whose slugs the scores
+    // of the answers refer to.
+    data.results.push(
+      { ...first, catchphrase: "重複した診断結果" },
+      { ...first, catchphrase: "もう1つの重複した診断結果" }
+    );
 
     expect(findSeedDataProblems(data)).toStrictEqual([
       `Duplicate result slug: ${slug}`,
@@ -90,6 +94,36 @@ describe("findSeedDataProblems", () => {
 
     expect(findSeedDataProblems(data)).toStrictEqual([
       `Result ${result.slug} refers to a missing talent: ${result.talentId}`,
+    ]);
+  });
+
+  it("reports scores for a missing result", () => {
+    const data = cloneSeedData();
+    const [answer] = data.questions[0].answers;
+    answer.scores[0].result = "missing";
+
+    expect(findSeedDataProblems(data)).toStrictEqual([
+      `Answer ${answer.id} has a score for a missing result: missing`,
+    ]);
+  });
+
+  it.each([-1, 4, 1.5, Number.NaN])("reports an invalid score: %d", (score) => {
+    const data = cloneSeedData();
+    const [answer] = data.questions[0].answers;
+    answer.scores[0].score = score;
+
+    expect(findSeedDataProblems(data)).toStrictEqual([
+      `Answer ${answer.id} has an invalid score for ${answer.scores[0].result}: ${score}`,
+    ]);
+  });
+
+  it("reports duplicate scores of an answer for the same result", () => {
+    const data = cloneSeedData();
+    const [answer] = data.questions[0].answers;
+    answer.scores[1].result = answer.scores[0].result;
+
+    expect(findSeedDataProblems(data)).toStrictEqual([
+      `Answer ${answer.id} has duplicate scores for ${answer.scores[0].result}`,
     ]);
   });
 });
