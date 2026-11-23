@@ -8,26 +8,12 @@ import { ButtonLink, ExternalButtonLink } from "@/components/button";
 import { getAnalysisResult, getAnalysisResultIDs } from "@/lib/analysis";
 import { cn } from "@/lib/cn";
 import { createTweetURL } from "@/lib/share";
+import { createYouTubeEmbedURL } from "@/lib/youtube";
 import pkg from "@/package.json";
 
 import nanashiAvatar from "./avatar.svg";
 import Graph from "./graph";
 import nanashiIllust from "./nanashi.svg";
-
-const createYouTubeEmbedURL = (url: string): string => {
-  const { pathname, searchParams } = new URL(url);
-
-  const id =
-    pathname === "/watch" && searchParams.has("id")
-      ? searchParams.get("v")
-      : pathname.slice(1);
-
-  if (!id) {
-    throw new TypeError("An invalid URL was given as an argument.");
-  }
-
-  return `https://www.youtube.com/embed/${id}`;
-};
 
 type MessageWindowProps = HTMLAttributes<HTMLDivElement>;
 
@@ -138,6 +124,10 @@ const ResultDetails = async ({
   }
 
   const shareURL = new URL(`/s/${result.slug}?s=true`, pkg.homepage).toString();
+  // Unsupported or invalid video URLs are skipped instead of being embedded.
+  const recommendedVideoEmbedURL = result.recommendedVideo
+    ? createYouTubeEmbedURL(result.recommendedVideo.url)
+    : null;
 
   return (
     <>
@@ -212,9 +202,9 @@ const ResultDetails = async ({
         好き】のアナタにマッチするVTuberが選ばれました!
       </h2>
 
-      {(result.recommendedVideo || result.talent.youtube) && (
+      {(recommendedVideoEmbedURL || result.talent.youtube) && (
         <section>
-          {result.recommendedVideo && (
+          {recommendedVideoEmbedURL && (
             <>
               <h2 className="mt-6 mb-0 px-2 text-center text-base text-balance wrap-anywhere break-auto-phrase text-white sm:text-xl">
                 「{result.talent.name}」のおすすめ動画はこちら!
@@ -252,7 +242,7 @@ const ResultDetails = async ({
                       allowFullScreen
                       className="absolute inset-0 size-full border-0"
                       height={315}
-                      src={createYouTubeEmbedURL(result.recommendedVideo.url)}
+                      src={recommendedVideoEmbedURL}
                       title={`「${result.talent.name}」のおすすめ動画`}
                       width={560}
                     />
