@@ -1,9 +1,9 @@
 "use client";
 
 import { Dialog } from "@base-ui/react/dialog";
+import { cn } from "cn";
 import Link from "next/link";
 import { useRef, useState } from "react";
-import { twMerge } from "tailwind-merge";
 
 import Logo from "#/components/logo.svg";
 
@@ -23,10 +23,7 @@ export default function MobileMenu({ className }: Props) {
     <Dialog.Root onOpenChange={setOpen} open={open}>
       <Dialog.Trigger
         aria-label="メニューを開く"
-        className={twMerge(
-          "m-2 w-10 space-y-1.5 p-2 text-slate-100",
-          className
-        )}
+        className={cn("m-2 w-10 space-y-1.5 p-2 text-slate-100", className)}
       >
         <span
           aria-hidden

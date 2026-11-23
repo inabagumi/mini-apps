@@ -5,7 +5,7 @@ import { Application, extend } from "@pixi/react";
 import type { ApplicationRef } from "@pixi/react";
 import { track } from "@vercel/analytics";
 import { fileSave } from "browser-fs-access";
-import { clsx } from "clsx";
+import { cn } from "cn";
 import { Sprite } from "pixi.js";
 import { useCallback, useEffect, useRef, useState } from "react";
 
@@ -114,7 +114,7 @@ export default function Camera() {
 
       <div className="flex justify-around px-4 pt-2 pb-6">
         <button
-          className={clsx(
+          className={cn(
             "bg-gray-50/95",
             isShooting ? "border-2" : "border-0",
             "border-black/95",

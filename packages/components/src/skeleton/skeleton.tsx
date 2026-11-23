@@ -1,4 +1,4 @@
-import { twMerge } from "tailwind-merge";
+import { cn } from "cn";
 
 interface Props {
   className?: string;
@@ -7,7 +7,7 @@ interface Props {
 export default function Skeleton({ className }: Props) {
   return (
     <span
-      className={twMerge(
+      className={cn(
         "inline-block animate-pulse rounded-md bg-slate-200",
         className
       )}

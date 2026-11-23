@@ -42,7 +42,7 @@
     "@pixi/react": "8.0.5",
     "@vercel/analytics": "2.0.1",
     "browser-fs-access": "0.39.0",
-    "clsx": "2.1.1",
+    "cn": "0.5.2",
     "contentful": "11.12.10",
     "next": "16.4.6",
     "pixi-viewport": "7.0.3",
