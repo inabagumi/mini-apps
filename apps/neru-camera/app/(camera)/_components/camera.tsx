@@ -142,7 +142,7 @@ export default function Camera() {
         <AlertDialog.Portal>
           <AlertDialog.Backdrop className="fixed inset-0 bg-black/33" />
           <AlertDialog.Viewport className="fixed inset-0 overflow-auto">
-            <AlertDialog.Popup className="mx-auto my-[10vh] w-[50vw] bg-white p-8 outline-hidden">
+            <AlertDialog.Popup className="mx-auto my-[10vh] w-1/2 bg-white p-8 outline-hidden">
               <AlertDialog.Title>エラー</AlertDialog.Title>
 
               <AlertDialog.Description>
