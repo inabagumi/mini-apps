@@ -12,7 +12,7 @@ import { afterAll, beforeAll, beforeEach, describe, expect, it } from "vitest";
 import { PrismaClient } from "../../lib/generated/prisma/client.ts";
 import { seedData } from "./data.ts";
 import { seed } from "./seed.ts";
-import type { SeedData } from "./seed.ts";
+import type { AnswerScoreSeed, SeedData } from "./seed.ts";
 
 const databaseURL = process.env.TEST_DATABASE_URL;
 
@@ -27,6 +27,7 @@ const APP_DIR = fileURLToPath(new URL("../..", import.meta.url));
 
 // The tables in the order that they can be truncated.
 const TABLES = [
+  "answer_scores",
   "answers",
   "questions",
   "results",
@@ -36,6 +37,9 @@ const TABLES = [
 ];
 
 const cloneSeedData = (): SeedData => structuredClone(seedData);
+
+const sortScores = (scores: AnswerScoreSeed[]): AnswerScoreSeed[] =>
+  scores.toSorted((a, b) => a.result.localeCompare(b.result));
 
 // Gives the last release an invalid date so that the seed fails in the middle,
 // after the other records are written. The seed data itself stays consistent,
@@ -55,6 +59,9 @@ describe.skipIf(!databaseURL)("seed", () => {
   let prisma: PrismaClient;
 
   const dump = async () => ({
+    answerScores: await prisma.answerScore.findMany({
+      orderBy: [{ answerId: "asc" }, { resultId: "asc" }],
+    }),
     answers: await prisma.answer.findMany({ orderBy: { id: "asc" } }),
     questions: await prisma.question.findMany({ orderBy: { id: "asc" } }),
     recommendedVideos: await prisma.recommendedVideo.findMany({
@@ -102,11 +109,29 @@ describe.skipIf(!databaseURL)("seed", () => {
     );
   });
 
+  // The scores of an answer by the slugs of the results, in the order of the
+  // slugs.
+  const findScores = async (answerId: string) => {
+    const scores = await prisma.answerScore.findMany({
+      include: { result: { select: { slug: true } } },
+      where: { answerId },
+    });
+
+    return sortScores(
+      scores.map(({ result, score }) => ({ result: result.slug, score }))
+    );
+  };
+
   it("inserts the seed data into an empty database", async () => {
     await seed(prisma);
 
     const questions = await prisma.question.findMany({
-      include: { answers: { orderBy: { id: "asc" } } },
+      include: {
+        answers: {
+          include: { scores: { include: { result: true } } },
+          orderBy: { id: "asc" },
+        },
+      },
       orderBy: { id: "asc" },
     });
 
@@ -114,12 +139,26 @@ describe.skipIf(!databaseURL)("seed", () => {
       questions.map(({ answers, id, title }) => ({
         answers: answers.map((answer) => ({
           id: answer.id,
+          scores: sortScores(
+            answer.scores.map(({ result, score }) => ({
+              result: result.slug,
+              score,
+            }))
+          ),
           value: answer.value,
         })),
         id,
         title,
       }))
-    ).toStrictEqual(seedData.questions);
+    ).toStrictEqual(
+      seedData.questions.map((question) => ({
+        ...question,
+        answers: question.answers.map((answer) => ({
+          ...answer,
+          scores: sortScores(answer.scores),
+        })),
+      }))
+    );
 
     const talents = await prisma.talent.findMany({ orderBy: { id: "asc" } });
 
@@ -182,6 +221,17 @@ describe.skipIf(!databaseURL)("seed", () => {
 
     question.title = "変更された質問";
     answer.value = "変更された選択肢";
+    // Change a score, remove a score and add a score.
+    const [changedScore, removedScore, ...otherScores] = answer.scores;
+    const addedResult = data.results.find(
+      ({ slug }) => !answer.scores.some((score) => score.result === slug)
+    ) as (typeof data.results)[number];
+    changedScore.score = changedScore.score === 3 ? 0 : 3;
+    answer.scores = [
+      changedScore,
+      ...otherScores,
+      { result: addedResult.slug, score: 2 },
+    ];
     result.catchphrase = "変更されたキャッチフレーズ";
     result.parameters = [{ label: "変更", value: 0.5 }];
     result.recommendedVideoUrl = "https://youtu.be/changed";
@@ -197,6 +247,12 @@ describe.skipIf(!databaseURL)("seed", () => {
     expect(
       await prisma.answer.findUniqueOrThrow({ where: { id: answer.id } })
     ).toMatchObject({ value: answer.value });
+    const scores = await findScores(answer.id);
+
+    expect(scores).toStrictEqual(sortScores(answer.scores));
+    expect(scores.map((score) => score.result)).not.toContain(
+      removedScore.result
+    );
     expect(
       await prisma.result.findUniqueOrThrow({
         include: { recommendedVideo: true },
@@ -215,6 +271,7 @@ describe.skipIf(!databaseURL)("seed", () => {
     ).toMatchObject({ title: release.title });
 
     // The records are updated in place.
+    expect(after.answerScores).toHaveLength(before.answerScores.length);
     expect(after.answers).toHaveLength(before.answers.length);
     expect(after.questions).toHaveLength(before.questions.length);
     expect(after.recommendedVideos).toHaveLength(
@@ -226,25 +283,67 @@ describe.skipIf(!databaseURL)("seed", () => {
   });
 
   it("keeps the records that are not in the seed data", async () => {
+    await seed(prisma);
+
+    const result = await prisma.result.findUniqueOrThrow({
+      where: { slug: seedData.results[0].slug },
+    });
     const question = await prisma.question.create({
-      data: { answers: { create: [{ value: "回答" }] }, title: "追加の質問" },
-      include: { answers: true },
+      data: {
+        answers: {
+          create: [
+            {
+              scores: { create: [{ resultId: result.id, score: 3 }] },
+              value: "回答",
+            },
+          ],
+        },
+        title: "追加の質問",
+      },
+      include: { answers: { include: { scores: true } } },
     });
 
     await seed(prisma);
 
     expect(
       await prisma.question.findUnique({
-        include: { answers: true },
+        include: { answers: { include: { scores: true } } },
         where: { id: question.id },
       })
     ).toStrictEqual(question);
+  });
+
+  it("rejects a score out of the range in the database", async () => {
+    await seed(prisma);
+
+    const [answer] = seedData.questions[0].answers;
+    const result = await prisma.result.findUniqueOrThrow({
+      where: { slug: answer.scores[0].result },
+    });
+
+    await expect(
+      prisma.answerScore.update({
+        data: { score: 4 },
+        where: {
+          answerId_resultId: { answerId: answer.id, resultId: result.id },
+        },
+      })
+    ).rejects.toThrow();
+    await expect(
+      prisma.answerScore.update({
+        data: { score: -1 },
+        where: {
+          answerId_resultId: { answerId: answer.id, resultId: result.id },
+        },
+      })
+    ).rejects.toThrow();
   });
 
   it("rejects and leaves an empty database unchanged when it fails", async () => {
     await expect(seed(prisma, breakSeedData(seedData))).rejects.toThrow();
 
     expect(await dump()).toStrictEqual({
+      answerScores: [],
       answers: [],
       questions: [],
       recommendedVideos: [],

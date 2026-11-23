@@ -22,6 +22,7 @@ import type {
 import { Button } from "@/components/button";
 import type { Question } from "@/lib/analysis";
 import { cn } from "@/lib/cn";
+import { decideResult } from "@/lib/scoring";
 
 const noop = (): void => {
   throw new TypeError("Cannot be executed before initialization.");
@@ -31,29 +32,29 @@ interface AnalysisContextValue {
   analyzing: boolean;
   count: number;
   questions: Question[];
+  selectAnswer: (answerID: string) => void;
   setCount: (value: number) => void;
-  startAnalyze: () => void;
 }
 
 const AnalysisContext = createContext<AnalysisContextValue>({
   analyzing: false,
   count: 0,
   questions: [],
+  selectAnswer: noop,
   setCount: noop,
-  startAnalyze: noop,
 });
 
 const useAnalysisContext = (): AnalysisContextValue => use(AnalysisContext);
 
 interface UseAnalyzerReturn {
   analyzing: boolean;
-  startAnalyze: () => void;
+  selectAnswer: (answerID: string) => void;
 }
 
 const useAnalyzer = (): UseAnalyzerReturn => {
-  const { analyzing, startAnalyze } = useAnalysisContext();
+  const { analyzing, selectAnswer } = useAnalysisContext();
 
-  return { analyzing, startAnalyze };
+  return { analyzing, selectAnswer };
 };
 
 interface UseCounterReturn {
@@ -142,18 +143,7 @@ interface AnswerProps {
 }
 
 const Answer = ({ question, show = false }: AnswerProps): JSX.Element => {
-  const { analyzing, startAnalyze } = useAnalyzer();
-  const { currentCount, maxCount, setCount } = useCounter();
-
-  const handleClickAnswer = useCallback<
-    MouseEventHandler<HTMLButtonElement>
-  >(() => {
-    if (currentCount < maxCount) {
-      setCount(currentCount + 1);
-    } else {
-      startAnalyze();
-    }
-  }, [currentCount, maxCount, setCount, startAnalyze]);
+  const { analyzing, selectAnswer } = useAnalyzer();
 
   return (
     <fieldset
@@ -168,15 +158,17 @@ const Answer = ({ question, show = false }: AnswerProps): JSX.Element => {
     >
       <legend className="sr-only">{question.title}</legend>
 
-      {question.answers.map((answer, i) => (
+      {question.answers.map((answer) => (
         <button
           className="flex min-h-17.5 w-full items-center justify-start rounded-2xl border-3 border-ink bg-white px-5 py-3 text-left text-base leading-snug font-bold break-words text-ink transition-[background-color,box-shadow] duration-150 ease-out hover:bg-highlight-tint hover:shadow-raised active:bg-highlight disabled:cursor-default sm:min-h-21.5 sm:text-xl sm:leading-relaxed"
           disabled={analyzing}
-          key={`answer-${i}`}
-          onClick={handleClickAnswer}
+          key={answer.id}
+          onClick={() => {
+            selectAnswer(answer.id);
+          }}
           type="button"
         >
-          {answer}
+          {answer.value}
         </button>
       ))}
     </fieldset>
@@ -279,6 +271,11 @@ export default function Analysis({
   resultIDs,
 }: Props): JSX.Element {
   const [count, setCount] = useState(1);
+  // The ID of the selected answer for each question, in the order of the
+  // questions. Selecting another answer of the same question replaces it.
+  const [selectedAnswerIDs, setSelectedAnswerIDs] = useState<
+    readonly (string | undefined)[]
+  >([]);
   const [resultURL, setResultURL] = useState<string | null>(null);
   const maxCount = useMemo(() => questions.length, [questions]);
 
@@ -293,23 +290,46 @@ export default function Analysis({
     [maxCount, setCount]
   );
 
-  const startAnalyze = useCallback(() => {
-    // Pick the result in the browser when the last question is answered so
-    // that every visitor gets their own random result.
-    const resultID = resultIDs[Math.floor(resultIDs.length * Math.random())];
+  const selectAnswer = useCallback(
+    (answerID: string) => {
+      const index = count - 1;
+      const nextAnswerIDs = questions.map((_, i) =>
+        i === index ? answerID : selectedAnswerIDs[i]
+      );
 
-    setResultURL(`/s/${resultID}`);
-  }, [resultIDs]);
+      setSelectedAnswerIDs(nextAnswerIDs);
+
+      if (count < maxCount) {
+        setCount(count + 1);
+
+        return;
+      }
+
+      // Decide the result from the selected answers when the last question is
+      // answered. The same answers always lead to the same result.
+      const answers = nextAnswerIDs.flatMap(
+        (id, i) => questions[i].answers.find((answer) => answer.id === id) ?? []
+      );
+      const resultID = decideResult(answers, resultIDs);
+
+      if (resultID === undefined) {
+        throw new Error("There are no results to choose from.");
+      }
+
+      setResultURL(`/s/${resultID}`);
+    },
+    [count, maxCount, questions, resultIDs, selectedAnswerIDs]
+  );
 
   const contextValue = useMemo(
     () => ({
       analyzing: resultURL !== null,
       count,
       questions,
+      selectAnswer,
       setCount: wrappedSetCount,
-      startAnalyze,
     }),
-    [count, questions, resultURL, wrappedSetCount, startAnalyze]
+    [count, questions, resultURL, selectAnswer, wrappedSetCount]
   );
 
   return (

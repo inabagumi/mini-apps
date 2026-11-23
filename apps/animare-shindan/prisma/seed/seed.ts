@@ -2,8 +2,19 @@ import type { PrismaClient } from "../../lib/generated/prisma/client.ts";
 import { seedData } from "./data.ts";
 import { validateSeedData } from "./validate.ts";
 
+export interface AnswerScoreSeed {
+  /** The slug of the result. */
+  result: string;
+  score: number;
+}
+
 export interface AnswerSeed {
   id: string;
+  /**
+   * The scores that the answer adds to the results. The results that are not
+   * listed get 0 points.
+   */
+  scores: AnswerScoreSeed[];
   value: string;
 }
 
@@ -64,6 +75,9 @@ const TRANSACTION_TIMEOUT = 60_000;
  * not duplicate the records, and a failure leaves the database unchanged.
  * Records that are not in the seed data are left as they are, which means
  * removing an item from the seed data does not delete it from the database.
+ * The exception is the scores between the answers and the results in the seed
+ * data: they are replaced with the scores in the seed data, so a score removed
+ * from the seed data is removed from the database (0 points).
  *
  * The seed data is validated before the transaction starts, so inconsistent
  * seed data (such as duplicate slugs) makes the seed fail without touching the
@@ -125,6 +139,31 @@ export const seed = async (
           where: { slug },
         });
       }
+
+      // The scores refer to the results by their IDs, so they are written
+      // after the results.
+      const results = await tx.result.findMany({
+        select: { id: true, slug: true },
+        where: { slug: { in: data.results.map(({ slug }) => slug) } },
+      });
+      const resultIDs = new Map(results.map(({ id, slug }) => [slug, id]));
+      const answers = data.questions.flatMap((question) => question.answers);
+
+      await tx.answerScore.deleteMany({
+        where: {
+          answerId: { in: answers.map((answer) => answer.id) },
+          resultId: { in: [...resultIDs.values()] },
+        },
+      });
+      await tx.answerScore.createMany({
+        data: answers.flatMap(({ id, scores }) =>
+          scores.map(({ result, score }) => ({
+            answerId: id,
+            resultId: resultIDs.get(result) as string,
+            score,
+          }))
+        ),
+      });
 
       for (const { slug, ...release } of data.releases) {
         await tx.release.upsert({

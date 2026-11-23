@@ -1,9 +1,17 @@
 import { cacheLife } from "next/cache";
 
 import prisma from "./prisma";
+import type { AnswerScore } from "./scoring";
+
+export interface Answer {
+  id: string;
+  /** The scores that the answer adds to the results. */
+  scores: AnswerScore[];
+  value: string;
+}
 
 export interface Question {
-  answers: string[];
+  answers: Answer[];
   title: string;
 }
 
@@ -21,6 +29,17 @@ export const getQuestions = async (): Promise<Question[]> => {
           id: "asc",
         },
         select: {
+          id: true,
+          scores: {
+            select: {
+              result: {
+                select: {
+                  slug: true,
+                },
+              },
+              score: true,
+            },
+          },
           value: true,
         },
       },
@@ -29,7 +48,14 @@ export const getQuestions = async (): Promise<Question[]> => {
   });
 
   return questions.map(({ answers, title }) => ({
-    answers: answers.map((answer) => answer.value),
+    answers: answers.map(({ id, scores, value }) => ({
+      id,
+      scores: scores.map(({ result, score }) => ({
+        result: result.slug,
+        score,
+      })),
+      value,
+    })),
     title,
   }));
 };
