@@ -1,2 +1,5 @@
 # build: migrate from Biome to Ultracite (Oxlint + Oxfmt) (#4672)
 1eaae9cf1bd86d5c4c00b7936e9c7755031448ad
+
+# build: migrate from ESLint and Prettier to Ultracite (Oxlint + Oxfmt) (inabagumi/animare-shindan#2254)
+e1a6869145bb22b3e94c2057c8f10db98aede776
