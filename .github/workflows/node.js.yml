@@ -11,6 +11,18 @@ jobs:
   build:
     runs-on: ubuntu-26.04
 
+    services:
+      # For the tests that need a database. Keep the image in sync with
+      # `compose.yaml`.
+      postgres:
+        image: mirror.gcr.io/library/postgres:18-alpine
+        env:
+          POSTGRES_PASSWORD: postgres
+        options: >-
+          --health-cmd "pg_isready --username=postgres" --health-interval 5s --health-timeout 3s --health-retries 10
+        ports:
+          - 5432:5432
+
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -25,3 +37,5 @@ jobs:
         run: pnpm check
       - name: Test
         run: pnpm test
+        env:
+          TEST_DATABASE_URL: postgres://postgres:postgres@localhost:5432/postgres
