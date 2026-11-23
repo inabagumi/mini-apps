@@ -1,14 +1,34 @@
 import type { JSX } from "react";
 
-import type { ResultParameter } from "@/lib/analysis";
 import { cn } from "@/lib/cn";
+import {
+  formatParameterValue,
+  getParameterBarRatio,
+  getParameterScale,
+} from "@/lib/parameters";
+import type { ResultParameter } from "@/lib/parameters";
 
 interface Props {
   parameters: ResultParameter[];
   title: string;
 }
 
-export default function Graph({ parameters, title }: Props): JSX.Element {
+/**
+ * Renders the parameters as a bar graph in their order, with the first one
+ * highlighted. Each row shows the label, the bar and the value as a
+ * percentage. The bars are scaled by {@link getParameterScale} so that they
+ * never overflow the graph. Nothing is rendered without parameters.
+ */
+export default function Graph({
+  parameters,
+  title,
+}: Props): JSX.Element | null {
+  if (parameters.length === 0) {
+    return null;
+  }
+
+  const scale = getParameterScale(parameters);
+
   return (
     <div className="mb-5">
       <h3 className="-mx-5 mt-7 mb-0 bg-line p-2 text-center text-sm sm:mx-0 sm:text-base">
@@ -23,22 +43,25 @@ export default function Graph({ parameters, title }: Props): JSX.Element {
                 {parameter.label}
               </span>
             </dt>
-            <dd className="m-0 flex min-w-0 grow items-center py-2">
-              <span className="sr-only">
-                {Math.round(parameter.value * 100)}%
-              </span>
-              <div
-                aria-hidden="true"
-                className="h-11"
-                style={{ width: `${parameter.value * 100}%` }}
-              >
+            <dd className="m-0 flex min-w-0 grow items-center gap-2 py-2">
+              <div aria-hidden="true" className="h-11 min-w-0 grow">
                 <div
-                  className={cn(
-                    "h-full rounded-r-sm bg-bar-stripes motion-safe:animate-bar-in",
-                    i === 0 ? "bg-sky" : "bg-bar"
-                  )}
-                />
+                  className="h-full"
+                  style={{
+                    width: `${getParameterBarRatio(parameter.value, scale) * 100}%`,
+                  }}
+                >
+                  <div
+                    className={cn(
+                      "h-full rounded-r-sm bg-bar-stripes motion-safe:animate-bar-in",
+                      i === 0 ? "bg-sky" : "bg-bar"
+                    )}
+                  />
+                </div>
               </div>
+              <span className="w-10 shrink-0 text-right text-xs font-bold tabular-nums motion-safe:animate-fade-in">
+                {formatParameterValue(parameter.value)}
+              </span>
             </dd>
           </div>
         ))}

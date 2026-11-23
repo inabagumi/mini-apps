@@ -49,6 +49,7 @@
     "@prisma/adapter-pg": "7.10.1",
     "@serwist/turbopack": "9.5.15",
     "@tailwindcss/turbopack": "4.3.5",
+    "@testing-library/react": "16.3.3",
     "@types/node": "26.6.6",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",

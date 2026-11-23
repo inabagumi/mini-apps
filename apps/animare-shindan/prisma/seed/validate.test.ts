@@ -5,6 +5,10 @@ import { fileURLToPath } from "node:url";
 
 import { describe, expect, it } from "vitest";
 
+import {
+  getParameterBarRatio,
+  getParameterScale,
+} from "../../lib/parameters.ts";
 import { seedData } from "./data.ts";
 import type { SeedData } from "./seed.ts";
 import { findSeedDataProblems, validateSeedData } from "./validate.ts";
@@ -18,6 +22,19 @@ const cloneSeedData = (): SeedData => structuredClone(seedData);
 describe("seedData", () => {
   it("has no problems", () => {
     expect(findSeedDataProblems(seedData)).toStrictEqual([]);
+  });
+
+  it("has parameters whose bars fit in the graph", () => {
+    for (const { parameters } of seedData.results) {
+      const scale = getParameterScale(parameters);
+
+      for (const { value } of parameters) {
+        const ratio = getParameterBarRatio(value, scale);
+
+        expect(ratio).toBeGreaterThanOrEqual(0);
+        expect(ratio).toBeLessThanOrEqual(1);
+      }
+    }
   });
 
   // Each image in `public/images/results` is named after the slug of a result
@@ -99,6 +116,22 @@ describe("findSeedDataProblems", () => {
 
     expect(findSeedDataProblems(data)).toStrictEqual([
       `Result ${result.slug} refers to a missing talent: ${result.talentId}`,
+    ]);
+  });
+
+  it("reports invalid parameters of a result", () => {
+    const data = cloneSeedData();
+    const [result] = data.results;
+    result.parameters = [
+      { label: "", value: 0.5 },
+      { label: "重複", value: 2 },
+      { label: "重複", value: 0.5 },
+    ];
+
+    expect(findSeedDataProblems(data)).toStrictEqual([
+      `Result ${result.slug}: Parameter 0 has an invalid label`,
+      `Result ${result.slug}: Parameter 1 has an invalid value: 2`,
+      `Result ${result.slug}: Parameter 2 has a duplicate label: 重複`,
     ]);
   });
 

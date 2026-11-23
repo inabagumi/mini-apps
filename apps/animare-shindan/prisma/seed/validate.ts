@@ -1,3 +1,4 @@
+import { findParameterProblems } from "../../lib/parameters.ts";
 import { MAX_SCORE, MIN_SCORE } from "../../lib/scoring.ts";
 import type { SeedData } from "./seed.ts";
 
@@ -19,7 +20,8 @@ const findDuplicates = (values: Iterable<string>): string[] => {
 /**
  * Returns the problems of the seed data that would make the seed fail or
  * overwrite one item with another: duplicate IDs and slugs, results that refer
- * to a talent that is not in the seed data, and invalid scores of the answers.
+ * to a talent that is not in the seed data, invalid parameters of the results,
+ * and invalid scores of the answers.
  */
 export const findSeedDataProblems = (data: SeedData): string[] => {
   const problems: string[] = [];
@@ -60,6 +62,10 @@ export const findSeedDataProblems = (data: SeedData): string[] => {
       problems.push(
         `Result ${result.slug} refers to a missing talent: ${result.talentId}`
       );
+    }
+
+    for (const problem of findParameterProblems(result.parameters)) {
+      problems.push(`Result ${result.slug}: ${problem}`);
     }
   }
 
