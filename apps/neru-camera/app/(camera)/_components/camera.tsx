@@ -5,10 +5,10 @@ import { Application, extend } from "@pixi/react";
 import type { ApplicationRef } from "@pixi/react";
 import { track } from "@vercel/analytics";
 import { fileSave } from "browser-fs-access";
-import { cn } from "cn";
 import { Sprite } from "pixi.js";
 import { useCallback, useEffect, useRef, useState } from "react";
 
+import { cn } from "#/lib/cn";
 import processing from "#/lib/processing";
 
 import { useAsset } from "./asset";
