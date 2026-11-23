@@ -1,7 +1,7 @@
 "use client";
 
 import { Menu } from "@base-ui/react/menu";
-import { EllipsisVerticalIcon } from "@heroicons/react/24/solid";
+import { EllipsisVertical } from "lucide-react";
 
 import { useAsset } from "./asset";
 
@@ -11,7 +11,7 @@ export default function HeaderMenu() {
   return (
     <Menu.Root>
       <Menu.Trigger className="m-2 rounded-full p-2 focus:bg-white/25 focus:outline-hidden">
-        <EllipsisVerticalIcon className="h-5 w-5" />
+        <EllipsisVertical className="h-5 w-5" />
       </Menu.Trigger>
       <Menu.Portal>
         <Menu.Positioner align="end">
