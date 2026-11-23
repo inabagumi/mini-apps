@@ -9,6 +9,7 @@
 | ディレクトリ | 名前 | URL |
 | --- | --- | --- |
 | [`apps/774-ink`](apps/774-ink/README.md) | 774.ink | https://774.ink/ |
+| [`apps/animare-shindan`](apps/animare-shindan/README.md) | あなたのオタクタイプ診断 by あにまーれ | https://shindan.animare.cafe/ |
 | [`apps/hanerubeat`](apps/hanerubeat/README.md) | Haneru Beat! | https://hanerubeat.app/ |
 | [`apps/inaba-jinja`](apps/inaba-jinja/README.md) | 因幡神社 | https://inaba-jinja.com/ |
 | [`apps/neru-camera`](apps/neru-camera/README.md) | ねるカメラ | https://neru.camera/ |
@@ -86,13 +87,14 @@ $ ./scripts/setup-mock-env.sh
 
 `pnpm dev` ですべての開発サーバーを同時に起動できるように、それぞれのポートを固定しています。
 
-| ディレクトリ       | URL                   |
-| ------------------ | --------------------- |
-| `apps/774-ink`     | http://localhost:3000 |
-| `apps/hanerubeat`  | http://localhost:3001 |
-| `apps/inaba-jinja` | http://localhost:3002 |
-| `apps/neru-camera` | http://localhost:3003 |
-| `website`          | http://localhost:3004 |
+| ディレクトリ           | URL                   |
+| ---------------------- | --------------------- |
+| `apps/774-ink`         | http://localhost:3000 |
+| `apps/hanerubeat`      | http://localhost:3001 |
+| `apps/inaba-jinja`     | http://localhost:3002 |
+| `apps/neru-camera`     | http://localhost:3003 |
+| `website`              | http://localhost:3004 |
+| `apps/animare-shindan` | http://localhost:3005 |
 
 モックサーバーは http://localhost:4000 と http://localhost:4001 で起動します。
 

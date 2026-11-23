@@ -1,6 +1,7 @@
 {
   "packages": {
     "apps/774-ink": {},
+    "apps/animare-shindan": {},
     "apps/hanerubeat": {},
     "apps/inaba-jinja": {},
     "apps/neru-camera": {}
