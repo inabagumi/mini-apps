@@ -24,6 +24,16 @@ describe(MobileMenu, () => {
     );
   });
 
+  it("hides the icon of the trigger from assistive technologies", () => {
+    render(<MobileMenu />);
+
+    expect(
+      screen
+        .getByRole("button", { name: "メニューを開く" })
+        .querySelector("svg")
+    ).toHaveAttribute("aria-hidden", "true");
+  });
+
   it("opens the menu with the links", async () => {
     render(<MobileMenu />);
 
