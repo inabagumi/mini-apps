@@ -9,11 +9,20 @@ generator client {
   provider            = "prisma-client"
 }
 
+// The questions and the answers are shown in the ascending order of their
+// positions (0 or more, which is also guaranteed by a CHECK constraint in the
+// migration). The positions do not have to be consecutive or unique: the items
+// with the same position are shown in the ascending order of their IDs, so the
+// order is always the same for the same data. To move an item, renumber the
+// positions of the items (the questions, or the answers of the question) in a
+// transaction, as the seed does.
 model Question {
-  answers Answer[]
-  id      String   @id @default(dbgenerated("uuidv7()")) @db.Uuid
-  title   String
+  answers  Answer[]
+  id       String   @id @default(dbgenerated("uuidv7()")) @db.Uuid
+  position Int
+  title    String
 
+  @@index([position])
   @@map("questions")
 }
 
@@ -21,10 +30,12 @@ model Answer {
   Question Question? @relation(fields: [questionId], references: [id])
 
   id         String        @id @default(dbgenerated("uuidv7()")) @db.Uuid
+  position   Int
   questionId String?       @map("question_id") @db.Uuid
   scores     AnswerScore[]
   value      String
 
+  @@index([questionId, position])
   @@map("answers")
 }
 

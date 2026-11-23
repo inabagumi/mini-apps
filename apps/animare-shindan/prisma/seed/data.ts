@@ -8,8 +8,10 @@
 //
 // Each question, answer and talent has a fixed ID so that the seed updates the
 // same records when it runs again. Results and releases are identified by
-// their unique slugs. The IDs of the questions and the answers increase in the
-// order of the arrays because they are sorted by ID.
+// their unique slugs. The questions and the answers are shown in the order of
+// the arrays, not in the order of their IDs, so reorder the arrays to change
+// the order. The IDs increase in the order of the arrays only to make them
+// easy to read.
 //
 // Each answer has the scores (0 to 3) that it adds to the results, and the
 // result with the highest total score is chosen (see `lib/scoring.ts`). A

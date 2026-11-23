@@ -41,6 +41,18 @@ const cloneSeedData = (): SeedData => structuredClone(seedData);
 const sortScores = (scores: AnswerScoreSeed[]): AnswerScoreSeed[] =>
   scores.toSorted((a, b) => a.result.localeCompare(b.result));
 
+// The positions that the seed gives to the questions and the answers, which
+// follow the order of the arrays.
+const toPositions = (data: SeedData) =>
+  data.questions.map((question, position) => ({
+    answers: question.answers.map((answer, answerPosition) => ({
+      id: answer.id,
+      position: answerPosition,
+    })),
+    id: question.id,
+    position,
+  }));
+
 // Gives the last release an invalid date so that the seed fails in the middle,
 // after the other records are written. The seed data itself stays consistent,
 // so it passes the validation before the transaction.
@@ -282,6 +294,43 @@ describe.skipIf(!databaseURL)("seed", () => {
     expect(after.talents).toHaveLength(before.talents.length);
   });
 
+  // The positions of the questions, and of the answers of each question, in
+  // the order of the positions.
+  const findPositions = async () =>
+    await prisma.question.findMany({
+      orderBy: { position: "asc" },
+      select: {
+        answers: {
+          orderBy: { position: "asc" },
+          select: { id: true, position: true },
+        },
+        id: true,
+        position: true,
+      },
+    });
+
+  it("gives the positions in the order of the arrays", async () => {
+    await seed(prisma);
+
+    expect(await findPositions()).toStrictEqual(toPositions(seedData));
+  });
+
+  it("reorders the questions and the answers when the arrays are reordered", async () => {
+    await seed(prisma);
+
+    const data = cloneSeedData();
+    // Move the last question to the top, and reverse the answers of a
+    // question.
+    const lastQuestion =
+      data.questions.pop() as (typeof data.questions)[number];
+    data.questions.unshift(lastQuestion);
+    data.questions[1].answers.reverse();
+
+    await seed(prisma, data);
+
+    expect(await findPositions()).toStrictEqual(toPositions(data));
+  });
+
   it("keeps the records that are not in the seed data", async () => {
     await seed(prisma);
 
@@ -293,11 +342,13 @@ describe.skipIf(!databaseURL)("seed", () => {
         answers: {
           create: [
             {
+              position: 0,
               scores: { create: [{ resultId: result.id, score: 3 }] },
               value: "回答",
             },
           ],
         },
+        position: 0,
         title: "追加の質問",
       },
       include: { answers: { include: { scores: true } } },

@@ -1,63 +1,14 @@
 import { cacheLife } from "next/cache";
 
 import prisma from "./prisma";
-import type { AnswerScore } from "./scoring";
-
-export interface Answer {
-  id: string;
-  /** The scores that the answer adds to the results. */
-  scores: AnswerScore[];
-  value: string;
-}
-
-export interface Question {
-  answers: Answer[];
-  title: string;
-}
+import { findQuestions } from "./questions";
+import type { Question } from "./questions";
 
 export const getQuestions = async (): Promise<Question[]> => {
   "use cache";
   cacheLife("minutes");
 
-  const questions = await prisma.question.findMany({
-    orderBy: {
-      id: "desc",
-    },
-    select: {
-      answers: {
-        orderBy: {
-          id: "asc",
-        },
-        select: {
-          id: true,
-          scores: {
-            select: {
-              result: {
-                select: {
-                  slug: true,
-                },
-              },
-              score: true,
-            },
-          },
-          value: true,
-        },
-      },
-      title: true,
-    },
-  });
-
-  return questions.map(({ answers, title }) => ({
-    answers: answers.map(({ id, scores, value }) => ({
-      id,
-      scores: scores.map(({ result, score }) => ({
-        result: result.slug,
-        score,
-      })),
-      value,
-    })),
-    title,
-  }));
+  return await findQuestions(prisma);
 };
 
 export interface Talent {
