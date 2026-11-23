@@ -1,10 +1,6 @@
 @import "tailwindcss";
 
 @theme {
-  --breakpoint-xs: 31.25rem;
-
   --color-accent: #e85465;
   --color-background: #544643;
-
-  --font-sans: sans-serif;
 }
