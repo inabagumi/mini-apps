@@ -35,18 +35,17 @@ const TABLES = [
   "releases",
 ];
 
-const MISSING_TALENT_ID = "00000000-0000-7000-8003-ffffffffffff";
-
 const cloneSeedData = (): SeedData => structuredClone(seedData);
 
-// Makes the last result refer to a missing talent so that the seed fails in
-// the middle.
+// Gives the last release an invalid date so that the seed fails in the middle,
+// after the other records are written. The seed data itself stays consistent,
+// so it passes the validation before the transaction.
 const breakSeedData = (data: SeedData): SeedData => ({
   ...data,
-  results: data.results.map((result, index) =>
-    index === data.results.length - 1
-      ? { ...result, talentId: MISSING_TALENT_ID }
-      : result
+  releases: data.releases.map((release, index) =>
+    index === data.releases.length - 1
+      ? { ...release, publishedAt: new Date(Number.NaN) }
+      : release
   ),
 });
 
@@ -130,12 +129,11 @@ describe.skipIf(!databaseURL)("seed", () => {
       include: { recommendedVideo: true },
       orderBy: { slug: "asc" },
     });
-    // The last one wins when the seed data has results with the same slug.
     const expectedResults = new Map(
       seedData.results.map((result) => [result.slug, result])
     );
 
-    expect(results).toHaveLength(expectedResults.size);
+    expect(results).toHaveLength(seedData.results.length);
 
     for (const {
       recommendedVideo,
@@ -254,6 +252,21 @@ describe.skipIf(!databaseURL)("seed", () => {
       results: [],
       talents: [],
     });
+  });
+
+  it("rejects inconsistent seed data without touching the database", async () => {
+    await seed(prisma);
+    const before = await dump();
+
+    const data = cloneSeedData();
+    data.questions[0].title = "変更された質問";
+    data.results[1].slug = data.results[0].slug;
+
+    await expect(seed(prisma, data)).rejects.toThrow(
+      `Duplicate result slug: ${data.results[0].slug}`
+    );
+
+    expect(await dump()).toStrictEqual(before);
   });
 
   it("rejects and leaves a seeded database unchanged when it fails", async () => {

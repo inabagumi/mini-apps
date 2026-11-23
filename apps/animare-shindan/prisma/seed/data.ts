@@ -122,7 +122,7 @@ export const seedData: SeedData = {
         { label: "色気", value: 0.28 },
       ],
       recommendedVideoUrl: "https://youtu.be/46zn0VIqJ1g",
-      slug: "3bXvK25U",
+      slug: "4yoyHoB7",
       talentId: HANERU_INABA_ID,
       type: "メガネ",
     },

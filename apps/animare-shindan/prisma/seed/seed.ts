@@ -1,5 +1,6 @@
 import type { PrismaClient } from "../../lib/generated/prisma/client.ts";
 import { seedData } from "./data.ts";
+import { validateSeedData } from "./validate.ts";
 
 export interface AnswerSeed {
   id: string;
@@ -63,11 +64,17 @@ const TRANSACTION_TIMEOUT = 60_000;
  * not duplicate the records, and a failure leaves the database unchanged.
  * Records that are not in the seed data are left as they are, which means
  * removing an item from the seed data does not delete it from the database.
+ *
+ * The seed data is validated before the transaction starts, so inconsistent
+ * seed data (such as duplicate slugs) makes the seed fail without touching the
+ * database.
  */
 export const seed = async (
   prisma: PrismaClient,
   data: SeedData = seedData
 ): Promise<void> => {
+  validateSeedData(data);
+
   await prisma.$transaction(
     async (tx) => {
       // The queries in a transaction are sent one by one anyway, so run them
