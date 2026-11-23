@@ -35,7 +35,6 @@ export default function RootLayout({
         "bg-brand bg-page-pattern font-sans leading-body font-bold"
       )}
       lang="ja"
-      prefix="og: https://ogp.me/ns#"
     >
       <body className="flex min-h-dvh flex-col text-base text-ink antialiased">
         <div className="grow px-4 sm:px-6">{children}</div>
