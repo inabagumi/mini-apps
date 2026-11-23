@@ -9,10 +9,12 @@ export const cn = createCn({
   extend: {
     classGroups: {
       "bg-image": [{ bg: ["page-pattern", "bar-stripes"] }],
+      break: [{ break: ["auto-phrase"] }],
     },
     theme: {
-      animate: ["bar-in"],
+      animate: ["fade-in", "bar-in", "loading-dots"],
       breakpoint: ["xs"],
+      container: ["page", "narrow"],
       leading: ["heading", "compact", "lead", "body"],
       radius: ["subtle", "balloon", "window"],
       shadow: ["raised", "pressed"],
