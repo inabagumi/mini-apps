@@ -138,6 +138,28 @@ const talentData: Prisma.TalentCreateInput[] = [
   },
 ];
 
+// Dummy releases for development and testing. The actual releases are stored
+// only in the production database.
+const releaseData: Prisma.ReleaseCreateInput[] = [
+  {
+    body: "テスト用のリリースです。",
+    publishedAt: new Date("2026-01-01T00:00:00Z"),
+    slug: "v1.0.0",
+    title: "Version 1.0",
+  },
+  {
+    body: [
+      "テスト用のリリースです。[リンク](https://example.com/)を含みます。",
+      "",
+      "- 項目 1",
+      "- 項目 2",
+    ].join("\n"),
+    publishedAt: new Date("2026-02-01T00:00:00Z"),
+    slug: "v2.0.0",
+    title: "Version 2.0",
+  },
+];
+
 const resultData: Prisma.ResultCreateWithoutTalentInput[] = [
   {
     attribute: "メイド",
@@ -397,6 +419,7 @@ const main = async () => {
   await Promise.allSettled([
     ...questionData.map((data) => prisma.question.create({ data })),
     ...talentData.map((data) => prisma.talent.create({ data })),
+    ...releaseData.map((data) => prisma.release.create({ data })),
   ]);
 
   const talent = await prisma.talent.findFirstOrThrow({
