@@ -4,13 +4,7 @@
 
 ## お知らせ
 
-[お知らせ](https://shindan.animare.cafe/list) に表示するリリースは DB の `releases` テーブルに保存しています。リリースを追加するときは、`apps/animare-shindan` で `releases` テーブルに行を追加するマイグレーションを作成し、本番の DB に適用してください。
-
-```console
-$ pnpm exec prisma migrate dev --create-only --name add_release_v5_0_0
-$ # 作成された migration.sql に INSERT 文を書く
-$ pnpm exec prisma migrate deploy
-```
+[お知らせ](https://shindan.animare.cafe/list) に表示するリリースは DB の `releases` テーブルに保存しています。リリースを追加するときは、本番の DB の `releases` テーブルに直接行を追加してください。リリースのデータはマイグレーションやシードには含めません。開発やテストでは [`prisma/seed.ts`](prisma/seed.ts) のダミーのリリースを使います。
 
 ## ライセンス
 
