@@ -35,33 +35,16 @@
   /* Breakpoints */
   --breakpoint-xs: 25rem;
 
-  /* Font sizes between the default scale, named after their sizes in pixels */
-  --text-13: 0.8125rem;
-  --text-15: 0.9375rem;
-  --text-17: 1.0625rem;
-  --text-22: 1.375rem;
-  --text-28: 1.75rem;
-
   /* Font sizes that scale with the viewport */
   --text-fluid-hero: clamp(1.75rem, 8.5vw, 2.875rem);
   --text-fluid-title: clamp(1.75rem, 7vw, 2.25rem);
   --text-fluid-result: clamp(1.75rem, 9vw, 2.25rem);
 
-  /* Line heights */
-  --leading-heading: 1.4;
-  --leading-compact: 1.6;
-  --leading-lead: 1.7;
+  /* The line height of the body text */
   --leading-body: 1.8;
 
-  /* Letter spacings */
-  --tracking-heading: 0.08rem;
-  --tracking-badge: 0.16rem;
+  /* The letter spacing of the logo */
   --tracking-logo: 7px;
-
-  /* Border radii */
-  --radius-subtle: 3px;
-  --radius-balloon: 10px;
-  --radius-window: 20px;
 
   /*
    * Shadows of controls that are raised on hover and pressed on click. The

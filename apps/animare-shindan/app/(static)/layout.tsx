@@ -16,7 +16,7 @@ export default function StaticLayout({ children }: Props): JSX.Element {
     <>
       <header className="mx-auto flex w-full max-w-page items-center justify-between gap-4 py-5">
         <Link
-          className="block rounded-subtle bg-logo py-0 pr-[0.2em] pl-[0.5em] text-17 leading-loose tracking-logo text-white no-underline"
+          className="block rounded-sm bg-logo py-0 pr-[0.2em] pl-[0.5em] text-lg leading-loose tracking-logo text-white no-underline"
           href="/"
         >
           ANiMARE
@@ -63,7 +63,7 @@ export default function StaticLayout({ children }: Props): JSX.Element {
       </header>
 
       <main className="pt-6 sm:pt-16">
-        <div className="mx-auto w-full max-w-page rounded-window border-4 border-ink bg-white px-5 py-7 text-ink sm:px-8 sm:py-10">
+        <div className="mx-auto w-full max-w-page rounded-3xl border-4 border-ink bg-white px-5 py-7 text-ink sm:px-8 sm:py-10">
           {children}
         </div>
       </main>

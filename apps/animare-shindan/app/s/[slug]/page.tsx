@@ -37,7 +37,7 @@ const MessageWindow = ({
 }: MessageWindowProps): JSX.Element => (
   <div
     className={cn(
-      "relative mt-16 rounded-window border-3 border-ink bg-white",
+      "relative mt-16 rounded-3xl border-3 border-ink bg-white",
       className
     )}
     {...props}
@@ -141,7 +141,7 @@ const ResultDetails = async ({
   return (
     <>
       <MessageWindow className="p-5 sm:p-10">
-        <h2 className="m-0 flex flex-col items-center justify-center text-center text-lg font-bold sm:text-22">
+        <h2 className="m-0 flex flex-col items-center justify-center text-center text-lg font-bold sm:text-2xl">
           <span className="my-1 block text-base leading-normal">
             アナタは
             <mark className="mr-0.5 bg-transparent bg-linear-to-b from-transparent from-80% to-highlight to-80% text-lg font-black">
@@ -150,7 +150,7 @@ const ResultDetails = async ({
             系の
           </span>
           <span className="block text-balance wrap-anywhere break-auto-phrase">
-            <mark className="inline bg-transparent bg-linear-to-b from-transparent from-80% to-highlight to-80% box-decoration-clone text-fluid-result leading-heading font-black tracking-heading">
+            <mark className="inline bg-transparent bg-linear-to-b from-transparent from-80% to-highlight to-80% box-decoration-clone text-fluid-result leading-snug font-black tracking-wider">
               {result.attribute}
             </mark>
             好きです!
@@ -172,7 +172,7 @@ const ResultDetails = async ({
             </figcaption>
           </figure>
 
-          <p className="relative mt-2 ml-4 flex-1 rounded-balloon bg-line p-2.5 after:absolute after:top-4 after:-left-2.5 after:border-y-7 after:border-r-10 after:border-y-transparent after:border-r-line sm:mt-5">
+          <p className="relative mt-2 ml-4 flex-1 rounded-xl bg-line p-2.5 after:absolute after:top-4 after:-left-2.5 after:border-y-7 after:border-r-10 after:border-y-transparent after:border-r-line sm:mt-5">
             あにまーれは仲良しです♩
           </p>
         </div>
@@ -206,7 +206,7 @@ const ResultDetails = async ({
         </ShareVisibility>
       </Suspense>
 
-      <h2 className="mx-auto mt-11 mb-2 px-2 text-2xl leading-heading font-black tracking-heading text-balance wrap-anywhere break-auto-phrase text-white sm:mt-16 sm:text-4xl">
+      <h2 className="mx-auto mt-11 mb-2 px-2 text-2xl leading-snug font-black tracking-wider text-balance wrap-anywhere break-auto-phrase text-white sm:mt-16 sm:text-4xl">
         総勢約8,000名のVTuberの中から【{result.type}
         好き】のアナタにマッチするVTuberが選ばれました!
       </h2>
@@ -220,12 +220,12 @@ const ResultDetails = async ({
               </h2>
 
               <div className="mx-auto mt-3 w-full max-w-94">
-                <header className="rounded-t-window bg-white p-3">
-                  <p className="m-0 text-center text-xs leading-heading text-caption">
+                <header className="rounded-t-3xl bg-white p-3">
+                  <p className="m-0 text-center text-xs leading-snug text-caption">
                     {result.catchphrase}
                   </p>
 
-                  <h3 className="m-0 text-center text-2xl leading-compact font-black text-balance wrap-anywhere break-auto-phrase text-brand-strong">
+                  <h3 className="m-0 text-center text-2xl leading-relaxed font-black text-balance wrap-anywhere break-auto-phrase text-brand-strong">
                     {result.talent.twitter ? (
                       <a
                         className="block rounded-md text-inherit no-underline hover:underline"
@@ -242,7 +242,7 @@ const ResultDetails = async ({
                 </header>
 
                 <div>
-                  <div className="relative z-1 aspect-video w-full overflow-hidden rounded-b-window bg-black">
+                  <div className="relative z-1 aspect-video w-full overflow-hidden rounded-b-3xl bg-black">
                     {/* The YouTube player needs both `allow-scripts` and
                         `allow-same-origin`, which the rule disallows. */}
                     {/* oxlint-disable-next-line react/iframe-missing-sandbox */}
@@ -263,7 +263,7 @@ const ResultDetails = async ({
 
           {result.talent.youtube && (
             <>
-              <h3 className="mt-5 mb-0 text-center text-lg leading-compact font-black text-balance wrap-anywhere break-auto-phrase text-white sm:text-28">
+              <h3 className="mt-5 mb-0 text-center text-lg leading-relaxed font-black text-balance wrap-anywhere break-auto-phrase text-white sm:text-3xl">
                 YouTubeにアクセスして、
                 <br />「{result.talent.name}」と会話しよう!
               </h3>
@@ -290,7 +290,7 @@ export default function ResultPage({
 }: Props): JSX.Element {
   return (
     <main className="mx-auto w-full max-w-narrow pt-5 pb-8 sm:pt-6">
-      <h1 className="m-0 p-2 text-center text-xl font-black tracking-heading text-white sm:px-0 sm:pt-0 sm:pb-6 sm:text-2xl">
+      <h1 className="m-0 p-2 text-center text-xl font-black tracking-wider text-white sm:px-0 sm:pt-0 sm:pb-6 sm:text-2xl">
         オタクタイプ 診断結果
       </h1>
 
@@ -305,7 +305,7 @@ export default function ResultPage({
 
       <div className="pt-10">
         <MessageWindow className="mx-auto w-full max-w-104">
-          <p className="mx-5 mt-4 mb-0 text-center text-17 leading-compact font-black">
+          <p className="mx-5 mt-4 mb-0 text-center text-lg leading-relaxed font-black">
             その他のVTuberや詳しい情報は
             <br />
             YouTubeをチェックしてみてね！
