@@ -25,6 +25,7 @@
     "fix": "ultracite fix",
     "prepare": "husky",
     "test": "turbo test",
+    "test:e2e": "turbo test:e2e",
     "typecheck": "turbo typecheck",
     "typegen": "turbo typegen"
   },

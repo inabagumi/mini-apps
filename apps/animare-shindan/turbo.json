@@ -3,12 +3,17 @@
   "extends": ["//"],
   "tasks": {
     "build": {
-      "env": ["DATABASE_URL"]
+      "env": ["DATABASE_ADAPTER", "DATABASE_URL"]
     },
     "test": {
       "env": ["TEST_DATABASE_URL"],
       "inputs": ["$TURBO_EXTENDS$", "prisma/**"],
       "passThroughEnv": ["CI"]
+    },
+    "test:e2e": {
+      "env": ["TEST_DATABASE_URL"],
+      "inputs": ["$TURBO_EXTENDS$", "prisma/**"],
+      "passThroughEnv": ["CI", "PLAYWRIGHT_*"]
     }
   }
 }

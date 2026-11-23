@@ -29,6 +29,20 @@
         "tsconfig.json"
       ]
     },
+    "test:e2e": {
+      "dependsOn": ["^build"],
+      "inputs": [
+        "app/**",
+        "assets/**",
+        "components/**",
+        "e2e/**",
+        "lib/**",
+        "public/**",
+        "*.ts",
+        "*.tsx",
+        "tsconfig.json"
+      ]
+    },
     "typecheck": {
       "dependsOn": ["^build", "typegen"]
     },
