@@ -5,11 +5,12 @@ import clsx from 'clsx'
 import { useRouter } from 'next/navigation'
 import {
   type HTMLAttributes,
+  type JSX,
   type MouseEventHandler,
   type ReactNode,
   createContext,
+  use,
   useCallback,
-  useContext,
   useEffect,
   useMemo,
   useState
@@ -38,7 +39,7 @@ const AnalysisContext = createContext<AnalysisContextValue>({
 })
 
 function useAnalysisContext(): AnalysisContextValue {
-  return useContext(AnalysisContext)
+  return use(AnalysisContext)
 }
 
 type UseAnalyzerReturn = {
@@ -228,16 +229,16 @@ function Analyzing({ resultURL }: AnalyzingProps): JSX.Element {
 type Props = {
   children: ReactNode
   questions: Question[]
-  resultURL: string
+  resultIDs: string[]
 }
 
 export default function Analysis({
   children,
   questions,
-  resultURL
+  resultIDs
 }: Props): JSX.Element {
   const [count, setCount] = useState(1)
-  const [nowAnalyzing, setNowAnalyzing] = useState(false)
+  const [resultURL, setResultURL] = useState<string | null>(null)
   const maxCount = useMemo(() => questions.length, [questions])
 
   const wrappedSetCount = useCallback(
@@ -252,16 +253,20 @@ export default function Analysis({
   )
 
   const startAnalyze = useCallback(() => {
-    setNowAnalyzing(true)
-  }, [setNowAnalyzing])
+    // Pick the result in the browser when the last question is answered so
+    // that every visitor gets their own random result.
+    const resultID = resultIDs[Math.floor(resultIDs.length * Math.random())]
+
+    setResultURL(`/s/${resultID}`)
+  }, [resultIDs])
 
   return (
-    <AnalysisContext.Provider
+    <AnalysisContext
       value={{ count, questions, setCount: wrappedSetCount, startAnalyze }}
     >
       {children}
 
-      {nowAnalyzing && <Analyzing resultURL={resultURL} />}
-    </AnalysisContext.Provider>
+      {resultURL && <Analyzing resultURL={resultURL} />}
+    </AnalysisContext>
   )
 }

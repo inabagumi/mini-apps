@@ -1,16 +1,18 @@
 import nextEnv from '@next/env'
-import prismaClient from '@prisma/client'
+import { PrismaNeon } from '@prisma/adapter-neon'
+
+import { type Prisma, PrismaClient } from '../lib/generated/prisma/client.ts'
 
 const { loadEnvConfig } = nextEnv
-const { PrismaClient } = prismaClient
 
 const projectDir = process.cwd()
 loadEnvConfig(projectDir)
 
-const prisma = new PrismaClient()
+const prisma = new PrismaClient({
+  adapter: new PrismaNeon({ connectionString: process.env.DATABASE_URL })
+})
 
-/** @type {import('@prisma/client').Prisma.QuestionCreateInput[]} */
-const questionData = [
+const questionData: Prisma.QuestionCreateInput[] = [
   {
     answers: {
       create: [
@@ -127,8 +129,7 @@ const questionData = [
   }
 ]
 
-/** @type {import('@prisma/client').Prisma.TalentCreateInput[]} */
-const talentData = [
+const talentData: Prisma.TalentCreateInput[] = [
   {
     name: '因幡はねる',
     twitter: 'Haneru_Inaba',
@@ -136,8 +137,7 @@ const talentData = [
   }
 ]
 
-/** @type {import('@prisma/client').Prisma.ResultCreateInput[]} */
-const resultData = [
+const resultData: Prisma.ResultCreateWithoutTalentInput[] = [
   {
     attribute: 'メイド',
     catchphrase: 'おかえりなさいませ♪ご主人さま！',
@@ -398,7 +398,7 @@ async function main() {
     ...talentData.map((data) => prisma.talent.create({ data }))
   ])
 
-  const talent = await prisma.talent.findFirst({
+  const talent = await prisma.talent.findFirstOrThrow({
     where: {
       name: '因幡はねる'
     }
@@ -422,8 +422,11 @@ async function main() {
   console.log('Seeding finished.')
 }
 
-main()
-  .catch(console.error)
-  .finally(() => {
-    prisma.$disconnect()
-  })
+try {
+  await main()
+} catch (error) {
+  console.error(error)
+  process.exitCode = 1
+} finally {
+  await prisma.$disconnect()
+}

@@ -1,16 +1,15 @@
 {
-  "compileOnSave": true,
   "compilerOptions": {
+    "allowImportingTsExtensions": true,
     "allowJs": true,
-    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "incremental": true,
     "isolatedModules": true,
-    "jsx": "preserve",
-    "lib": ["dom", "dom.iterable", "es2022"],
+    "jsx": "react-jsx",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "noEmit": true,
     "paths": {
       "@/*": ["./*"]
@@ -22,9 +21,9 @@
     ],
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "sourceMap": true,
     "strict": true,
-    "target": "esnext"
+    "target": "ES2017",
+    "types": ["node"]
   },
   "exclude": ["node_modules"],
   "include": [
@@ -32,6 +31,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts",
+    "**/*.mts"
   ]
 }

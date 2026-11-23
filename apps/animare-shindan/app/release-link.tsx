@@ -1,4 +1,5 @@
 import Link, { type LinkProps } from 'next/link'
+import { type JSX } from 'react'
 
 import { getRecentReleaseTitle } from '@/lib/releases'
 

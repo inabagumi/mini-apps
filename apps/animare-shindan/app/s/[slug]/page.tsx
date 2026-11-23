@@ -2,7 +2,7 @@ import clsx from 'clsx'
 import { type Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { type HTMLAttributes } from 'react'
+import { type HTMLAttributes, type JSX, type ReactNode, Suspense } from 'react'
 
 import { getAnalysisResult, getAnalysisResultIDs } from '@/lib/analysis'
 import { createTweetURL } from '@/lib/share'
@@ -11,8 +11,6 @@ import pkg from '@/package.json'
 import nanashiAvatar from './avatar.svg'
 import Graph from './graph'
 import styles from './page.module.css'
-
-export const revalidate = 60
 
 function createYouTubeEmbedURL(url: string): string {
   const { pathname, searchParams } = new URL(url)
@@ -41,27 +39,42 @@ function MessageWindow({
   return <div className={clsx(styles.messageWindow, className)} {...props} />
 }
 
-type Params = {
-  slug: string
+type Props = PageProps<'/s/[slug]'>
+
+type ShareVisibilityProps = {
+  children: ReactNode
+  searchParams: Props['searchParams']
+  shared: boolean
 }
 
-export async function generateStaticParams(): Promise<Params[]> {
+/**
+ * Renders `children` only when whether the page was opened from a shared
+ * link (`?s=true`) matches `shared`. This reads `searchParams`, so it has to
+ * be wrapped in `<Suspense>` to keep the rest of the page prerendered.
+ */
+async function ShareVisibility({
+  children,
+  searchParams,
+  shared
+}: ShareVisibilityProps): Promise<ReactNode> {
+  const { s } = await searchParams
+  const sharedParam = (Array.isArray(s) ? s.at(-1) : s) ?? 'false'
+  const isShared = ['1', 'true'].includes(sharedParam)
+
+  return isShared === shared ? children : null
+}
+
+export async function generateStaticParams(): Promise<
+  Awaited<Props['params']>[]
+> {
   const resultIDs = await getAnalysisResultIDs()
 
   return resultIDs.map((slug) => ({ slug }))
 }
 
-type SearchParams = {
-  s?: string[] | string
-}
-
-type Props = {
-  params: Params
-  searchParams: SearchParams
-}
-
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const result = await getAnalysisResult(params.slug)
+  const { slug } = await params
+  const result = await getAnalysisResult(slug)
 
   if (!result) {
     notFound()
@@ -95,26 +108,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-export default async function ResultPage({
+async function ResultDetails({
   params,
   searchParams
 }: Props): Promise<JSX.Element> {
-  const result = await getAnalysisResult(params.slug)
+  const { slug } = await params
+  const result = await getAnalysisResult(slug)
 
   if (!result) {
     notFound()
   }
 
-  const sharedParam =
-    (Array.isArray(searchParams.s) ? searchParams.s.at(-1) : searchParams.s) ??
-    'false'
-  const isShared = ['1', 'true'].includes(sharedParam)
   const shareURL = new URL(`/s/${result.slug}?s=true`, pkg.homepage).toString()
 
   return (
-    <main className={styles.content}>
-      <h1 className={styles.title}>オタクタイプ 診断結果</h1>
-
+    <>
       <MessageWindow className={styles.messageBox}>
         <h2 className={styles.messageTitle}>
           <span className={styles.messageTitleLine}>
@@ -146,8 +154,8 @@ export default async function ResultPage({
           <p className={styles.evaluationComment}>あにまーれは仲良しです♩</p>
         </div>
 
-        {!isShared && (
-          <>
+        <Suspense>
+          <ShareVisibility searchParams={searchParams} shared={false}>
             <a
               className={styles.shareButton}
               href={createTweetURL(
@@ -163,17 +171,19 @@ export default async function ResultPage({
             <Link className={styles.retryButton} href="/" role="button">
               もう一度診断する
             </Link>
-          </>
-        )}
+          </ShareVisibility>
+        </Suspense>
 
         <Graph parameters={result.parameters} title="オタクパラメーター" />
       </MessageWindow>
 
-      {isShared && (
-        <Link className={styles.button} href="/" role="button">
-          オタクタイプを診断してみる
-        </Link>
-      )}
+      <Suspense>
+        <ShareVisibility searchParams={searchParams} shared>
+          <Link className={styles.button} href="/" role="button">
+            オタクタイプを診断してみる
+          </Link>
+        </ShareVisibility>
+      </Suspense>
 
       <h2 className={styles.subtitle}>
         総勢約8,000名のVTuberの中から【{result.type}
@@ -244,6 +254,26 @@ export default async function ResultPage({
           )}
         </section>
       )}
+    </>
+  )
+}
+
+export default function ResultPage({
+  params,
+  searchParams
+}: Props): JSX.Element {
+  return (
+    <main className={styles.content}>
+      <h1 className={styles.title}>オタクタイプ 診断結果</h1>
+
+      {/*
+       * Everything that depends on the URL (`params` / `searchParams`) is
+       * rendered inside this boundary so that the rest of the page can be
+       * part of the App Shell shared by every result.
+       */}
+      <Suspense>
+        <ResultDetails params={params} searchParams={searchParams} />
+      </Suspense>
 
       <div className={styles.footer}>
         <MessageWindow className={styles.message}>

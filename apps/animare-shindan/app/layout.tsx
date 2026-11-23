@@ -1,9 +1,10 @@
 import './globals.css'
 
-import { Analytics } from '@vercel/analytics/react'
+import { SerwistProvider } from '@serwist/turbopack/react'
+import { Analytics } from '@vercel/analytics/next'
 import { type Metadata } from 'next'
 import { Noto_Sans_JP } from 'next/font/google'
-import { type ReactNode, Suspense } from 'react'
+import { type JSX, Suspense } from 'react'
 
 import pkg from '../package.json'
 
@@ -24,11 +25,9 @@ export const metadata: Metadata = {
   }
 }
 
-type Props = {
-  children: ReactNode
-}
-
-export default function RootLayout({ children }: Props): JSX.Element {
+export default function RootLayout({
+  children
+}: LayoutProps<'/'>): JSX.Element {
   return (
     <html className={notoSans.variable} lang="ja">
       <head prefix="og: https://ogp.me/ns#">
@@ -61,6 +60,10 @@ export default function RootLayout({ children }: Props): JSX.Element {
         </div>
 
         <Analytics />
+        <SerwistProvider
+          disable={process.env.NODE_ENV === 'development'}
+          swUrl="/sw.js"
+        />
       </body>
     </html>
   )

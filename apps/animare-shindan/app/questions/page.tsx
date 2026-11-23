@@ -1,11 +1,10 @@
 import { type Metadata } from 'next'
+import { type JSX } from 'react'
 
 import { getAnalysisResultIDs, getQuestions } from '@/lib/analysis'
 
 import Analysis, { AnswerList, Header, PrevButton } from './analysis'
 import styles from './page.module.css'
-
-export const revalidate = 60
 
 export const metadata: Metadata = {
   alternates: {
@@ -15,15 +14,13 @@ export const metadata: Metadata = {
 }
 
 export default async function QuestionsPage(): Promise<JSX.Element> {
-  const [questions, results] = await Promise.all([
+  const [questions, resultIDs] = await Promise.all([
     getQuestions(),
     getAnalysisResultIDs()
   ])
-  const resultID = results[Math.floor(results.length * Math.random())]
-  const resultURL = `/s/${resultID}`
 
   return (
-    <Analysis questions={questions} resultURL={resultURL}>
+    <Analysis questions={questions} resultIDs={resultIDs}>
       <div className={styles.container}>
         <Header />
 

@@ -1,9 +1,8 @@
 import { type Metadata } from 'next'
 import Link from 'next/link'
+import { type JSX } from 'react'
 
 import styles from './page.module.css'
-
-export const revalidate = 60
 
 const description = '好みと推しVTuberを無意識から探る！'
 
@@ -23,7 +22,7 @@ export const metadata: Metadata = {
   }
 }
 
-export default function Home() {
+export default function Home(): JSX.Element {
   return (
     <>
       <h1 className={styles.title}>

@@ -1,4 +1,5 @@
 import { type Metadata } from 'next'
+import { type JSX } from 'react'
 
 import Layout from './(static)/layout'
 import styles from './not-found.module.css'

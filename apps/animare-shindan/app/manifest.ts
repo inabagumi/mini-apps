@@ -3,9 +3,6 @@ import { type MetadataRoute } from 'next'
 import favicon512x512 from './icon1.png'
 import favicon192x192 from './icon2.png'
 
-export const runtime = 'edge'
-export const revalidate = 120
-
 export default function manifest(): MetadataRoute.Manifest {
   return {
     background_color: '#fff',

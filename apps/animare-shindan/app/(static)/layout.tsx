@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { type ReactNode } from 'react'
+import { type JSX, type ReactNode } from 'react'
 
 import { createLineShareURL, createTweetURL } from '@/lib/share'
 import pkg from '@/package.json'

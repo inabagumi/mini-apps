@@ -1,3 +1,5 @@
+import { cacheLife } from 'next/cache'
+
 import prisma from './prisma'
 
 export type Question = {
@@ -6,6 +8,9 @@ export type Question = {
 }
 
 export async function getQuestions(): Promise<Question[]> {
+  'use cache'
+  cacheLife('minutes')
+
   const questions = await prisma.question.findMany({
     orderBy: {
       id: 'desc'
@@ -55,6 +60,9 @@ export type Result = {
 }
 
 export async function getAnalysisResult(slug: string): Promise<Result | null> {
+  'use cache'
+  cacheLife('minutes')
+
   const result = await prisma.result.findFirst({
     select: {
       attribute: true,
@@ -89,6 +97,9 @@ export async function getAnalysisResult(slug: string): Promise<Result | null> {
 }
 
 export async function getAnalysisResultIDs(): Promise<string[]> {
+  'use cache'
+  cacheLife('minutes')
+
   const results = await prisma.result.findMany({
     select: {
       slug: true

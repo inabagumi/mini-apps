@@ -1,4 +1,5 @@
 import { Octokit } from '@octokit/rest'
+import { cacheLife } from 'next/cache'
 
 const octokit = new Octokit({
   auth: process.env.GITHUB_TOKEN
@@ -12,6 +13,9 @@ export type Release = {
 }
 
 export async function getAllReleases(): Promise<Release[]> {
+  'use cache'
+  cacheLife({ revalidate: 120 })
+
   const { data: releases } = await octokit.repos.listReleases({
     owner: 'inabagumi',
     repo: 'animare-shindan'
@@ -26,6 +30,9 @@ export async function getAllReleases(): Promise<Release[]> {
 }
 
 export async function getRecentReleaseTitle(): Promise<string> {
+  'use cache'
+  cacheLife({ revalidate: 120 })
+
   const {
     data: [release]
   } = await octokit.repos.listReleases({

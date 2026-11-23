@@ -1,11 +1,12 @@
 datasource db {
-  directUrl = env("DATABASE_URL_UNPOOLED")
-  provider  = "postgresql"
-  url       = env("DATABASE_URL")
+  provider = "postgresql"
 }
 
 generator client {
-  provider = "prisma-client-js"
+  importFileExtension = "ts"
+  moduleFormat        = "esm"
+  output              = "../lib/generated/prisma"
+  provider            = "prisma-client"
 }
 
 model Question {

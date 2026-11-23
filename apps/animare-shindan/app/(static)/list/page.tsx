@@ -1,12 +1,11 @@
 import { format } from 'date-fns'
 import { type Metadata } from 'next'
 import { MDXRemote } from 'next-mdx-remote/rsc'
+import { type JSX } from 'react'
 
 import { getAllReleases } from '@/lib/releases'
 
 import styles from './page.module.css'
-
-export const revalidate = 120
 
 export const metadata: Metadata = {
   alternates: {
