@@ -20,17 +20,22 @@ describe("seedData", () => {
     expect(findSeedDataProblems(seedData)).toStrictEqual([]);
   });
 
-  // The result page uses `/images/results/${slug}.png` as its image, and each
-  // image is named after the slug of a published result.
-  it("has a result for each result image and vice versa", async () => {
+  // Each image in `public/images/results` is named after the slug of a result
+  // in the production database. The seed data is for development and testing,
+  // so its results should not use the same slugs as the production results.
+  it("does not use the slugs of the result images", async () => {
     const files = await readdir(RESULT_IMAGES_DIR);
-    const imageSlugs = files
-      .filter((file) => file.endsWith(".png"))
-      .map((file) => file.slice(0, -".png".length));
+    const imageSlugs = new Set(
+      files
+        .filter((file) => file.endsWith(".png"))
+        .map((file) => file.slice(0, -".png".length))
+    );
 
     expect(
-      seedData.results.map((result) => result.slug).toSorted()
-    ).toStrictEqual(imageSlugs.toSorted());
+      seedData.results
+        .map((result) => result.slug)
+        .filter((slug) => imageSlugs.has(slug))
+    ).toStrictEqual([]);
   });
 });
 
