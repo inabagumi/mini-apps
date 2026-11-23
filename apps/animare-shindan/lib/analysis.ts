@@ -1,5 +1,7 @@
 import { cacheLife } from "next/cache";
 
+import { parseParameters } from "./parameters";
+import type { ResultParameter } from "./parameters";
 import prisma from "./prisma";
 import type { AnswerScore } from "./scoring";
 
@@ -70,11 +72,6 @@ export interface RecommendedVideo {
   url: string;
 }
 
-export interface ResultParameter {
-  label: string;
-  value: number;
-}
-
 export interface Result {
   attribute: string;
   catchphrase: string;
@@ -119,7 +116,9 @@ export const getAnalysisResult = async (
   return result
     ? {
         ...result,
-        parameters: result.parameters as unknown as ResultParameter[],
+        // The JSON is validated at runtime, since the database does not
+        // guarantee its structure.
+        parameters: parseParameters(result.parameters),
       }
     : null;
 };

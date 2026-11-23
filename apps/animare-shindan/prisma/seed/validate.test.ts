@@ -102,6 +102,22 @@ describe("findSeedDataProblems", () => {
     ]);
   });
 
+  it("reports invalid parameters of a result", () => {
+    const data = cloneSeedData();
+    const [result] = data.results;
+    result.parameters = [
+      { label: "", value: 0.5 },
+      { label: "重複", value: 2 },
+      { label: "重複", value: 0.5 },
+    ];
+
+    expect(findSeedDataProblems(data)).toStrictEqual([
+      `Result ${result.slug}: Parameter 0 has an invalid label`,
+      `Result ${result.slug}: Parameter 1 has an invalid value: 2`,
+      `Result ${result.slug}: Parameter 2 has a duplicate label: 重複`,
+    ]);
+  });
+
   it("reports scores for a missing result", () => {
     const data = cloneSeedData();
     const [answer] = data.questions[0].answers;
