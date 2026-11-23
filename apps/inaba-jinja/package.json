@@ -38,19 +38,19 @@
     "typegen": "next typegen"
   },
   "dependencies": {
-    "@base-ui/react": "1.9.0",
+    "@base-ui/react": "catalog:",
     "@inabagumi/components": "workspace:*",
     "@mdx-js/react": "3.1.1",
     "@upstash/redis": "1.41.0",
-    "@vercel/analytics": "2.0.1",
+    "@vercel/analytics": "catalog:",
     "@vercel/speed-insights": "2.1.0",
-    "cn": "0.5.2",
-    "contentful": "11.12.10",
+    "cn": "catalog:",
+    "contentful": "catalog:",
     "dedent": "1.7.2",
-    "lucide-react": "1.77.0",
-    "next": "16.4.6",
-    "react": "19.3.1",
-    "react-dom": "19.3.1"
+    "lucide-react": "catalog:",
+    "next": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:"
   },
   "devDependencies": {
     "@inabagumi/config": "workspace:*",
@@ -58,17 +58,17 @@
     "@mdx-js/loader": "3.1.1",
     "@next/mdx": "16.4.6",
     "@svgr/webpack": "8.1.0",
-    "@tailwindcss/turbopack": "4.3.5",
-    "@testing-library/react": "16.3.3",
+    "@tailwindcss/turbopack": "catalog:",
+    "@testing-library/react": "catalog:",
     "@types/mdx": "2.0.14",
-    "@types/node": "26.6.6",
-    "@types/react": "19.3.0",
-    "jsdom": "31.0.1",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "jsdom": "catalog:",
     "rehype-external-links": "3.0.0",
     "remark-gfm": "4.0.1",
-    "tailwindcss": "4.3.5",
-    "typescript": "6.0.3",
-    "vite": "8.3.8",
-    "vitest": "5.1.1"
+    "tailwindcss": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vitest": "catalog:"
   }
 }

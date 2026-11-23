@@ -181,6 +181,75 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+catalogs:
+  default:
+    '@base-ui/react':
+      specifier: 1.9.0
+      version: 1.9.0
+    '@serwist/turbopack':
+      specifier: 9.5.15
+      version: 9.5.15
+    '@tailwindcss/turbopack':
+      specifier: 4.3.5
+      version: 4.3.5
+    '@testing-library/react':
+      specifier: 16.3.3
+      version: 16.3.3
+    '@types/node':
+      specifier: 26.6.6
+      version: 26.6.6
+    '@types/react':
+      specifier: 19.3.0
+      version: 19.3.0
+    '@types/react-dom':
+      specifier: 19.3.0
+      version: 19.3.0
+    '@vercel/analytics':
+      specifier: 2.0.1
+      version: 2.0.1
+    '@vitejs/plugin-react':
+      specifier: 6.3.0
+      version: 6.3.0
+    cn:
+      specifier: 0.5.2
+      version: 0.5.2
+    contentful:
+      specifier: 11.12.10
+      version: 11.12.10
+    esbuild-wasm:
+      specifier: 0.28.2
+      version: 0.28.2
+    jsdom:
+      specifier: 31.0.1
+      version: 31.0.1
+    lucide-react:
+      specifier: 1.77.0
+      version: 1.77.0
+    next:
+      specifier: 16.4.6
+      version: 16.4.6
+    react:
+      specifier: 19.3.1
+      version: 19.3.1
+    react-dom:
+      specifier: 19.3.1
+      version: 19.3.1
+    serwist:
+      specifier: 9.5.15
+      version: 9.5.15
+    tailwindcss:
+      specifier: 4.3.5
+      version: 4.3.5
+    typescript:
+      specifier: 6.0.3
+      version: 6.0.3
+    vite:
+      specifier: 8.3.8
+      version: 8.3.8
+    vitest:
+      specifier: 5.1.1
+      version: 5.1.1
+
 overrides:
   axios@<0.33.0: ^0.35.0
   glob@>=9.0.0 <14.0.2: ^14.0.6
@@ -230,44 +299,44 @@ importers:
   apps/774-ink:
     dependencies:
       '@vercel/analytics':
-        specifier: 2.0.1
+        specifier: 'catalog:'
         version: 2.0.1(next@16.4.6(@babel/core@7.29.13(supports-color@8.1.1))(@playwright/test@1.65.1)(@types/node@26.6.6)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react@19.3.1)
       next:
-        specifier: 16.4.6
+        specifier: 'catalog:'
         version: 16.4.6(@babel/core@7.29.13(supports-color@8.1.1))(@playwright/test@1.65.1)(@types/node@26.6.6)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       react:
-        specifier: 19.3.1
+        specifier: 'catalog:'
         version: 19.3.1
       react-dom:
-        specifier: 19.3.1
+        specifier: 'catalog:'
         version: 19.3.1(react@19.3.1)
     devDependencies:
       '@inabagumi/config':
         specifier: workspace:*
         version: link:../../packages/config
       '@tailwindcss/turbopack':
-        specifier: 4.3.5
+        specifier: 'catalog:'
         version: 4.3.5
       '@types/node':
-        specifier: 26.6.6
+        specifier: 'catalog:'
         version: 26.6.6
       '@types/react':
-        specifier: 19.3.0
+        specifier: 'catalog:'
         version: 19.3.0
       jsdom:
-        specifier: 31.0.1
+        specifier: 'catalog:'
         version: 31.0.1(@noble/hashes@1.8.0)
       tailwindcss:
-        specifier: 4.3.5
+        specifier: 'catalog:'
         version: 4.3.5
       typescript:
-        specifier: 6.0.3
+        specifier: 'catalog:'
         version: 6.0.3
       vite:
-        specifier: 8.3.8
+        specifier: 'catalog:'
         version: 8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1)
       vitest:
-        specifier: 5.1.1
+        specifier: 'catalog:'
         version: 5.1.1(@types/node@26.6.6)(jsdom@31.0.1(@noble/hashes@1.8.0))(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1))
 
   apps/animare-shindan:
@@ -288,28 +357,28 @@ importers:
         specifier: 1.2.0
         version: 1.2.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@vercel/analytics':
-        specifier: 2.0.1
+        specifier: 'catalog:'
         version: 2.0.1(next@16.4.6(@babel/core@7.29.13(supports-color@8.1.1))(@playwright/test@1.65.1)(@types/node@26.6.6)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react@19.3.1)
       cn:
-        specifier: 0.5.2
+        specifier: 'catalog:'
         version: 0.5.2
       date-fns:
         specifier: 4.4.0
         version: 4.4.0
       lucide-react:
-        specifier: 1.77.0
+        specifier: 'catalog:'
         version: 1.77.0(@types/react@19.3.0)(react@19.3.1)
       next:
-        specifier: 16.4.6
+        specifier: 'catalog:'
         version: 16.4.6(@babel/core@7.29.13(supports-color@8.1.1))(@playwright/test@1.65.1)(@types/node@26.6.6)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       next-mdx-remote:
         specifier: 6.0.0
         version: 6.0.0(@types/react@19.3.0)(react@19.3.1)(supports-color@8.1.1)
       react:
-        specifier: 19.3.1
+        specifier: 'catalog:'
         version: 19.3.1
       react-dom:
-        specifier: 19.3.1
+        specifier: 'catalog:'
         version: 19.3.1(react@19.3.1)
     devDependencies:
       '@inabagumi/config':
@@ -322,113 +391,113 @@ importers:
         specifier: 1.65.1
         version: 1.65.1
       '@serwist/turbopack':
-        specifier: 9.5.15
+        specifier: 'catalog:'
         version: 9.5.15(@swc/helpers@0.5.23)(esbuild-wasm@0.28.2)(esbuild@0.28.2)(next@16.4.6(@babel/core@7.29.13(supports-color@8.1.1))(@playwright/test@1.65.1)(@types/node@26.6.6)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react@19.3.1)(typescript@6.0.3)
       '@tailwindcss/turbopack':
-        specifier: 4.3.5
+        specifier: 'catalog:'
         version: 4.3.5
       '@testing-library/react':
-        specifier: 16.3.3
+        specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@types/node':
-        specifier: 26.6.6
+        specifier: 'catalog:'
         version: 26.6.6
       '@types/react':
-        specifier: 19.3.0
+        specifier: 'catalog:'
         version: 19.3.0
       '@types/react-dom':
-        specifier: 19.3.0
+        specifier: 'catalog:'
         version: 19.3.0(@types/react@19.3.0)
       esbuild:
         specifier: 0.28.2
         version: 0.28.2
       jsdom:
-        specifier: 31.0.1
+        specifier: 'catalog:'
         version: 31.0.1(@noble/hashes@1.8.0)
       prisma:
         specifier: 7.10.1
         version: 7.10.1(@types/node@26.6.6)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(magicast@0.5.5)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(typescript@6.0.3)
       serwist:
-        specifier: 9.5.15
+        specifier: 'catalog:'
         version: 9.5.15(browserslist@4.29.3)(typescript@6.0.3)
       tailwindcss:
-        specifier: 4.3.5
+        specifier: 'catalog:'
         version: 4.3.5
       typescript:
-        specifier: 6.0.3
+        specifier: 'catalog:'
         version: 6.0.3
       vite:
-        specifier: 8.3.8
+        specifier: 'catalog:'
         version: 8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1)
       vitest:
-        specifier: 5.1.1
+        specifier: 'catalog:'
         version: 5.1.1(@types/node@26.6.6)(jsdom@31.0.1(@noble/hashes@1.8.0))(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1))
 
   apps/hanerubeat:
     dependencies:
       '@vercel/analytics':
-        specifier: 2.0.1
+        specifier: 'catalog:'
         version: 2.0.1(next@16.4.6(@babel/core@7.29.13(supports-color@8.1.1))(@playwright/test@1.65.1)(@types/node@26.6.6)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react@19.3.1)
       lucide-react:
-        specifier: 1.77.0
+        specifier: 'catalog:'
         version: 1.77.0(@types/react@19.3.0)(react@19.3.1)
       next:
-        specifier: 16.4.6
+        specifier: 'catalog:'
         version: 16.4.6(@babel/core@7.29.13(supports-color@8.1.1))(@playwright/test@1.65.1)(@types/node@26.6.6)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       react:
-        specifier: 19.3.1
+        specifier: 'catalog:'
         version: 19.3.1
       react-dom:
-        specifier: 19.3.1
+        specifier: 'catalog:'
         version: 19.3.1(react@19.3.1)
     devDependencies:
       '@inabagumi/config':
         specifier: workspace:*
         version: link:../../packages/config
       '@serwist/turbopack':
-        specifier: 9.5.15
+        specifier: 'catalog:'
         version: 9.5.15(@swc/helpers@0.5.23)(esbuild-wasm@0.28.2)(esbuild@0.28.2)(next@16.4.6(@babel/core@7.29.13(supports-color@8.1.1))(@playwright/test@1.65.1)(@types/node@26.6.6)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react@19.3.1)(typescript@6.0.3)
       '@tailwindcss/turbopack':
-        specifier: 4.3.5
+        specifier: 'catalog:'
         version: 4.3.5
       '@testing-library/react':
-        specifier: 16.3.3
+        specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@types/node':
-        specifier: 26.6.6
+        specifier: 'catalog:'
         version: 26.6.6
       '@types/react':
-        specifier: 19.3.0
+        specifier: 'catalog:'
         version: 19.3.0
       '@types/react-dom':
-        specifier: 19.3.0
+        specifier: 'catalog:'
         version: 19.3.0(@types/react@19.3.0)
       esbuild-wasm:
-        specifier: 0.28.2
+        specifier: 'catalog:'
         version: 0.28.2
       jsdom:
-        specifier: 31.0.1
+        specifier: 'catalog:'
         version: 31.0.1(@noble/hashes@1.8.0)
       serwist:
-        specifier: 9.5.15
+        specifier: 'catalog:'
         version: 9.5.15(browserslist@4.29.3)(typescript@6.0.3)
       tailwindcss:
-        specifier: 4.3.5
+        specifier: 'catalog:'
         version: 4.3.5
       typescript:
-        specifier: 6.0.3
+        specifier: 'catalog:'
         version: 6.0.3
       vite:
-        specifier: 8.3.8
+        specifier: 'catalog:'
         version: 8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1)
       vitest:
-        specifier: 5.1.1
+        specifier: 'catalog:'
         version: 5.1.1(@types/node@26.6.6)(jsdom@31.0.1(@noble/hashes@1.8.0))(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1))
 
   apps/inaba-jinja:
     dependencies:
       '@base-ui/react':
-        specifier: 1.9.0
+        specifier: 'catalog:'
         version: 1.9.0(@types/react@19.3.0)(date-fns@4.4.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@inabagumi/components':
         specifier: workspace:*
@@ -440,31 +509,31 @@ importers:
         specifier: 1.41.0
         version: 1.41.0
       '@vercel/analytics':
-        specifier: 2.0.1
+        specifier: 'catalog:'
         version: 2.0.1(next@16.4.6(@babel/core@7.29.13(supports-color@8.1.1))(@playwright/test@1.65.1)(@types/node@26.6.6)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react@19.3.1)
       '@vercel/speed-insights':
         specifier: 2.1.0
         version: 2.1.0(next@16.4.6(@babel/core@7.29.13(supports-color@8.1.1))(@playwright/test@1.65.1)(@types/node@26.6.6)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react@19.3.1)
       cn:
-        specifier: 0.5.2
+        specifier: 'catalog:'
         version: 0.5.2
       contentful:
-        specifier: 11.12.10
+        specifier: 'catalog:'
         version: 11.12.10(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1)
       dedent:
         specifier: 1.7.2
         version: 1.7.2
       lucide-react:
-        specifier: 1.77.0
+        specifier: 'catalog:'
         version: 1.77.0(@types/react@19.3.0)(react@19.3.1)
       next:
-        specifier: 16.4.6
+        specifier: 'catalog:'
         version: 16.4.6(@babel/core@7.29.13(supports-color@8.1.1))(@playwright/test@1.65.1)(@types/node@26.6.6)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       react:
-        specifier: 19.3.1
+        specifier: 'catalog:'
         version: 19.3.1
       react-dom:
-        specifier: 19.3.1
+        specifier: 'catalog:'
         version: 19.3.1(react@19.3.1)
     devDependencies:
       '@inabagumi/config':
@@ -483,22 +552,22 @@ importers:
         specifier: 8.1.0
         version: 8.1.0(supports-color@8.1.1)(typescript@6.0.3)
       '@tailwindcss/turbopack':
-        specifier: 4.3.5
+        specifier: 'catalog:'
         version: 4.3.5
       '@testing-library/react':
-        specifier: 16.3.3
+        specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@types/mdx':
         specifier: 2.0.14
         version: 2.0.14
       '@types/node':
-        specifier: 26.6.6
+        specifier: 'catalog:'
         version: 26.6.6
       '@types/react':
-        specifier: 19.3.0
+        specifier: 'catalog:'
         version: 19.3.0
       jsdom:
-        specifier: 31.0.1
+        specifier: 'catalog:'
         version: 31.0.1(@noble/hashes@1.8.0)
       rehype-external-links:
         specifier: 3.0.0
@@ -507,43 +576,43 @@ importers:
         specifier: 4.0.1
         version: 4.0.1(supports-color@8.1.1)
       tailwindcss:
-        specifier: 4.3.5
+        specifier: 'catalog:'
         version: 4.3.5
       typescript:
-        specifier: 6.0.3
+        specifier: 'catalog:'
         version: 6.0.3
       vite:
-        specifier: 8.3.8
+        specifier: 'catalog:'
         version: 8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1)
       vitest:
-        specifier: 5.1.1
+        specifier: 'catalog:'
         version: 5.1.1(@types/node@26.6.6)(jsdom@31.0.1(@noble/hashes@1.8.0))(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1))
 
   apps/neru-camera:
     dependencies:
       '@base-ui/react':
-        specifier: 1.9.0
+        specifier: 'catalog:'
         version: 1.9.0(@types/react@19.3.0)(date-fns@4.4.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@pixi/react':
         specifier: 8.0.5
         version: 8.0.5(@types/react@19.3.0)(pixi.js@8.23.0)(react@19.3.1)
       '@vercel/analytics':
-        specifier: 2.0.1
+        specifier: 'catalog:'
         version: 2.0.1(next@16.4.6(@babel/core@7.29.13(supports-color@8.1.1))(@playwright/test@1.65.1)(@types/node@26.6.6)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react@19.3.1)
       browser-fs-access:
         specifier: 0.39.0
         version: 0.39.0
       cn:
-        specifier: 0.5.2
+        specifier: 'catalog:'
         version: 0.5.2
       contentful:
-        specifier: 11.12.10
+        specifier: 'catalog:'
         version: 11.12.10(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1)
       lucide-react:
-        specifier: 1.77.0
+        specifier: 'catalog:'
         version: 1.77.0(@types/react@19.3.0)(react@19.3.1)
       next:
-        specifier: 16.4.6
+        specifier: 'catalog:'
         version: 16.4.6(@babel/core@7.29.13(supports-color@8.1.1))(@playwright/test@1.65.1)(@types/node@26.6.6)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       pixi-viewport:
         specifier: 7.0.3
@@ -552,47 +621,47 @@ importers:
         specifier: 8.23.0
         version: 8.23.0
       react:
-        specifier: 19.3.1
+        specifier: 'catalog:'
         version: 19.3.1
       react-dom:
-        specifier: 19.3.1
+        specifier: 'catalog:'
         version: 19.3.1(react@19.3.1)
     devDependencies:
       '@inabagumi/config':
         specifier: workspace:*
         version: link:../../packages/config
       '@serwist/turbopack':
-        specifier: 9.5.15
+        specifier: 'catalog:'
         version: 9.5.15(@swc/helpers@0.5.23)(esbuild-wasm@0.28.2)(esbuild@0.28.2)(next@16.4.6(@babel/core@7.29.13(supports-color@8.1.1))(@playwright/test@1.65.1)(@types/node@26.6.6)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react@19.3.1)(typescript@6.0.3)
       '@tailwindcss/turbopack':
-        specifier: 4.3.5
+        specifier: 'catalog:'
         version: 4.3.5
       '@types/node':
-        specifier: 26.6.6
+        specifier: 'catalog:'
         version: 26.6.6
       '@types/react':
-        specifier: 19.3.0
+        specifier: 'catalog:'
         version: 19.3.0
       esbuild-wasm:
-        specifier: 0.28.2
+        specifier: 'catalog:'
         version: 0.28.2
       jsdom:
-        specifier: 31.0.1
+        specifier: 'catalog:'
         version: 31.0.1(@noble/hashes@1.8.0)
       serwist:
-        specifier: 9.5.15
+        specifier: 'catalog:'
         version: 9.5.15(browserslist@4.29.6)(typescript@6.0.3)
       tailwindcss:
-        specifier: 4.3.5
+        specifier: 'catalog:'
         version: 4.3.5
       typescript:
-        specifier: 6.0.3
+        specifier: 'catalog:'
         version: 6.0.3
       vite:
-        specifier: 8.3.8
+        specifier: 'catalog:'
         version: 8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1)
       vitest:
-        specifier: 5.1.1
+        specifier: 'catalog:'
         version: 5.1.1(@types/node@26.6.6)(jsdom@31.0.1(@noble/hashes@1.8.0))(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1))
 
   packages/components:
@@ -601,40 +670,40 @@ importers:
         specifier: workspace:*
         version: link:../config
       '@testing-library/react':
-        specifier: 16.3.3
+        specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@tsconfig/strictest':
         specifier: 2.0.9
         version: 2.0.9
       '@types/node':
-        specifier: 26.6.6
+        specifier: 'catalog:'
         version: 26.6.6
       '@types/react':
-        specifier: 19.3.0
+        specifier: 'catalog:'
         version: 19.3.0
       cn:
-        specifier: 0.5.2
+        specifier: 'catalog:'
         version: 0.5.2
       jsdom:
-        specifier: 31.0.1
+        specifier: 'catalog:'
         version: 31.0.1(@noble/hashes@1.8.0)
       react:
-        specifier: 19.3.1
+        specifier: 'catalog:'
         version: 19.3.1
       react-dom:
-        specifier: 19.3.1
+        specifier: 'catalog:'
         version: 19.3.1(react@19.3.1)
       tsdown:
         specifier: 0.23.7
         version: 0.23.7(typescript@6.0.3)
       typescript:
-        specifier: 6.0.3
+        specifier: 'catalog:'
         version: 6.0.3
       vite:
-        specifier: 8.3.8
+        specifier: 'catalog:'
         version: 8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1)
       vitest:
-        specifier: 5.1.1
+        specifier: 'catalog:'
         version: 5.1.1(@types/node@26.6.6)(jsdom@31.0.1(@noble/hashes@1.8.0))(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1))
 
   packages/config:
@@ -646,41 +715,41 @@ importers:
         specifier: 8.0.0
         version: 8.0.0(@testing-library/dom@10.4.2)(vitest@5.1.1(@types/node@26.6.6)(jsdom@31.0.1(@noble/hashes@1.8.0))(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1)))
       '@vitejs/plugin-react':
-        specifier: 6.3.0
+        specifier: 'catalog:'
         version: 6.3.0(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1))
     devDependencies:
       '@serwist/turbopack':
-        specifier: 9.5.15
+        specifier: 'catalog:'
         version: 9.5.15(@swc/helpers@0.5.23)(esbuild-wasm@0.28.2)(esbuild@0.28.2)(next@16.4.6(@babel/core@7.29.13(supports-color@8.1.1))(@playwright/test@1.65.1)(@types/node@26.6.6)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react@19.3.1)(typescript@6.0.3)
       '@testing-library/react':
-        specifier: 16.3.3
+        specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@types/node':
-        specifier: 26.6.6
+        specifier: 'catalog:'
         version: 26.6.6
       '@types/react':
-        specifier: 19.3.0
+        specifier: 'catalog:'
         version: 19.3.0
       '@types/react-dom':
-        specifier: 19.3.0
+        specifier: 'catalog:'
         version: 19.3.0(@types/react@19.3.0)
       jsdom:
-        specifier: 31.0.1
+        specifier: 'catalog:'
         version: 31.0.1(@noble/hashes@1.8.0)
       next:
-        specifier: 16.4.6
+        specifier: 'catalog:'
         version: 16.4.6(@babel/core@7.29.13(supports-color@8.1.1))(@playwright/test@1.65.1)(@types/node@26.6.6)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       react:
-        specifier: 19.3.1
+        specifier: 'catalog:'
         version: 19.3.1
       react-dom:
-        specifier: 19.3.1
+        specifier: 'catalog:'
         version: 19.3.1(react@19.3.1)
       typescript:
-        specifier: 6.0.3
+        specifier: 'catalog:'
         version: 6.0.3
       vitest:
-        specifier: 5.1.1
+        specifier: 'catalog:'
         version: 5.1.1(@types/node@26.6.6)(jsdom@31.0.1(@noble/hashes@1.8.0))(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1))
 
   packages/theme:
@@ -689,7 +758,7 @@ importers:
         specifier: 0.5.20
         version: 0.5.20(tailwindcss@4.3.5)
       tailwindcss:
-        specifier: 4.3.5
+        specifier: 'catalog:'
         version: 4.3.5
       tailwindcss-safe-area:
         specifier: 2.0.0
@@ -722,10 +791,10 @@ importers:
         specifier: 4.18.1
         version: 4.18.1
       react:
-        specifier: 19.3.1
+        specifier: 'catalog:'
         version: 19.3.1
       react-dom:
-        specifier: 19.3.1
+        specifier: 'catalog:'
         version: 19.3.1(react@19.3.1)
       react-hook-form:
         specifier: 7.92.0
@@ -747,28 +816,28 @@ importers:
         specifier: 0.9.6
         version: 0.9.6(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1)
       '@testing-library/react':
-        specifier: 16.3.3
+        specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@types/lodash':
         specifier: 4.17.27
         version: 4.17.27
       '@types/react':
-        specifier: 19.3.0
+        specifier: 'catalog:'
         version: 19.3.0
       '@vitejs/plugin-react':
-        specifier: 6.3.0
+        specifier: 'catalog:'
         version: 6.3.0(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1))
       jsdom:
-        specifier: 31.0.1
+        specifier: 'catalog:'
         version: 31.0.1(@noble/hashes@1.8.0)
       typescript:
-        specifier: 6.0.3
+        specifier: 'catalog:'
         version: 6.0.3
       vite:
-        specifier: 8.3.8
+        specifier: 'catalog:'
         version: 8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1)
       vitest:
-        specifier: 5.1.1
+        specifier: 'catalog:'
         version: 5.1.1(@types/node@26.6.6)(jsdom@31.0.1(@noble/hashes@1.8.0))(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1))
 
 packages:

@@ -3,6 +3,35 @@ packages:
   - packages/*
   - website
 
+# The versions of the external dependencies that two or more workspace packages
+# use directly. Refer to them with `catalog:` in `package.json`. A dependency
+# that only one package uses keeps its version in that `package.json`.
+catalogMode: prefer
+
+catalog:
+  "@base-ui/react": 1.9.0
+  "@serwist/turbopack": 9.5.15
+  "@tailwindcss/turbopack": 4.3.5
+  "@testing-library/react": 16.3.3
+  "@types/node": 26.6.6
+  "@types/react": 19.3.0
+  "@types/react-dom": 19.3.0
+  "@vercel/analytics": 2.0.1
+  "@vitejs/plugin-react": 6.3.0
+  cn: 0.5.2
+  contentful: 11.12.10
+  esbuild-wasm: 0.28.2
+  jsdom: 31.0.1
+  lucide-react: 1.77.0
+  next: 16.4.6
+  react: 19.3.1
+  react-dom: 19.3.1
+  serwist: 9.5.15
+  tailwindcss: 4.3.5
+  typescript: 6.0.3
+  vite: 8.3.8
+  vitest: 5.1.1
+
 strictPeerDependencies: false
 
 overrides:
