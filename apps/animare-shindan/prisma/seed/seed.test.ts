@@ -246,7 +246,7 @@ describe.skipIf(!databaseURL)("seed", () => {
     ];
     result.catchphrase = "変更されたキャッチフレーズ";
     result.parameters = [{ label: "変更", value: 0.5 }];
-    result.recommendedVideoUrl = "https://youtu.be/changed";
+    result.recommendedVideoUrl = "https://youtu.be/changedVid0";
     talent.twitter = null;
     release.title = "Changed";
 
