@@ -7,13 +7,13 @@ import type { HTMLAttributes, JSX, ReactNode } from "react";
 import { ButtonLink, ExternalButtonLink } from "@/components/button";
 import { getAnalysisResult, getAnalysisResultIDs } from "@/lib/analysis";
 import { cn } from "@/lib/cn";
-import { createTweetURL } from "@/lib/share";
 import { createYouTubeEmbedURL } from "@/lib/youtube";
 import pkg from "@/package.json";
 
 import nanashiAvatar from "./avatar.svg";
 import Graph from "./graph";
 import nanashiIllust from "./nanashi.svg";
+import ShareButtons from "./share-buttons";
 
 type MessageWindowProps = HTMLAttributes<HTMLDivElement>;
 
@@ -170,17 +170,13 @@ const ResultDetails = async ({
 
         <Suspense>
           <ShareVisibility searchParams={searchParams} shared={false}>
-            <ExternalButtonLink
-              className="mt-10 sm:max-w-80"
-              href={createTweetURL(
-                shareURL,
-                `アナタは${result.type}系【${result.attribute}好き】です！\n`
-              )}
-              variant="share"
-            >
-              診断結果をツイートする
-            </ExternalButtonLink>
-            <ButtonLink className="mt-3 sm:max-w-80" href="/" variant="subtle">
+            <ShareButtons
+              className="mt-10"
+              text={`アナタは${result.type}系【${result.attribute}好き】です！`}
+              title={`${result.talent.name}が選ばれました！`}
+              url={shareURL}
+            />
+            <ButtonLink className="mt-1 sm:max-w-80" href="/" variant="subtle">
               もう一度診断する
             </ButtonLink>
           </ShareVisibility>
