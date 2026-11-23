@@ -96,7 +96,7 @@ export const Header = (): JSX.Element => {
   return (
     <>
       <header className="flex min-h-41 flex-col items-center justify-center gap-4 sm:min-h-49">
-        <p className="m-0 flex h-10 min-w-20 items-center justify-center rounded-full bg-sun px-4 pb-1 text-[1.375rem] font-black tracking-[0.16rem] text-ink">
+        <p className="m-0 flex h-10 min-w-20 items-center justify-center rounded-full bg-sun px-4 pb-1 text-22 font-black tracking-badge text-ink">
           <span className="sr-only">質問</span>Q{count}
         </p>
         <h2
@@ -170,7 +170,7 @@ const Answer = ({ question, show = false }: AnswerProps): JSX.Element => {
 
       {question.answers.map((answer, i) => (
         <button
-          className="flex min-h-17.5 w-full items-center justify-start rounded-2xl border-3 border-ink bg-white px-5 py-3 text-left text-base leading-[1.4] font-bold break-words text-ink transition-[background-color,box-shadow] duration-150 ease-out hover:bg-highlight-tint hover:shadow-[0_4px_0_rgb(0_0_0/0.2)] active:bg-highlight disabled:cursor-default sm:min-h-21.5 sm:text-xl sm:leading-[1.6]"
+          className="flex min-h-17.5 w-full items-center justify-start rounded-2xl border-3 border-ink bg-white px-5 py-3 text-left text-base leading-heading font-bold break-words text-ink transition-[background-color,box-shadow] duration-150 ease-out hover:bg-highlight-tint hover:shadow-raised active:bg-highlight disabled:cursor-default sm:min-h-21.5 sm:text-xl sm:leading-compact"
           disabled={analyzing}
           key={`answer-${i}`}
           onClick={handleClickAnswer}

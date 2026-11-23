@@ -16,7 +16,7 @@ const variants = {
   share:
     "border-share bg-share text-white hover:border-brand-strong hover:bg-brand-strong",
   /** Calls to action on the brand blue background. */
-  sun: "border-sun bg-sun font-black text-ink hover:border-[#f9a825] hover:bg-[#f9a825]",
+  sun: "border-sun bg-sun font-black text-ink hover:border-sun-strong hover:bg-sun-strong",
   /** A neutral action on a white surface. */
   subtle: "border-line bg-white text-muted hover:border-bar hover:bg-line-tint",
 } as const;
@@ -42,7 +42,7 @@ export const buttonVariants = ({
   variant = "primary",
 }: ButtonVariantProps & { className?: string } = {}): string =>
   cn(
-    "mx-auto flex w-full items-center justify-center gap-1 rounded-full border-3 border-solid px-6 py-2 text-center font-bold no-underline transition-[background-color,border-color,color,box-shadow,opacity,visibility] duration-150 ease-out hover:shadow-[0_4px_0_rgb(0_0_0/0.2)] active:shadow-[inset_0_3px_0_rgb(0_0_0/0.2)] disabled:cursor-default disabled:opacity-60",
+    "mx-auto flex w-full items-center justify-center gap-1 rounded-full border-3 border-solid px-6 py-2 text-center font-bold no-underline transition-[background-color,border-color,color,box-shadow,opacity,visibility] duration-150 ease-out hover:shadow-raised active:shadow-pressed disabled:cursor-default disabled:opacity-60",
     variants[variant],
     sizes[size],
     className

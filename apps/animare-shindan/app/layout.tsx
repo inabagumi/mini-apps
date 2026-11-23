@@ -32,7 +32,7 @@ export default function RootLayout({
     <html
       className={cn(
         notoSans.variable,
-        "bg-brand bg-[repeating-linear-gradient(150deg,rgb(255_255_255/0.05),rgb(255_255_255/0.05)_9px,transparent_10px,transparent_19px)] font-sans leading-[1.8] font-bold"
+        "bg-brand page-pattern font-sans leading-body font-bold"
       )}
       lang="ja"
     >
