@@ -1,4 +1,5 @@
 import { format } from "date-fns";
+import { ChevronRight } from "lucide-react";
 import type { Metadata } from "next";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import type { MDXRemoteProps } from "next-mdx-remote/rsc";
@@ -24,12 +25,10 @@ const components: MDXRemoteProps["components"] = {
   ),
   li: ({ children, ...props }) => (
     <li className="m-0 flex items-start p-0" {...props}>
-      <span
+      <ChevronRight
         aria-hidden="true"
-        className="material-icons -ml-1.5 shrink-0 text-xl/body text-brand"
-      >
-        arrow_right
-      </span>
+        className="-ml-1.5 size-6 shrink-0 text-brand"
+      />
       <span className="min-w-0">{children}</span>
     </li>
   ),

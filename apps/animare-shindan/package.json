@@ -36,6 +36,7 @@
     "@vercel/analytics": "2.0.1",
     "cn": "0.5.2",
     "date-fns": "4.4.0",
+    "lucide-react": "1.77.0",
     "next": "16.4.6",
     "next-mdx-remote": "6.0.0",
     "react": "19.3.1",
