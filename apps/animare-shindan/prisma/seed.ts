@@ -1,7 +1,7 @@
 import nextEnv from "@next/env";
-import { PrismaNeon } from "@prisma/adapter-neon";
 
 import { PrismaClient } from "../lib/generated/prisma/client.ts";
+import { createPrismaAdapter } from "../lib/prisma-adapter.ts";
 import { seed } from "./seed/seed.ts";
 
 const { loadEnvConfig } = nextEnv;
@@ -9,9 +9,7 @@ const { loadEnvConfig } = nextEnv;
 const projectDir = process.cwd();
 loadEnvConfig(projectDir);
 
-const prisma = new PrismaClient({
-  adapter: new PrismaNeon({ connectionString: process.env.DATABASE_URL }),
-});
+const prisma = new PrismaClient({ adapter: createPrismaAdapter() });
 
 try {
   console.log("Start seeding ...");

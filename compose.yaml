@@ -65,8 +65,8 @@ services:
     ports:
       - 127.0.0.1:4001:4001
 
-  # A PostgreSQL server for the tests that need a database (e.g. the seed of
-  # animare-shindan). Set `TEST_DATABASE_URL` to
+  # A PostgreSQL server for the tests that need a database (e.g. the seed and
+  # the E2E tests of animare-shindan). Set `TEST_DATABASE_URL` to
   # `postgres://postgres:postgres@127.0.0.1:5432/postgres` to use it. The data
   # is not persisted.
   postgres:

@@ -26,12 +26,14 @@
     "postinstall": "prisma generate",
     "start": "next start",
     "test": "vitest run",
+    "test:e2e": "playwright test",
     "typecheck": "tsc --noEmit",
     "typegen": "next typegen"
   },
   "dependencies": {
     "@neondatabase/serverless": "1.2.1",
     "@prisma/adapter-neon": "7.10.1",
+    "@prisma/adapter-pg": "7.10.1",
     "@prisma/client": "7.10.1",
     "@radix-ui/react-portal": "1.2.0",
     "@vercel/analytics": "2.0.1",
@@ -46,7 +48,7 @@
   "devDependencies": {
     "@inabagumi/config": "workspace:*",
     "@next/env": "16.4.6",
-    "@prisma/adapter-pg": "7.10.1",
+    "@playwright/test": "1.65.1",
     "@serwist/turbopack": "9.5.15",
     "@tailwindcss/turbopack": "4.3.5",
     "@testing-library/react": "16.3.3",

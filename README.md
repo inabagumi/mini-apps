@@ -50,6 +50,7 @@ $ pnpm install
 | `pnpm dev`       | 開発サーバーを起動する               |
 | `pnpm build`     | ビルドする                           |
 | `pnpm test`      | テストを実行する                     |
+| `pnpm test:e2e`  | E2Eテストを実行する                  |
 | `pnpm typegen`   | 型定義を生成する                     |
 | `pnpm typecheck` | 型チェックを行う                     |
 | `pnpm check`     | リントとフォーマットのチェックを行う |
