@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.3](https://github.com/inabagumi/mini-apps/compare/hanerubeat-v2.0.2...hanerubeat-v2.0.3) (2026-11-23)
+
+
+### Bug Fixes
+
+* **hanerubeat:** give the volume button an accessible name ([#4901](https://github.com/inabagumi/mini-apps/issues/4901)) ([b096842](https://github.com/inabagumi/mini-apps/commit/b096842da12ef50f2690e7ca2f5a5a74aa2d2736))
+
 ## [2.0.2](https://github.com/inabagumi/mini-apps/compare/hanerubeat-v2.0.1...hanerubeat-v2.0.2) (2026-11-19)
 
 
