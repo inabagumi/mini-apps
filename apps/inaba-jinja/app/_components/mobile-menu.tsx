@@ -2,6 +2,7 @@
 
 import { Dialog } from "@base-ui/react/dialog";
 import { cn } from "cn";
+import { Menu } from "lucide-react";
 import Link from "next/link";
 import { useRef, useState } from "react";
 
@@ -23,20 +24,9 @@ export default function MobileMenu({ className }: Props) {
     <Dialog.Root onOpenChange={setOpen} open={open}>
       <Dialog.Trigger
         aria-label="メニューを開く"
-        className={cn("m-2 w-10 space-y-1.5 p-2 text-slate-100", className)}
+        className={cn("m-2 p-2 text-slate-100", className)}
       >
-        <span
-          aria-hidden
-          className="block h-0.5 w-full rounded-full bg-current"
-        />
-        <span
-          aria-hidden
-          className="block h-0.5 w-full rounded-full bg-current"
-        />
-        <span
-          aria-hidden
-          className="block h-0.5 w-full rounded-full bg-current"
-        />
+        <Menu aria-hidden className="size-6" />
       </Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Backdrop className="fixed inset-0 z-20 bg-black/50 transition-opacity" />
