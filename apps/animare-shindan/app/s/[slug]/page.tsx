@@ -1,3 +1,4 @@
+import { ExternalLink } from "lucide-react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
@@ -317,12 +318,7 @@ export default function ResultPage({
             variant="brand"
           >
             YouTube公式ウェブサイト
-            <span
-              aria-hidden="true"
-              className="material-icons text-lg leading-none"
-            >
-              launch
-            </span>
+            <ExternalLink aria-hidden="true" className="size-4.5 shrink-0" />
             <span className="sr-only">（新しいタブで開きます）</span>
           </ExternalButtonLink>
         </MessageWindow>

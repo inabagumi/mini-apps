@@ -7,9 +7,4 @@ export default defineConfig({
   env: core.env,
   extends: [core, react, next],
   ignorePatterns: core.ignorePatterns,
-  rules: {
-    // The Material Icons stylesheet is loaded in the root layout of the App
-    // Router, so it applies to every page.
-    "nextjs/no-page-custom-font": "off",
-  },
 });

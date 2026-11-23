@@ -1,3 +1,4 @@
+import { ChevronLeft } from "lucide-react";
 import type { Metadata } from "next";
 import type { JSX } from "react";
 
@@ -34,12 +35,7 @@ export default async function QuestionsPage(): Promise<JSX.Element> {
           size="sm"
           variant="secondary"
         >
-          <span
-            aria-hidden="true"
-            className="material-icons text-2xl leading-none"
-          >
-            keyboard_arrow_left
-          </span>
+          <ChevronLeft aria-hidden="true" className="size-6 shrink-0" />
           1つ前に戻る
         </PrevButton>
       </main>
