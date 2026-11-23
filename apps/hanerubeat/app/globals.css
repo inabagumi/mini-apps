@@ -1,6 +1,11 @@
 @import "tailwindcss";
 
 @theme {
+  --color-background: #222;
+  --color-heart: #fff59d;
+  --color-control: #eee;
+  --color-control-disabled: #aaa;
+
   --animate-beat: beat 0.8s ease-in-out infinite;
 
   @keyframes beat {
