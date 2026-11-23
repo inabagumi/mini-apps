@@ -8,7 +8,10 @@ services:
   # A mock server of the Contentful Content Delivery API. See
   # mocks/contentful/README.md for details.
   contentful:
-    image: ghcr.io/wiremock/wiremock:3.13.2-3-alpine
+    # Use the default (Ubuntu-based) variant rather than the Alpine one because
+    # the Alpine variant is only published for linux/amd64 and is slow under
+    # emulation on arm64 hosts such as Apple silicon.
+    image: ghcr.io/wiremock/wiremock:3.13.2-3
     command:
       - --port=4000
       - --enable-stub-cors
