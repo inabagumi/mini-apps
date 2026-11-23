@@ -30,10 +30,7 @@ interface Props {
 
 export default function RootLayout({ children }: Props) {
   return (
-    <html
-      className="bg-[#544643] font-[sans-serif] leading-none text-white"
-      lang="ja"
-    >
+    <html className="bg-background font-sans leading-none text-white" lang="ja">
       <body>
         {children}
 
