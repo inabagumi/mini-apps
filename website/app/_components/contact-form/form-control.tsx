@@ -44,8 +44,8 @@ export default function FormControl({
   };
 
   return (
-    <div className="mt-2">
-      <dt className="my-1">
+    <div className="mt-2 first:mt-0">
+      <dt className="mb-1">
         <label htmlFor={name}>{label}</label>
       </dt>
 

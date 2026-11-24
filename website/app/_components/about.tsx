@@ -3,8 +3,8 @@ import TextLink from "./text-link";
 
 export default function About() {
   return (
-    <Section id="about" title="Haneru Developers とは?">
-      <div className="mt-6 max-w-3xl space-y-4 leading-relaxed">
+    <Section id="about" split title="Haneru Developers とは?">
+      <div className="space-y-4 leading-relaxed">
         <p>
           Haneru Developers はバーチャル YouTuber の
           <TextLink href="https://www.youtube.com/channel/UC0Owc36U9lOyi9Gx9Ic-4qg">

@@ -28,10 +28,7 @@ const ProductSection = ({ product }: Readonly<{ product: Product }>) => (
 
     <div>
       <p className="text-sm font-bold text-accent">{product.category}</p>
-      <h3
-        className="mt-1 text-xl font-bold sm:text-2xl"
-        id={`${product.id}-heading`}
-      >
+      <h3 className="mt-1 text-xl font-bold" id={`${product.id}-heading`}>
         {product.title}
       </h3>
       <p className="mt-3 leading-relaxed">{product.description}</p>
@@ -78,11 +75,9 @@ const ProductSection = ({ product }: Readonly<{ product: Product }>) => (
 export default function Products() {
   return (
     <Section id="products" title="プロダクト">
-      <div className="mt-2">
-        {products.map((product) => (
-          <ProductSection key={product.id} product={product} />
-        ))}
-      </div>
+      {products.map((product) => (
+        <ProductSection key={product.id} product={product} />
+      ))}
     </Section>
   );
 }

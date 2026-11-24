@@ -103,12 +103,7 @@ const Form = () => {
   };
 
   return (
-    <form
-      aria-label="お問い合わせ"
-      className="mt-6"
-      noValidate
-      onSubmit={handleSubmit}
-    >
+    <form aria-label="お問い合わせ" noValidate onSubmit={handleSubmit}>
       <dl>
         <FormControl
           autoComplete="name"
