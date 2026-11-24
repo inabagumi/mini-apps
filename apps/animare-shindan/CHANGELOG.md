@@ -1,5 +1,13 @@
 # Changelog
 
+## [4.3.0](https://github.com/inabagumi/mini-apps/compare/animare-shindan-v4.2.0...animare-shindan-v4.3.0) (2026-11-24)
+
+
+### Features
+
+* **animare-shindan:** share the result with other apps or by copying its URL ([#4915](https://github.com/inabagumi/mini-apps/issues/4915)) ([c4b284b](https://github.com/inabagumi/mini-apps/commit/c4b284b524fc5972085d8ec83a8065128357b52d))
+* **animare-shindan:** validate the consistency of the diagnosis content ([#4920](https://github.com/inabagumi/mini-apps/issues/4920)) ([fac1ad8](https://github.com/inabagumi/mini-apps/commit/fac1ad8ee05caa0d81f147ddf577d5bda5b11ec3))
+
 ## [4.2.0](https://github.com/inabagumi/mini-apps/compare/animare-shindan-v4.1.0...animare-shindan-v4.2.0) (2026-11-23)
 
 
