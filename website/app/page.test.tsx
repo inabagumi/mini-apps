@@ -6,6 +6,17 @@ import products from "#/lib/products";
 
 import Home from "./page";
 
+const renderProduct = (id: string) => {
+  const { container } = render(<Home />);
+  const section = container.querySelector<HTMLElement>(`#${id}`);
+
+  if (!section) {
+    throw new Error("The section is not found.");
+  }
+
+  return section;
+};
+
 describe(Home, () => {
   it("shows the title of the website as the top-level heading", () => {
     render(<Home />);
@@ -26,32 +37,46 @@ describe(Home, () => {
     );
   });
 
-  it.each(products)("shows the details of $title", (product) => {
+  it("lists the apps before the other products", () => {
     render(<Home />);
 
-    const heading = screen.getByRole("heading", {
-      level: 3,
-      name: product.title,
-    });
-    const card = heading.closest("li");
-
-    if (!card) {
-      throw new Error("The card is not found.");
-    }
-
-    const links = within(card);
-
     expect(
-      links.getByRole("link", { name: "ウェブサイト" }).getAttribute("href")
-    ).toBe(product.website);
+      screen
+        .getAllByRole("heading", { level: 3 })
+        .map((heading) => heading.textContent)
+    ).toStrictEqual([
+      "ねるカメラ",
+      "あにまーれ診断",
+      "Haneru Beat!",
+      "因幡神社",
+      "SHINJU DATE",
+    ]);
+  });
+
+  it.each(products)("has the section of $title", (product) => {
+    const section = renderProduct(product.id);
+    const queries = within(section);
+
+    expect(section.tagName).toBe("SECTION");
     expect(
-      links.getByRole("link", { name: "ソースコード" }).getAttribute("href")
-    ).toBe(product.source);
-    expect(card.querySelector("time")?.dateTime).toBe(product.releasedOn);
+      queries.getByRole("heading", { level: 3, name: product.title }).id
+    ).toBe(section.getAttribute("aria-labelledby"));
+    expect(queries.getByText(product.category)).toBeDefined();
+    expect(queries.getByText(product.description)).toBeDefined();
+  });
+
+  it.each(products)("links to the resources of $title", (product) => {
+    const section = renderProduct(product.id);
+    const getHref = (name: string) =>
+      within(section).getByRole("link", { name }).getAttribute("href");
+    const releaseDate = section.querySelector("time");
+
+    expect(getHref(new URL(product.website).hostname)).toBe(product.website);
+    expect(getHref(product.repository.label)).toBe(product.repository.url);
+    expect(releaseDate?.dateTime).toBe(product.releasedOn);
+    expect(releaseDate?.closest("a")?.href).toBe(product.releaseAnnouncement);
     expect(
-      product.technologies.map((technology) =>
-        links.getByRole("link", { name: technology.name }).getAttribute("href")
-      )
+      product.technologies.map((technology) => getHref(technology.name))
     ).toStrictEqual(product.technologies.map((technology) => technology.url));
   });
 

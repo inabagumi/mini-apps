@@ -1,5 +1,4 @@
 import ContactForm from "./contact-form/contact-form";
-import ContactFormProvider from "./contact-form/provider";
 import Section from "./section";
 
 export default function Contact() {
@@ -14,9 +13,7 @@ export default function Contact() {
           は本業の傍らで開発をしているため、返事の保証は致しかねます。
         </p>
 
-        <ContactFormProvider>
-          <ContactForm />
-        </ContactFormProvider>
+        <ContactForm />
       </div>
     </Section>
   );

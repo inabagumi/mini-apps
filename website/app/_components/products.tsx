@@ -3,81 +3,86 @@ import Image from "next/image";
 import type { Product } from "#/lib/products";
 import products from "#/lib/products";
 
-import ExternalLink from "./external-link";
 import Section from "./section";
+import TextLink from "./text-link";
 
 const dateFormatter = new Intl.DateTimeFormat("ja-JP", {
   dateStyle: "long",
   timeZone: "UTC",
 });
 
-const buttonClassName =
-  "rounded-md bg-control px-3 py-2 text-center text-sm font-bold transition-colors hover:bg-control-hover";
-
-const ProductCard = ({ product }: Readonly<{ product: Product }>) => (
-  <li className="flex flex-col overflow-hidden rounded-lg border border-line bg-surface shadow-sm">
+const ProductSection = ({ product }: Readonly<{ product: Product }>) => (
+  <section
+    aria-labelledby={`${product.id}-heading`}
+    // Keep the section out from under the sticky header.
+    className="grid scroll-mt-14 gap-6 border-t border-line py-10 first:border-t-0 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:gap-10"
+    id={product.id}
+  >
     <Image
-      alt={product.title}
-      className="h-auto w-full"
+      alt=""
+      className="h-auto w-full rounded-lg border border-line"
       placeholder="blur"
-      sizes="(min-width: 1024px) 368px, (min-width: 640px) 50vw, 100vw"
+      sizes="(min-width: 1152px) 492px, (min-width: 1024px) 45vw, 100vw"
       src={product.preview}
     />
 
-    <div className="flex grow flex-col gap-4 p-4">
-      <h3 className="text-lg font-bold">{product.title}</h3>
-      <p className="text-sm leading-relaxed">{product.description}</p>
+    <div>
+      <p className="text-sm font-bold text-accent">{product.category}</p>
+      <h3
+        className="mt-1 text-xl font-bold sm:text-2xl"
+        id={`${product.id}-heading`}
+      >
+        {product.title}
+      </h3>
+      <p className="mt-3 leading-relaxed">{product.description}</p>
 
-      <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-3 text-sm">
+      <dl className="mt-6 grid grid-cols-[auto_minmax(0,1fr)] gap-x-6 gap-y-3">
+        <dt className="text-muted">ウェブサイト</dt>
+        <dd>
+          <TextLink href={product.website}>
+            {new URL(product.website).hostname}
+          </TextLink>
+        </dd>
+
+        <dt className="text-muted">ソースコード</dt>
+        <dd>
+          <TextLink href={product.repository.url}>
+            {product.repository.label}
+          </TextLink>
+        </dd>
+
         <dt className="text-muted">公開日</dt>
         <dd>
-          <ExternalLink
-            className="rounded-sm underline decoration-muted/40 underline-offset-4 hover:text-accent hover:decoration-accent"
-            href={product.releaseAnnouncement}
-          >
+          <TextLink href={product.releaseAnnouncement}>
             <time dateTime={product.releasedOn}>
               {dateFormatter.format(new Date(product.releasedOn))}
             </time>
-          </ExternalLink>
+          </TextLink>
         </dd>
 
         <dt className="text-muted">使用技術</dt>
         <dd>
-          <ul className="flex flex-wrap gap-1.5">
+          <ul className="flex flex-wrap gap-x-4 gap-y-1">
             {product.technologies.map((technology) => (
               <li key={technology.name}>
-                <ExternalLink
-                  className="block rounded-full border border-line px-2 py-0.5 text-xs transition-colors hover:border-accent hover:text-accent"
-                  href={technology.url}
-                >
-                  {technology.name}
-                </ExternalLink>
+                <TextLink href={technology.url}>{technology.name}</TextLink>
               </li>
             ))}
           </ul>
         </dd>
       </dl>
-
-      <div className="mt-auto grid grid-cols-2 gap-2">
-        <ExternalLink className={buttonClassName} href={product.website}>
-          ウェブサイト
-        </ExternalLink>
-        <ExternalLink className={buttonClassName} href={product.source}>
-          ソースコード
-        </ExternalLink>
-      </div>
     </div>
-  </li>
+  </section>
 );
 
 export default function Products() {
   return (
     <Section id="products" title="プロダクト">
-      <ul className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-2">
         {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
+          <ProductSection key={product.id} product={product} />
         ))}
-      </ul>
+      </div>
     </Section>
   );
 }

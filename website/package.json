@@ -24,13 +24,10 @@
   },
   "dependencies": {
     "@formspree/react": "3.0.0",
-    "@hookform/error-message": "2.0.1",
     "@vercel/analytics": "catalog:",
     "next": "catalog:",
     "react": "catalog:",
-    "react-dom": "catalog:",
-    "react-hook-form": "7.92.0",
-    "react-textarea-autosize": "8.5.9"
+    "react-dom": "catalog:"
   },
   "devDependencies": {
     "@formspree/cli": "0.9.6",
