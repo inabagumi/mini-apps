@@ -40,18 +40,18 @@
   "dependencies": {},
   "devDependencies": {
     "@inabagumi/config": "workspace:*",
-    "@testing-library/react": "16.3.3",
+    "@testing-library/react": "catalog:",
     "@tsconfig/strictest": "2.0.9",
-    "@types/node": "26.6.6",
-    "@types/react": "19.3.0",
-    "cn": "0.5.2",
-    "jsdom": "31.0.1",
-    "react": "19.3.1",
-    "react-dom": "19.3.1",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "cn": "catalog:",
+    "jsdom": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
     "tsdown": "0.23.7",
-    "typescript": "6.0.3",
-    "vite": "8.3.8",
-    "vitest": "5.1.1"
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vitest": "catalog:"
   },
   "peerDependencies": {
     "@types/react": "^19.0.0",

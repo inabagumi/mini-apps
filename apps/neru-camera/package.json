@@ -37,31 +37,31 @@
     "typegen": "next typegen"
   },
   "dependencies": {
-    "@base-ui/react": "1.9.0",
+    "@base-ui/react": "catalog:",
     "@pixi/react": "8.0.5",
-    "@vercel/analytics": "2.0.1",
+    "@vercel/analytics": "catalog:",
     "browser-fs-access": "0.39.0",
-    "cn": "0.5.2",
-    "contentful": "11.12.10",
-    "lucide-react": "1.77.0",
-    "next": "16.4.6",
+    "cn": "catalog:",
+    "contentful": "catalog:",
+    "lucide-react": "catalog:",
+    "next": "catalog:",
     "pixi-viewport": "7.0.3",
     "pixi.js": "8.23.0",
-    "react": "19.3.1",
-    "react-dom": "19.3.1"
+    "react": "catalog:",
+    "react-dom": "catalog:"
   },
   "devDependencies": {
     "@inabagumi/config": "workspace:*",
-    "@serwist/turbopack": "9.5.15",
-    "@tailwindcss/turbopack": "4.3.5",
-    "@types/node": "26.6.6",
-    "@types/react": "19.3.0",
-    "esbuild-wasm": "0.28.2",
-    "jsdom": "31.0.1",
-    "serwist": "9.5.15",
-    "tailwindcss": "4.3.5",
-    "typescript": "6.0.3",
-    "vite": "8.3.8",
-    "vitest": "5.1.1"
+    "@serwist/turbopack": "catalog:",
+    "@tailwindcss/turbopack": "catalog:",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "esbuild-wasm": "catalog:",
+    "jsdom": "catalog:",
+    "serwist": "catalog:",
+    "tailwindcss": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vitest": "catalog:"
   }
 }
