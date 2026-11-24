@@ -1,6 +1,6 @@
 # Haneru Developers Website
 
-[Haneru Developers (haneru.dev)](https://haneru.dev/) のソースファイルです。[Docusaurus](https://docusaurus.io/) を使って構築されています。
+[Haneru Developers (haneru.dev)](https://haneru.dev/) のソースファイルです。[Next.js](https://nextjs.org/) を使って構築されています。
 
 ## デプロイ
 

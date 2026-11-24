@@ -1,25 +1,4 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "redirects": [
-    {
-      "destination": "/docs",
-      "source": "/about/"
-    },
-    {
-      "destination": "/docs/hanerubeat",
-      "source": "/docs/heartbeat"
-    },
-    {
-      "destination": "/docs/shinju-date",
-      "source": "/docs/animare-search"
-    },
-    {
-      "destination": "/",
-      "source": "/(products|docs)/(21g|npm-packages|eslint-config|prettier-config|renovate-config)(.html)?"
-    },
-    {
-      "destination": "/docs/:name",
-      "source": "/products/:name.html"
-    }
-  ]
+  "framework": "nextjs"
 }

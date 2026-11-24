@@ -1,9 +1,0 @@
-{
-  "$schema": "../node_modules/turbo/schema.json",
-  "extends": ["//"],
-  "tasks": {
-    "test": {
-      "inputs": ["src/**", "*.mts", "*.ts", "tsconfig.json"]
-    }
-  }
-}
