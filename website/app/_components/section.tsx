@@ -1,3 +1,4 @@
+import { cn } from "cn";
 import type { ReactNode } from "react";
 
 import type { SectionId } from "#/lib/constants";
@@ -28,9 +29,12 @@ export default function Section({
       id={id}
     >
       <div
-        className={`mx-auto max-w-6xl px-4 sm:px-6 ${split ? "lg:grid lg:grid-cols-5 lg:gap-x-10" : ""}`}
+        className={cn(
+          "mx-auto max-w-6xl px-4 sm:px-6",
+          split && "lg:grid lg:grid-cols-5 lg:gap-x-10"
+        )}
       >
-        <div className={split ? "lg:col-span-2" : undefined}>
+        <div className={cn(split && "lg:col-span-2")}>
           <h2 className="text-2xl font-bold" id={`${id}-heading`}>
             {title}
           </h2>
@@ -38,7 +42,7 @@ export default function Section({
           {lead}
         </div>
 
-        <div className={split ? "mt-6 lg:col-span-3 lg:mt-0" : "mt-2"}>
+        <div className={cn("mt-2", split && "mt-6 lg:col-span-3 lg:mt-0")}>
           {children}
         </div>
       </div>

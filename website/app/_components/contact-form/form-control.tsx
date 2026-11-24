@@ -1,11 +1,9 @@
 import type { ChangeEventHandler, FocusEventHandler } from "react";
 
+import TextField from "./text-field";
 import type { FieldName } from "./validation";
 
 type Field = HTMLInputElement | HTMLTextAreaElement;
-
-const fieldClassName =
-  "block w-full rounded-md border border-muted bg-surface px-3 py-2 font-mono text-base text-foreground placeholder:text-muted/70 focus:border-accent disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-danger aria-invalid:bg-danger-surface aria-invalid:focus:border-accent aria-invalid:focus:bg-surface";
 
 export default function FormControl({
   autoComplete,
@@ -51,15 +49,11 @@ export default function FormControl({
 
       <dd>
         {multiline ? (
-          <textarea
-            {...fieldProps}
-            // Grow with the content in the browsers that support
-            // `field-sizing`. The other browsers show 10 rows.
-            className={`${fieldClassName} field-sizing-content min-h-64 resize-y`}
-            rows={10}
-          />
+          // The minimum height keeps 10 rows in the browsers that support
+          // `field-sizing`, where `rows` has no effect.
+          <TextField {...fieldProps} className="min-h-64" multiline rows={10} />
         ) : (
-          <input {...fieldProps} className={fieldClassName} type={type} />
+          <TextField {...fieldProps} type={type} />
         )}
 
         {/* Reserve the height of a line so that an error does not shift the fields below. */}

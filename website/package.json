@@ -25,6 +25,7 @@
   "dependencies": {
     "@formspree/react": "3.0.0",
     "@vercel/analytics": "catalog:",
+    "cn": "catalog:",
     "next": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:"
