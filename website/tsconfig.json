@@ -1,10 +1,11 @@
 {
-  // This file is not used in compilation. It is here just for a nice editor experience.
-  "extends": "@docusaurus/tsconfig",
-  "compilerOptions": {
-    "baseUrl": null,
-    "paths": {
-      "@site/*": ["./*"]
-    }
-  }
+  "extends": "@inabagumi/config/tsconfig/nextjs.json",
+  "exclude": ["node_modules"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
+  ]
 }

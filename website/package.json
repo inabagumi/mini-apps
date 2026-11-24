@@ -5,37 +5,42 @@
   "description": "We are Haneru Developers!",
   "license": "MIT",
   "author": "Haneru Developers",
+  "type": "module",
+  "imports": {
+    "#/*": [
+      "./*",
+      "./*.ts",
+      "./*.tsx",
+      "./*/index.ts"
+    ]
+  },
   "scripts": {
-    "build": "docusaurus build",
-    "dev": "docusaurus start --port 3004",
-    "swizzle": "docusaurus swizzle",
+    "build": "next build",
+    "dev": "next dev --port 3004",
+    "start": "next start",
     "test": "vitest run",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "typegen": "next typegen"
   },
   "dependencies": {
-    "@docusaurus/core": "3.10.2",
-    "@docusaurus/plugin-ideal-image": "3.10.2",
-    "@docusaurus/plugin-vercel-analytics": "3.10.2",
-    "@docusaurus/preset-classic": "3.10.2",
     "@formspree/react": "3.0.0",
     "@hookform/error-message": "2.0.1",
-    "clsx": "2.1.1",
-    "lodash": "4.18.1",
+    "@vercel/analytics": "catalog:",
+    "next": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-hook-form": "7.92.0",
     "react-textarea-autosize": "8.5.9"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.10.2",
-    "@docusaurus/tsconfig": "3.10.2",
-    "@docusaurus/types": "3.10.2",
     "@formspree/cli": "0.9.6",
+    "@inabagumi/config": "workspace:*",
+    "@tailwindcss/turbopack": "catalog:",
     "@testing-library/react": "catalog:",
-    "@types/lodash": "4.17.27",
+    "@types/node": "catalog:",
     "@types/react": "catalog:",
-    "@vitejs/plugin-react": "catalog:",
     "jsdom": "catalog:",
+    "tailwindcss": "catalog:",
     "typescript": "catalog:",
     "vite": "catalog:",
     "vitest": "catalog:"

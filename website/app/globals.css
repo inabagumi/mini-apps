@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand colors */
+  --color-primary: #f57f17;
+  --color-primary-strong: #b45808;
+  --color-primary-light: #f68d31;
+  --color-slate: #303846;
+  --color-ink: #1c1e21;
+}
+
+/*
+ * Colors that depend on the color scheme. Components refer to them through
+ * the utilities defined below (e.g. `bg-background`), so they do not need the
+ * `dark:` variant.
+ */
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-control: var(--control);
+  --color-control-hover: var(--control-hover);
+  --color-accent: var(--accent);
+  --color-danger: var(--danger);
+  --color-danger-surface: var(--danger-surface);
+}
+
+:root {
+  color-scheme: light dark;
+
+  --background: #fff;
+  --surface: #fff;
+  --foreground: var(--color-ink);
+  --muted: #606770;
+  --line: #dadde1;
+  --control: #ebedf0;
+  --control-hover: #dadde1;
+  /* The primary color is too light for text on a light background. */
+  --accent: var(--color-primary-strong);
+  --danger: #ab1f11;
+  --danger-surface: #ffebe9;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1b1b1d;
+    --surface: #242526;
+    --foreground: #e3e3e3;
+    --muted: #b0b3b8;
+    --line: #444950;
+    --control: #3a3b3c;
+    --control-hover: #4e4f50;
+    --accent: var(--color-primary-light);
+    --danger: #ff8f85;
+    --danger-surface: #4b1113;
+  }
+}
+
+@layer base {
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-accent;
+  }
+
+  /*
+   * Tailwind CSS v4 changed the cursor of buttons to `default`.
+   * Keep the pointer cursor used in v3.
+   */
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+/*
+ * For the areas whose background is `slate` regardless of the color scheme.
+ */
+@utility on-slate {
+  --accent: var(--color-primary-light);
+}
