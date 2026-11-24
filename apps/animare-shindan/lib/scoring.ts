@@ -102,3 +102,152 @@ export const decideResult = (
 
   return best?.result;
 };
+
+/** The default number of the steps that {@link canReachResult} can take. */
+export const DEFAULT_REACHABILITY_SEARCH_LIMIT = 1_000_000;
+
+interface ScoredAnswerVector {
+  strongAnswers: number[];
+  totals: number[];
+}
+
+const toVector = (
+  answer: ScoredAnswer,
+  results: readonly string[]
+): ScoredAnswerVector => {
+  const tallies = tallyScores([answer], results);
+
+  return {
+    strongAnswers: tallies.map((tally) => tally.strongAnswers),
+    totals: tallies.map((tally) => tally.total),
+  };
+};
+
+// The answers that give the same scores lead to the same results, so only one
+// of them has to be tried.
+const uniqueVectors = (
+  vectors: readonly ScoredAnswerVector[]
+): ScoredAnswerVector[] => [
+  ...new Map(
+    vectors.map((vector) => [
+      JSON.stringify([vector.totals, vector.strongAnswers]),
+      vector,
+    ])
+  ).values(),
+];
+
+/**
+ * Whether some combination of the answers, one answer for each question,
+ * leads to the result (see {@link decideResult}).
+ *
+ * The questions without answers are ignored, since no combination of the
+ * answers can be made for them. The scores are expected to be integers from
+ * {@link MIN_SCORE} to {@link MAX_SCORE}.
+ *
+ * The combinations are searched with pruning, so the search usually ends
+ * quickly, but it can take exponential time in the number of the questions.
+ * Returns `undefined` when the search takes more than `limit` steps without
+ * finding the answer.
+ */
+export const canReachResult = (
+  questions: readonly (readonly ScoredAnswer[])[],
+  results: readonly string[],
+  target: string,
+  limit: number = DEFAULT_REACHABILITY_SEARCH_LIMIT
+): boolean | undefined => {
+  const slugs = [...new Set(results)];
+  const targetIndex = slugs.indexOf(target);
+
+  if (targetIndex === -1) {
+    return false;
+  }
+
+  // How much the answer puts the target ahead of each result.
+  const gains = (vector: ScoredAnswerVector): number[] =>
+    vector.totals.map((total) => vector.totals[targetIndex] - total);
+
+  const vectors = questions
+    .filter((answers) => answers.length > 0)
+    .map((answers) =>
+      uniqueVectors(answers.map((answer) => toVector(answer, slugs)))
+        // Try the answers that favor the target first, which finds a
+        // combination that leads to the target sooner.
+        .map((vector) => ({ minGain: Math.min(...gains(vector)), vector }))
+        .toSorted((a, b) => b.minGain - a.minGain)
+        .map(({ vector }) => vector)
+    );
+
+  // The most that the questions from each index onward can put the target
+  // ahead of each result, which is used to give up on the combinations that
+  // can no longer lead to the target.
+  const remainingGains: number[][] = [slugs.map(() => 0)];
+
+  for (const answers of vectors.toReversed()) {
+    const [next] = remainingGains;
+    const best = slugs.map((_, i) =>
+      Math.max(...answers.map((vector) => gains(vector)[i]))
+    );
+
+    remainingGains.unshift(next.map((gain, i) => gain + best[i]));
+  }
+
+  const totals = slugs.map(() => 0);
+  const strongAnswers = slugs.map(() => 0);
+  let steps = 0;
+
+  const isTargetChosen = (): boolean => {
+    const tallies = slugs.map((result, i) => ({
+      result,
+      strongAnswers: strongAnswers[i],
+      total: totals[i],
+    }));
+    const targetTally = tallies[targetIndex];
+
+    return tallies.every(
+      (tally, i) => i === targetIndex || compareTallies(targetTally, tally) < 0
+    );
+  };
+
+  const canStillWin = (index: number): boolean =>
+    slugs.every(
+      (_, i) => totals[targetIndex] - totals[i] + remainingGains[index][i] >= 0
+    );
+
+  const search = (index: number): boolean | undefined => {
+    steps += 1;
+
+    if (steps > limit) {
+      return undefined;
+    }
+
+    if (index === vectors.length) {
+      return isTargetChosen();
+    }
+
+    if (!canStillWin(index)) {
+      return false;
+    }
+
+    for (const vector of vectors[index]) {
+      for (const [i, total] of vector.totals.entries()) {
+        totals[i] += total;
+        strongAnswers[i] += vector.strongAnswers[i];
+      }
+
+      const found = search(index + 1);
+
+      for (const [i, total] of vector.totals.entries()) {
+        totals[i] -= total;
+        strongAnswers[i] -= vector.strongAnswers[i];
+      }
+
+      if (found !== false) {
+        return found;
+      }
+    }
+
+    return false;
+  };
+
+  return search(0);
+};

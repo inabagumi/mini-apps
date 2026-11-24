@@ -1,6 +1,12 @@
 import { describe, expect, it } from "vitest";
 
-import { compareTallies, decideResult, tallyScores } from "./scoring";
+import {
+  canReachResult,
+  compareTallies,
+  decideResult,
+  MAX_SCORE,
+  tallyScores,
+} from "./scoring";
 import type { ScoredAnswer } from "./scoring";
 
 const RESULTS = ["a", "b", "c"];
@@ -95,5 +101,110 @@ describe("decideResult", () => {
 
   it("returns undefined when there are no results", () => {
     expect(decideResult([answer({ a: 3 })], [])).toBeUndefined();
+  });
+});
+
+// Every combination of the answers, one answer for each question.
+const combineAnswers = (
+  questions: readonly ScoredAnswer[][]
+): ScoredAnswer[][] => {
+  let combinations: ScoredAnswer[][] = [[]];
+
+  for (const answers of questions) {
+    combinations = combinations.flatMap((combination) =>
+      answers.map((item) => [...combination, item])
+    );
+  }
+
+  return combinations;
+};
+
+describe("canReachResult", () => {
+  it("reaches the results that some combination of the answers leads to", () => {
+    const questions = [
+      [answer({ a: 3 }), answer({ b: 3 })],
+      [answer({ a: 1 }), answer({ c: 2 })],
+    ];
+
+    expect(canReachResult(questions, RESULTS, "a")).toBe(true);
+    expect(canReachResult(questions, RESULTS, "b")).toBe(true);
+    // b: 3 vs. c: 2 at most, and a: 3 vs. c: 2 otherwise.
+    expect(canReachResult(questions, RESULTS, "c")).toBe(false);
+  });
+
+  it("does not reach a result that loses every tie", () => {
+    // b always gets the same scores as a, which comes first by the slug.
+    const questions = [[answer({ a: 3, b: 3 }), answer({ a: 1, b: 1, c: 1 })]];
+
+    expect(canReachResult(questions, RESULTS, "a")).toBe(true);
+    expect(canReachResult(questions, RESULTS, "b")).toBe(false);
+  });
+
+  it("reaches a result that wins a tie by the answers with 3 points", () => {
+    // a: 2 + 2 = 4 and c: 3 + 1 = 4, where c has an answer with 3 points.
+    const questions = [[answer({ a: 2, c: 3 })], [answer({ a: 2, c: 1 })]];
+
+    expect(canReachResult(questions, RESULTS, "a")).toBe(false);
+    expect(canReachResult(questions, RESULTS, "c")).toBe(true);
+  });
+
+  it("ignores the questions without answers", () => {
+    expect(canReachResult([[], [answer({ b: 1 })]], RESULTS, "b")).toBe(true);
+  });
+
+  it("chooses the first slug when there are no questions", () => {
+    expect(canReachResult([], RESULTS, "a")).toBe(true);
+    expect(canReachResult([], RESULTS, "b")).toBe(false);
+  });
+
+  it("does not reach a result that is not in the results", () => {
+    expect(canReachResult([[answer({ z: 3 })]], RESULTS, "z")).toBe(false);
+  });
+
+  it("returns undefined when the search takes too many steps", () => {
+    const questions = [
+      [answer({ a: 3 }), answer({ b: 3 })],
+      [answer({ a: 3 }), answer({ b: 3 })],
+    ];
+
+    expect(canReachResult(questions, RESULTS, "b", 1)).toBeUndefined();
+    expect(canReachResult(questions, RESULTS, "b")).toBe(true);
+  });
+
+  // Compares the search with trying all the combinations of the answers on
+  // random questions.
+  it("agrees with trying all the combinations of the answers", () => {
+    // A linear congruential generator, so that the cases are the same on
+    // every run.
+    let seed = 1;
+    const random = (n: number): number => {
+      seed = (seed * 1_103_515_245 + 12_345) % 2_147_483_648;
+
+      return seed % n;
+    };
+
+    for (let i = 0; i < 200; i += 1) {
+      const results = ["a", "b", "c", "d"].slice(0, 2 + random(3));
+      const questions = Array.from({ length: 1 + random(4) }, () =>
+        Array.from({ length: 1 + random(3) }, () =>
+          answer(
+            Object.fromEntries(
+              results.map((result) => [result, random(MAX_SCORE + 1)])
+            )
+          )
+        )
+      );
+      const reached = new Set(
+        combineAnswers(questions).map((answers) =>
+          decideResult(answers, results)
+        )
+      );
+
+      for (const result of results) {
+        expect(canReachResult(questions, results, result)).toBe(
+          reached.has(result)
+        );
+      }
+    }
   });
 });

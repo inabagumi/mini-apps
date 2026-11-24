@@ -156,13 +156,14 @@ describe("validateSeedData", () => {
 
   it("throws an error that lists all the problems", () => {
     const data = cloneSeedData();
-    data.results[1].slug = data.results[0].slug;
+    const [result] = data.results;
+    result.recommendedVideoUrl = "https://example.com/";
     data.releases[1].slug = data.releases[0].slug;
 
     expect(() => validateSeedData(data)).toThrow(
       [
         "The seed data is inconsistent:",
-        `Duplicate result slug: ${data.results[0].slug}`,
+        `Result ${result.slug} has an invalid recommended video URL: https://example.com/`,
         `Duplicate release slug: ${data.releases[0].slug}`,
       ].join("\n- ")
     );
