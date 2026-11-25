@@ -35,7 +35,7 @@
     "@commitlint/types": "21.2.3",
     "husky": "9.1.7",
     "lint-staged": "17.6.2",
-    "oxfmt": "0.79.0",
+    "oxfmt": "0.80.0",
     "oxlint": "1.94.0",
     "turbo": "2.11.13",
     "ultracite": "8.3.1"
