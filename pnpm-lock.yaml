@@ -506,8 +506,8 @@ importers:
         specifier: 3.1.1
         version: 3.1.1(@types/react@19.3.0)(react@19.3.1)
       '@upstash/redis':
-        specifier: 1.41.0
-        version: 1.41.0
+        specifier: 1.41.1
+        version: 1.41.1
       '@vercel/analytics':
         specifier: 'catalog:'
         version: 2.0.1(next@16.4.6(@babel/core@7.29.13(supports-color@7.2.0))(@playwright/test@1.65.1)(@types/node@26.6.6)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react@19.3.1)
@@ -3291,8 +3291,8 @@ packages:
   '@ungap/structured-clone@1.4.0':
     resolution: {integrity: sha512-1mEZtMKPM09vDmQt5y7YvmN2+DFTP7Tg0EWXdic8/C6VRnpb33e4ghisCIE3WZjsE2N8mf+QV1Zqh7ZFYLWInQ==}
 
-  '@upstash/redis@1.41.0':
-    resolution: {integrity: sha512-TIu9C1B0ToXQLXt2M1LQuGZ6nkMjOZPIdJyU0GGWKZToa/MvJF8x2IRDOPMIAw2BLGXGhi1aZr5AnhlXu4YLXg==}
+  '@upstash/redis@1.41.1':
+    resolution: {integrity: sha512-HT5ixMRbylOM058GETYbh1DKV0Q5qL5bRf7YpOzpp3VR2YZNoYqsWznPvFWNFQEBTPcGANWoCDvA1+M2f6ub4w==}
 
   '@vercel/analytics@2.0.1':
     resolution: {integrity: sha512-MTQG6V9qQrt1tsDeF+2Uoo5aPjqbVPys1xvnIftXSJYG2SrwXRHnqEvVoYID7BTruDz4lCd2Z7rM1BdkUehk2g==}
@@ -9158,7 +9158,7 @@ snapshots:
 
   '@ungap/structured-clone@1.4.0': {}
 
-  '@upstash/redis@1.41.0':
+  '@upstash/redis@1.41.1':
     dependencies:
       uncrypto: 0.1.3
 
