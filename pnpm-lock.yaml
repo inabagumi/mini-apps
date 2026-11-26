@@ -223,8 +223,8 @@ catalogs:
       specifier: 31.0.1
       version: 31.0.1
     lucide-react:
-      specifier: 1.79.0
-      version: 1.79.0
+      specifier: 1.80.0
+      version: 1.80.0
     next:
       specifier: 16.4.6
       version: 16.4.6
@@ -367,7 +367,7 @@ importers:
         version: 4.4.0
       lucide-react:
         specifier: 'catalog:'
-        version: 1.79.0(@types/react@19.3.1)(react@19.3.1)
+        version: 1.80.0(@types/react@19.3.1)(react@19.3.1)
       next:
         specifier: 'catalog:'
         version: 16.4.6(@babel/core@7.29.13(supports-color@7.2.0))(@playwright/test@1.65.1)(@types/node@26.6.7)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
@@ -440,7 +440,7 @@ importers:
         version: 2.0.1(next@16.4.6(@babel/core@7.29.13(supports-color@7.2.0))(@playwright/test@1.65.1)(@types/node@26.6.7)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react@19.3.1)
       lucide-react:
         specifier: 'catalog:'
-        version: 1.79.0(@types/react@19.3.1)(react@19.3.1)
+        version: 1.80.0(@types/react@19.3.1)(react@19.3.1)
       next:
         specifier: 'catalog:'
         version: 16.4.6(@babel/core@7.29.13(supports-color@7.2.0))(@playwright/test@1.65.1)(@types/node@26.6.7)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
@@ -525,7 +525,7 @@ importers:
         version: 1.7.2
       lucide-react:
         specifier: 'catalog:'
-        version: 1.79.0(@types/react@19.3.1)(react@19.3.1)
+        version: 1.80.0(@types/react@19.3.1)(react@19.3.1)
       next:
         specifier: 'catalog:'
         version: 16.4.6(@babel/core@7.29.13(supports-color@7.2.0))(@playwright/test@1.65.1)(@types/node@26.6.7)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
@@ -610,7 +610,7 @@ importers:
         version: 11.12.10(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
       lucide-react:
         specifier: 'catalog:'
-        version: 1.79.0(@types/react@19.3.1)(react@19.3.1)
+        version: 1.80.0(@types/react@19.3.1)(react@19.3.1)
       next:
         specifier: 'catalog:'
         version: 16.4.6(@babel/core@7.29.13(supports-color@7.2.0))(@playwright/test@1.65.1)(@types/node@26.6.7)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
@@ -4844,8 +4844,8 @@ packages:
     resolution: {integrity: sha512-5J9ysMYUpYIg9RF2vJpy9SinEmSviFSe0GyPpCQ4L5QSkLAgeLXlTAOu2ZwWUU5m+0SBl6gUU1R1ZQB3aKypfA==}
     engines: {bun: '>=1.0.0', deno: '>=1.30.0', node: '>=8.0.0'}
 
-  lucide-react@1.79.0:
-    resolution: {integrity: sha512-MDHKxzUobPRyQgt4hHO1z+pUQJKYMvenh8qw+ndWQE0Wg+Hbjli/ZrkZXBGmRBrMvvqDRjkmQj0Z5RbeL/ogNw==}
+  lucide-react@1.80.0:
+    resolution: {integrity: sha512-f9cQkUMFp2ZrOek9FucpRqQVI67gT09clXcHs3yCvdhJnsK4RW4og/rqoC0YAHd6FV/GPkeiIR3Rdxr2pPRwHA==}
     peerDependencies:
       '@types/react': '*'
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
@@ -10743,7 +10743,7 @@ snapshots:
 
   lru.min@1.1.5: {}
 
-  lucide-react@1.79.0(@types/react@19.3.1)(react@19.3.1):
+  lucide-react@1.80.0(@types/react@19.3.1)(react@19.3.1):
     dependencies:
       react: 19.3.1
     optionalDependencies:
