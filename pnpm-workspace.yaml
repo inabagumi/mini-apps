@@ -10,7 +10,7 @@ catalogMode: prefer
 
 catalog:
   "@base-ui/react": 1.9.0
-  "@serwist/turbopack": 9.5.15
+  "@serwist/turbopack": 9.6.0
   "@tailwindcss/turbopack": 4.3.5
   "@testing-library/react": 16.3.3
   "@types/node": 26.6.7
@@ -26,7 +26,7 @@ catalog:
   next: 16.4.6
   react: 19.3.1
   react-dom: 19.3.1
-  serwist: 9.5.15
+  serwist: 9.6.0
   tailwindcss: 4.3.5
   typescript: 6.0.3
   vite: 8.3.8
