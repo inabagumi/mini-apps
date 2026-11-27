@@ -22,7 +22,7 @@ catalog:
   contentful: 11.12.10
   esbuild-wasm: 0.28.2
   jsdom: 31.0.1
-  lucide-react: 1.80.0
+  lucide-react: 1.81.0
   next: 16.4.6
   react: 19.3.1
   react-dom: 19.3.1
