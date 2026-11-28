@@ -82,6 +82,8 @@ $ ./scripts/start-mocks.sh
 $ ./scripts/setup-mock-env.sh
 ```
 
+`scripts/start-mocks.sh` は Docker デーモンが起動していない場合、[`scripts/daemon.json`](scripts/daemon.json) を設定ファイルにして `dockerd` を起動します。Docker Hub の匿名 pull はレート制限にかかることがあるので、この設定で Docker Hub のイメージをミラー (`mirror.gcr.io`) から pull します。すでに起動している Docker デーモン (Dev Container のホストの Docker など) の設定は変更しません。
+
 `scripts/setup-mock-env.sh` は `.env.local.example` のモックサーバー向けの設定をもとに `.env.local` を作成します。すでに `.env.local` がある場合は変更しないので、必要に応じて `.env.local.example` を参考に設定してください。
 
 ### 開発サーバーのポート
