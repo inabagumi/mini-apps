@@ -15,7 +15,7 @@ jobs:
       # For the tests that need a database. Keep the image in sync with
       # `compose.yaml`.
       postgres:
-        image: mirror.gcr.io/library/postgres:18-alpine
+        image: postgres:18-alpine
         env:
           POSTGRES_PASSWORD: postgres
         options: >-
@@ -47,7 +47,7 @@ jobs:
       # For the E2E tests of animare-shindan. Keep the image in sync with
       # `compose.yaml`.
       postgres:
-        image: mirror.gcr.io/library/postgres:18-alpine
+        image: postgres:18-alpine
         env:
           POSTGRES_PASSWORD: postgres
         options: >-
