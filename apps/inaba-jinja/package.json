@@ -43,7 +43,7 @@
     "@mdx-js/react": "3.1.1",
     "@upstash/redis": "1.41.1",
     "@vercel/analytics": "catalog:",
-    "@vercel/speed-insights": "2.1.0",
+    "@vercel/speed-insights": "2.1.1",
     "cn": "catalog:",
     "contentful": "catalog:",
     "dedent": "1.7.2",
