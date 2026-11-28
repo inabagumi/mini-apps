@@ -67,7 +67,7 @@ services:
   # `postgres://postgres:postgres@127.0.0.1:5432/postgres` to use it. The data
   # is not persisted.
   postgres:
-    image: postgres:18-alpine
+    image: postgres:19-alpine
     environment:
       POSTGRES_PASSWORD: postgres
     healthcheck:
