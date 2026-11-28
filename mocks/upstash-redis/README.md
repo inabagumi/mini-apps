@@ -24,8 +24,6 @@ UPSTASH_REDIS_REST_URL=http://localhost:4001
 
 コマンドは Valkey が実行するので、`@upstash/redis` が使う単一のコマンド (`POST /`)、パイプライン (`POST /pipeline`)、トランザクション (`POST /multi-exec`)、`EVAL` による Lua スクリプトがそのまま動作します。Upstash Redis との違いは [SRH の README](https://github.com/hiett/serverless-redis-http#differences-between-upstash-and-redis-to-note) を参照してください。
 
-Docker Hub の匿名 pull はレート制限にかかることがあるので、SRH は Docker Hub のミラー (`mirror.gcr.io`)、Valkey は GHCR のイメージを使っています。
-
 ## データ
 
 データは永続化しないので、モックサーバーを作り直すと空になります。`apps/inaba-jinja` は `fortunes` が空のときに Contentful から取得したおみくじの ID を登録するので、あらかじめデータを用意する必要はありません。

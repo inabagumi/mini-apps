@@ -14,7 +14,7 @@ if ! docker info > /dev/null 2>&1; then
   fi
 
   echo "Starting the Docker daemon..."
-  nohup dockerd > /tmp/dockerd.log 2>&1 &
+  nohup dockerd --config-file "$PWD/scripts/daemon.json" > /tmp/dockerd.log 2>&1 &
 
   i=0
   until docker info > /dev/null 2>&1; do
