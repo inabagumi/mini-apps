@@ -1,9 +1,7 @@
 #!/bin/sh
 #
 # Starts the mock servers defined in `compose.yaml`. When the Docker daemon is
-# not running (e.g. in Claude Code cloud sessions), it is started first with
-# `scripts/daemon.json`, which pulls the images of Docker Hub through its mirror
-# (mirror.gcr.io) to avoid the rate limit of anonymous pulls.
+# not running (e.g. in Claude Code cloud sessions), it is started first.
 
 set -eu
 
